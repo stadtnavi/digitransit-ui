@@ -49,7 +49,7 @@ class ModeFilter extends React.Component {
       }
       return null;
     };
-
+    // kovalenskotes
     // TODO we could build the filter strictly based on config
     return (
       <div className="btn-bar mode-filter no-select">
@@ -60,6 +60,7 @@ class ModeFilter extends React.Component {
         <ModeToggleButton type="ferry" />
         <ModeToggleButton type="airplane" />
         <ModeToggleButton type="citybike" stateName="BICYCLE_RENT" />
+        <ModeToggleButton type="rideshare" />
       </div>
     );
   }

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import connectToStores from 'fluxible-addons-react/connectToStores';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -149,6 +150,16 @@ class SelectMapLayersDialog extends React.Component {
               labelId="map-layer-stop-ferry"
               onChange={e =>
                 this.updateStopSetting({ ferry: e.target.checked })
+              }
+            />
+          )}
+          {isTransportModeEnabled(transportModes.rideshare) && (
+            <Checkbox
+              checked={terminal.rideshare}
+              defaultMessage="RideShare"
+              labelId="map-layer-terminal-rideshare"
+              onChange={e =>
+                this.updateStopAndTerminalSetting({ rideshare: e.target.checked })
               }
             />
           )}

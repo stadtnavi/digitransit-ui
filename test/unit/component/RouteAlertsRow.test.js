@@ -46,6 +46,8 @@ describe('<RouteAlertsRow />', () => {
     const props = {
       entityMode: 'BUS',
       entityType: 'stop',
+      identifier: '7922',
+      gtfsIds: 'HSL:27922',
       expired: false,
     };
     const wrapper = shallowWithIntl(<RouteAlertsRow {...props} />);
@@ -85,10 +87,33 @@ describe('<RouteAlertsRow />', () => {
 
   it('should render the identifier', () => {
     const props = {
+      entityType: 'route',
+      entityMode: 'bus',
       entityIdentifier: '97N',
+      gtfsIds: 'HSL:2097N',
     };
     const wrapper = shallowWithIntl(<RouteAlertsRow {...props} />);
-    expect(wrapper.find('.route-alert-top-row').text()).to.equal('97N');
+    expect(wrapper.find('.bus')).to.have.lengthOf(1);
+  });
+
+  it('should not render the identifier if gtfsIds not provided', () => {
+    const props = {
+      entityType: 'route',
+      entityMode: 'bus',
+      entityIdentifier: '97N',
+      showRouteNameLink: true,
+    };
+    const wrapper = shallowWithIntl(<RouteAlertsRow {...props} />);
+    expect(wrapper.find('.bus')).to.have.lengthOf(0);
+  });
+
+  it('should not render the identifier if entityIdentifier not provided', () => {
+    const props = {
+      entityType: 'route',
+      entityMode: 'bus',
+    };
+    const wrapper = shallowWithIntl(<RouteAlertsRow {...props} />);
+    expect(wrapper.find('.bus')).to.have.lengthOf(0);
   });
 
   it('should render the url', () => {
@@ -107,6 +132,15 @@ describe('<RouteAlertsRow />', () => {
     const wrapper = shallowWithIntl(<RouteAlertsRow {...props} />);
     expect(wrapper.find(RouteNumber).prop('alertSeverityLevel')).to.equal(
       AlertSeverityLevelType.Warning,
+    );
+  });
+  it("should add the http prefix to the url if it's missing", () => {
+    const props = {
+      url: 'www.hsl.fi',
+    };
+    const wrapper = shallowWithIntl(<RouteAlertsRow {...props} />);
+    expect(wrapper.find('.route-alert-url').prop('href')).to.equal(
+      'http://www.hsl.fi',
     );
   });
 });

@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/HSLdevcom/digitransit-ui.svg?branch=master)](https://travis-ci.org/HSLdevcom/digitransit-ui)
 [![codecov](https://codecov.io/gh/HSLdevcom/digitransit-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/HSLdevcom/digitransit-ui)
 
+# Digitransit
 
 Digitransit-ui is a mobile friendly User interface built to work with Digitransit platform
 
@@ -39,3 +40,62 @@ More information about [testing](docs/Tests.md).
 * [Navigation](docs/Navigation.md)
 * [Themes](docs/Themes.md)
 * [GeoJSON](docs/GeoJson.md)
+
+This repo is a fork from the original Digitransit and migrated to our internal gitlab.
+
+# MFDZ changes
+## Development environment
+* WebStorm 2019.2
+* Yarn v1.17.3
+* Node v10.16.3
+
+### Yarn Installation
+```
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$ sudo apt update
+$ sudo apt install yarn
+$ yarn --version
+```
+
+### NodeJS Installation
+```
+$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+$ node -v
+```
+
+### Debugger
+Run/Debug Configurations:
+1. Add new configuration...
+2. Attach to Node.js/Chrome
+3. check Reconnect automatically
+
+package.json 
+modify row 14. (add --inspect):
+    ```
+    "dev": "PID=$$; trap 'pkill -QUIT -P $PID > /dev/null' EXIT; NODE_ENV=development nodemon -e js,css,scss,html --watch ./server/ --watch ./app/ --inspect server/server.js & NODE_ENV=development webpack-dev-server",
+    ```
+## How to Run
+###In terminal locally
+```
+$ yarn run dev
+```
+If it won't work properly at first:
+```
+$ yarn upgrade
+```
+## Modifications
+### URLs: app/configuration/config.default.js
+* API_URL: https://api.mobil-in-herrengerg.de
+* MAP_URL: https://maps.wikimedia.org/osm-intl/
+* OTP (in row 27): changed string 'finland' to 'hb'
+* In row 29-30 delete the added strings of MAP_URL
+* STOP_MAP and CITYBIKE_MAP: changed MAP_URL to API_URL and removed string 'finland-'
+
+### New RideShare icons
+New icon from: https://iconmonstr.com/car-17-svg/ added to the street mode and to the transfer mode filter (in static/assets/svg-sprite.default.svg).
+The color of the RideShare filter button: $rideshare-color: #800000 (in default/theme.scss)
+
+###Timezone and default language
+Both can be modified in app/config.default.js.

@@ -16,6 +16,7 @@ import {
   getServiceAlertsForStop,
   otpServiceAlertShape,
   getServiceAlertsForStopRoutes,
+  getServiceAlertsForTerminalStops,
 } from '../util/alertUtils';
 
 const StopAlertsContainer = ({ stop }, { intl }) => {
@@ -42,13 +43,20 @@ const StopAlertsContainer = ({ stop }, { intl }) => {
       },
     };
   });
+  const isTerminal = !stop.code;
   const serviceAlerts = [
+    // Alerts for terminal's stops.
+    ...getServiceAlertsForTerminalStops(isTerminal, stop, intl.locale),
     ...getServiceAlertsForStop(stop, intl.locale),
     ...getServiceAlertsForStopRoutes(stop, intl.locale),
   ];
 
   return (
-    <AlertList cancelations={cancelations} serviceAlerts={serviceAlerts} />
+    <AlertList
+      showRouteNameLink={false}
+      cancelations={cancelations}
+      serviceAlerts={serviceAlerts}
+    />
   );
 };
 

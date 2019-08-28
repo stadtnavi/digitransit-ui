@@ -53,7 +53,7 @@ let assets;
 let mainAssets;
 let manifest;
 
-if (process.env.NODE_ENV !== 'development') {
+if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'production' ) {
   // eslint-disable-next-line global-require, import/no-unresolved
   assets = require('../manifest.json');
   // eslint-disable-next-line global-require, import/no-unresolved
@@ -282,7 +282,7 @@ export default function(req, res, next) {
     res.write('<head>\n');
 
     // Write preload hints before doing anything else
-    if (process.env.NODE_ENV !== 'development') {
+    if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'production') {
       if (config.GTMid) {
         // Google Tag Manager script
         res.write(
@@ -300,7 +300,8 @@ export default function(req, res, next) {
         { as: 'style', href: config.URL.FONT },
         {
           as: 'style',
-          href: `${ASSET_URL}/${assets[`${config.CONFIG}_theme.css`]}`,
+          // href: `${ASSET_URL}/${assets[`${config.CONFIG}_theme.css`]}`,
+          href: `https://digitransit-prod-cdn-origin.azureedge.net/ui/v1/hsl/css/hsl__theme.css`,
           crossorigin: true,
         },
         ...mainAssets.map(asset => ({
@@ -379,6 +380,7 @@ export default function(req, res, next) {
         return [content, relayData];
       })
       .catch(err => {
+        // eslint-disable-next-line no-console
         console.log(err);
         return ['', undefined];
       });
@@ -391,7 +393,7 @@ export default function(req, res, next) {
     res.write('</head>\n');
     res.write('<body>\n');
 
-    if (process.env.NODE_ENV !== 'development') {
+    if (process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'production') {
       res.write('<script>\n');
       res.write(`fetch('${ASSET_URL}/${assets[spriteName]}')
         .then(function(response) {return response.text();}).then(function(blob) {
@@ -418,7 +420,7 @@ export default function(req, res, next) {
     res.write(relayData != null ? JSON.stringify(relayData.data) : '[]');
     res.write('\n</script>\n');
 
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production') {
       res.write('<script async src="/proxy/js/main.js"></script>\n');
     } else {
       res.write('<script>');

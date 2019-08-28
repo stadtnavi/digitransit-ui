@@ -1,11 +1,14 @@
 /* eslint-disable prefer-template */
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 import safeJsonParse from '../util/safeJsonParser';
+// eslint-disable-next-line no-unused-vars
+import Icon from '../component/Icon';
 
 const CONFIG = process.env.CONFIG || 'default';
-const API_URL = process.env.API_URL || 'https://dev-api.digitransit.fi';
+const API_URL = process.env.API_URL || 'https://api.mobil-in-herrenberg.de';
 const GEOCODING_BASE_URL = `${API_URL}/geocoding/v1`;
-const MAP_URL =
-  process.env.MAP_URL || 'https://digitransit-dev-cdn-origin.azureedge.net';
+const MAP_URL = process.env.MAP_URL || 'https://maps.wikimedia.org/osm-intl/';
 const APP_PATH = process.env.APP_CONTEXT || '';
 const { SENTRY_DSN } = process.env;
 const PORT = process.env.PORT || 8080;
@@ -25,13 +28,13 @@ export default {
     API_URL,
     ASSET_URL: process.env.ASSET_URL,
     MAP_URL,
-    OTP: process.env.OTP_URL || `${API_URL}/routing/v1/routers/finland/`,
+    OTP: process.env.OTP_URL || `${API_URL}/routing/v1/routers/hb/`,
     MAP: {
-      default: `${MAP_URL}/map/v1/hsl-map/`,
-      sv: `${MAP_URL}/map/v1/hsl-map-sv/`,
+      default: `${MAP_URL}`,
+      sv: `${MAP_URL}`,
     },
-    STOP_MAP: `${MAP_URL}/map/v1/finland-stop-map/`,
-    CITYBIKE_MAP: `${MAP_URL}/map/v1/hsl-citybike-map/`,
+    STOP_MAP: `${API_URL}/map/v1/stop-map/`,
+    CITYBIKE_MAP: `${API_URL}/map/v1/citybike-map/`,
     FONT:
       'https://fonts.googleapis.com/css?family=Lato:300,400,900%7CPT+Sans+Narrow:400,700',
     PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
@@ -39,11 +42,16 @@ export default {
       GEOCODING_BASE_URL}/reverse`,
     ROUTE_TIMETABLES: {
       HSL: `${API_URL}/timetables/v1/hsl/routes/`,
+      tampere: 'http://joukkoliikenne.tampere.fi/media/aikataulut/',
+    },
+    STOP_TIMETABLES: {
+      HSL: `${API_URL}/timetables/v1/hsl/stops/`,
+      tampere: 'https://www.tampere.fi/ekstrat/ptdata/pdf/',
     },
   },
 
   APP_PATH: `${APP_PATH}`,
-  title: 'Reittihaku',
+  title: 'MFDZ',
 
   textLogo: false,
   // Navbar logo
@@ -157,12 +165,10 @@ export default {
   maxBikingDistance: 100000,
   itineraryFiltering: 1.5, // drops 66% worse routes
   useUnpreferredRoutesPenalty: 1200, // adds 10 minute (weight) penalty to routes that are unpreferred
-  availableLanguages: ['fi', 'sv', 'en', 'fr', 'nb', 'de'],
-  defaultLanguage: 'en',
-  // This timezone data will expire on 31.12.2020
+  availableLanguages: ['de', 'en'],
+  defaultLanguage: 'de',
   timezoneData:
-    'Europe/Helsinki|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 ' +
-    'WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|35e5',
+    'Europe/Berlin|CET CEST CEMT|-10 -20 -30|01010101010101210101210101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-2aFe0 11d0 1iO0 11A0 1o00 11A0 Qrc0 6i00 WM0 1fA0 1cM0 1cM0 1cM0 kL0 Nc0 m10 WM0 1ao0 1cp0 dX0 jz0 Dd0 1io0 17c0 1fA0 1a00 1ehA0 1a00 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|41e5',
 
   mainMenu: {
     // Whether to show the left menu toggle button at all
@@ -350,6 +356,7 @@ export default {
     car: 'CAR',
     car_park: 'CAR_PARK',
     public_transport: 'WALK',
+    // rideshare: 'RIDESHARE',
   },
 
   // Control what transport modes that should be possible to select in the UI
@@ -389,6 +396,11 @@ export default {
       availableForSelection: true, // TODO: Turn off in autumn
       defaultValue: false, // always false
     },
+
+    rideshare: {
+      availableForSelection: true,
+      defaultValue: true,
+    },
   },
 
   streetModes: {
@@ -425,6 +437,13 @@ export default {
       defaultValue: false,
       exclusive: false,
       icon: 'car_park-withoutBox',
+    },
+
+    rideshare: {
+      availableForSelection: true,
+      defaultValue: false,
+      exclusive: false,
+      icon: 'rideshare',
     },
   },
 
@@ -652,11 +671,127 @@ export default {
     ],
     nb: {},
     fr: {},
-    de: {},
+    de: [
+      {
+        header: 'Über diesen Service',
+        paragraphs: [
+          'Der Service umfasst öffentliche Verkehrsmittel, Wandern, Radfahren und einige private Autonutzungen. Der Dienst basiert auf der Digitransit-Plattform.',
+        ],
+      },
+      {
+        header: 'Digitransit-Plattform',
+        paragraphs: [
+          'Die Digitransit-Serviceplattform ist eine Open Source-Routingplattform, die von HSL und Traficom entwickelt wurde.',
+        ],
+      },
+      {
+        header: 'Datenquellen',
+        paragraphs: [
+          "Maps, streets, buildings, stop locations etc. are provided by © OpenStreetMap contributors. Address data is retrieved from the Building and Dwelling Register of the Finnish Population Register Center. Public transport routes and timetables are downloaded from Traficom's national public transit database.",
+        ],
+      },
+    ],
   },
 
   staticMessages: [],
 
+  staticIEMessage: [
+    {
+      id: '3',
+      priority: -1,
+      shouldTrigger: true,
+      content: {
+        fi: [
+          {
+            type: 'text',
+            content:
+              'Palvelu ei tue käyttämääsi selainta. Päivitä selainohjelmasi tai lataa uusi selain oheisista linkeistä.\n',
+          },
+          {
+            type: 'a',
+            content: 'Google Chrome',
+            href: 'https://www.google.com/chrome/',
+          },
+          {
+            type: 'a',
+            content: 'Firefox',
+            href: 'https://www.mozilla.org/fi/firefox/new/',
+          },
+          {
+            type: 'a',
+            content: 'Microsoft Edge',
+            href: 'https://www.microsoft.com/en-us/windows/microsoft-edge',
+          },
+        ],
+        en: [
+          {
+            type: 'text',
+            content:
+              'The service does not support the browser you are using. Update your browser or download a new browser using the links below.\n',
+          },
+          {
+            type: 'a',
+            content: 'Google Chrome',
+            href: 'https://www.google.com/chrome/',
+          },
+          {
+            type: 'a',
+            content: 'Firefox',
+            href: 'https://www.mozilla.org/fi/firefox/new/',
+          },
+          {
+            type: 'a',
+            content: 'Microsoft Edge',
+            href: 'https://www.microsoft.com/en-us/windows/microsoft-edge',
+          },
+        ],
+        de: [
+          {
+            type: 'text',
+            content:
+              'Der Dienst unterstützt den Browser nicht, der Sie benutzen. Aktualisieren Sie Ihren Browser oder laden Sie über die folgenden Links einen neuen Browser herunter.\n',
+          },
+          {
+            type: 'a',
+            content: 'Google Chrome',
+            href: 'https://www.google.com/chrome/',
+          },
+          {
+            type: 'a',
+            content: 'Firefox',
+            href: 'https://www.mozilla.org/fi/firefox/new/',
+          },
+          {
+            type: 'a',
+            content: 'Microsoft Edge',
+            href: 'https://www.microsoft.com/en-us/windows/microsoft-edge',
+          },
+        ],
+        sv: [
+          {
+            type: 'text',
+            content:
+              'Tjänsten stöder inte den webbläsare som du har i bruk. Uppdatera din webbläsare eller ladda ner en ny webbläsare via nedanstående länk.\n',
+          },
+          {
+            type: 'a',
+            content: 'Google Chrome',
+            href: 'https://www.google.com/chrome/',
+          },
+          {
+            type: 'a',
+            content: 'Firefox',
+            href: 'https://www.mozilla.org/sv-SE/firefox/new/',
+          },
+          {
+            type: 'a',
+            content: 'Microsoft Edge',
+            href: 'https://www.microsoft.com/en-us/windows/microsoft-edge',
+          },
+        ],
+      },
+    },
+  ],
   themeMap: {
     hsl: 'reittiopas',
     turku: '(turku|foli)',
@@ -688,5 +823,5 @@ export default {
     },
   },
 
-  routeTimetables: {},
+  timetables: {},
 };

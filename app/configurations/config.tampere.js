@@ -6,6 +6,7 @@ const APP_TITLE = 'Nyssen reittiopas';
 const APP_DESCRIPTION = 'Nyssen reittiopas';
 
 const walttiConfig = require('./waltti').default;
+const tampereTimetables = require('./timetableConfigUtils').default.tampere;
 
 const minLat = 61.16;
 const maxLat = 62.31;
@@ -222,4 +223,15 @@ export default configMerger(walttiConfig, {
   },
   showAllBusses: true,
   showVehiclesOnStopPage: true,
+  timetables: {
+    tampere: tampereTimetables,
+  },
+
+  // enable train routing for tampere
+  transportModes: {
+    rail: {
+      availableForSelection: true,
+      defaultValue: true,
+    },
+  },
 });

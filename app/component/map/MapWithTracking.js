@@ -12,12 +12,15 @@ import { isBrowser } from '../../util/browser';
 import MapLayerStore, { mapLayerShape } from '../../store/MapLayerStore';
 import PositionStore from '../../store/PositionStore';
 import GeoJsonStore from '../../store/GeoJsonStore';
+import MessageStore from '../../store/MessageStore';
 import VehicleMarkerContainer from './VehicleMarkerContainer';
 import {
   startRealTimeClient,
   stopRealTimeClient,
   changeRealTimeClientTopics,
 } from '../../action/realTimeClientAction';
+import { findFeatures } from '../../util/geo-utils';
+import { updateMessage } from '../../action/MessageActions';
 
 const DEFAULT_ZOOM = 12;
 const FOCUS_ZOOM = 16;
@@ -49,7 +52,7 @@ class MapWithTrackingStateHandler extends React.Component {
     getGeoJsonConfig: PropTypes.func.isRequired,
     getGeoJsonData: PropTypes.func.isRequired,
     origin: dtLocationShape.isRequired,
-    destination: dtLocationShape,
+    destination: dtLocationShape.isRequired,
     position: PropTypes.shape({
       hasLocation: PropTypes.bool.isRequired,
       isLocationingInProgress: PropTypes.bool.isRequired,
@@ -67,23 +70,27 @@ class MapWithTrackingStateHandler extends React.Component {
     children: PropTypes.array,
     renderCustomButtons: PropTypes.func,
     mapLayers: mapLayerShape.isRequired,
+    messages: PropTypes.array,
   };
 
   static defaultProps = {
     renderCustomButtons: undefined,
-    destination: {},
   };
 
   constructor(props) {
     super(props);
     const hasOriginorPosition =
-      props.origin.ready || props.position.hasLocation;
+      props.origin.ready ||
+      props.position.hasLocation ||
+      props.destination.ready;
     this.state = {
       geoJson: {},
       initialZoom: hasOriginorPosition ? FOCUS_ZOOM : DEFAULT_ZOOM,
       mapTracking: props.origin.gps && props.position.hasLocation,
       focusOnOrigin: props.origin.ready,
+      focusOnDestination: !props.origin.ready && props.destination.ready,
       origin: props.origin,
+      destination: props.destination,
       shouldShowDefaultLocation: !hasOriginorPosition,
     };
   }
@@ -123,6 +130,16 @@ class MapWithTrackingStateHandler extends React.Component {
     if (config.showAllBusses) {
       this.startClient();
     }
+
+    if (this.state.focusOnOrigin || this.state.focusOnDestination) {
+      const lat = this.state.focusOnDestination
+        ? this.state.destination.lat
+        : this.state.origin.lat;
+      const lon = this.state.focusOnDestination
+        ? this.state.destination.lon
+        : this.state.origin.lon;
+      await this.triggerMessage(lat, lon);
+    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -135,6 +152,18 @@ class MapWithTrackingStateHandler extends React.Component {
         !this.state.origin.gps) // current position selected
     ) {
       this.usePosition(newProps.origin);
+      this.triggerMessage(newProps.origin.lat, newProps.origin.lon);
+    } else if (
+      // "current position selected"
+      newProps.destination.lat !== null &&
+      newProps.destination.lon !== null &&
+      newProps.destination.gps === true &&
+      ((this.state.destination.ready === false &&
+        newProps.destination.ready === true) ||
+        !this.state.destination.gps) // current position selected
+    ) {
+      this.usePosition(newProps.destination);
+      this.triggerMessage(newProps.destination.lat, newProps.destination.lon);
     } else if (
       // "poi selected"
       !newProps.origin.gps &&
@@ -144,6 +173,17 @@ class MapWithTrackingStateHandler extends React.Component {
       newProps.origin.lon != null
     ) {
       this.useOrigin(newProps.origin);
+      this.triggerMessage(newProps.origin.lat, newProps.origin.lon);
+    } else if (
+      // destination selected without poi
+      !newProps.destination.gps &&
+      (newProps.destination.lat !== this.state.destination.lat ||
+        newProps.destination.lon !== this.state.destination.lon) &&
+      newProps.destination.lat != null &&
+      newProps.destination.lon != null
+    ) {
+      this.useDestination(newProps.destination);
+      this.triggerMessage(newProps.destination.lat, newProps.destination.lon);
     }
   }
 
@@ -188,6 +228,7 @@ class MapWithTrackingStateHandler extends React.Component {
     this.setState({
       mapTracking: false,
       focusOnOrigin: false,
+      focusOnDestination: false,
     });
   };
 
@@ -195,6 +236,7 @@ class MapWithTrackingStateHandler extends React.Component {
     this.setState({
       mapTracking: true,
       focusOnOrigin: false,
+      focusOnDestination: false,
     });
   };
 
@@ -213,6 +255,26 @@ class MapWithTrackingStateHandler extends React.Component {
       }
     }
     return geoHashes;
+  };
+
+  triggerMessage = (lat, lon) => {
+    const messages = this.props.messages.filter(
+      msg => !msg.shouldTrigger && msg.content && msg.geoJson,
+    );
+    messages.forEach(msg => {
+      return new Promise(resolve => {
+        resolve(this.props.getGeoJsonData(msg.geoJson));
+      }).then(value => {
+        const data = findFeatures(
+          { lat, lon },
+          (value && value.data && value.data.features) || [],
+        );
+        if (data.length > 0) {
+          msg.shouldTrigger = true; // eslint-disable-line no-param-reassign
+          this.context.executeAction(updateMessage, msg);
+        }
+      });
+    });
   };
 
   startClient() {
@@ -286,6 +348,7 @@ class MapWithTrackingStateHandler extends React.Component {
       origin,
       mapTracking: true,
       focusOnOrigin: false,
+      focusOnDestination: false,
       initialZoom:
         prevState.initialZoom === DEFAULT_ZOOM ? FOCUS_ZOOM : undefined,
       shouldShowDefaultLocation: false,
@@ -297,6 +360,19 @@ class MapWithTrackingStateHandler extends React.Component {
       origin,
       mapTracking: false,
       focusOnOrigin: true,
+      focusOnDestination: false,
+      initialZoom:
+        prevState.initialZoom === DEFAULT_ZOOM ? FOCUS_ZOOM : undefined,
+      shouldShowDefaultLocation: false,
+    }));
+  }
+
+  useDestination(destination) {
+    this.setState(prevState => ({
+      destination,
+      mapTracking: false,
+      focusOnOrigin: false,
+      focusOnDestination: true,
       initialZoom:
         prevState.initialZoom === DEFAULT_ZOOM ? FOCUS_ZOOM : undefined,
       shouldShowDefaultLocation: false,
@@ -325,6 +401,13 @@ class MapWithTrackingStateHandler extends React.Component {
       location = this.state.origin;
     } else if (this.state.mapTracking && position.hasLocation) {
       location = position;
+    } else if (
+      this.state.focusOnDestination &&
+      !this.state.destination.gps &&
+      this.state.destination.lat != null &&
+      this.state.destination.lon != null
+    ) {
+      location = this.state.destination;
     } else if (this.state.shouldShowDefaultLocation) {
       location = config.defaultMapCenter || config.defaultEndpoint;
     }
@@ -346,7 +429,7 @@ class MapWithTrackingStateHandler extends React.Component {
       );
     }
 
-    if (origin && origin.ready === true && origin.gps !== true) {
+    if (origin && origin.ready === true) {
       leafletObjs.push(
         <LazilyLoad modules={locationMarkerModules} key="from">
           {({ LocationMarker }) => (
@@ -392,6 +475,7 @@ class MapWithTrackingStateHandler extends React.Component {
         mapTracking={this.state.mapTracking}
         className="flex-grow"
         origin={origin}
+        destination={destination}
         leafletEvents={{
           onDragstart: this.disableMapTracking,
           onDragend: this.updateCurrentBounds,
@@ -436,12 +520,13 @@ const MapWithTracking = connectToStores(
       defaultMapCenter: dtLocationShape,
     }),
   })(MapWithTrackingStateHandler),
-  [PositionStore, MapLayerStore, GeoJsonStore],
+  [PositionStore, MapLayerStore, GeoJsonStore, MessageStore],
   ({ getStore }) => {
     const position = getStore(PositionStore).getLocationState();
     const mapLayers = getStore(MapLayerStore).getMapLayers();
     const { getGeoJsonConfig, getGeoJsonData } = getStore(GeoJsonStore);
-    return { position, mapLayers, getGeoJsonConfig, getGeoJsonData };
+    const messages = getStore(MessageStore).getMessages();
+    return { position, mapLayers, getGeoJsonConfig, getGeoJsonData, messages };
   },
 );
 

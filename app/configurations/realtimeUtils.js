@@ -50,7 +50,7 @@ export default {
       geoHash, // eslint-disable-line no-unused-vars
     ) {
       return (
-        '/hfp/v1/journey/ongoing/+/+/+/' +
+        '/hfp/v2/journey/ongoing/+/+/+/+/' +
         route +
         '/' +
         direction +
@@ -60,7 +60,7 @@ export default {
       );
     },
 
-    mqtt: 'wss://mqtt.hsl.fi',
+    mqtt: 'wss://cmqttdev.cinfra.fi',
 
     gtfsrt: false,
 

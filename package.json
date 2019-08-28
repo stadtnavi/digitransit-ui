@@ -11,7 +11,7 @@
     "predev": "npm run static",
     "predev-win-hsl": "npm run win-static",
     "predev-win-national": "npm run win-static",
-    "dev": "PID=$$; trap 'pkill -QUIT -P $PID > /dev/null' EXIT; NODE_ENV=development nodemon -e js,css,scss,html --watch ./server/ --watch ./app/ server/server.js & NODE_ENV=development webpack-dev-server",
+    "dev": "PID=$$; trap 'pkill -QUIT -P $PID > /dev/null' EXIT; NODE_ENV=development nodemon -e js,css,scss,html --watch ./server/ --watch ./app/ --inspect server/server.js & NODE_ENV=development webpack-dev-server",
     "dev-win-hsl": "cd win-launch-scripts&& hsl-win-launch-script.bat",
     "dev-win-national": "cd win-launch-scripts&& set CONFIG=&& national-win-launch-script.bat",
     "dev-nowatch": "NODE_ENV=development node server/server.js & NODE_ENV=development webpack-dev-server",
@@ -86,8 +86,8 @@
     "isomorphic-relay-router": "github:michaelstockton/isomorphic-relay-router#feature-relay-1-public",
     "leaflet": "1.4.0",
     "leaflet-active-area": "1.1.0",
-    "lodash": "4.17.11",
-    "lodash-es": "4.17.11",
+    "lodash": "4.17.14",
+    "lodash-es": "4.17.14",
     "lru-cache": "4.1.3",
     "material-ui": "0.20.2",
     "moment": "2.24.0",
@@ -123,6 +123,7 @@
     "react-transition-group": "1.2.1",
     "recompose": "0.30.0",
     "serialize-javascript": "1.6.1",
+    "uuidv4": "4.0.0",
     "zurb-foundation-5": "5.4.7"
   },
   "devDependencies": {
@@ -185,7 +186,7 @@
     "url-loader": "1.1.2",
     "webpack": "4.29.0",
     "webpack-assets-manifest": "3.1.1",
-    "webpack-bundle-analyzer": "3.0.3",
+    "webpack-bundle-analyzer": "3.3.2",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14"
   }

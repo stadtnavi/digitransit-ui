@@ -23,6 +23,14 @@
             background-color: $btn-bus-active-background-color;
           }
         }
+        &.rideshare {
+          background-color: $btn-rideshare-active-background-color;
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $btn-rideshare-active-background-color;
+          }
+        }
         &.tram {
           background-color: $btn-tram-active-background-color;
           &:hover,

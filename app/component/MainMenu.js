@@ -26,6 +26,16 @@ function MainMenu(props, { config, intl }) {
         <LangSelect />
       </header>
       <div className="offcanvas-section">
+        <Link id="login" to={props.homeUrl}> {/* TODO : link roli roli */}
+          <FormattedMessage id="login" defaultMessage="Login" />
+        </Link>
+      </div>
+      <div className="offcanvas-section">
+        <Link id="offerRide" to={props.homeUrl}> {/* TODO : link roli roli */}
+          <FormattedMessage id="offerRide" defaultMessage="Offer ride" />
+        </Link>
+      </div>
+      <div className="offcanvas-section">
         <Link id="frontpage" to={props.homeUrl}>
           <FormattedMessage id="frontpage" defaultMessage="Frontpage" />
         </Link>

@@ -53,7 +53,20 @@ $content-background-color: $background-color;
       display: none;
     }
   }
-
+  .top-btn-holder{
+    align-self: stretch;
+    height: inherit;
+  }
+  .offer-ride-btn {
+    font-size: 1.2em;
+    margin-top: 4px;
+    align-self: stretch;
+  }
+  .login-btn {
+    font-size: 1.2em;
+    align-self: stretch;
+    height: inherit;
+  }
   .icon-holder {
     padding: $padding-medium;
     align-self: stretch;

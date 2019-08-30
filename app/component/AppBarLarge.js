@@ -43,6 +43,11 @@ const AppBarLarge = (
         <button className="noborder" onClick={titleClicked}>
           {logoElement}
         </button>
+        <div className="top-btn-holder">
+        <button className="offer-ride-btn">
+          Offer ride!
+        </button>
+        </div>
         <div className="empty-space flex-grow" />
         <div className="navi-languages right-border navi-margin">
           <LangSelect />
@@ -58,6 +63,11 @@ const AppBarLarge = (
           >
             <Icon img="icon-icon_caution" className="caution-topbar" />
           </a>
+        </div>
+        <div className="top-btn-holder">
+          <button className="login-btn">
+            Log in
+          </button>
         </div>
         <div className="padding-horizontal-large navi-margin">
           <ExternalLink className="external-top-bar" {...config.appBarLink} />

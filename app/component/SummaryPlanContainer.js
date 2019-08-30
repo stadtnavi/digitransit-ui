@@ -426,6 +426,11 @@ class SummaryPlanContainer extends React.Component {
         >
           {this.props.children}
         </ItinerarySummaryListContainer>
+        <div>
+        <button className="standalone-btn-ss standalone-btn time-navigation-buttons">
+          Save search
+        </button>
+        </div>
         <TimeNavigationButtons
           isEarlierDisabled={disableButtons}
           isLaterDisabled={disableButtons}

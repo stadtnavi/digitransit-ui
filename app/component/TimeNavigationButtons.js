@@ -67,7 +67,7 @@ class TimeNavigationButtons extends React.Component {
             })}
           >
             {itineraryFeedback}
-            <button
+          <button
               className="standalone-btn time-navigation-earlier-btn"
               disabled={this.props.isEarlierDisabled}
               onClick={this.props.onEarlier}

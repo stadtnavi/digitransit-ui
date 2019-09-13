@@ -36,7 +36,7 @@ get_ipython().system('oc login -u system:admin')
 
 
 #%%
-get_ipython().system('oc adm policy add-scc-to-user anyuid P-dt-vh -z default')
+get_ipython().system('oc adm policy add-scc-to-user anyuid p-dt-vh -z default')
 
 #%% [markdown]
 # # Get the verschwoerhaus solution for Kubernetes usage

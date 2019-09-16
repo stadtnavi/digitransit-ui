@@ -39,6 +39,15 @@
         color: $primary-font-color;
         font-size: $font-size-normal;
         display: inline;
+        height: 38px; // 38
+        width: 50%;
+        margin-top: 5px;
+      }
+      .standalone-btn-ss {
+        background-color: $hilight-color;
+        color: $primary-font-color;
+        font-size: $font-size-normal;
+        display: inline;
         height: 38px;
         width: 50%;
         margin-top: 5px;

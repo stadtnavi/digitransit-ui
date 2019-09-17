@@ -77,7 +77,7 @@ modify row 14. (add --inspect):
     "dev": "PID=$$; trap 'pkill -QUIT -P $PID > /dev/null' EXIT; NODE_ENV=development nodemon -e js,css,scss,html --watch ./server/ --watch ./app/ --inspect server/server.js & NODE_ENV=development webpack-dev-server",
     ```
 ## How to Run
-###In terminal locally
+### In terminal locally
 ```
 $ yarn run dev
 ```
@@ -85,6 +85,12 @@ If it won't work properly at first:
 ```
 $ yarn upgrade
 ```
+### In Docker locally
+1. For details see the original docs above.
+2. Go to the folder of your project.
+3. Build image: ```docker build -t <yourUserName/yourProjectName> .```
+4. Run: ```docker run -p 8080:8080 <yourUserName/yourProjectName>```
+5. Stop: ```docker ps``` -> copy the ID of your running project -> ```docker stop <ID>```
 ## Modifications
 ### URLs: app/configuration/config.default.js
 * API_URL: https://api.mobil-in-herrengerg.de
@@ -97,5 +103,5 @@ $ yarn upgrade
 New icon from: https://iconmonstr.com/car-17-svg/ added to the street mode and to the transfer mode filter (in static/assets/svg-sprite.default.svg).
 The color of the RideShare filter button: $rideshare-color: #800000 (in default/theme.scss)
 
-###Timezone and default language
+### Timezone and default language
 Both can be modified in app/config.default.js.

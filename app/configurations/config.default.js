@@ -396,8 +396,11 @@ export default {
       availableForSelection: true, // TODO: Turn off in autumn
       defaultValue: false, // always false
     },
-
     rideshare: {
+      availableForSelection: true,
+      defaultValue: true,
+    },
+    taxi: {
       availableForSelection: true,
       defaultValue: true,
     },

@@ -24,6 +24,7 @@ class MapLayerStore extends Store {
     },
     showAllBusses: false,
     geoJson: {},
+    taxi: {},
   };
 
   static handlers = {
@@ -85,6 +86,7 @@ export const mapLayerShape = PropTypes.shape({
   }).isRequired,
   showAllBusses: PropTypes.bool,
   geoJson: PropTypes.object,
+  taxi: setMapLayerSettings(), // tipp
 });
 
 export default MapLayerStore;

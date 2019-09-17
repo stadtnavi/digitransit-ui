@@ -163,6 +163,16 @@ class SelectMapLayersDialog extends React.Component {
               }
             />
           )}
+          {isTransportModeEnabled(transportModes.taxi) && ( //config.default.js-ben hivodik meg
+            <Checkbox
+              checked={terminal.taxi}
+              defaultMessage="Taxi stand"
+              labelId="map-layer-terminal-taxi"
+              onChange={e =>
+                this.updateStopAndTerminalSetting({ taxi: e.target.checked })
+              }
+            />
+          )}
           {config.cityBike &&
             config.cityBike.showCityBikes && (
               <Checkbox
@@ -267,7 +277,7 @@ const mapLayersConfigShape = PropTypes.shape({
   cityBike: PropTypes.shape({
     showCityBikes: PropTypes.bool,
   }),
-  geoJson: PropTypes.shape({
+  geoJson: PropTypes.shape({  //hol hivodik meg???
     layers: PropTypes.arrayOf(
       PropTypes.shape({
         url: PropTypes.string.isRequired,
@@ -279,6 +289,20 @@ const mapLayersConfigShape = PropTypes.shape({
       }),
     ),
   }),
+  taxi: { // na es ez??
+    layers: [ // an array of data sources
+      {
+        name: {
+          // Displayed in UI. Should include supported languages
+          en: 'Taxi stand',
+        },
+        // web address of the data source
+        url: 'https://overpass-turbo.eu/',
+        // metadata which describes how to render point features ??
+      },
+      // more geojson sources can follow. Each source gets a separate drawing/on off switch in the map layer selection list
+    ]
+  },
   parkAndRide: PropTypes.shape({
     showParkAndRide: PropTypes.bool,
   }),
@@ -344,6 +368,9 @@ SelectMapLayersDialog.description = (
             tram: {
               availableForSelection: true,
             },
+            taxi: {
+              availableForSelection : true,
+            }
           },
         }}
         isOpen

@@ -427,7 +427,7 @@ class SummaryPlanContainer extends React.Component {
           {this.props.children}
         </ItinerarySummaryListContainer>
         <div>
-        <button className="standalone-btn-ss standalone-btn time-navigation-buttons">
+        <button className="save-search-buttons">
           Save search
         </button>
         </div>

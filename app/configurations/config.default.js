@@ -99,6 +99,18 @@ export default {
     bucketSize: 1000,
   },
 
+  geoJson: {
+    layers: [
+      {
+        name: {
+          en: 'Taxi',
+          de: 'Taxi',
+        },
+        url: '/assets/geojson/stuttgart_taxi_20190918.geojson',
+      },
+    ],
+  },
+
   defaultSettings: {
     accessibilityOption: 0,
     bikeSpeed: 5,

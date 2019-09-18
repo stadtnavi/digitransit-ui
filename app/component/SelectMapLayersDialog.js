@@ -277,32 +277,19 @@ const mapLayersConfigShape = PropTypes.shape({
   cityBike: PropTypes.shape({
     showCityBikes: PropTypes.bool,
   }),
-  geoJson: PropTypes.shape({  //hol hivodik meg???
+  geoJson: PropTypes.shape({
     layers: PropTypes.arrayOf(
       PropTypes.shape({
         url: PropTypes.string.isRequired,
         name: PropTypes.shape({
-          en: PropTypes.string,
-          fi: PropTypes.string.isRequired,
+          en: PropTypes.string.isRequired,
+          fi: PropTypes.string,
           sv: PropTypes.string,
+          de: PropTypes.string,
         }),
       }),
     ),
   }),
-  taxi: { // na es ez??
-    layers: [ // an array of data sources
-      {
-        name: {
-          // Displayed in UI. Should include supported languages
-          en: 'Taxi stand',
-        },
-        // web address of the data source
-        url: 'https://overpass-turbo.eu/',
-        // metadata which describes how to render point features ??
-      },
-      // more geojson sources can follow. Each source gets a separate drawing/on off switch in the map layer selection list
-    ]
-  },
   parkAndRide: PropTypes.shape({
     showParkAndRide: PropTypes.bool,
   }),

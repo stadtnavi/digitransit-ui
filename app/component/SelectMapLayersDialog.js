@@ -289,20 +289,6 @@ const mapLayersConfigShape = PropTypes.shape({
       }),
     ),
   }),
-  taxi: { // na es ez??
-    layers: [ // an array of data sources
-      {
-        name: {
-          // Displayed in UI. Should include supported languages
-          en: 'Taxi stand',
-        },
-        // web address of the data source
-        url: 'https://overpass-turbo.eu/',
-        // metadata which describes how to render point features ??
-      },
-      // more geojson sources can follow. Each source gets a separate drawing/on off switch in the map layer selection list
-    ]
-  },
   parkAndRide: PropTypes.shape({
     showParkAndRide: PropTypes.bool,
   }),

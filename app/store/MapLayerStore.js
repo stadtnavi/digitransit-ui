@@ -86,7 +86,7 @@ export const mapLayerShape = PropTypes.shape({
   }).isRequired,
   showAllBusses: PropTypes.bool,
   geoJson: PropTypes.object,
-  taxi: setMapLayerSettings(), // tipp
+  // taxi: setMapLayerSettings(), // tipp
 });
 
 export default MapLayerStore;

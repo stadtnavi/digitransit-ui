@@ -160,12 +160,12 @@ export default configMerger(walttiConfig, {
         },
         url: '/assets/geojson/stuttgart_taxi_20190918.geojson',
       },
-      // bike parks in herrenberg
+      // bike parks in Herrenberg
       {
         name: {
           en: 'Bike park',
         },
-        url: '/static/assets/geojson/HB_bikeParks_nocover_20190920.geojson',
+        url: '/assets/geojson/HB_bikeParks_nocover_20190920.geojson',
       }
     ],
   },

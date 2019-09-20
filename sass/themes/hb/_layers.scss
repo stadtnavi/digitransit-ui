@@ -1,0 +1,11 @@
+$dot-height: 3px;
+$dot-fill: white;
+
+.taxi_dots{
+  height: $dot-height;
+  width: $dot-height;
+  background-color: $dot-fill;
+  border: 5px red solid;
+  border-radius: 50%;
+  display: inline-block;
+}

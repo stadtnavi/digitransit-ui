@@ -1,18 +1,13 @@
 {
-  "type": "FeatureCollection",
+  "type": "Feature",
   "generator": "overpass-ide",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-18T14:08:03Z",
-  }
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "MultiPoint",
-        "coordinates": {
+  "properties": {
+   },
+  "geometry": {
+    "type": "MultiPoint",
+    "coordinates": [
             [9.181559, 48.783165],
             [9.1947976, 48.7737497],
             [9.2033997, 48.7747902],
@@ -20,373 +15,37 @@
             [9.2078487, 48.7850045],
             [9.1577029, 48.7820135],
             [9.1856802, 48.7768817],
-        }
-      },
-    },
-
-
-
-
-
-
-
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/303797846",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates":
-      },
-      "id": "node/303797846"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/439483872",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.178683,
-          48.7797451
-        ]
-      },
-      "id": "node/439483872"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/442120218",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1574076,
-          48.7703373
-        ]
-      },
-      "id": "node/442120218"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/442128283",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1730641,
-          48.7744202
-        ]
-      },
-      "id": "node/442128283"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/462250815",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1785147,
-          48.7715947
-        ]
-      },
-      "id": "node/462250815"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/839235822",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1969786,
-          48.7894679
-        ]
-      },
-      "id": "node/839235822"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/839246675",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.2154319,
-          48.7998199
-        ]
-      },
-      "id": "node/839246675"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1259197654",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.2172712,
-          48.8019209
-        ]
-      },
-      "id": "node/1259197654"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1332658410",
-        "amenity": "taxi",
-        "source": "Bing"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1808904,
-          48.7732647
-        ]
-      },
-      "id": "node/1332658410"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1485681084",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.2311101,
-          48.8063549
-        ]
-      },
-      "id": "node/1485681084"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1635660962",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1661158,
-          48.7785729
-        ]
-      },
-      "id": "node/1635660962"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/1775118338",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.2037167,
-          48.7891701
-        ]
-      },
-      "id": "node/1775118338"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2141800616",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1787148,
-          48.7779005
-        ]
-      },
-      "id": "node/2141800616"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2925298690",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1559599,
-          48.7735454
-        ]
-      },
-      "id": "node/2925298690"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3138491655",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.151623,
-          48.7876668
-        ]
-      },
-      "id": "node/3138491655"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/3679812024",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.2264829,
-          48.7934669
-        ]
-      },
-      "id": "node/3679812024"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/4102489040",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1789194,
-          48.7751316
-        ]
-      },
-      "id": "node/4102489040"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/5561087355",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1734244,
-          48.7829005
-        ]
-      },
-      "id": "node/5561087355"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/5814563448",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1773216,
-          48.7731058
-        ]
-      },
-      "id": "node/5814563448"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/5865966403",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1807522,
-          48.776025
-        ]
-      },
-      "id": "node/5865966403"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/5865994698",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1803217,
-          48.7761373
-        ]
-      },
-      "id": "node/5865994698"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6060820602",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1763064,
-          48.7736608
-        ]
-      },
-      "id": "node/6060820602"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6073177056",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1721155,
-          48.7758164
-        ]
-      },
-      "id": "node/6073177056"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6430928667",
-        "amenity": "taxi"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.1751824,
-          48.7830075
-        ]
-      },
-      "id": "node/6430928667"
-    }
-  ]
+            [9.178683, 48.7797451],
+            [9.1574076, 48.7703373],
+            [9.1730641, 48.7744202],
+            [9.1785147, 48.7715947],
+            [9.1969786, 48.7894679],
+            [9.2154319, 48.7998199],
+            [9.2172712, 48.8019209],
+            [9.1808904, 48.7732647],
+            [9.2311101, 48.8063549],
+            [9.1661158, 48.7785729],
+            [9.2037167, 48.7891701],
+            [9.1787148, 48.7779005],
+            [9.1559599, 48.7735454],
+            [9.151623, 48.7876668],
+            [9.2264829, 48.7934669],
+            [9.1789194, 48.7751316],
+            [9.1734244, 48.7829005],
+            [9.1773216, 48.7731058],
+            [9.1807522, 48.776025],
+            [9.1803217, 48.7761373],
+            [9.1763064, 48.7736608],
+            [9.1721155, 48.7758164],
+            [9.1751824, 48.7830075]
+    ]
+  },
+  "style": {
+        "color": "red",
+        "fillColor": "red",
+        "radius": 50,
+        "opacity": 0.6,
+        "fillOpacity": 1,
+        "weight": 5
+  }
 }

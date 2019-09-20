@@ -1,26 +1,31 @@
 {
-  "type": "Feature",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2019-09-20T06:35:02Z",
-      "geometry": {
-        "type": "MultiPoint",
-        "coordinates": [
-         [8.8678269, 48.5958898],
-         [8.8619851, 48.5943318],
-         [8.8621058, 48.5943793],
-         [8.8685618, 48.5961949],
-         [8.8678162, 48.5956716],
-         [8.870438, 48.5964255],
-         [8.871301, 48.5950538]
-         ]
-      },
-      "style": {
-            "color": "#a07722",
-            "fillColor": "red",
-            "radius": 10,
-            "opacity": 0.6,
-            "fillOpacity": 1,
-            "weight": 1
-      }
+    "type": "FeatureCollection",
+    "features": [
+        {
+          "type": "Feature",
+          "generator": "overpass-ide",
+          "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+          "timestamp": "2019-09-20T06:35:02Z",
+              "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                 [8.8678269, 48.5958898],
+                 [8.8619851, 48.5943318],
+                 [8.8621058, 48.5943793],
+                 [8.8685618, 48.5961949],
+                 [8.8678162, 48.5956716],
+                 [8.870438, 48.5964255],
+                 [8.871301, 48.5950538]
+                 ]
+              },
+              "style": {
+                    "color": "red",
+                    "fillColor": "white",
+                    "radius": 10,
+                    "opacity": 0.6,
+                    "fillOpacity": 1,
+                    "weight": 1
+              }
+        }
+    ]
 }

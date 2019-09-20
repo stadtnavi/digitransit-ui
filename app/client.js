@@ -211,7 +211,7 @@ const callback = () =>
                 </ClientBreakpointProvider>
               );
 
-              ReactDOM.hydrate(content, root, () => {
+              ReactDOM.render(content, root, () => {
                 // Run only in production mode and when built in a docker container
                 if (
                   process.env.NODE_ENV === 'production' &&

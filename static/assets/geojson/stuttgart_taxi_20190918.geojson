@@ -3,8 +3,6 @@
   "generator": "overpass-ide",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-18T14:08:03Z",
-  "properties": {
-   },
   "geometry": {
     "type": "MultiPoint",
     "coordinates": [
@@ -40,12 +38,7 @@
             [9.1751824, 48.7830075]
     ]
   },
-  "style": {
-        "color": "red",
-        "fillColor": "red",
-        "radius": 50,
-        "opacity": 0.6,
-        "fillOpacity": 1,
-        "weight": 5
+  "className": {
+    "baseVal": "taxi_dots"
   }
 }

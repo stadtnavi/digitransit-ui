@@ -447,12 +447,6 @@ export default {
       exclusive: false,
       icon: 'rideshare',
     },
-    taxi: {
-      availableForSelection: true,
-      defaultValue: false,
-      exclusive: false,
-      icon: 'taxi',
-    },
   },
 
   accessibilityOptions: [

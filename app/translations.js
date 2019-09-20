@@ -1016,6 +1016,7 @@ const translations = {
     'summary-page.row-label': 'Itinerary suggestion {number}',
     'summary-page.title': 'Itinerary suggestions',
     'swap-order-button-label': 'Reverse origin and destination',
+    taxi: 'Taxi',
     'terminal-page.description': 'Terminal {name}',
     'terminal-page.title': 'Terminal {name}',
     'terminal-page.title-short': 'Terminal',

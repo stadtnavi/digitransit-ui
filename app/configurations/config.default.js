@@ -361,6 +361,7 @@ export default {
 
   // Control what transport modes that should be possible to select in the UI
   // and whether the transport mode is used in trip planning by default.
+  // searchbox lower row
   transportModes: {
     bus: {
       availableForSelection: true,
@@ -403,6 +404,7 @@ export default {
     },
   },
 
+  // searchbox upper row
   streetModes: {
     public_transport: {
       availableForSelection: true,
@@ -444,6 +446,12 @@ export default {
       defaultValue: false,
       exclusive: false,
       icon: 'rideshare',
+    },
+    taxi: {
+      availableForSelection: true,
+      defaultValue: false,
+      exclusive: false,
+      icon: 'taxi',
     },
   },
 

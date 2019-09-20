@@ -1,152 +1,26 @@
 {
-  "type": "FeatureCollection",
+  "type": "Feature",
   "generator": "overpass-ide",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-20T06:35:02Z",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/2910430212",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "wall_loops",
-        "capacity": "9",
-        "covered": "no"
-      },
       "geometry": {
-        "type": "Point",
+        "type": "MultiPoint",
         "coordinates": [
-          8.8678269,
-          48.5958898
-        ]
+         [8.8678269, 48.5958898],
+         [8.8619851, 48.5943318],
+         [8.8621058, 48.5943793],
+         [8.8685618, 48.5961949],
+         [8.8678162, 48.5956716],
+         [8.870438, 48.5964255],
+         [8.871301, 48.5950538]
+         ]
       },
-      "id": "node/2910430212"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/5732601215",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "stands",
-        "covered": "no",
-        "source": "estimate; extrapolate; survey"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8555089,
-          48.592819
-        ]
-      },
-      "id": "node/5732601215"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6595769516",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "wall_loops",
-        "capacity": "3",
-        "covered": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8619851,
-          48.5943318
-        ]
-      },
-      "id": "node/6595769516"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6595769536",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "wall_loops",
-        "capacity": "12",
-        "covered": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8621058,
-          48.5943793
-        ]
-      },
-      "id": "node/6595769536"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6595792648",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "stands",
-        "capacity": "6",
-        "covered": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8685618,
-          48.5961949
-        ]
-      },
-      "id": "node/6595792648"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6595792653",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "stands",
-        "capacity": "6",
-        "covered": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8678162,
-          48.5956716
-        ]
-      },
-      "id": "node/6595792653"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6595890251",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "stands",
-        "capacity": "10",
-        "covered": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.870438,
-          48.5964255
-        ]
-      },
-      "id": "node/6595890251"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/6596031262",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "bollard",
-        "capacity": "6",
-        "covered": "no"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.871301,
-          48.5950538
-        ]
-      },
-      "id": "node/6596031262"
-    }
-  ]
+      "style": {
+            "color": "#a07722",
+            "fillColor": "red",
+            "radius": 10,
+            "opacity": 0.6,
+            "fillOpacity": 1,
+            "weight": 1
+      }
 }

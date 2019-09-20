@@ -165,7 +165,7 @@ export default configMerger(walttiConfig, {
         name: {
           en: 'Bike park',
         },
-        url: '/HB_bikePark_nocover_20190920.geojson',
+        url: '/static/assets/geojson/HB_bikeParks_nocover_20190920.geojson',
       }
     ],
   },

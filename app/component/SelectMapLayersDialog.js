@@ -272,9 +272,10 @@ const mapLayersConfigShape = PropTypes.shape({
       PropTypes.shape({
         url: PropTypes.string.isRequired,
         name: PropTypes.shape({
-          en: PropTypes.string,
-          fi: PropTypes.string.isRequired,
+          en: PropTypes.string.isRequired,
+          fi: PropTypes.string,
           sv: PropTypes.string,
+          de: PropTypes.string,
         }),
       }),
     ),

@@ -148,4 +148,25 @@ export default configMerger(walttiConfig, {
   themeMap: {
     hb: 'hb',
   },
+
+  // adding geoJson layers
+  geoJson: {
+    layers: [
+      // taxi stands in Stuttgart
+      {
+        name: {
+          en: 'Taxi stand',
+          de: 'Taxi',
+        },
+        url: '/stuttgart_taxi_20190918.geojson',
+      },
+      // bike parks in herrenberg
+      {
+        name: {
+          en: 'Bike park',
+        },
+        url: '/HB_bikePark_nocover_20190920.geojson',
+      }
+    ],
+  },
 });

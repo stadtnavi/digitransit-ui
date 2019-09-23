@@ -180,6 +180,13 @@ export default configMerger(walttiConfig, {
           en: 'Bike shop',
         },
         url: '/assets/geojson/stuttgart_bike_shops_20190923.geojson',
+      },
+      // bike charging stations in Stuttgart
+      {
+        name: {
+          en: 'Bike charging station',
+        },
+        url: '/assets/geojson/stuttgart_bike_charging_station.geojson',
       }
     ],
   },

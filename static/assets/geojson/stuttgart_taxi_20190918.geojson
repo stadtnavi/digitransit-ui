@@ -44,13 +44,10 @@
           "style": {
             "color": "black",
             "fillColor": "yellow",
-            "radius": 10,
+            "radius": 5,
             "opacity": 0.6,
             "fillOpacity": 1,
             "weight": 1
-          },
-          "properties": {
-            "popupContent": "Taxi stand"
           }
         }
     ]

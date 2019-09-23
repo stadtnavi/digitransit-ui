@@ -160,14 +160,14 @@ export default configMerger(walttiConfig, {
         },
         url: '/assets/geojson/stuttgart_taxi_20190918.geojson',
       },
-      // bike parks in Stuttgart --no-cover
+      // bike parks in Stuttgart --no-cover --WORKS FINE
       {
         name: {
           en: 'Bike parks n',
         },
         url: '/assets/geojson/stuttgart_bikeParks_nocover_20190920.geojson',
       },
-       // bike repair stations in Stuttgart
+       // bike repair stations in Stuttgart --WORKS FINE
       {
         name: {
           en: 'Bike repair station',
@@ -181,7 +181,7 @@ export default configMerger(walttiConfig, {
         },
         url: '/assets/geojson/stuttgart_bike_shops_20190923.geojson',
       },
-      // bike charging stations in Stuttgart
+      // bike charging stations in Stuttgart --WORKS FINE
       {
         name: {
           en: 'Bike charging station',

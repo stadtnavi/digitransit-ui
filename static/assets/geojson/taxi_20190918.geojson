@@ -3,8 +3,6 @@
     "features": [
         {
           "type": "Feature",
-          "generator": "overpass-ide",
-          "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
           "timestamp": "2019-09-18T14:08:03Z",
           "geometry": {
             "type": "MultiPoint",

@@ -152,20 +152,20 @@ export default configMerger(walttiConfig, {
   // adding geoJson layers
   geoJson: {
     layers: [
-      //taxi stands in Stuttgart
+      //taxi stands in Stuttgart --WORKS FINE
       {
         name: {
           en: 'Taxi stand',
           de: 'Taxi',
         },
-        url: '/assets/geojson/stuttgart_taxi_20190918.geojson',
+        url: '/assets/geojson/taxi_20190918.geojson',
       },
-      // bike parks in Stuttgart
+      // bike parks in Stuttgart --no-cover
       {
         name: {
-          en: 'Bike park',
+          en: 'Bike parks n',
         },
-        url: '/assets/geojson/HB_bikeParks_nocover_20190920.geojson',
+        url: '/assets/geojson/stuttgart_bikeParks_nocover_20190920.geojson',
       },
        // bike repair stations in Stuttgart
       {
@@ -186,7 +186,14 @@ export default configMerger(walttiConfig, {
         name: {
           en: 'Bike charging station',
         },
-        url: '/assets/geojson/stuttgart_bike_charging_station.geojson',
+        url: '/assets/geojson/stuttgart_bike_charging_station_20190923.geojson',
+      },
+      // bike parks covered yes in Stuttgart --WORKS FINE
+      {
+        name: {
+          en: 'Bike parks y',
+        },
+        url: '/assets/geojson/stuttgart_bike_parks_covered-yes_20190923.geojson',
       }
     ],
   },

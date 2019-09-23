@@ -158,7 +158,7 @@ export default configMerger(walttiConfig, {
           en: 'Taxi stand',
           de: 'Taxi',
         },
-        url: '/assets/geojson/taxi_20190918.geojson',
+        url: '/assets/geojson/stuttgart_taxi_20190918.geojson',
       },
       // bike parks in Stuttgart --no-cover
       {

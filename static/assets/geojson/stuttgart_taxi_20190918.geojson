@@ -42,7 +42,7 @@
             ]
           },
           "style": {
-            "color": "black",
+            "color": "yellow",
             "fillColor": "yellow",
             "radius": 5,
             "opacity": 0.6,

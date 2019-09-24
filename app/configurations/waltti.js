@@ -41,17 +41,17 @@ export default {
 
   transportModes: {
     rail: {
-      availableForSelection: true,
+      availableForSelection: false,
       defaultValue: false,
     },
 
     tram: {
-      availableForSelection: true,
+      availableForSelection: false,
       defaultValue: false,
     },
 
     subway: {
-      availableForSelection: true,
+      availableForSelection: false,
       defaultValue: false,
     },
 

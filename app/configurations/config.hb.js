@@ -239,6 +239,20 @@ export default {
           en: 'P+R',
         },
         url: '/assets/geojson/stuttgart_parkandride_20190924.geojson',
+      },
+      // Bike rental places in Stuttgart
+      {
+        name: {
+          en: 'Bike rental places',
+        },
+        url: '/assets/geojson/stuttgart_bicyclerental_20190924.geojson',
+      },
+      // Car sharing options in Stuttgart
+      {
+        name: {
+          en: 'Car sharing options',
+        },
+        url: '/assets/geojson/stuttgart_carsharing_20190924.geojson',
       }
     ],
   },

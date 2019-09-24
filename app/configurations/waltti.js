@@ -51,7 +51,7 @@ export default {
     },
 
     subway: {
-      availableForSelection: false,
+      availableForSelection: true,
       defaultValue: false,
     },
 

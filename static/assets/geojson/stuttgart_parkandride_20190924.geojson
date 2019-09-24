@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2019-09-24T08:05:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "access": "yes",
+        "amenity": "parking",
+        "capacity": "450",
+        "fee": "Mo-So 00:00-24:00",
+        "maxheight": "2.05",
+        "name": "P+R Albstraße",
+        "opening_hours": "Mo-Su 05:00-01:00",
+        "park_ride": "yes",
+        "parking": "multi-storey",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "popupContent": "Park and Ride station"
+      },
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [9.1628421, 48.7458938],
+          [9.1879453, 48.7833405],
+          [8.9860645,48.8514064]
+
+        ]
+      },
+      "style": {
+        "color": "brown",
+        "fillColor": "white",
+        "radius": 5,
+        "opacity": 0.6,
+        "fillOpacity": 1,
+        "weight": 1
+      }
+    }
+  ]
+}

@@ -232,6 +232,13 @@ export default {
           en: 'Car park', // TODO name it
         },
         url: '/assets/geojson/stuttgart_open_parking_20190924.geojson',
+      },
+      // park and ride places in Stuttgart
+      {
+        name: {
+          en: 'P+R', // TODO name it
+        },
+        url: '/assets/geojson/stuttgart_parkandride_20190924.geojson',
       }
     ],
   },

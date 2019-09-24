@@ -1,0 +1,33 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2019-09-24T06:46:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+        	[9.135645, 48.7465763],
+			[9.1356638, 48.7466031],
+			[9.2099725, 48.7988878],
+			[9.2101141, 48.7989896],
+			[9.2101167, 48.799012]
+		]
+      },
+      "style": {
+        "color": "pink",
+        "fillColor": "cyan",
+        "radius": 5,
+        "opacity": 0.6,
+        "fillOpacity": 1,
+        "weight": 1
+      },
+      "properties": {
+        "name": "Bike monitoring station",
+        "popupContent": "Bike monitoring station"
+      }
+    }
+  ]
+}

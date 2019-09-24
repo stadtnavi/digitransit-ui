@@ -9,15 +9,7 @@
       "properties": {
         "access": "yes",
         "amenity": "parking",
-        "capacity": "450",
-        "fee": "Mo-So 00:00-24:00",
-        "maxheight": "2.05",
-        "name": "P+R Albstraße",
-        "opening_hours": "Mo-Su 05:00-01:00",
         "park_ride": "yes",
-        "parking": "multi-storey",
-        "toilets:wheelchair": "yes",
-        "wheelchair": "yes",
         "popupContent": "Park and Ride station"
       },
       "geometry": {

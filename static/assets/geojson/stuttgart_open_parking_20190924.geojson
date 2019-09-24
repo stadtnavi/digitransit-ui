@@ -8,12 +8,7 @@
       "type": "Feature",
       "properties": {
         "amenity": "parking",
-        "fee": "yes",
-        "name": "Marktgarage",
-        "operator": "Parkierungs-GmbH",
-        "parking": "underground",
-        "wheelchair": "yes",
-        "popupContent": "Underground parking place"
+        "popupContent": "Parking place"
       },
       "geometry": {
         "type": "MultiPoint",

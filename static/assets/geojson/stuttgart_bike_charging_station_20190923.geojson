@@ -32,8 +32,8 @@
         "weight": 1
       },
       "properties": {
-        "name": "Bike charging station",
-        "popupContent": "Bike charging station"
+        "popupContent": "<strong>Bike charging station</strong>",
+        "name": "Bike charging station"
       }
     }
   ]

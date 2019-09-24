@@ -19,8 +19,15 @@
         "weight": 1
       },
       "properties": {
-        "name": "Bike repair station",
-        "pupupContent": "Bike repair station"
+        "name_en": "ADFC Selfrepairstation",
+        "name_de": "ADFC Selbsthilfewerkstatt",
+        "popupContent": "Bike repair station </br> Opening hours: Th 17:30-20:00 ",
+        "opening_hours": "Th 17:30-20:00",
+        "service:bicycle:chaintool": "yes",
+        "service:bicycle:pump": "yes",
+        "service:bicycle:tools": "yes",
+        "fee": "yes",
+        "description": "In einer geräumigen Garage kann jede und jeder sein Rad unter fachkundiger Anleitung selbst wieder fit machen. Entsprechendes Werkzeug ist vorhanden. Es wird eine geringe Werkstattgebühr erhoben."
       }
     }
   ]

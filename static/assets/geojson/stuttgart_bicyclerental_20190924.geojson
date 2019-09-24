@@ -8,11 +8,7 @@
       "type": "Feature",
       "properties": {
         "amenity": "bicycle_rental",
-        "capacity": "7",
-        "name": "Marienplatz (Böblinger Straße)",
         "network": "call-a-bike",
-        "ref": "7401",
-        "wheelchair": "yes",
         "popupContent": "Bicycle rental"
       },
       "geometry": {

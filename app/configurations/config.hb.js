@@ -183,7 +183,7 @@ export default {
   // adding geoJson layers
   geoJson: {
     layers: [
-      //taxi stands in Stuttgart --WORKS FINE
+      //taxi stands in Stuttgart
       {
         name: {
           en: 'Taxi stands',
@@ -191,14 +191,14 @@ export default {
         },
         url: '/assets/geojson/stuttgart_taxi_20190918.geojson',
       },
-      // bike parks in Stuttgart --yes-no-cover --WORKS FINE
+      // bike parks in Stuttgart and Herrenberg --yes-no-cover
       {
         name: {
           en: 'Bike parks',
         },
         url: '/assets/geojson/stuttgart_bikeParks_20190920.geojson',
       },
-       // bike repair stations in Stuttgart --WORKS FINE
+       // bike repair stations in Stuttgart
       {
         name: {
           en: 'Bike repair stations',
@@ -212,7 +212,7 @@ export default {
         },
         url: '/assets/geojson/stuttgart_bike_shops_20190923.geojson',
       },
-      // bike charging stations in Stuttgart --WORKS FINE
+      // bike charging stations in Stuttgart
       {
         name: {
           en: 'Bike charging stations',
@@ -229,7 +229,7 @@ export default {
       // car parks in Stuttgart
       {
         name: {
-          en: 'Car park', // TODO name it
+          en: 'Car parks',
         },
         url: '/assets/geojson/stuttgart_open_parking_20190924.geojson',
       },

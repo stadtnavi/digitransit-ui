@@ -8,7 +8,6 @@
       "type": "Feature",
       "properties": {
         "amenity": "car_sharing",
-        "operator": "stadtmobil",
         "popupContent": "Car sharing"
       },
       "geometry": {

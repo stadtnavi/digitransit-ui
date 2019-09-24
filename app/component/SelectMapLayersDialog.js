@@ -272,9 +272,10 @@ const mapLayersConfigShape = PropTypes.shape({
       PropTypes.shape({
         url: PropTypes.string.isRequired,
         name: PropTypes.shape({
-          en: PropTypes.string,
-          fi: PropTypes.string.isRequired,
+          en: PropTypes.string.isRequired,
+          fi: PropTypes.string,
           sv: PropTypes.string,
+          de: PropTypes.string,
         }),
       }),
     ),
@@ -295,8 +296,8 @@ const mapLayersConfigShape = PropTypes.shape({
   }),
   mapLayers: PropTypes.shape({
     tooltip: PropTypes.shape({
-      en: PropTypes.string,
-      fi: PropTypes.string.isRequired,
+      en: PropTypes.string.isRequired,
+      fi: PropTypes.string,
       sv: PropTypes.string,
     }),
   }),
@@ -314,7 +315,7 @@ SelectMapLayersDialog.propTypes = {
 SelectMapLayersDialog.defaultProps = {
   config: {},
   isOpen: false,
-  lang: 'fi',
+  lang: 'en',
 };
 
 SelectMapLayersDialog.description = (
@@ -342,6 +343,9 @@ SelectMapLayersDialog.description = (
               availableForSelection: true,
             },
             tram: {
+              availableForSelection: true,
+            },
+            taxi: {
               availableForSelection: true,
             },
           },

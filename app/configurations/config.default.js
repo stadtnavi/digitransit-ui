@@ -361,6 +361,7 @@ export default {
 
   // Control what transport modes that should be possible to select in the UI
   // and whether the transport mode is used in trip planning by default.
+  // searchbox lower row
   transportModes: {
     bus: {
       availableForSelection: true,
@@ -403,6 +404,7 @@ export default {
     },
   },
 
+  // searchbox upper row
   streetModes: {
     public_transport: {
       availableForSelection: true,
@@ -800,6 +802,7 @@ export default {
     oulu: 'oulu',
     hameenlinna: 'hameenlinna',
     matka: 'matka',
+    hb: 'hb',
     rovaniemi: 'rovaniemi',
     kouvola: 'kouvola',
     tampere: 'tampere',

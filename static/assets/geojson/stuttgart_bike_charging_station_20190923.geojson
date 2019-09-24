@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "generator": "overpass-ide",
+      "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+      "timestamp": "2019-09-23T06:35:02Z",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [9.1912975, 48.7805411],
+          [9.1762321, 48.7812824],
+          [9.1795528, 48.7824755],
+          [9.1900641, 48.7838806],
+          [9.2418613, 48.7761598],
+          [9.2264002, 48.8148855],
+          [9.2656174, 48.8154793],
+          [9.2977367, 48.8196884],
+          [9.0989234, 48.821103],
+          [9.1232669, 48.7299451],
+          [9.3052174, 48.82598],
+          [9.2671072, 48.8135581]
+        ]
+      },
+      "style": {
+        "color": "black",
+        "fillColor": "white",
+        "radius": 5,
+        "opacity": 0.6,
+        "fillOpacity": 1,
+        "weight": 1
+      },
+      "properties": {
+        "name": "Bike charging station",
+        "popupContent": "Bike charging station"
+      }
+    }
+  ]
+}

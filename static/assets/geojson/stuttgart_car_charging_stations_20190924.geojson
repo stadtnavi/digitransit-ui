@@ -102,8 +102,8 @@
         ]
       },
       "style": {
-        "color": "navy blue",
-        "fillColor": "navy blue",
+        "color": "#800000",
+        "fillColor": "#002966",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

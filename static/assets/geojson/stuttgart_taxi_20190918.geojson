@@ -46,6 +46,10 @@
             "opacity": 0.6,
             "fillOpacity": 1,
             "weight": 1
+          },
+          "properties": {
+            "name": "Taxi stand",
+            "popupContent": "Taxi stand"
           }
         }
     ]

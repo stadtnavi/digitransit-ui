@@ -24,8 +24,8 @@
         ]
       },
       "style": {
-        "color": "black",
-        "fillColor": "white",
+        "color": "#00b33c",
+        "fillColor": "#e6e600",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

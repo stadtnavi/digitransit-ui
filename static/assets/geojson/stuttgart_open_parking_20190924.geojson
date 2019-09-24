@@ -227,8 +227,8 @@
 
       },
       "style": {
-        "color": "brown",
-        "fillColor": "brown",
+        "color": "#800000",
+        "fillColor": "#558000",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

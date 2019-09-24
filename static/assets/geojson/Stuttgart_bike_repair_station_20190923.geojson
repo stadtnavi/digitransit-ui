@@ -11,8 +11,8 @@
         "coordinates": [9.1602466, 48.7715682]
       },
       "style": {
-        "color": "white",
-        "fillColor": "black",
+        "color": "#00b33c",
+        "fillColor": "#1e1e62",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

@@ -15,8 +15,8 @@
 		]
       },
       "style": {
-        "color": "pink",
-        "fillColor": "cyan",
+        "color": "#00b33c",
+        "fillColor": "#808000",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

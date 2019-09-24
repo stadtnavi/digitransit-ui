@@ -89,8 +89,8 @@
         ]
       },
       "style": {
-        "color": "crimson",
-        "fillColor": "crimson",
+        "color": "#800000",
+        "fillColor": "#ffb3b3",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

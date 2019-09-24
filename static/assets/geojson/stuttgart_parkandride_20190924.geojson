@@ -29,8 +29,8 @@
         ]
       },
       "style": {
-        "color": "brown",
-        "fillColor": "white",
+        "color": "#800000",
+        "fillColor": "#cccc00",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

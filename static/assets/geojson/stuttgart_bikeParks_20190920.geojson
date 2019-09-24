@@ -350,8 +350,8 @@
                 ]
               },
               "style": {
-                    "color": "red",
-                    "fillColor": "white",
+                    "color": "#00b33c",
+                    "fillColor": "#679898",
                     "radius": 5,
                     "opacity": 0.6,
                     "fillOpacity": 1,
@@ -481,8 +481,8 @@
           ]
         },
         "style": {
-          "color": "orange",
-          "fillColor": "white",
+          "color": "#00b33c",
+          "fillColor": "#1f2e2e",
           "radius": 5,
           "opacity": 0.6,
           "fillOpacity": 1,

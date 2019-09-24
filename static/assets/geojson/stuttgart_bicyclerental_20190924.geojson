@@ -97,8 +97,8 @@
         ]
       },
       "style": {
-        "color": "green",
-        "fillColor": "green",
+        "color": "#00b33c",
+        "fillColor": "#00cc00",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

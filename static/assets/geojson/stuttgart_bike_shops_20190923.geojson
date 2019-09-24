@@ -44,8 +44,8 @@
         ]
       },
       "style": {
-        "color": "orange",
-        "fillColor": "black",
+        "color": "#00b33c",
+        "fillColor": "#3d5c5c",
         "radius": 5,
         "opacity": 0.6,
         "fillOpacity": 1,

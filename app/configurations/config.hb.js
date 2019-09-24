@@ -236,7 +236,7 @@ export default {
       // park and ride places in Stuttgart
       {
         name: {
-          en: 'P+R', // TODO name it
+          en: 'P+R',
         },
         url: '/assets/geojson/stuttgart_parkandride_20190924.geojson',
       }

@@ -253,6 +253,13 @@ export default {
           en: 'Car sharing options',
         },
         url: '/assets/geojson/stuttgart_carsharing_20190924.geojson',
+      },
+      // Car charging stations in Stuttgart
+      {
+        name: {
+          en: 'Car charging stations',
+        },
+        url: '/assets/geojson/stuttgart_car_charging_stations_20190924.geojson',
       }
     ],
   },

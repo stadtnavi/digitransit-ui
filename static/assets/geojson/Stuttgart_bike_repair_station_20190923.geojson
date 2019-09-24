@@ -7,11 +7,8 @@
       "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
       "timestamp": "2019-09-20T06:35:02Z",
       "geometry": {
-        "type": "MultiPoint",
-        "coordinates": [
-          [9.1602466, 48.7715682],
-          [9.1602477, 48.7715688]
-        ]
+        "type": "Point",
+        "coordinates": [9.1602466, 48.7715682]
       },
       "style": {
         "color": "white",
@@ -20,6 +17,10 @@
         "opacity": 0.6,
         "fillOpacity": 1,
         "weight": 1
+      },
+      "properties": {
+        "name": "Bike repair station",
+        "pupupContent": "Bike repair station"
       }
     }
   ]

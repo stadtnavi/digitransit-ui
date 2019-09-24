@@ -596,7 +596,6 @@ const translations = {
     'summary-page.description': '{from} - {to}',
     'summary-page.title': 'Reisevorschläge',
     'swap-order-button-label': 'Reverse origin and destination', // TODO
-    taxi: 'Taxi',
     'terminal-page.description': 'Terminal - {name}',
     'terminal-page.title': 'Terminal',
     'terminal-page.title-short': 'Terminal - {name}',

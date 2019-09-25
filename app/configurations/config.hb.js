@@ -189,14 +189,14 @@ export default {
           en: 'Taxi stands',
           de: 'Taxi',
         },
-        url: '/assets/geojson/stuttgart_taxi_multipoint_20190918.geojson',
+        url: '/assets/geojson/stuttgart_taxi_point_20190925.geojson',
       },
       // bike parks in Stuttgart and Herrenberg --yes-no-cover
       {
         name: {
           en: 'Bike parks',
         },
-        url: '/assets/geojson/stuttgart_bikeParks_multipoint_20190920.geojson',
+        url: '/assets/geojson/stuttgart_bikeParks_point_20190925.geojson',
       },
        // bike repair stations in Stuttgart
       {
@@ -231,35 +231,35 @@ export default {
         name: {
           en: 'Car parks',
         },
-        url: '/assets/geojson/stuttgart_open_parking_multipoint_20190924.geojson',
+        url: '/assets/geojson/stuttgart_open_carpark_point_20190925.geojson',
       },
       // park and ride places in Stuttgart
       {
         name: {
           en: 'P+R',
         },
-        url: '/assets/geojson/stuttgart_parkandride_multipoint_20190924.geojson',
+        url: '/assets/geojson/stuttgart_parkandride_point_20190925.geojson',
       },
       // Bike rental places in Stuttgart
       {
         name: {
           en: 'Bike rental places',
         },
-        url: '/assets/geojson/stuttgart_bicyclerental_multipoint_20190924.geojson',
+        url: '/assets/geojson/stuttgart_bikerental_point_20190925.geojson',
       },
       // Car sharing options in Stuttgart
       {
         name: {
           en: 'Car sharing options',
         },
-        url: '/assets/geojson/stuttgart_carsharing_multipoint_20190924.geojson',
+        url: '/assets/geojson/stuttgart_carsharing_point_20190925.geojson',
       },
       // Car charging stations in Stuttgart
       {
         name: {
           en: 'Car charging stations',
         },
-        url: '/assets/geojson/stuttgart_car_charging_stations_multipoint_20190924.geojson',
+        url: '/assets/geojson/stuttgart_car_charging_station_point_20190925.geojson',
       }
     ],
   },

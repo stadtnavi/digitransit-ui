@@ -9,6 +9,7 @@
       "properties": {
         "@id": "node/275139037",
         "access": "yes",
+        "address": "Capacity: 450",
         "amenity": "parking",
         "capacity": "450",
         "fee": "Mo-So 00:00-24:00",
@@ -37,6 +38,7 @@
         "addr:housenumber": "28",
         "addr:postcode": "70173",
         "addr:street": "Willy-Brandt-Straße",
+        "address": "Capacity: 2",
         "amenity": "parking",
         "capacity": "2",
         "fee": "yes",

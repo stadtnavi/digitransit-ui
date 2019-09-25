@@ -1,0 +1,147 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2019-09-25T07:03:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3736798285",
+        "name": "Kontaktschleife der Fahrradzählstelle",
+        "display": "no",
+        "location": "surface",
+        "man_made": "monitoring_station",
+        "monitoring:bicycle": "yes",
+        "monitoring:traffic": "yes",
+        "address": "Zählstelle Böblinger Straße",
+        "network": "Fahrrad-Zählstellen Stuttgart",
+        "recording": "yes",
+        "recording:automated": "yes",
+        "start_date": "2013",
+        "visibility": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.135645,
+          48.7465763
+        ]
+      },
+      "id": "node/3736798285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3736798286",
+        "name": "Kontaktschleife der Fahrradzählstelle",
+        "display": "no",
+        "location": "surface",
+        "man_made": "monitoring_station",
+        "monitoring:bicycle": "yes",
+        "monitoring:traffic": "yes",
+        "address": "Zählstelle Böblinger Straße",
+        "network": "Fahrrad-Zählstellen Stuttgart",
+        "recording": "yes",
+        "recording:automated": "yes",
+        "start_date": "2013",
+        "visibility": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1356638,
+          48.7466031
+        ]
+      },
+      "id": "node/3736798286"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3736798287",
+        "name": "Kontaktschleife der Fahrradzählstelle",
+        "display": "no",
+        "location": "surface",
+        "man_made": "monitoring_station",
+        "monitoring:bicycle": "yes",
+        "monitoring:traffic": "yes",
+        "address": "Zählstelle König-Karls-Brücke",
+        "network": "Fahrrad-Zählstellen Stuttgart",
+        "operator": "Landeshauptstadt Stuttgart",
+        "recording": "yes",
+        "recording:automated": "yes",
+        "ref": "KKB-2",
+        "start_date": "2012",
+        "visibility": "house"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2099725,
+          48.7988878
+        ]
+      },
+      "id": "node/3736798287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3736798288",
+        "amenity": "clock",
+        "date": "yes",
+        "description": "Anzeigetafel der Fahrrad-Zählstelle König-Karls-Brücke: Tagesanzahl der registrierten Radfahrer zusammen mit denen des letzten Jahres und die aktuelle Uhrzeit/Datum",
+        "display": "yes",
+        "display:digital": "yes",
+        "faces": "2",
+        "man_made": "monitoring_station",
+        "monitoring:bicycle": "yes",
+        "monitoring:traffic": "yes",
+        "name": "Fahrradzählstelle König-Karls-Brücke",
+        "network": "Fahrrad-Zählstellen Stuttgart",
+        "operator": "Landeshauptstadt Stuttgart",
+        "recording": "yes",
+        "recording:automated": "yes",
+        "start_date": "2016-04-21",
+        "support": "pole",
+        "visibility": "street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2101141,
+          48.7989896
+        ]
+      },
+      "id": "node/3736798288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3736798289",
+        "name": "Kontaktschleife der Fahrradzählstelle",
+        "display": "no",
+        "location": "surface",
+        "man_made": "monitoring_station",
+        "monitoring:bicycle": "yes",
+        "monitoring:traffic": "yes",
+        "address": "Zählstelle König-Karls-Brücke",
+        "network": "Fahrrad-Zählstellen Stuttgart",
+        "operator": "Landeshauptstadt Stuttgart",
+        "recording": "yes",
+        "recording:automated": "yes",
+        "ref": "KKB-1",
+        "start_date": "2012",
+        "visibility": "house"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2101167,
+          48.799012
+        ]
+      },
+      "id": "node/3736798289"
+    }
+  ]
+}

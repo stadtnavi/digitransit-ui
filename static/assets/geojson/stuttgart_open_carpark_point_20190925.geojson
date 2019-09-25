@@ -1,0 +1,2640 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2019-09-25T07:01:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/59656297",
+        "amenity": "parking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1667318,
+          48.8106726
+        ]
+      },
+      "id": "node/59656297"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/59656298",
+        "amenity": "parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1649465,
+          48.8101469
+        ]
+      },
+      "id": "node/59656298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/59656349",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1584948,
+          48.8174712
+        ]
+      },
+      "id": "node/59656349"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/71713486",
+        "access": "yes",
+        "amenity": "parking",
+        "fee": "yes",
+        "name": "Zeppelin-Carré",
+        "parking": "underground",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1786227,
+          48.7830145
+        ]
+      },
+      "id": "node/71713486"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/71719181",
+        "amenity": "parking",
+        "capacity": "40",
+        "fee": "yes",
+        "maxheight": "2.30",
+        "name": "Königshof",
+        "parking": "multi-storey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1790211,
+          48.7806158
+        ]
+      },
+      "id": "node/71719181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/71719792",
+        "access": "yes",
+        "amenity": "parking",
+        "fee": "yes",
+        "name": "Marquardtgarage",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1785171,
+          48.7802551
+        ]
+      },
+      "id": "node/71719792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/76908569",
+        "amenity": "parking",
+        "fee": "yes",
+        "parking": "underground",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1755037,
+          48.7740124
+        ]
+      },
+      "id": "node/76908569"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/76926962",
+        "access": "yes",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "27",
+        "addr:postcode": "70173",
+        "addr:street": "Königstraße",
+        "amenity": "parking",
+        "bicycle": "no",
+        "capacity": "190",
+        "description": "Maximale Höhe: 1,8m",
+        "fee": "yes",
+        "layer": "-1",
+        "maxheight": "1.8",
+        "motorcar:liquid_gas": "no",
+        "motorcycle": "no",
+        "name": "Neue Brücke / Königstraße",
+        "opening_hours": "24/7",
+        "operator": "APCOA PARKING Deutschland GmbH",
+        "operator:type": "private",
+        "parking": "underground",
+        "payment:cash": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "surface": "asphalt",
+        "trailer": "no",
+        "was:name": "Karstadt",
+        "website": "https://www.apcoa.de/parken/stuttgart/neue-bruecke-koenigstrasse/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1761709,
+          48.7751615
+        ]
+      },
+      "id": "node/76926962"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/107560926",
+        "amenity": "parking",
+        "created_by": "JOSM",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.147429,
+          48.7994803
+        ]
+      },
+      "id": "node/107560926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/215704011",
+        "amenity": "parking",
+        "fee": "yes",
+        "parking": "underground",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1135231,
+          48.8147983
+        ]
+      },
+      "id": "node/215704011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/245617456",
+        "amenity": "parking",
+        "created_by": "Potlatch 0.7",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1149414,
+          48.7572217
+        ]
+      },
+      "id": "node/245617456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/246828223",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1253294,
+          48.7575912
+        ]
+      },
+      "id": "node/246828223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/249574611",
+        "amenity": "parking",
+        "created_by": "JOSM"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1291032,
+          48.8225198
+        ]
+      },
+      "id": "node/249574611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/249577286",
+        "amenity": "parking",
+        "created_by": "JOSM",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.115678,
+          48.8114901
+        ]
+      },
+      "id": "node/249577286"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/252905035",
+        "amenity": "parking",
+        "created_by": "JOSM"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1836091,
+          48.7516427
+        ]
+      },
+      "id": "node/252905035"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/256543395",
+        "amenity": "parking",
+        "created_by": "Potlatch 0.8a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2117729,
+          48.768188
+        ]
+      },
+      "id": "node/256543395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/265447498",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1593586,
+          48.7636087
+        ]
+      },
+      "id": "node/265447498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/266697293",
+        "amenity": "parking",
+        "entrance": "yes",
+        "fee": "yes",
+        "location": "underground",
+        "maxheight": "2",
+        "motor_vehicle": "designated",
+        "parking": "multi-storey",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178974,
+          48.7734348
+        ]
+      },
+      "id": "node/266697293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/267562574",
+        "amenity": "parking",
+        "fee": "yes",
+        "maxheight": "2.15",
+        "name": "Parkhaus Burgenlandzentrum",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su,PH off",
+        "operator": "Apcoa Parking Deutschland GmbH",
+        "parking": "underground",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1611336,
+          48.8102334
+        ]
+      },
+      "id": "node/267562574"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/268109350",
+        "amenity": "parking",
+        "description": "Besucher Mercedes-Benz Bank & Theaterhaus",
+        "fee": "yes",
+        "layer": "-1",
+        "maxheight": "2",
+        "maxspeed": "10",
+        "parking": "underground",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1803564,
+          48.8101857
+        ]
+      },
+      "id": "node/268109350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/269236571",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2624564,
+          48.7948129
+        ]
+      },
+      "id": "node/269236571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/269569243",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2512486,
+          48.7781462
+        ]
+      },
+      "id": "node/269569243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/271724271",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2673968,
+          48.7434732
+        ]
+      },
+      "id": "node/271724271"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/275139037",
+        "access": "yes",
+        "amenity": "parking",
+        "capacity": "450",
+        "fee": "Mo-So 00:00-24:00",
+        "maxheight": "2.05",
+        "name": "P+R Albstraße",
+        "opening_hours": "Mo-Su 05:00-01:00",
+        "park_ride": "yes",
+        "parking": "multi-storey",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1628421,
+          48.7458938
+        ]
+      },
+      "id": "node/275139037"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/277351223",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1827934,
+          48.7623605
+        ]
+      },
+      "id": "node/277351223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/277417299",
+        "amenity": "parking",
+        "capacity:women": "30",
+        "fee": "yes",
+        "name": "Stadtgarten (Katharinenhospital)",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1733488,
+          48.7823377
+        ]
+      },
+      "id": "node/277417299"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/279875043",
+        "access": "permissive",
+        "amenity": "parking",
+        "fee": "no",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited",
+        "wheelchair:description": "Parkplatz mit Gefälle zur Straße"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2302913,
+          48.7413486
+        ]
+      },
+      "id": "node/279875043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/280772294",
+        "access": "permissive",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.184302,
+          48.7675798
+        ]
+      },
+      "id": "node/280772294"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/281194130",
+        "access": "university",
+        "amenity": "parking",
+        "capacity:disabled": "yes",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175715,
+          48.7825934
+        ]
+      },
+      "id": "node/281194130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/282369561",
+        "amenity": "parking",
+        "fee": "yes",
+        "layer": "-1",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1875511,
+          48.7721983
+        ]
+      },
+      "id": "node/282369561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/283581011",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2406366,
+          48.7524594
+        ]
+      },
+      "id": "node/283581011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/289196126",
+        "amenity": "parking",
+        "name": "Post"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1760536,
+          48.8002669
+        ]
+      },
+      "id": "node/289196126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/303789005",
+        "amenity": "parking",
+        "fee": "yes",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1806489,
+          48.7804662
+        ]
+      },
+      "id": "node/303789005"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/321507115",
+        "amenity": "parking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2523313,
+          48.7497798
+        ]
+      },
+      "id": "node/321507115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/333134532",
+        "amenity": "parking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.244975,
+          48.7564478
+        ]
+      },
+      "id": "node/333134532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/337995956",
+        "access": "yes",
+        "amenity": "parking",
+        "fee": "yes",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2180926,
+          48.8018623
+        ]
+      },
+      "id": "node/337995956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/419144365",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1833857,
+          48.7658978
+        ]
+      },
+      "id": "node/419144365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/428634709",
+        "amenity": "parking",
+        "fee": "no",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1965109,
+          48.8250231
+        ]
+      },
+      "id": "node/428634709"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/452490737",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2512019,
+          48.7653395
+        ]
+      },
+      "id": "node/452490737"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/478559517",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2169148,
+          48.822871
+        ]
+      },
+      "id": "node/478559517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/567921019",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1525324,
+          48.825772
+        ]
+      },
+      "id": "node/567921019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/583709015",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2567175,
+          48.7507672
+        ]
+      },
+      "id": "node/583709015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/590060031",
+        "access": "yes",
+        "amenity": "parking",
+        "capacity": "343",
+        "fee": "yes",
+        "maxheight": "1.95",
+        "moped": "no",
+        "motorcycle": "no",
+        "name": "Tivoli",
+        "note": "Kein edit-war, nur mal der Hinweis auf: https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking_entrance. Dieser Punkt ist eine Parkhauseinfahrt, kein Parkplatz.",
+        "opening_hours": "24/7",
+        "parking": "underground",
+        "trailer": "no",
+        "website": "https://www.pbw.de/tivoli"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1663482,
+          48.77969
+        ]
+      },
+      "id": "node/590060031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/614241209",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2168143,
+          48.8234709
+        ]
+      },
+      "id": "node/614241209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/688422589",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2559633,
+          48.7502237
+        ]
+      },
+      "id": "node/688422589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/690522775",
+        "amenity": "parking",
+        "capacity:women": "yes",
+        "fee": "yes",
+        "maxheight": "2",
+        "name": "Schloss-Straße",
+        "operator": "APCOA",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1693745,
+          48.7784184
+        ]
+      },
+      "id": "node/690522775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/691993759",
+        "amenity": "parking",
+        "motorcar": "designated",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1130381,
+          48.8052447
+        ]
+      },
+      "id": "node/691993759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/692082606",
+        "amenity": "parking",
+        "parking": "surface",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1460161,
+          48.808387
+        ]
+      },
+      "id": "node/692082606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/720594313",
+        "amenity": "parking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2433525,
+          48.7544642
+        ]
+      },
+      "id": "node/720594313"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/720595645",
+        "amenity": "parking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2505549,
+          48.7567781
+        ]
+      },
+      "id": "node/720595645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/720597355",
+        "amenity": "parking",
+        "capacity": "1",
+        "capacity:disabled": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2534413,
+          48.7561231
+        ]
+      },
+      "id": "node/720597355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/878793598",
+        "amenity": "parking",
+        "fee": "yes",
+        "maxheight": "1.80",
+        "name": "Parkhaus Südwestbank",
+        "opening_hours": "Mo-Fr 06:00-23:00; Sa 06:00-23:00",
+        "opening_hours:lastcheck": "2016-09-07",
+        "parking": "underground",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1589162,
+          48.7700142
+        ]
+      },
+      "id": "node/878793598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1177574226",
+        "access": "yes",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1056597,
+          48.7559607
+        ]
+      },
+      "id": "node/1177574226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1178868932",
+        "amenity": "parking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1516006,
+          48.7978376
+        ]
+      },
+      "id": "node/1178868932"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1221298578",
+        "amenity": "parking",
+        "parking": "underground",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1169832,
+          48.814372
+        ]
+      },
+      "id": "node/1221298578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1309588079",
+        "amenity": "parking",
+        "fee": "yes",
+        "parking": "underground",
+        "source": "http://www.stuttgart.de/item/show/305802/1/dept/145135?",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.169829,
+          48.7724615
+        ]
+      },
+      "id": "node/1309588079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1336918589",
+        "amenity": "parking",
+        "capacity": "3",
+        "capacity:disabled": "3",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178867,
+          48.8106214
+        ]
+      },
+      "id": "node/1336918589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1349066210",
+        "amenity": "parking",
+        "fee": "no",
+        "opening_hours": "Mo-Fr 09:00-20:00; PH 09:00-20:00 off; Sa 09:00-20:00 off; Su 09:00-20:00 off",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1474033,
+          48.793725
+        ]
+      },
+      "id": "node/1349066210"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1389649593",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2772428,
+          48.7505857
+        ]
+      },
+      "id": "node/1389649593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420047436",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0963376,
+          48.8194827
+        ]
+      },
+      "id": "node/1420047436"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420047477",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0970646,
+          48.8204414
+        ]
+      },
+      "id": "node/1420047477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420047488",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0942931,
+          48.8205175
+        ]
+      },
+      "id": "node/1420047488"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420047491",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0939965,
+          48.8205652
+        ]
+      },
+      "id": "node/1420047491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420047549",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.096012,
+          48.8211172
+        ]
+      },
+      "id": "node/1420047549"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420047741",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0949548,
+          48.8230624
+        ]
+      },
+      "id": "node/1420047741"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420071059",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0947483,
+          48.8251074
+        ]
+      },
+      "id": "node/1420071059"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420150662",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0912272,
+          48.8208993
+        ]
+      },
+      "id": "node/1420150662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420150675",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.090858,
+          48.8210225
+        ]
+      },
+      "id": "node/1420150675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1420150719",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0908446,
+          48.8213388
+        ]
+      },
+      "id": "node/1420150719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1424160693",
+        "amenity": "parking",
+        "fee": "yes",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.106424,
+          48.8146368
+        ]
+      },
+      "id": "node/1424160693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1492900167",
+        "amenity": "parking",
+        "fee": "yes",
+        "name": "Parkhaus Rotebühlplatz",
+        "parking": "underground",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1697585,
+          48.7757877
+        ]
+      },
+      "id": "node/1492900167"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1496010270",
+        "amenity": "parking",
+        "fee": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1815993,
+          48.7832353
+        ]
+      },
+      "id": "node/1496010270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1537304435",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2474327,
+          48.818653
+        ]
+      },
+      "id": "node/1537304435"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1537304831",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2445377,
+          48.8197328
+        ]
+      },
+      "id": "node/1537304831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1537304924",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2464311,
+          48.8203393
+        ]
+      },
+      "id": "node/1537304924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1552016262",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2393467,
+          48.818805
+        ]
+      },
+      "id": "node/1552016262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1580794796",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2344054,
+          48.8133705
+        ]
+      },
+      "id": "node/1580794796"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1580794809",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.236096,
+          48.8134635
+        ]
+      },
+      "id": "node/1580794809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1686337257",
+        "access": "yes",
+        "amenity": "parking",
+        "description": "2 Rolliparkplätze",
+        "wheelchair": "limited",
+        "wheelchair:description": "es stehen oft Autos drauf, die 'kurz' einen Brief einwerfen wollen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1781083,
+          48.7798585
+        ]
+      },
+      "id": "node/1686337257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1743284282",
+        "amenity": "parking",
+        "capacity": "15",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2253627,
+          48.8053214
+        ]
+      },
+      "id": "node/1743284282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1778320874",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2039086,
+          48.8127079
+        ]
+      },
+      "id": "node/1778320874"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1816429226",
+        "amenity": "parking",
+        "capacity": "15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2336833,
+          48.8068271
+        ]
+      },
+      "id": "node/1816429226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1829225790",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2078086,
+          48.8080136
+        ]
+      },
+      "id": "node/1829225790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1829225791",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2079535,
+          48.80792
+        ]
+      },
+      "id": "node/1829225791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1829225792",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2075082,
+          48.8081266
+        ]
+      },
+      "id": "node/1829225792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1979642762",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2744832,
+          48.7603148
+        ]
+      },
+      "id": "node/1979642762"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2058242791",
+        "amenity": "parking",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.256126,
+          48.7577298
+        ]
+      },
+      "id": "node/2058242791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2080723888",
+        "access": "electric_vehicle",
+        "amenity": "parking",
+        "capacity": "2",
+        "fee": "no",
+        "maxstay": "unlimited",
+        "name": "Elektrofahrzeuge",
+        "operator": "ENBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0894703,
+          48.8057974
+        ]
+      },
+      "id": "node/2080723888"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2080728459",
+        "access": "electric_vehicle",
+        "amenity": "parking",
+        "capacity": "2",
+        "fee": "no",
+        "maxstay": "unlimited",
+        "name": "Elektrofahrzeuge",
+        "operator": "ENBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0920726,
+          48.803346
+        ]
+      },
+      "id": "node/2080728459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2321746008",
+        "amenity": "parking",
+        "maxheight": "2",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.183862,
+          48.7998198
+        ]
+      },
+      "id": "node/2321746008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2443173273",
+        "amenity": "parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.255209,
+          48.7602043
+        ]
+      },
+      "id": "node/2443173273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2900431478",
+        "amenity": "parking",
+        "capacity": "8",
+        "fee": "0",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.233432,
+          48.7469963
+        ]
+      },
+      "id": "node/2900431478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2900434726",
+        "amenity": "parking",
+        "capacity": "4",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2341857,
+          48.7476688
+        ]
+      },
+      "id": "node/2900434726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2900435514",
+        "amenity": "parking",
+        "capacity": "4",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2339471,
+          48.7474991
+        ]
+      },
+      "id": "node/2900435514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2900437163",
+        "amenity": "parking",
+        "capacity": "4",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2335019,
+          48.7472053
+        ]
+      },
+      "id": "node/2900437163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2900437164",
+        "amenity": "parking",
+        "capacity": "4",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2331478,
+          48.7470038
+        ]
+      },
+      "id": "node/2900437164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2900439527",
+        "amenity": "parking",
+        "capacity": "4",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2337538,
+          48.7473681
+        ]
+      },
+      "id": "node/2900439527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2964967133",
+        "amenity": "parking",
+        "name": "Mercedes-Benz Museum",
+        "opening_hours": "Tu-Su,PH 09:00-18:00",
+        "parking": "multi-storey",
+        "wheelchair": "limited",
+        "wheelchair:description": "Erdgeschoß Rollstuhlgerecht und mit Aufzug ausgestatter. Allerdings im 1. Stock keine Aufzüge vorhanden um Museum zu betreten. Man muss über die Fahrzeugrampe ein Stockwerk runter."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2342331,
+          48.78789
+        ]
+      },
+      "id": "node/2964967133"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3006461474",
+        "amenity": "parking",
+        "name": "Mineralbäder",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited",
+        "wheelchair:description": "2x Behinderten-Parkplätze vorhanden."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2093932,
+          48.7972761
+        ]
+      },
+      "id": "node/3006461474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3015497511",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "361",
+        "addr:postcode": "70327",
+        "addr:street": "Augsburger Straße",
+        "amenity": "parking",
+        "name": "CAP-Parkhaus",
+        "parking": "underground",
+        "source": "survey",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2515422,
+          48.7804766
+        ]
+      },
+      "id": "node/3015497511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3071815928",
+        "amenity": "parking",
+        "parking": "multi-storey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1860453,
+          48.7733321
+        ]
+      },
+      "id": "node/3071815928"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3228004581",
+        "amenity": "parking",
+        "layer": "-1",
+        "maxheight": "1.9",
+        "name": "Olgahospital / Frauenklinik",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1743861,
+          48.7840317
+        ]
+      },
+      "id": "node/3228004581"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3228373769",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1313161,
+          48.7857815
+        ]
+      },
+      "id": "node/3228373769"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3233639932",
+        "amenity": "parking",
+        "fee": "yes",
+        "maxheight": "2.1",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1763879,
+          48.7858104
+        ]
+      },
+      "id": "node/3233639932"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3562730532",
+        "access": "yes",
+        "amenity": "parking",
+        "capacity": "4",
+        "fee": "no",
+        "park_ride": "no",
+        "parking": "surface",
+        "surface": "sett"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2089342,
+          48.8143847
+        ]
+      },
+      "id": "node/3562730532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3575425515",
+        "amenity": "parking",
+        "maxheight": "2",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1799793,
+          48.7889101
+        ]
+      },
+      "id": "node/3575425515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3606785212",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2340792,
+          48.8091114
+        ]
+      },
+      "id": "node/3606785212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3625884374",
+        "access": "yes",
+        "amenity": "parking",
+        "fee": "yes",
+        "maxheight": "2.0",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1763586,
+          48.7827406
+        ]
+      },
+      "id": "node/3625884374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3753299824",
+        "amenity": "parking",
+        "operator": "Gärtnerei Roos",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2782232,
+          48.8084993
+        ]
+      },
+      "id": "node/3753299824"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3811114204",
+        "amenity": "parking",
+        "layer": "-1",
+        "name": "Schillerplatz",
+        "opening_hours": "24/7",
+        "operator": "APCOA PARKING Deutschland GmbH",
+        "parking": "underground",
+        "url": "https://service.stuttgart.de/lhs-services/ivlz/index.php?uid=35&objectid=108523&objecttype=dept&page=svc&servicetype=parking&serviceid=9356&detailid=65&showservice=1",
+        "website": "https://www.apcoa.de/parken-in/stuttgart/schillerplatz.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1786869,
+          48.7767973
+        ]
+      },
+      "id": "node/3811114204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4082690189",
+        "addr:city": "Stuttgart",
+        "addr:street": "Rotebühlplatz",
+        "amenity": "parking",
+        "name": "Parkplatz neben Optiker Peschke / öffent. Toilette",
+        "wheelchair": "yes",
+        "wheelchair:description": "1x Platz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1728055,
+          48.7743048
+        ]
+      },
+      "id": "node/4082690189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4157698928",
+        "access": "permissive",
+        "amenity": "parking",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1569114,
+          48.7693273
+        ]
+      },
+      "id": "node/4157698928"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4179676317",
+        "amenity": "parking",
+        "name": "Bülow Carré",
+        "parking": "underground",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1789156,
+          48.7811924
+        ]
+      },
+      "id": "node/4179676317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4366350887",
+        "amenity": "parking",
+        "name": "Handicapped",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2074943,
+          48.7838476
+        ]
+      },
+      "id": "node/4366350887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4467005497",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "5",
+        "addr:street": "Hauffstraße",
+        "amenity": "parking",
+        "fee": "yes",
+        "name": "Neckartorzentrum",
+        "parking": "underground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1907317,
+          48.7868455
+        ]
+      },
+      "id": "node/4467005497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4710800646",
+        "amenity": "parking",
+        "name": "Europcar",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1470093,
+          48.7674662
+        ]
+      },
+      "id": "node/4710800646"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4992154693",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:postcode": "70174",
+        "addr:street": "Schellingstraße",
+        "amenity": "parking",
+        "capacity:disabled": "2",
+        "name": "Barrier-free Parking",
+        "parking": "lane",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1744139,
+          48.7804882
+        ]
+      },
+      "id": "node/4992154693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4992154694",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:postcode": "70174",
+        "addr:street": "Willi-Bleicher-Straße",
+        "amenity": "parking",
+        "capacity": "1",
+        "name": "Barrier-free Parking",
+        "parking": "lane",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1737462,
+          48.78008
+        ]
+      },
+      "id": "node/4992154694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4992187175",
+        "access": "Students/Employees_of_Uni_Stuttgart",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "2",
+        "addr:postcode": "70174",
+        "addr:street": "Breitscheidstraße",
+        "amenity": "parking",
+        "operator": "Uni Stuttgart",
+        "parking": "surface",
+        "surface": "paved",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1713068,
+          48.7808119
+        ]
+      },
+      "id": "node/4992187175"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4992671079",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "17",
+        "addr:postcode": "70174",
+        "addr:street": "Keplerstraße",
+        "amenity": "parking",
+        "capacity:disabled": "2",
+        "fee": "yes",
+        "name": "Barrier-free Parking",
+        "parking": "lane",
+        "supervised": "yes",
+        "surface": "paving_stones",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1753039,
+          48.7826006
+        ]
+      },
+      "id": "node/4992671079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4992671080",
+        "access": "university",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "7",
+        "addr:postcode": "70174",
+        "addr:street": "Keplerstraße",
+        "amenity": "parking",
+        "capacity:disabled": "yes",
+        "name": "Barrier-free Parking",
+        "operator": "Uni Stuttgart",
+        "parking": "surface",
+        "surface": "paved",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1752461,
+          48.7816513
+        ]
+      },
+      "id": "node/4992671080"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4992875110",
+        "access": "university",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "operator": "Uni Stuttgart",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.166308,
+          48.7859922
+        ]
+      },
+      "id": "node/4992875110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5056118975",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "28",
+        "addr:postcode": "70173",
+        "addr:street": "Willy-Brandt-Straße",
+        "amenity": "parking",
+        "capacity": "2",
+        "fee": "yes",
+        "name": "ampido Parkplatz Hauptbahnhof",
+        "operator": "ampido GmbH",
+        "park_ride": "yes",
+        "parking": "surface",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1879453,
+          48.7833405
+        ]
+      },
+      "id": "node/5056118975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065756378",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "3b",
+        "addr:postcode": "70569",
+        "addr:street": "Allmandring",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1016872,
+          48.7438837
+        ]
+      },
+      "id": "node/5065756378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065756379",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "59",
+        "addr:postcode": "70569",
+        "addr:street": "Pfaffenwaldring",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "parking": "lane",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1024812,
+          48.7448947
+        ]
+      },
+      "id": "node/5065756379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065756380",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "8",
+        "addr:postcode": "70569",
+        "addr:street": "Allmandring",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1015794,
+          48.7446561
+        ]
+      },
+      "id": "node/5065756380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065756381",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "3a",
+        "addr:postcode": "70569",
+        "addr:street": "Allmandring",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.100148,
+          48.7444422
+        ]
+      },
+      "id": "node/5065756381"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065756382",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "8e",
+        "addr:postcode": "70569",
+        "addr:street": "Allmandring",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "parking": "lane",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0999341,
+          48.7446239
+        ]
+      },
+      "id": "node/5065756382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065786867",
+        "access": "university",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "39b",
+        "addr:postcode": "70569",
+        "addr:street": "Pfaffenwaldring",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1055451,
+          48.7477456
+        ]
+      },
+      "id": "node/5065786867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065786868",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "9",
+        "addr:postcode": "70569",
+        "addr:street": "Pfaffenwaldring",
+        "amenity": "parking",
+        "capacity:disabled": "2",
+        "name": "Barrier-free Parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1064615,
+          48.7471811
+        ]
+      },
+      "id": "node/5065786868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065786869",
+        "access": "public",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "56",
+        "addr:postcode": "70569",
+        "addr:street": "Pfaffenwaldring",
+        "amenity": "parking",
+        "capacity:disabled": "1",
+        "name": "Barrier-free Parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1086895,
+          48.7470963
+        ]
+      },
+      "id": "node/5065786869"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065786870",
+        "access": "Handicapped",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "72",
+        "addr:postcode": "70569",
+        "addr:street": "Pfaffenwaldring",
+        "amenity": "parking",
+        "capacity": "1",
+        "name": "Barrier-free Parking",
+        "parking": "surface",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1029248,
+          48.7432337
+        ]
+      },
+      "id": "node/5065786870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5065786872",
+        "access": "university",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "55",
+        "addr:postcode": "70569",
+        "addr:street": "Pfaffenwaldring",
+        "amenity": "parking",
+        "capacity:disabled": "yes",
+        "name": "Barrier-free Parking",
+        "operator": "Uni Stuttgart",
+        "parking": "underground",
+        "surface": "paving_stones",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1041865,
+          48.745073
+        ]
+      },
+      "id": "node/5065786872"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5459930770",
+        "amenity": "parking",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2685208,
+          48.8183267
+        ]
+      },
+      "id": "node/5459930770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5902550285",
+        "amenity": "parking",
+        "wheelchair": "yes",
+        "wheelchair:description": "Zwei Behindertenparkplätze"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2038428,
+          48.7878695
+        ]
+      },
+      "id": "node/5902550285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6208630971",
+        "access": "yes",
+        "amenity": "parking",
+        "capacity:charging": "yes",
+        "fee": "yes",
+        "lit": "24/7",
+        "maxheight": "1.9",
+        "name": "Le Meridien",
+        "parking": "underground",
+        "surface": "paved"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1889789,
+          48.7838242
+        ]
+      },
+      "id": "node/6208630971"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6548357155",
+        "amenity": "parking",
+        "capacity": "4",
+        "name": "Besucher",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1793128,
+          48.7895916
+        ]
+      },
+      "id": "node/6548357155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6558261152",
+        "access": "yes",
+        "amenity": "parking",
+        "description": "öffentliche Tiefgarage",
+        "parking": "underground",
+        "source": "bing; estimate; survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2736599,
+          48.8205811
+        ]
+      },
+      "id": "node/6558261152"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6735333698",
+        "access": "yes",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "2",
+        "addr:postcode": "70174",
+        "addr:street": "Huberstraße",
+        "amenity": "parking",
+        "capacity": "176",
+        "covered": "yes",
+        "description": "Maximale Höhe: 2,10m",
+        "fee": "yes",
+        "layer": "-1",
+        "name": "L-Bank Börsenplatz",
+        "operator": "PBW Parkraumgesellschaft Baden-Württemberg mbH",
+        "parking": "underground",
+        "payment:cash": "yes",
+        "payment:girocard": "yes",
+        "payment:maestro": "yes",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1756741,
+          48.780157
+        ]
+      },
+      "id": "node/6735333698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6735333700",
+        "access": "yes",
+        "addr:city": "Stuttgart",
+        "addr:housenumber": "2",
+        "addr:postcode": "70174",
+        "addr:street": "Huberstraße",
+        "amenity": "parking",
+        "capacity": "181",
+        "covered": "yes",
+        "description": "Maximale Durchfahrtshöhe 2,10m",
+        "fee": "yes",
+        "layer": "-1",
+        "name": "Volksbank Stuttgart eG Tiefgarage",
+        "opening_hours": "24/7",
+        "operator": "APCOA PARKING Deutschland GmbH",
+        "operator:type": "private",
+        "parking": "underground",
+        "payment:cash": "yes",
+        "supervised": "yes",
+        "surface": "asphalt",
+        "website": "https://www.apcoa.de/parken/stuttgart/volksbank-stuttgart-eg/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17579,
+          48.7800925
+        ]
+      },
+      "id": "node/6735333700"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6806098809",
+        "access": "yes",
+        "amenity": "parking",
+        "name": "Barrier-free Parking",
+        "parking": "lane",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1001433,
+          48.744655
+        ]
+      },
+      "id": "node/6806098809"
+    }
+  ]
+}

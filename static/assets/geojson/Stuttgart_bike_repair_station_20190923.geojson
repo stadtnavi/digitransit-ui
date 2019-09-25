@@ -10,18 +10,10 @@
         "type": "Point",
         "coordinates": [9.1602466, 48.7715682]
       },
-      "style": {
-        "color": "#00b33c",
-        "fillColor": "#1e1e62",
-        "radius": 5,
-        "opacity": 0.6,
-        "fillOpacity": 1,
-        "weight": 1
-      },
       "properties": {
         "name_en": "ADFC Selfrepairstation",
         "name_de": "ADFC Selbsthilfewerkstatt",
-        "popupContent": "Bike repair station </br> Opening hours: Th 17:30-20:00 ",
+        "address": "opening hours: Th 17:30-20:00",
         "opening_hours": "Th 17:30-20:00",
         "service:bicycle:chaintool": "yes",
         "service:bicycle:pump": "yes",

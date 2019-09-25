@@ -2,14 +2,1487 @@
   "type": "FeatureCollection",
   "generator": "overpass-ide",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2019-09-25T07:05:03Z",
+  "timestamp": "2019-09-25T07:07:02Z",
   "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/310817636",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: yes, supervised: no",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.134288,
+          48.7737714
+        ]
+      },
+      "id": "node/310817636"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/926178990",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 10, covered: yes",
+        "bicycle_parking": "stands",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1898395,
+          48.8036444
+        ]
+      },
+      "id": "node/926178990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1296579512",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: yes",
+        "capacity": "14",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1812959,
+          48.782924
+        ]
+      },
+      "id": "node/1296579512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1624621042",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1585591,
+          48.7705602
+        ]
+      },
+      "id": "node/1624621042"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1646644206",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: yes",
+        "capacity": "40",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2349614,
+          48.8059966
+        ]
+      },
+      "id": "node/1646644206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1646644207",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 28, covered: yes",
+        "capacity": "28",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2348997,
+          48.8065559
+        ]
+      },
+      "id": "node/1646644207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1674674479",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1148366,
+          48.7503459
+        ]
+      },
+      "id": "node/1674674479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1700376425",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: yes",
+        "capacity": "8",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1720405,
+          48.7747489
+        ]
+      },
+      "id": "node/1700376425"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1700376474",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1709238,
+          48.7757616
+        ]
+      },
+      "id": "node/1700376474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1742552273",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.165773,
+          48.8293185
+        ]
+      },
+      "id": "node/1742552273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1863612800",
+        "access": "yes",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 30, covered: yes",
+        "capacity": "30",
+        "covered": "yes",
+        "layer": "0",
+        "level": "0",
+        "operator": "VVS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1659279,
+          48.829825
+        ]
+      },
+      "id": "node/1863612800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1892867423",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes, bike+ride: yes",
+        "bike_ride": "yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2491483,
+          48.7796821
+        ]
+      },
+      "id": "node/1892867423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2158782291",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: yes",
+        "capacity": "20",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1748085,
+          48.7735476
+        ]
+      },
+      "id": "node/2158782291"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2316426420",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2153597,
+          48.8092541
+        ]
+      },
+      "id": "node/2316426420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2321746023",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 60, covered: yes",
+        "capacity": "60",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1848411,
+          48.801597
+        ]
+      },
+      "id": "node/2321746023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2450235871",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: yes",
+        "capacity": "16",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1677578,
+          48.748045
+        ]
+      },
+      "id": "node/2450235871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2450439027",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 80, covered: yes",
+        "capacity": "80",
+        "covered": "yes",
+        "supervised": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1947295,
+          48.7530293
+        ]
+      },
+      "id": "node/2450439027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2612114464",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 9, covered: yes",
+        "capacity": "9",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1636394,
+          48.7969119
+        ]
+      },
+      "id": "node/2612114464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2882103693",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2122262,
+          48.8252588
+        ]
+      },
+      "id": "node/2882103693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2885405223",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes",
+        "source": "extrapolation; survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.246323,
+          48.8149848
+        ]
+      },
+      "id": "node/2885405223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2885405228",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 24, covered: yes",
+        "capacity": "24",
+        "covered": "yes",
+        "source": "extrapolation; survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2468077,
+          48.8150847
+        ]
+      },
+      "id": "node/2885405228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2885405234",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: yes",
+        "capacity": "40",
+        "covered": "yes",
+        "source": "extrapolation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2506113,
+          48.8153372
+        ]
+      },
+      "id": "node/2885405234"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3083108395",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes",
+        "supervised": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.168934,
+          48.7640424
+        ]
+      },
+      "id": "node/3083108395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3340050625",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: yes",
+        "covered": "yes",
+        "operator": "Klinikum Stuttgart"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1731546,
+          48.7836257
+        ]
+      },
+      "id": "node/3340050625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3359581594",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1699248,
+          48.7806596
+        ]
+      },
+      "id": "node/3359581594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3359581595",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1698124,
+          48.7806834
+        ]
+      },
+      "id": "node/3359581595"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3359581598",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1700345,
+          48.7808994
+        ]
+      },
+      "id": "node/3359581598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3476357087",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2126945,
+          48.7998232
+        ]
+      },
+      "id": "node/3476357087"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3581794375",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 9, covered: yes",
+        "capacity": "9",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1648421,
+          48.8349739
+        ]
+      },
+      "id": "node/3581794375"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3616187482",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1424751,
+          48.8095709
+        ]
+      },
+      "id": "node/3616187482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3679359701",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: yes",
+        "covered": "yes",
+        "covered:by": "bridge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2264944,
+          48.7930422
+        ]
+      },
+      "id": "node/3679359701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3756673506",
+        "city": "Stuttgart",
+        "addr:country": "DE",
+        "addr:postcode": "70372",
+        "address": "Kegelenstraße 17, wall loops, capacity: 6, covered: yes, fee: yes",
+        "addr:suburb": "Bad Cannstatt",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "capacity": "6",
+        "covered": "yes",
+        "email": "fahrradwerkstatt@neuearbeit.de",
+        "fee": "yes",
+        "name": "Fahrrad-Service-Station Bad Cannstatt",
+        "opening_hours": "Mo-Fr 07:00-20:00; PH off",
+        "operator": "Neue Arbeit GmbH",
+        "phone": "+49 711 50593729",
+        "service:bicycle:charging": "yes",
+        "service:bicycle:repair": "yes",
+        "service:bicycle:second_hand": "yes",
+        "shop": "bicycle",
+        "surveillance": "indoor",
+        "website": "http://www.neuearbeit.de/index.php/angebote-fuer-kunden/konsum-und-service/fahrrad-service-stationen",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2167538,
+          48.8007463
+        ]
+      },
+      "id": "node/3756673506"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3829623618",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 9, covered: yes",
+        "capacity": "9",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1678491,
+          48.7480526
+        ]
+      },
+      "id": "node/3829623618"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3829806938",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2085152,
+          48.7475728
+        ]
+      },
+      "id": "node/3829806938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3832631604",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: yes",
+        "capacity": "16",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2184963,
+          48.8016894
+        ]
+      },
+      "id": "node/3832631604"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3836835789",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: yes, bike+ride: yes",
+        "bike_ride": "yes",
+        "covered": "yes",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1584044,
+          48.7707683
+        ]
+      },
+      "id": "node/3836835789"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3910929182",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 44, covered: yes",
+        "capacity": "44",
+        "covered": "yes",
+        "description": "Unter der Paulinenbrücke, daher überdacht; mobile Ständer",
+        "removable": "yes",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.173007,
+          48.770888
+        ]
+      },
+      "id": "node/3910929182"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3971909254",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 9, covered: yes",
+        "capacity": "9",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1852576,
+          48.7769633
+        ]
+      },
+      "id": "node/3971909254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3987011823",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: yes",
+        "capacity": "14",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2252656,
+          48.7978501
+        ]
+      },
+      "id": "node/3987011823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4100644362",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1725094,
+          48.7670279
+        ]
+      },
+      "id": "node/4100644362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4127021352",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "ground_slots",
+        "name": "Bike ground slots",
+        "address": "capacity: 8, covered: yes",
+        "capacity": "8",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2309236,
+          48.7995507
+        ]
+      },
+      "id": "node/4127021352"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4202422648",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 5, covered: yes",
+        "capacity": "5",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2337066,
+          48.8084336
+        ]
+      },
+      "id": "node/4202422648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4210880901",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2058787,
+          48.8089471
+        ]
+      },
+      "id": "node/4210880901"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4211524348",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: yes",
+        "capacity": "6",
+        "covered": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2390881,
+          48.8176035
+        ]
+      },
+      "id": "node/4211524348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4290615909",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1447283,
+          48.8324555
+        ]
+      },
+      "id": "node/4290615909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4291725687",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: yes",
+        "capacity": "8",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1752694,
+          48.769884
+        ]
+      },
+      "id": "node/4291725687"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4342632996",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "lockers",
+        "name": "Bike lockers",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1431753,
+          48.8073543
+        ]
+      },
+      "id": "node/4342632996"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4343730579",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "lockers",
+        "name": "Bike lockers",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1552295,
+          48.8148917
+        ]
+      },
+      "id": "node/4343730579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4386281191",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 11, covered: yes",
+        "capacity": "11",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1710431,
+          48.775048
+        ]
+      },
+      "id": "node/4386281191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4386281193",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 5, covered: yes",
+        "capacity": "5",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1711531,
+          48.7751222
+        ]
+      },
+      "id": "node/4386281193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4386281194",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: yes",
+        "capacity": "12",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1711263,
+          48.7751779
+        ]
+      },
+      "id": "node/4386281194"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4386281195",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1709734,
+          48.775299
+        ]
+      },
+      "id": "node/4386281195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4392759074",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: yes",
+        "covered": "yes",
+        "fee": "noyes",
+        "lit": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1786435,
+          48.8150038
+        ]
+      },
+      "id": "node/4392759074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4392759077",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: yes",
+        "capacity": "2",
+        "covered": "yes",
+        "fee": "noyes",
+        "lit": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1787222,
+          48.8151071
+        ]
+      },
+      "id": "node/4392759077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4392759078",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: yes",
+        "capacity": "2",
+        "covered": "yes",
+        "fee": "noyes",
+        "lit": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1787019,
+          48.8151358
+        ]
+      },
+      "id": "node/4392759078"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4413973081",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 60, covered: yes",
+        "capacity": "60",
+        "covered": "yes",
+        "layer": "0",
+        "level": "0",
+        "note": "Steht unterhalb des Überwerfungsbauwerks"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1661181,
+          48.829607
+        ]
+      },
+      "id": "node/4413973081"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4579827518",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: yes",
+        "capacity": "8",
+        "covered": "yes",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2642225,
+          48.83065
+        ]
+      },
+      "id": "node/4579827518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4579830619",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "covered: yes",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2555347,
+          48.8307056
+        ]
+      },
+      "id": "node/4579830619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4756097234",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes",
+        "note": "mit Ladeplätzen für Elektrofahrräder (siehe separater Punkt)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2656371,
+          48.8154832
+        ]
+      },
+      "id": "node/4756097234"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4946684513",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 72, covered: yes",
+        "capacity": "72",
+        "covered": "yes",
+        "note": "Fahrradständer stehen unter Vordach"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2678583,
+          48.8083888
+        ]
+      },
+      "id": "node/4946684513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5122810594",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: yes",
+        "covered": "yes",
+        "operator": "Edeka"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1233711,
+          48.8308643
+        ]
+      },
+      "id": "node/5122810594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5293343283",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: yes",
+        "capacity": "12",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1820403,
+          48.7753851
+        ]
+      },
+      "id": "node/5293343283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5500303195",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: yes",
+        "capacity": "16",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2316719,
+          48.8279096
+        ]
+      },
+      "id": "node/5500303195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5500303196",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: yes",
+        "capacity": "16",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2317718,
+          48.8279122
+        ]
+      },
+      "id": "node/5500303196"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5532030924",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: yes",
+        "capacity": "20",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1876321,
+          48.7770414
+        ]
+      },
+      "id": "node/5532030924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5813423982",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: yes",
+        "capacity": "16",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1716246,
+          48.7815953
+        ]
+      },
+      "id": "node/5813423982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5813423984",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: yes",
+        "capacity": "16",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1717064,
+          48.78162
+        ]
+      },
+      "id": "node/5813423984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5813423985",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 15, covered: yes",
+        "capacity": "15",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1718875,
+          48.7816774
+        ]
+      },
+      "id": "node/5813423985"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5814515235",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: yes",
+        "capacity": "6",
+        "covered": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1637765,
+          48.7772632
+        ]
+      },
+      "id": "node/5814515235"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6184461230",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 22, covered: yes",
+        "capacity": "22",
+        "covered": "yes",
+        "source": "estimate; extrapolate; survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2680306,
+          48.8136455
+        ]
+      },
+      "id": "node/6184461230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6224325599",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 10, covered: yes",
+        "capacity": "10",
+        "covered": "yes",
+        "layer": "0",
+        "level": "0",
+        "source": "estimate; extrapolate; survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1831781,
+          48.7753611
+        ]
+      },
+      "id": "node/6224325599"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6584832014",
+        "access": "private",
+        "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "covered: yes",
+        "covered": "yes",
+        "fee": "no",
+        "operator": "Daimler AG",
+        "operator:type": "public"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2679365,
+          48.7533754
+        ]
+      },
+      "id": "node/6584832014"
+    },
     {
       "type": "Feature",
       "properties": {
         "@id": "node/246647556",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -28,6 +1501,8 @@
         "@id": "node/926178555",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -46,6 +1521,8 @@
         "@id": "node/942677886",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "note": "zwei Fahrradständer stehen relativ nah beieinander"
@@ -64,6 +1541,8 @@
       "properties": {
         "@id": "node/1042594406",
         "amenity": "bicycle_parking",
+        "name": "Bike park",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -81,6 +1560,8 @@
         "@id": "node/1042594422",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -99,6 +1580,8 @@
         "@id": "node/1042594426",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -116,6 +1599,8 @@
         "@id": "node/1042594431",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -133,6 +1618,8 @@
         "@id": "node/1042594459",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -150,6 +1637,8 @@
         "@id": "node/1262952946",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -168,6 +1657,8 @@
         "@id": "node/1264534594",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 30, covered: no, lit: yes",
         "capacity": "30",
         "covered": "no",
         "lit": "yes"
@@ -187,6 +1678,8 @@
         "@id": "node/1277744008",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 29, covered: no, lit: yes",
         "capacity": "29",
         "covered": "no",
         "lit": "yes"
@@ -205,6 +1698,8 @@
       "properties": {
         "@id": "node/1277744014",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -223,6 +1718,8 @@
         "@id": "node/1277744016",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "supervised": "no"
@@ -242,6 +1739,8 @@
         "@id": "node/1277744025",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no"
       },
@@ -260,6 +1759,8 @@
         "@id": "node/1296579483",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 70, covered: no",
         "capacity": "70",
         "covered": "no"
       },
@@ -278,6 +1779,8 @@
         "@id": "node/1296579489",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -296,6 +1799,8 @@
         "@id": "node/1296579495",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -314,6 +1819,8 @@
         "@id": "node/1296579501",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 26, covered: no",
         "capacity": "26",
         "covered": "no"
       },
@@ -332,6 +1839,8 @@
         "@id": "node/1296579504",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -350,6 +1859,8 @@
         "@id": "node/1296579516",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -368,6 +1879,8 @@
         "@id": "node/1296579523",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no"
       },
@@ -386,6 +1899,8 @@
         "@id": "node/1296579525",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 30, covered: no",
         "capacity": "30",
         "covered": "no"
       },
@@ -404,6 +1919,8 @@
         "@id": "node/1376486890",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -421,6 +1938,8 @@
       "properties": {
         "@id": "node/1397163256",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -438,6 +1957,8 @@
         "@id": "node/1404763970",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -456,6 +1977,8 @@
         "@id": "node/1450412982",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no"
       },
@@ -474,6 +1997,8 @@
         "@id": "node/1453604600",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -492,6 +2017,8 @@
         "@id": "node/1505326214",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 29, covered: no",
         "capacity": "20",
         "covered": "no",
         "fee": "no"
@@ -510,6 +2037,8 @@
       "properties": {
         "@id": "node/1505433279",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "covered: no",
         "covered": "no",
         "fee": "no"
       },
@@ -528,6 +2057,8 @@
         "@id": "node/1519492132",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -546,6 +2077,8 @@
         "@id": "node/1521755419",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -564,6 +2097,8 @@
         "@id": "node/1646644203",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -582,6 +2117,8 @@
         "@id": "node/1646644205",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "source": "extrapolation"
@@ -601,6 +2138,8 @@
         "@id": "node/1658348629",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "quantity": "5"
@@ -620,6 +2159,8 @@
         "@id": "node/1658348656",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "quantity": "4"
@@ -639,6 +2180,8 @@
         "@id": "node/1668070582",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -657,6 +2200,8 @@
         "@id": "node/1686277603",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -675,6 +2220,8 @@
         "@id": "node/1686277693",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -693,6 +2240,8 @@
         "@id": "node/1688171893",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -711,6 +2260,8 @@
         "@id": "node/1689228957",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -729,6 +2280,8 @@
         "@id": "node/1699236316",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -747,6 +2300,8 @@
         "@id": "node/1699236318",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 32, covered: no",
         "capacity": "32",
         "covered": "no"
       },
@@ -765,6 +2320,8 @@
         "@id": "node/1700376404",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -783,6 +2340,8 @@
         "@id": "node/1700376431",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -800,6 +2359,8 @@
         "@id": "node/1700376434",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -818,6 +2379,8 @@
         "@id": "node/1700376493",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no"
       },
@@ -836,6 +2399,8 @@
         "@id": "node/1708803972",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollard",
+        "address": "capacity: 28, covered: no",
         "capacity": "28",
         "covered": "no"
       },
@@ -854,6 +2419,8 @@
         "@id": "node/1725914488",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -872,6 +2439,8 @@
         "@id": "node/1781340366",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -890,6 +2459,8 @@
         "@id": "node/1781340367",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 22, covered: no",
         "capacity": "22",
         "covered": "no"
       },
@@ -908,6 +2479,8 @@
         "@id": "node/1781340373",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "source": "extrapolation"
@@ -927,6 +2500,8 @@
         "@id": "node/1819938822",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no"
       },
@@ -945,6 +2520,8 @@
         "@id": "node/1851235980",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -963,6 +2540,8 @@
         "@id": "node/1892867417",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no, bike+ride: yes",
         "bike_ride": "yes",
         "capacity": "20",
         "covered": "no"
@@ -982,6 +2561,8 @@
         "@id": "node/1892867426",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no, bike+ride: yes",
         "bike_ride": "yes",
         "capacity": "10",
         "covered": "no"
@@ -1001,6 +2582,8 @@
         "@id": "node/1892867427",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1019,6 +2602,8 @@
         "@id": "node/1937783416",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1037,6 +2622,8 @@
         "@id": "node/2012616486",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -1055,6 +2642,8 @@
         "@id": "node/2012616495",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1073,6 +2662,8 @@
         "@id": "node/2016236704",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -1091,6 +2682,8 @@
         "@id": "node/2037792627",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1109,6 +2702,8 @@
         "@id": "node/2045146393",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1126,6 +2721,8 @@
       "properties": {
         "@id": "node/2072629108",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 40, covered: no",
         "capacity": "40",
         "covered": "no"
       },
@@ -1144,6 +2741,8 @@
         "@id": "node/2072629112",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -1162,6 +2761,8 @@
         "@id": "node/2072629113",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: no",
         "capacity": "40",
         "covered": "no",
         "lit": "yes"
@@ -1181,6 +2782,8 @@
         "@id": "node/2077003306",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1199,6 +2802,8 @@
         "@id": "node/2083016985",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -1217,6 +2822,8 @@
         "@id": "node/2083967352",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1235,6 +2842,8 @@
         "@id": "node/2146156995",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -1253,6 +2862,8 @@
         "@id": "node/2154903884",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 28, covered: no",
         "capacity": "28",
         "covered": "no"
       },
@@ -1271,6 +2882,8 @@
         "@id": "node/2158782290",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1289,6 +2902,8 @@
         "@id": "node/2158782292",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1307,6 +2922,8 @@
         "@id": "node/2158782293",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 28, covered: no",
         "capacity": "28",
         "covered": "no"
       },
@@ -1325,6 +2942,8 @@
         "@id": "node/2158782294",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1343,6 +2962,8 @@
         "@id": "node/2187535113",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1361,6 +2982,8 @@
         "@id": "node/2203077779",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -1379,6 +3002,8 @@
         "@id": "node/2203077780",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -1397,6 +3022,8 @@
         "@id": "node/2203077781",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1415,6 +3042,8 @@
         "@id": "node/2207819689",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1433,6 +3062,8 @@
         "@id": "node/2252215542",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1451,6 +3082,8 @@
         "@id": "node/2257505383",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1469,6 +3102,8 @@
         "@id": "node/2284141730",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 26, covered: no",
         "capacity": "26",
         "covered": "no"
       },
@@ -1487,6 +3122,8 @@
         "@id": "node/2285237794",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -1504,6 +3141,8 @@
         "@id": "node/2379363979",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -1522,6 +3161,8 @@
         "@id": "node/2379363984",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -1540,6 +3181,8 @@
         "@id": "node/2445419488",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 66, covered: no",
         "bike_ride": "no",
         "capacity": "66",
         "covered": "no"
@@ -1559,6 +3202,8 @@
         "@id": "node/2448503419",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "supervised": "no"
@@ -1578,6 +3223,8 @@
         "@id": "node/2480557836",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "fee": "no"
@@ -1597,6 +3244,8 @@
         "@id": "node/2597440078",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "bike_ride": "no",
         "capacity": "20",
         "covered": "no"
@@ -1616,6 +3265,8 @@
         "@id": "node/2770824411",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no",
         "source": "survey; extrapolation"
@@ -1635,6 +3286,8 @@
         "@id": "node/2882103694",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no"
       },
@@ -1653,6 +3306,8 @@
         "@id": "node/2882516164",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no",
         "supervised": "no"
@@ -1672,6 +3327,8 @@
         "@id": "node/2893570195",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -1689,6 +3346,8 @@
         "@id": "node/2900310701",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "source": "survey"
@@ -1708,6 +3367,8 @@
         "@id": "node/2911650226",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -1726,6 +3387,8 @@
         "@id": "node/2923560143",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 28, covered: no",
         "capacity": "28",
         "covered": "no",
         "lit": "yes"
@@ -1745,6 +3408,8 @@
         "@id": "node/2973462974",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 28, covered: no",
         "capacity": "28",
         "covered": "no",
         "source": "estimation; survey"
@@ -1764,6 +3429,8 @@
         "@id": "node/2973462975",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "source": "estimation; survey"
@@ -1783,6 +3450,8 @@
         "@id": "node/2989979630",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no",
         "source": "survey"
@@ -1802,6 +3471,8 @@
         "@id": "node/2989980235",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no",
         "source": "survey"
@@ -1821,6 +3492,8 @@
         "@id": "node/3003597166",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -1839,6 +3512,8 @@
         "@id": "node/3003597508",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -1857,6 +3532,8 @@
         "@id": "node/3003599389",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -1875,6 +3552,8 @@
         "@id": "node/3035939339",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -1893,6 +3572,8 @@
         "@id": "node/3080872259",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no",
         "supervised": "no"
@@ -1912,6 +3593,8 @@
         "@id": "node/3100349268",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no"
       },
@@ -1930,6 +3613,8 @@
         "@id": "node/3116764246",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -1948,6 +3633,8 @@
         "@id": "node/3120042929",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -1966,6 +3653,8 @@
         "@id": "node/3124209530",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -1983,6 +3672,8 @@
         "@id": "node/3127149130",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -2001,6 +3692,8 @@
         "@id": "node/3135326220",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2019,6 +3712,8 @@
         "@id": "node/3139191173",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "supervised": "no"
@@ -2038,6 +3733,8 @@
         "@id": "node/3163603377",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 28, covered: no",
         "capacity": "28",
         "covered": "no"
       },
@@ -2056,6 +3753,8 @@
         "@id": "node/3188116878",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no",
         "source": "estimation; survey"
@@ -2075,6 +3774,8 @@
         "@id": "node/3200074114",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 26, covered: no",
         "capacity": "26",
         "covered": "no"
       },
@@ -2093,6 +3794,8 @@
         "@id": "node/3223296591",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2111,6 +3814,8 @@
         "@id": "node/3296402670",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -2129,6 +3834,8 @@
         "@id": "node/3359581632",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -2147,6 +3854,8 @@
         "@id": "node/3391583954",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 26, covered: no",
         "capacity": "26",
         "covered": "no"
       },
@@ -2165,6 +3874,8 @@
         "@id": "node/3440551929",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -2183,6 +3894,8 @@
         "@id": "node/3440745682",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -2201,6 +3914,8 @@
         "@id": "node/3456645901",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no, lit: yes",
         "capacity": "20",
         "covered": "no",
         "lit": "yes"
@@ -2220,6 +3935,8 @@
         "@id": "node/3503840977",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -2238,6 +3955,8 @@
         "@id": "node/3503840979",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -2256,6 +3975,8 @@
         "@id": "node/3503840989",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -2274,6 +3995,8 @@
         "@id": "node/3503850793",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -2292,6 +4015,8 @@
         "@id": "node/3507382089",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no",
         "fee": "no",
@@ -2312,6 +4037,8 @@
         "@id": "node/3516895828",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2330,6 +4057,8 @@
         "@id": "node/3516895832",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -2348,6 +4077,8 @@
         "@id": "node/3575425536",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2366,6 +4097,8 @@
         "@id": "node/3606785217",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -2383,6 +4116,8 @@
       "properties": {
         "@id": "node/3606785219",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -2401,6 +4136,8 @@
         "@id": "node/3606785224",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "source": "extrapolation; survey"
@@ -2420,6 +4157,8 @@
         "@id": "node/3617868366",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 34, covered: no",
         "capacity": "34",
         "covered": "no",
         "lit": "yes"
@@ -2439,6 +4178,8 @@
         "@id": "node/3617868367",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no",
         "lit": "yes"
@@ -2458,6 +4199,8 @@
         "@id": "node/3623067204",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -2476,6 +4219,8 @@
         "@id": "node/3623067205",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no"
       },
@@ -2494,6 +4239,8 @@
         "@id": "node/3625884372",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "covered: no, lit: yes",
         "covered": "no",
         "lit": "yes"
       },
@@ -2512,6 +4259,8 @@
         "@id": "node/3625887522",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -2530,6 +4279,8 @@
         "@id": "node/3653281882",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -2548,6 +4299,8 @@
         "@id": "node/3653300205",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 26, covered: no",
         "capacity": "26",
         "covered": "no"
       },
@@ -2566,6 +4319,8 @@
         "@id": "node/3653544319",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -2584,6 +4339,8 @@
         "@id": "node/3653544320",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -2602,6 +4359,8 @@
         "@id": "node/3653544832",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2620,6 +4379,8 @@
         "@id": "node/3653544841",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no"
       },
@@ -2638,6 +4399,8 @@
         "@id": "node/3653544842",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2656,6 +4419,8 @@
         "@id": "node/3658263673",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -2674,6 +4439,8 @@
         "@id": "node/3658555533",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -2692,6 +4459,8 @@
         "@id": "node/3658646507",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2710,6 +4479,8 @@
         "@id": "node/3658650322",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: no",
         "capacity": "40",
         "covered": "no"
       },
@@ -2728,6 +4499,8 @@
         "@id": "node/3659179268",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 30, covered: no",
         "capacity": "30",
         "covered": "no"
       },
@@ -2746,6 +4519,8 @@
         "@id": "node/3660466286",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -2764,6 +4539,8 @@
         "@id": "node/3660466295",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2782,6 +4559,8 @@
         "@id": "node/3660466297",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2800,6 +4579,8 @@
         "@id": "node/3660466299",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2818,6 +4599,8 @@
         "@id": "node/3660964799",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -2836,6 +4619,8 @@
         "@id": "node/3660964800",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -2854,6 +4639,8 @@
         "@id": "node/3660964816",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2872,6 +4659,8 @@
         "@id": "node/3660964821",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -2890,6 +4679,8 @@
         "@id": "node/3663364079",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "lit": "yes"
@@ -2909,6 +4700,8 @@
         "@id": "node/3671202842",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "check_date": "2015-07-29",
         "covered": "no"
@@ -2928,6 +4721,8 @@
         "@id": "node/3672473520",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no",
         "note:capacity": "Foto war abgeschnitten, muss man nochmal nachzählen"
@@ -2947,6 +4742,8 @@
         "@id": "node/3672479143",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2965,6 +4762,8 @@
         "@id": "node/3672479144",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -2983,6 +4782,8 @@
         "@id": "node/3672605114",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3000,6 +4801,8 @@
         "@id": "node/3676114247",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3018,6 +4821,8 @@
         "@id": "node/3677271207",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "source": "extrapolation; survey"
@@ -3037,6 +4842,8 @@
         "@id": "node/3681363611",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -3055,6 +4862,8 @@
         "@id": "node/3683088276",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3072,6 +4881,8 @@
         "@id": "node/3683488646",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3090,6 +4901,8 @@
         "@id": "node/3684809917",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: no",
         "capacity": "40",
         "covered": "no"
       },
@@ -3108,6 +4921,8 @@
         "@id": "node/3684809918",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -3126,6 +4941,8 @@
         "@id": "node/3692231483",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3144,6 +4961,8 @@
         "@id": "node/3693652481",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "operator": "Stuttgarter Straßenbahnen"
@@ -3163,6 +4982,8 @@
         "@id": "node/3697279493",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -3181,6 +5002,8 @@
         "@id": "node/3701567475",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3199,6 +5022,8 @@
         "@id": "node/3715557457",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3216,6 +5041,8 @@
         "@id": "node/3715557766",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3234,6 +5061,8 @@
         "@id": "node/3715557768",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3252,6 +5081,8 @@
         "@id": "node/3721255946",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3270,6 +5101,8 @@
         "@id": "node/3722810155",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3288,6 +5121,8 @@
         "@id": "node/3736798295",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -3306,6 +5141,8 @@
         "@id": "node/3736798296",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -3324,6 +5161,8 @@
         "@id": "node/3746654508",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -3342,6 +5181,8 @@
         "@id": "node/3749706529",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 36, covered: no",
         "capacity": "36",
         "covered": "no",
         "source": "extrapolation; survey"
@@ -3361,6 +5202,8 @@
         "@id": "node/3762956350",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "source": "survey"
@@ -3380,6 +5223,8 @@
         "@id": "node/3762960358",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no",
         "source": "survey"
@@ -3399,6 +5244,8 @@
         "@id": "node/3762960361",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no",
         "description": "Fahrradständer unter Dach",
@@ -3419,6 +5266,8 @@
         "@id": "node/3771682684",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3437,6 +5286,8 @@
         "@id": "node/3771682693",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3455,6 +5306,8 @@
         "@id": "node/3771682698",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3472,6 +5325,8 @@
         "@id": "node/3771705273",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3489,6 +5344,8 @@
         "@id": "node/3771902084",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -3507,6 +5364,8 @@
         "@id": "node/3771902091",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -3525,6 +5384,8 @@
         "@id": "node/3774181111",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3542,6 +5403,8 @@
         "@id": "node/3788003095",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3559,6 +5422,8 @@
         "@id": "node/3793377411",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3577,6 +5442,8 @@
         "@id": "node/3797297182",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 7, covered: no",
         "capacity": "7",
         "covered": "no"
       },
@@ -3595,6 +5462,8 @@
         "@id": "node/3798991941",
         "access": "private",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -3611,6 +5480,8 @@
       "properties": {
         "@id": "node/3800106950",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 16, covered: no, lit: yes",
         "capacity": "16",
         "covered": "no",
         "lit": "yes"
@@ -3630,6 +5501,8 @@
         "@id": "node/3804773241",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3648,6 +5521,8 @@
         "@id": "node/3804784519",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -3666,6 +5541,8 @@
         "@id": "node/3804784522",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3684,6 +5561,8 @@
         "@id": "node/3805092992",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3702,6 +5581,8 @@
         "@id": "node/3813328990",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -3720,6 +5601,8 @@
         "@id": "node/3813328991",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -3738,6 +5621,8 @@
         "@id": "node/3813328993",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3756,6 +5641,8 @@
         "@id": "node/3814630819",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3774,6 +5661,8 @@
         "@id": "node/3817566206",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -3792,6 +5681,8 @@
         "@id": "node/3826394176",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -3810,6 +5701,8 @@
         "@id": "node/3829549477",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -3828,6 +5721,8 @@
         "@id": "node/3829848391",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -3846,6 +5741,8 @@
         "@id": "node/3832631992",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -3864,6 +5761,8 @@
         "@id": "node/3832632000",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -3882,6 +5781,8 @@
         "@id": "node/3836833720",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -3899,6 +5800,8 @@
       "properties": {
         "@id": "node/3836835793",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no",
         "source": "survey"
@@ -3918,6 +5821,8 @@
         "@id": "node/3836835802",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no",
         "source": "extrapolate; survey"
       },
@@ -3936,6 +5841,8 @@
         "@id": "node/3877884125",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "source": "extrapolate; survey"
@@ -3955,6 +5862,8 @@
         "@id": "node/3877884137",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -3973,6 +5882,8 @@
         "@id": "node/3877884148",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -3991,6 +5902,8 @@
         "@id": "node/3877886665",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 3, covered: no",
         "capacity": "3",
         "covered": "no",
         "source": "extrapolate; survey"
@@ -4010,6 +5923,8 @@
         "@id": "node/3882750301",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -4028,6 +5943,8 @@
         "@id": "node/3882750303",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -4046,6 +5963,8 @@
         "@id": "node/3882750306",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -4064,6 +5983,8 @@
         "@id": "node/3905225845",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -4082,6 +6003,8 @@
         "@id": "node/3905225852",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -4100,6 +6023,8 @@
         "@id": "node/3905589618",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4118,6 +6043,8 @@
         "@id": "node/3905589628",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -4136,6 +6063,8 @@
         "@id": "node/3907290041",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "removable": "yes",
@@ -4156,6 +6085,8 @@
         "@id": "node/3907290042",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "removable": "yes",
@@ -4176,6 +6107,8 @@
         "@id": "node/3907290043",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "source": "survey"
@@ -4195,6 +6128,8 @@
         "@id": "node/3908602564",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -4213,6 +6148,8 @@
         "@id": "node/3908602565",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "removable": "yes"
@@ -4232,6 +6169,8 @@
         "@id": "node/3910978057",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "source": "survey"
@@ -4251,6 +6190,8 @@
         "@id": "node/3910978058",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "source": "survey"
@@ -4270,6 +6211,8 @@
         "@id": "node/3911560777",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 30, covered: no",
         "capacity": "30",
         "covered": "no",
         "removable": "yes"
@@ -4289,6 +6232,8 @@
         "@id": "node/3919357570",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "source": "survey"
@@ -4308,6 +6253,8 @@
         "@id": "node/3919357571",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "source": "survey"
@@ -4327,6 +6274,8 @@
         "@id": "node/3940775944",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -4345,6 +6294,8 @@
         "@id": "node/3940775948",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -4363,6 +6314,8 @@
         "@id": "node/3974503345",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -4381,6 +6334,8 @@
         "@id": "node/3984837434",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -4399,6 +6354,8 @@
         "@id": "node/3984837776",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -4417,6 +6374,8 @@
         "@id": "node/4015396676",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -4435,6 +6394,8 @@
         "@id": "node/4015541185",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no"
       },
@@ -4453,6 +6414,8 @@
         "@id": "node/4018793919",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4471,6 +6434,8 @@
         "@id": "node/4020625583",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4489,6 +6454,8 @@
         "@id": "node/4020626707",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4507,6 +6474,8 @@
         "@id": "node/4020626712",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4525,6 +6494,8 @@
         "@id": "node/4020626718",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4543,6 +6514,8 @@
         "@id": "node/4020626722",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 22, covered: no",
         "capacity": "22",
         "covered": "no",
         "fee": "no",
@@ -4563,6 +6536,8 @@
         "@id": "node/4044895124",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -4581,6 +6556,8 @@
         "@id": "node/4044895130",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 22, covered: no",
         "capacity": "22",
         "covered": "no"
       },
@@ -4599,6 +6576,8 @@
         "@id": "node/4044895132",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4618,6 +6597,8 @@
         "access": "customers",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4636,6 +6617,8 @@
         "@id": "node/4050313633",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4654,6 +6637,8 @@
         "@id": "node/4100644366",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4672,6 +6657,8 @@
         "@id": "node/4102810557",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -4690,6 +6677,8 @@
         "@id": "node/4117027919",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no, lit: yes",
         "capacity": "14",
         "covered": "no",
         "fee": "no",
@@ -4711,6 +6700,8 @@
         "@id": "node/4170520307",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -4728,6 +6719,8 @@
       "properties": {
         "@id": "node/4170993463",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "source": "survey"
@@ -4747,6 +6740,8 @@
         "@id": "node/4183373739",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -4765,6 +6760,8 @@
         "@id": "node/4208678375",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "fee": "no",
@@ -4785,6 +6782,8 @@
         "@id": "node/4213516279",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4803,6 +6802,8 @@
         "@id": "node/4231526386",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -4821,6 +6822,8 @@
         "@id": "node/4246383545",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4839,6 +6842,8 @@
         "@id": "node/4246755310",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 4, covered: no, supervised: yes",
         "capacity": "4",
         "covered": "no",
         "fee": "no",
@@ -4859,6 +6864,8 @@
         "@id": "node/4246755312",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 4, covered: no, supervised: yes",
         "capacity": "4",
         "covered": "no",
         "fee": "no",
@@ -4879,6 +6886,8 @@
         "@id": "node/4276557987",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "last_checked": "2018-12",
@@ -4899,6 +6908,8 @@
         "@id": "node/4289584087",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4917,6 +6928,8 @@
         "@id": "node/4289584370",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -4935,6 +6948,8 @@
         "@id": "node/4314482366",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4953,6 +6968,8 @@
         "@id": "node/4314482396",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -4971,6 +6988,8 @@
         "@id": "node/4316522286",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -4989,6 +7008,8 @@
         "@id": "node/4316522368",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5007,6 +7028,8 @@
         "@id": "node/4317598015",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -5025,6 +7048,8 @@
         "@id": "node/4317598045",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -5043,6 +7068,8 @@
         "@id": "node/4317598050",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -5061,6 +7088,8 @@
         "@id": "node/4317598054",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -5079,6 +7108,8 @@
         "@id": "node/4326060982",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no",
         "source": "extrapolation"
@@ -5098,6 +7129,8 @@
         "@id": "node/4327805188",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5116,6 +7149,8 @@
         "@id": "node/4331333733",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5134,6 +7169,8 @@
         "@id": "node/4331333734",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -5152,6 +7189,8 @@
         "@id": "node/4333903590",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5170,6 +7209,8 @@
         "@id": "node/4342633014",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5187,6 +7228,8 @@
         "@id": "node/4342633020",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5204,6 +7247,8 @@
         "@id": "node/4342652816",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5221,6 +7266,8 @@
         "@id": "node/4343666585",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5238,6 +7285,8 @@
         "@id": "node/4343670894",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5255,6 +7304,8 @@
         "@id": "node/4343670899",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5272,6 +7323,8 @@
         "@id": "node/4343670901",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5289,6 +7342,8 @@
         "@id": "node/4343730584",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5306,6 +7361,8 @@
         "@id": "node/4352885473",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -5324,6 +7381,8 @@
         "@id": "node/4353327834",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "fee": "no"
@@ -5343,6 +7402,8 @@
         "@id": "node/4354342760",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -5361,6 +7422,8 @@
         "@id": "node/4368422434",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "source": "extrapolate; survey"
@@ -5380,6 +7443,8 @@
         "@id": "node/4369728674",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -5398,6 +7463,8 @@
         "@id": "node/4369728678",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -5416,6 +7483,8 @@
         "@id": "node/4369728993",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5434,6 +7503,8 @@
         "@id": "node/4388716715",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -5452,6 +7523,8 @@
         "@id": "node/4394708500",
         "amenity": "bicycle_parking",
         "bicycle_parking": "lockers",
+        "name": "Bike lockers",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5469,6 +7542,8 @@
         "@id": "node/4394708502",
         "amenity": "bicycle_parking",
         "bicycle_parking": "lockers",
+        "name": "Bike lockers",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5486,6 +7561,8 @@
         "@id": "node/4394708509",
         "amenity": "bicycle_parking",
         "bicycle_parking": "lockers",
+        "name": "Bike lockers",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5503,6 +7580,8 @@
         "@id": "node/4394708511",
         "amenity": "bicycle_parking",
         "bicycle_parking": "lockers",
+        "name": "Bike lockers",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5520,6 +7599,8 @@
         "@id": "node/4394708563",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5538,6 +7619,8 @@
         "@id": "node/4394708566",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5556,6 +7639,8 @@
         "@id": "node/4394708568",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5574,6 +7659,8 @@
         "@id": "node/4394708571",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5592,6 +7679,8 @@
         "@id": "node/4394708572",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -5610,6 +7699,8 @@
         "@id": "node/4412089125",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no",
         "fee": "no",
@@ -5630,6 +7721,8 @@
         "@id": "node/4412089126",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "fee": "no",
@@ -5650,6 +7743,8 @@
         "@id": "node/4412089298",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no",
         "source": "survey"
@@ -5669,6 +7764,8 @@
         "@id": "node/4412089302",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "fee": "no"
@@ -5688,6 +7785,8 @@
         "@id": "node/4412089303",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "fee": "no",
@@ -5708,6 +7807,8 @@
         "@id": "node/4418159792",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5726,6 +7827,8 @@
         "@id": "node/4418159799",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -5744,6 +7847,8 @@
         "@id": "node/4420783833",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5762,6 +7867,8 @@
         "@id": "node/4423517658",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -5780,6 +7887,8 @@
         "@id": "node/4423599123",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -5798,6 +7907,8 @@
         "@id": "node/4423936180",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -5816,6 +7927,8 @@
         "@id": "node/4432863903",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -5834,6 +7947,8 @@
         "@id": "node/4435067160",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -5852,6 +7967,8 @@
         "@id": "node/4436151814",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -5870,6 +7987,8 @@
         "@id": "node/4450615417",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no",
         "source": "survey"
@@ -5889,6 +8008,8 @@
         "@id": "node/4566767820",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 72, covered: no, lit: yes",
         "capacity": "72",
         "covered": "no",
         "lit": "yes",
@@ -5909,6 +8030,8 @@
         "@id": "node/4589481198",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -5927,6 +8050,8 @@
         "@id": "node/4621960801",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no, lit: yes",
         "capacity": "18",
         "covered": "no",
         "lit": "yes"
@@ -5946,6 +8071,8 @@
         "@id": "node/4621960817",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5963,6 +8090,8 @@
         "@id": "node/4621960818",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -5981,6 +8110,8 @@
         "@id": "node/4621960819",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -5998,6 +8129,8 @@
         "@id": "node/4621960822",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no, lit: yes",
         "capacity": "10",
         "covered": "no",
         "fee": "no",
@@ -6019,6 +8152,8 @@
         "@id": "node/4657376213",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no",
         "source": "estimate; extrapolate; survey"
@@ -6038,6 +8173,8 @@
         "@id": "node/4719187741",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6056,6 +8193,8 @@
         "@id": "node/4730694637",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "lit": "no",
@@ -6076,6 +8215,8 @@
         "@id": "node/4732792595",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6094,6 +8235,8 @@
         "@id": "node/4732792598",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6112,6 +8255,8 @@
         "@id": "node/4791811359",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -6130,6 +8275,8 @@
         "@id": "node/4799212050",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -6148,6 +8295,8 @@
         "@id": "node/4933902677",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no, lit: yes",
         "capacity": "10",
         "covered": "no",
         "lit": "yes"
@@ -6167,6 +8316,8 @@
         "@id": "node/4933902678",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no, lit: yes",
         "capacity": "12",
         "covered": "no",
         "lit": "yes"
@@ -6186,6 +8337,8 @@
         "@id": "node/4958250539",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6204,6 +8357,8 @@
         "@id": "node/4958250540",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6222,6 +8377,8 @@
         "@id": "node/4958250543",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6240,6 +8397,8 @@
         "@id": "node/4958314381",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6258,6 +8417,8 @@
         "@id": "node/4958322938",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6276,6 +8437,8 @@
         "@id": "node/4958322956",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6294,6 +8457,8 @@
         "@id": "node/4958322977",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6312,6 +8477,8 @@
         "@id": "node/4958322979",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -6330,6 +8497,8 @@
         "@id": "node/4958322985",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6348,6 +8517,8 @@
         "@id": "node/4958322995",
         "amenity": "bicycle_parking",
         "bicycle_parking": "bollard",
+        "name": "Bike bollards",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no"
       },
@@ -6366,6 +8537,8 @@
         "@id": "node/5033337721",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6384,6 +8557,8 @@
         "@id": "node/5122810592",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -6401,6 +8576,8 @@
         "@id": "node/5122861704",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -6418,6 +8595,8 @@
         "@id": "node/5124384350",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -6436,6 +8615,8 @@
         "@id": "node/5126746117",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -6454,6 +8635,8 @@
         "@id": "node/5185688827",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -6472,6 +8655,8 @@
         "@id": "node/5185688828",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -6490,6 +8675,8 @@
         "@id": "node/5185688829",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6508,6 +8695,8 @@
         "@id": "node/5281346799",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 22, covered: no",
         "capacity": "22",
         "covered": "no"
       },
@@ -6526,6 +8715,8 @@
         "@id": "node/5292576050",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -6544,6 +8735,8 @@
         "@id": "node/5292576061",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -6562,6 +8755,8 @@
         "@id": "node/5292576064",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -6580,6 +8775,8 @@
         "@id": "node/5293343278",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6598,6 +8795,8 @@
         "@id": "node/5293343279",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -6616,6 +8815,8 @@
         "@id": "node/5293343280",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -6634,6 +8835,8 @@
         "@id": "node/5293343281",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -6652,6 +8855,8 @@
         "@id": "node/5302298895",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6670,6 +8875,8 @@
         "@id": "node/5316250794",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -6688,6 +8895,8 @@
         "@id": "node/5355386243",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6706,6 +8915,8 @@
         "@id": "node/5355452157",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -6724,6 +8935,8 @@
         "@id": "node/5395229083",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -6741,6 +8954,8 @@
         "@id": "node/5418226274",
         "access": "customers",
         "amenity": "bicycle_parking",
+        "name": "Bike parking - Media Markt",
+        "address": "covered: no, lit: yes",
         "covered": "no",
         "lit": "yes",
         "operator": "Media Markt"
@@ -6760,6 +8975,8 @@
         "@id": "node/5445829804",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -6778,6 +8995,8 @@
         "@id": "node/5458422863",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -6796,6 +9015,8 @@
         "@id": "node/5470433240",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "source": "estimate; extrapolate; survey"
@@ -6815,6 +9036,8 @@
         "@id": "node/5470433244",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -6833,6 +9056,8 @@
         "@id": "node/5476213308",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no",
         "source": "survey"
@@ -6852,6 +9077,8 @@
         "@id": "node/5476213309",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no",
         "source": "survey"
@@ -6871,6 +9098,8 @@
         "@id": "node/5477950315",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -6889,6 +9118,8 @@
         "@id": "node/5477954717",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6907,6 +9138,8 @@
         "@id": "node/5485070924",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -6925,6 +9158,8 @@
         "@id": "node/5514148103",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -6943,6 +9178,8 @@
         "@id": "node/5523571293",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -6961,6 +9198,8 @@
         "@id": "node/5525756547",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -6979,6 +9218,8 @@
         "@id": "node/5530182353",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 30, covered: no",
         "capacity": "30",
         "covered": "no"
       },
@@ -6997,6 +9238,8 @@
         "@id": "node/5530580669",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -7015,6 +9258,8 @@
         "@id": "node/5530580679",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no, lit: yes",
         "capacity": "10",
         "covered": "no",
         "lit": "yes"
@@ -7034,6 +9279,8 @@
         "@id": "node/5532027102",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7052,6 +9299,8 @@
         "@id": "node/5541289921",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7070,6 +9319,8 @@
         "@id": "node/5542867147",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no",
         "fee": "no"
@@ -7089,6 +9340,8 @@
         "@id": "node/5542867156",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7107,6 +9360,8 @@
         "@id": "node/5547503793",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -7125,6 +9380,8 @@
         "@id": "node/5548131061",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7143,6 +9400,8 @@
         "@id": "node/5558990179",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -7161,6 +9420,8 @@
         "@id": "node/5561756578",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7179,6 +9440,8 @@
         "@id": "node/5564291067",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7197,6 +9460,8 @@
         "@id": "node/5564346317",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7215,6 +9480,8 @@
         "@id": "node/5564440758",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7233,6 +9500,8 @@
         "@id": "node/5564684440",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7251,6 +9520,8 @@
         "@id": "node/5564702368",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7269,6 +9540,8 @@
         "@id": "node/5564876118",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7287,6 +9560,8 @@
         "@id": "node/5564876119",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7305,6 +9580,8 @@
         "@id": "node/5565217394",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no",
         "fee": "no"
@@ -7324,6 +9601,8 @@
         "@id": "node/5565217395",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no",
         "fee": "no"
@@ -7343,6 +9622,8 @@
         "@id": "node/5565882287",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7361,6 +9642,8 @@
         "@id": "node/5573570513",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -7379,6 +9662,8 @@
         "@id": "node/5576231905",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7397,6 +9682,8 @@
         "@id": "node/5576231906",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7415,6 +9702,8 @@
         "@id": "node/5576324938",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7433,6 +9722,8 @@
         "@id": "node/5576324940",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7451,6 +9742,8 @@
         "@id": "node/5604330825",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7469,6 +9762,8 @@
         "@id": "node/5604330826",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7487,6 +9782,8 @@
         "@id": "node/5604662635",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7505,6 +9802,8 @@
         "@id": "node/5614686443",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7523,6 +9822,8 @@
         "@id": "node/5633032618",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7541,6 +9842,8 @@
         "@id": "node/5654062768",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -7559,6 +9862,8 @@
         "@id": "node/5693555398",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -7577,6 +9882,8 @@
         "@id": "node/5698614550",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7595,6 +9902,8 @@
         "@id": "node/5698614551",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7613,6 +9922,8 @@
         "@id": "node/5707473525",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7631,6 +9942,8 @@
         "@id": "node/5710560591",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7649,6 +9962,8 @@
         "@id": "node/5710599962",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -7667,6 +9982,8 @@
         "@id": "node/5710599963",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7685,6 +10002,8 @@
         "@id": "node/5712300446",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -7703,6 +10022,8 @@
         "@id": "node/5712300447",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -7721,6 +10042,8 @@
         "@id": "node/5712300450",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -7739,6 +10062,8 @@
         "@id": "node/5712320587",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7757,6 +10082,8 @@
         "@id": "node/5716767504",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -7775,6 +10102,8 @@
         "@id": "node/5716767506",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7793,6 +10122,8 @@
         "@id": "node/5717928509",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -7811,6 +10142,8 @@
         "@id": "node/5720547451",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7829,6 +10162,8 @@
         "@id": "node/5722165459",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7847,6 +10182,8 @@
         "@id": "node/5725830535",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 24, covered: no",
         "capacity": "24",
         "covered": "no"
       },
@@ -7865,6 +10202,8 @@
         "@id": "node/5731902516",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -7883,6 +10222,8 @@
         "@id": "node/5734640917",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -7901,6 +10242,8 @@
         "@id": "node/5734792797",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7919,6 +10262,8 @@
         "@id": "node/5734792798",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7937,6 +10282,8 @@
         "@id": "node/5734792799",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -7955,6 +10302,8 @@
         "@id": "node/5747089051",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -7973,6 +10322,8 @@
         "@id": "node/5797841925",
         "access": "yes",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -7991,6 +10342,8 @@
         "@id": "node/5797841926",
         "access": "yes",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -8009,6 +10362,8 @@
         "@id": "node/5806948160",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -8026,6 +10381,8 @@
         "@id": "node/5814382669",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -8044,6 +10401,8 @@
         "@id": "node/5814382671",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -8062,6 +10421,8 @@
         "@id": "node/5815638578",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -8080,6 +10441,8 @@
         "@id": "node/5817651361",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -8098,6 +10461,8 @@
         "@id": "node/5818255350",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8116,6 +10481,8 @@
         "@id": "node/5818395086",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -8134,6 +10501,8 @@
         "@id": "node/5828748277",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8152,6 +10521,8 @@
         "@id": "node/5846736830",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 36, covered: no",
         "capacity": "36",
         "covered": "no"
       },
@@ -8170,6 +10541,8 @@
         "@id": "node/5849925419",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -8188,6 +10561,8 @@
         "@id": "node/5850770740",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: no, lit: yes",
         "capacity": "40",
         "covered": "no",
         "lit": "yes"
@@ -8207,6 +10582,8 @@
         "@id": "node/5857145145",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8225,6 +10602,8 @@
         "@id": "node/5865994583",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8243,6 +10622,8 @@
         "@id": "node/5865994584",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8261,6 +10642,8 @@
         "@id": "node/5865994685",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8279,6 +10662,8 @@
         "@id": "node/5865994686",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8297,6 +10682,8 @@
         "@id": "node/5865994687",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8315,6 +10702,8 @@
         "@id": "node/5865994688",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8333,6 +10722,8 @@
         "@id": "node/5865994689",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8351,6 +10742,8 @@
         "@id": "node/5865994690",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8369,6 +10762,8 @@
         "@id": "node/5865994691",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8387,6 +10782,8 @@
         "@id": "node/5865994697",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8405,6 +10802,8 @@
         "@id": "node/5875616132",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 42, covered: no",
         "capacity": "42",
         "covered": "no",
         "lit": "yes"
@@ -8424,6 +10823,8 @@
         "@id": "node/5875616138",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 45, covered: no, lit: yes",
         "capacity": "45",
         "covered": "no",
         "lit": "yes"
@@ -8443,6 +10844,8 @@
         "@id": "node/5875616144",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 30, covered: no, lit: yes",
         "capacity": "30",
         "covered": "no",
         "lit": "yes"
@@ -8462,6 +10865,8 @@
         "@id": "node/5875616146",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "covered: no, lit: yes",
         "covered": "no",
         "lit": "yes"
       },
@@ -8480,6 +10885,8 @@
         "@id": "node/5875616148",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 60, covered: no, lit: yes",
         "capacity": "60",
         "covered": "no",
         "lit": "yes"
@@ -8499,6 +10906,8 @@
         "@id": "node/5895077253",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8517,6 +10926,8 @@
         "@id": "node/5896114836",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -8535,6 +10946,8 @@
         "@id": "node/5896677018",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8553,6 +10966,8 @@
         "@id": "node/5897509041",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -8571,6 +10986,8 @@
         "@id": "node/5897516282",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8589,6 +11006,8 @@
         "@id": "node/5897516283",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8607,6 +11026,8 @@
         "@id": "node/5901746032",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -8625,6 +11046,8 @@
         "@id": "node/5901746033",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -8643,6 +11066,8 @@
         "@id": "node/5901746034",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -8661,6 +11086,8 @@
         "@id": "node/5901746035",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -8679,6 +11106,8 @@
         "@id": "node/5901746036",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -8697,6 +11126,8 @@
         "@id": "node/5901746037",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 2, covered: no",
         "capacity": "2",
         "covered": "no"
       },
@@ -8715,6 +11146,8 @@
         "@id": "node/5904883189",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8733,6 +11166,8 @@
         "@id": "node/5904915994",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -8751,6 +11186,8 @@
         "@id": "node/5904915999",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -8769,6 +11206,8 @@
         "@id": "node/5904975710",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8787,6 +11226,8 @@
         "@id": "node/5940920804",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -8805,6 +11246,8 @@
         "@id": "node/5953031549",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 16, covered: no",
         "capacity": "16",
         "covered": "no"
       },
@@ -8823,6 +11266,8 @@
         "@id": "node/5953133968",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -8841,6 +11286,8 @@
         "@id": "node/5953230650",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -8859,6 +11306,8 @@
         "@id": "node/5953237160",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 20, covered: no",
         "capacity": "20",
         "covered": "no"
       },
@@ -8877,6 +11326,8 @@
         "@id": "node/5953985208",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -8895,6 +11346,8 @@
         "@id": "node/5954012341",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8913,6 +11366,8 @@
         "@id": "node/5954273167",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -8931,6 +11386,8 @@
         "@id": "node/5954273168",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -8949,6 +11406,8 @@
         "@id": "node/5971848189",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8967,6 +11426,8 @@
         "@id": "node/5992895685",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -8985,6 +11446,8 @@
         "@id": "node/5993074128",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -9003,6 +11466,8 @@
         "@id": "node/6002080034",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -9022,6 +11487,8 @@
         "access": "yes",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 5, covered: no",
         "capacity": "5",
         "covered": "no",
         "fee": "no",
@@ -9046,6 +11513,8 @@
         "@id": "node/6054170134",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands - Musikschule Eberhard",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "operator": "Musikschule Eberhard"
@@ -9065,6 +11534,8 @@
         "@id": "node/6116371779",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -9083,6 +11554,8 @@
         "@id": "node/6119363332",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -9101,6 +11574,8 @@
         "@id": "node/6119363333",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -9119,6 +11594,8 @@
         "@id": "node/6119363334",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -9137,6 +11614,8 @@
         "@id": "node/6119363335",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -9155,6 +11634,8 @@
         "@id": "node/6119363336",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -9173,6 +11654,8 @@
         "@id": "node/6153050848",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "covered": "no",
         "note": "zwei Fahrradständer stehen relativ nah beieinander"
       },
@@ -9191,6 +11674,8 @@
         "@id": "node/6153050853",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no",
         "source": "estimate; extrapolate; survey"
@@ -9210,6 +11695,8 @@
         "@id": "node/6153056587",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no",
         "source": "estimate; extrapolate; survey"
@@ -9229,6 +11716,8 @@
         "@id": "node/6153056589",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "source": "estimate; extrapolate; survey"
@@ -9248,6 +11737,8 @@
         "@id": "node/6224325596",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no",
         "source": "estimate; extrapolate; survey"
@@ -9267,6 +11758,8 @@
         "@id": "node/6268141025",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -9285,6 +11778,8 @@
         "@id": "node/6268141032",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no"
       },
       "geometry": {
@@ -9302,6 +11797,8 @@
         "@id": "node/6306130251",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -9320,6 +11817,8 @@
         "@id": "node/6307891005",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no"
       },
@@ -9338,6 +11837,8 @@
         "@id": "node/6357626846",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no"
       },
@@ -9356,6 +11857,8 @@
         "@id": "node/6357731285",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 8, covered: no",
         "capacity": "8",
         "covered": "no",
         "fee": "no",
@@ -9376,6 +11879,8 @@
         "@id": "node/6491995434",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no",
         "covered": "no",
         "source": "estimate; extrapolate; survey",
         "start_date": "2019-05"
@@ -9396,6 +11901,8 @@
         "access": "yes",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no, lit: yes",
         "capacity": "4",
         "covered": "no",
         "fee": "no",
@@ -9418,6 +11925,8 @@
         "@id": "node/6528307044",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no, lit: yes",
         "covered": "no",
         "lit": "yes",
         "source": "estimate; extrapolate; survey"
@@ -9437,6 +11946,8 @@
         "@id": "node/6532893085",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: no",
         "capacity": "40",
         "covered": "no",
         "source": "estimate; extrapolate; survey",
@@ -9457,6 +11968,8 @@
         "@id": "node/6548372747",
         "amenity": "bicycle_parking",
         "bicycle_parking": "wall_loops",
+        "name": "Bike wall loops",
+        "address": "capacity: 9, covered: no",
         "capacity": "9",
         "covered": "no",
         "source": "estimate; extrapolate; survey"
@@ -9476,6 +11989,8 @@
         "@id": "node/6582564828",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 6, covered: no",
         "capacity": "6",
         "covered": "no",
         "supervised": "no"
@@ -9495,6 +12010,8 @@
         "@id": "node/6585969364",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 40, covered: no",
         "capacity": "40",
         "covered": "no"
       },
@@ -9513,6 +12030,8 @@
         "@id": "node/6585969372",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 4, covered: no",
         "capacity": "4",
         "covered": "no"
       },
@@ -9531,6 +12050,8 @@
         "@id": "node/6586850246",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 18, covered: no",
         "capacity": "18",
         "covered": "no"
       },
@@ -9549,6 +12070,8 @@
         "@id": "node/6588226663",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -9567,6 +12090,8 @@
         "@id": "node/6594772154",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 14, covered: no",
         "capacity": "14",
         "covered": "no"
       },
@@ -9585,6 +12110,8 @@
         "@id": "node/6600861532",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "capacity: 22, covered: no",
         "capacity": "22",
         "covered": "no"
       },
@@ -9603,6 +12130,8 @@
         "@id": "node/6600861540",
         "access": "yes",
         "amenity": "bicycle_parking",
+        "name": "Bike stands",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -9621,6 +12150,8 @@
         "@id": "node/6637377735",
         "access": "yes",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 10, covered: no",
         "capacity": "10",
         "covered": "no"
       },
@@ -9639,6 +12170,8 @@
         "@id": "node/6637377736",
         "access": "yes",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -9657,6 +12190,8 @@
         "@id": "node/6637377737",
         "access": "yes",
         "amenity": "bicycle_parking",
+        "name": "Bike parking",
+        "address": "capacity: 12, covered: no",
         "capacity": "12",
         "covered": "no"
       },
@@ -9675,6 +12210,8 @@
         "@id": "node/6670774473",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
+        "name": "Bike stands",
+        "address": "covered: no, lit: yes",
         "covered": "no",
         "lit": "yes"
       },

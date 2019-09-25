@@ -9,7 +9,8 @@
       "properties": {
         "@id": "node/280408306",
         "amenity": "car_sharing",
-        "operator": "stadtmobil"
+        "operator": "stadtmobil",
+        "name": "Car sharing - stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -27,7 +28,8 @@
         "amenity": "car_sharing",
         "capacity": "2",
         "name": "Hoppenlau-Schule",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 2"
       },
       "geometry": {
         "type": "Point",
@@ -44,7 +46,8 @@
         "@id": "node/280828357",
         "amenity": "car_sharing",
         "operator": "Stadtmobil Stuttgart",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -78,7 +81,9 @@
         "@id": "node/497002112",
         "amenity": "car_sharing",
         "capacity": "2",
-        "operator": "stadtmobil carsharing AG"
+        "operator": "stadtmobil carsharing AG",
+        "name": "Car sharing - stadtmobil carsharing AG",
+        "address": "capacity: 2"
       },
       "geometry": {
         "type": "Point",
@@ -96,7 +101,8 @@
         "amenity": "car_sharing",
         "capacity": "2",
         "name": "Azenberstraße",
-        "operator": "Stadtmobil"
+        "operator": "Stadtmobil",
+        "address": "capacity: 2"
       },
       "geometry": {
         "type": "Point",
@@ -115,7 +121,8 @@
         "capacity": "1",
         "name": "Paul-Gerhardt-Kirche",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -136,7 +143,8 @@
         "network": "Flinkster",
         "operator": "Flinkster",
         "ref": "Straus1",
-        "wheelchair": "limited"
+        "wheelchair": "limited",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -157,7 +165,8 @@
         "network": "Flinkster",
         "operator": "Flinkster",
         "ref": "Straus2",
-        "wheelchair": "limited"
+        "wheelchair": "limited",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -177,7 +186,8 @@
         "name": "Vaihingen Bahnhof",
         "network": "Flinkster",
         "operator": "Flinkster",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 1, wheelchair: yes"
       },
       "geometry": {
         "type": "Point",
@@ -195,7 +205,9 @@
         "amenity": "car_sharing",
         "capacity": "2",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 2",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -213,7 +225,9 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -233,7 +247,8 @@
         "name": "stadtmobil carsharing AG",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://stuttgart.stadtmobil.de/",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 1, wheelchair: yes"
       },
       "geometry": {
         "type": "Point",
@@ -254,7 +269,8 @@
         "name": "stadtmobil carsharing AG",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://stuttgart.stadtmobil.de/",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "address": "capacity: 2, layer: -1"
       },
       "geometry": {
         "type": "Point",
@@ -276,7 +292,8 @@
         "capacity": "7",
         "name": "stadtmobil",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 7"
       },
       "geometry": {
         "type": "Point",
@@ -294,7 +311,9 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -312,7 +331,9 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -330,7 +351,9 @@
         "amenity": "car_sharing",
         "capacity": "3",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 3",
+        "name": "Car sharing  Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -348,7 +371,9 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -368,7 +393,9 @@
         "layer": "-1",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://stuttgart.stadtmobil.de/",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "address": "capacity: 2, layer: -1",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -387,7 +414,9 @@
         "capacity": "1",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://stuttgart.stadtmobil.de/",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 1, wheelchair: yes",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -406,7 +435,9 @@
         "capacity": "2",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 2",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -445,7 +476,8 @@
         "note": "The safe that contains the keys for the cars on the adjacent parking slot is located at this node",
         "opening_hours": "24/7",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 16"
       },
       "geometry": {
         "type": "Point",
@@ -464,7 +496,8 @@
         "capacity": "1",
         "name": "Russische Kirche",
         "operator": "Stadtmobil Stuttgart",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -482,7 +515,8 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "name": "Hoppenlaustraße",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -500,7 +534,8 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "name": "Ecke Schwab/Senefelderstraße",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -518,7 +553,8 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "name": "Schwarzwaldstraße Stuttgart",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -535,7 +571,8 @@
         "@id": "node/1913151069",
         "amenity": "car_sharing",
         "capacity": "1",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -554,7 +591,9 @@
         "capacity": "2",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://www.stadtmobil.de",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 2, wheelchair: yes",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -572,7 +611,9 @@
         "amenity": "car_sharing",
         "capacity": "4",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://www.stadtmobil.de/"
+        "website": "https://www.stadtmobil.de/",
+        "address": "capacity: 4",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -606,7 +647,8 @@
       "properties": {
         "@id": "node/2354959634",
         "amenity": "car_sharing",
-        "operator": "Stadtmobil"
+        "operator": "Stadtmobil",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -622,7 +664,8 @@
       "properties": {
         "@id": "node/2354962177",
         "amenity": "car_sharing",
-        "operator": "Stadtmobil"
+        "operator": "Stadtmobil",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -638,7 +681,8 @@
       "properties": {
         "@id": "node/2354963165",
         "amenity": "car_sharing",
-        "operator": "Stadtmobil"
+        "operator": "Stadtmobil",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -656,7 +700,8 @@
         "amenity": "car_sharing",
         "capacity": "3",
         "name": "Stadtmobil Roßbollengässle (Tiefgarage)",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 3"
       },
       "geometry": {
         "type": "Point",
@@ -674,7 +719,9 @@
         "amenity": "car_sharing",
         "capacity": "4",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 4",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -693,7 +740,8 @@
         "capacity": "1",
         "name": "Engelboldstraße",
         "opening_hours": "24/7",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -710,7 +758,9 @@
         "@id": "node/3349960295",
         "amenity": "car_sharing",
         "capacity": "2",
-        "operator": "Car2go"
+        "operator": "Car2go",
+        "address": "capacity: 2",
+        "name": "Car sharing - Car2go"
       },
       "geometry": {
         "type": "Point",
@@ -727,7 +777,9 @@
         "@id": "node/3350002193",
         "amenity": "car_sharing",
         "capacity": "disabled",
-        "operator": "Stadtmobil"
+        "operator": "Stadtmobil",
+        "address": "capacity: disabled",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -750,7 +802,8 @@
         "name": "stadtmobil",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://stuttgart.stadtmobil.de/",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 1, wheelchair: yes"
       },
       "geometry": {
         "type": "Point",
@@ -772,7 +825,8 @@
         "capacity": "1",
         "name": "stadtmobil",
         "operator": "Stadtmobil Stuttgarrt",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -791,7 +845,9 @@
         "brand": "Stadtmobil",
         "capacity": "2",
         "operator": "Stadtmobil",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 2, wheelchair: yes",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -811,7 +867,8 @@
         "name": "stadtmobil carsharing AG",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://stuttgart.stadtmobil.de",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "address": "layer: -1"
       },
       "geometry": {
         "type": "Point",
@@ -828,7 +885,8 @@
         "@id": "node/3618349523",
         "amenity": "car_sharing",
         "operator": "Stadtmobil",
-        "source": "estimate; survey"
+        "source": "estimate; survey",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -849,7 +907,9 @@
         "contact:website": "https://www.car2go.com/DE/en/stuttgart/",
         "fee": "no",
         "network": "car2go Stuttgart",
-        "operator": "car2go Group GmbH"
+        "operator": "car2go Group GmbH",
+        "address": "fee: no, access: customers",
+        "name": "Car sharing - car2go Group GmbH"
       },
       "geometry": {
         "type": "Point",
@@ -870,7 +930,8 @@
         "name": "car2go black parkspot",
         "network": "car2go",
         "operator": "car2go black",
-        "website": "https://car2goblack.com/"
+        "website": "https://car2goblack.com/",
+        "address": "fee: no, access: customers"
       },
       "geometry": {
         "type": "Point",
@@ -891,7 +952,8 @@
         "name": "car2go black parkspot",
         "network": "car2go",
         "operator": "car2go black",
-        "website": "https://car2goblack.com/"
+        "website": "https://car2goblack.com/",
+        "address": "fee: no, access: customers"
       },
       "geometry": {
         "type": "Point",
@@ -912,7 +974,8 @@
         "name": "car2go black parkspot",
         "network": "car2go",
         "operator": "car2go black",
-        "website": "https://car2goblack.com/"
+        "website": "https://car2goblack.com/",
+        "address": "fee: no, access: customers"
       },
       "geometry": {
         "type": "Point",
@@ -929,7 +992,9 @@
         "@id": "node/4021171943",
         "amenity": "car_sharing",
         "capacity": "10",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "capacity: 10",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -948,7 +1013,9 @@
         "capacity": "4",
         "operator": "Car2go",
         "toilets:wheelchair": "no",
-        "wheelchair": "limited"
+        "wheelchair": "limited",
+        "address": "capacity: 4, wheelchair: limited",
+        "name": "Car sharing - Car2go"
       },
       "geometry": {
         "type": "Point",
@@ -966,7 +1033,9 @@
         "amenity": "car_sharing",
         "capacity": "2",
         "operator": "Stadtmobil",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 2, wheelchair: yes",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -985,7 +1054,8 @@
         "name": "Stadtmobil Carsharing AG",
         "operator": "Stadtmobil Stuttgart",
         "website": "https://stuttgart.stadtmobil.de/",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "wheelchair: yes"
       },
       "geometry": {
         "type": "Point",
@@ -1002,7 +1072,8 @@
         "@id": "node/5104557791",
         "amenity": "car_sharing",
         "brand": "Flinkster",
-        "capacity": "4"
+        "capacity": "4",
+        "name": "Car sharing - Flinkster"
       },
       "geometry": {
         "type": "Point",
@@ -1019,7 +1090,9 @@
         "@id": "node/5178103956",
         "amenity": "car_sharing",
         "opening_hours": "24/7",
-        "operator": "Stadtmobil Stuttgart"
+        "operator": "Stadtmobil Stuttgart",
+        "address": "opening hours: 24/7",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -1042,7 +1115,9 @@
         "operator": "Stadtmobil",
         "phone": "+49 71194543636",
         "website": "https://stuttgart.stadtmobil.de/privatkunden/stationen/station/rot-fuerfelder-strasse/",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "address": "capacity: 2, wheelchair: yes, phone: +49 71194543636"
+
       },
       "geometry": {
         "type": "Point",
@@ -1061,7 +1136,9 @@
         "capacity": "3",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 3",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1080,7 +1157,8 @@
         "capacity": "3",
         "name": "Ford Carsharing",
         "operator": "Schwabengarage GmbH",
-        "url": "https://www.ford-carsharing.de/"
+        "url": "https://www.ford-carsharing.de/",
+        "address": "capacity: 3"
       },
       "geometry": {
         "type": "Point",
@@ -1098,7 +1176,9 @@
         "amenity": "car_sharing",
         "capacity": "2",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 2",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1116,7 +1196,9 @@
         "amenity": "car_sharing",
         "brand": "stadtmobil",
         "capacity": "5",
-        "source": "estimate; extrapolate; survey"
+        "source": "estimate; extrapolate; survey",
+        "address": "capacity: 5",
+        "name": "Car sharing - stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1135,7 +1217,9 @@
         "capacity": "2",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 2",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1154,7 +1238,9 @@
         "capacity": "2",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 2",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1173,7 +1259,9 @@
         "capacity": "1",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1192,7 +1280,9 @@
         "capacity": "3",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 3",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1211,7 +1301,9 @@
         "capacity": "1",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 1",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1229,7 +1321,8 @@
         "amenity": "car_sharing",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1248,7 +1341,8 @@
         "capacity": "2",
         "name": "Flinkster",
         "source": "estimate; extrapolate; survey",
-        "start_date": "2018-08"
+        "start_date": "2018-08",
+        "address": "capacity: 2"
       },
       "geometry": {
         "type": "Point",
@@ -1267,7 +1361,9 @@
         "capacity": "2",
         "network": "Stadtmobil",
         "operator": "Stadtmobil",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "address": "capacity: 2",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1282,7 +1378,8 @@
       "type": "Feature",
       "properties": {
         "@id": "node/6399018923",
-        "amenity": "car_sharing"
+        "amenity": "car_sharing",
+        "name": "Car sharing"
       },
       "geometry": {
         "type": "Point",
@@ -1300,7 +1397,8 @@
         "amenity": "car_sharing",
         "capacity": "1",
         "name": "Stadtmobil",
-        "source": "estimate; extrapolate; survey"
+        "source": "estimate; extrapolate; survey",
+        "address": "capacity: 1"
       },
       "geometry": {
         "type": "Point",
@@ -1317,7 +1415,8 @@
         "@id": "node/6597493518",
         "amenity": "car_sharing",
         "operator": "Stadtmobil Stuttgart",
-        "website": "https://stuttgart.stadtmobil.de/"
+        "website": "https://stuttgart.stadtmobil.de/",
+        "name": "Car sharing - Stadtmobil Stuttgart"
       },
       "geometry": {
         "type": "Point",
@@ -1335,7 +1434,9 @@
         "amenity": "car_sharing",
         "brand": "Stadtmobil",
         "capacity": "5",
-        "source": "estimate; extrapolate; survey"
+        "source": "estimate; extrapolate; survey",
+        "address": "capacity: 5",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",
@@ -1358,8 +1459,9 @@
         "brand": "stadtmobil",
         "brand:wikidata": "Q2327629",
         "brand:wikipedia": "en:Stadtmobil",
-        "name": "stadtmobil",
-        "operator": "stadtmobil"
+        "operator": "stadtmobil",
+        "address": "Eckartstraße 4a",
+        "name": "Car sharing - Stadtmobil"
       },
       "geometry": {
         "type": "Point",

@@ -11,9 +11,10 @@
         "coordinates": [9.1602466, 48.7715682]
       },
       "properties": {
-        "name_en": "ADFC Selfrepairstation",
+        "name_en": "Bike repair station - ADFC Selbsthilfewerkstatt",
         "name_de": "ADFC Selbsthilfewerkstatt",
-        "address": "opening hours: Th 17:30-20:00",
+        "address_en": "opening hours: Th 17:30-20:00",
+        "address_de": "Do 17:30-20:00",
         "opening_hours": "Th 17:30-20:00",
         "service:bicycle:chaintool": "yes",
         "service:bicycle:pump": "yes",

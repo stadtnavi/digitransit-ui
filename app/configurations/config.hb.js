@@ -187,42 +187,47 @@ export default {
       {
         name: {
           en: 'Taxi stands',
-          de: 'Taxi',
+          de: 'Taxistands',
         },
         url: '/assets/geojson/Point/stuttgart_taxi_point_20190925.geojson',
       },
       // bike parks in Stuttgart and Herrenberg --yes-no-cover
       {
         name: {
-          en: 'Bike parks',
+          en: 'Bicycle parks',
+          de: 'Fahrradparks',
         },
         url: '/assets/geojson/Point/stuttgart_bikeParks_point_20190925.geojson',
       },
       // bike repair stations in Stuttgart
       {
         name: {
-          en: 'Bike repair stations',
+          en: 'Bicycle repair stations',
+          de: 'Fahrradreparaturstationen',
         },
         url: '/assets/geojson/Point/Stuttgart_bike_repair_station_20190923.geojson',
       },
       // bike shops in Stuttgart
       {
         name: {
-          en: 'Bike shops',
+          en: 'Bicycle shops',
+          de: 'Fahrradgeschäfte',
         },
         url: '/assets/geojson/Point/stuttgart_bike_shop_point_20190925.geojson',
       },
       // bike charging stations in Stuttgart
       {
         name: {
-          en: 'Bike charging stations',
+          en: 'Bicycle charging stations',
+          de: 'Fahrradladestationen',
         },
         url: '/assets/geojson/Point/stuttgart_bike_chargingstation_point_20190925.geojson',
       },
       // bike monitoring stations in Stuttgart
       {
         name: {
-          en: 'Bike monitoring stations',
+          en: 'Bicycle monitoring stations',
+          de: 'Fahrradzählstelle',
         },
         url: '/assets/geojson/Point/stuttgart_bike_monitoringstation_point_20190925.geojson',
       },
@@ -230,6 +235,7 @@ export default {
       {
         name: {
           en: 'Car parks',
+          de: 'Parkplätzen',
         },
         url: '/assets/geojson/Point/stuttgart_open_carpark_point_20190925.geojson',
       },
@@ -237,13 +243,15 @@ export default {
       {
         name: {
           en: 'P+R',
+          de: 'P+R',
         },
         url: '/assets/geojson/Point/stuttgart_parkandride_point_20190925.geojson',
       },
       // Bike rental places in Stuttgart
       {
         name: {
-          en: 'Bike rental places',
+          en: 'Bicycle rental places',
+          de: 'Fahrradverleih',
         },
         url: '/assets/geojson/Point/stuttgart_bikerental_point_20190925.geojson',
       },
@@ -251,6 +259,7 @@ export default {
       {
         name: {
           en: 'Car sharing options',
+          de: 'Fahrgemeinschaft',
         },
         url: '/assets/geojson/Point/stuttgart_carsharing_point_20190925.geojson',
       },
@@ -258,6 +267,7 @@ export default {
       {
         name: {
           en: 'Car charging stations',
+          de: 'Autoladestationen',
         },
         url: '/assets/geojson/Point/stuttgart_car_charging_station_point_20190925.geojson',
       }

@@ -67,7 +67,7 @@ export default {
   },
 
   feedIds: ['hb'],
-  
+
   searchSources: ['oa', 'osm'],
 
   searchParams: {
@@ -106,7 +106,7 @@ export default {
     {
       icon: 'icon-icon_star',
       label: 'Waldfriedhof / Schönbuchturm',
-      lat: 48.6020352, 
+      lat: 48.6020352,
       lon: 8.9036348,
     },
   ],
@@ -183,83 +183,93 @@ export default {
   // adding geoJson layers
   geoJson: {
     layers: [
-      //taxi stands in Stuttgart --WORKS FINE
+      //taxi stands in Stuttgart
       {
         name: {
           en: 'Taxi stands',
-          de: 'Taxi',
+          de: 'Taxistands',
         },
-        url: '/assets/geojson/stuttgart_taxi_20190918.geojson',
+        url: '/assets/geojson/Point/stuttgart_taxi.geojson',
       },
-      // bike parks in Stuttgart --yes-no-cover --WORKS FINE
+      // bike parks in Stuttgart and Herrenberg --yes-no-cover
       {
         name: {
-          en: 'Bike parks',
+          en: 'Bicycle parks',
+          de: 'Fahrradparks',
         },
-        url: '/assets/geojson/stuttgart_bikeParks_20190920.geojson',
+        url: '/assets/geojson/Point/stuttgart_bikeParks.geojson',
       },
-       // bike repair stations in Stuttgart --WORKS FINE
+      // bike repair stations in Stuttgart
       {
         name: {
-          en: 'Bike repair stations',
+          en: 'Bicycle repair stations',
+          de: 'Fahrradreparaturstationen',
         },
-        url: '/assets/geojson/Stuttgart_bike_repair_station_20190923.geojson',
+        url: '/assets/geojson/Point/stuttgart_bike_repair_station.geojson',
       },
       // bike shops in Stuttgart
       {
         name: {
-          en: 'Bike shops',
+          en: 'Bicycle shops',
+          de: 'Fahrradgeschäfte',
         },
-        url: '/assets/geojson/stuttgart_bike_shops_20190923.geojson',
+        url: '/assets/geojson/Point/stuttgart_bike_shop.geojson',
       },
-      // bike charging stations in Stuttgart --WORKS FINE
+      // bike charging stations in Stuttgart
       {
         name: {
-          en: 'Bike charging stations',
+          en: 'Bicycle charging stations',
+          de: 'Fahrradladestationen',
         },
-        url: '/assets/geojson/stuttgart_bike_charging_station_20190923.geojson',
+        url: '/assets/geojson/Point/stuttgart_bike_chargingstation.geojson',
       },
       // bike monitoring stations in Stuttgart
       {
         name: {
-          en: 'Bike monitoring stations',
+          en: 'Bicycle monitoring stations',
+          de: 'Fahrradzählstelle',
         },
-        url: '/assets/geojson/stuttgart_bike_monitoring_station_20190924.geojson',
+        url: '/assets/geojson/Point/stuttgart_bike_monitoringstation.geojson',
       },
       // car parks in Stuttgart
       {
         name: {
-          en: 'Car park', // TODO name it
+          en: 'Car parks',
+          de: 'Parkplätzen',
         },
-        url: '/assets/geojson/stuttgart_open_parking_20190924.geojson',
+        url: '/assets/geojson/Point/stuttgart_open_carpark.geojson',
       },
       // park and ride places in Stuttgart
       {
         name: {
           en: 'P+R',
+          de: 'P+R',
         },
-        url: '/assets/geojson/stuttgart_parkandride_20190924.geojson',
+        url: '/assets/geojson/Point/stuttgart_parkandride.geojson',
       },
       // Bike rental places in Stuttgart
       {
         name: {
-          en: 'Bike rental places',
+          en: 'Bicycle rental places',
+          de: 'Fahrradverleih',
         },
-        url: '/assets/geojson/stuttgart_bicyclerental_20190924.geojson',
+        url: '/assets/geojson/Point/stuttgart_bikerental.geojson',
       },
       // Car sharing options in Stuttgart
       {
         name: {
           en: 'Car sharing options',
+          de: 'Fahrgemeinschaft',
         },
-        url: '/assets/geojson/stuttgart_carsharing_20190924.geojson',
+        url: '/assets/geojson/Point/stuttgart_carsharing.geojson',
       },
       // Car charging stations in Stuttgart
       {
         name: {
           en: 'Car charging stations',
+          de: 'Autoladestationen',
         },
-        url: '/assets/geojson/stuttgart_car_charging_stations_20190924.geojson',
+        url: '/assets/geojson/Point/stuttgart_car_charging_station.geojson',
       }
     ],
   },

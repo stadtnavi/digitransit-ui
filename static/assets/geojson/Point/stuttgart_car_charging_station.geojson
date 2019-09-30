@@ -1,0 +1,2875 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2019-09-25T07:00:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1675926719",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2144507,
+          48.7416325
+        ]
+      },
+      "id": "node/1675926719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2032534058",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2558519,
+          48.7578187
+        ]
+      },
+      "id": "node/2032534058"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2074783729",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3138",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1315306,
+          48.7731785
+        ]
+      },
+      "id": "node/2074783729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2074783735",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1283268,
+          48.7790471
+        ]
+      },
+      "id": "node/2074783735"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2080242273",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3065",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1902732,
+          48.7928987
+        ]
+      },
+      "id": "node/2080242273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2122335209",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "MeRegio",
+        "ref": "1021",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2436738,
+          48.8083998
+        ]
+      },
+      "id": "node/2122335209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2146156996",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3136",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2082938,
+          48.7968186
+        ]
+      },
+      "id": "node/2146156996"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2166912428",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "1027",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2338325,
+          48.8058807
+        ]
+      },
+      "id": "node/2166912428"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2242397434",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.237808,
+          48.7584481
+        ]
+      },
+      "id": "node/2242397434"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2285869046",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3113",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1692429,
+          48.832317
+        ]
+      },
+      "id": "node/2285869046"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2296769066",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "description": "Elektrotankstelle",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2531649,
+          48.8093136
+        ]
+      },
+      "id": "node/2296769066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2451000881",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2678923,
+          48.7628198
+        ]
+      },
+      "id": "node/2451000881"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2451926101",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2644066,
+          48.768108
+        ]
+      },
+      "id": "node/2451926101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2589312880",
+        "amenity": "charging_station",
+        "car": "yes",
+        "name": "Car charging station",
+        "operator": "EnBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1619594,
+          48.7648054
+        ]
+      },
+      "id": "node/2589312880"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2590889263",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "2074",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2074307,
+          48.8085816
+        ]
+      },
+      "id": "node/2590889263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2628807706",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1026114,
+          48.7451154
+        ]
+      },
+      "id": "node/2628807706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2648283300",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3055",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1700393,
+          48.7543137
+        ]
+      },
+      "id": "node/2648283300"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2710004108",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1415991,
+          48.7320518
+        ]
+      },
+      "id": "node/2710004108"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2721674321",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "yes",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "parking:fee": "no",
+        "payment:coins": "no",
+        "payment:notes": "no",
+        "ref": "3019",
+        "socket:schuko": "2",
+        "socket:schuko:output": "3.7kW",
+        "socket:type2": "2",
+        "socket:type2:output": "22kW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1639838,
+          48.7726315
+        ]
+      },
+      "id": "node/2721674321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2725937337",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1623464,
+          48.8002849
+        ]
+      },
+      "id": "node/2725937337"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2789786614",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3090",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1565137,
+          48.7731857
+        ]
+      },
+      "id": "node/2789786614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2826478916",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1475574,
+          48.7837597
+        ]
+      },
+      "id": "node/2826478916"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2826478917",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0948727,
+          48.8212952
+        ]
+      },
+      "id": "node/2826478917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2879687801",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3146",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1231587,
+          48.7787076
+        ]
+      },
+      "id": "node/2879687801"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2953767063",
+        "amenity": "charging_station",
+        "bicycle": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "opening_hours": "24/7",
+        "operator": "ENBW",
+        "ref": "Haußmannstraße 28",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1912975,
+          48.7805411
+        ]
+      },
+      "id": "node/2953767063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2957198877",
+        "amenity": "charging_station",
+        "bicycle": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fixme": "ref",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1762321,
+          48.7812824
+        ]
+      },
+      "id": "node/2957198877"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2957198878",
+        "amenity": "charging_station",
+        "bicycle": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: ",
+        "car": "yes",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "ref": "Lautenschlagerstraße 3",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1795528,
+          48.7824755
+        ]
+      },
+      "id": "node/2957198878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2990887824",
+        "amenity": "charging_station",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "ref": "3121",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0947799,
+          48.8222021
+        ]
+      },
+      "id": "node/2990887824"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3024741369",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "car2go"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2170618,
+          48.7564765
+        ]
+      },
+      "id": "node/3024741369"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3065975195",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.126,
+          48.7736344
+        ]
+      },
+      "id": "node/3065975195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3097123474",
+        "amenity": "charging_station",
+        "amperage": "20",
+        "car": "yes",
+        "name": "Car charging station",
+        "operator": "Porsche",
+        "voltage": "480"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1930551,
+          48.6909752
+        ]
+      },
+      "id": "node/3097123474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3138512685",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3045",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1516913,
+          48.7877821
+        ]
+      },
+      "id": "node/3138512685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3354476626",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3049",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.14672,
+          48.8054884
+        ]
+      },
+      "id": "node/3354476626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3376752812",
+        "amenity": "charging_station",
+        "bicycle": "yes",
+        "car": "yes",
+        "fee": "yes",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "ref": "3089",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1900641,
+          48.7838806
+        ]
+      },
+      "id": "node/3376752812"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3480586107",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1639009,
+          48.8105567
+        ]
+      },
+      "id": "node/3480586107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3481482304",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3221",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1733029,
+          48.8020585
+        ]
+      },
+      "id": "node/3481482304"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3507040609",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3052",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1618199,
+          48.7660122
+        ]
+      },
+      "id": "node/3507040609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3512624141",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.128062,
+          48.7380194
+        ]
+      },
+      "id": "node/3512624141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3516074731",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1146718,
+          48.7320436
+        ]
+      },
+      "id": "node/3516074731"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3516895831",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1900904,
+          48.7957619
+        ]
+      },
+      "id": "node/3516895831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3527028589",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3159",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1067661,
+          48.7357626
+        ]
+      },
+      "id": "node/3527028589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3533084161",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3066",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1526618,
+          48.7406893
+        ]
+      },
+      "id": "node/3533084161"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3556515480",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "bicycle": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "ref": "1023",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2418613,
+          48.7761598
+        ]
+      },
+      "id": "node/3556515480"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3577376947",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3124",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2019885,
+          48.7327997
+        ]
+      },
+      "id": "node/3577376947"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3621845707",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3156",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0818908,
+          48.7999156
+        ]
+      },
+      "id": "node/3621845707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3628290040",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1985401,
+          48.8117944
+        ]
+      },
+      "id": "node/3628290040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3657665929",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3174",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1457421,
+          48.7742674
+        ]
+      },
+      "id": "node/3657665929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3658524339",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1792487,
+          48.7661713
+        ]
+      },
+      "id": "node/3658524339"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3658597727",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.185701,
+          48.7767065
+        ]
+      },
+      "id": "node/3658597727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3660964805",
+        "amenity": "charging_station",
+        "amperage": "32",
+        "authentication:membership_card": "yes",
+        "bicycle": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2264002,
+          48.8148855
+        ]
+      },
+      "id": "node/3660964805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3701567482",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1500838,
+          48.8103244
+        ]
+      },
+      "id": "node/3701567482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3727525912",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3083",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1978936,
+          48.7860303
+        ]
+      },
+      "id": "node/3727525912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3761967713",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1819844,
+          48.7765647
+        ]
+      },
+      "id": "node/3761967713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3762674020",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1755048,
+          48.778773
+        ]
+      },
+      "id": "node/3762674020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3762674025",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175567,
+          48.7788402
+        ]
+      },
+      "id": "node/3762674025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3775560012",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1735545,
+          48.7766285
+        ]
+      },
+      "id": "node/3775560012"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3775560013",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1736022,
+          48.7766693
+        ]
+      },
+      "id": "node/3775560013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3829549465",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3024",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1800065,
+          48.7706504
+        ]
+      },
+      "id": "node/3829549465"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3880464174",
+        "amenity": "charging_station",
+        "bicycle": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "contact:website": "https://www.enbw.com/privatkunden/energie-und-zukunft/e-mobilitaet/ladestationen/index.html",
+        "operator": "EnBW",
+        "ref": "3143",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1950519,
+          48.8350819
+        ]
+      },
+      "id": "node/3880464174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4055157074",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1526913,
+          48.7250823
+        ]
+      },
+      "id": "node/4055157074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4066201636",
+        "amenity": "charging_station",
+        "bicycle": "yes",
+        "car": "yes",
+        "name": "Car charging station",
+        "operator": "Aldi",
+        "socket:chademo": "1",
+        "socket:schuko": "3",
+        "socket:type2_combo": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1435168,
+          48.7011938
+        ]
+      },
+      "id": "node/4066201636"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4101918850",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.148042,
+          48.7787545
+        ]
+      },
+      "id": "node/4101918850"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4118715191",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1632997,
+          48.786393
+        ]
+      },
+      "id": "node/4118715191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4122980742",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1587328,
+          48.8119453
+        ]
+      },
+      "id": "node/4122980742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4144106489",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3189",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0583509,
+          48.7934712
+        ]
+      },
+      "id": "node/4144106489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4144227831",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3190",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0564469,
+          48.7972454
+        ]
+      },
+      "id": "node/4144227831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333796891",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1593373,
+          48.7741471
+        ]
+      },
+      "id": "node/4333796891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4353040522",
+        "amenity": "charging_station",
+        "authentication:none": "yes",
+        "bicycle": "no",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
+        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
+        "fee": "no",
+        "operator": "Aldi Süd",
+        "socket:chademo": "1",
+        "socket:type2": "1",
+        "socket:type2_combo": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2012262,
+          48.8355036
+        ]
+      },
+      "id": "node/4353040522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4357426541",
+        "amenity": "charging_station",
+        "authentication:none": "yes",
+        "bicycle": "no",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
+        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
+        "fee": "no",
+        "opening_hours": "Mo-Sa 08:00-21:00",
+        "operator": "Aldi Süd",
+        "socket:chademo": "1",
+        "socket:type2": "1",
+        "socket:type2_combo": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2657687,
+          48.8155106
+        ]
+      },
+      "id": "node/4357426541"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4357431777",
+        "amenity": "charging_station",
+        "authentication:none": "yes",
+        "bicycle": "no",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
+        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
+        "fee": "no",
+        "operator": "Aldi Süd",
+        "socket:chademo": "1",
+        "socket:type2": "1",
+        "socket:type2_combo": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2975986,
+          48.819608
+        ]
+      },
+      "id": "node/4357431777"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4357457671",
+        "amenity": "charging_station",
+        "authentication:none": "yes",
+        "bicycle": "no",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
+        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
+        "fee": "no",
+        "operator": "Aldi Süd",
+        "socket:chademo": "1",
+        "socket:type2": "1",
+        "socket:type2_combo": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0988255,
+          48.8213184
+        ]
+      },
+      "id": "node/4357457671"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4361408588",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2071547,
+          48.7905685
+        ]
+      },
+      "id": "node/4361408588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4397050877",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "2059",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1530357,
+          48.8350167
+        ]
+      },
+      "id": "node/4397050877"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4411340511",
+        "addr:city": "Stuttgart",
+        "addr:country": "DE",
+        "addr:housenumber": "77",
+        "addr:postcode": "70563",
+        "addr:street": "Möhringer Landstraße",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "bicycle": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3029",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1232669,
+          48.7299451
+        ]
+      },
+      "id": "node/4411340511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4423209318",
+        "amenity": "charging_station",
+        "car": "yes",
+        "name": "Car charging station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2453055,
+          48.7712417
+        ]
+      },
+      "id": "node/4423209318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4432927411",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2080124,
+          48.7824397
+        ]
+      },
+      "id": "node/4432927411"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4450615394",
+        "amenity": "charging_station",
+        "amperage": "32",
+        "authentication:nfc": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "yes",
+        "fixme": "Lage nochmal prüfen",
+        "name": "EnBW",
+        "opening_hours": "24/7",
+        "operator": "EnBE",
+        "scooter": "yes",
+        "socket:schuko": "2",
+        "socket:type2": "2",
+        "truck": "no",
+        "voltage": "400"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1797601,
+          48.7827556
+        ]
+      },
+      "id": "node/4450615394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4738795391",
+        "amenity": "charging_station",
+        "car": "yes",
+        "fee": "yes",
+        "level": "0",
+        "name": "Car charging station",
+        "operator": "EnBW Energie Baden-Württemberg AG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1884132,
+          48.6899042
+        ]
+      },
+      "id": "node/4738795391"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4739733858",
+        "amenity": "charging_station",
+        "car": "yes",
+        "name": "Car charging station"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2721017,
+          48.7153559
+        ]
+      },
+      "id": "node/4739733858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4784557114",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "bicycle": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "yes",
+        "operator": "EnBW",
+        "ref": "3082",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2194864,
+          48.8431384
+        ]
+      },
+      "id": "node/4784557114"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4927277679",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "car": "yes",
+        "fee": "yes",
+        "name": "Car charging station",
+        "operator": "EnBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1669906,
+          48.7853591
+        ]
+      },
+      "id": "node/4927277679"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5104027739",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "description": "Ladesäule",
+        "operator": "Stadtwerke Ludwigsburg-Kornwestheim",
+        "ref": "DE SLB E000702",
+        "scooter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1795308,
+          48.8627974
+        ]
+      },
+      "id": "node/5104027739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5112637662",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "yes",
+        "operator": "EnBW",
+        "ref": "3118",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1624637,
+          48.7688664
+        ]
+      },
+      "id": "node/5112637662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5112637663",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "yes",
+        "operator": "EnBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1666499,
+          48.7703684
+        ]
+      },
+      "id": "node/5112637663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5136993422",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1485188,
+          48.7312467
+        ]
+      },
+      "id": "node/5136993422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5183473965",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "yes",
+        "operator": "EnBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1544142,
+          48.7702037
+        ]
+      },
+      "id": "node/5183473965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5298005207",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2019212,
+          48.7892401
+        ]
+      },
+      "id": "node/5298005207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5433699131",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1800964,
+          48.7350997
+        ]
+      },
+      "id": "node/5433699131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5466167779",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.224839,
+          48.7360842
+        ]
+      },
+      "id": "node/5466167779"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5485907716",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "1",
+        "socket:type2": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2573722,
+          48.7834536
+        ]
+      },
+      "id": "node/5485907716"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5499497048",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "no",
+        "fee:description": "Only parking fees apply",
+        "fee:description:de": "Es fallen nur Parkgebühren an",
+        "opening_hours": "24/7",
+        "operator": "Flughafen Stuttgart GmbH",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1918273,
+          48.6905248
+        ]
+      },
+      "id": "node/5499497048"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5565217334",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1826217,
+          48.7886714
+        ]
+      },
+      "id": "node/5565217334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5565217348",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "2058",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1824654,
+          48.7887297
+        ]
+      },
+      "id": "node/5565217348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5565217377",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.182554,
+          48.7897926
+        ]
+      },
+      "id": "node/5565217377"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5590999458",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fixme": "ref",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1752676,
+          48.7828997
+        ]
+      },
+      "id": "node/5590999458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5646069977",
+        "amenity": "charging_station",
+        "bicycle": "no",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "no",
+        "fixme": "Betreiber, Nutzungsbedingungen oder Website sind vor Ort nicht angegeben. Lediglich der Werbeslogan: „Lidl lädt auf, schnell, kostenlos, sauber Tanken“",
+        "socket:chademo": "1",
+        "socket:type2": "1",
+        "socket:type2_combo": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3049479,
+          48.8261252
+        ]
+      },
+      "id": "node/5646069977"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5818077830",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1859275,
+          48.7750484
+        ]
+      },
+      "id": "node/5818077830"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5865963729",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1814529,
+          48.775907
+        ]
+      },
+      "id": "node/5865963729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5921960117",
+        "amenity": "charging_station",
+        "authentication:app": "yes",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "network": "EnBW",
+        "opening_hours": "24/7",
+        "parking:fee": "no",
+        "socket:type2": "2",
+        "socket:type2:output": "22000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4185733,
+          48.7094945
+        ]
+      },
+      "id": "node/5921960117"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5988221871",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "2072",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2285116,
+          48.8423205
+        ]
+      },
+      "id": "node/5988221871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6009997893",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "ref": "3015",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2474909,
+          48.8152713
+        ]
+      },
+      "id": "node/6009997893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6036451662",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "no",
+        "fee:description": "Only parking fees apply",
+        "fee:description:de": "Es fallen nur Parkgebühren an",
+        "opening_hours": "24/7",
+        "operator": "Flughafen Stuttgart GmbH",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1920829,
+          48.6905759
+        ]
+      },
+      "id": "node/6036451662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6036451663",
+        "amenity": "charging_station",
+        "authentication:none": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "no",
+        "fee:description": "Only parking fees apply",
+        "fee:description:de": "Es fallen nur Parkgebühren an",
+        "opening_hours": "24/7",
+        "operator": "Flughafen Stuttgart GmbH",
+        "socket:chademo": "2",
+        "socket:type2": "2",
+        "socket:type2_combo": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1919977,
+          48.6905588
+        ]
+      },
+      "id": "node/6036451663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6036451664",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "fee": "no",
+        "fee:description": "Only parking fees apply",
+        "fee:description:de": "Es fallen nur Parkgebühren an",
+        "opening_hours": "24/7",
+        "operator": "Flughafen Stuttgart GmbH",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1919125,
+          48.6905418
+        ]
+      },
+      "id": "node/6036451664"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6051563829",
+        "amenity": "charging_station",
+        "authentication:app": "yes",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "network": "EnBW",
+        "opening_hours": "24/7",
+        "parking:fee": "no",
+        "socket:type2": "2",
+        "socket:type2:output": "22000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4138442,
+          48.7127255
+        ]
+      },
+      "id": "node/6051563829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6221695195",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:chademo": "1",
+        "socket:chademo:output": "50 kW",
+        "socket:type2": "1",
+        "socket:type2:output": "43 kW",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "50 kW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1702919,
+          48.7784396
+        ]
+      },
+      "id": "node/6221695195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6325913174",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "EnBW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2085296,
+          48.7457664
+        ]
+      },
+      "id": "node/6325913174"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6430920615",
+        "amenity": "charging_station",
+        "authentication:membership_card": "yes",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "yes",
+        "socket:type2": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1757073,
+          48.787245
+        ]
+      },
+      "id": "node/6430920615"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6430928668",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1758985,
+          48.7812242
+        ]
+      },
+      "id": "node/6430928668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6430928669",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:schuko": "2",
+        "socket:type2": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1758288,
+          48.7814204
+        ]
+      },
+      "id": "node/6430928669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6468545622",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3287657,
+          48.8537532
+        ]
+      },
+      "id": "node/6468545622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6535042759",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:chademo": "1",
+        "socket:chademo:output": "50 kW",
+        "socket:type2": "1",
+        "socket:type2:output": "43 kW",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "50 kW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3037167,
+          48.6938765
+        ]
+      },
+      "id": "node/6535042759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6535042760",
+        "amenity": "charging_station",
+        "capacity": "2",
+        "name": "Car charging station",
+        "address": "Capacity: 2",
+        "car": "yes",
+        "operator": "EnBW",
+        "socket:type2": "1",
+        "socket:type2:output": "43 kW",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "50 kW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3038226,
+          48.6938554
+        ]
+      },
+      "id": "node/6535042760"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6535156702",
+        "amenity": "charging_station",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "IONITY",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "350 kW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3032735,
+          48.6937579
+        ]
+      },
+      "id": "node/6535156702"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6535156703",
+        "amenity": "charging_station",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "IONITY",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "350 kW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3032636,
+          48.6937116
+        ]
+      },
+      "id": "node/6535156703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6535156704",
+        "amenity": "charging_station",
+        "capacity": "1",
+        "name": "Car charging station",
+        "address": "Capacity: 1",
+        "car": "yes",
+        "operator": "IONITY",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "350 kW"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3032575,
+          48.6936807
+        ]
+      },
+      "id": "node/6535156704"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6571824263",
+        "amenity": "charging_station",
+        "authentication:app": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle": "no",
+        "car": "yes",
+        "charging_station:output": "98kW",
+        "fee": "yes",
+        "name": "Car charging station",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "parking:fee": "no",
+        "ref": "4263",
+        "socket:chademo": "1",
+        "socket:chademo:output": "50kW",
+        "socket:type2": "1",
+        "socket:type2:output": "43kW",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "50kW",
+        "voltage": "400V"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2688523,
+          48.7423492
+        ]
+      },
+      "id": "node/6571824263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6571824264",
+        "amenity": "charging_station",
+        "authentication:app": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle": "no",
+        "car": "yes",
+        "charging_station:output": "98kW",
+        "fee": "yes",
+        "name": "Car charging station",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "parking:fee": "no",
+        "ref": "4262",
+        "socket:chademo": "1",
+        "socket:chademo:output": "50kW",
+        "socket:type2": "1",
+        "socket:type2:output": "43kW",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "50kW",
+        "voltage": "400V"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2688029,
+          48.7422942
+        ]
+      },
+      "id": "node/6571824264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6571824265",
+        "amenity": "charging_station",
+        "authentication:app": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle": "no",
+        "car": "yes",
+        "charging_station:output": "98kW",
+        "fee": "yes",
+        "name": "Car charging station",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "parking:fee": "no",
+        "ref": "4265",
+        "socket:chademo": "1",
+        "socket:chademo:output": "50kW",
+        "socket:type2": "1",
+        "socket:type2:output": "43kW",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "50kW",
+        "voltage": "400V"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2686099,
+          48.7423567
+        ]
+      },
+      "id": "node/6571824265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6571824266",
+        "amenity": "charging_station",
+        "authentication:app": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle": "no",
+        "car": "yes",
+        "charging_station:output": "98kW",
+        "fee": "yes",
+        "name": "Car charging station",
+        "opening_hours": "24/7",
+        "operator": "EnBW",
+        "parking:fee": "no",
+        "ref": "4264",
+        "socket:chademo": "1",
+        "socket:chademo:output": "50kW",
+        "socket:type2": "1",
+        "socket:type2:output": "43kW",
+        "socket:type2_combo": "1",
+        "socket:type2_combo:output": "50kW",
+        "voltage": "400V"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2686467,
+          48.7423945
+        ]
+      },
+      "id": "node/6571824266"
+    }
+  ]
+}

@@ -1,25 +1,12 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-25T07:00:02Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/275139037",
-        "access": "yes",
         "address": "Capacity: 450",
-        "amenity": "parking",
-        "capacity": "450",
-        "fee": "Mo-So 00:00-24:00",
-        "maxheight": "2.05",
-        "name": "P+R Albstraße",
-        "opening_hours": "Mo-Su 05:00-01:00",
-        "park_ride": "yes",
-        "parking": "multi-storey",
-        "toilets:wheelchair": "yes",
-        "wheelchair": "yes"
+        "name": "P+R Albstraße"
       },
       "geometry": {
         "type": "Point",
@@ -27,26 +14,13 @@
           9.1628421,
           48.7458938
         ]
-      },
-      "id": "node/275139037"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5056118975",
-        "addr:city": "Stuttgart",
-        "addr:housenumber": "28",
-        "addr:postcode": "70173",
-        "addr:street": "Willy-Brandt-Straße",
         "address": "Capacity: 2",
-        "amenity": "parking",
-        "capacity": "2",
-        "fee": "yes",
-        "name": "ampido Parkplatz Hauptbahnhof",
-        "operator": "ampido GmbH",
-        "park_ride": "yes",
-        "parking": "surface",
-        "surface": "asphalt"
+        "name": "ampido Parkplatz Hauptbahnhof"
       },
       "geometry": {
         "type": "Point",
@@ -54,8 +28,7 @@
           9.1879453,
           48.7833405
         ]
-      },
-      "id": "node/5056118975"
+      }
     }
   ]
 }

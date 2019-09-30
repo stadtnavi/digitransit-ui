@@ -1,22 +1,11 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-25T07:03:02Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2953767063",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "ENBW",
-        "address": "Haußmannstraße 28, capacity: 2, opening hours: 24/7",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": "Haußmannstraße 28, capacity: 2, opening hours: 24/7"
       },
       "geometry": {
         "type": "Point",
@@ -24,23 +13,12 @@
           9.1912975,
           48.7805411
         ]
-      },
-      "id": "node/2953767063"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2957198877",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "address": "capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "fixme": "ref",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": "capacity: 2, opening hours: 24/7"
       },
       "geometry": {
         "type": "Point",
@@ -48,22 +26,12 @@
           9.1762321,
           48.7812824
         ]
-      },
-      "id": "node/2957198877"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2957198878",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "address": "Lautenschlagerstraße 3, capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": "Lautenschlagerstraße 3, capacity: 2, opening hours: 24/7"
       },
       "geometry": {
         "type": "Point",
@@ -71,23 +39,12 @@
           9.1795528,
           48.7824755
         ]
-      },
-      "id": "node/2957198878"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3376752812",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "car": "yes",
-        "address": "fee: yes, opening hours: 24/7",
-        "fee": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "ref": "3089",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": "fee: yes, opening hours: 24/7"
       },
       "geometry": {
         "type": "Point",
@@ -95,24 +52,12 @@
           9.1900641,
           48.7838806
         ]
-      },
-      "id": "node/3376752812"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3556515480",
-        "amenity": "charging_station",
-        "authentication:membership_card": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "ref": "1023",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": "capacity: 2, opening hours: 24/7"
       },
       "geometry": {
         "type": "Point",
@@ -120,24 +65,12 @@
           9.2418613,
           48.7761598
         ]
-      },
-      "id": "node/3556515480"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3660964805",
-        "amenity": "charging_station",
-        "amperage": "32",
-        "authentication:membership_card": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": "capacity: 2, opening hours: 24/7"
       },
       "geometry": {
         "type": "Point",
@@ -145,24 +78,12 @@
           9.2264002,
           48.8148855
         ]
-      },
-      "id": "node/3660964805"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4357426538",
-        "amenity": "charging_station",
-        "authentication:none": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 3",
-        "capacity": "3",
-        "car": "no",
-        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
-        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
-        "fee": "no",
-        "operator": "Aldi Süd",
-        "socket:schuko": "3"
+        "address": "capacity: 3"
       },
       "geometry": {
         "type": "Point",
@@ -170,24 +91,12 @@
           9.2656174,
           48.8154793
         ]
-      },
-      "id": "node/4357426538"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4357457669",
-        "amenity": "charging_station",
-        "authentication:none": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 3",
-        "capacity": "3",
-        "car": "no",
-        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
-        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
-        "fee": "no",
-        "operator": "Aldi Süd",
-        "socket:schuko": "3"
+        "address": "capacity: 3"
       },
       "geometry": {
         "type": "Point",
@@ -195,21 +104,13 @@
           9.0989234,
           48.821103
         ]
-      },
-      "id": "node/4357457669"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6424297277",
-        "amenity": "charging_station",
-        "bicycle": "yes",
         "address": "capacity: 3, covered: no",
-        "capacity": "3",
-        "covered": "no",
-        "name": "E-Bike Ladestation",
-        "source": "survey",
-        "source:name": "Anschrift auf Ladesäule"
+        "name": "E-Bike Ladestation"
       },
       "geometry": {
         "type": "Point",
@@ -217,8 +118,7 @@
           9.2671072,
           48.8135581
         ]
-      },
-      "id": "node/6424297277"
+      }
     }
   ]
 }

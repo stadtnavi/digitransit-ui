@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let a = <!--place of your geojson file (copy, paste)-->
+
+    <!-- the for cycle below deletes every property that is not written in the if condition -->
+    for(let i = 0; i < a.features.length; i++){
+      let p = a.features[i].properties;
+      <!-- deletes the properies listed below -->
+      delete a.features[i].id;
+      delete a.features[i].copyright;
+      delete a.features[i].generator;
+
+      for(let j in p){
+        if(j !== "name" && j !== "address" && j !== "icon" && j !== "name_en" && j !== "name_de" && j !== "address_en" && j !== "address_de") {
+          delete p[j];
+        }
+      }
+    }
+    <!-- deletes the properies listed below -->
+    delete a.generator;
+    delete a.copyright;
+
+
+    console.log(a);
+
+</script>
+</body>
+</html>

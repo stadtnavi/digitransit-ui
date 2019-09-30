@@ -9,29 +9,38 @@
 </head>
 <body>
 <script>
-    let a = <!--place of your geojson file (copy, paste)-->
+    //<!--place of your geoJson file -->
+    let myObj =
 
-    <!-- the for cycle below deletes every property that is not written in the if condition -->
-    for(let i = 0; i < a.features.length; i++){
-      let p = a.features[i].properties;
+
+
+    <!-- the for cycle below deletes every property that is not written in the exceptions array -->
+    let exceptions = ["name", "address","icon","name_en","name_de","address_en", "address_de"];
+
+
+    for(let i = 0; i < myObj.features.length; i++){
+
+      let properties = myObj.features[i].properties;
+
       <!-- deletes the properies listed below -->
-      delete a.features[i].id;
-      delete a.features[i].copyright;
-      delete a.features[i].generator;
+      delete myObj.features[i].id;
+      delete myObj.features[i].copyright;
+      delete myObj.features[i].generator;
 
-      for(let j in p){
-        if(j !== "name" && j !== "address" && j !== "icon" && j !== "name_en" && j !== "name_de" && j !== "address_en" && j !== "address_de") {
-          delete p[j];
+      for(let propertiesKey in properties){
+        if(!exceptions.includes(propertiesKey)) {
+          delete properties[propertiesKey];
         }
       }
     }
     <!-- deletes the properies listed below -->
-    delete a.generator;
-    delete a.copyright;
+    delete myObj.generator;
+    delete myObj.copyright;
 
 
-    console.log(a);
+    console.log(myObj);
 
+    //<!-- open any browser and paste this file path to the url search box, press F12 and You will see the final object that You can copy -->
 </script>
 </body>
 </html>

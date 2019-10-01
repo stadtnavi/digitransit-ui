@@ -1,25 +1,20 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-25T07:03:02Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3736798285",
-        "name": "Kontaktschleife der Fahrradzählstelle",
-        "display": "no",
-        "location": "surface",
-        "man_made": "monitoring_station",
-        "monitoring:bicycle": "yes",
-        "monitoring:traffic": "yes",
-        "address": "Zählstelle Böblinger Straße",
-        "network": "Fahrrad-Zählstellen Stuttgart",
-        "recording": "yes",
-        "recording:automated": "yes",
-        "start_date": "2013",
-        "visibility": "street"
+        "name": "Kontaktschleife der Fahrradz\u00e4hlstelle",
+        "address": [],
+        "name_en": "Bicycle monitoring station",
+        "name_de": "Fahrradz\u00e4hlstelle",
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeMonitorIcon",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10.938 20h-10.938v-20h21v11.462c-.594-.472-1.269-.843-2-1.094v-4.368h-17v12h8.212c.136.713.384 1.386.726 2zm13.062 2.586l-2.831-2.832c.522-.79.831-1.735.831-2.754 0-2.761-2.238-5-5-5s-5 2.239-5 5 2.238 5 5 5c1.019 0 1.964-.309 2.755-.832l2.831 2.832 1.414-1.414zm-10-5.586c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3zm-9-1h-2v-5h2v5zm3 0h-2v-8h2v8zm3 0h-2v-3h2v3z\"/></svg>"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -27,25 +22,20 @@
           9.135645,
           48.7465763
         ]
-      },
-      "id": "node/3736798285"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3736798286",
-        "name": "Kontaktschleife der Fahrradzählstelle",
-        "display": "no",
-        "location": "surface",
-        "man_made": "monitoring_station",
-        "monitoring:bicycle": "yes",
-        "monitoring:traffic": "yes",
-        "address": "Zählstelle Böblinger Straße",
-        "network": "Fahrrad-Zählstellen Stuttgart",
-        "recording": "yes",
-        "recording:automated": "yes",
-        "start_date": "2013",
-        "visibility": "street"
+        "name": "Kontaktschleife der Fahrradz\u00e4hlstelle",
+        "address": [],
+        "name_en": "Bicycle monitoring station",
+        "name_de": "Fahrradz\u00e4hlstelle",
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeMonitorIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -53,27 +43,20 @@
           9.1356638,
           48.7466031
         ]
-      },
-      "id": "node/3736798286"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3736798287",
-        "name": "Kontaktschleife der Fahrradzählstelle",
-        "display": "no",
-        "location": "surface",
-        "man_made": "monitoring_station",
-        "monitoring:bicycle": "yes",
-        "monitoring:traffic": "yes",
-        "address": "Zählstelle König-Karls-Brücke",
-        "network": "Fahrrad-Zählstellen Stuttgart",
-        "operator": "Landeshauptstadt Stuttgart",
-        "recording": "yes",
-        "recording:automated": "yes",
-        "ref": "KKB-2",
-        "start_date": "2012",
-        "visibility": "house"
+        "name": "Kontaktschleife der Fahrradz\u00e4hlstelle",
+        "address": [],
+        "name_en": "Bicycle monitoring station",
+        "name_de": "Fahrradz\u00e4hlstelle",
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeMonitorIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -81,30 +64,20 @@
           9.2099725,
           48.7988878
         ]
-      },
-      "id": "node/3736798287"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3736798288",
-        "amenity": "clock",
-        "date": "yes",
-        "description": "Anzeigetafel der Fahrrad-Zählstelle König-Karls-Brücke: Tagesanzahl der registrierten Radfahrer zusammen mit denen des letzten Jahres und die aktuelle Uhrzeit/Datum",
-        "display": "yes",
-        "display:digital": "yes",
-        "faces": "2",
-        "man_made": "monitoring_station",
-        "monitoring:bicycle": "yes",
-        "monitoring:traffic": "yes",
-        "name": "Fahrradzählstelle König-Karls-Brücke",
-        "network": "Fahrrad-Zählstellen Stuttgart",
-        "operator": "Landeshauptstadt Stuttgart",
-        "recording": "yes",
-        "recording:automated": "yes",
-        "start_date": "2016-04-21",
-        "support": "pole",
-        "visibility": "street"
+        "name": "Fahrradz\u00e4hlstelle K\u00f6nig-Karls-Br\u00fccke",
+        "name_en": "Bicycle monitoring station",
+        "name_de": "Fahrradz\u00e4hlstelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeMonitorIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -112,27 +85,20 @@
           9.2101141,
           48.7989896
         ]
-      },
-      "id": "node/3736798288"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3736798289",
-        "name": "Kontaktschleife der Fahrradzählstelle",
-        "display": "no",
-        "location": "surface",
-        "man_made": "monitoring_station",
-        "monitoring:bicycle": "yes",
-        "monitoring:traffic": "yes",
-        "address": "Zählstelle König-Karls-Brücke",
-        "network": "Fahrrad-Zählstellen Stuttgart",
-        "operator": "Landeshauptstadt Stuttgart",
-        "recording": "yes",
-        "recording:automated": "yes",
-        "ref": "KKB-1",
-        "start_date": "2012",
-        "visibility": "house"
+        "name": "Kontaktschleife der Fahrradz\u00e4hlstelle",
+        "address": [],
+        "name_en": "Bicycle monitoring station",
+        "name_de": "Fahrradz\u00e4hlstelle",
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeMonitorIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -140,8 +106,7 @@
           9.2101167,
           48.799012
         ]
-      },
-      "id": "node/3736798289"
+      }
     }
   ]
 }

@@ -1,22 +1,29 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-25T07:03:02Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2953767063",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "ENBW",
-        "address": "Haußmannstraße 28, capacity: 2, opening hours: 24/7",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "address_en": [
+          "capacity: 2 ,",
+          "opening hours: 24/7 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon",
+          "svg": "<svg width=\"24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"><path d=\"M6.804 10.336l1.181-2.331-.462-1.005h-4.523v-1h5.992c.238 0 .5.19.5.5 0 .311-.26.5-.5.5h-.368l.47 1h6.483l-.841-2h3.243c.823.005 1.49.675 1.49 1.5 0 .828-.672 1.5-1.5 1.5-.711 0-.727-1 0-1 .239 0 .5-.189.5-.5 0-.239-.189-.5-.5-.5h-1.727l1.324 3.209c.454-.136.936-.209 1.434-.209 2.76 0 5 2.24 5 5s-2.24 5-5 5c-2.759 0-5-2.24-5-5 0-1.906 1.069-3.564 2.64-4.408l-.43-1.039-4.493 5.947h-1.742c-.251 2.525-2.384 4.5-4.975 4.5-2.759 0-5-2.24-5-5s2.241-5 5-5c.636 0 1.244.119 1.804.336zm-.455.897c-.421-.151-.876-.233-1.349-.233-2.207 0-4 1.792-4 4s1.793 4 4 4c2.038 0 3.723-1.528 3.97-3.5h-3.103c-.174.299-.497.5-.867.5-.551 0-1-.448-1-1 0-.533.419-.97.946-.998l1.403-2.769zm10.675.29c-1.208.688-2.024 1.988-2.024 3.477 0 2.208 1.792 4 4 4s4-1.792 4-4-1.792-4-4-4c-.363 0-.716.049-1.05.14l1.182 2.869c.49.064.868.484.868.991 0 .552-.448 1-1 1-.551 0-1-.448-1-1 0-.229.077-.44.207-.609l-1.183-2.868zm-9.783.164l-1.403 2.766.029.047h3.103c-.147-1.169-.798-2.183-1.729-2.813zm.454-.898c1.254.804 2.126 2.152 2.28 3.711h.998l-2.455-5.336-.823 1.625zm7.683-1.789h-5.839l2.211 4.797 3.628-4.797zm-14.378 0h4v-1h-4v1zm1-4h4v-1h-4v1z\"/></svg>"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -24,23 +31,29 @@
           9.1912975,
           48.7805411
         ]
-      },
-      "id": "node/2953767063"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2957198877",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "address": "capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "fixme": "ref",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "address_en": [
+          "capacity: 2 ,",
+          "opening hours: 24/7 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -48,22 +61,29 @@
           9.1762321,
           48.7812824
         ]
-      },
-      "id": "node/2957198877"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2957198878",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "address": "Lautenschlagerstraße 3, capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "address_en": [
+          "capacity: 2 ,",
+          "opening hours: 24/7 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -71,23 +91,26 @@
           9.1795528,
           48.7824755
         ]
-      },
-      "id": "node/2957198878"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3376752812",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "car": "yes",
-        "address": "fee: yes, opening hours: 24/7",
-        "fee": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "ref": "3089",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": [
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "address_en": [
+          "opening hours: 24/7 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -95,24 +118,29 @@
           9.1900641,
           48.7838806
         ]
-      },
-      "id": "node/3376752812"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3556515480",
-        "amenity": "charging_station",
-        "authentication:membership_card": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "ref": "1023",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "address_en": [
+          "capacity: 2 ,",
+          "opening hours: 24/7 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -120,24 +148,29 @@
           9.2418613,
           48.7761598
         ]
-      },
-      "id": "node/3556515480"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3660964805",
-        "amenity": "charging_station",
-        "amperage": "32",
-        "authentication:membership_card": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 2, opening hours: 24/7",
-        "capacity": "2",
-        "car": "yes",
-        "opening_hours": "24/7",
-        "operator": "EnBW",
-        "socket:schuko": "2",
-        "socket:type2": "2"
+        "address": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 2 ,",
+          "\u00f6ffnungszeiten: 24/7 ,"
+        ],
+        "address_en": [
+          "capacity: 2 ,",
+          "opening hours: 24/7 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -145,24 +178,26 @@
           9.2264002,
           48.8148855
         ]
-      },
-      "id": "node/3660964805"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4357426538",
-        "amenity": "charging_station",
-        "authentication:none": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 3",
-        "capacity": "3",
-        "car": "no",
-        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
-        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
-        "fee": "no",
-        "operator": "Aldi Süd",
-        "socket:schuko": "3"
+        "address": [
+          "kapazit\u00e4t: 3 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 3 ,"
+        ],
+        "address_en": [
+          "capacity: 3 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -170,24 +205,26 @@
           9.2656174,
           48.8154793
         ]
-      },
-      "id": "node/4357426538"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4357457669",
-        "amenity": "charging_station",
-        "authentication:none": "yes",
-        "bicycle": "yes",
-        "address": "capacity: 3",
-        "capacity": "3",
-        "car": "no",
-        "contact:website": "www.aldi-sued.de/de/aldi-sued-a-bis-z/aldi-sued-a-bis-z/e/elektrotankstellen",
-        "description": "Die Aufladung an der Ladestation ist nur während der Öffnungszeiten der ALDI SÜD Filiale möglich. Maximale Dauer eines Ladevorgangs sowie Parkdauer des Elektrofahrzeugs beträgt eine Stunde.",
-        "fee": "no",
-        "operator": "Aldi Süd",
-        "socket:schuko": "3"
+        "address": [
+          "kapazit\u00e4t: 3 ,"
+        ],
+        "name": "Fahrradladestation",
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 3 ,"
+        ],
+        "address_en": [
+          "capacity: 3 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -195,21 +232,26 @@
           9.0989234,
           48.821103
         ]
-      },
-      "id": "node/4357457669"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6424297277",
-        "amenity": "charging_station",
-        "bicycle": "yes",
-        "address": "capacity: 3, covered: no",
-        "capacity": "3",
-        "covered": "no",
+        "address": [
+          "kapazit\u00e4t: 3 ,"
+        ],
         "name": "E-Bike Ladestation",
-        "source": "survey",
-        "source:name": "Anschrift auf Ladesäule"
+        "name_en": "Bike charging station",
+        "name_de": "Fahrradladestation",
+        "address_de": [
+          "kapazit\u00e4t: 3 ,"
+        ],
+        "address_en": [
+          "capacity: 3 ,"
+        ],
+        "icon": {
+          "id": "bikeChargeIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -217,8 +259,7 @@
           9.2671072,
           48.8135581
         ]
-      },
-      "id": "node/6424297277"
+      }
     }
   ]
 }

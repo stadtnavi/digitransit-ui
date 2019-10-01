@@ -1,20 +1,26 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-25T07:00:02Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/262791148",
-        "amenity": "bicycle_rental",
-        "capacity": "7",
-        "address": "capacity: 7",
-        "name": "Marienplatz (Böblinger Straße)",
-        "network": "call-a-bike",
-        "ref": "7401",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "name": "Marienplatz (B\u00f6blinger Stra\u00dfe)",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "address_en": [
+          "capacity: 7, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon",
+          "svg": "<svg width=\"24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"><path d=\"M8.141 11.624l-.653-.519c-.395-.312-.477-.878-.187-1.291l2.474-3.519c.237-.337.7-.42 1.04-.186l4.185 2.884h1.5c.31 0 .5.259.5.5 0 .276-.224.5-.5.5h-.728l1.3 2.393c.593-.248 1.244-.386 1.928-.386 2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5c0-1.72.87-3.237 2.193-4.138l-1.563-2.877-2.541-.782-.872 1.309 2.287 2.948c.179.231.216.535.122.811-.338.994-1.201 3.429-1.567 4.398-.09.244-.351.38-.604.316l-.023-.006c-.286-.071-.46-.347-.42-.637.156-1.159.573-3.986.573-3.986l-2.659-2.109-.674.957c1.07.917 1.748 2.277 1.748 3.796 0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5c.883 0 1.712.229 2.433.632l.708-1.008zm-1.288 1.831c-.554-.291-1.185-.455-1.853-.455-2.208 0-4 1.792-4 4s1.792 4 4 4c2.207 0 4-1.792 4-4 0-1.18-.512-2.241-1.326-2.974l-1.779 2.529c.067.133.105.285.105.445 0 .552-.448 1-1 1s-1-.448-1-1 .448-1 1-1l.061.002 1.792-2.547zm9.821.292c-1.014.726-1.674 1.913-1.674 3.253 0 2.208 1.792 4 4 4s4-1.792 4-4-1.792-4-4-4c-.511 0-.998.096-1.447.27l1.483 2.731c.535.019.964.459.964.999 0 .552-.448 1-1 1s-1-.448-1-1c0-.194.056-.377.152-.53l-1.478-2.723zm-3.597-11.747c1.147 0 2.077.931 2.077 2.077 0 1.147-.93 2.077-2.077 2.077-1.146 0-2.077-.93-2.077-2.077 0-1.146.931-2.077 2.077-2.077z\"/></svg>"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -22,20 +28,26 @@
           9.167691,
           48.7641822
         ]
-      },
-      "id": "node/262791148"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/262791149",
-        "amenity": "bicycle_rental",
-        "capacity": "16",
-        "address": "Capacity 16",
+        "address": [
+          "kapazit\u00e4t: 16, "
+        ],
         "name": "Marienplatz (Zahnradbahn)",
-        "network": "call-a-bike",
-        "ref": "7400",
-        "wheelchair": "no"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 16, "
+        ],
+        "address_en": [
+          "capacity: 16, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -43,20 +55,26 @@
           9.1679982,
           48.7645436
         ]
-      },
-      "id": "node/262791149"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/262791156",
-        "amenity": "bicycle_rental",
-        "capacity": "9",
-        "address": "Capacity: 9",
-        "name": "Berliner Platz / Fritz-Elsas-Straße",
-        "network": "call-a-bike",
-        "ref": "7325",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 9, "
+        ],
+        "name": "Berliner Platz / Fritz-Elsas-Stra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 9, "
+        ],
+        "address_en": [
+          "capacity: 9, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -64,19 +82,26 @@
           9.1677198,
           48.7778564
         ]
-      },
-      "id": "node/262791156"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/262791157",
-        "amenity": "bicycle_rental",
-        "capacity": "9",
-        "address": "Capacity: 9",
-        "name": "Berliner Platz / Breitscheidstraße",
-        "network": "call-a-bike",
-        "ref": "7320"
+        "address": [
+          "kapazit\u00e4t: 9, "
+        ],
+        "name": "Berliner Platz / Breitscheidstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 9, "
+        ],
+        "address_en": [
+          "capacity: 9, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -84,20 +109,26 @@
           9.167433,
           48.7790193
         ]
-      },
-      "id": "node/262791157"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264663634",
-        "amenity": "bicycle_rental",
-        "capacity": "13",
-        "address": "Capacity: 13",
-        "name": "Universität Keplerstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70014",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 13, "
+        ],
+        "name": "Universit\u00e4t Keplerstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 13, "
+        ],
+        "address_en": [
+          "capacity: 13, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -105,19 +136,26 @@
           9.175403,
           48.7824079
         ]
-      },
-      "id": "node/264663634"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264663637",
-        "amenity": "bicycle_rental",
-        "capacity": "8",
-        "address": "Capacity: 8",
-        "name": "Theodor-Heuss-Straße / Friedrichstraße",
-        "network": "call-a-bike",
-        "ref": "7031"
+        "address": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "name": "Theodor-Heuss-Stra\u00dfe / Friedrichstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "address_en": [
+          "capacity: 8, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -125,19 +163,26 @@
           9.1754309,
           48.7781935
         ]
-      },
-      "id": "node/264663637"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264713348",
-        "amenity": "bicycle_rental",
-        "capacity": "8",
-        "address": "Capacity: 8",
-        "name": "Berliner Platz / Breitscheidstraße",
-        "network": "call-a-bike",
-        "ref": "7321"
+        "address": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "name": "Berliner Platz / Breitscheidstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "address_en": [
+          "capacity: 8, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -145,20 +190,26 @@
           9.1675458,
           48.7790494
         ]
-      },
-      "id": "node/264713348"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264713354",
-        "amenity": "bicycle_rental",
-        "capacity": "8",
-        "address": "Capacity: 8",
-        "name": "Theodor-Heuss-Straße / Büchsengasse",
-        "network": "call-a-bike",
-        "ref": "7128",
-        "wheelchair": "no"
+        "address": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "name": "Theodor-Heuss-Stra\u00dfe / B\u00fcchsengasse",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "address_en": [
+          "capacity: 8, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -166,19 +217,26 @@
           9.1739809,
           48.7772994
         ]
-      },
-      "id": "node/264713354"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264713406",
-        "amenity": "bicycle_rental",
-        "capacity": "28",
-        "address": "Capacity: 28",
-        "name": "Theodor-Heuss-Straße / Friedrichstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70007"
+        "address": [
+          "kapazit\u00e4t: 28, "
+        ],
+        "name": "Theodor-Heuss-Stra\u00dfe / Friedrichstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 28, "
+        ],
+        "address_en": [
+          "capacity: 28, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -186,20 +244,26 @@
           9.1766511,
           48.7794344
         ]
-      },
-      "id": "node/264713406"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264713410",
-        "amenity": "bicycle_rental",
-        "capacity": "11",
-        "address": "Capacity: 11",
-        "name": "Rotebühlplatz / Rotebühlstraße",
-        "network": "call-a-bike",
-        "ref": "7120",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "name": "Roteb\u00fchlplatz / Roteb\u00fchlstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "address_en": [
+          "capacity: 11, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -207,20 +271,26 @@
           9.1719261,
           48.7748078
         ]
-      },
-      "id": "node/264713410"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264713429",
-        "amenity": "bicycle_rental",
-        "capacity": "11",
-        "address": "Capacity: 11",
-        "name": "Eberhardtstraße / Josef-Hirn-Platz",
-        "network": "call-a-bike",
-        "ref": "7110",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "name": "Eberhardtstra\u00dfe / Josef-Hirn-Platz",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "address_en": [
+          "capacity: 11, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -228,19 +298,26 @@
           9.1779658,
           48.7732471
         ]
-      },
-      "id": "node/264713429"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264713434",
-        "amenity": "bicycle_rental",
-        "capacity": "12",
-        "address": "Capacity: 12",
-        "name": "Leonhardsplatz / Hauptstätter Straße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70002"
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "name": "Leonhardsplatz / Hauptst\u00e4tter Stra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -248,20 +325,26 @@
           9.180635,
           48.7737282
         ]
-      },
-      "id": "node/264713434"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264713446",
-        "amenity": "bicycle_rental",
-        "capacity": "20",
-        "address": "Capacity: 20",
-        "name": "Wilhelmsplatz / Schlosserstraße",
-        "network": "call-a-bike",
-        "ref": "7140",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 20, "
+        ],
+        "name": "Wilhelmsplatz / Schlosserstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 20, "
+        ],
+        "address_en": [
+          "capacity: 20, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -269,20 +352,26 @@
           9.1786396,
           48.7711711
         ]
-      },
-      "id": "node/264713446"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/265336985",
-        "amenity": "bicycle_rental",
-        "capacity": "20",
-        "address": "Capacity: 20",
-        "name": "Südheimer Platz / Böblinger Straße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70306",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 20, "
+        ],
+        "name": "S\u00fcdheimer Platz / B\u00f6blinger Stra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 20, "
+        ],
+        "address_en": [
+          "capacity: 20, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -290,19 +379,26 @@
           9.1441447,
           48.7565505
         ]
-      },
-      "id": "node/265336985"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/265357690",
-        "amenity": "bicycle_rental",
-        "capacity": "5",
-        "address": "Capacity: 5",
-        "name": "Herdweg / Relenbergstraße",
-        "network": "call-a-bike",
-        "ref": "7240"
+        "address": [
+          "kapazit\u00e4t: 5, "
+        ],
+        "name": "Herdweg / Relenbergstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 5, "
+        ],
+        "address_en": [
+          "capacity: 5, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -310,19 +406,26 @@
           9.1623065,
           48.7867534
         ]
-      },
-      "id": "node/265357690"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/265357751",
-        "amenity": "bicycle_rental",
-        "capacity": "7",
-        "address": "Capacity: 7",
-        "name": "Schwabstraße / Wernlienstraße",
-        "network": "call-a-bike",
-        "ref": "7330"
+        "address": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "name": "Schwabstra\u00dfe / Wernlienstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "address_en": [
+          "capacity: 7, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -330,19 +433,26 @@
           9.1575014,
           48.7817441
         ]
-      },
-      "id": "node/265357751"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/265357758",
-        "amenity": "bicycle_rental",
-        "capacity": "15",
-        "address": "Capacity: 15",
-        "name": "Johannesstraße / Lerchenstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70403"
+        "address": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "name": "Johannesstra\u00dfe / Lerchenstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "address_en": [
+          "capacity: 15, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -350,20 +460,26 @@
           9.1590484,
           48.780734
         ]
-      },
-      "id": "node/265357758"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/265542966",
-        "amenity": "bicycle_rental",
-        "capacity": "6",
-        "address": "Capacity: 6",
-        "name": "Erwin-Schoettle-Platz / Matthäuskirche",
-        "network": "call-a-bike",
-        "ref": "7410",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 6, "
+        ],
+        "name": "Erwin-Schoettle-Platz / Matth\u00e4uskirche",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 6, "
+        ],
+        "address_en": [
+          "capacity: 6, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -371,21 +487,26 @@
           9.1599581,
           48.7621841
         ]
-      },
-      "id": "node/265542966"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/266530610",
-        "amenity": "bicycle_rental",
-        "capacity": "10",
-        "address": "Capacity: 10",
+        "address": [
+          "kapazit\u00e4t: 10, "
+        ],
         "name": "Hauptbahnhof Haupteingang",
-        "network": "call-a-bike",
-        "ref": "7000",
-        "toilets:wheelchair": "no",
-        "wheelchair": "no"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "address_en": [
+          "capacity: 10, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -393,20 +514,26 @@
           9.1817889,
           48.7831903
         ]
-      },
-      "id": "node/266530610"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/266530614",
-        "amenity": "bicycle_rental",
-        "capacity": "8",
-        "address": "Capacity: 8",
-        "name": "Königstraße / Schillerstraße",
-        "network": "call-a-bike",
-        "ref": "7010",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "name": "K\u00f6nigstra\u00dfe / Schillerstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 8, "
+        ],
+        "address_en": [
+          "capacity: 8, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -414,19 +541,26 @@
           9.1817645,
           48.7826668
         ]
-      },
-      "id": "node/266530614"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/266530616",
-        "amenity": "bicycle_rental",
-        "capacity": "11",
-        "address": "Capacity: 11",
-        "fixme": "Keine Stationsname vor Ort",
-        "network": "call-a-bike",
-        "ref": "7010"
+        "address": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "address_en": [
+          "capacity: 11, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -434,21 +568,26 @@
           9.1824069,
           48.7824212
         ]
-      },
-      "id": "node/266530616"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/266530617",
-        "amenity": "bicycle_rental",
-        "capacity": "10",
-        "address": "Capacity: 10",
-        "name": "Lautenschlagerstraße / Zeppelin Carre",
-        "network": "call-a-bike",
-        "ref": "7014",
-        "toilets:wheelchair": "no",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "name": "Lautenschlagerstra\u00dfe / Zeppelin Carre",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "address_en": [
+          "capacity: 10, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -456,20 +595,26 @@
           9.1798816,
           48.7828127
         ]
-      },
-      "id": "node/266530617"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/266530619",
-        "amenity": "bicycle_rental",
-        "capacity": "23",
-        "address": "Capacity: 23",
-        "network": "call-a-bike",
-        "ref": "7106",
-        "toilets:wheelchair": "no",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 23, "
+        ],
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 23, "
+        ],
+        "address_en": [
+          "capacity: 23, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -477,20 +622,26 @@
           9.1802807,
           48.7818474
         ]
-      },
-      "id": "node/266530619"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/267391307",
-        "amenity": "bicycle_rental",
-        "capacity": "18",
-        "address": "Capacity: 18",
-        "name": "Wilhelmsplatz / König-Karl-Straße",
-        "network": "call-a-bike",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "7610"
+        "address": [
+          "kapazit\u00e4t: 18, "
+        ],
+        "name": "Wilhelmsplatz / K\u00f6nig-Karl-Stra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 18, "
+        ],
+        "address_en": [
+          "capacity: 18, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -498,22 +649,26 @@
           9.2157713,
           48.802379
         ]
-      },
-      "id": "node/267391307"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/278829473",
-        "amenity": "bicycle_rental",
-        "capacity": "15",
-        "address": "Capacity: 15",
-        "name": "Neckartor / Neckarstraße",
-        "network": "call-a-bike",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "7070",
-        "website": "https://www.callabike-interaktiv.de",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "name": "Neckartor / Neckarstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "address_en": [
+          "capacity: 15, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -521,23 +676,26 @@
           9.1905886,
           48.7865098
         ]
-      },
-      "id": "node/278829473"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/298074605",
-        "amenity": "bicycle_rental",
-        "capacity": "10",
-        "address": "Capacity: 10",
-        "capacity:cargobike": "1",
-        "capacity:pedelec": "3",
+        "address": [
+          "kapazit\u00e4t: 10, "
+        ],
         "name": "Feuersee Feuerseeplatz",
-        "network": "RegioRadStuttgart",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "70401",
-        "wheelchair": "yes"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "address_en": [
+          "capacity: 10, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -545,20 +703,26 @@
           9.1641319,
           48.7725626
         ]
-      },
-      "id": "node/298074605"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/298287101",
-        "amenity": "bicycle_rental",
-        "capacity": "7",
-        "address": "Capacity: 7",
-        "name": "Rathaus / Marktstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70001",
-        "wheelchair": "no"
+        "address": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "name": "Rathaus / Marktstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "address_en": [
+          "capacity: 7, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -566,20 +730,26 @@
           9.179158,
           48.7749129
         ]
-      },
-      "id": "node/298287101"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/298725937",
-        "amenity": "bicycle_rental",
-        "capacity": "12",
-        "address": "Capacity: 12",
-        "name": "Bebelstraße / Bürgerzentrum West",
-        "network": "RegioRad Stuttgart",
-        "ref": "70405",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "name": "Bebelstra\u00dfe / B\u00fcrgerzentrum West",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -587,21 +757,26 @@
           9.1551368,
           48.7751583
         ]
-      },
-      "id": "node/298725937"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/299010349",
-        "amenity": "bicycle_rental",
-        "capacity": "10",
-        "address": "Capacity: 10",
-        "name": "Bad Cannstatt Bahnhof / Bahnhofstraße",
-        "network": "call-a-bike",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "7600",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "name": "Bad Cannstatt Bahnhof / Bahnhofstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "address_en": [
+          "capacity: 10, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -609,19 +784,26 @@
           9.218191,
           48.8016622
         ]
-      },
-      "id": "node/299010349"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/299834757",
-        "amenity": "bicycle_rental",
-        "capacity": "14",
-        "address": "Capacity: 14",
+        "address": [
+          "kapazit\u00e4t: 14, "
+        ],
         "name": "Daimler-Benz-Stadion",
-        "network": "call-a-bike",
-        "ref": "7630"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 14, "
+        ],
+        "address_en": [
+          "capacity: 14, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -629,22 +811,26 @@
           9.2263139,
           48.7929717
         ]
-      },
-      "id": "node/299834757"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/299834760",
-        "amenity": "bicycle_rental",
-        "capacity": "12",
-        "address": "Capacity: 12",
-        "name": "Daimler-Benz-Museum Mercedesstraße",
-        "network": "call-a-bike",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "7635",
-        "toilets:wheelchair": "yes",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "name": "Daimler-Benz-Museum Mercedesstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -652,21 +838,26 @@
           9.2355026,
           48.7888957
         ]
-      },
-      "id": "node/299834760"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300146729",
-        "amenity": "bicycle_rental",
-        "capacity": "10",
-        "address": "Capacity: 10",
-        "name": "Wagenburgstraße Talstraße",
-        "network": "call-a-bike",
-        "ref": "7540",
-        "toilets:wheelchair": "yes",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "name": "Wagenburgstra\u00dfe Talstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "address_en": [
+          "capacity: 10, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -674,20 +865,26 @@
           9.2082632,
           48.7810839
         ]
-      },
-      "id": "node/300146729"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300146731",
-        "amenity": "bicycle_rental",
-        "capacity": "11",
-        "address": "Capacity: 11",
-        "name": "Ostendplatz / Landhausstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70203",
-        "wheelchair": "limited"
+        "address": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "name": "Ostendplatz / Landhausstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "address_en": [
+          "capacity: 11, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -695,19 +892,26 @@
           9.2075818,
           48.7858819
         ]
-      },
-      "id": "node/300146731"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300148215",
-        "amenity": "bicycle_rental",
-        "capacity": "7",
-        "address": "Capacity: 7",
-        "name": "Kleiner Schlossplatz / Kronprinzenstraße",
-        "network": "call-a-bike",
-        "ref": "7036"
+        "address": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "name": "Kleiner Schlossplatz / Kronprinzenstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 7, "
+        ],
+        "address_en": [
+          "capacity: 7, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -715,19 +919,26 @@
           9.1765023,
           48.7780264
         ]
-      },
-      "id": "node/300148215"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300148216",
-        "amenity": "bicycle_rental",
-        "capacity": "15",
-        "address": "Capacity: 15",
-        "name": "Kleiner Schlossplatz / Theodor-Heuss-Straße",
-        "network": "call-a-bike",
-        "ref": "7035"
+        "address": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "name": "Kleiner Schlossplatz / Theodor-Heuss-Stra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "address_en": [
+          "capacity: 15, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -735,20 +946,26 @@
           9.1762705,
           48.7781282
         ]
-      },
-      "id": "node/300148216"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300633727",
-        "amenity": "bicycle_rental",
-        "capacity": "10",
-        "address": "Capacity: 10",
-        "name": "Paul-Gerhardt-Platz / Forststraße",
-        "network": "call-a-bike",
-        "ref": "7340",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "name": "Paul-Gerhardt-Platz / Forststra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "address_en": [
+          "capacity: 10, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -756,19 +973,26 @@
           9.146795,
           48.7755143
         ]
-      },
-      "id": "node/300633727"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300633745",
-        "amenity": "bicycle_rental",
-        "capacity": "12",
-        "address": "Capacity: 12",
-        "name": "Johannesstraße / Schlossstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70402"
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "name": "Johannesstra\u00dfe / Schlossstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -776,20 +1000,26 @@
           9.1620949,
           48.7768805
         ]
-      },
-      "id": "node/300633745"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300633795",
-        "amenity": "bicycle_rental",
-        "capacity": "6",
-        "address": "Capacity: 6",
+        "address": [
+          "kapazit\u00e4t: 6, "
+        ],
         "name": "Erwin-Schoettle-Platz / Altes Feuerwehrhaus",
-        "network": "call-a-bike",
-        "ref": "7411",
-        "wheelchair": "yes"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 6, "
+        ],
+        "address_en": [
+          "capacity: 6, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -797,19 +1027,26 @@
           9.1597003,
           48.7620725
         ]
-      },
-      "id": "node/300633795"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/300790066",
-        "amenity": "bicycle_rental",
-        "capacity": "10",
-        "address": "Capacity: 10",
-        "name": "Böheimstraße / Burgstallstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70305"
+        "address": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "name": "B\u00f6heimstra\u00dfe / Burgstallstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 10, "
+        ],
+        "address_en": [
+          "capacity: 10, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -817,19 +1054,20 @@
           9.153695,
           48.7597954
         ]
-      },
-      "id": "node/300790066"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/303797848",
-        "amenity": "bicycle_rental",
-        "name": "Landesbibliothek Urbanstraße",
-        "network": "call-a-bike",
-        "ref": "7060",
-        "toilets:wheelchair": "yes",
-        "wheelchair": "limited"
+        "name": "Landesbibliothek Urbanstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -837,17 +1075,20 @@
           9.1855925,
           48.7769642
         ]
-      },
-      "id": "node/303797848"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/303802785",
-        "amenity": "bicycle_rental",
-        "name": "Konrad-Adenauer-Straße Haus der Geschichte",
-        "network": "call-a-bike",
-        "ref": "7055"
+        "name": "Konrad-Adenauer-Stra\u00dfe Haus der Geschichte",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -855,17 +1096,20 @@
           9.1853435,
           48.7788716
         ]
-      },
-      "id": "node/303802785"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1576576613",
-        "amenity": "bicycle_rental",
         "name": "Hedelfingen",
-        "network": "RegioRad Stuttgart",
-        "operator": "Deutsche Bahn Connect GmbH"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -873,19 +1117,26 @@
           9.2541801,
           48.7598942
         ]
-      },
-      "id": "node/1576576613"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1724578032",
-        "amenity": "bicycle_rental",
-        "capacity": "9",
-        "address": "Capacity: 9",
-        "name": "Mineralbäder",
-        "network": "call-a-bike",
-        "ref": "7530"
+        "address": [
+          "kapazit\u00e4t: 9, "
+        ],
+        "name": "Mineralb\u00e4der",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 9, "
+        ],
+        "address_en": [
+          "capacity: 9, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -893,19 +1144,20 @@
           9.2057296,
           48.7964979
         ]
-      },
-      "id": "node/1724578032"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2187535115",
-        "amenity": "bicycle_rental",
         "name": "Pragsattel Heilbronner Str.",
-        "network": "call-a-bike",
-        "operator": "RegioRadStuttgart",
-        "ref": "70104",
-        "wheelchair": "yes"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -913,18 +1165,26 @@
           9.1824762,
           48.8101117
         ]
-      },
-      "id": "node/2187535115"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2200305158",
-        "amenity": "bicycle_rental",
-        "brand": "RegioRad Stuttgart",
-        "capacity": "15",
-        "address": "Capacity: 15",
-        "source": "estimate; extrapolate; survey"
+        "address": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "address_en": [
+          "capacity: 15, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -932,16 +1192,20 @@
           9.1687993,
           48.8135333
         ]
-      },
-      "id": "node/2200305158"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2252215549",
-        "amenity": "bicycle_rental",
-        "network": "RegioRadStuttgart",
-        "ref": "70702"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -949,19 +1213,26 @@
           9.1745518,
           48.8312357
         ]
-      },
-      "id": "node/2252215549"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2279291828",
-        "amenity": "bicycle_rental",
-        "capacity": "11",
-        "address": "Capacity: 11",
-        "name": "Streesemannstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70103"
+        "address": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "name": "Streesemannstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 11, "
+        ],
+        "address_en": [
+          "capacity: 11, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -969,17 +1240,20 @@
           9.1735004,
           48.7996861
         ]
-      },
-      "id": "node/2279291828"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2450507427",
-        "amenity": "bicycle_rental",
         "name": "Sillenbuch",
-        "network": "RegioRad Stuttgart",
-        "ref": "7840"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -987,20 +1261,26 @@
           9.2182114,
           48.7417338
         ]
-      },
-      "id": "node/2450507427"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2882023217",
-        "amenity": "bicycle_rental",
-        "capacity": "12",
-        "address": "Capacity: 12",
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
         "name": "Seeblickweg",
-        "network": "call-a-bike",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "7690"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1008,22 +1288,26 @@
           9.2172862,
           48.8330596
         ]
-      },
-      "id": "node/2882023217"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3618349482",
-        "amenity": "bicycle_rental",
-        "capacity": "35",
-        "address": "Capacity: 35",
-        "covered": "no",
-        "note": "Mit einer Ladesäule der EnBW",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "7600",
-        "source": "survey",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 35, "
+        ],
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 35, "
+        ],
+        "address_en": [
+          "capacity: 35, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1031,16 +1315,20 @@
           9.2178708,
           48.8018231
         ]
-      },
-      "id": "node/3618349482"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3623067202",
-        "amenity": "bicycle_rental",
-        "ref": "7830",
-        "source": "estimation; extrapolation; survey"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1048,18 +1336,26 @@
           9.1684835,
           48.7486772
         ]
-      },
-      "id": "node/3623067202"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3826434775",
-        "amenity": "bicycle_rental",
-        "capacity": "12",
-        "address": "Capacity: 12",
-        "network": "RegioRad Stuttgart",
-        "ref": "72001"
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1067,18 +1363,26 @@
           9.1463679,
           48.7303628
         ]
-      },
-      "id": "node/3826434775"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4064677709",
-        "amenity": "bicycle_rental",
-        "capacity": "15",
-        "address": "Capacity: 15",
+        "address": [
+          "kapazit\u00e4t: 15, "
+        ],
         "name": "DB Bikes",
-        "operator": "Deutsche Bahn"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "address_en": [
+          "capacity: 15, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1086,27 +1390,26 @@
           9.1912157,
           48.780055
         ]
-      },
-      "id": "node/4064677709"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4246702459",
-        "addr:city": "Stuttgart",
-        "addr:housenumber": "136",
-        "addr:street": "Werastraße",
-        "amenity": "bicycle_rental",
-        "bicycle:tours": "guided",
-        "contact:facebook": "radhausost",
-        "email": "info@stuttgart-by-bike.com",
-        "entrance": "yes",
-        "level": "0",
         "name": "RaDhaus Ost | Stuttgart by bike",
-        "phone": "+49017661127943",
-        "shop": "travel_agency",
-        "website": "https://www.stuttgart-by-bike.com",
-        "address": "https://www.stuttgart-by-bike.com"
+        "address": [
+          "telefon: +49017661127943"
+        ],
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "telefon: +49017661127943"
+        ],
+        "address_en": [
+          "phone: +49017661127943"
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1114,15 +1417,20 @@
           9.1964239,
           48.789058
         ]
-      },
-      "id": "node/4246702459"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5211917273",
-        "amenity": "bicycle_rental",
-        "operator": "Deutsche Bahn"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1130,14 +1438,20 @@
           9.1881135,
           48.7551048
         ]
-      },
-      "id": "node/5211917273"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5477587959",
-        "amenity": "bicycle_rental"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1145,16 +1459,20 @@
           9.3016561,
           48.8265971
         ]
-      },
-      "id": "node/5477587959"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5576361580",
-        "amenity": "bicycle_rental",
-        "network": "RegioRad Stuttgart",
-        "ref": "70011"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1162,20 +1480,20 @@
           9.1804223,
           48.7693457
         ]
-      },
-      "id": "node/5576361580"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5638299933",
-        "amenity": "bicycle_rental",
-        "brand": "RegioRad Stuttgart",
-        "operator": "Deutsche Bahn Connect GmbH",
-        "ref": "70015",
-        "source": "estimate; extrapolate; survey",
-        "website": "https://www.callabike-interaktiv.de",
-        "address": "https://www.callabike-interaktiv.de"
+        "address": [],
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1183,16 +1501,20 @@
           9.1796971,
           48.7828467
         ]
-      },
-      "id": "node/5638299933"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5651035135",
-        "amenity": "bicycle_rental",
-        "network": "RegioRad Stuttgart",
-        "ref": "72101"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1200,17 +1522,20 @@
           9.1116853,
           48.729761
         ]
-      },
-      "id": "node/5651035135"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5717774625",
-        "amenity": "bicycle_rental",
         "name": "S Bhf. Echterdingen / Hauptstr",
-        "network": "RegioRad Stuttgart",
-        "ref": "77902"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1218,17 +1543,20 @@
           9.1676516,
           48.6924021
         ]
-      },
-      "id": "node/5717774625"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5717775798",
-        "amenity": "bicycle_rental",
         "name": "S Bhf. Leinfelden / Bahnhofstr.",
-        "network": "RegioRad Stuttgart",
-        "ref": "77901"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1236,20 +1564,26 @@
           9.1422075,
           48.6973155
         ]
-      },
-      "id": "node/5717775798"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5745683534",
-        "amenity": "bicycle_rental",
-        "brand": "RegioRad Stuttgart",
-        "capacity": "12",
-        "address":  "Capacity: 12",
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
         "name": "Bhf. Ditzingen Nordseite",
-        "operator": "Deutsche Bahn",
-        "ref": "72302"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1257,18 +1591,20 @@
           9.0663855,
           48.8238976
         ]
-      },
-      "id": "node/5745683534"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5745683535",
-        "amenity": "bicycle_rental",
-        "brand": "RegioRad Stuttgart",
-        "fixme": "Kapazität?",
-        "name": "Bhf. Ditzingen Südseite",
-        "ref": "72301"
+        "name": "Bhf. Ditzingen S\u00fcdseite",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1276,18 +1612,26 @@
           9.0668991,
           48.823412
         ]
-      },
-      "id": "node/5745683535"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5828883061",
-        "amenity": "bicycle_rental",
-        "capacity": "6",
-        "address":  "Capacity: 6",
-        "network": "RegioRad Stuttgart",
-        "ref": "70502"
+        "address": [
+          "kapazit\u00e4t: 6, "
+        ],
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 6, "
+        ],
+        "address_en": [
+          "capacity: 6, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1295,16 +1639,20 @@
           9.1289534,
           48.7789185
         ]
-      },
-      "id": "node/5828883061"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5834505786",
-        "amenity": "bicycle_rental",
-        "network": "RegioRad Stuttgart",
-        "ref": "79001"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1312,16 +1660,20 @@
           9.0666698,
           48.7885123
         ]
-      },
-      "id": "node/5834505786"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5951281477",
-        "amenity": "bicycle_rental",
-        "network": "RegioRad Stuttgart",
-        "ref": "71105"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1329,16 +1681,20 @@
           9.2223439,
           48.8089249
         ]
-      },
-      "id": "node/5951281477"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6143563414",
-        "amenity": "bicycle_rental",
-        "network": "call-a-bike",
-        "operator": "Regio Rad Stuttgart"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1346,20 +1702,26 @@
           9.2510934,
           48.780018
         ]
-      },
-      "id": "node/6143563414"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6153050852",
-        "amenity": "bicycle_rental",
-        "brand": "Regiorad Stuttgart",
-        "capacity": "12",
-        "address":  "Capacity: 12",
-        "covered": "yes",
-        "name": "Wilhelmsplatz König-Karl-Str.",
-        "ref": "71103"
+        "address": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "name": "Wilhelmsplatz K\u00f6nig-Karl-Str.",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 12, "
+        ],
+        "address_en": [
+          "capacity: 12, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1367,16 +1729,20 @@
           9.2157228,
           48.8024912
         ]
-      },
-      "id": "node/6153050852"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6171654998",
-        "amenity": "bicycle_rental",
-        "brand": "RegioRad Stuttgart",
-        "source": "survey"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1384,15 +1750,20 @@
           9.1279819,
           48.7377808
         ]
-      },
-      "id": "node/6171654998"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6181809023",
-        "amenity": "bicycle_rental",
-        "name": "RegioRadStuttgart"
+        "name": "RegioRadStuttgart",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1400,17 +1771,20 @@
           9.1433171,
           48.7179854
         ]
-      },
-      "id": "node/6181809023"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6191888339",
-        "amenity": "bicycle_rental",
-        "network": "Lastenrad Stuttgart e.V.",
-        "operator": "Lastenrad Stuttgart e.V.",
-        "website": "https://www.lastenrad-stuttgart.de"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1418,14 +1792,20 @@
           9.1569543,
           48.7709104
         ]
-      },
-      "id": "node/6191888339"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6225748984",
-        "amenity": "bicycle_rental"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1433,19 +1813,26 @@
           9.1731453,
           48.770725
         ]
-      },
-      "id": "node/6225748984"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6307717358",
-        "amenity": "bicycle_rental",
-        "capacity": "4",
-        "address":  "Capacity: 4",
-        "name": "Johannesstraße / Schlossstraße",
-        "network": "RegioRad Stuttgart",
-        "ref": "70402"
+        "address": [
+          "kapazit\u00e4t: 4, "
+        ],
+        "name": "Johannesstra\u00dfe / Schlossstra\u00dfe",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 4, "
+        ],
+        "address_en": [
+          "capacity: 4, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1453,14 +1840,20 @@
           9.1621672,
           48.7767771
         ]
-      },
-      "id": "node/6307717358"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6433687436",
-        "amenity": "bicycle_rental"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1468,19 +1861,26 @@
           9.2028737,
           48.7103286
         ]
-      },
-      "id": "node/6433687436"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6592819824",
-        "amenity": "bicycle_rental",
-        "capacity": "15",
-        "address":  "Capacity: 15",
-        "contact:website": "www.regioradstuttgart.de",
+        "address": [
+          "kapazit\u00e4t: 15, "
+        ],
         "name": "RegioRad",
-        "operator": "RegioRad Stuttgart"
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address_de": [
+          "kapazit\u00e4t: 15, "
+        ],
+        "address_en": [
+          "capacity: 15, "
+        ],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1488,15 +1888,20 @@
           9.230774,
           48.8416943
         ]
-      },
-      "id": "node/6592819824"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6622175830",
-        "amenity": "bicycle_rental",
-        "network": "RegioRad Stuttgart"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1504,16 +1909,20 @@
           9.1085029,
           48.7181173
         ]
-      },
-      "id": "node/6622175830"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6649953780",
-        "amenity": "bicycle_rental",
-        "network": "RegioRad Stuttgart",
-        "ref": "79002"
+        "name": "Fahrradverleih",
+        "name_en": "Bicycle rental place",
+        "name_de": "Fahrradverleih",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeRentalIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -1521,8 +1930,7 @@
           9.0825102,
           48.8023092
         ]
-      },
-      "id": "node/6649953780"
+      }
     }
   ]
 }

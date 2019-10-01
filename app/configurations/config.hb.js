@@ -187,7 +187,7 @@ export default {
       {
         name: {
           en: 'Taxi stands',
-          de: 'Taxistands',
+          de: 'Taxistellen',
         },
         url: '/assets/geojson/Point/stuttgart_taxi.geojson',
       },
@@ -227,7 +227,7 @@ export default {
       {
         name: {
           en: 'Bicycle monitoring stations',
-          de: 'Fahrradzählstelle',
+          de: 'Fahrradzählstellen',
         },
         url: '/assets/geojson/Point/stuttgart_bike_monitoringstation.geojson',
       },

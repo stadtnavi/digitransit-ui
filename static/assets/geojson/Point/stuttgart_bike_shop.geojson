@@ -1,29 +1,29 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-25T07:05:03Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264893973",
         "name": "Bike Sport",
-        "city": "Stuttgart",
-        "address": "Hauptstätter Straße 154, opening hours: Mo-Fr 09:00-13:00,15:00-18:00 Sa 09:00-14:00, phone: +49 711 6070066",
-        "addr:country": "DE",
-        "addr:postcode": "70178",
-        "addr:suburb": "Süd",
-        "email": "info@bike-sport.de",
-        "opening_hours": "Mo-Fr 09:00-13:00,15:00-18:00;Sa 09:00-14:00;PH off",
-        "phone": "+49 711 6070066",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:retail": "yes",
-        "shop": "bicycle",
-        "vending:accessories": "yes",
-        "vending:bicycle_parts": "yes",
-        "website": "https://www.bike-sport.de/",
-        "wheelchair": "yes"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:00-13:00,15:00-18:00;Sa 09:00-14:00;PH off, ",
+          "telefon: +49 711 6070066"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:00-13:00,15:00-18:00;Sa 09:00-14:00;PH off, ",
+          "telefon: +49 711 6070066"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 09:00-13:00,15:00-18:00;Sa 09:00-14:00;PH off, ",
+          "phone: +49 711 6070066"
+        ],
+        "icon": {
+          "id": "bikeShopIcon",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M9.939 0l-.939 4.971v1.098c0 1.066-.933 1.931-2 1.931s-2-.865-2-1.932v-1.097l2.996-4.971h1.943zm-3.052 0l-2.887 4.971v1.098c0 1.066-.933 1.931-2 1.931s-2-.865-2-1.932v-1.097l4.874-4.971h2.013zm17.113 6.068c0 1.067-.933 1.932-2 1.932s-2-.933-2-2v-1.098l-2.887-4.902h2.014l4.873 4.971v1.097zm-10-1.168v1.098c0 1.066-.933 2.002-2 2.002s-2-.933-2-2v-1.098l1.047-4.902h1.905l1.048 4.9zm2.004-4.9l2.993 5.002v1.098c.001 1.067-.93 1.9-1.997 1.9s-2-.933-2-2v-1.098l-.939-4.902h1.943zm-15.004 10v14h10v-2h-8v-10h18v12h2v-14h-22zm18 4h-6v10h6v-10z\"/></svg>"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -31,26 +31,29 @@
           9.1691733,
           48.7644918
         ]
-      },
-      "id": "node/264893973"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/833383969",
         "name": "Bike-Center",
-        "city": "Stuttgart",
-        "address": "Amstetter Straße 40, opening hours: Mo-Fr 09:30-13:00,15:00-18:00 Sa 09:30-13:00, phone: +49 711 91275162",
-        "addr:country": "DE",
-        "addr:housenumber": "40",
-        "addr:postcode": "70329",
-        "addr:suburb": "Hedelfingen",
-        "email": "info@bike-center-stuttgart.de",
-        "opening_hours": "Mo-Fr 09:30-13:00,15:00-18:00;Sa 09:30-13:00;PH off",
-        "phone": "+49 711 91275162",
-        "shop": "bicycle",
-        "website": "http://www.bike-center-stuttgart.de/",
-        "wheelchair": "limited"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-13:00,15:00-18:00;Sa 09:30-13:00;PH off, ",
+          "telefon: +49 711 91275162"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-13:00,15:00-18:00;Sa 09:30-13:00;PH off, ",
+          "telefon: +49 711 91275162"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 09:30-13:00,15:00-18:00;Sa 09:30-13:00;PH off, ",
+          "phone: +49 711 91275162"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -58,26 +61,26 @@
           9.2564684,
           48.7571061
         ]
-      },
-      "id": "node/833383969"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/896323559",
         "name": "Mega-Bike",
-        "city": "Stuttgart",
-        "addr": "Voltastraße 10, opnening hours: Mo-Fr 14:00-18:30 Sa 10:00-14:00, phone: +49 711 5490944",
-        "addr:country": "DE",
-        "addr:housenumber": "10",
-        "addr:postcode": "70376",
-        "addr:suburb": "Bad Cannstatt",
-        "contact:email": "info@megabike-stuttgart.de",
-        "contact:phone": "+49 711 5490944",
-        "contact:website": "http://megabike-stuttgart.de/",
-        "opening_hours": "Mo-Fr 14:00-18:30; Sa 10:00-14:00; PH off",
-        "operator": "Joachim Gebhardt",
-        "shop": "bicycle"
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 14:00-18:30; Sa 10:00-14:00; PH off, "
+        ],
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 14:00-18:30; Sa 10:00-14:00; PH off, "
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 14:00-18:30; Sa 10:00-14:00; PH off, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -85,26 +88,29 @@
           9.2179054,
           48.811101
         ]
-      },
-      "id": "node/896323559"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1018371258",
         "name": "Bikes'n'Boards",
-        "city": "Stuttgart",
-        "address": "Tübinger Straße 53, opening hours: Mo-Fr 11:00-19:00 Sa 10:00-16:00, phone: +49 711 51872402",
-        "addr:country": "DE",
-        "addr:housenumber": "53",
-        "addr:postcode": "70178",
-        "addr:suburb": "Süd",
-        "email": "info@bikesnboards.de",
-        "opening_hours": "Mo-Fr 11:00-19:00;Sa 10:00-16:00;PH off",
-        "phone": "+49 711 51872402",
-        "shop": "bicycle",
-        "website": "https://www.bikesnboards.de/",
-        "wheelchair": "limited"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 11:00-19:00;Sa 10:00-16:00;PH off, ",
+          "telefon: +49 711 51872402"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 11:00-19:00;Sa 10:00-16:00;PH off, ",
+          "telefon: +49 711 51872402"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 11:00-19:00;Sa 10:00-16:00;PH off, ",
+          "phone: +49 711 51872402"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -112,30 +118,29 @@
           9.1719429,
           48.7691413
         ]
-      },
-      "id": "node/1018371258"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1018381039",
         "name": "TransVelo",
-        "city": "Stuttgart",
-        "addr:country": "DE",
-        "addr:street": "Strohberg 7-9, opening hours: Mo-Fr 10:00-19:00 Sa 10:00-14:00, phone: +49 711 6492153",
-        "addr:housenumber": "7-9",
-        "addr:postcode": "70180",
-        "addr:suburb": "Süd",
-        "email": "stuttgart@transvelo.de",
-        "fax": "+49 711 6492 121",
-        "opening_hours": "Mo-Fr 10:00-19:00;Sa 10:00-14:00;PH off",
-        "phone": "+49 711 6492153",
-        "service:bicycle:rental": "yes",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:retail": "yes",
-        "shop": "bicycle",
-        "website": "http://www.transvelo.de",
-        "wheelchair": "yes"
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-19:00;Sa 10:00-14:00;PH off, ",
+          "telefon: +49 711 6492153"
+        ],
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-19:00;Sa 10:00-14:00;PH off, ",
+          "telefon: +49 711 6492153"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 10:00-19:00;Sa 10:00-14:00;PH off, ",
+          "phone: +49 711 6492153"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -143,21 +148,20 @@
           9.1721851,
           48.7647034
         ]
-      },
-      "id": "node/1018381039"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1139627842",
         "name": "BIKE'N FUN",
-        "city": "Korntal-Münchingen",
-        "address": "Hans-Sachs-Straße 3/1",
-        "addr:country": "DE",
-        "addr:housenumber": "3/1",
-        "addr:postcode": "70825",
-        "shop": "bicycle",
-        "wheelchair": "yes"
+        "address": [],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -165,28 +169,29 @@
           9.1217771,
           48.8290211
         ]
-      },
-      "id": "node/1139627842"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1373737121",
         "name": "extrabike",
-        "city": "Stuttgart",
-        "addr:street": "Glemsgaustraße 40, opening hours: Mo 15:00-18:30 Tu-Fr 10:00-13:00,15:00-18:30 Sa 09:00-13:00, phone: +49 711 8873203",
-        "addr:country": "DE",
-        "addr:housenumber": "40",
-        "addr:postcode": "70499",
-        "addr:suburb": "Weilimdorf",
-        "email": "info@extrabike.de",
-        "opening_hours": "Mo 15:00-18:30;Tu-Fr 10:00-13:00,15:00-18:30;Sa 09:00-13:00;PH off",
-        "phone": "+49 711 8873203",
-        "service:bicycle:retail": "yes",
-        "shop": "bicycle",
-        "vending:bicycle_parts": "limited",
-        "website": "http://www.extrabike.de/",
-        "wheelchair": "no"
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address": [
+          "\u00f6ffnungszeiten: Mo 15:00-18:30;Di-Fr 10:00-13:00,15:00-18:30;Sa 09:00-13:00;PH off, ",
+          "telefon: +49 711 8873203"
+        ],
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo 15:00-18:30;Di-Fr 10:00-13:00,15:00-18:30;Sa 09:00-13:00;PH off, ",
+          "telefon: +49 711 8873203"
+        ],
+        "address_en": [
+          "opening hours: Mo 15:00-18:30;Tu-Fr 10:00-13:00,15:00-18:30;Sa 09:00-13:00;PH off, ",
+          "phone: +49 711 8873203"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -194,28 +199,26 @@
           9.1105363,
           48.8163933
         ]
-      },
-      "id": "node/1373737121"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1494535079",
         "name": "Fahrrad Topshop",
-        "city": "Stuttgart",
-        "address": "Dennerstraße 62, opening hours: Mo-Fr 09:30-19:00 Sa 09:30-17:00, phone: +49 711 50484847",
-        "addr:country": "DE",
-        "addr:housenumber": "62",
-        "addr:postcode": "70372",
-        "addr:suburb": "Bad Cannstatt",
-        "building": "yes",
-        "contact:phone": "+49 711 50484847",
-        "contact:website": "https://www.fahrradtopshop.com/",
-        "email": "info@fahrradtopshop.de",
-        "entrance": "yes",
-        "opening_hours": "Mo-Fr 09:30-19:00; Sa 09:30-17:00; PH off",
-        "shop": "bicycle",
-        "wheelchair": "yes"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-19:00; Sa 09:30-17:00; PH off, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-19:00; Sa 09:30-17:00; PH off, "
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 09:30-19:00; Sa 09:30-17:00; PH off, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -223,26 +226,29 @@
           9.2299048,
           48.8058208
         ]
-      },
-      "id": "node/1494535079"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1595624206",
         "name": "Renner",
-        "city": "Stuttgart",
-        "address": "Wormser Straße 16, opening hours: Mo-Fr 09:30-18:00 Sa 09:30-14:00, phone: +49 711 296234",
-        "addr:country": "DE",
-        "addr:housenumber": "16",
-        "addr:postcode": "70499",
-        "addr:suburb": "Weilimdorf",
-        "email": "fahrrad-renner@t-online.de",
-        "opening_hours": "Mo-Fr 09:30-18:00; Sa 09:30-14:00",
-        "phone": "+49 711 296234",
-        "service:bicycle:pump": "yes",
-        "shop": "bicycle",
-        "website": "http://www.fahrrad-renner.de"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-18:00; Sa 09:30-14:00, ",
+          "telefon: +49 711 296234"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-18:00; Sa 09:30-14:00, ",
+          "telefon: +49 711 296234"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 09:30-18:00; Sa 09:30-14:00, ",
+          "phone: +49 711 296234"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -250,26 +256,26 @@
           9.1194181,
           48.8125018
         ]
-      },
-      "id": "node/1595624206"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1856225971",
-        "name": "Kurz Zweiräder",
-        "city": "Stuttgart",
-        "address": "Aachener Straße 34, opening hours: Mo-Th 09:30-12:30,14:00-18:00 We 09:30-12:30 Fr 09:30-12:30,14:00-17:00, phone: +49 711 544603",
-        "addr:country": "DE",
-        "addr:housenumber": "34",
-        "addr:postcode": "70376",
-        "addr:suburb": "Bad Cannstatt",
-        "contact:email": "kontakt@kurz-zweiraeder.de",
-        "contact:fax": "+49 711 557619",
-        "contact:phone": "+49 711 544603",
-        "contact:website": "http://www.kurz-zweiraeder.de",
-        "opening_hours": "Mo-Th 09:30-12:30,14:00-18:00; We 09:30-12:30; Fr 09:30-12:30,14:00-17:00; PH off",
-        "shop": "bicycle"
+        "name": "Kurz Zweir\u00e4der",
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Do 09:30-12:30,14:00-18:00; Mi 09:30-12:30; Fr 09:30-12:30,14:00-17:00; PH off, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Do 09:30-12:30,14:00-18:00; Mi 09:30-12:30; Fr 09:30-12:30,14:00-17:00; PH off, "
+        ],
+        "address_en": [
+          "opening hours: Mo-Th 09:30-12:30,14:00-18:00; We 09:30-12:30; Fr 09:30-12:30,14:00-17:00; PH off, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -277,29 +283,29 @@
           9.2087448,
           48.8080129
         ]
-      },
-      "id": "node/1856225971"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2331976846",
-        "name": "Tretmühle Stuttgart GmbH",
-        "city": "Stuttgart",
-        "address": "Kirchheimer Straße 34, opening hours: Mo-Fr 10:00-13:00,14:00-18:30 Sa 10:00-14:00, phone: +49 711 50494444",
-        "addr:district": "Sillenbuch",
-        "addr:housenumber": "34",
-        "addr:postcode": "70619",
-        "addr:suburb": "Sillenbuch",
-        "email": "stuttgart@tretmuehle.de",
-        "fax": "+49 711 50494002",
-        "opening_hours": "Mo-Fr 10:00-13:00,14:00-18:30;Sa 10:00-14:00",
-        "phone": "+49 711 50494444",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:retail": "yes",
-        "shop": "bicycle",
-        "website": "https://www.tretmuehle-stuttgart.de/",
-        "wheelchair": "limited"
+        "name": "Tretm\u00fchle Stuttgart GmbH",
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-13:00,14:00-18:30;Sa 10:00-14:00, ",
+          "telefon: +49 711 50494444"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-13:00,14:00-18:30;Sa 10:00-14:00, ",
+          "telefon: +49 711 50494444"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 10:00-13:00,14:00-18:30;Sa 10:00-14:00, ",
+          "phone: +49 711 50494444"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -307,25 +313,29 @@
           9.2103587,
           48.7460078
         ]
-      },
-      "id": "node/2331976846"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2585682663",
         "name": "kunstform?! BMX Shop",
-        "city": "Stuttgart",
-        "address": "Rotebühlstraße 63, opening hours: Mo-Fr 13:00-18:00 Sa 11:00-19:00, phone: +49 711 21954890",
-        "addr:country": "DE",
-        "addr:housenumber": "63",
-        "addr:postcode": "70178",
-        "addr:suburb": "West",
-        "email": "contact@kunstform.org",
-        "opening_hours": "Mo-Fr 13:00-18:00; Sa 11:00-19:00",
-        "phone": "+49 711 21954890",
-        "shop": "bicycle",
-        "website": "https://www.kunstform.org/"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 13:00-18:00; Sa 11:00-19:00, ",
+          "telefon: +49 711 21954890"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 13:00-18:00; Sa 11:00-19:00, ",
+          "telefon: +49 711 21954890"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 13:00-18:00; Sa 11:00-19:00, ",
+          "phone: +49 711 21954890"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -333,28 +343,26 @@
           9.1676347,
           48.7729658
         ]
-      },
-      "id": "node/2585682663"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2680205064",
         "name": "Die Tretkurbel",
-        "city": "Fellbach",
-        "address": "Eberhardstraße 45, opening hours: Mar-Sep: Mo-Fr 09:30-18:30 Sa 09:00-14:00; Oct-Feb: Mo-Fr 10:00-18:00 Sa 09:00-14:00, phone: +49 711 5781175",
-        "addr:country": "DE",
-        "addr:housenumber": "45",
-        "addr:postcode": "70736",
-        "contact:email": "fellbach@die-tretkurbel.de",
-        "contact:fax": "+49 711 5284645",
-        "contact:phone": "+49 711 5781175",
-        "contact:website": "http://www.die-tretkurbel.de/index.php/die-tretkurbel/fellbach",
-        "email": "fellbach@die-tretkurbel.de",
-        "opening_hours": "Mar-Sep: Mo-Fr 09:30-18:30; Sa 09:00-14:00; Oct-Feb: Mo-Fr 10:00-18:00; We off; Sa 09:00-14:00; PH off",
-        "operator": "Gernolf Kopf",
-        "shop": "bicycle",
-        "wheelchair": "yes"
+        "address": [
+          "\u00f6ffnungszeiten: Mar-Sep: Mo-Fr 09:30-18:30; Sa 09:00-14:00; Oct-Feb: Mo-Fr 10:00-18:00; Mi off; Sa 09:00-14:00; PH off, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mar-Sep: Mo-Fr 09:30-18:30; Sa 09:00-14:00; Oct-Feb: Mo-Fr 10:00-18:00; Mi off; Sa 09:00-14:00; PH off, "
+        ],
+        "address_en": [
+          "opening hours: Mar-Sep: Mo-Fr 09:30-18:30; Sa 09:00-14:00; Oct-Feb: Mo-Fr 10:00-18:00; We off; Sa 09:00-14:00; PH off, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -362,30 +370,29 @@
           9.2761486,
           48.8158678
         ]
-      },
-      "id": "node/2680205064"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2721674169",
         "name": "eRadwerk",
-        "city": "Stuttgart",
-        "address": "Reinsburgstraße 96, opening hours: Tu-Fr 11:00-19:00 Sa 10:00-14:00, phone: +49 711 12859816",
-        "addr:country": "DE",
-        "addr:housenumber": "96",
-        "addr:postcode": "70197",
-        "addr:suburb": "West",
-        "email": "info@e-radwerk.de",
-        "entrance": "yes",
-        "opening_hours": "Tu-Fr 11:00-19:00;Sa 10:00-14:00;PH off",
-        "phone": "+49 711 12859816",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:retail": "yes",
-        "shop": "bicycle",
-        "vending:accessories": "limited",
-        "vending:bicycle_parts": "yes",
-        "website": "http://e-radwerk.de/"
+        "address": [
+          "\u00f6ffnungszeiten: Di-Fr 11:00-19:00;Sa 10:00-14:00;PH off, ",
+          "telefon: +49 711 12859816"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Di-Fr 11:00-19:00;Sa 10:00-14:00;PH off, ",
+          "telefon: +49 711 12859816"
+        ],
+        "address_en": [
+          "opening hours: Tu-Fr 11:00-19:00;Sa 10:00-14:00;PH off, ",
+          "phone: +49 711 12859816"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -393,28 +400,29 @@
           9.1589658,
           48.7682581
         ]
-      },
-      "id": "node/2721674169"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2848289729",
-        "name": "Zweirad Häcker GmbH",
-        "city": "Stuttgart",
-        "address": "Ulmer Straße 274, opening hours: Tu-Fr 10:00-13:00,14:30-18:00 Sa 10:00-13:00, phone: +49 711 425601",
-        "addr:country": "DE",
-        "addr:housenumber": "274",
-        "addr:postcode": "70327",
-        "addr:suburb": "Wangen",
-        "email": "haecker.schaefer@t-online.de",
-        "opening_hours": "Tu-Fr 10:00-13:00,14:30-18:00; Sa 10:00-13:00; PH off",
-        "phone": "+49 711 425601",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:retail": "yes",
-        "shop": "bicycle",
-        "website": "http://www.zweirad-haecker.de/",
-        "wheelchair": "yes"
+        "name": "Zweirad H\u00e4cker GmbH",
+        "address": [
+          "\u00f6ffnungszeiten: Di-Fr 10:00-13:00,14:30-18:00; Sa 10:00-13:00; PH off, ",
+          "telefon: +49 711 425601"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Di-Fr 10:00-13:00,14:30-18:00; Sa 10:00-13:00; PH off, ",
+          "telefon: +49 711 425601"
+        ],
+        "address_en": [
+          "opening hours: Tu-Fr 10:00-13:00,14:30-18:00; Sa 10:00-13:00; PH off, ",
+          "phone: +49 711 425601"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -422,26 +430,29 @@
           9.2370874,
           48.775672
         ]
-      },
-      "id": "node/2848289729"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3201310566",
         "name": "Fahrschneller",
-        "city": "Stuttgart",
-        "address": "Schwabstraße 34b, opening hours: Mo-Tu,Th-Fr 10:00-13:00,14:00-19:00; We 10:00-13:00,14:00-18:00; Sa 10:00-13:30, phone: +49 711 12173049",
-        "addr:country": "DE",
-        "addr:housenumber": "34b",
-        "addr:postcode": "70197",
-        "addr:suburb": "West",
-        "email": "info@fahrschneller.de",
-        "opening_hours": "Mo-Tu,Th-Fr 10:00-13:00,14:00-19:00; We 10:00-13:00,14:00-18:00; Sa 10:00-13:30",
-        "phone": "+49 711 12173049",
-        "shop": "bicycle",
-        "website": "http://www.fahrschneller.de/",
-        "wheelchair": "no"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Di,Do-Fr 10:00-13:00,14:00-19:00; Mi 10:00-13:00,14:00-18:00; Sa 10:00-13:30, ",
+          "telefon: +49 711 12173049"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Di,Do-Fr 10:00-13:00,14:00-19:00; Mi 10:00-13:00,14:00-18:00; Sa 10:00-13:30, ",
+          "telefon: +49 711 12173049"
+        ],
+        "address_en": [
+          "opening hours: Mo-Tu,Th-Fr 10:00-13:00,14:00-19:00; We 10:00-13:00,14:00-18:00; Sa 10:00-13:30, ",
+          "phone: +49 711 12173049"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -449,28 +460,26 @@
           9.1573409,
           48.7718047
         ]
-      },
-      "id": "node/3201310566"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3406782889",
-        "name": "Fahrräder für Afrika, Technik und Solidarität e.V.",
-        "city": "Stuttgart",
-        "address": "Innerer Nordbahnhof 1, opnening hours: Th 15:00-18:30 Sa 11:00-15:00",
-        "addr:country": "DE",
-        "addr:housenumber": "1",
-        "addr:postcode": "70191",
-        "addr:suburb": "Nord",
-        "description": "Gemeinnütziger Verein Verkauf von Gebrauchträdern und Ersatzteilen",
-        "email": "afrikafahrrad@tus2005.net",
-        "opening_hours": "Th 15:00-18:30;Sa 11:00-15:00;PH off",
-        "service:bicycle:retail": "no",
-        "service:bicycle:second_hand": "no",
-        "shop": "bicycle",
-        "vending": "no",
-        "website": "http://www.tus2005.net/?page_id=57"
+        "name": "Fahrr\u00e4der f\u00fcr Afrika, Technik und Solidarit\u00e4t e.V.",
+        "address": [
+          "\u00f6ffnungszeiten: Do 15:00-18:30;Sa 11:00-15:00;PH off, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Do 15:00-18:30;Sa 11:00-15:00;PH off, "
+        ],
+        "address_en": [
+          "opening hours: Th 15:00-18:30;Sa 11:00-15:00;PH off, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -478,27 +487,29 @@
           9.1861897,
           48.7993218
         ]
-      },
-      "id": "node/3406782889"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3609127074",
         "name": "Stromrad",
-        "city": "Stuttgart",
-        "address": "Olgastraße 43, opening hours: Mo-Sa 10:00-18:00, phone: +49 711 31953771",
-        "addr:country": "DE",
-        "addr:housenumber": "43",
-        "addr:postcode": "70182",
-        "addr:suburb": "Mitte",
-        "email": "info@stromrad.com",
-        "entrance": "yes",
-        "opening_hours": "Mo-Sa 10:00-18:00;PH off",
-        "phone": "+49 711 31953771",
-        "shop": "bicycle",
-        "website": "https://www.stromrad.com/",
-        "wheelchair": "no"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Sa 10:00-18:00;PH off, ",
+          "telefon: +49 711 31953771"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Sa 10:00-18:00;PH off, ",
+          "telefon: +49 711 31953771"
+        ],
+        "address_en": [
+          "opening hours: Mo-Sa 10:00-18:00;PH off, ",
+          "phone: +49 711 31953771"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -506,27 +517,29 @@
           9.185124,
           48.7739695
         ]
-      },
-      "id": "node/3609127074"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3670858930",
         "name": "Stadtrad",
-        "city": "Stuttgart",
-        "address": "Gutenbergstraße 45A, opening hours: Mo-Fr 09:00-13:00,14:00-18:30 Sa 09:00-14:00 Oct-Mar Mo off, phone: +49 711 6567199",
-        "addr:country": "DE",
-        "addr:housenumber": "45A",
-        "addr:postcode": "70176",
-        "addr:suburb": "West",
-        "email": "stadtrad@stadtrad-west.de",
-        "opening_hours": "Mo-Fr 09:00-13:00,14:00-18:30;Sa 09:00-14:00;PH off;Oct-Mar Mo off",
-        "phone": "+49 711 6567199",
-        "service:bicycle:pump": "yes",
-        "shop": "bicycle",
-        "website": "https://www.stadtrad-west.de/",
-        "wheelchair": "yes"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:00-13:00,14:00-18:30;Sa 09:00-14:00;PH off;Oct-Mar Mo off, ",
+          "telefon: +49 711 6567199"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:00-13:00,14:00-18:30;Sa 09:00-14:00;PH off;Oct-Mar Mo off, ",
+          "telefon: +49 711 6567199"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 09:00-13:00,14:00-18:30;Sa 09:00-14:00;PH off;Oct-Mar Mo off, ",
+          "phone: +49 711 6567199"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -534,26 +547,29 @@
           9.1607233,
           48.7724126
         ]
-      },
-      "id": "node/3670858930"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3676573039",
         "name": "Top Shop",
-        "city": "Stuttgart",
-        "address": "Wagenburgstraße 92, opening hours: Mo-Fr 09:30-19:00 Sa 10:00-17:00, phone: +49 711 50484807",
-        "addr:country": "DE",
-        "addr:housenumber": "92",
-        "addr:postcode": "70186",
-        "addr:suburb": "Ost",
-        "email": "info@fahrradtopshop.de",
-        "opening_hours": "Mo-Fr 09:30-19:00; Sa 10:00-17:00",
-        "phone": "+49 711 50484807",
-        "shop": "bicycle",
-        "website": "https://www.fahrradtopshop.com/",
-        "wheelchair": "no"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-19:00; Sa 10:00-17:00, ",
+          "telefon: +49 711 50484807"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-19:00; Sa 10:00-17:00, ",
+          "telefon: +49 711 50484807"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 09:30-19:00; Sa 10:00-17:00, ",
+          "phone: +49 711 50484807"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -561,25 +577,29 @@
           9.2029627,
           48.7804498
         ]
-      },
-      "id": "node/3676573039"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3676576259",
         "name": "Top Shop",
-        "city": "Stuttgart",
-        "address": "Seidenstraße 61, opening hours: Mo-Fr 09:30-19:00 Sa 10:00-17:00, phone: +49 711 50484841",
-        "addr:country": "DE",
-        "addr:housenumber": "61",
-        "addr:postcode": "70174",
-        "addr:suburb": "West",
-        "email": "info@fahrradtopshop.de",
-        "opening_hours": "Mo-Fr 09:30-19:00; Sa 10:00-17:00",
-        "phone": "+49 711 50484841",
-        "shop": "bicycle",
-        "website": "https://www.fahrradtopshop.com/"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-19:00; Sa 10:00-17:00, ",
+          "telefon: +49 711 50484841"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 09:30-19:00; Sa 10:00-17:00, ",
+          "telefon: +49 711 50484841"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 09:30-19:00; Sa 10:00-17:00, ",
+          "phone: +49 711 50484841"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -587,36 +607,32 @@
           9.1641141,
           48.7830256
         ]
-      },
-      "id": "node/3676576259"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3756673506",
         "name": "Fahrrad-Service-Station Bad Cannstatt",
-        "city": "Stuttgart",
-        "address": "Kegelenstraße 17, opening hours: Mo-Fr 07:00-20:00, phone: +49 711 50593729",
-        "addr:country": "DE",
-        "addr:housenumber": "17",
-        "addr:postcode": "70372",
-        "addr:suburb": "Bad Cannstatt",
-        "amenity": "bicycle_parking",
-        "bicycle_parking": "wall_loops",
-        "capacity": "6",
-        "covered": "yes",
-        "email": "fahrradwerkstatt@neuearbeit.de",
-        "fee": "yes",
-        "opening_hours": "Mo-Fr 07:00-20:00; PH off",
-        "operator": "Neue Arbeit GmbH",
-        "phone": "+49 711 50593729",
-        "service:bicycle:charging": "yes",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:second_hand": "yes",
-        "shop": "bicycle",
-        "surveillance": "indoor",
-        "website": "http://www.neuearbeit.de/index.php/angebote-fuer-kunden/konsum-und-service/fahrrad-service-stationen",
-        "wheelchair": "yes"
+        "address": [
+          "kapazit\u00e4t: 6, ",
+          "\u00f6ffnungszeiten: Mo-Fr 07:00-20:00; PH off, ",
+          "telefon: +49 711 50593729"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "kapazit\u00e4t: 6, ",
+          "\u00f6ffnungszeiten: Mo-Fr 07:00-20:00; PH off, ",
+          "telefon: +49 711 50593729"
+        ],
+        "address_en": [
+          "capacity: 6, ",
+          "opening hours: Mo-Fr 07:00-20:00; PH off, ",
+          "phone: +49 711 50593729"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -624,25 +640,29 @@
           9.2167538,
           48.8007463
         ]
-      },
-      "id": "node/3756673506"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3797297184",
         "name": "Basis Fahrradwarenladen",
-        "city": "Stuttgart",
-        "address": "Blumenstraße 15, opening hours: Mo-Fr 10:00-20:00 Sa 10:00-18:00, phone: +49 711 31534925",
-        "addr:country": "DE",
-        "addr:housenumber": "15",
-        "addr:postcode": "70182",
-        "addr:suburb": "Mitte",
-        "email": "info@fahrradwarenladen.de",
-        "opening_hours": "Mo-Fr 10:00-20:00;Sa 10:00-18:00;PH off",
-        "phone": "+49 711 31534925",
-        "shop": "bicycle",
-        "website": "https://www.fahrradwarenladen.de/"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-20:00;Sa 10:00-18:00;PH off, ",
+          "telefon: +49 711 31534925"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-20:00;Sa 10:00-18:00;PH off, ",
+          "telefon: +49 711 31534925"
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 10:00-20:00;Sa 10:00-18:00;PH off, ",
+          "phone: +49 711 31534925"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -650,26 +670,20 @@
           9.1867927,
           48.7740722
         ]
-      },
-      "id": "node/3797297184"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3887455376",
         "name": "Hyggelig Bikes",
-        "city": "Stuttgart",
-        "address": "Kolbstraße 21, phone: +49 711 57018410",
-        "addr:housenumber": "21",
-        "addr:postcode": "70180",
-        "addr:suburb": "Süd",
-        "contact:phone": "+49 711 57018410",
-        "email": "ride@hyggelig-bikes.de",
-        "entrance": "yes",
-        "shop": "bicycle",
-        "vending:accessories": "no",
-        "vending:bicycle_parts": "no",
-        "website": "http://hyggelig-bikes.de/"
+        "address": [],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -677,21 +691,26 @@
           9.1710483,
           48.7646833
         ]
-      },
-      "id": "node/3887455376"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3897361033",
         "name": "Bikewerkstatt GmbH",
-        "city": "Stuttgart",
-        "address": "Eberhardstraße 35/37, opening hours: Mo-Fr 11:00-19:00,09:00-18:00 Sa 11:00-16:00",
-        "addr:housenumber": "35/37",
-        "addr:postcode": "70173",
-        "description": "Fahrradwerkstatt",
-        "opening_hours": "Mo-Fr 11:00-19:00, 09:00-18:00; Sa 11:00-16:00",
-        "shop": "bicycle"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 11:00-19:00, 09:00-18:00; Sa 11:00-16:00, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 11:00-19:00, 09:00-18:00; Sa 11:00-16:00, "
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 11:00-19:00, 09:00-18:00; Sa 11:00-16:00, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -699,25 +718,26 @@
           9.1785666,
           48.7729337
         ]
-      },
-      "id": "node/3897361033"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4710800647",
         "name": "Fahrrad.de",
-        "city": "Stuttgart",
-        "address": "Rotenwaldstraße 154, opening hours: Mo-Fr 10:00-19:00 Sa 10:00-18:00",
-        "addr:housenumber": "154",
-        "addr:postcode": "70197",
-        "opening_hours": "Mo-Fr 10:00-19:00, Sa 10:00-18:00",
-        "operator": "INTERNETSTORES GmbH",
-        "payment:cash": "yes",
-        "payment:credit_cards": "yes",
-        "payment:debit_cards": "yes",
-        "service:bicycle:repair": "yes",
-        "shop": "bicycle"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-19:00, Sa 10:00-18:00, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-19:00, Sa 10:00-18:00, "
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 10:00-19:00, Sa 10:00-18:00, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -725,30 +745,29 @@
           9.1477503,
           48.7668545
         ]
-      },
-      "id": "node/4710800647"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4729410782",
         "name": "Bike + Style",
-        "city": "Fellbach",
-        "address": "Schorndorfer Straße 21, opening hours: Tu-Fr 10:00-13:00,14:00-18:00 Sa 10:00-14:00, phone: +49 711 4141515",
-        "addr:country": "DE",
-        "addr:housenumber": "21",
-        "addr:postcode": "70736",
-        "email": "info@bike-and-style.de",
-        "opening_hours": "Tu-Fr 10:00-13:00, 14:00-18:00; Sa 10:00-14:00",
-        "payment:coins": "no",
-        "payment:debit_cards": "no",
-        "payment:girocard": "yes",
-        "payment:notes": "no",
-        "phone": "+49 711 4141515",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:retail": "yes",
-        "shop": "bicycle",
-        "website": "https://www.bike-style.de/"
+        "address": [
+          "\u00f6ffnungszeiten: Di-Fr 10:00-13:00, 14:00-18:00; Sa 10:00-14:00, ",
+          "telefon: +49 711 4141515"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Di-Fr 10:00-13:00, 14:00-18:00; Sa 10:00-14:00, ",
+          "telefon: +49 711 4141515"
+        ],
+        "address_en": [
+          "opening hours: Tu-Fr 10:00-13:00, 14:00-18:00; Sa 10:00-14:00, ",
+          "phone: +49 711 4141515"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -756,20 +775,29 @@
           9.2775641,
           48.8153762
         ]
-      },
-      "id": "node/4729410782"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5377476523",
         "name": "bike-bar",
-        "address": "opening hours: Mo,Tu,Th,Fr 10:00-13:00,14:00-18:00 We 14:00-18:00 Sa 10:00-13:30, phone: +49 711 762295",
-        "email": "info@bike-bar.de",
-        "opening_hours": "Mo,Tu,Th,Fr 10:00-13:00,14:00-18:00;We 14:00-18:00;Sa 10:00-13:30;PH off",
-        "phone": "+49 711 762295",
-        "shop": "bicycle",
-        "website": "https://www.bike-bar.de/"
+        "address": [
+          "\u00f6ffnungszeiten: Mo,Di,Do,Fr 10:00-13:00,14:00-18:00;Mi 14:00-18:00;Sa 10:00-13:30;PH off, ",
+          "telefon: +49 711 762295"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo,Di,Do,Fr 10:00-13:00,14:00-18:00;Mi 14:00-18:00;Sa 10:00-13:30;PH off, ",
+          "telefon: +49 711 762295"
+        ],
+        "address_en": [
+          "opening hours: Mo,Tu,Th,Fr 10:00-13:00,14:00-18:00;We 14:00-18:00;Sa 10:00-13:30;PH off, ",
+          "phone: +49 711 762295"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -777,18 +805,26 @@
           9.1675571,
           48.7425079
         ]
-      },
-      "id": "node/5377476523"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5635663582",
         "name": "Radsport Mayer",
-        "address": "Heilbronner Straße 189, opening hours: Mo-Fr 10:00-20:00 Sa 10:00-16:00",
-        "addr:housenumber": "189",
-        "opening_hours": "Mo-Fr 10:00-20:00; Sa 10:00-16:00",
-        "shop": "bicycle"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-20:00; Sa 10:00-16:00, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 10:00-20:00; Sa 10:00-16:00, "
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 10:00-20:00; Sa 10:00-16:00, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -796,24 +832,26 @@
           9.1719362,
           48.8210777
         ]
-      },
-      "id": "node/5635663582"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5693734429",
         "name": "Keller 5 - die offene Fahrradwerkstatt",
-        "city": "Stuttgart",
-        "address": "Schickhardtstraße 35-37, opening hours: Tu 18:30-20:30 Th 18:30-20:30",
-        "addr:housenumber": "35-37",
-        "addr:postcode": "70199",
-        "description": "Keller 5 ist eine Fahrradwerkstatt - offen für alle. Werkzeuge und Hilfe für alle üblichen Rad-Reparaturen. Basis-Verschleiß-/Ersatzteile auf Spendenbasis. Annahme, Aufbereitung und Weitergabe von Spenden-Fahrrädern für Geflüchtete und andere Bedürftige.",
-        "description:en": "Keller 5 is a bicycle workshop for everyone. Tools and practical help for all common bicycle repairs. Simple spare parts on donation basis. Acceptance and repair of bike donations and transfer to refugees and other people in need.",
-        "email": "fahrradwerkstatt@freundeskreis-süd.de",
-        "opening_hours": "Tu 18:30-20:30, Th 18:30-20:30",
-        "shop": "bicycle",
-        "website": "www.freundeskreis-süd.de"
+        "address": [
+          "\u00f6ffnungszeiten: Di 18:30-20:30, Do 18:30-20:30, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Di 18:30-20:30, Do 18:30-20:30, "
+        ],
+        "address_en": [
+          "opening hours: Tu 18:30-20:30, Th 18:30-20:30, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -821,21 +859,26 @@
           9.1598628,
           48.7655638
         ]
-      },
-      "id": "node/5693734429"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5698451792",
         "name": "Fahrrad B & S",
-        "city": "Stuttgart",
-        "address": "Gablenberger Hauptstraße 21, phone: +49 711 42080396",
-        "addr:country": "DE",
-        "addr:housenumber": "21",
-        "addr:postcode": "70186",
-        "phone": "+49 711 42080396",
-        "shop": "bicycle"
+        "address": [
+          "telefon: +49 711 42080396"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "telefon: +49 711 42080396"
+        ],
+        "address_en": [
+          "phone: +49 711 42080396"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -843,22 +886,26 @@
           9.2076346,
           48.7795229
         ]
-      },
-      "id": "node/5698451792"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5841424746",
         "name": "Fahrrad Galerie",
-        "city": "Stuttgart",
-        "address": "Burgenlandstraße 102, phone: +7 11 85 12 02",
-        "addr:housenumber": "102",
-        "addr:postcode": "70469",
-        "email": "info@fahre-rad.de",
-        "phone": "+7 11 85 12 02",
-        "shop": "bicycle",
-        "website": "http://www.fahre-rad.de/"
+        "address": [
+          "telefon: +7 11 85 12 02"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "telefon: +7 11 85 12 02"
+        ],
+        "address_en": [
+          "phone: +7 11 85 12 02"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -866,14 +913,20 @@
           9.1580874,
           48.8102711
         ]
-      },
-      "id": "node/5841424746"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6076286874",
-        "shop": "bicycle"
+        "name": "Fahrradgeschaft",
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -881,31 +934,29 @@
           9.1111207,
           48.8133399
         ]
-      },
-      "id": "node/6076286874"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6117806385",
         "name": "Radtheke, reCycle - upCycle - justCycle",
-        "address": "opening hours: Mo,We,Fr 10:00-17:00 Tu,Th 12:00.19:00, phone: +49 711 504 707 23",
-        "addr:postcode": "70178",
-        "email": "post@radtheke.de",
-        "internet_access": "wlan",
-        "opening_hours": "Mo, We, Fr 10:00-17:00; Tu, Th 12:00.19:00",
-        "operator": "Hotte Hoss",
-        "payment:cash": "yes",
-        "phone": "+49 711 504 707 23",
-        "service:bicycle:bicycle": "yes",
-        "service:bicycle:bike": "yes",
-        "service:bicycle:ebike": "yes",
-        "service:bicycle:mtb": "yes",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:second_hand": "yes",
-        "service:bicycle:service": "yes",
-        "shop": "bicycle",
-        "website": "https://radtheke.de/"
+        "address": [
+          "\u00f6ffnungszeiten: Mo, Mi, Fr 10:00-17:00; Di, Do 12:00.19:00, ",
+          "telefon: +49 711 504 707 23"
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo, Mi, Fr 10:00-17:00; Di, Do 12:00.19:00, ",
+          "telefon: +49 711 504 707 23"
+        ],
+        "address_en": [
+          "opening hours: Mo, We, Fr 10:00-17:00; Tu, Th 12:00.19:00, ",
+          "phone: +49 711 504 707 23"
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -913,15 +964,20 @@
           9.1692572,
           48.7665963
         ]
-      },
-      "id": "node/6117806385"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6130800738",
         "name": "Fahrrad Topshop",
-        "shop": "bicycle"
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -929,23 +985,26 @@
           9.1567313,
           48.8084563
         ]
-      },
-      "id": "node/6130800738"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6286097186",
         "name": "Radstation Fellbach",
-        "city": "Fellbach",
-        "address": "Eisenbahnstraße 21, opening hours: Mo-Fr 07:00-19:30 Sa 10:00-19:30",
-        "addr:housenumber": "21",
-        "addr:postcode": "70736",
-        "opening_hours": "Mo-Fr 07:00-19:30; Sa 10:00-19:30",
-        "operator": "Neue Arbeit",
-        "service:bicycle:repair": "yes",
-        "service:bicycle:second_hand": "yes",
-        "shop": "bicycle"
+        "address": [
+          "\u00f6ffnungszeiten: Mo-Fr 07:00-19:30; Sa 10:00-19:30, "
+        ],
+        "name_en": "Bicycle shop",
+        "name_de": "Fahrradgeschaft",
+        "address_de": [
+          "\u00f6ffnungszeiten: Mo-Fr 07:00-19:30; Sa 10:00-19:30, "
+        ],
+        "address_en": [
+          "opening hours: Mo-Fr 07:00-19:30; Sa 10:00-19:30, "
+        ],
+        "icon": {
+          "id": "bikeShopIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -953,8 +1012,7 @@
           9.2699058,
           48.8196035
         ]
-      },
-      "id": "node/6286097186"
+      }
     }
   ]
 }

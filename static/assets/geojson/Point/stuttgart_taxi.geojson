@@ -1,16 +1,20 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-ide",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
   "timestamp": "2019-09-25T07:08:03Z",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/175740526",
-        "amenity": "taxi",
-        "created_by": "JOSM",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M17.75 7c.138 0 .25.112.25.25v.255c0 .397-.463.495-.808.495l-.543-1h1.101zm-.721 1.753c.32.593.473 1.126.473 1.833 0 .685-.198 1.267-.503 1.991v.923c0 .276-.224.5-.5.5h-.75c-.276 0-.5-.224-.5-.5v-.5h-6.5v.5c0 .276-.224.5-.5.5h-.749c-.276 0-.5-.224-.5-.5v-.924c-.304-.724-.503-1.306-.503-1.991 0-.707.154-1.24.473-1.833.414-.768.926-1.726 1.465-2.626.415-.69.631-.853 1.139-.944.767-.137 1.459-.182 2.426-.182s1.659.045 2.426.182c.508.091.725.253 1.139.945.539.9 1.05 1.857 1.464 2.626zm-8.029 1.497c0-.414-.336-.75-.75-.75s-.75.336-.75.75.336.75.75.75.75-.336.75-.75zm5 .5c0-.138-.112-.25-.25-.25h-3.5c-.138 0-.25.112-.25.25s.112.25.25.25h3.5c.138 0 .25-.112.25-.25zm1.471-2.764s-.37-.913-.815-1.571c-.101-.149-.258-.251-.435-.283-.756-.136-1.418-.179-2.221-.179s-1.465.043-2.22.179c-.177.032-.334.134-.435.283-.445.658-.816 1.571-.816 1.571.821.157 2.155.249 3.471.249s2.65-.092 3.471-.249zm1.029 2.264c0-.414-.336-.75-.75-.75s-.75.336-.75.75.336.75.75.75.75-.336.75-.75zm-9.149-3.25h-1.101c-.138 0-.25.112-.25.25v.255c0 .397.463.495.808.495l.543-1zm4.649-7c-5.523 0-10 4.394-10 9.815 0 5.505 4.375 9.268 10 14.185 5.625-4.917 10-8.68 10-14.185 0-5.421-4.478-9.815-10-9.815zm0 18c-4.419 0-8-3.582-8-8s3.581-8 8-8c4.419 0 8 3.582 8 8s-3.581 8-8 8z\"/></svg>"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -18,15 +22,20 @@
           9.1683643,
           48.8301797
         ]
-      },
-      "id": "node/175740526"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/175740541",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -34,15 +43,20 @@
           9.181559,
           48.783165
         ]
-      },
-      "id": "node/175740541"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/216094412",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -50,15 +64,20 @@
           9.1947976,
           48.7737497
         ]
-      },
-      "id": "node/216094412"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/247894795",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -66,15 +85,20 @@
           9.2033997,
           48.7747902
         ]
-      },
-      "id": "node/247894795"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/264894479",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -82,15 +106,20 @@
           9.1674649,
           48.764454
         ]
-      },
-      "id": "node/264894479"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/271727653",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -98,17 +127,26 @@
           9.1747921,
           48.7836939
         ]
-      },
-      "id": "node/271727653"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/281888506",
-        "amenity": "taxi",
-        "capacity": "5",
         "name": "Taxi stand",
-        "address": "capacity: 5"
+        "address": [
+          "kapazit\u00e4t: 5, "
+        ],
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address_de": [
+          "kapazit\u00e4t: 5, "
+        ],
+        "address_en": [
+          "capacity: 5, "
+        ],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -116,15 +154,20 @@
           9.2078487,
           48.7850045
         ]
-      },
-      "id": "node/281888506"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/282520421",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -132,15 +175,20 @@
           9.1577029,
           48.7820135
         ]
-      },
-      "id": "node/282520421"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/303797846",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -148,17 +196,26 @@
           9.1856802,
           48.7768817
         ]
-      },
-      "id": "node/303797846"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/308664644",
-        "amenity": "taxi",
-        "capacity": "2",
         "name": "Taxi stand",
-        "address": "capacity: 2"
+        "address": [
+          "kapazit\u00e4t: 2, "
+        ],
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address_de": [
+          "kapazit\u00e4t: 2, "
+        ],
+        "address_en": [
+          "capacity: 2, "
+        ],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -166,15 +223,20 @@
           9.254131,
           48.7599676
         ]
-      },
-      "id": "node/308664644"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/439483872",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -182,15 +244,20 @@
           9.178683,
           48.7797451
         ]
-      },
-      "id": "node/439483872"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/442120218",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -198,15 +265,20 @@
           9.1574076,
           48.7703373
         ]
-      },
-      "id": "node/442120218"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/442128283",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -214,15 +286,20 @@
           9.1730641,
           48.7744202
         ]
-      },
-      "id": "node/442128283"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/462250815",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -230,15 +307,20 @@
           9.1785147,
           48.7715947
         ]
-      },
-      "id": "node/462250815"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/518927411",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -246,15 +328,20 @@
           9.1779414,
           48.7667357
         ]
-      },
-      "id": "node/518927411"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/599502514",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -262,15 +349,20 @@
           9.2705939,
           48.8199865
         ]
-      },
-      "id": "node/599502514"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/807636257",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -278,15 +370,20 @@
           9.1624642,
           48.760993
         ]
-      },
-      "id": "node/807636257"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/833407808",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -294,15 +391,20 @@
           9.1211721,
           48.8267687
         ]
-      },
-      "id": "node/833407808"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/839235822",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -310,15 +412,20 @@
           9.1969786,
           48.7894679
         ]
-      },
-      "id": "node/839235822"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/839246675",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -326,15 +433,20 @@
           9.2154319,
           48.7998199
         ]
-      },
-      "id": "node/839246675"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1221842049",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -342,15 +454,20 @@
           9.1511058,
           48.8100094
         ]
-      },
-      "id": "node/1221842049"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1259197654",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -358,16 +475,20 @@
           9.2172712,
           48.8019209
         ]
-      },
-      "id": "node/1259197654"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1332658410",
-        "amenity": "taxi",
-        "source": "Bing",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -375,17 +496,26 @@
           9.1808904,
           48.7732647
         ]
-      },
-      "id": "node/1332658410"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1376486870",
-        "amenity": "taxi",
-        "phone": "+49 711 8874040",
         "name": "Taxi stand",
-        "address": "phone: +49 711 8874040"
+        "address": [
+          "telefon: +49 711 8874040"
+        ],
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address_de": [
+          "telefon: +49 711 8874040"
+        ],
+        "address_en": [
+          "phone: +49 711 8874040"
+        ],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -393,15 +523,20 @@
           9.1139475,
           48.8137856
         ]
-      },
-      "id": "node/1376486870"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1485681084",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -409,15 +544,20 @@
           9.2311101,
           48.8063549
         ]
-      },
-      "id": "node/1485681084"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1635660962",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -425,17 +565,26 @@
           9.1661158,
           48.7785729
         ]
-      },
-      "id": "node/1635660962"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1668070585",
-        "amenity": "taxi",
-        "capacity": "3",
         "name": "Taxi stand",
-        "address": "capacity: 3"
+        "address": [
+          "kapazit\u00e4t: 3, "
+        ],
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address_de": [
+          "kapazit\u00e4t: 3, "
+        ],
+        "address_en": [
+          "capacity: 3, "
+        ],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -443,15 +592,20 @@
           9.2371087,
           48.8324756
         ]
-      },
-      "id": "node/1668070585"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1680632419",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -459,15 +613,20 @@
           9.1249277,
           48.7790075
         ]
-      },
-      "id": "node/1680632419"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1689140792",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -475,15 +634,20 @@
           9.1510308,
           48.7597258
         ]
-      },
-      "id": "node/1689140792"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1702886614",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -491,15 +655,20 @@
           9.1683408,
           48.8140322
         ]
-      },
-      "id": "node/1702886614"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/1775118338",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -507,15 +676,20 @@
           9.2037167,
           48.7891701
         ]
-      },
-      "id": "node/1775118338"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2083016990",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -523,15 +697,20 @@
           9.242296,
           48.7729732
         ]
-      },
-      "id": "node/2083016990"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2141800616",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -539,15 +718,20 @@
           9.1787148,
           48.7779005
         ]
-      },
-      "id": "node/2141800616"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2145735473",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -555,15 +739,20 @@
           9.2350509,
           48.8147088
         ]
-      },
-      "id": "node/2145735473"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2398774055",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -571,15 +760,20 @@
           9.206556,
           48.8411574
         ]
-      },
-      "id": "node/2398774055"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2451000880",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -587,15 +781,20 @@
           9.2681533,
           48.7624432
         ]
-      },
-      "id": "node/2451000880"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/2925298690",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -603,15 +802,20 @@
           9.1559599,
           48.7735454
         ]
-      },
-      "id": "node/2925298690"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3138491655",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -619,15 +823,20 @@
           9.151623,
           48.7876668
         ]
-      },
-      "id": "node/3138491655"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3554348771",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -635,15 +844,20 @@
           9.277076,
           48.8088563
         ]
-      },
-      "id": "node/3554348771"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3657665930",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -651,15 +865,20 @@
           9.145349,
           48.774417
         ]
-      },
-      "id": "node/3657665930"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/3679812024",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -667,15 +886,20 @@
           9.2264829,
           48.7934669
         ]
-      },
-      "id": "node/3679812024"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4102489040",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -683,15 +907,20 @@
           9.1789194,
           48.7751316
         ]
-      },
-      "id": "node/4102489040"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4147909145",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -699,15 +928,20 @@
           9.1862369,
           48.8150938
         ]
-      },
-      "id": "node/4147909145"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/4406183875",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -715,15 +949,20 @@
           9.1820308,
           48.8097895
         ]
-      },
-      "id": "node/4406183875"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5314929734",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -731,15 +970,20 @@
           9.1146237,
           48.8138813
         ]
-      },
-      "id": "node/5314929734"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5561087355",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -747,15 +991,20 @@
           9.1734244,
           48.7829005
         ]
-      },
-      "id": "node/5561087355"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5814563448",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -763,15 +1012,20 @@
           9.1773216,
           48.7731058
         ]
-      },
-      "id": "node/5814563448"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5865966403",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -779,15 +1033,20 @@
           9.1807522,
           48.776025
         ]
-      },
-      "id": "node/5865966403"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/5865994698",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -795,15 +1054,20 @@
           9.1803217,
           48.7761373
         ]
-      },
-      "id": "node/5865994698"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6060820602",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -811,15 +1075,20 @@
           9.1763064,
           48.7736608
         ]
-      },
-      "id": "node/6060820602"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6073177056",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -827,15 +1096,20 @@
           9.1721155,
           48.7758164
         ]
-      },
-      "id": "node/6073177056"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/6430928667",
-        "amenity": "taxi",
-        "name": "Taxi stand"
+        "name": "Taxi stand",
+        "name_en": "Taxi stand",
+        "name_de": "Taxistelle",
+        "address": [],
+        "address_de": [],
+        "address_en": [],
+        "icon": {
+          "id": "taxiIcon"
+        }
       },
       "geometry": {
         "type": "Point",
@@ -843,8 +1117,7 @@
           9.1751824,
           48.7830075
         ]
-      },
-      "id": "node/6430928667"
+      }
     }
   ]
 }

@@ -109,9 +109,9 @@ class UpdateLayer:
     
     def delete_unnecessary_properties(self, exceptions):
         if 'generator' in self.data:
-            del data['generator']
+            del self.data['generator']
         if 'copyright' in self.data:
-            del data['copyright']
+            del self.data['copyright']
         for feat in self.data['features']:
             if 'generator' in feat:
                 del feat['generator']
@@ -139,7 +139,7 @@ Stuttgart_bbox = "48.592050872804194,8.795928955078125,48.94730802864721,9.55467
 # In the overpass query there must be am '[out:json];' command.
 
 #%%
-dest_dir = "/home/beki/Documents/"
+dest_dir = "/home/misi/Work/mfdz/digitransit-ui/static/assets/geojson/Point/"
 iconID = "taxiIcon"
 iconSource = """<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n\t viewBox="0 0 207 207" style="enable-background:new 0 0 207 207;" xml:space="preserve">\n<path d="M193.031,101.521l-19.398-64.25C171.374,29.829,163.687,24,156.025,24H144V10c0-5.523-4.144-10-9.667-10h-63\n\tC65.81,0,61,4.477,61,10v14H50.641c-7.659,0-15.43,5.829-17.691,13.272L13.2,101.86C7.36,103.911,3,109.459,3,116v47\n\tc0,8.284,7.049,15,15.333,15H19v6.094C19,196.745,29.589,207,42.24,207h0.188C55.078,207,65,196.745,65,184.094V178h75v6.828\n\tC140,197.073,150.26,207,162.505,207h0.656c12.245,0,21.839-9.927,21.839-22.172V178h4.333c8.284,0,14.667-6.716,14.667-15v-47\n\tC204,109.054,199.439,103.228,193.031,101.521z M43.185,157.355c-10.036,0-18.172-8.136-18.172-18.172s8.136-18.172,18.172-18.172\n\ts18.172,8.136,18.172,18.172S53.221,157.355,43.185,157.355z M40.068,94l17.078-56h92.374l17.078,56H40.068z M163.118,157.355\n\tc-10.036,0-18.172-8.136-18.172-18.172s8.136-18.172,18.172-18.172s18.172,8.136,18.172,18.172S173.154,157.355,163.118,157.355z"/>"""
 name_en = "Taxi stand"

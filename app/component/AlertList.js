@@ -1,11 +1,15 @@
+import cx from 'classnames';
 import connectToStores from 'fluxible-addons-react/connectToStores';
+import isEmpty from 'lodash/isEmpty';
+import groupBy from 'lodash/groupBy';
+import uniqBy from 'lodash/uniqBy';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import ComponentUsageExample from './ComponentUsageExample';
 import RouteAlertsRow from './RouteAlertsRow';
-import { alertHasExpired } from '../util/alertUtils';
+import { isAlertValid } from '../util/alertUtils';
 import { routeNameCompare } from '../util/searchUtils';
 import { AlertSeverityLevelType } from '../constants';
 
@@ -23,11 +27,15 @@ export const alertCompare = (a, b) => {
 
   // sort by missing route information (for stop level alerts)
   if (!a.route || !a.route.shortName) {
+    // sort by stop information if it exists
+    if (a.stop && b.stop) {
+      return `${a.stop.code}`.localeCompare(`${b.stop.code}`);
+    }
     return -1;
   }
 
   // sort by route information
-  const routeOrder = routeNameCompare(a.route, b.route);
+  const routeOrder = routeNameCompare(a.route || {}, b.route || {});
   if (routeOrder !== 0) {
     return routeOrder;
   }
@@ -36,25 +44,61 @@ export const alertCompare = (a, b) => {
   return b.validityPeriod.startTime - a.validityPeriod.startTime;
 };
 
+const hasRoute = alert => alert && !isEmpty(alert.route);
+const hasStop = alert => alert && !isEmpty(alert.stop);
+
 const AlertList = ({
   cancelations,
   currentTime,
+  disableScrolling,
   showExpired,
   serviceAlerts,
+  showRouteNameLink,
 }) => {
-  const currentUnixTime = Number.isInteger(currentTime)
-    ? currentTime
-    : currentTime.unix();
+  const getRoute = alert => alert.route || {};
+  const getMode = alert => getRoute(alert).mode;
+  const getShortName = alert => getRoute(alert).shortName;
+  const getRouteGtfsId = alert => getRoute(alert).gtfsId;
 
-  const alerts = (Array.isArray(cancelations) ? cancelations : [])
-    .concat(Array.isArray(serviceAlerts) ? serviceAlerts : [])
-    .map(alert => ({
-      ...alert,
-      expired: alertHasExpired(alert.validityPeriod, currentUnixTime),
-    }))
-    .filter(alert => (showExpired ? true : !alert.expired));
+  const getStop = alert => alert.stop || {};
+  const getVehicleMode = alert => getStop(alert).vehicleMode;
+  const getCode = alert => getStop(alert).code;
+  const getStopGtfsId = alert => getStop(alert).gtfsId;
 
-  if (alerts.length === 0) {
+  const getGroupKey = alert =>
+    `${alert.severityLevel}${(hasRoute(alert) && `route_${getMode(alert)}`) ||
+      (hasStop(alert) && `stop_${getVehicleMode(alert)}`)}${alert.header}${
+      alert.description
+    }`;
+  const getUniqueId = alert =>
+    `${getShortName(alert) || getCode(alert)}${getGroupKey(alert)}`;
+
+  const uniqueAlerts = uniqBy(
+    [
+      ...(Array.isArray(cancelations)
+        ? cancelations
+            .map(cancelation => ({
+              ...cancelation,
+              severityLevel: AlertSeverityLevelType.Warning,
+              expired: !isAlertValid(cancelation, currentTime, {
+                isFutureValid: true,
+              }),
+            }))
+            .filter(alert => (showExpired ? true : !alert.expired))
+        : []),
+      ...(Array.isArray(serviceAlerts)
+        ? serviceAlerts
+            .map(alert => ({
+              ...alert,
+              expired: !isAlertValid(alert, currentTime),
+            }))
+            .filter(alert => (showExpired ? true : !alert.expired))
+        : []),
+    ],
+    getUniqueId,
+  );
+
+  if (uniqueAlerts.length === 0) {
     return (
       <div className="stop-no-alerts-container">
         <FormattedMessage
@@ -65,29 +109,78 @@ const AlertList = ({
     );
   }
 
+  const alertGroups = groupBy(uniqueAlerts, getGroupKey);
+  const groupedAlerts = Object.keys(alertGroups).map(key => {
+    const alerts = alertGroups[key];
+    const alert = alerts[0];
+    return {
+      ...alert,
+      route:
+        (hasRoute(alert) && {
+          mode: getMode(alert),
+          routeGtfsId: alerts
+            .sort(alertCompare)
+            .map(getRouteGtfsId)
+            .join(','),
+          shortName: alerts
+            .sort(alertCompare)
+            .map(getShortName)
+            .join(', '),
+        }) ||
+        undefined,
+      stop:
+        (hasStop(alert) && {
+          stopGtfsId: alerts
+            .sort(alertCompare)
+            .map(getStopGtfsId)
+            .join(','),
+          code: alerts
+            .sort(alertCompare)
+            .map(getCode)
+            .join(', '),
+          vehicleMode: getVehicleMode(alert),
+        }) ||
+        undefined,
+    };
+  });
   return (
-    <div className="momentum-scroll">
+    <div className={cx({ 'momentum-scroll': !disableScrolling })}>
       <div className="route-alerts-list">
-        {alerts
+        {groupedAlerts
           .sort(alertCompare)
           .map(
-            ({
-              description,
-              header,
-              expired,
-              route: { color, mode, shortName } = {},
-              severityLevel,
-              validityPeriod: { startTime, endTime },
-            }) => (
+            (
+              {
+                description,
+                expired,
+                header,
+                route: { color, mode, shortName, routeGtfsId } = {},
+                severityLevel,
+                stop: { code, vehicleMode, stopGtfsId } = {},
+                url,
+                validityPeriod: { startTime, endTime },
+              },
+              i,
+            ) => (
               <RouteAlertsRow
                 color={color ? `#${color}` : null}
+                currentTime={currentTime}
                 description={description}
+                endTime={endTime}
+                entityIdentifier={shortName || code}
+                entityMode={
+                  (mode && mode.toLowerCase()) ||
+                  (vehicleMode && vehicleMode.toLowerCase())
+                }
+                entityType={(shortName && 'route') || (code && 'stop')}
                 expired={expired}
                 header={header}
-                key={`alert-${startTime}-${endTime}-${shortName}-${severityLevel}`}
-                routeLine={shortName}
-                routeMode={mode && mode.toLowerCase()}
+                key={`alert-${shortName}-${severityLevel}-${i}`} // eslint-disable-line react/no-array-index-key
                 severityLevel={severityLevel}
+                startTime={startTime}
+                url={url}
+                gtfsIds={routeGtfsId || stopGtfsId}
+                showRouteNameLink={showRouteNameLink}
               />
             ),
           )}
@@ -105,6 +198,11 @@ const alertShape = PropTypes.shape({
     shortName: PropTypes.string,
   }),
   severityLevel: PropTypes.string,
+  stop: PropTypes.shape({
+    code: PropTypes.string,
+    vehicleMode: PropTypes.string,
+  }),
+  url: PropTypes.string,
   validityPeriod: PropTypes.shape({
     startTime: PropTypes.number.isRequired,
     endTime: PropTypes.number,
@@ -112,17 +210,17 @@ const alertShape = PropTypes.shape({
 });
 
 AlertList.propTypes = {
-  currentTime: PropTypes.oneOfType([
-    PropTypes.shape({ unix: PropTypes.func.isRequired }),
-    PropTypes.number,
-  ]).isRequired,
   cancelations: PropTypes.arrayOf(alertShape),
+  currentTime: PropTypes.PropTypes.number.isRequired,
+  disableScrolling: PropTypes.bool,
   serviceAlerts: PropTypes.arrayOf(alertShape),
   showExpired: PropTypes.bool,
+  showRouteNameLink: PropTypes.bool,
 };
 
 AlertList.defaultProps = {
   cancelations: [],
+  disableScrolling: false,
   serviceAlerts: [],
   showExpired: false,
 };
@@ -131,7 +229,7 @@ AlertList.description = (
   <React.Fragment>
     <ComponentUsageExample>
       <AlertList
-        currentTime={15}
+        currentTime={1554719400}
         cancelations={[
           {
             header:
@@ -140,8 +238,7 @@ AlertList.description = (
               mode: 'BUS',
               shortName: '3A',
             },
-            severityLevel: AlertSeverityLevelType.Warning,
-            validityPeriod: { startTime: 20, endTime: 30 },
+            validityPeriod: { startTime: 1554719400 },
           },
           {
             header:
@@ -150,8 +247,7 @@ AlertList.description = (
               mode: 'BUS',
               shortName: '28B',
             },
-            severityLevel: AlertSeverityLevelType.Warning,
-            validityPeriod: { startTime: 10, endTime: 20 },
+            validityPeriod: { startTime: 1554719400 },
           },
           {
             header:
@@ -160,8 +256,7 @@ AlertList.description = (
               mode: 'BUS',
               shortName: '28B',
             },
-            severityLevel: AlertSeverityLevelType.Warning,
-            validityPeriod: { startTime: 1, endTime: 11 },
+            validityPeriod: { startTime: 1554719400 },
           },
           {
             header: 'Bussin 80 lähtö Moisio–Irjala kello 10:45 on peruttu',
@@ -169,8 +264,7 @@ AlertList.description = (
               mode: 'BUS',
               shortName: '80',
             },
-            severityLevel: AlertSeverityLevelType.Warning,
-            validityPeriod: { startTime: 11, endTime: 21 },
+            validityPeriod: { startTime: 1554719400 },
           },
           {
             header: 'Bussin 80 lähtö Moisio–Irjala kello 10:24 on peruttu',
@@ -178,8 +272,7 @@ AlertList.description = (
               mode: 'BUS',
               shortName: '80',
             },
-            severityLevel: AlertSeverityLevelType.Warning,
-            validityPeriod: { startTime: 0, endTime: 10 },
+            validityPeriod: { startTime: 1554719400 },
           },
         ]}
         serviceAlerts={[
@@ -189,7 +282,7 @@ AlertList.description = (
               'Pysäkki Rantatie (1007) toistaiseksi pois käytöstä työmaan vuoksi.',
             route: {},
             severityLevel: AlertSeverityLevelType.Warning,
-            validityPeriod: { startTime: 10, endTime: 20 },
+            validityPeriod: { startTime: 1554718400, endTime: 1554728400 },
           },
           {
             header: 'Pysäkillä Rantatie (1007) lisävuoroja',
@@ -197,7 +290,42 @@ AlertList.description = (
               'Pysäkillä Rantatie (1007) on lisävuoroja yleisötapahtuman vuoksi.',
             route: {},
             severityLevel: AlertSeverityLevelType.Info,
-            validityPeriod: { startTime: 0, endTime: 10 },
+            validityPeriod: { startTime: 1554718400, endTime: 1554728400 },
+          },
+        ]}
+      />
+    </ComponentUsageExample>
+    <ComponentUsageExample>
+      <AlertList
+        currentTime={1554718400}
+        serviceAlerts={[
+          {
+            description:
+              'Pasilansillan työmaa aiheuttaa viivästyksiä joukkoliikenteelle',
+            route: { mode: 'BUS', shortName: '14' },
+            severityLevel: AlertSeverityLevelType.Warning,
+            validityPeriod: { startTime: 1564718400, endTime: 1568728400 },
+          },
+          {
+            description:
+              'Pasilansillan työmaa aiheuttaa viivästyksiä joukkoliikenteelle',
+            route: { mode: 'BUS', shortName: '39B' },
+            severityLevel: AlertSeverityLevelType.Warning,
+            validityPeriod: { startTime: 1564718400, endTime: 1568728400 },
+          },
+          {
+            description:
+              'Pasilansillan työmaa aiheuttaa viivästyksiä joukkoliikenteelle',
+            route: { mode: 'TRAM', shortName: '7' },
+            severityLevel: AlertSeverityLevelType.Warning,
+            validityPeriod: { startTime: 1564718400, endTime: 1568728400 },
+          },
+          {
+            description:
+              'Pasilansillan työmaa aiheuttaa viivästyksiä joukkoliikenteelle',
+            route: { mode: 'TRAM', shortName: '9' },
+            severityLevel: AlertSeverityLevelType.Warning,
+            validityPeriod: { startTime: 1564718400, endTime: 1568728400 },
           },
         ]}
       />
@@ -209,7 +337,10 @@ const connectedComponent = connectToStores(
   AlertList,
   ['TimeStore'],
   context => ({
-    currentTime: context.getStore('TimeStore').getCurrentTime(),
+    currentTime: context
+      .getStore('TimeStore')
+      .getCurrentTime()
+      .unix(),
   }),
 );
 

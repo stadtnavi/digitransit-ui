@@ -91,7 +91,6 @@ class SummaryPage extends React.Component {
   };
 
   static propTypes = {
-    printPage: PropTypes.object,
     location: PropTypes.shape({
       state: PropTypes.object,
     }).isRequired,
@@ -116,7 +115,7 @@ class SummaryPage extends React.Component {
     routes: PropTypes.arrayOf(
       PropTypes.shape({
         fullscreenMap: PropTypes.bool,
-        printPage: PropTypes.object,
+        printPage: PropTypes.bool,
       }).isRequired,
     ).isRequired,
     breakpoint: PropTypes.string.isRequired,
@@ -200,33 +199,19 @@ class SummaryPage extends React.Component {
 
     if (from.lat && from.lon) {
       leafletObjs.push(
-        <LocationMarker
-          className="from"
-          key="fromMarker"
-          position={from}
-          type="from"
-        />,
+        <LocationMarker key="fromMarker" position={from} type="from" />,
       );
     }
 
     if (to.lat && to.lon) {
       leafletObjs.push(
-        <LocationMarker
-          className="to"
-          key="toMarker"
-          position={to}
-          type="to"
-        />,
+        <LocationMarker isLarge key="toMarker" position={to} type="to" />,
       );
     }
 
     getIntermediatePlaces(query).forEach((intermediatePlace, i) => {
       leafletObjs.push(
-        <LocationMarker
-          className="via"
-          key={`via_${i}`}
-          position={intermediatePlace}
-        />,
+        <LocationMarker key={`via_${i}`} position={intermediatePlace} />,
       );
     });
 
@@ -480,7 +465,9 @@ const containerComponent = Relay.createContainer(SummaryPageWithBreakpoint, {
           itineraryFiltering: $itineraryFiltering,
           modeWeight: $modeWeight
           preferred: $preferred,
-          unpreferred: $unpreferred),
+          unpreferred: $unpreferred,
+          allowedBikeRentalNetworks: $allowedBikeRentalNetworks,
+          ),
         {
           ${SummaryPlanContainer.getFragment('plan')}
           ${ItineraryTab.getFragment('searchTime')}
@@ -536,6 +523,7 @@ const containerComponent = Relay.createContainer(SummaryPageWithBreakpoint, {
       walkReluctance: null,
       walkSpeed: null,
       wheelchair: null,
+      allowedBikeRentalNetworks: null,
     },
     ...defaultRoutingSettings,
   },

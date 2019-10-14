@@ -12,6 +12,15 @@ import { isBrowser } from '../../util/browser';
 import MapLayerStore, { mapLayerShape } from '../../store/MapLayerStore';
 import PositionStore from '../../store/PositionStore';
 import GeoJsonStore from '../../store/GeoJsonStore';
+import MessageStore from '../../store/MessageStore';
+import VehicleMarkerContainer from './VehicleMarkerContainer';
+import {
+  startRealTimeClient,
+  stopRealTimeClient,
+  changeRealTimeClientTopics,
+} from '../../action/realTimeClientAction';
+import { findFeatures } from '../../util/geo-utils';
+import { updateMessage } from '../../action/MessageActions';
 
 const DEFAULT_ZOOM = 12;
 const FOCUS_ZOOM = 16;
@@ -27,9 +36,9 @@ const onlyUpdateCoordChanges = onlyUpdateForKeys([
   'children',
 ]);
 
-const placeMarkerModules = {
-  PlaceMarker: () =>
-    importLazy(import(/* webpackChunkName: "map" */ './PlaceMarker')),
+const locationMarkerModules = {
+  LocationMarker: () =>
+    importLazy(import(/* webpackChunkName: "map" */ './LocationMarker')),
 };
 
 const jsonModules = {
@@ -43,6 +52,7 @@ class MapWithTrackingStateHandler extends React.Component {
     getGeoJsonConfig: PropTypes.func.isRequired,
     getGeoJsonData: PropTypes.func.isRequired,
     origin: dtLocationShape.isRequired,
+    destination: dtLocationShape.isRequired,
     position: PropTypes.shape({
       hasLocation: PropTypes.bool.isRequired,
       isLocationingInProgress: PropTypes.bool.isRequired,
@@ -52,10 +62,15 @@ class MapWithTrackingStateHandler extends React.Component {
     config: PropTypes.shape({
       defaultMapCenter: dtLocationShape,
       defaultEndpoint: dtLocationShape.isRequired,
+      realTime: PropTypes.object.isRequired,
+      feedIds: PropTypes.array.isRequired,
+      showAllBusses: PropTypes.bool.isRequired,
+      stopsMinZoom: PropTypes.number.isRequired,
     }).isRequired,
     children: PropTypes.array,
     renderCustomButtons: PropTypes.func,
     mapLayers: mapLayerShape.isRequired,
+    messages: PropTypes.array,
   };
 
   static defaultProps = {
@@ -65,13 +80,17 @@ class MapWithTrackingStateHandler extends React.Component {
   constructor(props) {
     super(props);
     const hasOriginorPosition =
-      props.origin.ready || props.position.hasLocation;
+      props.origin.ready ||
+      props.position.hasLocation ||
+      props.destination.ready;
     this.state = {
       geoJson: {},
       initialZoom: hasOriginorPosition ? FOCUS_ZOOM : DEFAULT_ZOOM,
       mapTracking: props.origin.gps && props.position.hasLocation,
       focusOnOrigin: props.origin.ready,
+      focusOnDestination: !props.origin.ready && props.destination.ready,
       origin: props.origin,
+      destination: props.destination,
       shouldShowDefaultLocation: !hasOriginorPosition,
     };
   }
@@ -94,8 +113,9 @@ class MapWithTrackingStateHandler extends React.Component {
     }
 
     const json = await Promise.all(
-      layers.map(async ({ url, name, metadata }) => ({
+      layers.map(async ({ url, name, isOffByDefault, metadata }) => ({
         url,
+        isOffByDefault,
         data: await getGeoJsonData(url, name, metadata),
       })),
     );
@@ -103,22 +123,47 @@ class MapWithTrackingStateHandler extends React.Component {
       return;
     }
     const { geoJson } = this.state;
-    json.forEach(({ url, data }) => {
-      geoJson[url] = data;
+    json.forEach(({ url, data, isOffByDefault }) => {
+      geoJson[url] = { ...data, isOffByDefault };
     });
     this.setState(geoJson);
+    if (config.showAllBusses) {
+      this.startClient();
+    }
+
+    if (this.state.focusOnOrigin || this.state.focusOnDestination) {
+      const lat = this.state.focusOnDestination
+        ? this.state.destination.lat
+        : this.state.origin.lat;
+      const lon = this.state.focusOnDestination
+        ? this.state.destination.lon
+        : this.state.origin.lon;
+      await this.triggerMessage(lat, lon);
+    }
   }
 
   componentWillReceiveProps(newProps) {
     if (
       // "current position selected"
-      newProps.origin.lat != null &&
-      newProps.origin.lon != null &&
+      newProps.origin.lat !== null &&
+      newProps.origin.lon !== null &&
       newProps.origin.gps === true &&
       ((this.state.origin.ready === false && newProps.origin.ready === true) ||
         !this.state.origin.gps) // current position selected
     ) {
       this.usePosition(newProps.origin);
+      this.triggerMessage(newProps.origin.lat, newProps.origin.lon);
+    } else if (
+      // "current position selected"
+      newProps.destination.lat !== null &&
+      newProps.destination.lon !== null &&
+      newProps.destination.gps === true &&
+      ((this.state.destination.ready === false &&
+        newProps.destination.ready === true) ||
+        !this.state.destination.gps) // current position selected
+    ) {
+      this.usePosition(newProps.destination);
+      this.triggerMessage(newProps.destination.lat, newProps.destination.lon);
     } else if (
       // "poi selected"
       !newProps.origin.gps &&
@@ -128,11 +173,35 @@ class MapWithTrackingStateHandler extends React.Component {
       newProps.origin.lon != null
     ) {
       this.useOrigin(newProps.origin);
+      this.triggerMessage(newProps.origin.lat, newProps.origin.lon);
+    } else if (
+      // destination selected without poi
+      !newProps.destination.gps &&
+      (newProps.destination.lat !== this.state.destination.lat ||
+        newProps.destination.lon !== this.state.destination.lon) &&
+      newProps.destination.lat != null &&
+      newProps.destination.lon != null
+    ) {
+      this.useDestination(newProps.destination);
+      this.triggerMessage(newProps.destination.lat, newProps.destination.lon);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.config.showAllBusses &&
+      (prevProps.origin.lat !== this.state.origin.lat ||
+        prevProps.origin.lon !== this.state.origin.lon)
+    ) {
+      this.updateClient();
     }
   }
 
   componentWillUnmount() {
     this.isCancelled = true;
+    if (this.props.config.showAllBusses) {
+      this.removeClient();
+    }
   }
 
   updateCurrentBounds = () => {
@@ -155,25 +224,131 @@ class MapWithTrackingStateHandler extends React.Component {
     }
   };
 
-  enableMapTracking = () => {
-    this.setState({
-      mapTracking: true,
-      focusOnOrigin: false,
-    });
-  };
-
   disableMapTracking = () => {
     this.setState({
       mapTracking: false,
       focusOnOrigin: false,
+      focusOnDestination: false,
     });
   };
+
+  enableMapTracking = () => {
+    this.setState({
+      mapTracking: true,
+      focusOnOrigin: false,
+      focusOnDestination: false,
+    });
+  };
+
+  createGeoHashBoundingBox = location => {
+    const geoHashes = [];
+    for (let i = -3; i <= 3; i++) {
+      const lon = (location.lon + i * 0.01).toString();
+      for (let j = -1; j <= 1; j++) {
+        const lat = (location.lat + j * 0.01).toString();
+        geoHashes.push([
+          `${lat.substring(0, 2)};${lon.substring(0, 2)}`,
+          lat.substring(3, 4) + lon.substring(3, 4),
+          lat.substring(4, 5) + lon.substring(4, 5),
+          '+',
+        ]);
+      }
+    }
+    return geoHashes;
+  };
+
+  triggerMessage = (lat, lon) => {
+    const messages = this.props.messages.filter(
+      msg => !msg.shouldTrigger && msg.content && msg.geoJson,
+    );
+    messages.forEach(msg => {
+      return new Promise(resolve => {
+        resolve(this.props.getGeoJsonData(msg.geoJson));
+      }).then(value => {
+        const data = findFeatures(
+          { lat, lon },
+          (value && value.data && value.data.features) || [],
+        );
+        if (data.length > 0) {
+          msg.shouldTrigger = true; // eslint-disable-line no-param-reassign
+          this.context.executeAction(updateMessage, msg);
+        }
+      });
+    });
+  };
+
+  startClient() {
+    const { realTime, defaultEndpoint } = this.props.config;
+    const agency = this.props.config.feedIds[0];
+    const source = realTime[agency];
+    const location = this.props.origin.set
+      ? this.props.origin
+      : defaultEndpoint;
+    const options = [];
+    const geoHashes = this.createGeoHashBoundingBox(location);
+    geoHashes.forEach(geoHash => {
+      options.push({
+        mode: '+',
+        gtfsId: '+',
+        headsign: '+',
+        geoHash,
+      });
+    });
+    if (source && source.active) {
+      this.context.executeAction(startRealTimeClient, {
+        ...source,
+        agency,
+        options,
+      });
+    }
+  }
+
+  updateClient() {
+    const { client, topics } = this.context.getStore(
+      'RealTimeInformationStore',
+    );
+    if (client) {
+      const { realTime, defaultEndpoint } = this.props.config;
+      const agency = this.props.config.feedIds[0];
+      const source = realTime[agency];
+      const location = this.props.origin.set
+        ? this.props.origin
+        : defaultEndpoint;
+      const options = [];
+      const geoHashes = this.createGeoHashBoundingBox(location);
+      geoHashes.forEach(geoHash => {
+        options.push({
+          mode: '+',
+          gtfsId: '+',
+          headsign: '+',
+          geoHash,
+        });
+      });
+      if (source && source.active) {
+        this.context.executeAction(changeRealTimeClientTopics, {
+          ...source,
+          agency,
+          options,
+          client,
+          oldTopics: topics,
+        });
+      }
+    }
+  }
+
+  removeClient() {
+    const { client } = this.context.getStore('RealTimeInformationStore');
+    if (client) {
+      this.context.executeAction(stopRealTimeClient, client);
+    }
+  }
 
   usePosition(origin) {
     this.setState(prevState => ({
       origin,
       mapTracking: true,
       focusOnOrigin: false,
+      focusOnDestination: false,
       initialZoom:
         prevState.initialZoom === DEFAULT_ZOOM ? FOCUS_ZOOM : undefined,
       shouldShowDefaultLocation: false,
@@ -185,6 +360,19 @@ class MapWithTrackingStateHandler extends React.Component {
       origin,
       mapTracking: false,
       focusOnOrigin: true,
+      focusOnDestination: false,
+      initialZoom:
+        prevState.initialZoom === DEFAULT_ZOOM ? FOCUS_ZOOM : undefined,
+      shouldShowDefaultLocation: false,
+    }));
+  }
+
+  useDestination(destination) {
+    this.setState(prevState => ({
+      destination,
+      mapTracking: false,
+      focusOnOrigin: false,
+      focusOnDestination: true,
       initialZoom:
         prevState.initialZoom === DEFAULT_ZOOM ? FOCUS_ZOOM : undefined,
       shouldShowDefaultLocation: false,
@@ -195,6 +383,7 @@ class MapWithTrackingStateHandler extends React.Component {
     const {
       position,
       origin,
+      destination,
       config,
       children,
       renderCustomButtons,
@@ -202,7 +391,6 @@ class MapWithTrackingStateHandler extends React.Component {
       ...rest
     } = this.props;
     const { geoJson } = this.state;
-
     let location;
     if (
       this.state.focusOnOrigin &&
@@ -213,16 +401,49 @@ class MapWithTrackingStateHandler extends React.Component {
       location = this.state.origin;
     } else if (this.state.mapTracking && position.hasLocation) {
       location = position;
+    } else if (
+      this.state.focusOnDestination &&
+      !this.state.destination.gps &&
+      this.state.destination.lat != null &&
+      this.state.destination.lon != null
+    ) {
+      location = this.state.destination;
     } else if (this.state.shouldShowDefaultLocation) {
       location = config.defaultMapCenter || config.defaultEndpoint;
     }
-
     const leafletObjs = [];
-
-    if (origin && origin.ready === true && origin.gps !== true) {
+    if (mapLayers.showAllBusses) {
+      const currentZoom =
+        this.mapElement && this.mapElement.leafletElement
+          ? this.mapElement.leafletElement._zoom // eslint-disable-line no-underscore-dangle
+          : -1;
+      const useLargeIcon = currentZoom >= this.props.config.stopsMinZoom;
       leafletObjs.push(
-        <LazilyLoad modules={placeMarkerModules} key="from">
-          {({ PlaceMarker }) => <PlaceMarker position={this.props.origin} />}
+        <VehicleMarkerContainer
+          key="vehicles"
+          pattern="+"
+          headsign="+"
+          tripStart="+"
+          useLargeIcon={useLargeIcon}
+        />,
+      );
+    }
+
+    if (origin && origin.ready === true) {
+      leafletObjs.push(
+        <LazilyLoad modules={locationMarkerModules} key="from">
+          {({ LocationMarker }) => (
+            <LocationMarker position={origin} type="from" />
+          )}
+        </LazilyLoad>,
+      );
+    }
+    if (destination && destination.ready === true) {
+      leafletObjs.push(
+        <LazilyLoad modules={locationMarkerModules} key="to">
+          {({ LocationMarker }) => (
+            <LocationMarker position={destination} type="to" />
+          )}
         </LazilyLoad>,
       );
     }
@@ -230,7 +451,12 @@ class MapWithTrackingStateHandler extends React.Component {
     if (geoJson) {
       const { bounds } = this.state;
       Object.keys(geoJson)
-        .filter(key => mapLayers.geoJson[key] !== false)
+        .filter(
+          key =>
+            mapLayers.geoJson[key] !== false &&
+            (mapLayers.geoJson[key] === true ||
+              geoJson[key].isOffByDefault !== true),
+        )
         .forEach(key => {
           leafletObjs.push(
             <LazilyLoad modules={jsonModules} key={key}>
@@ -241,7 +467,6 @@ class MapWithTrackingStateHandler extends React.Component {
           );
         });
     }
-
     return (
       <Component
         lat={location ? location.lat : null}
@@ -249,7 +474,8 @@ class MapWithTrackingStateHandler extends React.Component {
         zoom={this.state.initialZoom}
         mapTracking={this.state.mapTracking}
         className="flex-grow"
-        origin={this.props.origin}
+        origin={origin}
+        destination={destination}
         leafletEvents={{
           onDragstart: this.disableMapTracking,
           onDragend: this.updateCurrentBounds,
@@ -263,7 +489,7 @@ class MapWithTrackingStateHandler extends React.Component {
         {children}
         <div className="map-with-tracking-buttons">
           {renderCustomButtons && renderCustomButtons()}
-          {this.props.position.hasLocation && (
+          {position.hasLocation && (
             <ToggleMapTracking
               key="toggleMapTracking"
               handleClick={
@@ -282,6 +508,11 @@ class MapWithTrackingStateHandler extends React.Component {
   }
 }
 
+MapWithTrackingStateHandler.contextTypes = {
+  executeAction: PropTypes.func,
+  getStore: PropTypes.func,
+};
+
 // todo convert to use origin prop
 const MapWithTracking = connectToStores(
   getContext({
@@ -289,12 +520,13 @@ const MapWithTracking = connectToStores(
       defaultMapCenter: dtLocationShape,
     }),
   })(MapWithTrackingStateHandler),
-  [PositionStore, MapLayerStore, GeoJsonStore],
+  [PositionStore, MapLayerStore, GeoJsonStore, MessageStore],
   ({ getStore }) => {
     const position = getStore(PositionStore).getLocationState();
     const mapLayers = getStore(MapLayerStore).getMapLayers();
     const { getGeoJsonConfig, getGeoJsonData } = getStore(GeoJsonStore);
-    return { position, mapLayers, getGeoJsonConfig, getGeoJsonData };
+    const messages = getStore(MessageStore).getMessages();
+    return { position, mapLayers, getGeoJsonConfig, getGeoJsonData, messages };
   },
 );
 

@@ -208,7 +208,7 @@ export default configMerger(walttiConfig, {
     },
 
     car: {
-      availableForSelection: true,
+      availableForSelection: false,
       defaultValue: false,
       exclusive: false,
       icon: 'car-withoutBox',

@@ -183,11 +183,6 @@ export default configMerger(walttiConfig, {
       availableForSelection: false,
       defaultValue: false,
     },
-
-    rideshare: {
-      availableForSelection: true,
-      defaultValue: false,
-    },
   },
 
   streetModes: {
@@ -224,13 +219,6 @@ export default configMerger(walttiConfig, {
       defaultValue: false,
       exclusive: false,
       icon: 'car_park-withoutBox',
-    },
-
-    rideshare: {
-      availableForSelection: true,
-      defaultValue: false,
-      exclusive: false,
-      icon: 'rideshare',
     }
   },
 

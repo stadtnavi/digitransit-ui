@@ -327,7 +327,7 @@ export default configMerger(walttiConfig, {
         name: {
           fi: '',
           en: 'Car charging stations',
-          de: 'Elktroauto-Ladestationen',
+          de: 'Elektroauto-Ladestationen',
         },
         url: '/assets/geojson/hb-layers/carchargingstation.geojson',
       }

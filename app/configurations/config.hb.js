@@ -5,7 +5,7 @@ const CONFIG = 'hb';
 const APP_TITLE = 'Mobil in Herrenberg';
 const APP_DESCRIPTION = '';
 
-const API_URL = process.env.API_URL || 'https://api.mobil-in-herrenberg.de';
+const API_URL = process.env.API_URL || 'http://localhost:8801';
 const MAP_URL = process.env.MAP_URL || 'https://maps.wikimedia.org/osm-intl/';
 const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || `https://pelias.locationiq.org/v1`;
 const LOCATIONIQ_API_KEY = process.env.LOCATIONIQ_API_KEY;
@@ -20,7 +20,7 @@ const maxLon = 8.98613;
 export default configMerger(walttiConfig, {
   CONFIG,
   URL: {
-    OTP: process.env.OTP_URL || `${API_URL}/routing/v1/routers/hb/`,
+    OTP: process.env.OTP_URL || `${API_URL}/otp/routers/default/`,
     MAP: {
       default: MAP_URL,
     },

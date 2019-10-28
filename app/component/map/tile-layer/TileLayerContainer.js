@@ -16,6 +16,7 @@ import CityBikeRoute from '../../../route/CityBikeRoute';
 import StopMarkerPopup from '../popups/StopMarkerPopup';
 import MarkerSelectPopup from './MarkerSelectPopup';
 import CityBikePopup from '../popups/CityBikePopup';
+import DynamicParkingLotsPopup from '../popups/DynamicParkingLotsPopup';
 import ParkAndRideHubPopup from '../popups/ParkAndRideHubPopup';
 import ParkAndRideFacilityPopup from '../popups/ParkAndRideFacilityPopup';
 import ParkAndRideHubRoute from '../../../route/ParkAndRideHubRoute';
@@ -46,6 +47,7 @@ class TileLayerContainer extends GridLayer {
       map: PropTypes.shape({
         addLayer: PropTypes.func.isRequired,
         addEventParent: PropTypes.func.isRequired,
+        closePopup: PropTypes.func.isRequired,
         removeEventParent: PropTypes.func.isRequired,
       }).isRequired,
     }).isRequired,
@@ -64,7 +66,7 @@ class TileLayerContainer extends GridLayer {
     autoPanPaddingTopLeft: [5, 125],
     className: 'popup',
     ref: 'popup',
-    onClose: this.onPopupclose,
+    onClose: () => this.setState({ ...initialState }),
     autoPan: false,
   };
 
@@ -149,8 +151,6 @@ class TileLayerContainer extends GridLayer {
     /* eslint-enable no-underscore-dangle */
   };
 
-  onPopupclose = () => this.setState(initialState);
-
   createTile = (tileCoords, done) => {
     const tile = new TileContainer(
       tileCoords,
@@ -159,9 +159,30 @@ class TileLayerContainer extends GridLayer {
       this.context.config,
     );
 
-    tile.onSelectableTargetClicked = (selectableTargets, coords) => {
-      if (selectableTargets && this.props.disableMapTracking) {
-        this.props.disableMapTracking(); // disable now that popup opens
+    tile.onSelectableTargetClicked = (
+      selectableTargets,
+      coords,
+      forceOpen = false,
+    ) => {
+      const {
+        disableMapTracking,
+        leaflet: { map },
+        mapLayers,
+      } = this.props;
+      const { coords: prevCoords } = this.state;
+      const popup = map._popup; // eslint-disable-line no-underscore-dangle
+
+      if (
+        popup &&
+        popup.isOpen() &&
+        (!forceOpen || (coords && coords.equals(prevCoords)))
+      ) {
+        map.closePopup();
+        return;
+      }
+
+      if (selectableTargets && disableMapTracking) {
+        disableMapTracking(); // disable now that popup opens
       }
 
       this.setState({
@@ -169,7 +190,7 @@ class TileLayerContainer extends GridLayer {
           isFeatureLayerEnabled(
             target.feature,
             target.layer,
-            this.props.mapLayers,
+            mapLayers,
             this.context.config,
           ),
         ),
@@ -230,6 +251,26 @@ class TileLayerContainer extends GridLayer {
               }
               renderLoading={loadingPopup}
               renderFetched={data => <CityBikePopup {...data} />}
+            />
+          );
+        } else if (this.state.selectableTargets[0].layer === 'dynamicParkingLots') {
+          contents = (
+            <Relay.RootContainer
+              Component={DynamicParkingLotsPopup}
+              forceFetch
+              route={
+                {
+                  name: "",
+                  queries: {},
+                  params: {
+                    feature: this.state.selectableTargets[0].feature,
+                    lat:this.state.coords.lat,
+                    lon:this.state.coords.lng
+                  }
+                }
+              }
+              renderLoading={loadingPopup}
+              renderFetched={data => <DynamicParkingLotsPopup {...data} />}
             />
           );
         } else if (
@@ -303,6 +344,7 @@ class TileLayerContainer extends GridLayer {
             <MarkerSelectPopup
               selectRow={this.selectRow}
               options={this.state.selectableTargets}
+              location={this.state.coords}
             />
           </Popup>
         );
@@ -328,8 +370,10 @@ class TileLayerContainer extends GridLayer {
   }
 }
 
-export default withLeaflet(
+const connectedComponent = withLeaflet(
   connectToStores(TileLayerContainer, [MapLayerStore], context => ({
     mapLayers: context.getStore(MapLayerStore).getMapLayers(),
   })),
 );
+
+export { connectedComponent as default, TileLayerContainer as Component };

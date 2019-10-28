@@ -64,7 +64,16 @@ class SelectMapLayersDialog extends React.Component {
   };
 
   renderContents = (
-    { citybike, parkAndRide, stop, terminal, ticketSales, geoJson },
+    {
+      citybike,
+      parkAndRide,
+      dynamicParkingLots,
+      stop,
+      terminal,
+      ticketSales,
+      geoJson,
+      showAllBusses,
+    },
     config,
     lang,
   ) => {
@@ -73,6 +82,18 @@ class SelectMapLayersDialog extends React.Component {
     const transportModes = config.transportModes || {};
     return (
       <React.Fragment>
+        {config.showAllBusses && (
+        <div className="checkbox-grouping">
+            <Checkbox
+              checked={showAllBusses}
+              defaultMessage="Moving vehicles"
+              labelId="map-layer-vehicles"
+              onChange={e =>
+                this.updateSetting({ showAllBusses: e.target.checked })
+              }
+            />
+          </div>
+        )}
         <div className="checkbox-grouping">
           {isTransportModeEnabled(transportModes.bus) && (
             <React.Fragment>
@@ -143,6 +164,17 @@ class SelectMapLayersDialog extends React.Component {
                 }
               />
             )}
+          {config.dynamicParkingLots &&
+            config.dynamicParkingLots.showDynamicParkingLots && (
+              <Checkbox
+                checked={dynamicParkingLots}
+                defaultMessage="Dynamic parking lots"
+                labelId="map-layer-dynamicparkinglot"
+                onChange={e =>
+                  this.updateSetting({ dynamicParkingLots: e.target.checked })
+                }
+              />
+            )}
           {config.parkAndRide &&
             config.parkAndRide.showParkAndRide && (
               <Checkbox
@@ -186,7 +218,10 @@ class SelectMapLayersDialog extends React.Component {
             <div className="checkbox-grouping">
               {config.geoJson.layers.map(gj => (
                 <Checkbox
-                  checked={geoJson[gj.url] !== false}
+                  checked={
+                    (gj.isOffByDefault && geoJson[gj.url] === true) ||
+                    (!gj.isOffByDefault && geoJson[gj.url] !== false)
+                  }
                   defaultMessage={gj.name[lang]}
                   key={gj.url}
                   onChange={e => {
@@ -203,20 +238,23 @@ class SelectMapLayersDialog extends React.Component {
   };
 
   render() {
+    const { config, lang, isOpen, mapLayers } = this.props;
+    const tooltip =
+      config.mapLayers &&
+      config.mapLayers.tooltip &&
+      config.mapLayers.tooltip[lang];
+
     return (
       <BubbleDialog
         contentClassName="select-map-layers-dialog-content"
         header="select-map-layers-header"
-        id="mapLayerSelector"
         icon="map-layers"
-        isOpen={this.props.isOpen}
+        id="mapLayerSelectorV2"
         isFullscreenOnMobile
+        isOpen={isOpen}
+        tooltip={tooltip}
       >
-        {this.renderContents(
-          this.props.mapLayers,
-          this.props.config,
-          this.props.lang,
-        )}
+        {this.renderContents(mapLayers, config, lang)}
       </BubbleDialog>
     );
   }
@@ -229,6 +267,9 @@ const transportModeConfigShape = PropTypes.shape({
 const mapLayersConfigShape = PropTypes.shape({
   cityBike: PropTypes.shape({
     showCityBikes: PropTypes.bool,
+  }),
+  dynamicParkingLots: PropTypes.shape({
+    showDynamicParkingLots: PropTypes.bool,
   }),
   geoJson: PropTypes.shape({
     layers: PropTypes.arrayOf(
@@ -256,6 +297,14 @@ const mapLayersConfigShape = PropTypes.shape({
     subway: transportModeConfigShape,
     tram: transportModeConfigShape,
   }),
+  mapLayers: PropTypes.shape({
+    tooltip: PropTypes.shape({
+      en: PropTypes.string,
+      fi: PropTypes.string.isRequired,
+      sv: PropTypes.string,
+    }),
+  }),
+  showAllBusses: PropTypes.bool,
 });
 
 SelectMapLayersDialog.propTypes = {

@@ -19,3 +19,5 @@ gemini-report
 tags
 .nyc_output
 coverage
+.vscode
+

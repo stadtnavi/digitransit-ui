@@ -29,9 +29,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 7",
-        "address_de": "Kapazit\u00e4t: 7",
-        "address_en": "Capacity: 7",
+        "address": "Kapazit\u00e4t: 7, ",
+        "address_de": "Kapazit\u00e4t: 7, ",
+        "address_en": "Capacity: 7, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -71,9 +71,30 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 18, ",
+        "address_de": "Kapazit\u00e4t: 18, ",
+        "address_en": "Capacity: 18, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0094704,
+          48.6854788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -92,9 +113,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -113,9 +134,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -134,9 +155,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 3",
-        "address_de": "Kapazit\u00e4t: 3",
-        "address_en": "Capacity: 3",
+        "address": "Kapazit\u00e4t: 3, ",
+        "address_de": "Kapazit\u00e4t: 3, ",
+        "address_en": "Capacity: 3, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -155,9 +176,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_en": "Capacity: 5, Fee: no",
+        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 5, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -176,9 +197,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 9",
-        "address_de": "Kapazit\u00e4t: 9",
-        "address_en": "Capacity: 9",
+        "address": "Kapazit\u00e4t: 9, ",
+        "address_de": "Kapazit\u00e4t: 9, ",
+        "address_en": "Capacity: 9, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -197,9 +218,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 58",
-        "address_de": "Kapazit\u00e4t: 58",
-        "address_en": "Capacity: 58",
+        "address": "Kapazit\u00e4t: 58, ",
+        "address_de": "Kapazit\u00e4t: 58, ",
+        "address_en": "Capacity: 58, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -218,9 +239,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 18",
-        "address_de": "Kapazit\u00e4t: 18",
-        "address_en": "Capacity: 18",
+        "address": "Kapazit\u00e4t: 18, ",
+        "address_de": "Kapazit\u00e4t: 18, ",
+        "address_en": "Capacity: 18, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -239,9 +260,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -260,9 +281,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -281,9 +302,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -302,9 +323,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -323,9 +344,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -344,9 +365,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -365,9 +386,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 12",
-        "address_de": "Kapazit\u00e4t: 12",
-        "address_en": "Capacity: 12",
+        "address": "Kapazit\u00e4t: 12, ",
+        "address_de": "Kapazit\u00e4t: 12, ",
+        "address_en": "Capacity: 12, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -386,9 +407,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 34",
-        "address_de": "Kapazit\u00e4t: 34",
-        "address_en": "Capacity: 34",
+        "address": "Kapazit\u00e4t: 34, ",
+        "address_de": "Kapazit\u00e4t: 34, ",
+        "address_en": "Capacity: 34, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -407,9 +428,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -428,9 +449,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -449,9 +470,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -470,9 +491,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -491,30 +512,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 18",
-        "address_de": "Kapazit\u00e4t: 18",
-        "address_en": "Capacity: 18",
-        "icon": {
-          "id": "bikeParkOpIcon"
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.0095041,
-          48.6855182
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name_en": "Open-air bike park",
-        "name_de": "Fahrradstellplatz",
-        "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 20",
-        "address_de": "Kapazit\u00e4t: 20",
-        "address_en": "Capacity: 20",
+        "address": "Kapazit\u00e4t: 20, ",
+        "address_de": "Kapazit\u00e4t: 20, ",
+        "address_en": "Capacity: 20, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -533,9 +533,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -554,9 +554,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -575,9 +575,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 10, Geb\u00fchr: nein",
-        "address_en": "Capacity: 10, Fee: no",
+        "address": "Kapazit\u00e4t: 10, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 10, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 10, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -596,9 +596,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -617,9 +617,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -638,9 +638,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 100",
-        "address_de": "Kapazit\u00e4t: 100",
-        "address_en": "Capacity: 100",
+        "address": "Kapazit\u00e4t: 100, ",
+        "address_de": "Kapazit\u00e4t: 100, ",
+        "address_en": "Capacity: 100, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -659,9 +659,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -680,9 +680,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 42",
-        "address_de": "Kapazit\u00e4t: 42",
-        "address_en": "Capacity: 42",
+        "address": "Kapazit\u00e4t: 42, ",
+        "address_de": "Kapazit\u00e4t: 42, ",
+        "address_en": "Capacity: 42, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -701,9 +701,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -722,9 +722,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 28",
-        "address_de": "Kapazit\u00e4t: 28",
-        "address_en": "Capacity: 28",
+        "address": "Kapazit\u00e4t: 28, ",
+        "address_de": "Kapazit\u00e4t: 28, ",
+        "address_en": "Capacity: 28, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -743,9 +743,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 16",
-        "address_de": "Kapazit\u00e4t: 16",
-        "address_en": "Capacity: 16",
+        "address": "Kapazit\u00e4t: 16, ",
+        "address_de": "Kapazit\u00e4t: 16, ",
+        "address_en": "Capacity: 16, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -764,9 +764,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 26",
-        "address_de": "Kapazit\u00e4t: 26",
-        "address_en": "Capacity: 26",
+        "address": "Kapazit\u00e4t: 24, ",
+        "address_de": "Kapazit\u00e4t: 24, ",
+        "address_en": "Capacity: 24, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -774,8 +774,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.0036239,
-          48.6881707
+          9.0035709,
+          48.6881494
         ]
       }
     },
@@ -785,9 +785,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -806,9 +806,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -827,9 +827,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 12",
-        "address_de": "Kapazit\u00e4t: 12",
-        "address_en": "Capacity: 12",
+        "address": "Kapazit\u00e4t: 12, ",
+        "address_de": "Kapazit\u00e4t: 12, ",
+        "address_en": "Capacity: 12, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -848,9 +848,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -869,9 +869,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -890,9 +890,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 34",
-        "address_de": "Kapazit\u00e4t: 34",
-        "address_en": "Capacity: 34",
+        "address": "Kapazit\u00e4t: 34, ",
+        "address_de": "Kapazit\u00e4t: 34, ",
+        "address_en": "Capacity: 34, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -911,9 +911,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -932,9 +932,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -953,9 +953,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -974,9 +974,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 50",
-        "address_de": "Kapazit\u00e4t: 50",
-        "address_en": "Capacity: 50",
+        "address": "Kapazit\u00e4t: 50, ",
+        "address_de": "Kapazit\u00e4t: 50, ",
+        "address_en": "Capacity: 50, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -995,9 +995,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1016,9 +1016,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 20",
-        "address_de": "Kapazit\u00e4t: 20",
-        "address_en": "Capacity: 20",
+        "address": "Kapazit\u00e4t: 20, ",
+        "address_de": "Kapazit\u00e4t: 20, ",
+        "address_en": "Capacity: 20, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1037,9 +1037,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 14, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 14, Geb\u00fchr: nein",
-        "address_en": "Capacity: 14, Fee: no",
+        "address": "Kapazit\u00e4t: 14, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 14, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 14, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1058,9 +1058,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 10, Geb\u00fchr: nein",
-        "address_en": "Capacity: 10, Fee: no",
+        "address": "Kapazit\u00e4t: 10, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 10, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 10, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1079,9 +1079,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 4, Geb\u00fchr: nein",
-        "address_en": "Capacity: 4, Fee: no",
+        "address": "Kapazit\u00e4t: 4, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 4, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 4, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1100,9 +1100,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_en": "Capacity: 5, Fee: no",
+        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 5, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1121,9 +1121,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1142,9 +1142,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 20",
-        "address_de": "Kapazit\u00e4t: 20",
-        "address_en": "Capacity: 20",
+        "address": "Kapazit\u00e4t: 20, ",
+        "address_de": "Kapazit\u00e4t: 20, ",
+        "address_en": "Capacity: 20, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1226,9 +1226,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Geb\u00fchr: nein",
-        "address_de": "Geb\u00fchr: nein",
-        "address_en": "Fee: no",
+        "address": "Geb\u00fchr: nein, ",
+        "address_de": "Geb\u00fchr: nein, ",
+        "address_en": "Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1247,9 +1247,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1268,9 +1268,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_en": "Capacity: 5, Fee: no",
+        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 5, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1289,9 +1289,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 3, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 3, Geb\u00fchr: nein",
-        "address_en": "Capacity: 3, Fee: no",
+        "address": "Kapazit\u00e4t: 3, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 3, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 3, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1310,9 +1310,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein",
-        "address_en": "Capacity: 5, Fee: no",
+        "address": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_de": "Kapazit\u00e4t: 5, Geb\u00fchr: nein, ",
+        "address_en": "Capacity: 5, Fee: no, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1331,9 +1331,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1352,9 +1352,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1373,9 +1373,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1394,9 +1394,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1415,9 +1415,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1436,9 +1436,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 16",
-        "address_de": "Kapazit\u00e4t: 16",
-        "address_en": "Capacity: 16",
+        "address": "Kapazit\u00e4t: 16, ",
+        "address_de": "Kapazit\u00e4t: 16, ",
+        "address_en": "Capacity: 16, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1457,9 +1457,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1478,9 +1478,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1499,9 +1499,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 12",
-        "address_de": "Kapazit\u00e4t: 12",
-        "address_en": "Capacity: 12",
+        "address": "Kapazit\u00e4t: 12, ",
+        "address_de": "Kapazit\u00e4t: 12, ",
+        "address_en": "Capacity: 12, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1520,9 +1520,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1541,9 +1541,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1562,9 +1562,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1583,9 +1583,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1604,9 +1604,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1625,9 +1625,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 7",
-        "address_de": "Kapazit\u00e4t: 7",
-        "address_en": "Capacity: 7",
+        "address": "Kapazit\u00e4t: 7, ",
+        "address_de": "Kapazit\u00e4t: 7, ",
+        "address_en": "Capacity: 7, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1646,9 +1646,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 3",
-        "address_de": "Kapazit\u00e4t: 3",
-        "address_en": "Capacity: 3",
+        "address": "Kapazit\u00e4t: 3, ",
+        "address_de": "Kapazit\u00e4t: 3, ",
+        "address_en": "Capacity: 3, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1667,9 +1667,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 12",
-        "address_de": "Kapazit\u00e4t: 12",
-        "address_en": "Capacity: 12",
+        "address": "Kapazit\u00e4t: 12, ",
+        "address_de": "Kapazit\u00e4t: 12, ",
+        "address_en": "Capacity: 12, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1688,9 +1688,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1709,9 +1709,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1730,9 +1730,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1751,9 +1751,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1772,9 +1772,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1793,9 +1793,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 26",
-        "address_de": "Kapazit\u00e4t: 26",
-        "address_en": "Capacity: 26",
+        "address": "Kapazit\u00e4t: 26, ",
+        "address_de": "Kapazit\u00e4t: 26, ",
+        "address_en": "Capacity: 26, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1814,9 +1814,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1835,9 +1835,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1856,9 +1856,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 16",
-        "address_de": "Kapazit\u00e4t: 16",
-        "address_en": "Capacity: 16",
+        "address": "Kapazit\u00e4t: 16, ",
+        "address_de": "Kapazit\u00e4t: 16, ",
+        "address_en": "Capacity: 16, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1877,9 +1877,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 9",
-        "address_de": "Kapazit\u00e4t: 9",
-        "address_en": "Capacity: 9",
+        "address": "Kapazit\u00e4t: 9, ",
+        "address_de": "Kapazit\u00e4t: 9, ",
+        "address_en": "Capacity: 9, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1919,9 +1919,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 16",
-        "address_de": "Kapazit\u00e4t: 16",
-        "address_en": "Capacity: 16",
+        "address": "Kapazit\u00e4t: 16, ",
+        "address_de": "Kapazit\u00e4t: 16, ",
+        "address_en": "Capacity: 16, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1940,9 +1940,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -1982,9 +1982,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 3",
-        "address_de": "Kapazit\u00e4t: 3",
-        "address_en": "Capacity: 3",
+        "address": "Kapazit\u00e4t: 3, ",
+        "address_de": "Kapazit\u00e4t: 3, ",
+        "address_en": "Capacity: 3, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2003,9 +2003,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2024,9 +2024,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 6",
-        "address_de": "Kapazit\u00e4t: 6",
-        "address_en": "Capacity: 6",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2045,9 +2045,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2066,9 +2066,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2087,9 +2087,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 8",
-        "address_de": "Kapazit\u00e4t: 8",
-        "address_en": "Capacity: 8",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2108,9 +2108,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2129,9 +2129,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 2",
-        "address_de": "Kapazit\u00e4t: 2",
-        "address_en": "Capacity: 2",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2150,9 +2150,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2171,9 +2171,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 4",
-        "address_de": "Kapazit\u00e4t: 4",
-        "address_en": "Capacity: 4",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2192,9 +2192,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 10",
-        "address_de": "Kapazit\u00e4t: 10",
-        "address_en": "Capacity: 10",
+        "address": "Kapazit\u00e4t: 10, ",
+        "address_de": "Kapazit\u00e4t: 10, ",
+        "address_en": "Capacity: 10, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2213,9 +2213,9 @@
         "name_en": "Open-air bike park",
         "name_de": "Fahrradstellplatz",
         "name": "Fahrradstellplatz",
-        "address": "Kapazit\u00e4t: 12",
-        "address_de": "Kapazit\u00e4t: 12",
-        "address_en": "Capacity: 12",
+        "address": "Kapazit\u00e4t: 12, ",
+        "address_de": "Kapazit\u00e4t: 12, ",
+        "address_en": "Capacity: 12, ",
         "icon": {
           "id": "bikeParkOpIcon"
         }
@@ -2225,6 +2225,510 @@
         "coordinates": [
           9.0187463,
           48.6957871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9030617,
+          48.6419357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9050063,
+          48.6379408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 3, ",
+        "address_de": "Kapazit\u00e4t: 3, ",
+        "address_en": "Capacity: 3, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9033903,
+          48.6373718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9028552,
+          48.6375739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9024234,
+          48.6375438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8973788,
+          48.6369881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8975049,
+          48.6369416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8977134,
+          48.6370838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8971736,
+          48.6415197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8954443,
+          48.6416708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 7, ",
+        "address_de": "Kapazit\u00e4t: 7, ",
+        "address_en": "Capacity: 7, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8897794,
+          48.6452791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 7, ",
+        "address_de": "Kapazit\u00e4t: 7, ",
+        "address_en": "Capacity: 7, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8938269,
+          48.6427528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 4, ",
+        "address_de": "Kapazit\u00e4t: 4, ",
+        "address_en": "Capacity: 4, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8957004,
+          48.6425507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 3, ",
+        "address_de": "Kapazit\u00e4t: 3, ",
+        "address_en": "Capacity: 3, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9011855,
+          48.6421245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 2, ",
+        "address_de": "Kapazit\u00e4t: 2, ",
+        "address_en": "Capacity: 2, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.900317,
+          48.6421471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 5, ",
+        "address_de": "Kapazit\u00e4t: 5, ",
+        "address_en": "Capacity: 5, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.900295,
+          48.6419419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8999611,
+          48.641949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 7, ",
+        "address_de": "Kapazit\u00e4t: 7, ",
+        "address_en": "Capacity: 7, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8995883,
+          48.6423474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8979595,
+          48.6442765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 5, ",
+        "address_de": "Kapazit\u00e4t: 5, ",
+        "address_en": "Capacity: 5, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9147159,
+          48.6424448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 8, ",
+        "address_de": "Kapazit\u00e4t: 8, ",
+        "address_en": "Capacity: 8, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9112706,
+          48.6405799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 5, ",
+        "address_de": "Kapazit\u00e4t: 5, ",
+        "address_en": "Capacity: 5, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9059103,
+          48.6411054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "Kapazit\u00e4t: 6, ",
+        "address_de": "Kapazit\u00e4t: 6, ",
+        "address_en": "Capacity: 6, ",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9043398,
+          48.646096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Open-air bike park",
+        "name_de": "Fahrradstellplatz",
+        "name": "Fahrradstellplatz",
+        "address": "",
+        "address_de": "",
+        "address_en": "",
+        "icon": {
+          "id": "bikeParkOpIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.909546,
+          48.6384911
         ]
       }
     }

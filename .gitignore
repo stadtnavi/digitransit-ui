@@ -1,5 +1,6 @@
 .DS_Store
 _static
+static/assets/geojson/hb-layers/
 npm-debug.log
 node_modules
 filesizes.html

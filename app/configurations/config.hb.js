@@ -9,6 +9,7 @@ const API_URL = process.env.API_URL || 'https://api.mobil-in-herrenberg.de';
 const MAP_URL = process.env.MAP_URL || 'https://maps.wikimedia.org/osm-intl/';
 const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || `https://pelias.locationiq.org/v1`;
 const LOCATIONIQ_API_KEY = process.env.LOCATIONIQ_API_KEY;
+const GEOJSON_LAYERS_BASE_URL = process.env.GEOJSON_LAYERS_BASE_URL || 'http://opentripplanner-data-con-hb:8080/routing-data/v2/hb/';
 
 const walttiConfig = require('./waltti').default;
 
@@ -225,7 +226,7 @@ export default configMerger(walttiConfig, {
       icon: 'car-withoutBox',
     }
   },
-
+  
   // adding assets/geoJson/hb-layers layers
   geoJson: {
     layers: [
@@ -236,7 +237,7 @@ export default configMerger(walttiConfig, {
           en: 'Taxi stands',
           de: 'Taxi Standorte',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/taxistand.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'taxistand.geojson',
       },
       // bike parks
       {
@@ -245,7 +246,7 @@ export default configMerger(walttiConfig, {
           en: 'Open-air bicycle parks',
           de: 'Fahrradstellplätze',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/open-airbikepark.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'open-airbikepark.geojson',
       },
       {
         name: {
@@ -253,7 +254,7 @@ export default configMerger(walttiConfig, {
           en: 'Covered bicycle parks',
           de: 'Überdachte Fahrradstellplätze',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/coveredbikepark.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'coveredbikepark.geojson',
       },
       // bike repair stations
       {
@@ -262,7 +263,7 @@ export default configMerger(walttiConfig, {
           en: 'Bicycle repair stations',
           de: 'Fahrradreparaturstationen',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/bicyclerepairstation.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'bicyclerepairstation.geojson',
       },
       // bike shops in Stuttgart
       {
@@ -271,7 +272,7 @@ export default configMerger(walttiConfig, {
           en: 'Bicycle shops',
           de: 'Fahrradgeschäfte',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/bicycleshop.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'bicycleshop.geojson',
       },
       // bike charging stations in Stuttgart
       {
@@ -280,7 +281,7 @@ export default configMerger(walttiConfig, {
           en: 'Bicycle charging stations',
           de: 'Fahrradladestationen',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/bicyclechargingstation.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'bicyclechargingstation.geojson',
       },
       // Bike rental places in Stuttgart
       {
@@ -289,7 +290,7 @@ export default configMerger(walttiConfig, {
           en: 'Bicycle rental places',
           de: 'Fahrradverleih',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/bikerental.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'bikerental.geojson',
       },
       // car parks
       {
@@ -298,7 +299,7 @@ export default configMerger(walttiConfig, {
           en: 'Open-air car parks',
           de: 'Parkplätze',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/carparking.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'carparking.geojson',
       },
       {
         name: {
@@ -306,7 +307,7 @@ export default configMerger(walttiConfig, {
           en: 'Multi-story/underground car parks',
           de: 'Parkhäuser/Tiefgaragen',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/multi-storyundergroundcarparking.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'multi-storyundergroundcarparking.geojson',
       },
       // park and ride places
       {
@@ -315,7 +316,7 @@ export default configMerger(walttiConfig, {
           en: 'Park and Ride',
           de: 'Park-Und-Ride',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/parkandride.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'parkandride.geojson',
       },
       // Car sharing options in Stuttgart
       {
@@ -324,7 +325,7 @@ export default configMerger(walttiConfig, {
           en: 'Car sharing',
           de: 'Car-Sharing',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/carsharing.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'carsharing.geojson',
       },
       // Car charging stations in Stuttgart
       {
@@ -333,7 +334,7 @@ export default configMerger(walttiConfig, {
           en: 'Car charging stations',
           de: 'Elektroauto-Ladestationen',
         },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/carchargingstation.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'carchargingstation.geojson',
       }
       /*,
        Had to comment out since there is no bike monitoring stations

@@ -311,6 +311,7 @@ const translations = {
     car: 'Auto',
     'car-distance-duration': 'Auto {distance} ({duration})',
     car_park: 'Park & Ride',
+    carpool: 'Carpool', // TODO add German translation
     cause: 'Grund',
     'char-left': 'Zeichen',
     'choose-stop': 'Haltestelle auswählen',
@@ -729,6 +730,7 @@ const translations = {
     car: 'Car',
     'car-distance-duration': 'Drive {distance} ({duration})',
     car_park: 'park & ride',
+    carpool: 'Carpool',
     cause: 'cause',
     'char-left': 'characters',
     'choose-stop': 'Select stop',

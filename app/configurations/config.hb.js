@@ -228,6 +228,11 @@ export default configMerger(walttiConfig, {
       availableForSelection: false,
       defaultValue: false,
     },
+
+    carpool: {
+      availableForSelection: true,
+      defaultValue: false,
+    }
   },
 
   streetModes: {

@@ -199,6 +199,22 @@ export default configMerger(walttiConfig, {
     hb: 'hb',
   },
 
+  modeToOTP: {
+    bus: 'BUS',
+    tram: 'TRAM',
+    rail: 'RAIL',
+    subway: 'SUBWAY',
+    citybike: 'BICYCLE_RENT',
+    airplane: 'AIRPLANE',
+    ferry: 'FERRY',
+    walk: 'WALK',
+    bicycle: 'BICYCLE',
+    car: 'CAR',
+    car_park: 'CAR_PARK',
+    public_transport: 'WALK',
+    carpool: 'CARPOOLING',
+  },
+
   transportModes: {
     rail: {
       availableForSelection: true,

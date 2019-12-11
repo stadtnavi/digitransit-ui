@@ -1,6 +1,7 @@
 import { VectorTile } from '@mapbox/vector-tile';
 import Protobuf from 'pbf';
-import Relay from 'react-relay/classic';
+// Relay is never used and caused eslint error
+// import Relay from 'react-relay/classic';
 import pick from 'lodash/pick';
 
 import { isBrowser } from '../../../util/browser';
@@ -47,11 +48,7 @@ class DynamicParkingLots {
           this.features = [];
 
           if (vt.layers.parking != null) {
-            for (
-              let i = 0, ref = vt.layers.parking.length - 1;
-              i <= ref;
-              i++
-            ) {
+            for (let i = 0, ref = vt.layers.parking.length - 1; i <= ref; i++) {
               const feature = vt.layers.parking.feature(i);
               [[feature.geom]] = feature.loadGeometry();
               this.features.push(pick(feature, ['geom', 'properties']));
@@ -60,21 +57,23 @@ class DynamicParkingLots {
 
           this.features.forEach(actionFn);
         },
+        // eslint-disable-next-line no-console
         err => console.log(err),
       );
     });
 
-  fetchAndDrawStatus = ({ geom, properties}) => {
-    console.log("DRAW", geom)
+  fetchAndDrawStatus = ({ geom, properties }) => {
+    // eslint-disable-next-line no-console
+    console.log('DRAW', geom);
     if (
-      this.tile.coords.z <= this.config.dynamicParkingLots.dynamicParkingLotsSmallIconZoom
+      this.tile.coords.z <=
+      this.config.dynamicParkingLots.dynamicParkingLotsSmallIconZoom
     ) {
       return drawRoundIcon(this.tile, geom, 'car');
     }
 
-
     return drawIcon(
-      "icon-icon_car",
+      'icon-icon_car',
       this.tile,
       geom,
       this.citybikeImageSize,
@@ -88,16 +87,15 @@ class DynamicParkingLots {
         this.scaleratio,
       );
 
-      /*drawAvailabilityBadge(
+      /* drawAvailabilityBadge(
         'no',
         this.tile,
         geom,
         this.citybikeImageSize,
         this.availabilityImageSize,
         this.scaleratio,
-      );*/
+      ); */
     });
-
   };
 
   onTimeChange = () => {

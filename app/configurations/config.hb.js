@@ -338,5 +338,5 @@ export default configMerger(walttiConfig, {
 },
 
 staticMessagesUrl: STATIC_MESSAGE_URL,
-
+  
 });

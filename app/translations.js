@@ -267,7 +267,7 @@ const translations = {
     'add-itinerary-via-point': 'Zwischenstopp hinzufügen',
     'add-location': 'Ort hinzufügen',
     'add-location-to-favourites': 'Ort zu Favoriten hinzufügen',
-    'add-via-button-label': 'Zwischenziel hinzufügen',
+    'add-via-button-label': 'Zwischenstopp hinzufügen',
     'add-via-duration-button-label': '',
     address: 'Adresse',
     'address-or-stop': 'Adresse oder Haltestelle',
@@ -322,7 +322,7 @@ const translations = {
       'Citybike-Stationen sind ab Frühling wieder verfügbar',
     'citybike-register-required': 'Anmeldung bei Citybikes benötigt',
     citybike_off: 'Geschlossen',
-    'clear-button-label': 'leeren',
+    'clear-button-label': 'Leeren',
     close: 'Schließen',
     'contact-information': '{contactName} Kontaktinformationen',
     continue: 'Fortsetzen',
@@ -578,7 +578,7 @@ const translations = {
     'select-position': 'Standort aus vorherigen Suchen wählen',
     send: 'Senden',
     'separate-ticket-required': 'Ein weiteres Ticket wird für diesen Teil der Reise benötigt.',
-    'separate-ticket-required-disclaimer':
+    'separate-ticket-required-disclaimer': 
       'Diese Reise enthält ein oder mehrere Teilstrecken für die {agencyName} keine Tickets verkauft.',
     settings: 'Einstellungen',
     'settings-label-change': 'Einstellungen ändern',

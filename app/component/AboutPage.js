@@ -6,8 +6,8 @@ import { FormattedMessage } from 'react-intl';
 import connectToStores from 'fluxible-addons-react/connectToStores';
 import SanitizedHTML from 'react-sanitized-html';
 
-const AboutPage = ({ currentLanguage }, context) => {
-  const about = context.config.aboutThisService[currentLanguage];
+const AboutPage = ({ currentLanguage }, { config }) => {
+  const about = config.aboutThisService[currentLanguage];
   const allowedTags = ['a', 'b', 'i', 'strong', 'em', 'img', 'br'];
   return (
     <div className="about-page fullscreen">
@@ -60,7 +60,7 @@ const connectedComponent = connectToStores(
   AboutPage,
   ['PreferencesStore'],
   context => ({
-    currentLanguage: context.getStore('PreferencesStore').getLanguage(),
+  currentLanguage: context.getStore('PreferencesStore').getLanguage(),
   }),
 );
 

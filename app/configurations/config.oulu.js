@@ -34,8 +34,17 @@ export default configMerger(walttiConfig, {
   // Navbar logo
   logo: 'oulu/oulu-logo.png',
 
+  mapLayers: {
+    tooltip: {
+      fi: 'Uutta! Saat nyt lähellä olevat bussit kartalle asetuksista.',
+      en: 'New! You can now get nearby busses on the map from the settings.',
+      sv:
+        'Nytt! I inställningarna kan du nu välja att se närliggande bussar på kartan.',
+    },
+  },
+
   cityBike: {
-    showCityBikes: true,
+    showCityBikes: false,
     useUrl: {
       fi: 'https://kaupunkipyorat.ouka.fi/',
       sv: 'https://kaupunkipyorat.ouka.fi/home',
@@ -68,7 +77,7 @@ export default configMerger(walttiConfig, {
 
   transportModes: {
     citybike: {
-      availableForSelection: true,
+      availableForSelection: false,
     },
   },
 
@@ -123,6 +132,9 @@ export default configMerger(walttiConfig, {
       },
     ],
   },
+
+  showAllBusses: true,
+  showVehiclesOnStopPage: true,
 
   aboutThisService: {
     fi: [

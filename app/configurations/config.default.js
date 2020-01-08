@@ -37,6 +37,8 @@ export default {
     PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
     PELIAS_REVERSE_GEOCODER: `${process.env.GEOCODING_BASE_URL ||
       GEOCODING_BASE_URL}/reverse`,
+    PELIAS_PLACE: `${process.env.GEOCODING_BASE_URL ||
+      GEOCODING_BASE_URL}/place`,
     ROUTE_TIMETABLES: {
       HSL: `${API_URL}/timetables/v1/hsl/routes/`,
       tampere: 'http://joukkoliikenne.tampere.fi/media/aikataulut/',
@@ -74,9 +76,9 @@ export default {
   GTMid: 'GTM-PZV2S2V',
 
   /*
- * by default search endpoints from all but gtfs sources, correct gtfs source
- * figured based on feedIds config variable
- */
+   * by default search endpoints from all but gtfs sources, correct gtfs source
+   * figured based on feedIds config variable
+   */
   searchSources: ['oa', 'osm', 'nlsfi'],
 
   search: {
@@ -391,7 +393,7 @@ export default {
     },
 
     citybike: {
-      availableForSelection: true, // TODO: Turn off in autumn
+      availableForSelection: false,
       defaultValue: false, // always false
     },
   },
@@ -771,4 +773,5 @@ export default {
   },
 
   timetables: {},
+  showLogin: false,
 };

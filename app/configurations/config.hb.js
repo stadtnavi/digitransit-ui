@@ -4,12 +4,15 @@ import configMerger from '../util/configMerger';
 const CONFIG = 'hb';
 const APP_TITLE = 'Mobil in Herrenberg';
 const APP_DESCRIPTION = '';
-
 const API_URL = process.env.API_URL || 'https://api.mobil-in-herrenberg.de';
 const MAP_URL = process.env.MAP_URL || 'https://maps.wikimedia.org/osm-intl/';
 const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || `https://pelias.locationiq.org/v1`;
 const LOCATIONIQ_API_KEY = process.env.LOCATIONIQ_API_KEY;
 const GEOJSON_LAYERS_BASE_URL = process.env.GEOJSON_LAYERS_BASE_URL || 'http://opentripplanner-data-con-hb:8080/routing-data/v2/hb/';
+const YEAR = 1900 + new Date().getYear();
+const STATIC_MESSAGE_URL =
+  process.env.STATIC_MESSAGE_URL ||
+  '/assets/messages/message.hb.json';
 
 const walttiConfig = require('./waltti').default;
 
@@ -52,7 +55,7 @@ export default configMerger(walttiConfig, {
   },
 
   dynamicParkingLots: {
-    showDynamicParkingLots: true,
+    showDynamicParkingLots: false,
     dynamicParkingLotsSmallIconZoom: 16,
     dynamicParkingLotsMinZoom: 14
   },
@@ -60,6 +63,8 @@ export default configMerger(walttiConfig, {
   mergeStopsByCode: true,
 
   title: APP_TITLE,
+
+  favicon: './app/configurations/images/hb/favicon.png',
 
   meta: {
     description: APP_DESCRIPTION,
@@ -74,17 +79,17 @@ export default configMerger(walttiConfig, {
     useRetinaTiles: true,
     tileSize: 256,
     zoomOffset: 0,
+    attribution: '&copy; <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>'
   },
 
   feedIds: ['hb'],
-  
   searchSources: ['oa', 'osm'],
 
   searchParams: {
-    'boundary.rect.min_lat': minLat,
-    'boundary.rect.max_lat': maxLat,
-    'boundary.rect.min_lon': minLon,
-    'boundary.rect.max_lon': maxLon,
+    'boundary.rect.min_lat': 48.4521,
+    'boundary.rect.max_lat': 48.85,
+    'boundary.rect.min_lon': 8.5,
+    'boundary.rect.max_lon': 9.2780,
   },
 
   areaPolygon: [
@@ -93,6 +98,8 @@ export default configMerger(walttiConfig, {
     [maxLon, maxLat],
     [maxLon, minLat],
   ],
+
+  nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
 
   defaultEndpoint: {
     address: 'ZOB Herrenberg',
@@ -123,13 +130,23 @@ export default configMerger(walttiConfig, {
 
   footer: {
     content: [
-      { label: `ein digitransit des transportkollektivs` },
+      { label: `© Stadt Herrenberg ${YEAR}` },
       {},
       {
         name: 'about-this-service',
         nameEn: 'About this service',
         route: '/tietoja-palvelusta',
         icon: 'icon-icon_info',
+      },
+      {
+        name: 'imprint',
+        nameEn: 'Imprint',
+        href: 'https://www.herrenberg.de/impressum',
+      },
+      {
+        name: 'privacy',
+        nameEn: 'Privacy',
+        href: 'https://www.herrenberg.de/datenschutz',
       },
     ],
   },
@@ -139,7 +156,21 @@ export default configMerger(walttiConfig, {
       {
         header: 'Über diesen Dienst',
         paragraphs: [
-          'This service is provided by Hb for route planning in Hb region. The service covers public transport, walking, cycling, and some private car use. Service is built on Digitransit platform.',
+          'Mobil-in-Herrenberg ist eine Reiseplannungs-Anwendung für die Region Herrenberg. Dieser Dienst umfasst ÖPNV, Fußwege, Radverkehr, und PKW-Routing, inklusive Park&Ride.',
+          
+        ],
+      },
+      {
+        header: 'Digitransit Plattform',
+        paragraphs: [
+          'Dieser Dienst basiert auf der Digitransit Platform und dem Backend-Dienst OpenTripPlanner. Alle Software ist unter einer offenen Lizenzen verfügbar. Vielen Dank an alle Beteiligten.',        ],
+      },
+      {
+        header: 'Datenquellen',
+        paragraphs: [
+          'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
+          'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> und der <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
+          'Alle Angaben ohne Gewähr.'
         ],
       },
     ],
@@ -147,7 +178,21 @@ export default configMerger(walttiConfig, {
       {
         header: 'About this service',
         paragraphs: [
-          'This service is provided by Hb for route planning in Hb region. The service covers public transport, walking, cycling, and some private car use. Service is built on Digitransit platform.',
+          'This service is provided by Hb for route planning in Hb region. The service covers public transport, walking, cycling, and some private car use. Service is built on Digitransit platform and OpenTriPlanner.',
+        ],
+      },
+      {
+        header: 'Digitransit platform',
+        paragraphs: [
+          'The Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source. Thanks to everybody working on this!',
+        ],
+      },
+      {
+        header: 'Data sources',
+        paragraphs: [
+          'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
+          'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> and <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
+          'No responsibility is accepted for the accuracy of this information.'
         ],
       },
     ],
@@ -227,52 +272,50 @@ export default configMerger(walttiConfig, {
     }
   },
   
-  // adding assets/geoJson/hb-layers layers
   geoJson: {
     layers: [
-      //taxi stands
       {
         name: {
           fi: '',
-          en: 'Taxi stands',
-          de: 'Taxi Standorte',
+          en: 'Bicycle parkings',
+          de: 'Fahrrad-Abstellanlagen',
         },
-        url: GEOJSON_LAYERS_BASE_URL + 'taxistand.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'bicycle-parking.geojson',
       },
-      // bike parks
+      // bicycleinfrastructure includes shops, repair stations, 
       {
         name: {
           fi: '',
-          en: 'Open-air bicycle parks',
-          de: 'Fahrradstellplätze',
+          en: 'Bicycle infrastructure',
+          de: "Rund um's Fahrrad",
         },
-        url: GEOJSON_LAYERS_BASE_URL + 'open-airbikepark.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'bicycleinfrastucture.geojson',
+      },
+      // sharing options
+      {
+        name: {
+          fi: '',
+          en: 'Taxi & Sharing',
+          de: 'Taxi & Sharing-Angebot',
+        },
+        url: GEOJSON_LAYERS_BASE_URL + 'taxi-and-sharing.geojson',
       },
       {
         name: {
           fi: '',
-          en: 'Covered bicycle parks',
-          de: 'Überdachte Fahrradstellplätze',
+          en: 'Car parkings',
+          de: 'Parken (& Reisen)',
         },
-        url: GEOJSON_LAYERS_BASE_URL + 'coveredbikepark.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'car-parking.geojson',
       },
-      // bike repair stations
+      // Charging stations 
       {
         name: {
           fi: '',
-          en: 'Bicycle repair stations',
-          de: 'Fahrradreparaturstationen',
+          en: 'Charging stations',
+          de: 'Ladestationen',
         },
-        url: GEOJSON_LAYERS_BASE_URL + 'bicyclerepairstation.geojson',
-      },
-      // bike shops in Stuttgart
-      {
-        name: {
-          fi: '',
-          en: 'Bicycle shops',
-          de: 'Fahrradgeschäfte',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'bicycleshop.geojson',
+        url: GEOJSON_LAYERS_BASE_URL + 'charging.geojson',
       },
       // bike charging stations in Stuttgart
       {
@@ -292,23 +335,6 @@ export default configMerger(walttiConfig, {
         },
         url: GEOJSON_LAYERS_BASE_URL + 'bikerental.geojson',
       },
-      // car parks
-      {
-        name: {
-          fi: '',
-          en: 'Open-air car parks',
-          de: 'Parkplätze',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'carparking.geojson',
-      },
-      {
-        name: {
-          fi: '',
-          en: 'Multi-story/underground car parks',
-          de: 'Parkhäuser/Tiefgaragen',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'multi-storyundergroundcarparking.geojson',
-      },
       // park and ride places
       {
         name: {
@@ -317,24 +343,6 @@ export default configMerger(walttiConfig, {
           de: 'Park-Und-Ride',
         },
         url: GEOJSON_LAYERS_BASE_URL + 'parkandride.geojson',
-      },
-      // Car sharing options in Stuttgart
-      {
-        name: {
-          fi: '',
-          en: 'Car sharing',
-          de: 'Car-Sharing',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'carsharing.geojson',
-      },
-      // Car charging stations in Stuttgart
-      {
-        name: {
-          fi: '',
-          en: 'Car charging stations',
-          de: 'Elektroauto-Ladestationen',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'carchargingstation.geojson',
       }
       /*,
        Had to comment out since there is no bike monitoring stations
@@ -351,5 +359,6 @@ export default configMerger(walttiConfig, {
       */
     ],
 },
+staticMessagesUrl: STATIC_MESSAGE_URL,
   
 });

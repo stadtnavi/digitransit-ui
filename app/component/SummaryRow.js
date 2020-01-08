@@ -214,7 +214,14 @@ const isViaPointConnectingLeg = (leg, nextLeg, intermediatePlaces) => {
 };
 
 const SummaryRow = (
-  { data, breakpoint, intermediatePlaces, zones, ...props },
+  {
+    data,
+    breakpoint,
+    intermediatePlaces,
+    zones,
+    renderAlwaysNonTransitLegs,
+    ...props
+  },
   { intl, intl: { formatMessage }, config },
 ) => {
   const isTransitLeg = leg => leg.transitLeg || leg.rentedBike;
@@ -226,11 +233,13 @@ const SummaryRow = (
   const legs = [];
   let noTransitLegs = true;
 
-  data.legs.forEach(leg => {
-    if (isTransitLeg(leg)) {
-      noTransitLegs = false;
-    }
-  });
+  if (!renderAlwaysNonTransitLegs) {
+    data.legs.forEach(leg => {
+      if (isTransitLeg(leg)) {
+        noTransitLegs = false;
+      }
+    });
+  }
 
   let lastLegRented = false;
   let firstLegStartTime = null;
@@ -497,11 +506,13 @@ SummaryRow.propTypes = {
   intermediatePlaces: PropTypes.array,
   isCancelled: PropTypes.bool,
   showCancelled: PropTypes.bool,
+  renderAlwaysNonTransitLegs: PropTypes.bool,
   zones: PropTypes.arrayOf(PropTypes.string),
 };
 
 SummaryRow.defaultProps = {
   zones: [],
+  renderAlwaysNonTransitLegs: false,
 };
 
 SummaryRow.contextTypes = {

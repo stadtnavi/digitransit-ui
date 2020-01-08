@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import some from 'lodash/some';
-import get from 'lodash/get';
 import connectToStores from 'fluxible-addons-react/connectToStores';
 import { getHomeUrl, parseLocation } from '../util/path';
 import { dtLocationShape } from '../util/shapes';
 import AppBarContainer from './AppBarContainer';
 import MobileView from './MobileView';
 import DesktopView from './DesktopView';
-import HSLAdformTrackingPixel from './HSLAdformTrackingPixel';
 import ErrorBoundary from './ErrorBoundary';
 import { DesktopOrMobile } from '../util/withBreakpoint';
 
@@ -50,21 +48,9 @@ class TopLevel extends React.Component {
     location: PropTypes.object,
   };
 
-  constructor(props, { headers, config }) {
+  constructor(props) {
     super(props);
-    const host = headers && (headers['x-forwarded-host'] || headers.host);
-
-    // TODO: Move this to server.js
-    const hasTrackingPixel = get(config, 'showHSLTracking', false);
-    this.trackingPixel =
-      host &&
-      host.indexOf('127.0.0.1') === -1 &&
-      host.indexOf('localhost') === -1 &&
-      hasTrackingPixel ? (
-        <HSLAdformTrackingPixel key="trackingpixel" />
-      ) : (
-        undefined
-      );
+    this.state = { loggedIn: false };
   }
 
   getChildContext() {
@@ -80,6 +66,12 @@ class TopLevel extends React.Component {
       this.setState({ logo: logo.default });
     });
   }
+
+  logIn = () => {
+    this.setState(prevState => ({
+      loggedIn: !prevState.loggedIn,
+    }));
+  };
 
   render() {
     this.topBarOptions = Object.assign(
@@ -131,6 +123,8 @@ class TopLevel extends React.Component {
             {...this.topBarOptions}
             {...this.state}
             homeUrl={homeUrl}
+            loggedIn={this.state.loggedIn}
+            logIn={() => this.logIn()}
           />
         )}
         <section id="mainContent" className="content">
@@ -138,7 +132,6 @@ class TopLevel extends React.Component {
           <noscript>This page requires JavaScript to run.</noscript>
           <ErrorBoundary>{content}</ErrorBoundary>
         </section>
-        {this.trackingPixel}
       </Fragment>
     );
   }

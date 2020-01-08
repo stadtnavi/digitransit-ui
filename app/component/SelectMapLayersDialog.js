@@ -9,12 +9,22 @@ import GeoJsonStore from '../store/GeoJsonStore';
 import MapLayerStore, { mapLayerShape } from '../store/MapLayerStore';
 
 import ComponentUsageExample from './ComponentUsageExample';
+import { addAnalyticsEvent } from '../util/analyticsUtils';
 
 class SelectMapLayersDialog extends React.Component {
   updateSetting = newSetting => {
     this.props.updateMapLayers({
       ...this.props.mapLayers,
       ...newSetting,
+    });
+  };
+
+  sendLayerChangeAnalytic = (name, enable) => {
+    const action = enable ? 'ShowMapLayer' : 'HideMapLayer';
+    addAnalyticsEvent({
+      category: 'Map',
+      action,
+      name,
     });
   };
 
@@ -83,14 +93,15 @@ class SelectMapLayersDialog extends React.Component {
     return (
       <React.Fragment>
         {config.showAllBusses && (
-        <div className="checkbox-grouping">
+          <div className="checkbox-grouping">
             <Checkbox
               checked={showAllBusses}
               defaultMessage="Moving vehicles"
               labelId="map-layer-vehicles"
-              onChange={e =>
-                this.updateSetting({ showAllBusses: e.target.checked })
-              }
+              onChange={e => {
+                this.updateSetting({ showAllBusses: e.target.checked });
+                this.sendLayerChangeAnalytic('Vehicles', e.target.checked);
+              }}
             />
           </div>
         )}
@@ -101,17 +112,19 @@ class SelectMapLayersDialog extends React.Component {
                 checked={stop.bus}
                 defaultMessage="Bus stop"
                 labelId="map-layer-stop-bus"
-                onChange={e =>
-                  this.updateStopSetting({ bus: e.target.checked })
-                }
+                onChange={e => {
+                  this.updateStopSetting({ bus: e.target.checked });
+                  this.sendLayerChangeAnalytic('BusStop', e.target.checked);
+                }}
               />
               <Checkbox
                 checked={terminal.bus}
                 defaultMessage="Bus terminal"
                 labelId="map-layer-terminal-bus"
-                onChange={e =>
-                  this.updateTerminalSetting({ bus: e.target.checked })
-                }
+                onChange={e => {
+                  this.updateTerminalSetting({ bus: e.target.checked });
+                  this.sendLayerChangeAnalytic('BusTerminal', e.target.checked);
+                }}
               />
             </React.Fragment>
           )}
@@ -120,7 +133,10 @@ class SelectMapLayersDialog extends React.Component {
               checked={stop.tram}
               defaultMessage="Tram stop"
               labelId="map-layer-stop-tram"
-              onChange={e => this.updateStopSetting({ tram: e.target.checked })}
+              onChange={e => {
+                this.updateStopSetting({ tram: e.target.checked });
+                this.sendLayerChangeAnalytic('TramStop', e.target.checked);
+              }}
             />
           )}
           {isTransportModeEnabled(transportModes.rail) && (
@@ -128,9 +144,10 @@ class SelectMapLayersDialog extends React.Component {
               checked={terminal.rail}
               defaultMessage="Railway station"
               labelId="map-layer-terminal-rail"
-              onChange={e =>
-                this.updateStopAndTerminalSetting({ rail: e.target.checked })
-              }
+              onChange={e => {
+                this.updateStopAndTerminalSetting({ rail: e.target.checked });
+                this.sendLayerChangeAnalytic('RailTerminal', e.target.checked);
+              }}
             />
           )}
           {isTransportModeEnabled(transportModes.subway) && (
@@ -138,9 +155,13 @@ class SelectMapLayersDialog extends React.Component {
               checked={terminal.subway}
               defaultMessage="Subway station"
               labelId="map-layer-terminal-subway"
-              onChange={e =>
-                this.updateStopAndTerminalSetting({ subway: e.target.checked })
-              }
+              onChange={e => {
+                this.updateStopAndTerminalSetting({ subway: e.target.checked });
+                this.sendLayerChangeAnalytic(
+                  'SubwayTerminal',
+                  e.target.checked,
+                );
+              }}
             />
           )}
           {isTransportModeEnabled(transportModes.ferry) && (
@@ -148,9 +169,10 @@ class SelectMapLayersDialog extends React.Component {
               checked={stop.ferry}
               defaultMessage="Ferry"
               labelId="map-layer-stop-ferry"
-              onChange={e =>
-                this.updateStopSetting({ ferry: e.target.checked })
-              }
+              onChange={e => {
+                this.updateStopSetting({ ferry: e.target.checked });
+                this.sendLayerChangeAnalytic('FerryStop', e.target.checked);
+              }}
             />
           )}
           {config.cityBike &&
@@ -159,9 +181,10 @@ class SelectMapLayersDialog extends React.Component {
                 checked={citybike}
                 defaultMessage="Citybike station"
                 labelId="map-layer-citybike"
-                onChange={e =>
-                  this.updateSetting({ citybike: e.target.checked })
-                }
+                onChange={e => {
+                  this.updateSetting({ citybike: e.target.checked });
+                  this.sendLayerChangeAnalytic('Citybike', e.target.checked);
+                }}
               />
             )}
           {config.dynamicParkingLots &&
@@ -181,9 +204,10 @@ class SelectMapLayersDialog extends React.Component {
                 checked={parkAndRide}
                 defaultMessage="Park &amp; ride"
                 labelId="map-layer-park-and-ride"
-                onChange={e =>
-                  this.updateSetting({ parkAndRide: e.target.checked })
-                }
+                onChange={e => {
+                  this.updateSetting({ parkAndRide: e.target.checked });
+                  this.sendLayerChangeAnalytic('ParkAndRide', e.target.checked);
+                }}
               />
             )}
         </div>
@@ -194,22 +218,30 @@ class SelectMapLayersDialog extends React.Component {
                 checked={ticketSales.ticketMachine}
                 defaultMessage="Ticket machine"
                 labelId="map-layer-ticket-sales-machine"
-                onChange={e =>
+                onChange={e => {
                   this.updateTicketSalesSetting({
                     ticketMachine: e.target.checked,
-                  })
-                }
+                  });
+                  this.sendLayerChangeAnalytic(
+                    'TicketSalesMachine',
+                    e.target.checked,
+                  );
+                }}
               />
               <Checkbox
                 checked={ticketSales.salesPoint}
                 defaultMessage="Travel Card top up"
                 labelId="map-layer-ticket-sales-point"
-                onChange={e =>
+                onChange={e => {
                   this.updateTicketSalesSetting({
                     salesPoint: e.target.checked,
                     servicePoint: e.target.checked,
-                  })
-                }
+                  });
+                  this.sendLayerChangeAnalytic(
+                    'TicketSalesPoint',
+                    e.target.checked,
+                  );
+                }}
               />
             </div>
           )}
@@ -228,6 +260,7 @@ class SelectMapLayersDialog extends React.Component {
                     const newSetting = {};
                     newSetting[gj.url] = e.target.checked;
                     this.updateGeoJsonSetting(newSetting);
+                    this.sendLayerChangeAnalytic('Zones', e.target.checked);
                   }}
                 />
               ))}

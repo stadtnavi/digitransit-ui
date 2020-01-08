@@ -130,6 +130,8 @@ const translations = {
       'Current timetable does not include routes departing later.',
     'no-route-msg':
       'Vi finder desværre ingen rejseforslag til rejsesøget. Forsøg at ændre adressen',
+    'no-route-msg-with-changes':
+      'Unfortunately no routes were found for your journey. Try changing your settings, origin or destination.',
     'no-route-origin-near-destination':
       'The origin and the destination are close to each other. Please change either location.',
     'no-route-start-date-too-early':
@@ -306,7 +308,8 @@ const translations = {
     canceled: 'Ausgefallen',
     'canceled-itineraries-amount':
       'Weitere {itineraryAmount, plural, =1 {ausgefallene Verbindung} other {{itineraryAmount} ausgefallene Verbindungen}}',
-    'canceled-itineraries-amount-hide': 'Ausgefallene Verbindungen verstecken ({itineraryAmount})',
+    'canceled-itineraries-amount-hide':
+      'Ausgefallene Verbindungen verstecken ({itineraryAmount})',
     'canceled-legs': 'Ausgefallene Abfahrten auf dieser Route',
     car: 'Auto',
     'car-distance-duration': 'Auto {distance} ({duration})',
@@ -321,7 +324,7 @@ const translations = {
       'Citybike-Stationen sind ab Frühling wieder verfügbar',
     'citybike-register-required': 'Anmeldung bei Citybikes benötigt',
     citybike_off: 'Geschlossen',
-    'clear-button-label': 'leeren',
+    'clear-button-label': 'Leeren',
     close: 'Schließen',
     'contact-information': '{contactName} Kontaktinformationen',
     continue: 'Fortsetzen',
@@ -394,6 +397,7 @@ const translations = {
     hour: 'Stunde',
     'hour-short': 'h',
     'how-to-rate-service': 'Wie würden Sie den Service bewerten?',
+    imprint: 'Impressum',
     'in-addition': 'auch',
     inquiry: 'Feedback geben',
     instructions: 'Anweisungen',
@@ -402,9 +406,9 @@ const translations = {
     'itinerary-feedback-placeholder': 'Beschreibung (optional)',
     'itinerary-hide-stops': 'Zwischenstopps ausblenden',
     'itinerary-page.description': 'Reisebeschreibung',
-    'itinerary-page.title': 'Reisebeschreibung',
     'itinerary-page.hide-details': 'Details der Reisebeschreibung verstecken',
     'itinerary-page.show-details': 'Details der Reisebeschreibung anzeigen',
+    'itinerary-page.title': 'Reisebeschreibung',
     'itinerary-summary-page.description': 'Reisevorschläge',
     'itinerary-summary-page.title': 'Reisevorschläge',
     'itinerary-ticket.title': 'Benötigte Fahrkarte',
@@ -470,6 +474,8 @@ const translations = {
       'Der aktuelle Fahrplan enthält keine späteren Abfahrten.',
     'no-route-msg':
       'Wir konnten leider keine Reisevorschläge für diese Strecke finden. Bitte versuchen Sie den Abfahrts- oder Zielort zu ändern.',
+    'no-route-msg-with-changes':
+      'Unfortunately no routes were found for your journey. Try changing your settings, origin or destination.',
     'no-route-origin-near-destination':
       'Die Entfernung zwischen Start und Ziel ist sehr gering. Bitte ändern Sie einen dieser Orte.',
     'no-route-start-date-too-early':
@@ -510,12 +516,13 @@ const translations = {
     previous: 'Vorherige',
     print: 'Drucken',
     'print-timetable': 'Fahrplan',
+    privacy: 'Datenschutz',
     'public-transport': 'Öffentlicher Nahverkehr',
     rail: 'Zug',
     'rail-with-route-number': 'Zug {routeNumber} {headSign}',
     realtime: 'Echtzeit',
     'realtime-matching': 'Echtzeit-Matching',
-    'releases': 'Veröffentlichungen',
+    releases: 'Veröffentlichungen',
     'remove-via-button-label': 'Zwischenstopp entfernen',
     'rent-cycle-at': 'Fahrrad bei {station} mieten',
     'rent-scooter-at': 'Scooter bei {station} ausleihen',
@@ -558,8 +565,10 @@ const translations = {
     'scooter-availability': 'Scooter sind jetzt an dieser Station verfügbar',
     'scooter-availability-short': 'Scooter',
     'scooter-distance-duration': 'Scooter {distance} fahren ({duration})',
-    'scooter-register-required': 'Um Scooter nutzen zu können, wird eine Anmeldung benötigt',
-    'scooterwalk-distance-duration': 'Scooter schieben: {distance} ({duration})',
+    'scooter-register-required':
+      'Um Scooter nutzen zu können, wird eine Anmeldung benötigt',
+    'scooterwalk-distance-duration':
+      'Scooter schieben: {distance} ({duration})',
     search: 'Ziel',
     'search-button-label': 'Suchen',
     'search-destination': 'Suche Ziel, Linie oder Haltestelle',
@@ -574,8 +583,9 @@ const translations = {
     'select-map-layers-header': 'Was soll auf der Karte angezeigt werden?',
     'select-position': 'Standort aus vorherigen Suchen wählen',
     send: 'Senden',
-    'separate-ticket-required': 'Ein weiteres Ticket wird für diesen Teil der Reise benötigt.',
-    'separate-ticket-required-disclaimer': 
+    'separate-ticket-required':
+      'Ein weiteres Ticket wird für diesen Teil der Reise benötigt.',
+    'separate-ticket-required-disclaimer':
       'Diese Reise enthält ein oder mehrere Teilstrecken für die {agencyName} keine Tickets verkauft.',
     settings: 'Einstellungen',
     'settings-label-change': 'Einstellungen ändern',
@@ -585,7 +595,7 @@ const translations = {
     'settings-savebutton': 'Einstellungen speichern',
     'settings-saved': 'Änderungen gespeichert!',
     share: 'Reise teilen',
-    'show': 'Zeigen',
+    show: 'Zeigen',
     'show-departures': 'Abfahrten zeigen',
     'show-more': 'Mehr zeigen',
     'show-routes': 'Verbindungen auswählen',
@@ -613,8 +623,8 @@ const translations = {
     subway: 'U-Bahn',
     'subway-with-route-number': 'U-Bahn {routeNumber} {headSign}',
     'summary-page.description': '{from} - {to}',
-    'summary-page.title': 'Reisevorschläge',
     'summary-page.row-label': 'Reisevorschlag {number}',
+    'summary-page.title': 'Reisevorschläge',
     'swap-order-button-label': 'Start und Ziel tauschen',
     'terminal-page.description': 'Terminal - {name}',
     'terminal-page.title': 'Terminal',
@@ -648,7 +658,8 @@ const translations = {
     'try-again': 'Nochmal versuchen',
     unpreferred: 'Routen vermeiden',
     'use-citybike': 'Fahrrad benutzen',
-    'use-national-service': 'Sie können auch den Nationalen Service benutzen: ',
+    'use-national-service':
+      'Sie können auch das überregionale Angebot benutzen: ',
     'use-own-position': 'Aktuellen Standort benutzen',
     'using-modes': 'Verkehrsmittel',
     'very-likely': 'Sehr wahrscheinlich',
@@ -845,10 +856,11 @@ const translations = {
     'location-sport': 'Sports',
     'location-work': 'Work',
     login: 'Log in',
+    logout: 'Log out',
     'long-transfers-margin': '12 min',
     'main-menu-label-close': 'Close the main menu',
     'main-menu-label-open': 'Open the main menu',
-    'main-mode': "I'm traveling by",
+    'main-mode': "I'm travelling by",
     map: 'Map',
     'map-layer-citybike': 'Citybike stations',
     'map-layer-park-and-ride': 'Park & ride sites',
@@ -886,7 +898,9 @@ const translations = {
     'no-route-end-date-not-in-range':
       'Current timetable does not include routes departing later.',
     'no-route-msg':
-      'Unfortunately no routes were found for your journey. Please change your origin or destination address.',
+      'Unfortunately no routes were found for your journey. Try changing your origin or destination.',
+    'no-route-msg-with-changes':
+      'Unfortunately no routes were found for your journey. Try changing your settings, origin or destination.',
     'no-route-origin-near-destination':
       'The origin and the destination are close to each other. Please change either location.',
     'no-route-start-date-too-early':
@@ -1254,6 +1268,8 @@ const translations = {
       'Los horarios actuales no incluyen rutas saliendo más tarde.',
     'no-route-msg':
       'Desafortunadamente no se encontraron rutas para su viaje. Por favor cambie el origen o el destino.',
+    'no-route-msg-with-changes':
+      'Unfortunately no routes were found for your journey. Try changing your settings, origin or destination.',
     'no-route-origin-near-destination':
       'The origin and the destination are close to each other. Please change either location.',
     'no-route-start-date-too-early':
@@ -1565,7 +1581,8 @@ const translations = {
     'location-shopping': 'Kauppa',
     'location-sport': 'Urheilu',
     'location-work': 'Työ',
-    login: 'Kirjaudu sisään',
+    login: 'Kirjaudu',
+    logout: 'Kirjaudu ulos',
     'long-transfers-margin': '12 min',
     'main-menu-label-close': 'Sulje päävalikko',
     'main-menu-label-open': 'Avaa päävalikko',
@@ -1607,7 +1624,9 @@ const translations = {
     'no-route-end-date-not-in-range':
       'Käytössä oleva aikataulu ei sisällä myöhäisempiä reittejä.',
     'no-route-msg':
-      'Emme valitettavasti löytäneet yhtään reittiehdotusta kyseiselle välille. Muuta lähdön tai määränpään osoitetta.',
+      'Emme löytäneet reittiehdotuksia antamillasi tiedoilla. Kokeile muokata lähtöpaikkaa tai määränpäätä.',
+    'no-route-msg-with-changes':
+      'Emme löytäneet reittiehdotuksia antamillasi tiedoilla. Kokeile muokata asetuksia, lähtöpaikkaa tai määränpäätä.',
     'no-route-origin-near-destination':
       'Lähtöpaikka ja määränpää ovat liian lähekkäin. Muuta lähdön tai määränpään osoitetta.',
     'no-route-start-date-too-early':
@@ -1988,6 +2007,8 @@ const translations = {
       'Current timetable does not include routes departing later.',
     'no-route-msg':
       "Impossible de trouver un itinéraire dans cette zone. Changer le point de départ ou d'arrivée.",
+    'no-route-msg-with-changes':
+      'Unfortunately no routes were found for your journey. Try changing your settings, origin or destination.',
     'no-route-origin-near-destination':
       'The origin and the destination are close to each other. Please change either location.',
     'no-route-start-date-too-early':
@@ -2293,6 +2314,8 @@ const translations = {
       'Current timetable does not include routes departing later.',
     'no-route-msg':
       'Vi finner dessverre ingen reiseforslag til angitt rute. Forsøk å endre adresse',
+    'no-route-msg-with-changes':
+      'Unfortunately no routes were found for your journey. Try changing your settings, origin or destination.',
     'no-route-origin-near-destination':
       'The origin and the destination are close to each other. Please change either location.',
     'no-route-start-date-too-early':
@@ -2595,6 +2618,7 @@ const translations = {
     'location-sport': 'Sport',
     'location-work': 'Arbetsplats',
     login: 'Logga in',
+    logout: 'Logga ut',
     'long-transfers-margin': '12 min',
     'main-menu-label-close': 'Stäng huvudmenyn',
     'main-menu-label-open': 'Öppna huvudmenyn',
@@ -2636,7 +2660,9 @@ const translations = {
     'no-route-end-date-not-in-range':
       'Tidtabellen har inga resor som avgår senare.',
     'no-route-msg':
-      'Vi kunde tyvärr inte hitta några reseförslag för denna sträcka. Ändra adress.',
+      'Vi hittade inga ruttförslag som passar dina önskemål. Försök pånytt med annan avfärdsplats eller annan destination.',
+    'no-route-msg-with-changes':
+      'Vi hittade inga ruttförslag som passar dina önskemål. Försök pånytt med andra inställningar, annan avfärdsplats eller annan destination.',
     'no-route-origin-near-destination':
       'Din avfärdsplats och destination är väldigt nära varandra, vill du ändra avfärdsplats eller destination?',
     'no-route-start-date-too-early':

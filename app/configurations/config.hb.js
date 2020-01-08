@@ -317,15 +317,6 @@ export default configMerger(walttiConfig, {
         },
         url: GEOJSON_LAYERS_BASE_URL + 'charging.geojson',
       },
-      // bike charging stations in Stuttgart
-      {
-        name: {
-          fi: '',
-          en: 'Bicycle charging stations',
-          de: 'Fahrradladestationen',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'bicyclechargingstation.geojson',
-      },
       // Bike rental places in Stuttgart
       {
         name: {

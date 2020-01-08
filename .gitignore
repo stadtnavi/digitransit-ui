@@ -8,6 +8,7 @@ manifest.json
 test/credentials.json
 test/binaries
 *.swp
+.idea
 *.iml
 *~
 test_output
@@ -18,3 +19,4 @@ gemini-report
 tags
 .nyc_output
 coverage
+sessions/

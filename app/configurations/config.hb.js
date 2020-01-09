@@ -291,7 +291,7 @@ export default configMerger(walttiConfig, {
         },
         url: GEOJSON_LAYERS_BASE_URL + 'bicycleinfrastucture.geojson',
       },
-      // sharing options
+      // sharing options (taxi, carshare, bike rental)
       {
         name: {
           fi: '',
@@ -316,15 +316,6 @@ export default configMerger(walttiConfig, {
           de: 'Ladestationen',
         },
         url: GEOJSON_LAYERS_BASE_URL + 'charging.geojson',
-      },
-      // Bike rental places in Stuttgart
-      {
-        name: {
-          fi: '',
-          en: 'Bicycle rental places',
-          de: 'Fahrradverleih',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'bikerental.geojson',
       },
       // park and ride places
       {

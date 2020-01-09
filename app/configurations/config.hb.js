@@ -300,6 +300,7 @@ export default configMerger(walttiConfig, {
         },
         url: GEOJSON_LAYERS_BASE_URL + 'taxi-and-sharing.geojson',
       },
+      // includes car park, park&ride, multi-story underground parking
       {
         name: {
           fi: '',
@@ -316,15 +317,6 @@ export default configMerger(walttiConfig, {
           de: 'Ladestationen',
         },
         url: GEOJSON_LAYERS_BASE_URL + 'charging.geojson',
-      },
-      // park and ride places
-      {
-        name: {
-          fi: '',
-          en: 'Park and Ride',
-          de: 'Park-Und-Ride',
-        },
-        url: GEOJSON_LAYERS_BASE_URL + 'parkandride.geojson',
       }
       /*,
        Had to comment out since there is no bike monitoring stations

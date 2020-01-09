@@ -318,19 +318,6 @@ export default configMerger(walttiConfig, {
         },
         url: GEOJSON_LAYERS_BASE_URL + 'charging.geojson',
       }
-      /*,
-       Had to comment out since there is no bike monitoring stations
-        in Herrenberg's neighbourhood and so would return an error.
-      // bike monitoring stations
-      {
-        name: {
-          fi: '',
-          en: 'Bicycle monitoring stations',
-          de: 'Fahrradzählstellen',
-        },
-        url: 'http://opentripplanner-data-con-hb:8080/layers/bicyclemonitoringstation.geojson',
-      }
-      */
     ],
 },
 staticMessagesUrl: STATIC_MESSAGE_URL,

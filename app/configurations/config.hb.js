@@ -8,7 +8,7 @@ const API_URL = process.env.API_URL || 'https://api.mobil-in-herrenberg.de';
 const MAP_URL = process.env.MAP_URL || 'https://maps.wikimedia.org/osm-intl/';
 const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || `https://pelias.locationiq.org/v1`;
 const LOCATIONIQ_API_KEY = process.env.LOCATIONIQ_API_KEY;
-const GEOJSON_LAYERS_BASE_URL = process.env.GEOJSON_LAYERS_BASE_URL || '/assets/geojson/hb-layers/';
+const GEOJSON_LAYERS_BASE_URL = process.env.GEOJSON_LAYERS_BASE_URL || 'https://api.mobil-in-herrenberg.de/routing-data/v2/hb/';
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL =
   process.env.STATIC_MESSAGE_URL ||

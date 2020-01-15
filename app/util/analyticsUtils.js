@@ -23,20 +23,26 @@ export function addAnalyticsEvent(event) {
 /**
  * Get code to initialize UI analytics in server side
  *
- * @param MTMid
  * @param {number|string} GTMid Google Tag Manager id
  *
+ * @param MTM_URL
  * @return string
  */
-export function getAnalyticsInitCode(MTMid, GTMid) {
-  if (MTMid) {
-    // Matamo Tag Manager script
+export function getAnalyticsInitCode(GTMid, MTM_URL) {
+  if (MTM_URL) {
     return `<script type="text/javascript">
-        var _mtm = _mtm || [];
-        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/mobilinherrenberg.matomo.cloud/container_'+ ${MTMid} +'.js'; s.parentNode.insertBefore(g,s);
-        </script>`;
+      var _paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+      var u="https://"+${MTM_URL};
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/'+${MTM_URL}+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+    </script>`;
   }
   if (!GTMid) {
     return '';

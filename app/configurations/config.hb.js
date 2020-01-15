@@ -45,7 +45,7 @@ export default configMerger(walttiConfig, {
   },
   
   // Matomo Tag Manager id
-  MTMid: 'jUK6B6kx',
+  MTM_URL: 'matomo.localhost:8080/',
 
   contactName: {
     de: 'transportkollektiv',

@@ -23,11 +23,21 @@ export function addAnalyticsEvent(event) {
 /**
  * Get code to initialize UI analytics in server side
  *
+ * @param MTMid
  * @param {number|string} GTMid Google Tag Manager id
  *
  * @return string
  */
-export function getAnalyticsInitCode(GTMid) {
+export function getAnalyticsInitCode(MTMid, GTMid) {
+  if (MTMid) {
+    // Matamo Tag Manager script
+    return `<script type="text/javascript">
+        var _mtm = _mtm || [];
+        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/mobilinherrenberg.matomo.cloud/container_'+ ${MTMid} +'.js'; s.parentNode.insertBefore(g,s);
+        </script>`;
+  }
   if (!GTMid) {
     return '';
   }

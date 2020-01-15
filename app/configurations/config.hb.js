@@ -43,6 +43,9 @@ export default configMerger(walttiConfig, {
     href: 'https://mobil-in-herrenberg.de/feedback',
     target: '_blank'
   },
+  
+  // Matomo Tag Manager id
+  MTMid: 'jUK6B6kx',
 
   contactName: {
     de: 'transportkollektiv',

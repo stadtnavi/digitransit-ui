@@ -38,6 +38,9 @@ export default configMerger(walttiConfig, {
   availableLanguages: ['de', 'en'],
   defaultLanguage: 'de',
 
+  // Matomo Tag Manager id
+  MTMid: 'jUK6B6kx',
+
   appBarLink: { name: 'Herrenberg.de', href: 'https://www.herrenberg.de' },
 
   contactName: {

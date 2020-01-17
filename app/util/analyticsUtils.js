@@ -30,19 +30,14 @@ export function addAnalyticsEvent(event) {
  */
 export function getAnalyticsInitCode(GTMid, MTM_URL) {
   if (MTM_URL) {
-    return `<script type="text/javascript">
-      var _paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-      var u="https://"+${MTM_URL};
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
+    return `<!-- Matomo Tag Manager -->
+      <script type="text/javascript">
+      var _mtm = _mtm || [];
+      _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/'+${MTM_URL}+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-    </script>`;
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/'+${MTM_URL}+'.js'; s.parentNode.insertBefore(g,s);
+      </script>
+      <!-- End Matomo Tag Manager -->`;
   }
   if (!GTMid) {
     return '';

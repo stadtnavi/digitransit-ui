@@ -45,7 +45,8 @@ export default configMerger(walttiConfig, {
   },
   
   // Matomo Tag Manager id
-  MTM_URL: 'mobilinherrenberg.matomo.cloud/container_jUK6B6kx',
+  MTM_URL: 'mobilinherrenberg.matomo.cloud/',
+  MTM_CON: 'container_jUK6B6kx',
 
   contactName: {
     de: 'transportkollektiv',

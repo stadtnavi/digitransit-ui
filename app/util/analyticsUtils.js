@@ -29,7 +29,7 @@ export function addAnalyticsEvent(event) {
  * @param MTM_CON
  * @return string
  */
-export function getAnalyticsInitCode(GTMid, MTM_URL) {
+export function getAnalyticsInitCode(GTMid, MTM_URL, MTM_CON) {
   if (MTM_URL) {
     return `<!-- Matomo -->
       <script type="text/javascript">
@@ -51,7 +51,7 @@ export function getAnalyticsInitCode(GTMid, MTM_URL) {
       var _mtm = _mtm || [];
       _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/'+'${MTM_URL}'+'.js'; s.parentNode.insertBefore(g,s);
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/'+'${MTM_URL}'+'${MTM_CON}'+'.js'; s.parentNode.insertBefore(g,s);
       </script>
       <!-- End Matomo Tag Manager -->`;
   }

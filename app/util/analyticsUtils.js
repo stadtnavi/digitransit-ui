@@ -29,34 +29,31 @@ export function addAnalyticsEvent(event) {
  * @param MTM_CON
  * @return string
  */
-// eslint-disable-next-line no-unused-vars
 export function getAnalyticsInitCode(GTMid, MTM_URL, MTM_CON) {
   if (MTM_URL) {
-    return `
-
-<!-- Matomo -->
-<script type="text/javascript">
-  var _paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://f6034b4cngrokio.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '4']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/f6034b4cngrokio.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
-<!-- Matomo Tag Manager -->
-<script type="text/javascript">
-var _mtm = _mtm || [];
-_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/f6034b4cngrokio.matomo.cloud/container_LUP3nW9b.js'; s.parentNode.insertBefore(g,s);
-</script>
-<!-- End Matomo Tag Manager -->`;
+    return `<!-- Matomo -->
+      <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+          var u="https://"+"${MTM_URL}";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '1']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/'+'${MTM_URL}'+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+      <!-- End Matomo Code -->
+      <!-- Matomo Tag Manager -->
+      <script type="text/javascript">
+      var _mtm = _mtm || [];
+      _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/'+'${MTM_URL}'+'${MTM_CON}'+'.js'; s.parentNode.insertBefore(g,s);
+      </script>
+      <!-- End Matomo Tag Manager -->`;
   }
   if (!GTMid) {
     return '';

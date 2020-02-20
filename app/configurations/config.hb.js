@@ -349,7 +349,41 @@ export default configMerger(walttiConfig, {
         url: '/assets/geojson/hb-layers/charging.geojson',
       },
     ],
-},
-staticMessagesUrl: STATIC_MESSAGE_URL,
+  },
+
+  staticMessages: [
+    {
+      id: '2',
+      priority: -1,
+      shouldTrigger: true,
+      content: {
+        en: [
+          {
+            type: 'text',
+            content:
+              'We use cookies to improve our services. By using this site, you agree to its use of cookies. Read more: ',
+          },
+          {
+            type: 'a',
+            content: 'Privacy Statement',
+            href: 'https://www.herrenberg.de/datenschutz',
+          },
+        ],
+        de: [
+          {
+            type: 'text',
+            content:
+              'Diese Seite benutzt Cookies. Wenn Sie die Seite weiterhin benutzten stimmen Sie dem zu. Mehr Informationen: ',
+          },
+          {
+            type: 'a',
+            content: 'Datenshutz',
+            href: 'https://www.herrenberg.de/datenschutz',
+          },
+        ],
+      },
+    },
+  ],
+  staticMessagesUrl: STATIC_MESSAGE_URL,
 
 });

@@ -377,7 +377,7 @@ export default configMerger(walttiConfig, {
           },
           {
             type: 'a',
-            content: 'Datenshutz',
+            content: 'Datenschutz',
             href: 'https://www.herrenberg.de/datenschutz',
           },
         ],

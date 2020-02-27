@@ -217,7 +217,7 @@ class TileLayerContainer extends GridLayer {
     );
 
     if (typeof this.state.selectableTargets !== 'undefined') {
-      if (this.state.selectableTargets.length === 1) {
+      if (this.state.selectableTargets.length >= 1) {
         let id;
         if (this.state.selectableTargets[0].layer === 'stop') {
           id = this.state.selectableTargets[0].feature.properties.gtfsId;

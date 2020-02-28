@@ -39,20 +39,44 @@ class DynamicParkingLotsPopup extends React.Component {
 
   getPaidHours() {
     const NOW = new Date();
+    const inSevenDays = Moment()
+      .add(7, 'days')
+      .format('YYYY/MM/DD');
+    const text = [];
+    let openUntil = '';
 
     Moment.locale('de');
-    var oh = new OpeningHours(this.props.feature.properties.paid_hours, null, {'locale': 'en'});
-    var from = new Date('23 Feb 2020');
-    var to = new Date('29 Feb 2020');
-    var intervals = oh.getOpenIntervals(from, to);
-    let isOpenNow = 'Now: ' + (oh.getState(NOW) ? 'open' : 'closed');
-    console.log('Further this week:');
-    for (var i in intervals)
-      console.log('From ' + Moment(intervals[i][0]).format('dd HH:mm') + ' till ' + Moment(intervals[i][1]).format('HH:mm') + '.');
+
+    const paidHours = new OpeningHours(
+      this.props.feature.properties.paid_hours,
+      null,
+      { locale: 'en' },
+    );
+
+    const intervals = paidHours.getOpenIntervals(NOW, new Date(inSevenDays));
+
+    const isOpenNow = paidHours.getState(NOW) ? 'open' : 'closed';
+
+    for (let i in intervals) {
+      text.push(
+        `${Moment(intervals[i][0]).format('dd')} ${Moment(
+          intervals[i][0],
+        ).format('HH:mm')}-${Moment(intervals[i][1]).format('HH:mm')}.`,
+      );
+    }
+
+    if (isOpenNow === 'open') {
+      openUntil = `until ${Moment(intervals[0][1]).format('HH:mm')}`;
+      text.shift();
+    }
+
     return (
       <div className="padding-vertical-small">
-        <div>{isOpenNow}</div>
-        <div>Further this week:</div>
+        <div>Now: <b>{isOpenNow} {openUntil}</b></div>
+        <div>
+          Upcoming opening hours:<br />
+          {text}
+        </div>
       </div>
     );
   }
@@ -106,7 +130,7 @@ class DynamicParkingLotsPopup extends React.Component {
     const desc = (
       <div>
         {this.getCapacity()}
-        {this.getPaidHours()}
+        {this.props.feature.properties.paid_hours ? this.getPaidHours() : ''}
         {this.getUrl()}
       </div>
     );

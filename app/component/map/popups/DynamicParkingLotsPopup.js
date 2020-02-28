@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Relay from 'react-relay/classic';
 import { intlShape } from 'react-intl';
+import OpeningHours from 'opening_hours';
+import Moment from 'moment';
 import MarkerPopupBottom from '../MarkerPopupBottom';
 import Card from '../../Card';
 import CardHeader from '../../CardHeader';
@@ -34,6 +36,26 @@ class DynamicParkingLotsPopup extends React.Component {
     lat: PropTypes.number.isRequired,
     lon: PropTypes.number.isRequired,
   };
+
+  getPaidHours() {
+    const NOW = new Date();
+
+    Moment.locale('de');
+    var oh = new OpeningHours(this.props.feature.properties.paid_hours, null, {'locale': 'en'});
+    var from = new Date('23 Feb 2020');
+    var to = new Date('29 Feb 2020');
+    var intervals = oh.getOpenIntervals(from, to);
+    let isOpenNow = 'Now: ' + (oh.getState(NOW) ? 'open' : 'closed');
+    console.log('Further this week:');
+    for (var i in intervals)
+      console.log('From ' + Moment(intervals[i][0]).format('dd HH:mm') + ' till ' + Moment(intervals[i][1]).format('HH:mm') + '.');
+    return (
+      <div className="padding-vertical-small">
+        <div>{isOpenNow}</div>
+        <div>Further this week:</div>
+      </div>
+    );
+  }
 
   getCapacity() {
     const { intl } = this.context;
@@ -84,6 +106,7 @@ class DynamicParkingLotsPopup extends React.Component {
     const desc = (
       <div>
         {this.getCapacity()}
+        {this.getPaidHours()}
         {this.getUrl()}
       </div>
     );

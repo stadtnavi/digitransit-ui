@@ -60,15 +60,7 @@ class DynamicParkingLotsPopup extends React.Component {
 
     const intervals = openingHours.getOpenIntervals(NOW, new Date(inSevenDays));
 
-    const isOpenNow = openingHours.getState(NOW)
-      ? intl.formatMessage({
-          id: 'open',
-          defaultMessage: 'open',
-        })
-      : intl.formatMessage({
-          id: 'closed',
-          defaultMessage: 'closed',
-        });
+    const isOpenNow = openingHours.getState(NOW);
 
     for (let i in intervals) {
       data.push(
@@ -78,7 +70,7 @@ class DynamicParkingLotsPopup extends React.Component {
       );
     }
 
-    if (openingHours.getState(NOW)) {
+    if (isOpenNow) {
       openUntil =
         intl.formatMessage({ id: 'until', defaultMessage: 'until' }) +
         ' ' +
@@ -92,7 +84,16 @@ class DynamicParkingLotsPopup extends React.Component {
         <div>
           {intl.formatMessage({ id: 'now', defaultMessage: 'Now' })}{' '}
           <b>
-            {isOpenNow} {openUntil}
+            {isOpenNow
+              ? intl.formatMessage({
+                  id: 'open',
+                  defaultMessage: 'open',
+                })
+              : intl.formatMessage({
+                  id: 'closed',
+                  defaultMessage: 'closed',
+                })}{' '}
+            {openUntil}
           </b>
         </div>
         <div>

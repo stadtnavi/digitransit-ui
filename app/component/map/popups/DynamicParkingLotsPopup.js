@@ -53,7 +53,7 @@ class DynamicParkingLotsPopup extends React.Component {
     Moment.locale(this.context.locale);
 
     const openingHours = new OpeningHours(
-      this.props.feature.properties.paid_hours,
+      this.props.feature.properties.opening_hours,
       null,
       { locale: 'en' },
     );
@@ -72,9 +72,9 @@ class DynamicParkingLotsPopup extends React.Component {
 
     for (let i in intervals) {
       data.push(
-        `${Moment(intervals[i][0]).format('dd')} ${Moment(
+        `${Moment(intervals[i][0]).format('dd')}\t\t${Moment(
           intervals[i][0],
-        ).format('HH:mm')}-${Moment(intervals[i][1]).format('HH:mm')}.`,
+        ).format('HH:mm')}-${Moment(intervals[i][1]).format('HH:mm')}\n`,
       );
     }
 
@@ -96,8 +96,7 @@ class DynamicParkingLotsPopup extends React.Component {
           </b>
         </div>
         <div>
-          {furtherOpenings}:<br />
-          {data}
+          {furtherOpenings}:<pre className="popup-opening-hours">{data}</pre>
         </div>
       </div>
     );

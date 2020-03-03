@@ -328,6 +328,7 @@ const translations = {
     citybike_off: 'Geschlossen',
     'clear-button-label': 'Leeren',
     close: 'Schließen',
+    closed: 'geschlossen',
     'contact-information': '{contactName} Kontaktinformationen',
     continue: 'Fortsetzen',
     'create-account': '{contactName}-Konto anlegen',
@@ -496,6 +497,7 @@ const translations = {
       '{number, plural, =0 {0 Minuten} one {1 Minute} other {{number} Minuten}}',
     'off-canvas-info':
       'Mit einer Anmeldung können Sie Favoriten speichern und auf anderen Geräten wieder verwenden.',
+    open: 'geöffnet',
     'option-default': 'Standard',
     'option-least': 'Am wenigsten',
     'option-less': 'Weniger',
@@ -666,6 +668,8 @@ const translations = {
     'trip-page.title': 'Linie {shortName}',
     'try-again': 'Nochmal versuchen',
     unpreferred: 'Routen vermeiden',
+    until: 'bis',
+    'upcoming-opening-hours': 'Bevorstehende Öffnungszeiten',
     'use-citybike': 'Fahrrad benutzen',
     'use-national-service':
       'Sie können auch das überregionale Angebot benutzen: ',
@@ -761,6 +765,7 @@ const translations = {
     citybike_off: 'Closed',
     'clear-button-label': 'Clear',
     close: 'Close',
+    closed: 'closed',
     'contact-information': '{contactName} contact details',
     continue: 'Continue',
     'create-account': 'Create {contactName} account',
@@ -929,6 +934,7 @@ const translations = {
       '{number, plural, =0 {0 minutes} one {1 minute} other {{number} minutes}}',
     'off-canvas-info':
       'Log in to the service to save your favorites and utilize them on other devices',
+    open: 'open',
     'option-default': 'Default',
     'option-least': 'Least',
     'option-less': 'Less',
@@ -1097,6 +1103,8 @@ const translations = {
     'trip-page.title': 'Route {route_short_name}',
     'try-again': 'Try again',
     unpreferred: 'Avoid routes',
+    until: 'until',
+    'upcoming-opening-hours': 'Upcoming opening hours',
     'use-citybike': 'Start using',
     'use-national-service':
       'You can also try the national service available at',

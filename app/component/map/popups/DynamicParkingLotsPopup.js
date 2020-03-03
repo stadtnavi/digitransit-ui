@@ -37,45 +37,67 @@ class DynamicParkingLotsPopup extends React.Component {
     lon: PropTypes.number.isRequired,
   };
 
-  getPaidHours() {
+  getOpeningHours() {
+    const { intl } = this.context;
     const NOW = new Date();
     const inSevenDays = Moment()
       .add(7, 'days')
       .format('YYYY/MM/DD');
-    const text = [];
+    const data = [];
     let openUntil = '';
+    const furtherOpenings = intl.formatMessage({
+      id: 'upcoming-opening-hours',
+      defaultMessage: 'Upcoming opening hours',
+    });
 
-    Moment.locale('de');
+    Moment.locale(this.context.locale);
 
-    const paidHours = new OpeningHours(
+    const openingHours = new OpeningHours(
       this.props.feature.properties.paid_hours,
       null,
       { locale: 'en' },
     );
 
-    const intervals = paidHours.getOpenIntervals(NOW, new Date(inSevenDays));
+    const intervals = openingHours.getOpenIntervals(NOW, new Date(inSevenDays));
 
-    const isOpenNow = paidHours.getState(NOW) ? 'open' : 'closed';
+    const isOpenNow = openingHours.getState(NOW)
+      ? intl.formatMessage({
+          id: 'open',
+          defaultMessage: 'open',
+        })
+      : intl.formatMessage({
+          id: 'closed',
+          defaultMessage: 'closed',
+        });
 
     for (let i in intervals) {
-      text.push(
+      data.push(
         `${Moment(intervals[i][0]).format('dd')} ${Moment(
           intervals[i][0],
         ).format('HH:mm')}-${Moment(intervals[i][1]).format('HH:mm')}.`,
       );
     }
 
-    if (isOpenNow === 'open') {
-      openUntil = `until ${Moment(intervals[0][1]).format('HH:mm')}`;
-      text.shift();
+    if (openingHours.getState(NOW)) {
+      openUntil =
+        intl.formatMessage({ id: 'until', defaultMessage: 'until' }) +
+        ' ' +
+        Moment(intervals[0][1]).format('HH:mm');
+      // If open, display opening hours only from the next day.
+      data.shift();
     }
 
     return (
       <div className="padding-vertical-small">
-        <div>Now: <b>{isOpenNow} {openUntil}</b></div>
         <div>
-          Upcoming opening hours:<br />
-          {text}
+          {intl.formatMessage({ id: 'now', defaultMessage: 'Now' })}{' '}
+          <b>
+            {isOpenNow} {openUntil}
+          </b>
+        </div>
+        <div>
+          {furtherOpenings}:<br />
+          {data}
         </div>
       </div>
     );
@@ -130,7 +152,7 @@ class DynamicParkingLotsPopup extends React.Component {
     const desc = (
       <div>
         {this.getCapacity()}
-        {this.props.feature.properties.paid_hours ? this.getPaidHours() : ''}
+        {this.props.feature.properties.paid_hours ? this.getOpeningHours() : ''}
         {this.getUrl()}
       </div>
     );

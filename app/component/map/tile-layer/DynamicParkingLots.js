@@ -2,6 +2,8 @@ import { VectorTile } from '@mapbox/vector-tile';
 import Protobuf from 'pbf';
 import pick from 'lodash/pick';
 
+import OpeningHours from 'opening_hours';
+import Moment from 'moment';
 import { isBrowser } from '../../../util/browser';
 import {
   drawRoundIcon,
@@ -85,6 +87,25 @@ class DynamicParkingLots {
 
     const icon = this.getIcon(properties.lot_type);
 
+    const NOW = new Date();
+    const tomorrow = new Date(NOW);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const openingHours = new OpeningHours(
+      this.props.feature.properties.opening_hours,
+      null,
+      {},
+    );
+
+    const intervals = openingHours.getOpenIntervals(NOW, tomorrow);
+    const isOpenNow = openingHours.getState(NOW);
+    const isClosingSoon =
+      isOpenNow &&
+      Moment.utc(
+        Moment(intervals[0][1], 'DD/MM/YYYY HH:mm').diff(
+          Moment(NOW, 'DD/MM/YYYY HH:mm'),
+        ),
+      ).format('HH:mm') < Moment('00:30');
+
     return drawIcon(
       `icon-icon_${icon}`,
       this.tile,
@@ -93,9 +114,9 @@ class DynamicParkingLots {
     ).then(() => {
       if (properties.free !== undefined) {
         let avail;
-        if (properties.free === 0) {
+        if (properties.free === 0 || !isOpenNow) {
           avail = 'no';
-        } else if (properties.free < 3) {
+        } else if (properties.free < 3 || isClosingSoon) {
           avail = 'poor';
         } else {
           avail = 'good';

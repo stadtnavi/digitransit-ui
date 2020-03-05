@@ -87,23 +87,25 @@ class DynamicParkingLots {
 
     const icon = this.getIcon(properties.lot_type);
 
-    const NOW = new Date();
-    const tomorrow = new Date(NOW);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const openingHours = new OpeningHours(
-      this.props.feature.properties.opening_hours,
-      null,
-      {},
-    );
-    const intervals = openingHours.getOpenIntervals(NOW, tomorrow);
-    const isOpenNow = openingHours.getState(NOW);
-    const timeLeftTilClose = Moment.utc(
-      Moment(intervals[0][1], 'DD/MM/YYYY HH:mm').diff(
-        Moment(NOW, 'DD/MM/YYYY HH:mm'),
-        'minutes',
-      ),
-    );
-    const isClosingSoon = isOpenNow && timeLeftTilClose < 30;
+    let isOpenNow = true;
+    let isClosingSoon = false;
+    if (properties.opening_hours) {
+      const NOW = new Date();
+      const tomorrow = new Date(NOW);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      const openingHours = new OpeningHours(properties.opening_hours, null, {});
+      const intervals = openingHours.getOpenIntervals(NOW, tomorrow);
+
+      isOpenNow = openingHours.getState(NOW);
+      const timeLeftTilClose = Moment.utc(
+        Moment(intervals[0][1], 'DD/MM/YYYY HH:mm').diff(
+          Moment(NOW, 'DD/MM/YYYY HH:mm'),
+          'minutes',
+        ),
+      );
+      isClosingSoon = isOpenNow && timeLeftTilClose < 30;
+    }
 
     return drawIcon(
       `icon-icon_${icon}`,

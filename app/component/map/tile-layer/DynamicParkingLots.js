@@ -95,16 +95,15 @@ class DynamicParkingLots {
       null,
       {},
     );
-
     const intervals = openingHours.getOpenIntervals(NOW, tomorrow);
     const isOpenNow = openingHours.getState(NOW);
-    const isClosingSoon =
-      isOpenNow &&
-      Moment.utc(
-        Moment(intervals[0][1], 'DD/MM/YYYY HH:mm').diff(
-          Moment(NOW, 'DD/MM/YYYY HH:mm'),
-        ),
-      ).format('HH:mm') < Moment('00:30');
+    const timeLeftTilClose = Moment.utc(
+      Moment(intervals[0][1], 'DD/MM/YYYY HH:mm').diff(
+        Moment(NOW, 'DD/MM/YYYY HH:mm'),
+        'minutes',
+      ),
+    );
+    const isClosingSoon = isOpenNow && timeLeftTilClose < 30;
 
     return drawIcon(
       `icon-icon_${icon}`,

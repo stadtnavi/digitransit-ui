@@ -115,7 +115,7 @@ class DynamicParkingLots {
         let avail;
         if (properties.free === 0 || !isOpenNow) {
           avail = 'no';
-        } else if (properties.free < 3 || isClosingSoon) {
+        } else if (properties.free / properties.total < 0.1 || isClosingSoon) {
           avail = 'poor';
         } else {
           avail = 'good';

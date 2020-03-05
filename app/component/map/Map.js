@@ -113,7 +113,13 @@ export default class Map extends React.Component {
       mapUrl = mapUrl[this.props.lang] || config.URL.MAP.default;
     }
 
-    let finalMapUrl = `${mapUrl}{z}/{x}/{y}{size}.png`;
+    let finalMapUrl;
+    // TODO if BICYCLE is set as streetmode
+    if (true) {
+      finalMapUrl = `https://{s}${config.URL.BIKE_MAP_URL}{z}/{x}/{y}.png`;
+    } else {
+      finalMapUrl = `${mapUrl}{z}/{x}/{y}{size}.png`;
+    }
 
     if (!isEmpty(config.map.key)) {
       finalMapUrl = `${finalMapUrl}?key=${config.map.key}`;

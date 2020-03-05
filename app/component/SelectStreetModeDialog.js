@@ -80,6 +80,9 @@ class SelectStreetModeDialog extends React.Component {
         }
       },
     );
+    if (streetMode === 'BICYCLE') {
+      // TODO rerender map
+    }
   }
 
   render() {

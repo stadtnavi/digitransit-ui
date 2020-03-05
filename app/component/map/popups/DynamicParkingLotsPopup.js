@@ -152,7 +152,9 @@ class DynamicParkingLotsPopup extends React.Component {
     const desc = (
       <div>
         {this.getCapacity()}
-        {this.props.feature.properties.paid_hours ? this.getOpeningHours() : ''}
+        {this.props.feature.properties.opening_hours
+          ? this.getOpeningHours()
+          : ''}
         {this.getUrl()}
       </div>
     );

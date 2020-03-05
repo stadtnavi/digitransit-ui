@@ -104,14 +104,16 @@ class DynamicParkingLotsPopup extends React.Component {
                 })}{' '}
             {openUntil}
           </b>
-          <span className="popup-closes-soon">
-            {isClosingSoon
-              ? intl.formatMessage({
-                  id: 'closes-soon',
-                  defaultMessage: 'Closes soon',
-                })
-              : ''}
-          </span>
+          {isClosingSoon ? (
+            <span className="popup-closes-soon">
+              {intl.formatMessage({
+                id: 'closes-soon',
+                defaultMessage: 'Closes soon',
+              })}
+            </span>
+          ) : (
+            ''
+          )}
         </div>
         <div>
           {furtherOpenings}:<pre className="popup-opening-hours">{data}</pre>

@@ -7,6 +7,7 @@ const APP_DESCRIPTION = '';
 const API_URL = process.env.API_URL || 'https://api.mobil-in-herrenberg.de';
 const MAP_URL = process.env.MAP_URL || 'https://maps.wikimedia.org/osm-intl/';
 const MAP_KEY = process.env.MAP_KEY || '';
+const BIKE_MAP_URL = process.env.BIKE_MAP_URL || '.tile-cyclosm.openstreetmap.fr/cyclosm/';
 const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || `https://pelias.locationiq.org/v1`;
 const LOCATIONIQ_API_KEY = process.env.LOCATIONIQ_API_KEY;
 const YEAR = 1900 + new Date().getYear();
@@ -34,6 +35,7 @@ export default configMerger(walttiConfig, {
 
     PELIAS: `${GEOCODING_BASE_URL}/search${LOCATIONIQ_API_KEY ? '?api_key=' + LOCATIONIQ_API_KEY : ''}`,
     PELIAS_REVERSE_GEOCODER: `${GEOCODING_BASE_URL}/reverse${LOCATIONIQ_API_KEY ? '?api_key=' + LOCATIONIQ_API_KEY : ''}`,
+    BIKE_MAP_URL,
   },
 
   availableLanguages: ['de', 'en'],

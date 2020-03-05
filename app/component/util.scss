@@ -349,6 +349,15 @@ $btn-heigth: 17px;
   left: 0;
 }
 
+.popup-closes-soon {
+  display: inline-block;
+  padding: 4px;
+  border-radius: 5px;
+  margin: 4px;
+  background-color: darkorange;
+  color: white;
+}
+
 .popup-opening-hours {
   font-family: $font-family;
   font-size: 1em;

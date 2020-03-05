@@ -62,7 +62,8 @@ class DynamicParkingLotsPopup extends React.Component {
 
     const isOpenNow = openingHours.getState(NOW);
 
-    for (let i in intervals) {
+    // eslint-disable-next-line guard-for-in,no-restricted-syntax
+    for (const i in intervals) {
       data.push(
         `${Moment(intervals[i][0]).format('dd')}\t\t${Moment(
           intervals[i][0],
@@ -70,11 +71,19 @@ class DynamicParkingLotsPopup extends React.Component {
       );
     }
 
+    const timeLeftTilClose = Moment.utc(
+      Moment(intervals[0][1], 'DD/MM/YYYY HH:mm').diff(
+        Moment(NOW, 'DD/MM/YYYY HH:mm'),
+        'minutes',
+      ),
+    );
+    const isClosingSoon = isOpenNow && timeLeftTilClose < 30;
+
     if (isOpenNow) {
-      openUntil =
-        intl.formatMessage({ id: 'until', defaultMessage: 'until' }) +
-        ' ' +
-        Moment(intervals[0][1]).format('HH:mm');
+      openUntil = `${intl.formatMessage({
+        id: 'until',
+        defaultMessage: 'until',
+      })} ${Moment(intervals[0][1]).format('HH:mm')}`;
       // If open, display opening hours only from the next day.
       data.shift();
     }
@@ -95,6 +104,14 @@ class DynamicParkingLotsPopup extends React.Component {
                 })}{' '}
             {openUntil}
           </b>
+          <span className="popup-closes-soon">
+            {isClosingSoon
+              ? intl.formatMessage({
+                  id: 'closes-soon',
+                  defaultMessage: 'Closes soon',
+                })
+              : ''}
+          </span>
         </div>
         <div>
           {furtherOpenings}:<pre className="popup-opening-hours">{data}</pre>

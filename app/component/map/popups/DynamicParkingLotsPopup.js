@@ -55,7 +55,7 @@ class DynamicParkingLotsPopup extends React.Component {
     const openingHours = new OpeningHours(
       this.props.feature.properties.opening_hours,
       null,
-      { locale: 'en' },
+      { locale: this.context.locale },
     );
 
     const intervals = openingHours.getOpenIntervals(NOW, new Date(inSevenDays));

@@ -18,6 +18,8 @@ import {
 import { isCallAgencyDeparture } from '../util/legUtils';
 import { PREFIX_ROUTES } from '../util/path';
 
+import Icon from './Icon';
+
 const DepartureRow = ({ departure, currentTime, distance }, context) => {
   let departureTimes;
   let stopAlerts = [];
@@ -105,6 +107,11 @@ const DepartureRow = ({ departure, currentTime, distance }, context) => {
             departure.pattern.route.longName
           }
         />
+        {departure.pattern.route.gtfsId.split(':')[0] === 'mfdz' ? (
+          <Icon img="icon-icon_carpool_link_arrow" />
+        ) : (
+          ''
+        )}
       </td>
       {departureTimesChecked}
     </tr>

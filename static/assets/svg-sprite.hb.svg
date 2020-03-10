@@ -1,7 +1,7 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
 <defs>
-    <symbol id="icon-icon_carpool_link_arrow" viewBox="0 -22 512 511">
-        <path d="m512 233.820312-212.777344-233.320312v139.203125h-45.238281c-140.273437 0-253.984375 113.710937-253.984375 253.984375v73.769531l20.09375-22.019531c68.316406-74.851562 164.980469-117.5 266.324219-117.5h12.804687v139.203125zm0 0"/>
+    <symbol id="icon-icon_carpool_link_arrow" viewBox="0 -22 40 37">
+        <path fill="fff" d="M 39.987694,-3.5987085 23.409347,-21.777643 v 10.845882 h -3.524699 c -10.9292742,0 -19.78895638,8.8596814 -19.78895638,19.7889559 V 14.604879 L 1.6612774,12.889248 C 6.9840864,7.0572579 14.515577,3.7343448 22.411681,3.7343448 h 0.997666 V 14.580226 Z m 0,0"/>
     </symbol>
     <symbol id="icon-icon_caravan" viewBox="0 0 32.5 32.5" style="enable-background:new 0 0 32.5 32.5;">
         <style type="text/css">

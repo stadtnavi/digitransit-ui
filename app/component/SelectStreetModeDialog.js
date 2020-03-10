@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { intlShape } from 'react-intl';
 
+import connectToStores from 'fluxible-addons-react/connectToStores';
 import BubbleDialog from './BubbleDialog';
 import ToggleButton from './ToggleButton';
 import { isKeyboardSelectionEvent } from '../util/browser';
 
 import ComponentUsageExample from './ComponentUsageExample';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
+import MapServerStore from '../store/MapServerStore';
 
 class SelectStreetModeDialog extends React.Component {
   constructor(props) {
@@ -80,9 +82,6 @@ class SelectStreetModeDialog extends React.Component {
         }
       },
     );
-    if (streetMode === 'BICYCLE') {
-      // TODO rerender map
-    }
   }
 
   render() {
@@ -168,4 +167,12 @@ SelectStreetModeDialog.description = (
   </ComponentUsageExample>
 );
 
-export default SelectStreetModeDialog;
+const connectedComponent = connectToStores(
+  SelectStreetModeDialog,
+  [MapServerStore],
+  ({ getStore }) => ({
+    // TODO:
+  }),
+);
+
+export { connectedComponent as default, SelectStreetModeDialog as Component};

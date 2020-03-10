@@ -23,6 +23,8 @@ function DepartureTime(props, context) {
   let hours = new Moment(props.departureTime * 1000).format('HH');
   let minutesFirstChar = minutes.split('')[0];
   let minutesSecondChar = minutes.split('')[1];
+  const tmpH2 = parseInt(hours, 10) + 1;
+  const tmpMin2 = parseInt(minutesFirstChar, 10) + 1;
   const timeDiffInMinutes = Math.floor(
     (props.departureTime - props.currentTime) / 60,
   );
@@ -42,13 +44,11 @@ function DepartureTime(props, context) {
       case toZeroUp.includes(minutesSecondChar) && minutesFirstChar === '5':
         minutesFirstChar = '0';
         minutesSecondChar = '0';
-        const tmpH2 = parseInt(hours) + 1;
         hours = tmpH2.toString();
         break;
       // rounds to 10,20,30,40,50
       case toZeroUp.includes(minutesSecondChar):
         minutesSecondChar = '0';
-        const tmpMin2 = parseInt(minutesFirstChar) + 1;
         minutesFirstChar = tmpMin2.toString();
         break;
       // 0 and 5 are not rounded
@@ -106,9 +106,10 @@ function DepartureTime(props, context) {
         {realtime}
         {shownTime}
       </span>
-      {props.canceled && props.showCancelationIcon && (
-        <Icon className="caution" img="icon-icon_caution" />
-      )}
+      {props.canceled &&
+        props.showCancelationIcon && (
+          <Icon className="caution" img="icon-icon_caution" />
+        )}
     </React.Fragment>
   );
 }

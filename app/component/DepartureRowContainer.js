@@ -27,7 +27,9 @@ const DepartureRow = ({ departure, currentTime, distance }, context) => {
       stopAlerts = getServiceAlertsForStop(departureTime.stop);
       headsign = departureTime.stopHeadsign;
       const canceled = departureTime.realtimeState === 'CANCELED';
-      const key = `${departure.pattern.route.gtfsId}:${departure.pattern.headsign}:${departureTime.realtimeDeparture}`;
+      const key = `${departure.pattern.route.gtfsId}:${
+        departure.pattern.headsign
+      }:${departureTime.realtimeDeparture}`;
 
       return (
         <td key={`${key}-td`} className="td-departure-times">
@@ -50,7 +52,9 @@ const DepartureRow = ({ departure, currentTime, distance }, context) => {
     context.router.push(val);
   };
 
-  const departureLinkUrl = `/${PREFIX_ROUTES}/${departure.pattern.route.gtfsId}/pysakit/${departure.pattern.code}`;
+  const departureLinkUrl = `/${PREFIX_ROUTES}/${
+    departure.pattern.route.gtfsId
+  }/pysakit/${departure.pattern.code}`;
 
   // In case there's only one departure for the route,
   // add a dummy cell to keep the table layout from breaking

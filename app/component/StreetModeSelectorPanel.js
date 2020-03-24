@@ -22,6 +22,7 @@ class StreetModeSelectorPanel extends React.Component {
       const { exclusive, icon, name } = streetMode;
       const isSelected = name === selectedStreetMode;
       const labelId = `street-mode-${name.toLowerCase()}`;
+      console.log('selectedStreetMode: ', selectedStreetMode);
       return (
         <ToggleButton
           checkedClass="selected"

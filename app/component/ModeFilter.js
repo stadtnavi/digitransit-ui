@@ -31,9 +31,18 @@ class ModeFilter extends React.Component {
           `toggle${type.charAt(0).toUpperCase() + type.slice(1)}State`
         ];
         const { selectedModes } = this.props;
+
+        let isCarpoolTransportMode = false;
+        if (type === 'carpool' && selectedModes.includes(type.toUpperCase())){
+          // Decide whether carpool is a street mode or a transport mode:
+          isCarpoolTransportMode = !this.context.config.transportModes[type].streetmode;
+        }
+
         const isEnabled =
           selectedModes.includes(stateName) ||
-          selectedModes.includes(type.toUpperCase());
+          (type !== 'carpool' && selectedModes.includes(type.toUpperCase())) ||
+          isCarpoolTransportMode;
+
         return (
           <ToggleButton
             icon={`${type}-withoutBox`}

@@ -400,6 +400,7 @@ export default {
     carpool: {
       availableForSelection: false,
       defaultValue: false,
+      streetmode: false,
     },
   },
 
@@ -444,6 +445,7 @@ export default {
       defaultValue: false,
       exclusive: true,
       icon: 'carpool-withoutBox',
+      streetmode: true,
     },
   },
 

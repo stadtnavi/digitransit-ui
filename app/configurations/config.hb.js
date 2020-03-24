@@ -247,35 +247,42 @@ export default configMerger(walttiConfig, {
     rail: {
       availableForSelection: true,
       defaultValue: true,
+      streetmode: false,
     },
 
     tram: {
       availableForSelection: false,
       defaultValue: false,
+      streetmode: false,
     },
 
     subway: {
       availableForSelection: true,
       defaultValue: true,
+      streetmode: false,
     },
 
     citybike: {
       availableForSelection: false,
+      streetmode: false,
     },
 
     airplane: {
       availableForSelection: false,
       defaultValue: false,
+      streetmode: false,
     },
 
     ferry: {
       availableForSelection: false,
       defaultValue: false,
+      streetmode: false,
     },
 
     carpool: {
       availableForSelection: true,
-      defaultValue: false,
+      defaultValue: true,
+      streetmode: false,
     },
   },
 
@@ -285,6 +292,7 @@ export default configMerger(walttiConfig, {
       defaultValue: true,
       exclusive: false,
       icon: 'bus-withoutBox',
+      streetmode: true,
     },
 
     walk: {
@@ -292,6 +300,7 @@ export default configMerger(walttiConfig, {
       defaultValue: false,
       exclusive: true,
       icon: 'walk',
+      streetmode: true,
     },
 
     bicycle: {
@@ -299,6 +308,7 @@ export default configMerger(walttiConfig, {
       defaultValue: false,
       exclusive: true,
       icon: 'bicycle-withoutBox',
+      streetmode: true,
     },
 
     car: {
@@ -306,6 +316,7 @@ export default configMerger(walttiConfig, {
       defaultValue: false,
       exclusive: false,
       icon: 'car-withoutBox',
+      streetmode: true,
     },
 
     car_park: {
@@ -313,6 +324,7 @@ export default configMerger(walttiConfig, {
       defaultValue: false,
       exclusive: false,
       icon: 'car-withoutBox',
+      streetmode: true,
     },
 
     carpool: {
@@ -320,6 +332,7 @@ export default configMerger(walttiConfig, {
       defaultValue: false,
       exclusive: true,
       icon: 'carpool-withoutBox',
+      streetmode: true,
     },
   },
 

@@ -29,7 +29,7 @@ export const getAvailableStreetModeConfigs = config =>
 export const getDefaultStreetModes = config =>
   getAvailableStreetModeConfigs(config)
     .filter(sm => sm.defaultValue)
-    .map(sm => sm.name);
+    .map(sm => {sm.name, sm.streetmode});
 
 /**
  * Retrieves all street modes that have specified "availableForSelection": true.
@@ -56,7 +56,7 @@ export const getAvailableTransportModeConfigs = config =>
 export const getDefaultTransportModes = config =>
   getAvailableTransportModeConfigs(config)
     .filter(tm => tm.defaultValue)
-    .map(tm => tm.name);
+    .map(tm => {tm.name, tm.streetmode});
 
 /**
  * Retrieves all transport modes that have specified "availableForSelection": true.
@@ -229,7 +229,7 @@ export const getModes = (location, config) => {
  */
 export const getStreetMode = (location, config) => {
   const currentStreetModes = intersection(
-    getModes(location, config),
+    getModes(location, config).filter(m => m.streetmode),
     getAvailableStreetModes(config),
   );
   if (currentStreetModes.length > 0) {

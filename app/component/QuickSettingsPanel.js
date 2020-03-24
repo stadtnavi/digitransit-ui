@@ -144,6 +144,12 @@ class QuickSettingsPanel extends React.Component {
       ',',
     );
 
+/*
+    const streetmode = getStreetMode(this.context.location, this.context.config);
+    const disable = (mode !== 'carpool' && this.getModes().includes(mode.toUpperCase())) ||
+                    (this.getModes().includes('CARPOOL') && streetmode !== 'CARPOOL');
+*/
+
     const disable = this.getModes().includes(mode.toUpperCase());
     addAnalyticsEvent({
       category: 'ItinerarySettings',

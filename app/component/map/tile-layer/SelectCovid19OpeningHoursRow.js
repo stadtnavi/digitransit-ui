@@ -4,9 +4,23 @@ import { intlShape } from 'react-intl';
 import ComponentUsageExample from '../../ComponentUsageExample';
 import Icon from '../../Icon';
 
+function getIcon(subCategory, mainCategory) {
+  const missingIcons = [
+    'pharmacy',
+    'insurance',
+    'medical_supply',
+    'fabric',
+    'hardware',
+  ];
+  if (missingIcons.includes(subCategory)) {
+    return `poi_${mainCategory}`;
+  }
+  return `poi_${subCategory}`;
+}
+
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 function SelectCovid19OpeningHoursRow(props, context) {
-  const { name, brand, cat, selectRow } = props;
+  const { name, brand, normalized_cat, cat, selectRow } = props;
   const translatedCat = context.intl.formatMessage({
     id: `poi-${cat}`,
     defaultMessage: cat,
@@ -17,7 +31,7 @@ function SelectCovid19OpeningHoursRow(props, context) {
       <div className="cursor-pointer select-row" onClick={selectRow}>
         <div className="padding-vertical-normal select-row-icon">
           <Icon
-            img={`poi_${cat || 'other'}`}
+            img={getIcon(cat, normalized_cat)}
             viewBox="0 0 18 18"
             width={0.7}
             height={0.7}

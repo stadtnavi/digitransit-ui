@@ -60,7 +60,7 @@ class Covid19OpeningHours {
   };
 
   getIcon = (subCategory, mainCategory) => {
-    const missingIcons = ['pharmacy', 'insurance', 'medical_supply'];
+    const missingIcons = ['pharmacy', 'insurance', 'medical_supply', 'fabric', 'hardware'];
     if (missingIcons.includes(subCategory)) {
       return `poi_${mainCategory}`;
     }

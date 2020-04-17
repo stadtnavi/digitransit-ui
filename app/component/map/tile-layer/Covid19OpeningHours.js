@@ -59,8 +59,12 @@ class Covid19OpeningHours {
     });
   };
 
-  getIcon = category => {
-    return `poi_${category || 'other'}`;
+  getIcon = (subCategory, mainCategory) => {
+    const missingIcons = ['pharmacy', 'insurance', 'medical_supply'];
+    if (missingIcons.includes(subCategory)) {
+      return `poi_${mainCategory}`;
+    }
+    return `poi_${subCategory}`;
   };
 
   getIconStatus = status => {
@@ -83,7 +87,7 @@ class Covid19OpeningHours {
       return drawRoundIcon(this.tile, geom, status);
     }
 
-    const icon = this.getIcon(properties.cat);
+    const icon = this.getIcon(properties.cat, properties.normalized_cat);
     return drawRoundIcon(
       this.tile,
       geom,

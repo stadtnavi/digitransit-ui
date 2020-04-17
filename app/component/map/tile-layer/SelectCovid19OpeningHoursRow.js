@@ -20,6 +20,7 @@ function getIcon(subCategory, mainCategory) {
 
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 function SelectCovid19OpeningHoursRow(props, context) {
+  // eslint-disable-next-line camelcase
   const { name, brand, normalized_cat, cat, selectRow } = props;
   const translatedCat = context.intl.formatMessage({
     id: `poi-${cat}`,
@@ -58,6 +59,7 @@ SelectCovid19OpeningHoursRow.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
   cat: PropTypes.string.isRequired,
+  normalized_cat: PropTypes.string.isRequired,
 };
 
 SelectCovid19OpeningHoursRow.description = () => (

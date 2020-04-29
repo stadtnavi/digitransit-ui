@@ -64,6 +64,19 @@ class Stops {
       return;
     }
 
+    if (
+      feature.properties.type === 'BUS' &&
+      this.tile.coords.z >= this.config.transportModes.bus.smallIconZoom
+    ) {
+      drawIcon(
+        'icon_map-bus',
+        this.tile,
+        feature.geom,
+        15 * getScale(this.tile.coords.z),
+      );
+      return;
+    }
+
     let scale;
 
     if (large) {
@@ -126,19 +139,6 @@ class Stops {
         getActiveAlertSeverityLevel(result.alerts, currentTime / 1000),
       );
     };
-
-    if (
-      stopFeature.properties.type === 'BUS' &&
-      this.tile.coords.z >= this.config.transportModes.bus.smallIconZoom
-    ) {
-      drawIcon(
-        'icon_map-bus',
-        this.tile,
-        stopFeature.geom,
-        15 * getScale(this.tile.coords.z),
-      );
-      return;
-    }
 
     const latestFetchTime = cache[gtfsId];
     if (latestFetchTime && latestFetchTime - currentTime < CACHE_PERIOD_MS) {

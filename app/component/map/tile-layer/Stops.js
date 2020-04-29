@@ -58,6 +58,19 @@ class Stops {
       return;
     }
 
+    if (
+      feature.properties.type === 'BUS' &&
+      this.tile.coords.z >= this.config.transportModes.bus.smallIconZoom
+    ) {
+      drawIcon(
+        'icon_map-bus',
+        this.tile,
+        feature.geom,
+        15 * getScale(this.tile.coords.z),
+      );
+      return;
+    }
+
     let scale;
 
     if (large) {

@@ -1,6 +1,4 @@
-sudo: required
-
-dist: trusty
+dist: bionic
 
 branches:
   only:

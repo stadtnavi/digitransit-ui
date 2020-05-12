@@ -22,7 +22,8 @@ for icon in icons:
 
     path_string = ''
     for path in attributes[1]:
-        path_string += '<path d="' + path['d'] + '" />'
+        if 'd' in path:
+            path_string += '<path d="' + path['d'] + '" />'
 
     new_icon = '\t<symbol id="' + id + '" viewBox="0 0 18 18">\n\t\t' + path_string + '\n\t</symbol>\n'
 

@@ -261,10 +261,18 @@ class TransitLeg extends React.Component {
             <span className="sr-only">{children}</span>
             <span aria-hidden="true">
               <div className="itinerary-time-column-time">
-                <span className={cx({ canceled: legHasCancelation(leg) })}>
-                  {moment(leg.startTime).format('HH:mm')}
+                <span className={cx({ realtime: leg.realTime })}>
+                  {leg.realTime && (
+                    <Icon
+                      img="icon-icon_realtime"
+                      className="realtime-icon realtime"
+                    />
+                  )}
+                  <span className={cx({ canceled: legHasCancelation(leg) })}>
+                    {moment(leg.startTime).format('HH:mm')}
+                  </span>
+                  {originalTime}
                 </span>
-                {originalTime}
               </div>
               <RouteNumber //  shouldn't this be a route number container instead???
                 alertSeverityLevel={getActiveLegAlertSeverityLevel(leg)}

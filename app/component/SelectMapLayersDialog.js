@@ -422,6 +422,9 @@ const mapLayersConfigShape = PropTypes.shape({
   roadworks: PropTypes.shape({
     roadworks: PropTypes.bool,
   }),
+  covid19: PropTypes.shape({
+    covid19: PropTypes.bool,
+  }),
   geoJson: PropTypes.shape({
     layers: PropTypes.arrayOf(
       PropTypes.shape({

@@ -23,6 +23,8 @@ class MapLayerStore extends Store {
       ticketMachine: true,
     },
     showAllBusses: false,
+    roadworks: true,
+    covid19: true,
     geoJson: {},
   };
 

@@ -115,10 +115,15 @@ const PointFeatureMarker = ({ feature, icons, language }) => {
 
   const { icon } = properties;
   const header = getPropertyValueOrDefault(properties, 'name', language);
-  let address = getPropertyValueOrDefault(properties, 'address', language);
+  let popupContent = getPropertyValueOrDefault(
+    properties,
+    'popupContent',
+    language,
+  );
+  const address = getPropertyValueOrDefault(properties, 'address', language);
 
   if (properties.name === 'Fahrradreparaturstation') {
-    address =
+    popupContent =
       language === 'de'
         ? 'Derzeit nicht in Betrieb – voraussichtlich Anfang / Mitte Juni mit verbessertem Angebot wieder verfügbar – ggf. mit leicht geändertem Standort.'
         : 'Currently out of order. The service will resume in June, possibly at a slightly different location.';
@@ -154,6 +159,7 @@ const PointFeatureMarker = ({ feature, icons, language }) => {
             name={useDescriptionAsHeader ? description : header}
             unlinked
           />
+          {popupContent && <div className="card-text">{popupContent}</div>}
         </div>
       </Card>
       <MarkerPopupBottom

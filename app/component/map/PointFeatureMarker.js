@@ -120,7 +120,12 @@ const PointFeatureMarker = ({ feature, icons, language }) => {
     'popupContent',
     language,
   );
-  const address = getPropertyValueOrDefault(properties, 'address', language);
+  const address = getPropertyValueOrDefault(
+    properties,
+    'address',
+    language,
+    header,
+  );
 
   if (properties.name === 'Fahrradreparaturstation') {
     popupContent =

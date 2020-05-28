@@ -15,13 +15,14 @@ export default function DesktopView(
     <div className="desktop">
       <div className="main-content">
         <div className="desktop-title">
-          <h2>
+          <div className="title-container h2">
             <Link
               title={formatMessage({
                 id: 'back-to-front-page',
                 defaultMessage: 'Back to the front page',
               })}
               to={homeUrl}
+              onlyActiveOnIndex={false}
             >
               <Icon img="icon-icon_home" className="home-icon" />
             </Link>
@@ -29,8 +30,8 @@ export default function DesktopView(
               img="icon-icon_arrow-collapse--right"
               className="arrow-icon"
             />
-            {title}
-          </h2>
+            <h1 className="h2">{title}</h1>
+          </div>
         </div>
         <div
           className={cx('scrollable-content-wrapper', {
@@ -49,11 +50,11 @@ export default function DesktopView(
 }
 
 DesktopView.propTypes = {
-  title: PropTypes.node,
-  header: PropTypes.node,
-  map: PropTypes.node,
-  content: PropTypes.node,
-  homeUrl: PropTypes.string,
+  title: PropTypes.node.isRequired,
+  header: PropTypes.node.isRequired,
+  map: PropTypes.node.isRequired,
+  content: PropTypes.node.isRequired,
+  homeUrl: PropTypes.string.isRequired,
   scrollable: PropTypes.bool,
 };
 

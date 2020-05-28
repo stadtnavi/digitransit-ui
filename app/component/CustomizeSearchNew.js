@@ -3,7 +3,7 @@ import React from 'react';
 import { intlShape } from 'react-intl';
 import { routerShape } from 'react-router';
 
-import { StreetMode } from '../constants';
+import { MapMode, StreetMode } from '../constants';
 import Icon from './Icon';
 import FareZoneSelector from './FareZoneSelector';
 import PreferredRoutes from './PreferredRoutes';
@@ -13,7 +13,7 @@ import LoadCustomizedSettingsButton from './LoadCustomizedSettingsButton';
 import StreetModeSelectorPanel from './StreetModeSelectorPanel';
 import BikeTransportOptionsSection from './customizesearch/BikeTransportOptionsSection';
 import BikingOptionsSection from './customizesearch/BikingOptionsSection';
-import RoutePreferencesSection from './customizesearch/RoutePreferencesSection';
+// import RoutePreferencesSection from './customizesearch/RoutePreferencesSection';
 import SelectOptionContainer from './customizesearch/SelectOptionContainer';
 import TransferOptionsSection from './customizesearch/TransferOptionsSection';
 import TransportModesSection from './customizesearch/TransportModesSection';
@@ -25,7 +25,6 @@ import { getDefaultSettings, getCurrentSettings } from '../util/planParamUtil';
 import {
   addPreferredRoute,
   addUnpreferredRoute,
-  clearQueryParams,
   removePreferredRoute,
   removeUnpreferredRoute,
   replaceQueryParams,
@@ -39,6 +38,7 @@ class CustomizeSearch extends React.Component {
     router: routerShape.isRequired,
     location: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
+    getStore: PropTypes.func.isRequired,
   };
 
   static propTypes = {
@@ -66,7 +66,7 @@ class CustomizeSearch extends React.Component {
 
   resetParameters = () => {
     resetCustomizedSettings();
-    clearQueryParams(this.context.router, Object.keys(this.defaultSettings));
+    replaceQueryParams(this.context.router, this.defaultSettings);
   };
 
   render() {
@@ -116,6 +116,14 @@ class CustomizeSearch extends React.Component {
                 category: 'ItinerarySettings',
                 name: streetMode,
               });
+              const MapModeStore = this.context.getStore('MapModeStore');
+              if (streetMode === StreetMode.Bicycle) {
+                MapModeStore.setPrevMapMode(MapModeStore.getMapMode());
+                MapModeStore.setMapMode(MapMode.Bicycle);
+              }
+              if (streetMode !== StreetMode.Bicycle) {
+                MapModeStore.setMapMode(MapModeStore.getPrevMapMode());
+              }
             }}
             showButtonTitles
             streetModeConfigs={ModeUtils.getAvailableStreetModeConfigs(config)}
@@ -203,6 +211,7 @@ class CustomizeSearch extends React.Component {
           unPreferredRoutes={currentSettings.unpreferredRoutes}
           removeRoute={this.removeRoute}
         />
+        {/*
         <div className="settings-option-container">
           <RoutePreferencesSection
             optimize={currentSettings.optimize}
@@ -214,6 +223,7 @@ class CustomizeSearch extends React.Component {
             defaultSettings={this.defaultSettings}
           />
         </div>
+        */}
         <div className="settings-option-container">
           <SelectOptionContainer
             currentSelection={currentSettings.accessibilityOption}

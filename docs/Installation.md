@@ -34,16 +34,16 @@ The same applies to other npm run commands below.
 Or you can also use this:
 - https://github.com/robertknight/webpack-bundle-size-analyzer
 
-## Configure Git Hooks
-You should configure git pre-commit hook to run tests and lint. That can be done like so:
-- `ln -s ../../hooks/pre-commit.sh .git/hooks/pre-commit`
-- `ln -s ../../hooks/pre-push.sh .git/hooks/pre-push`
+## Using Git Hooks
+Husky (npm-package) is used for setting up the git hooks (`.git/hooks/`) that will allow custom scripts to be run on the repository.
+Look up 'husky' in `package.json` to see the details.
 
 ## Configuration application
 Digitransit ui can be configured in multiple ways. You can
-- Change between National and Regional versions using CONFIG parameter
-- Switch API backend using API_URL parameter
-- Enable Sentry client side error monitoring using SENTRY_* parameters
+- Change between National and Regional versions using `CONFIG` parameter
+  - Alternatively, use `BASE_CONFIG` if server is supposed to serve multiple configurations which have same base configuration. It is used server side at start up and request's host specific config based on `host` or `x-forwarded-host` header is merged into it before returning config to client.
+- Switch API backend using `API_URL` parameter
+- Enable Sentry client side error monitoring using `SENTRY_*` parameters
 
 Note that you can combine multiple configuration parameters.
 

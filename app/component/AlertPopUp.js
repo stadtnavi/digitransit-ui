@@ -7,7 +7,7 @@ import Icon from './Icon';
 
 const AlertPopUp = props => (
   <FullscreenDialog
-    className={props.textId}
+    className={props.className}
     renderContent={() => (
       <React.Fragment>
         {props.icon && (
@@ -26,10 +26,15 @@ const AlertPopUp = props => (
 );
 
 AlertPopUp.propTypes = {
+  className: PropTypes.string,
   isPopUpOpen: PropTypes.bool,
-  textId: PropTypes.string,
-  icon: PropTypes.string,
-  togglePopUp: PropTypes.func,
+  textId: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  togglePopUp: PropTypes.func.isRequired,
+};
+
+AlertPopUp.defaultProps = {
+  isPopUpOpen: false,
 };
 
 export default AlertPopUp;

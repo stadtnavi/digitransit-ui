@@ -13,20 +13,21 @@ import 'leaflet-active-area';
 // Webpack handles this by bundling it with the other css files
 import 'leaflet/dist/leaflet.css';
 
-import isEmpty from 'lodash/isEmpty';
-
+import { withRouter, routerShape } from 'react-router';
+import { connectToStores } from 'fluxible-addons-react';
 import PositionMarker from './PositionMarker';
 import VectorTileLayerContainer from './tile-layer/VectorTileLayerContainer';
 import { boundWithMinimumArea } from '../../util/geo-utils';
-import { isDebugTiles } from '../../util/browser';
+import { isDebugTiles, isBikeSafetyTiles } from '../../util/browser';
 import { BreakpointConsumer } from '../../util/withBreakpoint';
 import events from '../../util/events';
+import { MapMode } from '../../constants';
 
 const zoomOutText = `<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-icon_minus"/></svg>`;
 
 const zoomInText = `<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-icon_plus"/></svg>`;
 
-export default class Map extends React.Component {
+class Map extends React.Component {
   static propTypes = {
     animate: PropTypes.bool,
     bounds: PropTypes.array,
@@ -49,6 +50,7 @@ export default class Map extends React.Component {
     disableZoom: PropTypes.bool,
     activeArea: PropTypes.string,
     mapRef: PropTypes.func,
+    currentMapMode: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -56,12 +58,22 @@ export default class Map extends React.Component {
     loaded: () => {},
     showScaleBar: false,
     activeArea: null,
+    bounds: undefined,
+    boundsOptions: {},
+    center: false,
+    disableMapTracking: () => {},
+    fitBounds: false,
+    hilightedStops: [],
+    leafletEvents: {},
+    showStops: false,
+    disableZoom: false,
     mapRef: null,
   };
 
   static contextTypes = {
     executeAction: PropTypes.func.isRequired,
     config: PropTypes.object.isRequired,
+    router: routerShape,
   };
 
   componentDidMount() {
@@ -92,6 +104,31 @@ export default class Map extends React.Component {
     }
   };
 
+  loadMapLayer(mapUrl, attribution, index) {
+    const zIndex = -10 + index;
+    return (
+      <TileLayer
+        key={mapUrl}
+        onLoad={this.setLoaded}
+        url={mapUrl}
+        tileSize={this.context.config.map.tileSize || 256}
+        zoomOffset={this.context.config.map.zoomOffset || 0}
+        updateWhenIdle={false}
+        zIndex={zIndex}
+        size={
+          this.context.config.map.useRetinaTiles &&
+          L.Browser.retina &&
+          !isDebugTiles
+            ? '@2x'
+            : ''
+        }
+        minZoom={this.context.config.map.minZoom}
+        maxZoom={this.context.config.map.maxZoom}
+        attribution={attribution}
+      />
+    );
+  }
+
   render() {
     const { zoom, boundsOptions } = this.props;
     const { config } = this.context;
@@ -106,18 +143,31 @@ export default class Map extends React.Component {
       boundsOptions.paddingTopLeft = this.props.padding;
     }
 
-    let mapUrl =
-      (isDebugTiles && `${config.URL.OTP}inspector/tile/traversal/`) ||
-      config.URL.MAP;
+    const { currentMapMode } = this.props;
+
+    const mapUrls = [];
+    if (isDebugTiles) {
+      mapUrls.push(`${config.URL.OTP}inspector/tile/traversal/{z}/{x}/{y}.png`);
+    } else if (isBikeSafetyTiles) {
+      mapUrls.push(
+        `${config.URL.OTP}inspector/tile/bike-safety/{z}/{x}/{y}.png`,
+      );
+    } else if (currentMapMode === MapMode.Satellite) {
+      mapUrls.push(config.URL.MAP.satellite);
+      mapUrls.push(config.URL.MAP.semiTransparent);
+    } else if (currentMapMode === MapMode.Bicycle) {
+      mapUrls.push(config.URL.MAP.bicycle);
+    } else {
+      mapUrls.push(config.URL.MAP.default);
+    }
+
+    /*
     if (mapUrl !== null && typeof mapUrl === 'object') {
       mapUrl = mapUrl[this.props.lang] || config.URL.MAP.default;
     }
+    */
 
-    let finalMapUrl = `${mapUrl}{z}/{x}/{y}{size}.png`;
-
-    if (!isEmpty(config.map.key)) {
-      finalMapUrl = `${finalMapUrl}?key=${config.map.key}`;
-    }
+    const attribution = config.map.attribution[currentMapMode];
 
     return (
       <div aria-hidden="true">
@@ -149,27 +199,10 @@ export default class Map extends React.Component {
           onPopupopen={this.onPopupopen}
           closePopupOnClick={false}
         >
-          <TileLayer
-            onLoad={this.setLoaded}
-            url={finalMapUrl}
-            tileSize={config.map.tileSize || 256}
-            zoomOffset={config.map.zoomOffset || 0}
-            updateWhenIdle={false}
-            size={
-              config.map.useRetinaTiles && L.Browser.retina && !isDebugTiles
-                ? '@2x'
-                : ''
-            }
-            minZoom={config.map.minZoom}
-            maxZoom={config.map.maxZoom}
-          />
-          <AttributionControl
-            position="bottomright"
-            prefix={
-              config.map.attribution ||
-              '&copy; <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap</a>'
-            }
-          />
+          {mapUrls.map((url, index) =>
+            this.loadMapLayer(url, attribution, index),
+          )}
+          <AttributionControl position="bottomright" prefix="" />
           {this.props.showScaleBar && (
             <ScaleControl
               imperial={false}
@@ -200,3 +233,9 @@ export default class Map extends React.Component {
     );
   }
 }
+
+const connectedComponent = connectToStores(Map, ['MapModeStore'], context => ({
+  currentMapMode: context.getStore('MapModeStore').getMapMode(),
+}));
+
+export default withRouter(connectedComponent);

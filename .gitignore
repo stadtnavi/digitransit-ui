@@ -19,3 +19,8 @@ gemini-report
 tags
 .nyc_output
 coverage
+caresteouvert
+package-lock.json
+sessions/
+run*.sh
+app/**/__generated__

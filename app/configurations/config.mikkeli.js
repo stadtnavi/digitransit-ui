@@ -5,7 +5,7 @@ const CONFIG = 'mikkeli';
 const APP_TITLE = 'Mikkelin Reittiopas';
 const APP_DESCRIPTION = 'Mikkelin julkisen liikenteen reittiopas';
 
-const walttiConfig = require('./waltti').default;
+const walttiConfig = require('./config.waltti').default;
 
 const minLat = 61.65922;
 const maxLat = 61.717372;
@@ -119,5 +119,17 @@ export default configMerger(walttiConfig, {
         ],
       },
     ],
+  },
+  zoneIdMapping: {
+    1: 'A',
+    2: 'B',
+    3: 'C',
+    4: 'D',
+    5: 'E',
+  },
+  stopCard: {
+    header: {
+      showZone: true,
+    },
   },
 });

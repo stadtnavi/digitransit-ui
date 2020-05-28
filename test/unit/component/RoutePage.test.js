@@ -8,13 +8,15 @@ import { shallowWithIntl } from '../helpers/mock-intl-enzyme';
 import { startRealTimeClient } from '../../../app/action/realTimeClientAction';
 import { Component as RoutePage } from '../../../app/component/RoutePage';
 import { AlertSeverityLevelType } from '../../../app/constants';
+import { PREFIX_ROUTES, PREFIX_STOPS } from '../../../app/util/path';
+import Icon from '../../../app/component/Icon';
 
 describe('<RoutePage />', () => {
   it('should set the activeAlert class if there is an alert and no patternId', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:01',
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
       },
       params: {
         routeId: 'HSL:1063',
@@ -36,7 +38,7 @@ describe('<RoutePage />', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:01',
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
       },
       params: {
         routeId: 'HSL:1063',
@@ -66,7 +68,7 @@ describe('<RoutePage />', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:01',
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
       },
       params: {
         routeId: 'HSL:1063',
@@ -96,7 +98,7 @@ describe('<RoutePage />', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/tampere:32/pysakit/tampere:32:1:01',
+        pathname: `/${PREFIX_ROUTES}/tampere:32/${PREFIX_STOPS}/tampere:32:1:01`,
       },
       params: {
         patternId: 'tampere:32:1:01',
@@ -133,7 +135,7 @@ describe('<RoutePage />', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/tampere:32/pysakit/tampere:32:1:01',
+        pathname: `/${PREFIX_ROUTES}/tampere:32/${PREFIX_STOPS}/tampere:32:1:01`,
       },
       params: {
         patternId: 'tampere:32:1:01',
@@ -168,7 +170,7 @@ describe('<RoutePage />', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:01',
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
       },
       params: {
         routeId: 'HSL:1063',
@@ -204,7 +206,7 @@ describe('<RoutePage />', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:01',
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
       },
       params: {
         routeId: 'HSL:1063',
@@ -240,7 +242,7 @@ describe('<RoutePage />', () => {
     const props = {
       breakpoint: 'large',
       location: {
-        pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:01',
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
       },
       params: {
         routeId: 'HSL:1063',
@@ -274,7 +276,7 @@ describe('<RoutePage />', () => {
       const props = {
         breakpoint: 'large',
         location: {
-          pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:02',
+          pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:02`,
         },
         params: {
           routeId: 'HSL:1063',
@@ -305,7 +307,7 @@ describe('<RoutePage />', () => {
       const props = {
         breakpoint: 'large',
         location: {
-          pathname: '/linjat/HSL:1063/pysakit/HSL:1063:0:02',
+          pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:02`,
         },
         params: {
           routeId: 'HSL:1063',
@@ -332,5 +334,92 @@ describe('<RoutePage />', () => {
       });
       wrapper.instance().onPatternChange('foobar');
     });
+  });
+
+  it('should mark the disruptions tab as having an active info alert due to a route INFO level service alert', () => {
+    const props = {
+      breakpoint: 'large',
+      location: {
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
+      },
+      params: {
+        routeId: 'HSL:1063',
+        patternId: 'HSL:1063:0:01',
+      },
+      route: {
+        gtfsId: 'HSL:1063',
+        mode: 'BUS',
+        alerts: [
+          { id: 'foobar', alertSeverityLevel: AlertSeverityLevelType.Info },
+        ],
+      },
+    };
+    const wrapper = shallowWithIntl(<RoutePage {...props} />, {
+      context: { ...mockContext },
+    });
+    expect(
+      wrapper
+        .find(Icon)
+        .at(2)
+        .props().className,
+    ).to.equal('route-page-tab_icon active-service-alert');
+  });
+
+  it('should mark the disruptions tab as having an active info alert due to a route WARNING level service alert', () => {
+    const props = {
+      breakpoint: 'large',
+      location: {
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
+      },
+      params: {
+        routeId: 'HSL:1063',
+        patternId: 'HSL:1063:0:01',
+      },
+      route: {
+        gtfsId: 'HSL:1063',
+        mode: 'BUS',
+        alerts: [
+          { id: 'foobar', alertSeverityLevel: AlertSeverityLevelType.Warning },
+        ],
+      },
+    };
+    const wrapper = shallowWithIntl(<RoutePage {...props} />, {
+      context: { ...mockContext },
+    });
+    expect(
+      wrapper
+        .find(Icon)
+        .at(2)
+        .props().className,
+    ).to.equal('route-page-tab_icon active-disruption-alert');
+  });
+
+  it('should mark the disruptions tab as having an active info alert due to a route SEVERE level service alert', () => {
+    const props = {
+      breakpoint: 'large',
+      location: {
+        pathname: `/${PREFIX_ROUTES}/HSL:1063/${PREFIX_STOPS}/HSL:1063:0:01`,
+      },
+      params: {
+        routeId: 'HSL:1063',
+        patternId: 'HSL:1063:0:01',
+      },
+      route: {
+        gtfsId: 'HSL:1063',
+        mode: 'BUS',
+        alerts: [
+          { id: 'foobar', alertSeverityLevel: AlertSeverityLevelType.Severe },
+        ],
+      },
+    };
+    const wrapper = shallowWithIntl(<RoutePage {...props} />, {
+      context: { ...mockContext },
+    });
+    expect(
+      wrapper
+        .find(Icon)
+        .at(2)
+        .props().className,
+    ).to.equal('route-page-tab_icon active-disruption-alert');
   });
 });

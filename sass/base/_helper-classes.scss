@@ -38,7 +38,7 @@
   color: $citybike-color;
 }
 .citybike-off {
-  color: $citybike-off-color;
+  color: $citybike-color;
 }
 .walk {
   color: $walk-color;
@@ -48,6 +48,18 @@
 }
 .bicycle_walk {
   color: $bicycle-color;
+}
+.poi {
+  color: $poi-color;
+}
+.poi-open {
+  color: $poi-open-color;
+}
+.poi-closed {
+  color: $poi-closed-color;
+}
+.poi-partial {
+  color: $poi-partial-color;
 }
 .via {
   color: $walk-color;

@@ -36,7 +36,7 @@ const CardHeader = ({
         </div>
       )}
       <div className="card-header-wrapper">
-        <span className={headingStyle || 'h4'}>
+        <span className={headingStyle}>
           {name}
           {externalLink || null}
           {headerIcon}
@@ -56,7 +56,12 @@ const CardHeader = ({
 
 const emptyFunction = () => {};
 const exampleIcons = [
-  <Favourite key="favourite" favourite={false} addFavourite={emptyFunction} />,
+  <Favourite
+    key="favourite"
+    favourite={false}
+    addFavourite={emptyFunction}
+    deleteFavourite={emptyFunction}
+  />,
 ];
 
 CardHeader.displayName = 'CardHeader';
@@ -94,7 +99,10 @@ CardHeader.propTypes = {
 };
 
 CardHeader.defaultProps = {
-  headerIcon: undefined,
+  className: '',
+  headingStyle: 'h4',
+  icons: [],
+  unlinked: false,
 };
 
 export default CardHeader;

@@ -25,7 +25,7 @@ function addMetaData(config) {
   const html = stats.html.join(' ');
   const APP_PATH =
     config.APP_PATH && config.APP_PATH !== '' ? `${config.APP_PATH}'/'` : '/';
-  const appPathPrefix = process.env.ASSET_URL || APP_PATH;
+  const appPathPrefix = config.URL.ASSET_URL || APP_PATH;
 
   htmlParser.convert_html_to_json(html, (err, data) => {
     if (!err) {
@@ -49,7 +49,7 @@ function addMetaData(config) {
       data.link.forEach(e => {
         // eslint-disable-next-line no-param-reassign
         delete e.innerHTML;
-        if (process.env.ASSET_URL && e.href.startsWith('/icons')) {
+        if (config.URL.ASSET_URL && e.href.startsWith('/icons')) {
           e.href = appPathPrefix + e.href;
         }
       });
@@ -71,7 +71,13 @@ export function getNamedConfiguration(configName) {
       additionalConfig = require(`./configurations/config.${configName}`)
         .default;
     }
-    const config = configMerger(defaultConfig, additionalConfig);
+
+    // use cached baseConfig that is potentially patched in server start up
+    // for merge if one is configured
+    const baseConfig = configs[process.env.BASE_CONFIG];
+    const config = baseConfig
+      ? configMerger(baseConfig, additionalConfig)
+      : configMerger(defaultConfig, additionalConfig);
 
     if (config.useSearchPolygon && config.areaPolygon) {
       // pass poly as 'lon lat, lon lat, lon lat ...' sequence
@@ -100,13 +106,31 @@ export function getNamedConfiguration(configName) {
 
     addMetaData(config); // add dynamic metadata content
 
+    if (!process.env.OIDC_CLIENT_ID) {
+      // disable user account access if backend is not available
+      config.showLogin = false;
+    }
+
+    const appPathPrefix = config.URL.ASSET_URL || '';
+
+    if (config.geoJson && Array.isArray(config.geoJson.layers)) {
+      for (let i = 0; i < config.geoJson.layers.length; i++) {
+        const layer = config.geoJson.layers[i];
+        layer.url = appPathPrefix + layer.url;
+      }
+    }
+
+    if (config.geoJson && config.geoJson.zones) {
+      config.geoJson.zones.url = appPathPrefix + config.geoJson.zones.url;
+    }
+
     configs[configName] = config;
   }
   return configs[configName];
 }
 
 export function getConfiguration(req) {
-  let configName = process.env.CONFIG || 'default';
+  let configName = process.env.CONFIG || process.env.BASE_CONFIG || 'default';
   let host;
 
   if (req) {

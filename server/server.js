@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign, no-console, strict, global-require */
+/* eslint-disable no-param-reassign, no-console, strict, global-require, no-unused-vars */
 
 'use strict';
 
@@ -9,7 +9,9 @@ const fs = require('fs');
 require('@babel/register')({
   // This will override `node_modules` ignoring - you can alternatively pass
   // an array of strings to be explicitly matched or a regex / glob
-  ignore: [/node_modules\/(?!react-leaflet|@babel\/runtime\/helpers\/esm)/],
+  ignore: [
+    /node_modules\/(?!react-leaflet|@babel\/runtime\/helpers\/esm|@digitransit-util)/,
+  ],
 });
 
 global.fetch = require('node-fetch');
@@ -18,6 +20,7 @@ const proxy = require('express-http-proxy');
 global.self = { fetch: global.fetch };
 
 let Raven;
+const devhost = '';
 
 if (process.env.NODE_ENV === 'production' && process.env.SENTRY_SECRET_DSN) {
   Raven = require('raven');
@@ -30,11 +33,31 @@ if (process.env.NODE_ENV === 'production' && process.env.SENTRY_SECRET_DSN) {
   });
 }
 
+process.on('uncaughtException', error => {
+  // perhaps this is a little too careful but i want to make sure that things like out of memory errors
+  // are still crashing the process as there is no point in trying to recover from these.
+  if (error.name === 'RRNLRequestError') {
+    console.log('Unhandled Error', error);
+  } else {
+    throw error;
+  }
+});
+
 /* ********* Server ********* */
 const express = require('express');
 const expressStaticGzip = require('express-static-gzip');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const {
+  Validator,
+  ValidationError,
+} = require('express-json-validator-middleware');
+
+const validator = new Validator({ allErrors: true });
+
+const request = require('request');
+const logger = require('morgan');
+const { postCarpoolOffer, bodySchema } = require('./carpool');
 const { retryFetch } = require('../app/util/fetchUtils');
 const config = require('../app/config').getConfiguration();
 
@@ -43,6 +66,140 @@ const port = config.PORT || 8080;
 const app = express();
 
 /* Setup functions */
+function setUpOIDC() {
+  /* ********* Setup OpenID Connect ********* */
+  const callbackPath = '/oid_callback'; // connect callback path
+  // Use Passport with OpenId Connect strategy to authenticate users
+  const OIDCHost = process.env.OIDCHOST || 'https://hslid-dev.t5.fi';
+  const FavouriteHost =
+    process.env.FAVOURITE_HOST || 'https://dev-api.digitransit.fi/favourites';
+  const LoginStrategy = require('./passport-openid-connect/Strategy').Strategy;
+  const passport = require('passport');
+  const session = require('express-session');
+
+  const redis = require('redis');
+  const RedisStore = require('connect-redis')(session);
+  const RedisHost = process.env.REDIS_HOST || 'localhost';
+  const RedisPort = process.env.REDIS_PORT || 6379;
+  const RedisKey = process.env.REDIS_KEY;
+  const RedisClient = RedisKey
+    ? redis.createClient(RedisPort, RedisHost, {
+        auth_pass: RedisKey,
+        tls: { servername: RedisHost },
+      })
+    : redis.createClient(RedisPort, RedisHost);
+  const oic = new LoginStrategy({
+    issuerHost:
+      process.env.OIDC_ISSUER || `${OIDCHost}/.well-known/openid-configuration`,
+    client_id: process.env.OIDC_CLIENT_ID,
+    client_secret: process.env.OIDC_CLIENT_SECRET,
+    redirect_uri:
+      process.env.OIDC_CLIENT_CALLBACK ||
+      `http://localhost:${port}${callbackPath}`,
+    scope: 'openid profile',
+  });
+  passport.use(oic);
+  passport.serializeUser(LoginStrategy.serializeUser);
+  passport.deserializeUser(LoginStrategy.deserializeUser);
+  app.use(logger('dev'));
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(require('helmet')());
+  // Passport requires session to persist the authentication
+  app.use(
+    session({
+      secret: process.env.SESSION_SECRET || 'reittiopas_secret',
+      store: new RedisStore({
+        host: RedisHost,
+        port: RedisPort,
+        client: RedisClient,
+        ttl: 1000 * 60 * 60 * 24 * 365 * 10,
+      }),
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: process.env.NODE_ENV === 'production',
+        maxAge: 1000 * 60 * 60 * 24 * 365 * 10,
+      },
+    }),
+  );
+  // Initialize Passport
+  app.use(passport.initialize());
+  app.use(passport.session());
+  // Initiates an authentication request
+  // users will be redirected to hsl.id and once authenticated
+  // they will be returned to the callback handler below
+  app.get(
+    '/login',
+    passport.authenticate('passport-openid-connect', {
+      successReturnToOrRedirect: '/',
+      scope: 'profile',
+    }),
+  );
+  // Callback handler that will redirect back to application after successfull authentication
+  app.get(
+    callbackPath,
+    passport.authenticate('passport-openid-connect', {
+      callback: true,
+      successReturnToOrRedirect: `${devhost}/`,
+      failureRedirect: '/',
+    }),
+  );
+  app.get('/logout', function(req, res) {
+    req.logout();
+    req.session.destroy(function() {
+      res.clearCookie('connect.sid');
+      res.redirect('/');
+    });
+  });
+  app.use('/api', function(req, res, next) {
+    if (req.isAuthenticated()) {
+      next();
+    } else {
+      res.sendStatus(401);
+    }
+  });
+  /* GET the profile of the current authenticated user */
+  app.get('/api/user', function(req, res, next) {
+    request.get(
+      `${OIDCHost}/openid/userinfo`,
+      {
+        auth: {
+          bearer: req.user.token.access_token,
+        },
+      },
+      function(err, response, body) {
+        if (!err) {
+          res.status(response.statusCode).send(body);
+        } else {
+          res.status(401).send('Unauthorized');
+        }
+      },
+    );
+  });
+
+  app.use('/api/user/favourites', function(req, res, next) {
+    request(
+      {
+        auth: {
+          bearer: req.user.token.access_token,
+        },
+        method: req.method,
+        url: `${FavouriteHost}/${req.user.data.sub}`,
+        body: JSON.stringify(req.body),
+      },
+      function(err, response, body) {
+        if (!err) {
+          res.status(response.statusCode).send(body);
+        } else {
+          res.status(404).send(body);
+        }
+      },
+    );
+  });
+}
+
 function setUpStaticFolders() {
   // First set up a specific path for sw.js
   if (process.env.ASSET_URL) {
@@ -100,11 +257,6 @@ function setUpMiddleware() {
   }
 }
 
-function onError(err, req, res) {
-  res.statusCode = 500;
-  res.end(err.message + err.stack);
-}
-
 function setUpRaven() {
   if (process.env.NODE_ENV === 'production' && process.env.SENTRY_SECRET_DSN) {
     app.use(Raven.requestHandler());
@@ -116,7 +268,34 @@ function setUpErrorHandling() {
     app.use(Raven.errorHandler());
   }
 
-  app.use(onError);
+  app.use(function(err, req, res, next) {
+    if (err instanceof ValidationError) {
+      res.status(400).send(err.validationErrors);
+      next();
+    } else {
+      console.error(err.stack);
+      res.status(500).send('Internal server error.');
+    }
+  });
+}
+
+function setUpCarpoolOffer() {
+  app.use(bodyParser.json());
+
+  app.post(
+    `${config.APP_PATH}/carpool-offers`,
+    validator.validate({ body: bodySchema }),
+    function(req, res) {
+      postCarpoolOffer(req.body).then(json => {
+        const jsonResponse = {
+          id: json.tripID,
+          url: `https://live.ride2go.com/#/trip/${json.tripID}/{lang}`,
+        };
+        res.set('Content-Type', 'application/json');
+        res.send(JSON.stringify(jsonResponse));
+      });
+    },
+  );
 }
 
 function setUpRoutes() {
@@ -215,20 +394,27 @@ function setUpAvailableTickets() {
         },
         err => {
           console.log(err);
-          // If after 5 tries no available ticketTypes are found, start server anyway
-          resolve();
-          console.log('failed to load availableTickets at launch, retrying');
-          // Continue attempts to fetch available ticketTypes in the background for one day once every minute
-          retryFetch(`${config.URL.OTP}index/graphql`, options, 1440, 60000)
-            .then(res => res.json())
-            .then(
-              result => {
-                processTicketTypeResult(result);
-              },
-              error => {
-                console.log(error);
-              },
-            );
+          if (process.env.BASE_CONFIG) {
+            // Patching of availableTickets into cached configs would not work with BASE_CONFIG
+            // if availableTickets are fetched after launch
+            console.log('failed to load availableTickets at launch, exiting');
+            process.exit(1);
+          } else {
+            // If after 5 tries no available ticketTypes are found, start server anyway
+            resolve();
+            console.log('failed to load availableTickets at launch, retrying');
+            // Continue attempts to fetch available ticketTypes in the background for one day once every minute
+            retryFetch(`${config.URL.OTP}index/graphql`, options, 1440, 60000)
+              .then(res => res.json())
+              .then(
+                result => {
+                  processTicketTypeResult(result);
+                },
+                error => {
+                  console.log(error);
+                },
+              );
+          }
         },
       );
   });
@@ -241,12 +427,17 @@ function startServer() {
 }
 
 /* ********* Init ********* */
+if (process.env.OIDC_CLIENT_ID) {
+  setUpOIDC();
+}
 setUpRaven();
 setUpStaticFolders();
 setUpMiddleware();
+setUpCarpoolOffer();
 setUpRoutes();
 setUpErrorHandling();
 Promise.all([setUpAvailableRouteTimetables(), setUpAvailableTickets()]).then(
   () => startServer(),
 );
+
 module.exports.app = app;

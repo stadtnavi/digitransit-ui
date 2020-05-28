@@ -62,13 +62,17 @@ export default function RouteAlertsRow(
     endTime &&
     currentTime;
   const gtfsIdList = gtfsIds ? gtfsIds.split(',') : [];
+
   const routeLinks =
     entityType === 'route' && entityIdentifier && gtfsIds
       ? entityIdentifier.split(',').map((identifier, i) => (
           <Link
             key={gtfsIdList[i]}
-            to={`/${PREFIX_ROUTES}/${gtfsIdList[i]}/pysakit/${gtfsIdList[i]}/`}
+            to={`/${PREFIX_ROUTES}/${gtfsIdList[i]}/${PREFIX_STOPS}/${
+              gtfsIdList[i]
+            }:0:01`}
             className="route-alert-row-link"
+            onlyActiveOnIndex={false}
           >
             {' '}
             {identifier}{' '}
@@ -83,6 +87,7 @@ export default function RouteAlertsRow(
             key={gtfsIdList[i]}
             to={`/${PREFIX_STOPS}/${gtfsIdList[i]}`}
             className="route-alert-row-link"
+            onlyActiveOnIndex={false}
           >
             {' '}
             {identifier}{' '}
@@ -175,6 +180,10 @@ RouteAlertsRow.propTypes = {
   url: PropTypes.string,
   gtfsIds: PropTypes.string,
   showRouteNameLink: PropTypes.bool,
+};
+
+RouteAlertsRow.defaultProps = {
+  showRouteNameLink: false,
 };
 
 RouteAlertsRow.contextTypes = {

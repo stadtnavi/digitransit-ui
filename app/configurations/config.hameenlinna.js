@@ -5,7 +5,7 @@ const CONFIG = 'hameenlinna';
 const APP_TITLE = 'reittiopas.hameenlinna.fi';
 const APP_DESCRIPTION = '';
 
-const walttiConfig = require('./waltti').default;
+const walttiConfig = require('./config.waltti').default;
 
 export default configMerger(walttiConfig, {
   CONFIG,
@@ -122,5 +122,21 @@ export default configMerger(walttiConfig, {
         ],
       },
     ],
+  },
+  zoneIdMapping: {
+    1: 'A',
+    2: 'B',
+    3: 'C',
+    4: 'D',
+    5: 'E',
+    6: 'F',
+    7: 'G',
+    8: 'H',
+    9: 'I',
+  },
+  stopCard: {
+    header: {
+      showZone: true,
+    },
   },
 });

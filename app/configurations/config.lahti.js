@@ -5,7 +5,7 @@ const CONFIG = 'lahti';
 const APP_TITLE = 'Uusi Reittiopas';
 const APP_DESCRIPTION = 'Uusi Reittiopas - Lahti';
 
-const walttiConfig = require('./waltti').default;
+const walttiConfig = require('./config.waltti').default;
 
 const minLat = 60.692506;
 const maxLat = 61.790694;
@@ -98,6 +98,53 @@ export default configMerger(walttiConfig, {
     ],
   },
 
+  staticMessages: [
+    {
+      id: '4',
+      priority: -1,
+      shouldTrigger: true,
+      persistence: 'repeat',
+      content: {
+        fi: [
+          {
+            type: 'text',
+            content:
+              'Reittiopas on päivitetty 24.4.2020. Koronatilanteen aikana vuoroihin voi tulla muutoksia, jotka eivät näy reittioppaassa. Tarkista koronan vaikutukset joukkoliikenteeseen ennen matkaa ',
+          },
+          {
+            type: 'a',
+            content: 'www.lsl.fi',
+            href: 'http://www.lsl.fi',
+          },
+        ],
+        en: [
+          {
+            type: 'text',
+            content:
+              'The journey planner has been updated on 24.4.2020. During the coronavirus pandemic, trips may be cancelled. Please check possible changes before traveling ',
+          },
+          {
+            type: 'a',
+            content: 'www.lsl.fi',
+            href: 'http://www.lsl.fi',
+          },
+        ],
+        sv: [
+          {
+            type: 'text',
+            content:
+              'Ruttguiden har uppdaterats 22.4.2020. Under coronapandemin kan resor avbrytas. Kontrollera eventuella ändringar innan du reser ',
+          },
+          {
+            type: 'a',
+            content: 'www.lsl.fi',
+            href: 'http://www.lsl.fi',
+          },
+        ],
+      },
+    },
+  ],
+
   aboutThisService: {
     fi: [
       {
@@ -143,5 +190,22 @@ export default configMerger(walttiConfig, {
         ],
       },
     ],
+  },
+  zoneIdMapping: {
+    1: 'A',
+    2: 'B',
+    3: 'C',
+    4: 'D',
+    5: 'E',
+    6: 'F1',
+    7: 'F2',
+    8: 'G',
+    9: 'H',
+    10: 'I',
+  },
+  stopCard: {
+    header: {
+      showZone: true,
+    },
   },
 });

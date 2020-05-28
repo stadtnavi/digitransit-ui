@@ -9,7 +9,7 @@ import LangSelect from './LangSelect';
 import MainMenuLinks from './MainMenuLinks';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import LoginButton from './LoginButton';
-import Dropdown from './Dropdown';
+import UserInfo from './UserInfo';
 
 function MainMenu(props, { config, intl }) {
   /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
@@ -39,6 +39,7 @@ function MainMenu(props, { config, intl }) {
               name: null,
             });
           }}
+          onlyActiveOnIndex={false}
         >
           <FormattedMessage id="frontpage" defaultMessage="Frontpage" />
         </Link>
@@ -56,34 +57,31 @@ function MainMenu(props, { config, intl }) {
         ).filter(item => item.href || item.route)}
       />
       {config.showLogin &&
-        (props.loggedIn ? (
-          <Dropdown
-            username="Matti Meikäläinen"
+        (!props.user.name ? (
+          <LoginButton isMobile />
+        ) : (
+          <UserInfo
+            user={props.user}
             list={[
               {
                 key: 'dropdown-item-1',
                 messageId: 'logout',
-                onClick: () => props.logIn(),
+                href: '/logout',
               },
             ]}
             isMobile
           />
-        ) : (
-          <div className="offcanvas-section">
-            <LoginButton logIn={() => props.logIn()} />
-          </div>
         ))}
     </div>
   );
 }
 
 MainMenu.propTypes = {
-  showDisruptionInfo: PropTypes.bool,
+  showDisruptionInfo: PropTypes.bool.isRequired,
   toggleVisibility: PropTypes.func.isRequired,
   visible: PropTypes.bool,
   homeUrl: PropTypes.string.isRequired,
-  loggedIn: PropTypes.bool,
-  logIn: PropTypes.func,
+  user: PropTypes.object,
 };
 
 MainMenu.defaultProps = {

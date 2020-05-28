@@ -9,9 +9,10 @@ import QuickSettingsPanel from './QuickSettingsPanel';
 import StreetModeSelectorPanel from './StreetModeSelectorPanel';
 import { getDrawerWidth, isBrowser } from '../util/browser';
 import * as ModeUtils from '../util/modeUtils';
-import { parseLocation } from '../util/path';
+import { parseLocation, PREFIX_ITINERARY_SUMMARY } from '../util/path';
 import withBreakpoint from '../util/withBreakpoint';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
+import { MapMode, StreetMode } from '../constants';
 
 class SummaryNavigation extends React.Component {
   static propTypes = {
@@ -37,6 +38,7 @@ class SummaryNavigation extends React.Component {
     config: PropTypes.object.isRequired,
     router: routerShape,
     location: PropTypes.object.isRequired,
+    getStore: PropTypes.func.isRequired,
   };
 
   customizeSearchModules = {
@@ -51,7 +53,7 @@ class SummaryNavigation extends React.Component {
         this.context.location.state.customizeSearchOffcanvas &&
         (!location.state || !location.state.customizeSearchOffcanvas) &&
         !this.transitionDone &&
-        location.pathname.startsWith('/reitti/')
+        location.pathname.startsWith(`/${PREFIX_ITINERARY_SUMMARY}/`)
       ) {
         this.transitionDone = true;
         const newLocation = {
@@ -116,6 +118,14 @@ class SummaryNavigation extends React.Component {
             category: 'ItinerarySettings',
             name: streetMode,
           });
+          const MapModeStore = this.context.getStore('MapModeStore');
+          if (streetMode === StreetMode.Bicycle) {
+            MapModeStore.setPrevMapMode(MapModeStore.getMapMode());
+            MapModeStore.setMapMode(MapMode.Bicycle);
+          }
+          if (streetMode !== StreetMode.Bicycle) {
+            MapModeStore.setMapMode(MapModeStore.getPrevMapMode());
+          }
         }}
         streetModeConfigs={ModeUtils.getAvailableStreetModeConfigs(config)}
       />
@@ -159,6 +169,11 @@ class SummaryNavigation extends React.Component {
                 background: 'transparent',
                 boxShadow: 'none',
                 overflow: 'visible',
+              }}
+              style={{
+                // hide root element from screen reader in sync with drawer animation
+                transition: 'visibility 450ms',
+                visibility: isOpen ? 'visible' : 'hidden',
               }}
               width={getDrawerWidth(window)}
             >

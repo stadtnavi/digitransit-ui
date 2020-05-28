@@ -10,6 +10,8 @@ import SelectTicketSalesRow from './SelectTicketSalesRow';
 import ComponentUsageExample from '../../ComponentUsageExample';
 import MarkerPopupBottom from '../MarkerPopupBottom';
 import { options } from '../../ExampleData';
+import SelectCovid19OpeningHoursRow from './SelectCovid19OpeningHoursRow';
+import RoadworksRow from './RoadworksRow';
 
 function MarkerSelectPopup(props) {
   const rows = props.options.map(option => {
@@ -53,7 +55,26 @@ function MarkerSelectPopup(props) {
       return (
         <SelectTicketSalesRow
           {...option.feature.properties}
-          key={option.feature.properties.FID}
+          key={option.feature.properties.NID_fi}
+          selectRow={() => props.selectRow(option)}
+        />
+      );
+    }
+    if (option.layer === 'covid19') {
+      return (
+        <SelectCovid19OpeningHoursRow
+          {...option.feature.properties}
+          normalizedCat={option.feature.properties.normalized_cat}
+          key={option.feature.properties.fid}
+          selectRow={() => props.selectRow(option)}
+        />
+      );
+    }
+    if (option.layer === 'roadworks') {
+      return (
+        <RoadworksRow
+          {...option.feature}
+          key={option.feature.properties.Baustellennummer}
           selectRow={() => props.selectRow(option)}
         />
       );
@@ -64,7 +85,7 @@ function MarkerSelectPopup(props) {
   return (
     <div className="card marker-select-popup">
       <h3 className="padding-normal gray">
-        <FormattedMessage id="choose-stop" defaultMessage="Choose stop" />
+        <FormattedMessage id="choose-option" defaultMessage="Choose option" />
       </h3>
       <hr className="no-margin gray" />
       <div className="scrollable momentum-scroll card-row">{rows}</div>
@@ -73,7 +94,7 @@ function MarkerSelectPopup(props) {
           location={{
             address:
               props.options[0].feature.properties.name ||
-              props.options[0].feature.properties.NIMI,
+              props.options[0].feature.properties.Name_fi,
             lat: props.location.lat,
             lon: props.location.lng,
           }}

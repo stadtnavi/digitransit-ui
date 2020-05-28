@@ -371,6 +371,8 @@ export default function(req, res, next) {
       .catch(err => {
         // eslint-disable-next-line no-console
         console.log(err);
+        // the first element in the array is not an error message but it conveys the absence of information.
+        // it is required to continue the server-side rendering correctly.
         return ['', undefined];
       });
 

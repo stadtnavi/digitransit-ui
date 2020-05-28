@@ -239,7 +239,8 @@ $btn-heigth: 17px;
   &.subway,
   &.ferry,
   &.airplane,
-  &.citybike {
+  &.citybike,
+  &.carpool {
     .icon {
       color: $btn-icon-color-active;
     }
@@ -347,6 +348,38 @@ $btn-heigth: 17px;
   z-index: 1008;
   top: 0;
   left: 0;
+}
+
+.opening-hours {
+  .currently-open {
+    font-size: 13px;
+    margin-bottom: 19px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    tr {
+      td:last-child {
+        text-align: right;
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+.covid-19-badge {
+  border: 1px solid $poi-closed-color;
+  border-radius: 3px;
+  font-weight: bold;
+  color: $poi-closed-color;
+  padding: 0 3px;
+  font-size: 12px;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
 }
 
 .popup-container {

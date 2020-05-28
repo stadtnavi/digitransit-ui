@@ -49,6 +49,13 @@ export const getFill = memoize(selector => getStyleOrDefault(selector).fill);
 
 export const getModeColor = mode => getColor(`.${mode}`);
 
+export const iconExists = memoize(icon => {
+  if (!document) {
+    return null;
+  }
+  return !!document.getElementById(icon);
+});
+
 function getImageFromSpriteSync(icon, width, height, fill) {
   if (!document) {
     return null;
@@ -122,8 +129,22 @@ function drawIconImageBadge(
   );
 }
 
+export function drawIcon(icon, tile, geom, imageSize) {
+  return getImageFromSpriteCache(icon, imageSize, imageSize).then(image => {
+    drawIconImage(image, tile, geom, imageSize, imageSize);
+  });
+}
+
 /* eslint-disable no-param-reassign */
-export function drawRoundIcon(tile, geom, type, customScale, platformNumber) {
+export function drawRoundIcon(
+  tile,
+  geom,
+  type,
+  customScale,
+  platformNumber,
+  icon,
+  imageSize,
+) {
   const scale = customScale || 1;
   const caseRadius = getCaseRadius(tile.coords.z) * scale;
   const stopRadius = getStopRadius(tile.coords.z) * scale;
@@ -152,7 +173,7 @@ export function drawRoundIcon(tile, geom, type, customScale, platformNumber) {
     );
     tile.ctx.fill();
 
-    if (hubRadius > 0) {
+    if (hubRadius > 4) {
       tile.ctx.beginPath();
       tile.ctx.fillStyle = '#fff';
       tile.ctx.arc(
@@ -179,6 +200,10 @@ export function drawRoundIcon(tile, geom, type, customScale, platformNumber) {
           geom.x / tile.ratio,
           geom.y / tile.ratio,
         );
+      }
+
+      if (icon && imageSize) {
+        drawIcon(icon, tile, geom, imageSize);
       }
     }
   }
@@ -276,12 +301,20 @@ export function drawParkAndRideIcon(tile, geom, width, height) {
   );
 }
 
-export function drawCitybikeNotInUseIcon(tile, geom, imageSize) {
+export function drawCitybikeNotInUseIcon(
+  tile,
+  geom,
+  imageSize,
+  badgeSize,
+  scaleratio,
+) {
   return getImageFromSpriteCache(
     'icon-icon_not-in-use',
-    imageSize,
-    imageSize,
-  ).then(image => drawIconImage(image, tile, geom, imageSize, imageSize));
+    badgeSize,
+    badgeSize,
+  ).then(image =>
+    drawIconImageBadge(image, tile, geom, imageSize, badgeSize, scaleratio),
+  );
 }
 
 export function drawAvailabilityBadge(
@@ -306,12 +339,6 @@ export function drawAvailabilityBadge(
     badgeSize,
   ).then(image => {
     drawIconImageBadge(image, tile, geom, imageSize, badgeSize, scaleratio);
-  });
-}
-
-export function drawIcon(icon, tile, geom, imageSize) {
-  return getImageFromSpriteCache(icon, imageSize, imageSize).then(image => {
-    drawIconImage(image, tile, geom, imageSize, imageSize);
   });
 }
 
@@ -343,3 +370,17 @@ export function drawAvailabilityValue(
   tile.ctx.textBaseline = 'middle';
   tile.ctx.fillText(value, x, y);
 }
+
+export const getZoneLabelColor = config => {
+  if (typeof config.colors !== 'undefined' && config.colors.primary) {
+    return config.colors.primary;
+  }
+  return '#000';
+};
+
+export const getZoneLabel = (zoneId, config) => {
+  if (config.zoneIdMapping) {
+    return config.zoneIdMapping[zoneId];
+  }
+  return zoneId;
+};

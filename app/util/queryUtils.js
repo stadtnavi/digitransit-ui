@@ -55,6 +55,23 @@ export const clearQueryParams = (router, paramsToClear = []) => {
 };
 
 /**
+ * Processes query so that empty arrays will be preserved in URL
+ *
+ * @param {*} query The location query params to fix
+ */
+
+export const fixArrayParams = query => {
+  const fixedQuery = { ...query };
+
+  Object.keys(query).forEach(key => {
+    if (Array.isArray(query[key]) && !query[key].length) {
+      fixedQuery[key] = '';
+    }
+  });
+  return fixedQuery;
+};
+
+/**
  * Updates the browser's url with the given parameters.
  *
  * @param {*} router The router
@@ -66,15 +83,17 @@ export const replaceQueryParams = (router, newParams) => {
 
   const removeTriangleFactors =
     newParams.optimize &&
+    location.query &&
     location.query.optimize &&
     newParams.optimize !== location.query.optimize &&
     location.query.optimize === OptimizeType.Triangle;
   const triangleFactors = ['safetyFactor', 'slopeFactor', 'timeFactor'];
 
-  const query = {
+  const query = fixArrayParams({
     ...location.query,
     ...newParams,
-  };
+  });
+
   router.replace({
     ...location,
     query: removeTriangleFactors ? omit(query, triangleFactors) : query,

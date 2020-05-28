@@ -14,6 +14,7 @@ import {
 } from '../../../util/mapIconUtils';
 import { isBrowser } from '../../../util/browser';
 import Loading from '../../Loading';
+import { addAnalyticsEvent } from '../../../util/analyticsUtils';
 
 let L;
 
@@ -33,6 +34,14 @@ class StopMarker extends React.Component {
     renderName: PropTypes.bool,
     disableModeIcons: PropTypes.bool,
     selected: PropTypes.bool,
+    endPoint: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    renderName: false,
+    disableModeIcons: false,
+    selected: false,
+    endPoint: false,
   };
 
   static contextTypes = {
@@ -96,6 +105,29 @@ class StopMarker extends React.Component {
       iconSvg = '';
     }
 
+    if (this.props.mode === 'bus' && this.props.endPoint) {
+      const icon = Icon.asString({
+        img: 'icon_map-bus',
+        className: 'mode-icon',
+      });
+      let size;
+      if (zoom <= this.context.config.stopsSmallMaxZoom) {
+        size = this.context.config.stopsIconSize.small;
+      } else if (this.props.selected) {
+        size = this.context.config.stopsIconSize.selected;
+      } else {
+        size = this.context.config.stopsIconSize.default;
+      }
+      return L.divIcon({
+        html: icon,
+        iconSize: [size + 3, size + 3],
+        className: cx('cursor-pointer', this.props.mode, {
+          small: size === this.context.config.stopsIconSize.small,
+          selected: this.props.selected,
+        }),
+      });
+    }
+
     return L.divIcon({
       html: iconSvg,
       iconSize: [radius * 2, radius * 2],
@@ -144,7 +176,20 @@ class StopMarker extends React.Component {
               <Loading />
             </div>
           )}
-          renderFetched={data => <StopMarkerPopup {...data} />}
+          renderFetched={data => {
+            const pathPrefixMatch = window.location.pathname.match(
+              /^\/([a-z]{2,})\//,
+            );
+            const context = pathPrefixMatch ? pathPrefixMatch[1] : 'index';
+            addAnalyticsEvent({
+              action: 'SelectMapPoint',
+              category: 'Map',
+              name: 'stop',
+              type: this.props.mode.toUpperCase(),
+              context,
+            });
+            return <StopMarkerPopup {...data} />;
+          }}
         />
       </GenericMarker>
     );

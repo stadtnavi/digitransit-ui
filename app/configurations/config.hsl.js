@@ -471,10 +471,9 @@ export default {
     featureMapping: {
       ticketSales: {
         Palvelupiste: 'servicePoint',
-        'HSL Automaatti MNL': 'ticketMachine',
-        'HSL Automaatti KL': 'ticketMachine',
+        Monilippuautomaatti: 'ticketMachine',
+        Kertalippuautomaatti: 'ticketMachine',
         Myyntipiste: 'salesPoint',
-        'R-kioski': 'salesPoint',
       },
     },
   },
@@ -502,22 +501,8 @@ export default {
   useTicketIcons: true,
 
   cityBike: {
-    showCityBikes: false,
+    showCityBikes: true,
     networks: {
-      samocat: {
-        icon: 'scooter',
-        name: {
-          fi: 'Vuosaari',
-          sv: 'Nordsjö',
-          en: 'Vuosaari',
-        },
-        type: 'scooter',
-        url: {
-          fi: 'https://www.hsl.fi/potkulaudat',
-          sv: 'https://www.hsl.fi/sv/stadssparkcyklar',
-          en: 'https://www.hsl.fi/en/cityscooters',
-        },
-      },
       smoove: {
         icon: 'citybike',
         name: {
@@ -548,4 +533,5 @@ export default {
       },
     },
   },
+  showLogin: true,
 };

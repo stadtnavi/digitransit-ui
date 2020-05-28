@@ -5,7 +5,7 @@ const CONFIG = 'oulu';
 const APP_DESCRIPTION = 'Oulun seudun uusi reittiopas';
 const APP_TITLE = 'Reittiopas';
 
-const walttiConfig = require('./waltti').default;
+const walttiConfig = require('./config.waltti').default;
 
 export default configMerger(walttiConfig, {
   CONFIG,
@@ -163,5 +163,20 @@ export default configMerger(walttiConfig, {
         ],
       },
     ],
+  },
+  zoneIdMapping: {
+    1: 'A-city',
+    2: 'A',
+    3: 'B',
+    4: 'C',
+    5: 'D',
+  },
+  zoneIdFontSize: {
+    1: '10px',
+  },
+  stopCard: {
+    header: {
+      showZone: true,
+    },
   },
 });

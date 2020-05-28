@@ -4,15 +4,17 @@ import Relay from 'react-relay/classic';
 import { Link } from 'react-router';
 import connectToStores from 'fluxible-addons-react/connectToStores';
 import { FormattedMessage } from 'react-intl';
-import { PREFIX_ROUTES } from '../../../util/path';
+import { PREFIX_ROUTES, PREFIX_STOPS } from '../../../util/path';
 
 import RouteHeader from '../../RouteHeader';
 
-import { addFavouriteRoute } from '../../../action/FavouriteActions';
+import { addFavourite } from '../../../action/FavouriteActions';
 import { addAnalyticsEvent } from '../../../util/analyticsUtils';
 
 function TripMarkerPopup(props) {
-  let patternPath = `/${PREFIX_ROUTES}/${props.trip.route.gtfsId}/pysakit`;
+  let patternPath = `/${PREFIX_ROUTES}/${
+    props.trip.route.gtfsId
+  }/${PREFIX_STOPS}`;
   let tripPath = patternPath;
 
   if (props.trip.trip) {
@@ -77,14 +79,17 @@ TripMarkerPopup.propTypes = {
 
 const TripMarkerPopupWithFavourite = connectToStores(
   TripMarkerPopup,
-  ['FavouriteRoutesStore'],
+  ['FavouriteStore'],
   (context, props) => ({
     favourite: context
-      .getStore('FavouriteRoutesStore')
+      .getStore('FavouriteStore')
       .isFavourite(props.trip.route.gtfsId),
     addAsFavouriteRoute: e => {
       e.stopPropagation();
-      context.executeAction(addFavouriteRoute, props.trip.route.gtfsId);
+      context.executeAction(addFavourite, {
+        type: 'route',
+        gtfsId: props.trip.route.gtfsId,
+      });
     },
   }),
 );

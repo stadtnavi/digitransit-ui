@@ -7,6 +7,7 @@ import Card from '../../Card';
 import CardHeader from '../../CardHeader';
 import { station as exampleStation } from '../../ExampleData';
 import ComponentUsageExample from '../../ComponentUsageExample';
+import OSMOpeningHours from './OSMOpeningHours';
 
 class DynamicParkingLotsPopup extends React.Component {
   static contextTypes = {
@@ -80,22 +81,32 @@ class DynamicParkingLotsPopup extends React.Component {
     return null;
   }
 
+  renderOpeningHours() {
+    const {
+      feature: { properties },
+    } = this.props;
+    const openingHours = properties.opening_hours;
+    if (openingHours) {
+      return <OSMOpeningHours openingHours={openingHours} displayStatus />;
+    }
+    return null;
+  }
+
   render() {
-    const desc = (
-      <div>
-        {this.getCapacity()}
-        {this.getUrl()}
-      </div>
-    );
     return (
       <Card>
         <div className="padding-normal">
           <CardHeader
             name={this.props.feature.properties.name}
-            description={desc}
+            description={this.getCapacity()}
             unlinked
-            className="padding-small"
+            className="padding-medium"
+            headingStyle="h2"
           />
+          <div>
+            {this.renderOpeningHours()}
+            {this.getUrl()}
+          </div>
         </div>
         <MarkerPopupBottom
           location={{
@@ -114,17 +125,5 @@ DynamicParkingLotsPopup.contextTypes = {
 };
 
 export default Relay.createContainer(DynamicParkingLotsPopup, {
-  fragments: {
-    /* station: () => Relay.QL`
-      fragment on BikeRentalStation {
-        stationId
-        name
-        lat
-        lon
-        bikesAvailable
-        spacesAvailable
-        state
-      }
-    `, */
-  },
+  fragments: {},
 });

@@ -13,7 +13,7 @@ import {
   patternIdPredicate,
 } from '../util/alertUtils';
 import { isBrowser } from '../util/browser';
-import { PREFIX_ROUTES } from '../util/path';
+import { PREFIX_ROUTES, PREFIX_STOPS } from '../util/path';
 import {
   stopRealTimeClient,
   startRealTimeClient,
@@ -79,7 +79,13 @@ class DepartureListContainer extends Component {
   };
 
   static defaultProps = {
+    infiniteScroll: false,
+    showStops: false,
+    routeLinks: false,
+    className: '',
+    isTerminal: false,
     showPlatformCodes: false,
+    isStopPage: false,
   };
 
   constructor(props) {
@@ -243,12 +249,13 @@ class DepartureListContainer extends Component {
         />
       );
 
+      // DT-3331: added query string sort=no to Link's to
       if (this.props.routeLinks) {
         departureObjs.push(
           <Link
-            to={`/${PREFIX_ROUTES}/${departure.pattern.route.gtfsId}/pysakit/${
-              departure.pattern.code
-            }`}
+            to={`/${PREFIX_ROUTES}/${
+              departure.pattern.route.gtfsId
+            }/${PREFIX_STOPS}/${departure.pattern.code}?sort=no`}
             key={id}
             onClick={() => {
               addAnalyticsEvent({
@@ -257,6 +264,7 @@ class DepartureListContainer extends Component {
                 name: 'RightNowTab',
               });
             }}
+            onlyActiveOnIndex={false}
           >
             {departureObj}
           </Link>,

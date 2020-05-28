@@ -32,6 +32,12 @@ export const TransportMode = {
   Tram: 'TRAM',
 };
 
+export const MapMode = {
+  Default: 'default',
+  Satellite: 'satellite',
+  Bicycle: 'bicycle',
+};
+
 /**
  * Mode depicts different kinds of mode available as any kind of transportation.
  */

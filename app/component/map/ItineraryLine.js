@@ -36,11 +36,17 @@ class ItineraryLine extends React.Component {
   };
 
   static propTypes = {
-    legs: PropTypes.array,
+    legs: PropTypes.array.isRequired,
     passive: PropTypes.bool,
     hash: PropTypes.number,
     showTransferLabels: PropTypes.bool,
     showIntermediateStops: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    passive: false,
+    showTransferLabels: false,
+    showIntermediateStops: false,
   };
 
   render() {
@@ -159,6 +165,7 @@ class ItineraryLine extends React.Component {
                 }}
                 mode={mode.toLowerCase()}
                 renderText={leg.transitLeg && this.props.showTransferLabels}
+                endPoint
               />,
             );
             objs.push(
@@ -174,6 +181,7 @@ class ItineraryLine extends React.Component {
                 }}
                 mode={mode.toLowerCase()}
                 renderText={leg.transitLeg && this.props.showTransferLabels}
+                endPoint
               />,
             );
           }

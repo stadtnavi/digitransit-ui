@@ -5,14 +5,17 @@ import {
   locationToOTP,
   addressToItinerarySearch,
 } from './otpStrings';
+import { addAnalyticsEvent } from './analyticsUtils';
 
 const debug = d('path.js');
-export const TAB_NEARBY = 'lahellasi';
-export const TAB_FAVOURITES = 'suosikit';
-export const PREFIX_ROUTES = 'linjat';
-export const PREFIX_STOPS = 'pysakit';
-export const PREFIX_TERMINALS = 'terminaalit';
-export const PREFIX_ITINERARY_SUMMARY = 'reitti';
+export const TAB_NEARBY = 'indernaehe';
+export const TAB_FAVOURITES = 'gespeichertesuchen';
+export const PREFIX_ROUTES = 'routen';
+export const PREFIX_STOPS = 'haltestellen';
+export const PREFIX_TERMINALS = 'busbahnhoefe';
+export const PREFIX_ITINERARY_SUMMARY = 'reiseplan';
+export const PREFIX_TIMETABLE = 'fahrplan';
+export const PREFIX_DISRUPTION = 'stoerungen';
 export const stopUrl = id => id;
 
 export const getRoutePath = (origin, destination) =>
@@ -182,5 +185,12 @@ export const navigateTo = ({
     router.push(url);
   } else {
     router.replace(url);
+  }
+  if (origin && destination && origin.ready && destination.ready) {
+    addAnalyticsEvent({
+      category: 'Itinerary',
+      action: 'ItinerariesSearched',
+      name: null,
+    });
   }
 };

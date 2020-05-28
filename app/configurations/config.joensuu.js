@@ -5,7 +5,7 @@ const CONFIG = 'joensuu';
 const APP_TITLE = 'Joensuun reittiopas';
 const APP_DESCRIPTION = 'Joensuun uusi reittiopas';
 
-const walttiConfig = require('./waltti').default;
+const walttiConfig = require('./config.waltti').default;
 
 export default configMerger(walttiConfig, {
   CONFIG,
@@ -127,5 +127,15 @@ export default configMerger(walttiConfig, {
         ],
       },
     ],
+  },
+  zoneIdMapping: {
+    1: 'A',
+    2: 'B',
+    3: 'C',
+  },
+  stopCard: {
+    header: {
+      showZone: true,
+    },
   },
 });

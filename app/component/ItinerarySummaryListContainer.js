@@ -64,7 +64,7 @@ function ItinerarySummaryListContainer(
     const canceledItinerariesCount = itineraries.filter(itineraryHasCancelation)
       .length;
     return (
-      <div className="summary-list-container">
+      <div className="summary-list-container" role="list">
         {isBrowser && summaries}
         {isBrowser &&
           canceledItinerariesCount > 0 && (
@@ -187,10 +187,10 @@ ItinerarySummaryListContainer.propTypes = {
   from: locationShape.isRequired,
   intermediatePlaces: PropTypes.arrayOf(locationShape),
   itineraries: PropTypes.array,
-  locationState: PropTypes.object,
+  locationState: PropTypes.object.isRequired,
   onSelect: PropTypes.func.isRequired,
   onSelectImmediately: PropTypes.func.isRequired,
-  open: PropTypes.number,
+  open: PropTypes.number.isRequired,
   searchTime: PropTypes.number.isRequired,
   to: locationShape.isRequired,
 };

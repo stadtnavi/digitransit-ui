@@ -4,6 +4,7 @@ import React from 'react';
 import Relay from 'react-relay/classic';
 import { FormattedMessage, intlShape } from 'react-intl';
 import cx from 'classnames';
+import sortBy from 'lodash/sortBy'; // DT-3182
 import { routerShape } from 'react-router';
 
 import Icon from './Icon';
@@ -12,7 +13,7 @@ import FavouriteRouteContainer from './FavouriteRouteContainer';
 import RoutePatternSelect from './RoutePatternSelect';
 import RouteAgencyInfo from './RouteAgencyInfo';
 import RouteNumber from './RouteNumber';
-import { DATE_FORMAT } from '../constants';
+import { DATE_FORMAT, AlertSeverityLevelType } from '../constants';
 import {
   startRealTimeClient,
   stopRealTimeClient,
@@ -24,16 +25,27 @@ import {
   getServiceAlertsForRouteStops,
   isAlertActive,
   getActiveAlertSeverityLevel,
+  getServiceAlertsForStop,
+  getCancelationsForStop,
+  getServiceAlertsForStopRoutes,
 } from '../util/alertUtils';
-import { PREFIX_ROUTES } from '../util/path';
+import {
+  PREFIX_DISRUPTION,
+  PREFIX_ROUTES,
+  PREFIX_STOPS,
+  PREFIX_TIMETABLE,
+} from '../util/path';
 import withBreakpoint from '../util/withBreakpoint';
-import { RouteAlertsQuery, StopAlertsQuery } from '../util/alertQueries';
+import {
+  RouteAlertsQuery,
+  StopAlertsWithContentQuery,
+} from '../util/alertQueries';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 
 const Tab = {
-  Disruptions: 'hairiot',
-  Stops: 'pysakit',
-  Timetable: 'aikataulu',
+  Disruptions: PREFIX_DISRUPTION,
+  Stops: PREFIX_STOPS,
+  Timetable: PREFIX_TIMETABLE,
 };
 
 const getActiveTab = pathname => {
@@ -72,9 +84,65 @@ class RoutePage extends React.Component {
   // gets called if pattern has not been visited before
   componentDidMount() {
     const { params, route } = this.props;
-    const { config, executeAction } = this.context;
+    const { config, executeAction, router } = this.context; // DT-3182: added router for changing URL
+    if (!route || !route.patterns) {
+      return;
+    }
+
+    const { location } = router;
+
+    const lengthPathName =
+      location !== undefined ? location.pathname.length : 0; // DT-3331
+    const lengthIndexOfPattern =
+      location !== undefined
+        ? location.pathname.indexOf(params.patternId) + params.patternId.length
+        : 0; // DT-3331
+    const noSortFound =
+      location !== undefined
+        ? location.search.indexOf('sort=no') !== -1
+        : false; // DT-3331
+    const reRouteAllowed =
+      lengthPathName === lengthIndexOfPattern && !noSortFound; // DT-3331
+
+    let sortedPatternsByCountOfTrips;
+    const tripsExists = route.patterns ? 'trips' in route.patterns[0] : false;
+
+    // DT-3331 added reRouteAllowed
+    if (tripsExists && reRouteAllowed) {
+      sortedPatternsByCountOfTrips = sortBy(
+        sortBy(route.patterns, 'code').reverse(),
+        'trips.length',
+      ).reverse();
+    }
+    const pattern =
+      sortedPatternsByCountOfTrips !== undefined
+        ? sortedPatternsByCountOfTrips[0]
+        : route.patterns.find(({ code }) => code === params.patternId);
+
+    if (!pattern) {
+      return;
+    }
+
+    // DT-3182: call this only 1st time for changing URL to wanted route (most trips)
+    // DT-3331: added reRouteAllowed
+    if (
+      location !== undefined &&
+      location.action === 'PUSH' &&
+      params.patternId !== pattern.code &&
+      reRouteAllowed
+    ) {
+      router.replace(
+        decodeURIComponent(location.pathname).replace(
+          new RegExp(`${params.patternId}(.*)`),
+          pattern.code,
+        ),
+      );
+      return;
+    }
+
     const { realTime } = config;
-    if (!realTime || route == null) {
+
+    if (!realTime) {
       return;
     }
 
@@ -85,14 +153,12 @@ class RoutePage extends React.Component {
       return;
     }
 
-    const pattern = route.patterns.find(
-      ({ code }) => code === params.patternId,
-    );
-    if (!pattern) {
-      return;
-    }
+    const id =
+      sortedPatternsByCountOfTrips !== undefined &&
+      pattern.code !== params.patternId
+        ? routeParts[1]
+        : source.routeSelector(this.props);
 
-    const id = source.routeSelector(this.props);
     executeAction(startRealTimeClient, {
       ...source,
       agency,
@@ -167,13 +233,13 @@ class RoutePage extends React.Component {
     this.context.router.replace(path);
     let action;
     switch (tab) {
-      case 'aikataulu':
+      case PREFIX_TIMETABLE:
         action = 'OpenTimetableTab';
         break;
-      case 'pysakit':
+      case PREFIX_STOPS:
         action = 'OpenStopsTab';
         break;
-      case 'hairiot':
+      case PREFIX_DISRUPTION:
         action = 'OpenDisruptionsTab';
         break;
       default:
@@ -202,7 +268,6 @@ class RoutePage extends React.Component {
     }
 
     const activeTab = getActiveTab(location.pathname);
-
     const currentTime = moment().unix();
     const hasActiveAlert = isAlertActive(
       getCancelationsForRoute(route, patternId),
@@ -212,14 +277,50 @@ class RoutePage extends React.Component {
       ],
       currentTime,
     );
+
+    const routePatternStopAlerts = [];
+
+    if (route.patterns && route.patterns.length > 0) {
+      route.patterns.forEach(
+        pattern =>
+          pattern.stops &&
+          pattern.stops.forEach(stop => {
+            return (
+              getActiveAlertSeverityLevel(
+                [
+                  ...getCancelationsForStop(stop),
+                  ...getServiceAlertsForStop(stop),
+                  ...getServiceAlertsForStopRoutes(stop),
+                ],
+                currentTime,
+              ) && routePatternStopAlerts.push(...stop.alerts)
+            );
+          }),
+      );
+    }
+
     const hasActiveServiceAlerts = getActiveAlertSeverityLevel(
       getServiceAlertsForRoute(route, patternId),
       currentTime,
     );
 
     const disruptionClassName =
-      (hasActiveAlert && 'active-disruption-alert') ||
-      (hasActiveServiceAlerts && 'active-service-alert');
+      ((hasActiveAlert ||
+        routePatternStopAlerts.find(
+          alert =>
+            alert.severityLevel ===
+            (AlertSeverityLevelType.Severe || AlertSeverityLevelType.Warning),
+        )) &&
+        'active-disruption-alert') ||
+      ((hasActiveServiceAlerts ||
+        routePatternStopAlerts.find(
+          alert =>
+            alert.severityLevel !==
+            (AlertSeverityLevelType.Severe || AlertSeverityLevelType.Warning),
+        )) &&
+        'active-service-alert');
+
+    const useCurrentTime = activeTab === Tab.Stops; // DT-3182
 
     return (
       <div>
@@ -306,6 +407,7 @@ class RoutePage extends React.Component {
               onSelectChange={this.onPatternChange}
               gtfsId={route.gtfsId}
               className={cx({ 'bp-large': breakpoint === 'large' })}
+              useCurrentTime={useCurrentTime}
             />
           )}
           <RouteAgencyInfo route={route} />
@@ -315,6 +417,7 @@ class RoutePage extends React.Component {
   }
 }
 
+// DT-2531: added activeDates
 const containerComponent = Relay.createContainer(withBreakpoint(RoutePage), {
   fragments: {
     route: () =>
@@ -336,7 +439,7 @@ const containerComponent = Relay.createContainer(withBreakpoint(RoutePage), {
           headsign
           code
           stops {
-            ${StopAlertsQuery}
+            ${StopAlertsWithContentQuery}
           }
           trips: tripsForDate(serviceDay: $serviceDay) {
             stoptimes: stoptimesForDate(serviceDay: $serviceDay) {
@@ -345,6 +448,9 @@ const containerComponent = Relay.createContainer(withBreakpoint(RoutePage), {
               scheduledDeparture
               serviceDay
             }
+          }
+          activeDates: trips {
+            day: activeDates
           }
         }
       }

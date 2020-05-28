@@ -168,6 +168,10 @@ DepartureTime.propTypes = {
 };
 
 DepartureTime.defaultProps = {
+  className: '',
+  canceled: false,
+  realtime: false,
+  useUTC: false,
   showCancelationIcon: false,
 };
 

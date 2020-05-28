@@ -11,12 +11,13 @@ import Icon from './Icon';
 import ModeFilter from './ModeFilter';
 import RightOffcanvasToggle from './RightOffcanvasToggle';
 import TimeSelectorContainer from './TimeSelectorContainer';
-import { QuickOptionSetType } from '../constants';
-import { getModes, isBikeRestricted } from '../util/modeUtils';
+import { OptimizeType, QuickOptionSetType } from '../constants';
+import { getModes, getStreetMode, isBikeRestricted } from '../util/modeUtils';
 import {
   matchQuickOption,
   getQuickOptionSets,
   getApplicableQuickOptionSets,
+  getCurrentSettings,
 } from '../util/planParamUtil';
 import { getCustomizedSettings } from '../store/localStorage';
 import { replaceQueryParams, clearQueryParams } from '../util/queryUtils';
@@ -50,6 +51,23 @@ class QuickSettingsPanel extends React.Component {
     toggleAirplaneState: () => this.toggleTransportMode('airplane'),
     toggleCarpoolState: () => this.toggleTransportMode('carpool'),
   };
+
+  componentDidMount() {
+    const defaultOption = matchQuickOption(this.context);
+    const { config, router, query } = this.context;
+    const currentSettings = getCurrentSettings(config, query);
+    if (
+      currentSettings.optimize === OptimizeType.Triangle &&
+      defaultOption === QuickOptionSetType.DefaultRoute
+    ) {
+      replaceQueryParams(router, {
+        optimize: currentSettings.optimize,
+        safetyFactor: currentSettings.safetyFactor,
+        slopeFactor: currentSettings.slopeFactor,
+        timeFactor: currentSettings.timeFactor,
+      });
+    }
+  }
 
   onRequestChange = newState => {
     this.internalSetOffcanvas(newState);
@@ -163,12 +181,23 @@ class QuickSettingsPanel extends React.Component {
     const applicableQuickOptionSets = getApplicableQuickOptionSets(
       this.context,
     );
+    // isCarpool will be true if carpool was chosen as streetMode
+    const shouldRenderSecondRow =
+      getStreetMode(this.context.router.location, this.context.config) ===
+      'CARPOOL';
+    const modesWithNoBicycle = this.context.config.modesWithNoBike;
 
     return (
       <div className={cx(['quicksettings-container'])}>
         <AlertPopUp
+          className="no-bike-allowed-popup"
           isPopUpOpen={this.state.isPopUpOpen}
-          textId="no-bike-allowed-popup"
+          textId={
+            Array.isArray(modesWithNoBicycle) &&
+            modesWithNoBicycle.includes('RAIL')
+              ? 'no-bike-allowed-popup-train'
+              : 'no-bike-allowed-popup-tram-bus'
+          }
           icon="caution"
           togglePopUp={this.togglePopUp}
         />
@@ -180,6 +209,10 @@ class QuickSettingsPanel extends React.Component {
           />
           <div className="select-wrapper">
             <select
+              aria-label={this.context.intl.formatMessage({
+                id: 'arrive-leave',
+                defaultMessage: 'Arrive or leave at selected time',
+              })}
               className="arrive"
               value={arriveBy}
               onChange={this.setArriveBy}
@@ -213,110 +246,116 @@ class QuickSettingsPanel extends React.Component {
             />
           </div>
         </div>
-        <div className="bottom-row">
-          <div className="toggle-modes">
-            <ModeFilter
-              action={this.actions}
-              buttonClass="mode-icon"
-              selectedModes={Object.keys(this.context.config.transportModes)
-                .filter(
-                  mode =>
-                    this.context.config.transportModes[mode]
-                      .availableForSelection,
-                )
-                .filter(mode => this.isModeSelected(mode))
-                .map(mode => mode.toUpperCase())}
-            />
-          </div>
-          <div className="select-wrapper">
-            <select
-              className="select-route-modes"
-              value={quickOption}
-              onChange={e => this.setQuickOption(e.target.value)}
-            >
-              <option value="default-route">
-                {this.context.intl.formatMessage({
-                  id: 'route-default',
-                  defaultMessage: 'Default settings',
-                })}
-              </option>
-              {applicableQuickOptionSets.includes('least-transfers') && (
-                <option value="least-transfers">
+        {shouldRenderSecondRow ? (
+          ''
+        ) : (
+          <div className="bottom-row">
+            <div className="toggle-modes">
+              <ModeFilter
+                action={this.actions}
+                buttonClass="mode-icon"
+                selectedModes={Object.keys(this.context.config.transportModes)
+                  .filter(
+                    mode =>
+                      this.context.config.transportModes[mode]
+                        .availableForSelection,
+                  )
+                  .filter(mode => this.isModeSelected(mode))
+                  .map(mode => mode.toUpperCase())}
+              />
+            </div>
+            <div className="select-wrapper">
+              <select
+                className="select-route-modes"
+                value={quickOption}
+                onChange={e => this.setQuickOption(e.target.value)}
+              >
+                <option value="default-route">
                   {this.context.intl.formatMessage({
-                    id: 'route-least-transfers',
-                    defaultMessage: 'Least transfers',
+                    id: 'route-default',
+                    defaultMessage: 'Default settings',
                   })}
                 </option>
-              )}
-              {applicableQuickOptionSets.includes('least-walking') && (
-                <option value="least-walking">
-                  {this.context.intl.formatMessage({
-                    id: 'route-least-walking',
-                    defaultMessage: 'Least walking',
-                  })}
-                </option>
-              )}
-              {applicableQuickOptionSets.includes(
-                'least-elevation-changes',
-              ) && (
-                <option value="least-elevation-changes">
-                  {this.context.intl.formatMessage({
-                    id: 'route-least-elevation-changes',
-                    defaultMessage: 'Least elevation changes',
-                  })}
-                </option>
-              )}
-              {applicableQuickOptionSets.includes('prefer-walking-routes') && (
-                <option value="prefer-walking-routes">
-                  {this.context.intl.formatMessage({
-                    id: 'route-prefer-walking-routes',
-                    defaultMessage: 'Prefer walking routes',
-                  })}
-                </option>
-              )}
-              {applicableQuickOptionSets.includes('prefer-greenways') && (
-                <option value="prefer-greenways">
-                  {this.context.intl.formatMessage({
-                    id: 'route-prefer-greenways',
-                    defaultMessage: 'Prefer cycling routes',
-                  })}
-                </option>
-              )}
-              {applicableQuickOptionSets.includes(
-                'public-transport-with-bicycle',
-              ) && (
-                <option value="public-transport-with-bicycle">
-                  {this.context.intl.formatMessage({
-                    id: 'route-public-transport-with-bicycle',
-                    defaultMessage: 'Public transport with bicycle',
-                  })}
-                </option>
-              )}
-              {customizedSettings &&
-                Object.keys(customizedSettings).length > 0 &&
-                applicableQuickOptionSets.includes('saved-settings') && (
-                  <option value="saved-settings">
+                {applicableQuickOptionSets.includes('least-transfers') && (
+                  <option value="least-transfers">
                     {this.context.intl.formatMessage({
-                      id: 'route-saved-settings',
-                      defaultMessage: 'Customized mode',
+                      id: 'route-least-transfers',
+                      defaultMessage: 'Least transfers',
                     })}
                   </option>
                 )}
-              {quickOption === 'custom-settings' && (
-                <option value="custom-settings">
-                  {this.context.intl.formatMessage({
-                    id: 'route-custom-settings',
-                    defaultMessage: 'Current Settings',
-                  })}
-                </option>
-              )}
-            </select>
-            <Icon
-              className="fake-select-arrow"
-              img="icon-icon_arrow-dropdown"
-            />
+                {applicableQuickOptionSets.includes('least-walking') && (
+                  <option value="least-walking">
+                    {this.context.intl.formatMessage({
+                      id: 'route-least-walking',
+                      defaultMessage: 'Least walking',
+                    })}
+                  </option>
+                )}
+                {applicableQuickOptionSets.includes(
+                  'least-elevation-changes',
+                ) && (
+                  <option value="least-elevation-changes">
+                    {this.context.intl.formatMessage({
+                      id: 'route-least-elevation-changes',
+                      defaultMessage: 'Least elevation changes',
+                    })}
+                  </option>
+                )}
+                {applicableQuickOptionSets.includes(
+                  'prefer-walking-routes',
+                ) && (
+                  <option value="prefer-walking-routes">
+                    {this.context.intl.formatMessage({
+                      id: 'route-prefer-walking-routes',
+                      defaultMessage: 'Prefer walking routes',
+                    })}
+                  </option>
+                )}
+                {applicableQuickOptionSets.includes('prefer-greenways') && (
+                  <option value="prefer-greenways">
+                    {this.context.intl.formatMessage({
+                      id: 'route-prefer-greenways',
+                      defaultMessage: 'Prefer cycling routes',
+                    })}
+                  </option>
+                )}
+                {applicableQuickOptionSets.includes(
+                  'public-transport-with-bicycle',
+                ) && (
+                  <option value="public-transport-with-bicycle">
+                    {this.context.intl.formatMessage({
+                      id: 'route-public-transport-with-bicycle',
+                      defaultMessage: 'Public transport with bicycle',
+                    })}
+                  </option>
+                )}
+                {customizedSettings &&
+                  Object.keys(customizedSettings).length > 0 &&
+                  applicableQuickOptionSets.includes('saved-settings') && (
+                    <option value="saved-settings">
+                      {this.context.intl.formatMessage({
+                        id: 'route-saved-settings',
+                        defaultMessage: 'Customized mode',
+                      })}
+                    </option>
+                  )}
+                {quickOption === 'custom-settings' && (
+                  <option value="custom-settings">
+                    {this.context.intl.formatMessage({
+                      id: 'route-custom-settings',
+                      defaultMessage: 'Current Settings',
+                    })}
+                  </option>
+                )}
+              </select>
+              <Icon
+                className="fake-select-arrow"
+                img="icon-icon_arrow-dropdown"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }

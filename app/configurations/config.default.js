@@ -73,7 +73,7 @@ export default {
   realTimePatch: REALTIME_PATCH,
 
   // Google Tag Manager id
-  GTMid: 'GTM-PZV2S2V',
+  GTMid: process.env.GTM_ID || null,
 
   /*
    * by default search endpoints from all but gtfs sources, correct gtfs source
@@ -104,7 +104,7 @@ export default {
     minTransferTime: 120,
     optimize: 'QUICK',
     preferredRoutes: [],
-    ticketTypes: null,
+    ticketTypes: 'none',
     transferPenalty: 0,
     unpreferredRoutes: [],
     walkBoardCost: 600,
@@ -164,12 +164,15 @@ export default {
   maxBikingDistance: 100000,
   itineraryFiltering: 1.5, // drops 66% worse routes
   useUnpreferredRoutesPenalty: 1200, // adds 10 minute (weight) penalty to routes that are unpreferred
-  availableLanguages: ['fi', 'sv', 'en', 'fr', 'nb', 'de'],
+  availableLanguages: ['fi', 'sv', 'en', 'fr', 'nb', 'de', 'da', 'es', 'ro'],
   defaultLanguage: 'en',
   // This timezone data will expire on 31.12.2020
   timezoneData:
     'Europe/Helsinki|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 ' +
     'WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|35e5',
+
+  /* Option to disable the "next" column of the Route panel as it can be confusing sometimes: https://github.com/mfdz/digitransit-ui/issues/167 */
+  displayNextDeparture: true,
 
   mainMenu: {
     // Whether to show the left menu toggle button at all
@@ -192,6 +195,8 @@ export default {
     },
 
     showZoneLimits: false,
+    // Number of days to include to the service time range from the future (DT-3317)
+    serviceTimeRange: 30,
   },
 
   nearestStopDistance: {
@@ -264,6 +269,7 @@ export default {
     // When should bikeshare availability be rendered in orange rather than green
     fewAvailableCount: 3,
     networks: {},
+    useSpacesAvailable: true,
   },
 
   // Lowest level for stops and terminals are rendered
@@ -393,7 +399,7 @@ export default {
     },
 
     citybike: {
-      availableForSelection: false,
+      availableForSelection: true,
       defaultValue: false, // always false
     },
 
@@ -437,6 +443,13 @@ export default {
       defaultValue: false,
       exclusive: false,
       icon: 'car_park-withoutBox',
+    },
+
+    carpool: {
+      availableForSelection: false,
+      defaultValue: false,
+      exclusive: true,
+      icon: 'carpool-withoutBox',
     },
   },
 

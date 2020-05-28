@@ -272,7 +272,6 @@ class TransitLeg extends React.Component {
                   <span className={cx({ canceled: legHasCancelation(leg) })}>
                     {moment(leg.startTime).format('HH:mm')}
                   </span>
-                  <br />
                   {originalTime}
                 </span>
               </div>

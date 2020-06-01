@@ -113,16 +113,16 @@ class TransitLeg extends React.Component {
   renderMain = () => {
     const { children, focusAction, index, leg, mode } = this.props;
     const { config, intl } = this.context;
-    const isLate = leg.departureDelay >= config.itinerary.delayThreshold;
+    const isLate = leg.departureDelay <= config.itinerary.delayThreshold;
 
     const originalTime = leg.realTime &&
       isLate && [
-        <br key="br" />,
         <span key="time" className="original-time">
           {moment(leg.startTime)
             .subtract(leg.departureDelay, 's')
             .format('HH:mm')}
         </span>,
+        <br key="br" />,
       ];
     const LegRouteName = leg.from.name.concat(' - ').concat(leg.to.name);
     const firstLegClassName = index === 0 ? ' start' : '';
@@ -268,10 +268,10 @@ class TransitLeg extends React.Component {
                       className="realtime-icon realtime"
                     />
                   )}
+                  {originalTime}
                   <span className={cx({ canceled: legHasCancelation(leg) })}>
                     {moment(leg.startTime).format('HH:mm')}
                   </span>
-                  {originalTime}
                 </span>
               </div>
               <RouteNumber //  shouldn't this be a route number container instead???

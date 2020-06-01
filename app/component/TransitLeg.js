@@ -116,7 +116,6 @@ class TransitLeg extends React.Component {
     const isLate = leg.departureDelay >= config.itinerary.delayThreshold;
 
     const originalTime = leg.realTime &&
-      leg.departureDelay &&
       isLate && [
         <br key="br" />,
         <span key="time" className="original-time">

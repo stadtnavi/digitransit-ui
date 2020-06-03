@@ -18,6 +18,19 @@ function DepartureTime(props, context) {
   const timeDiffInMinutes = Math.floor(
     (props.departureTime - props.currentTime) / 60,
   );
+  const isLate =
+    props.departureDelay >= context.config.itinerary.delayThreshold;
+
+  const originalTime = props.realtime &&
+    isLate && [
+      <span key="time" className="gray">
+        <LocalTime
+          forceUtc={props.useUTC}
+          time={props.departureTime - props.departureDelay}
+        />
+      </span>,
+      <br key="br" />,
+    ];
 
   if (
     timeDiffInMinutes < 0 ||
@@ -60,11 +73,13 @@ function DepartureTime(props, context) {
           {
             realtime: props.realtime,
             canceled: props.canceled,
+            late: isLate,
           },
           props.className,
         )}
       >
         {realtime}
+        {originalTime}
         {shownTime}
       </span>
       {props.canceled &&
@@ -77,6 +92,11 @@ function DepartureTime(props, context) {
 
 DepartureTime.contextTypes = {
   intl: intlShape.isRequired, // eslint-disable-line react/no-typos
+  config: PropTypes.shape({
+    itinerary: PropTypes.shape({
+      delayThreshold: PropTypes.number,
+    }).isRequired,
+  }).isRequired,
 };
 
 DepartureTime.description = () => (
@@ -125,6 +145,7 @@ DepartureTime.propTypes = {
   style: PropTypes.object,
   useUTC: PropTypes.bool,
   showCancelationIcon: PropTypes.bool,
+  departureDelay: PropTypes.number,
 };
 
 DepartureTime.defaultProps = {

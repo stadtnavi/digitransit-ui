@@ -43,6 +43,7 @@ function Departure({
       {!staticDeparture && (
         <DepartureTime
           departureTime={departure.stoptime}
+          departureDelay={departure.departureDelay}
           realtime={departure.realtime}
           currentTime={currentTime}
           canceled={canceled}

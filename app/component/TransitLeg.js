@@ -113,7 +113,7 @@ class TransitLeg extends React.Component {
   renderMain = () => {
     const { children, focusAction, index, leg, mode } = this.props;
     const { config, intl } = this.context;
-    const isLate = leg.departureDelay <= config.itinerary.delayThreshold;
+    const isLate = leg.departureDelay >= config.itinerary.delayThreshold;
 
     const originalTime = leg.realTime &&
       isLate && [

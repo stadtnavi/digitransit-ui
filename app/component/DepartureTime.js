@@ -23,13 +23,12 @@ function DepartureTime(props, context) {
 
   const originalTime = props.realtime &&
     isLate && [
-      <span key="time" className="gray">
+      <span key="time" className="text-right gray linethrough">
         <LocalTime
           forceUtc={props.useUTC}
           time={props.departureTime - props.departureDelay}
         />
       </span>,
-      <br key="br" />,
     ];
 
   if (
@@ -79,8 +78,7 @@ function DepartureTime(props, context) {
         )}
       >
         {realtime}
-        {originalTime}
-        {shownTime}
+        {originalTime} {shownTime}
       </span>
       {props.canceled &&
         props.showCancelationIcon && (

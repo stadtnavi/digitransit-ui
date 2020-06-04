@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
-import { intlShape, FormattedMessage } from 'react-intl';
+import { intlShape } from 'react-intl';
 
 import Icon from './Icon';
 import LocalTime from './LocalTime';
@@ -14,10 +14,9 @@ import {
 } from './ExampleData';
 
 function DepartureTime(props, context) {
-  let shownTime;
-  const timeDiffInMinutes = Math.floor(
-    (props.departureTime - props.currentTime) / 60,
-  );
+  const shownTime = props.departureTime ? (
+    <LocalTime forceUtc={props.useUTC} time={props.departureTime} />
+  ) : null;
   const isLate =
     props.departureDelay >= context.config.itinerary.delayThreshold;
 
@@ -31,6 +30,10 @@ function DepartureTime(props, context) {
       </span>,
     ];
 
+  /* Display time remaining until departure in minutes.
+  const timeDiffInMinutes = Math.floor(
+    (props.departureTime - props.currentTime) / 60,
+  );
   if (
     timeDiffInMinutes < 0 ||
     timeDiffInMinutes > context.config.minutesToDepartureLimit
@@ -48,7 +51,7 @@ function DepartureTime(props, context) {
         values={{ minutes: timeDiffInMinutes }}
       />
     );
-  }
+  } */
 
   let realtime;
   if (props.realtime && !props.canceled) {
@@ -137,7 +140,7 @@ DepartureTime.displayName = 'DepartureTime';
 DepartureTime.propTypes = {
   className: PropTypes.string,
   canceled: PropTypes.bool,
-  currentTime: PropTypes.number.isRequired,
+  // currentTime: PropTypes.number.isRequired,
   departureTime: PropTypes.number.isRequired,
   realtime: PropTypes.bool,
   style: PropTypes.object,

@@ -191,6 +191,7 @@ export const mapStopTime = (stoptime, pattern) => ({
   realtime: stoptime.realtimeDeparture !== -1 && stoptime.realtime,
   pattern: pattern && pattern.pattern,
   trip: stoptime.trip,
+  departureDelay: stoptime.departureDelay,
 });
 
 /**
@@ -198,15 +199,18 @@ export const mapStopTime = (stoptime, pattern) => ({
  *  @param stoptime stoptime from graphql
  *  @param currentTime
  *  @param showCancelationIcon whether an icon should be shown if the departure is canceled.
+ *  @param displayOriginalTime whether original time should be shown if there's a delay.
  */
 export const fromStopTime = (
   stoptime,
   currentTime,
   showCancelationIcon = true,
+  displayOriginalTime = false,
 ) => (
   <DepartureTime
     currentTime={currentTime}
     {...mapStopTime(stoptime)}
     showCancelationIcon={showCancelationIcon}
+    displayOriginalTime={displayOriginalTime}
   />
 );

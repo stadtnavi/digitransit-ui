@@ -77,6 +77,7 @@ class DepartureListContainer extends Component {
     isTerminal: PropTypes.bool,
     showPlatformCodes: PropTypes.bool,
     isStopPage: PropTypes.bool,
+    displayOriginalTime: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -87,6 +88,7 @@ class DepartureListContainer extends Component {
     isTerminal: false,
     showPlatformCodes: false,
     isStopPage: false,
+    displayOriginalTime: false,
   };
 
   constructor(props) {
@@ -259,6 +261,7 @@ class DepartureListContainer extends Component {
           isArrival={departure.isArrival}
           isLastStop={departure.isLastStop}
           showPlatformCode={this.props.showPlatformCodes}
+          displayOriginalTime={this.props.displayOriginalTime}
         />
       );
 

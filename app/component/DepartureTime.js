@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
-import { intlShape } from 'react-intl';
+import { intlShape, FormattedMessage } from 'react-intl';
 
 import Icon from './Icon';
 import LocalTime from './LocalTime';
@@ -14,44 +14,46 @@ import {
 } from './ExampleData';
 
 function DepartureTime(props, context) {
-  const shownTime = props.departureTime ? (
+  let shownTime = props.departureTime ? (
     <LocalTime forceUtc={props.useUTC} time={props.departureTime} />
   ) : null;
+  let originalTime = null;
   const isLate =
     props.departureDelay >= context.config.itinerary.delayThreshold;
 
-  const originalTime = props.realtime &&
-    isLate && [
-      <span key="time" className="text-right gray linethrough">
-        <LocalTime
-          forceUtc={props.useUTC}
-          time={props.departureTime - props.departureDelay}
-        />
-      </span>,
-    ];
-
-  /* Display time remaining until departure in minutes.
-  const timeDiffInMinutes = Math.floor(
-    (props.departureTime - props.currentTime) / 60,
-  );
-  if (
-    timeDiffInMinutes < 0 ||
-    timeDiffInMinutes > context.config.minutesToDepartureLimit
-  ) {
-    shownTime = (
-      <LocalTime forceUtc={props.useUTC} time={props.departureTime} />
-    );
-  } else if (timeDiffInMinutes === 0) {
-    shownTime = <FormattedMessage id="arriving-soon" defaultMessage="Now" />;
+  if (props.displayOriginalTime) {
+    originalTime = props.realtime &&
+      isLate && [
+        <span key="time" className="text-right gray linethrough">
+          <LocalTime
+            forceUtc={props.useUTC}
+            time={props.departureTime - props.departureDelay}
+          />{' '}
+        </span>,
+      ];
   } else {
-    shownTime = (
-      <FormattedMessage
-        id="departure-time-in-minutes"
-        defaultMessage="{minutes} min"
-        values={{ minutes: timeDiffInMinutes }}
-      />
+    const timeDiffInMinutes = Math.floor(
+      (props.departureTime - props.currentTime) / 60,
     );
-  } */
+    if (
+      timeDiffInMinutes < 0 ||
+      timeDiffInMinutes > context.config.minutesToDepartureLimit
+    ) {
+      shownTime = (
+        <LocalTime forceUtc={props.useUTC} time={props.departureTime} />
+      );
+    } else if (timeDiffInMinutes === 0) {
+      shownTime = <FormattedMessage id="arriving-soon" defaultMessage="Now" />;
+    } else {
+      shownTime = (
+        <FormattedMessage
+          id="departure-time-in-minutes"
+          defaultMessage="{minutes} min"
+          values={{ minutes: timeDiffInMinutes }}
+        />
+      );
+    }
+  }
 
   let realtime;
   if (props.realtime && !props.canceled) {
@@ -81,7 +83,8 @@ function DepartureTime(props, context) {
         )}
       >
         {realtime}
-        {originalTime} {shownTime}
+        {originalTime}
+        {shownTime}
       </span>
       {props.canceled &&
         props.showCancelationIcon && (
@@ -140,13 +143,14 @@ DepartureTime.displayName = 'DepartureTime';
 DepartureTime.propTypes = {
   className: PropTypes.string,
   canceled: PropTypes.bool,
-  // currentTime: PropTypes.number.isRequired,
+  currentTime: PropTypes.number.isRequired,
   departureTime: PropTypes.number.isRequired,
   realtime: PropTypes.bool,
   style: PropTypes.object,
   useUTC: PropTypes.bool,
   showCancelationIcon: PropTypes.bool,
   departureDelay: PropTypes.number,
+  displayOriginalTime: PropTypes.bool,
 };
 
 DepartureTime.defaultProps = {
@@ -155,6 +159,7 @@ DepartureTime.defaultProps = {
   realtime: false,
   useUTC: false,
   showCancelationIcon: false,
+  displayOriginalTime: false,
 };
 
 DepartureTime.contextTypes = {

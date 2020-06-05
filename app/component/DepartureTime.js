@@ -64,7 +64,10 @@ function DepartureTime(props, context) {
           defaultMessage: 'Real time',
         })}
       >
-        <Icon img="icon-icon_realtime" className="realtime-icon realtime" />
+        <Icon
+          img="icon-icon_realtime"
+          className={cx('realtime-icon', { late: isLate, realtime: !isLate })}
+        />
       </span>
     );
   }

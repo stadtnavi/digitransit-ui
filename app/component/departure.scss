@@ -61,10 +61,6 @@
   .vehicle-number {
     mask-image: none;
   }
-  .time {
-    width: 4.25em;
-    margin-right: $padding-medium;
-  }
 }
 
 .time,
@@ -186,7 +182,7 @@
   vertical-align: top;
   position: relative;
   display: inline-block;
-  // min-width: 64px;
+  min-width: 64px;
   &.vertical {
     max-width: 100%;
     .vehicle-number {

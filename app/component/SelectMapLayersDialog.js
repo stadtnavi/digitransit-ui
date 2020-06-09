@@ -402,6 +402,7 @@ const mapLayersConfigShape = PropTypes.shape({
   }),
   dynamicParkingLots: PropTypes.shape({
     showDynamicParkingLots: PropTypes.bool,
+    dynamicParkingLots: PropTypes.bool,
   }),
   roadworks: PropTypes.shape({
     roadworks: PropTypes.bool,

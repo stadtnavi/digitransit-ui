@@ -449,7 +449,7 @@ SelectMapLayersDialog.propTypes = {
   mapLayers: mapLayerShape.isRequired,
   updateMapLayers: PropTypes.func.isRequired,
   lang: PropTypes.string,
-  currentMapMode: PropTypes.string.isRequired,
+  currentMapMode: PropTypes.any.isRequired,
   setMapMode: PropTypes.func.isRequired,
 };
 

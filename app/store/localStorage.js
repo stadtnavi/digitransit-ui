@@ -1,5 +1,5 @@
 import { isBrowser, isWindowsPhone, isIOSApp } from '../util/browser';
-import { OptimizeType } from '../constants';
+import { MapMode, OptimizeType } from '../constants';
 
 function handleSecurityError(error, logMessage) {
   if (error.name === 'SecurityError') {
@@ -361,6 +361,14 @@ export const setMapLayerSettings = settings => {
 };
 
 export const getMapLayerSettings = () => getItemAsJson('map-layers', '{}');
+
+export function getLocalMapMode() {
+  return getItemAsJson('map-mode', `{"mapMode": "${MapMode.Default}"}`);
+}
+
+export function setLocalMapMode(mode) {
+  setItem('map-mode', mode);
+}
 
 /**
  * Sets the seen state of the given dialog.

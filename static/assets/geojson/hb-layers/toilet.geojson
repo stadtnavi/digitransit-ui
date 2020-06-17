@@ -1,0 +1,195 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: ja, Barrierefrei: nein",
+        "address_de": "Wickelm\u00f6glichkeit: ja, Barrierefrei: nein",
+        "address_en": "Changing table: yes, Wheelchair: no",
+        "icon": {
+          "id": "toiletIcon",
+          "svg": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg   xmlns:dc=\"http://purl.org/dc/elements/1.1/\"   xmlns:cc=\"http://creativecommons.org/ns#\"   xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"   xmlns:svg=\"http://www.w3.org/2000/svg\"   xmlns=\"http://www.w3.org/2000/svg\"   xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"   xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"   version=\"1.1\"   id=\"Layer_1\"   x=\"0px\"   y=\"0px\"   viewBox=\"0 0 32.529999 32.529999\"   xml:space=\"preserve\"   sodipodi:docname=\"toilet.svg\"   width=\"32.529999\"   height=\"32.529999\"   inkscape:version=\"0.92.4 (5da689c313, 2019-01-14)\"><metadata   id=\"metadata29\"><rdf:RDF><cc:Work       rdf:about=\"\"><dc:format>image/svg+xml</dc:format><dc:type         rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" /><dc:title /></cc:Work></rdf:RDF></metadata><sodipodi:namedview   pagecolor=\"#ffffff\"   bordercolor=\"#666666\"   borderopacity=\"1\"   objecttolerance=\"10\"   gridtolerance=\"10\"   guidetolerance=\"10\"   inkscape:pageopacity=\"0\"   inkscape:pageshadow=\"2\"   inkscape:window-width=\"1463\"   inkscape:window-height=\"824\"   id=\"namedview27\"   showgrid=\"false\"   inkscape:zoom=\"7.254842\"   inkscape:cx=\"54.160156\"   inkscape:cy=\"11.799821\"   inkscape:window-x=\"2179\"   inkscape:window-y=\"63\"   inkscape:window-maximized=\"0\"   inkscape:current-layer=\"g12\" /><defs   id=\"defs47\" /><g   id=\"g14\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g16\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g18\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g20\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g22\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g24\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g26\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g28\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g30\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g32\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g34\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g36\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g38\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g40\"   transform=\"translate(0,-422.47)\"></g><g   id=\"g42\"   transform=\"translate(0,-422.47)\"></g><ellipse   id=\"path29\"   cx=\"16.423164\"   cy=\"16.399452\"   rx=\"16.130768\"   ry=\"16.258589\"   style=\"fill:#000000;stroke-width:0.82700747\" /><g   inkscape:groupmode=\"layer\"   id=\"layer1\"   inkscape:label=\"Layer 1\"><g     id=\"g12\"     transform=\"matrix(0.04788221,0,0,0.05308904,5.5866156,3.971248)\"     style=\"fill:#ffffff\">\t<circle   cx=\"99.019104\"   cy=\"36.581436\"   r=\"35.493999\"   id=\"circle2\"   style=\"fill:#ffffff\" />\t<polygon   points=\"324.261,444.734 432.902,444.734 432.902,279.306 451.5,279.306 451.5,110.764 305.663,110.764 305.663,279.306 324.261,279.306 \"   id=\"polygon4\"   style=\"fill:#ffffff\"   transform=\"matrix(1.0714642,0,0,1.0714642,-40.111478,-31.782526)\" />\t<circle   cx=\"365.35089\"   cy=\"35.505981\"   r=\"35.493999\"   id=\"circle6\"   style=\"fill:#ffffff\" />\t<polygon   points=\"41.628,444.734 111.628,444.734 111.628,330.323 149.755,330.323 122.713,171.255 132.713,111.255 20.542,111.255 30.542,171.255 3.5,330.323 41.628,330.323 \"   id=\"polygon8\"   style=\"fill:#ffffff\"   transform=\"matrix(1.0798273,0,0,1.0798273,15.256359,-33.666022)\" />\t<rect   x=\"212.709\"   width=\"30\"   height=\"455\"   id=\"rect10\"   y=\"0\"   style=\"fill:#ffffff\" /></g></g></svg>"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9030233,
+          48.6028307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Mi 8:30-17:00; Do 8:30-18:30; Fr 8:30-12:00; Sa 09:30-12:00, Barrierefrei: ja",
+        "address_de": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Mi 8:30-17:00; Do 8:30-18:30; Fr 8:30-12:00; Sa 09:30-12:00, Barrierefrei: ja",
+        "address_en": "Changing table: yes, Opening hours: Mo-We 8:30-17:00; Th 8:30-18:30; Fr 8:30-12:00; Sa 09:30-12:00, Wheelchair: yes",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8699241,
+          48.5962662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Fr 09:00-18:00, Barrierefrei: ja",
+        "address_de": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Fr 09:00-18:00, Barrierefrei: ja",
+        "address_en": "Changing table: no, Opening hours: Mo-Fr 09:00-18:00, Wheelchair: yes",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8675448,
+          48.5957324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Di-Sa 09:00-22:00, Barrierefrei: ja",
+        "address_de": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Di-Sa 09:00-22:00, Barrierefrei: ja",
+        "address_en": "Changing table: yes, Opening hours: Tu-Sa 09:00-22:00, Wheelchair: yes",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8698859,
+          48.5964488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Fr 07:30-22:30, Barrierefrei: ja",
+        "address_de": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Fr 07:30-22:30, Barrierefrei: ja",
+        "address_en": "Changing table: no, Opening hours: Mo-Fr 07:30-22:30, Wheelchair: yes",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8733932,
+          48.5940092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Sa 11:30-23:00; So 15:00-20:00, Barrierefrei: nein",
+        "address_de": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Sa 11:30-23:00; So 15:00-20:00, Barrierefrei: nein",
+        "address_en": "Changing table: no, Opening hours: Mo-Sa 11:30-23:00; Su 15:00-20:00, Wheelchair: no",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8712517,
+          48.5947852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Di 8:30-23:00; Fr 08:30-01:00; Sa 09:00-01:00; So 10:00-22:00, Barrierefrei: ja",
+        "address_de": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Di 8:30-23:00; Fr 08:30-01:00; Sa 09:00-01:00; So 10:00-22:00, Barrierefrei: ja",
+        "address_en": "Changing table: yes, Opening hours: Mo-Tu 8:30-23:00; Fr 08:30-01:00; Sa 09:00-01:00; Su 10:00-22:00, Wheelchair: yes",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8682324,
+          48.5953346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Sa 08:00-22:00, Barrierefrei: ja",
+        "address_de": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Sa 08:00-22:00, Barrierefrei: ja",
+        "address_en": "Changing table: yes, Opening hours: Mo-Sa 08:00-22:00, Wheelchair: yes",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8708826,
+          48.5982287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "address": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Fr 15:00-22:00; Sa 14:00-23:00; So 11:00-22:00, Barrierefrei: nein",
+        "address_de": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Fr 15:00-22:00; Sa 14:00-23:00; So 11:00-22:00, Barrierefrei: nein",
+        "address_en": "Changing table: no, Opening hours: Mo-Fr 15:00-22:00; Sa 14:00-23:00; Su 11:00-22:00, Wheelchair: no",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8736775,
+          48.597394
+        ]
+      }
+    }
+  ]
+}

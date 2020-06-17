@@ -399,6 +399,16 @@ export default configMerger(walttiConfig, {
         url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
         isOffByDefault: true,
       },
+      // Nette Toilette layer
+      {
+        name: {
+          fi: '',
+          en: 'Toilet',
+          de: 'Nette Toilette',
+        },
+        url: '/assets/geojson/hb-layers/toilet.geojson',
+        isOffByDefault: true,
+      },
     ],
 },
 staticMessagesUrl: STATIC_MESSAGE_URL,

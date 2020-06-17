@@ -1,11 +1,11 @@
 import Store from 'fluxible/addons/BaseStore';
 import { MapMode } from '../constants';
-import { getLocalMapMode, setLocalMapMode } from './localStorage';
 
 export default class MapModeStore extends Store {
   static storeName = 'MapModeStore';
   static existingMapModes = Object.values(MapMode);
-  prevMapMode = MapMode.Default;
+  mapMode = MapMode.Default;
+  prevMapMode = this.mapMode;
 
   static handlers = {
     SetMapMode: 'setMapMode',
@@ -15,18 +15,19 @@ export default class MapModeStore extends Store {
     super(dispatcher);
 
     const { router } = dispatcher.getContext();
-    if (router && router.query && router.query.mapMode) {
-      this.setMapMode(router.query.mapMode);
-    }
+    this.mapMode =
+      router && router.query && router.query.mapMode
+        ? router.query.mapMode
+        : MapMode.Default;
   }
 
-  getMapMode = () => getLocalMapMode();
+  getMapMode = () => this.mapMode;
 
   setMapMode = mapMode => {
     if (MapModeStore.existingMapModes.includes(mapMode)) {
-      setLocalMapMode(mapMode);
+      this.mapMode = mapMode;
     } else {
-      setLocalMapMode(MapMode.Default);
+      this.mapMode = MapMode.Default;
     }
     this.emitChange();
   };

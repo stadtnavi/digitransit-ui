@@ -403,7 +403,7 @@ export default configMerger(walttiConfig, {
       {
         name: {
           fi: '',
-          en: 'Toilet',
+          en: 'Public Toilets',
           de: 'Nette Toilette',
         },
         url: '/assets/geojson/hb-layers/toilet.geojson',

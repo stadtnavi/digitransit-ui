@@ -131,6 +131,27 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Mauerwerk",
+        "name_en": "Mauerwerk",
+        "name_de": "Mauerwerk",
+        "address": "Wickelm\u00f6glichkeit: ja, Telefon: +49 7032 9553280, \u00d6ffnungszeiten: Mo-Fr 17:00-24:00; Sa 17:00-24:00; So 09:30-24:00; PH 09:30-24:00, Barrierefrei: nein",
+        "address_de": "Wickelm\u00f6glichkeit: ja, Telefon: +49 7032 9553280, \u00d6ffnungszeiten: Mo-Fr 17:00-24:00; Sa 17:00-24:00; So 09:30-24:00; PH 09:30-24:00, Barrierefrei: nein",
+        "address_en": "Changing table: yes, Phone: +49 7032 9553280, Opening hours: Mo-Fr 17:00-24:00; Sa 17:00-24:00; Su 09:30-24:00; PH 09:30-24:00, Wheelchair: no",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8699905,
+          48.5946118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Naturfreundehaus",
         "name_en": "Naturfreundehaus",
         "name_de": "Naturfreundehaus",

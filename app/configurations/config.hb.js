@@ -122,7 +122,7 @@ export default configMerger(walttiConfig, {
         type: 'citybike',
         url: {
           de: 'https://www.regioradstuttgart.de/de',
-          en: 'https://www.regioradstuttgart.de/en',
+          en: 'https://www.regioradstuttgart.de/',
         },
       },
     }

@@ -114,7 +114,7 @@ export default configMerger(walttiConfig, {
     showCityBikes: true,
     networks: {
       regiorad: {
-        icon: 'citybike',
+        icon: 'regiorad',
         name: {
           de: 'RegioRad',
           en: 'RegioRad',

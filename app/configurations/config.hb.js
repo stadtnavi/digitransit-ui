@@ -111,21 +111,6 @@ export default configMerger(walttiConfig, {
   cityBike: {
     showStationId: false,
     useSpacesAvailable: false,
-    showCityBikes: true,
-    networks: {
-      regiorad: {
-        icon: 'regiorad',
-        name: {
-          de: 'RegioRad',
-          en: 'RegioRad',
-        },
-        type: 'citybike',
-        url: {
-          de: 'https://www.regioradstuttgart.de/de',
-          en: 'https://www.regioradstuttgart.de/',
-        },
-      },
-    }
   },
 
   mergeStopsByCode: true,

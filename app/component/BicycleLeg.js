@@ -112,6 +112,8 @@ function BicycleLeg({ focusAction, index, leg }, { config }) {
           mode={mode}
           vertical
           icon={networkIcon}
+          subIcon={hasAlert ? 'icon-icon_caution' : ''}
+          subIconClass={hasAlert ? 'subicon-caution' : ''}
           {...getLegBadgeProps(leg, config)}
         />
       </div>

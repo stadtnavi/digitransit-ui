@@ -410,15 +410,6 @@ export default configMerger(walttiConfig, {
         },
         url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
       },
-      // sharing options
-      {
-        name: {
-          fi: '',
-          en: 'Taxi & Sharing',
-          de: 'Taxi & Sharing-Angebot',
-        },
-        url: '/assets/geojson/hb-layers/taxi-and-sharing.geojson',
-      },
       // Charging stations
       {
         name: {

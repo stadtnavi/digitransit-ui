@@ -134,6 +134,14 @@ export default configMerger(walttiConfig, {
         },
         type: 'citybike',
       },
+      "car-sharing": {
+        icon: 'car-sharing',
+        name: {
+          de: 'Car-Sharing',
+          en: 'car sharing',
+        },
+        type: 'citybike',
+      },
     }
   },
 

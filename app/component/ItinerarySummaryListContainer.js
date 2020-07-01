@@ -225,9 +225,6 @@ const containerComponent = Relay.createContainer(
           distance
           duration
           rentedBike
-          alerts {
-            alertUrl
-          }
           intermediatePlace
           intermediatePlaces {
             stop {

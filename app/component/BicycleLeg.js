@@ -17,6 +17,8 @@ import {
   CityBikeNetworkType,
 } from '../util/citybikes';
 import { isKeyboardSelectionEvent } from '../util/browser';
+import ServiceAlertIcon from './ServiceAlertIcon';
+import { AlertSeverityLevelType } from '../constants';
 
 function BicycleLeg({ focusAction, index, leg }, { config }) {
   let stopsDescription;
@@ -61,8 +63,10 @@ function BicycleLeg({ focusAction, index, leg }, { config }) {
   }
 
   let networkIcon;
+  let hasAlert = false;
 
   if (leg.rentedBike === true) {
+    hasAlert = leg.alerts && !!leg.alerts[0].alertUrl;
     networkIcon = networkConfig && getCityBikeNetworkIcon(networkConfig);
 
     modeClassName = 'citybike';
@@ -131,8 +135,22 @@ function BicycleLeg({ focusAction, index, leg }, { config }) {
         </div>
         <div className="itinerary-leg-action" aria-hidden="true">
           {stopsDescription}
+          {hasAlert && (
+            <div className="itinerary-leg-first-row">
+              <ServiceAlertIcon
+                className="inline-icon"
+                severityLevel={AlertSeverityLevelType.Info}
+              />
+              <FormattedMessage id={leg.alerts[0].alertUrl} />
+            </div>
+          )}
         </div>
       </div>
+      <span className="sr-only">
+        {hasAlert && (
+          <FormattedMessage id="itinerary-details.route-has-info-alert" />
+        )}
+      </span>
     </div>
   );
 }
@@ -262,6 +280,7 @@ BicycleLeg.propTypes = {
     }).isRequired,
     mode: PropTypes.string.isRequired,
     rentedBike: PropTypes.bool.isRequired,
+    alerts: PropTypes.array,
   }).isRequired,
   index: PropTypes.number.isRequired,
   focusAction: PropTypes.func.isRequired,

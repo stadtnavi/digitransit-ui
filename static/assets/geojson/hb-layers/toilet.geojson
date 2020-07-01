@@ -152,6 +152,27 @@
     {
       "type": "Feature",
       "properties": {
+        "name_en": "Toilet",
+        "name_de": "Nette Toilette",
+        "name": "Nette Toilette",
+        "popupContent": "Wickelm\u00f6glichkeit: ja, Barrierefrei: ja",
+        "popupContent_de": "Wickelm\u00f6glichkeit: ja, Barrierefrei: ja",
+        "popupContent_en": "Changing table: yes, Wheelchair: yes",
+        "icon": {
+          "id": "toiletIcon"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8954413,
+          48.6042608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name": "Nette Toilette \"Naturfreundehaus\"",
         "name_en": "Public toilet \"Naturfreundehaus\"",
         "name_de": "Nette Toilette \"Naturfreundehaus\"",

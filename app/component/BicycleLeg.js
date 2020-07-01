@@ -138,7 +138,7 @@ function BicycleLeg({ focusAction, index, leg }, { config }) {
         <div className="itinerary-leg-action" aria-hidden="true">
           {stopsDescription}
           {hasAlert && (
-            <div className="itinerary-leg-first-row">
+            <div className="itinerary-leg-first-row itinerary-alert-info citybike">
               <ServiceAlertIcon
                 className="inline-icon"
                 severityLevel={AlertSeverityLevelType.Info}

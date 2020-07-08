@@ -34,7 +34,8 @@ const CityBikeContent = ({ station, lang }, { config }) => (
         />
       )}
     {config.transportModes.citybike.availableForSelection &&
-      getCityBikeUrl(station.networks, lang, config) && (
+      (station.rentalUriWeb ||
+        getCityBikeUrl(station.networks, lang, config)) && (
         <CityBikeUse
           url={
             station.rentalUriWeb ||

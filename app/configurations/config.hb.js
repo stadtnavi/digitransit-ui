@@ -126,18 +126,6 @@ export default configMerger(walttiConfig, {
           en: 'https://www.regioradstuttgart.de/',
         },
       },
-      "uri-demo": {
-        icon: 'regiorad',
-        name: {
-          de: 'RegioRad',
-          en: 'RegioRad',
-        },
-        type: 'citybike',
-        url: {
-          de: 'https://www.regioradstuttgart.de/de',
-          en: 'https://www.regioradstuttgart.de/',
-        },
-      },
       taxi: {
         icon: 'taxi',
         name: {
@@ -154,7 +142,6 @@ export default configMerger(walttiConfig, {
         },
         type: 'car-sharing',
       },
-
     }
   },
 

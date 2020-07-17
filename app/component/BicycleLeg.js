@@ -68,7 +68,7 @@ function BicycleLeg({ focusAction, index, leg }, { config }) {
   let rentalUri;
 
   if (leg.rentedBike === true) {
-    hasAlert = leg.alerts && leg.alerts.length > 0 && leg.alerts[0].alertUrl;
+    hasAlert = leg.alerts && leg.alerts.length > 0 && leg.alerts[0].alertId;
     networkIcon = networkConfig && getCityBikeNetworkIcon(networkConfig);
     rentalUri =
       leg.from.bikeRentalStation.rentalUriWeb ||
@@ -148,7 +148,8 @@ function BicycleLeg({ focusAction, index, leg }, { config }) {
                 className="inline-icon"
                 severityLevel={AlertSeverityLevelType.Info}
               />
-              <FormattedMessage id={leg.alerts[0].alertUrl} />
+              {leg.alerts[0].alertHeaderText}{' '}
+              {leg.alerts[0].alertDescriptionText}
             </div>
           )}
           {rentalUri && (

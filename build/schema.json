@@ -1797,6 +1797,16 @@
                                 "defaultValue": null
                             },
                             {
+                                "name": "useCarParkAvailabilityInformation",
+                                "description": "",
+                                "type": {
+                                    "kind": "SCALAR",
+                                    "name": "Boolean",
+                                    "ofType": null
+                                },
+                                "defaultValue": null
+                            },
+                            {
                                 "name": "omitCanceled",
                                 "description": "When false, return itineraries using canceled trips. Default value: true.",
                                 "type": {

@@ -83,20 +83,21 @@ class CarLeg extends React.Component {
   render = () => {
     const isOpen = this.getOffcanvasState();
     const carpoolAgencyIcon = [];
-    if (this.props.leg.mode === 'CARPOOL') {
-      if (this.props.leg.route.agency.gtfsId === 'mfdz:fg') {
+    const { leg } = this.props;
+    if (leg.mode === 'CARPOOL') {
+      if (leg.route.agency.gtfsId === 'mfdz:fg') {
         carpoolAgencyIcon[0] = 'fg_icon';
         carpoolAgencyIcon[1] = 'adac_icon';
-      } else if (this.props.leg.route.agency.gtfsId === 'mfdz:mifaz') {
+      } else if (leg.route.agency.gtfsId === 'mfdz:mifaz') {
         carpoolAgencyIcon[0] = 'mifaz_icon-without-text';
       }
     }
 
     const distance = displayDistance(
-      parseInt(this.props.leg.distance, 10),
+      parseInt(leg.distance, 10),
       this.context.config,
     );
-    const duration = durationToString(this.props.leg.duration * 1000);
+    const duration = durationToString(leg.duration * 1000);
 
     const firstLegClassName = this.props.index === 0 ? 'start' : '';
 
@@ -105,21 +106,21 @@ class CarLeg extends React.Component {
       <div key={this.props.index} className="row itinerary-row">
         <div className="small-2 columns itinerary-time-column">
           <div className="itinerary-time-column-time">
-            {moment(this.props.leg.startTime).format('HH:mm')}
+            {moment(leg.startTime).format('HH:mm')}
           </div>
-          <RouteNumber mode={this.props.leg.mode.toLowerCase()} vertical />
+          <RouteNumber mode={leg.mode.toLowerCase()} vertical />
         </div>
         <ItineraryCircleLine
           index={this.props.index}
-          modeClassName={CarLeg.getModeClassName(this.props.leg.mode)}
+          modeClassName={CarLeg.getModeClassName(leg.mode)}
         />
         <div
           onClick={this.props.focusAction}
-          className={`small-9 columns itinerary-instruction-column ${firstLegClassName} ${this.props.leg.mode.toLowerCase()}`}
+          className={`small-9 columns itinerary-instruction-column ${firstLegClassName} ${leg.mode.toLowerCase()}`}
         >
           <div className="itinerary-leg-first-row">
             <div>
-              {this.props.leg.from.name}
+              {leg.from.name}
               {this.props.children}
             </div>
             <Icon
@@ -129,18 +130,18 @@ class CarLeg extends React.Component {
           </div>
           <div className="itinerary-leg-action">
             <FormattedMessage
-              id={CarLeg.getTranslationKey(this.props.leg.mode)}
+              id={CarLeg.getTranslationKey(leg.mode)}
               values={{ distance, duration }}
               defaultMessage="Drive {distance} ({duration})}"
             />
             <br />
-            {CarLeg.showCarpoolButton(this.props.leg, this.toggleOfferCarpool)}
-            {CarLeg.createBookButton(this.props.leg)}
+            {CarLeg.showCarpoolButton(leg, this.toggleOfferCarpool)}
+            {CarLeg.createBookButton(leg)}
             {carpoolAgencyIcon[1] && (
               <Icon
                 img={carpoolAgencyIcon[0]}
                 className="carpool-agency-logo"
-                tooltip={this.props.leg.route.agency.name}
+                tooltip={leg.route.agency.name}
               />
             )}
             {carpoolAgencyIcon[1] && (

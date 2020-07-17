@@ -136,23 +136,19 @@ class CarLeg extends React.Component {
             <br />
             {CarLeg.showCarpoolButton(this.props.leg, this.toggleOfferCarpool)}
             {CarLeg.createBookButton(this.props.leg)}
-            {carpoolAgencyIcon[1] ? (
+            {carpoolAgencyIcon[1] && (
               <Icon
                 img={carpoolAgencyIcon[0]}
                 className="carpool-agency-logo"
                 tooltip={this.props.leg.route.agency.name}
               />
-            ) : (
-              ''
             )}
-            {carpoolAgencyIcon[1] ? (
+            {carpoolAgencyIcon[1] && (
               <Icon
                 img={carpoolAgencyIcon[1]}
                 className="carpool-agency-logo"
                 tooltip="ADAC Mitfahrclub"
               />
-            ) : (
-              ''
             )}
           </div>
         </div>

@@ -95,10 +95,9 @@ class CarLeg extends React.Component {
         carpoolAgencyIcon[0] = 'mifaz_icon-without-text';
       }
     }
-    const hasAlert =
-      leg.alerts && leg.alerts.length > 0 && leg.alerts[0].alertId;
-    const useCarParkAvailabilityInformation =
-      hasAlert && leg.alerts[0].alertId === 'car_park_full';
+
+    const alerts = leg.alerts || [];
+    const carParkAlert = alerts.filter(a => a.alertId === 'car_park_full')[0];
 
     const distance = displayDistance(
       parseInt(leg.distance, 10),
@@ -158,23 +157,23 @@ class CarLeg extends React.Component {
                 tooltip="ADAC Mitfahrclub"
               />
             )}
-            {hasAlert && (
+            {carParkAlert && (
               <div className="itinerary-leg-first-row itinerary-alert-info carpool">
                 <ServiceAlertIcon
                   className="inline-icon"
                   severityLevel={AlertSeverityLevelType.Info}
                 />
-                {leg.alerts[0].alertHeaderText}
+                {carParkAlert.alertHeaderText}
                 {': '}
-                {leg.alerts[0].alertDescriptionText}
+                {carParkAlert.alertDescriptionText}
               </div>
             )}
-            {useCarParkAvailabilityInformation && (
+            {carParkAlert && (
               <button
                 className="standalone-btn cursor-pointer carpool-offer-btn"
                 onClick={() => {
                   replaceQueryParams(this.context.router, {
-                    useCarParkAvailabilityInformation,
+                    useCarParkAvailabilityInformation: true,
                   });
                 }}
               >

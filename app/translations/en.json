@@ -53,6 +53,7 @@
   "canceled-legs": "Canceled departures on the route",
   "car": "Car",
   "car-distance-duration": "Drive {distance} ({duration})",
+  "car-park-full": "Exclude full car parks",
   "car_park": "park & ride",
   "carpool": "Carpool",
   "carpool-and-parking": "Carpool & parking",

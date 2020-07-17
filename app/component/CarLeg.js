@@ -16,6 +16,7 @@ import ItineraryCircleLine from './ItineraryCircleLine';
 import ToggleButton from './ToggleButton';
 import ServiceAlertIcon from './ServiceAlertIcon';
 import { AlertSeverityLevelType } from '../constants';
+import { replaceQueryParams } from '../util/queryUtils';
 
 class CarLeg extends React.Component {
   carpoolOfferModules = {
@@ -96,6 +97,8 @@ class CarLeg extends React.Component {
     }
     const hasAlert =
       leg.alerts && leg.alerts.length > 0 && leg.alerts[0].alertId;
+    const useCarParkAvailabilityInformation =
+      hasAlert && leg.alerts[0].alertId === 'car_park_full';
 
     const distance = displayDistance(
       parseInt(leg.distance, 10),
@@ -165,6 +168,18 @@ class CarLeg extends React.Component {
                 {': '}
                 {leg.alerts[0].alertDescriptionText}
               </div>
+            )}
+            {useCarParkAvailabilityInformation && (
+              <button
+                className="standalone-btn cursor-pointer carpool-offer-btn"
+                onClick={() => {
+                  replaceQueryParams(this.context.router, {
+                    useCarParkAvailabilityInformation,
+                  });
+                }}
+              >
+                <FormattedMessage id="car-park-full" />
+              </button>
             )}
           </div>
         </div>

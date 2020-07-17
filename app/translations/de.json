@@ -53,6 +53,7 @@
   "canceled-legs": "Ausgefallene Abfahrten auf dieser Route",
   "car": "Auto",
   "car-distance-duration": "Auto {distance} ({duration})",
+  "car-park-full": "Volle Parkplätze ausschließen",
   "car_park": "PWK",
   "carpool": "Mitfahren",
   "carpool-and-parking": "Mitfahren & Parken",

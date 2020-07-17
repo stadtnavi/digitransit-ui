@@ -69,6 +69,7 @@ export const defaultRoutingSettings = {
   compactLegsByReversedSearch: null,
   disableRemainingWeightHeuristic: null,
   modeWeight: null,
+  useCarParkAvailabilityInformation: null,
 };
 
 function getTicketTypes(ticketType, settingsTicketType, defaultTicketType) {
@@ -281,6 +282,7 @@ export const preparePlanParams = config => (
         walkSpeed,
         allowedBikeRentalNetworks,
         locale,
+        useCarParkAvailabilityInformation,
       },
     },
   },
@@ -424,6 +426,7 @@ export const preparePlanParams = config => (
       defaultSettings.ticketTypes,
     ),
     allowedBikeRentalNetworks: allowedBikeRentalNetworksMapped,
+    useCarParkAvailabilityInformation,
   };
 };
 

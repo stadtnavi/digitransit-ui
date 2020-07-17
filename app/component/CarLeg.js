@@ -14,6 +14,8 @@ import { displayDistance } from '../util/geo-utils';
 import { durationToString } from '../util/timeUtils';
 import ItineraryCircleLine from './ItineraryCircleLine';
 import ToggleButton from './ToggleButton';
+import ServiceAlertIcon from './ServiceAlertIcon';
+import { AlertSeverityLevelType } from '../constants';
 
 class CarLeg extends React.Component {
   carpoolOfferModules = {
@@ -92,6 +94,8 @@ class CarLeg extends React.Component {
         carpoolAgencyIcon[0] = 'mifaz_icon-without-text';
       }
     }
+    const hasAlert =
+      leg.alerts && leg.alerts.length > 0 && leg.alerts[0].alertId;
 
     const distance = displayDistance(
       parseInt(leg.distance, 10),
@@ -150,6 +154,17 @@ class CarLeg extends React.Component {
                 className="carpool-agency-logo"
                 tooltip="ADAC Mitfahrclub"
               />
+            )}
+            {hasAlert && (
+              <div className="itinerary-leg-first-row itinerary-alert-info carpool">
+                <ServiceAlertIcon
+                  className="inline-icon"
+                  severityLevel={AlertSeverityLevelType.Info}
+                />
+                {leg.alerts[0].alertHeaderText}
+                {': '}
+                {leg.alerts[0].alertDescriptionText}
+              </div>
             )}
           </div>
         </div>

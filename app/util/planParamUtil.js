@@ -253,6 +253,9 @@ export const getSettings = () => {
     preferredRoutes: custSettings.preferredRoutes,
     unpreferredRoutes: custSettings.unpreferredRoutes,
     allowedBikeRentalNetworks: custSettings.allowedBikeRentalNetworks,
+    useCarParkAvailabilityInformation: getBooleanValueOrDefault(
+      routingSettings.useCarParkAvailabilityInformation,
+    ),
   };
 };
 
@@ -416,6 +419,9 @@ export const preparePlanParams = config => (
           intermediatePlaceLocations,
         ),
         locale: locale || cookie.load('lang') || 'fi',
+        useCarParkAvailabilityInformation: getBooleanValueOrDefault(
+          useCarParkAvailabilityInformation,
+        ),
       },
       nullOrUndefined,
     ),
@@ -426,7 +432,6 @@ export const preparePlanParams = config => (
       defaultSettings.ticketTypes,
     ),
     allowedBikeRentalNetworks: allowedBikeRentalNetworksMapped,
-    useCarParkAvailabilityInformation,
   };
 };
 

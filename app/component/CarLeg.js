@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, intlShape } from 'react-intl';
 
 import { routerShape } from 'react-router';
 import LazilyLoad, { importLazy } from './LazilyLoad';
@@ -17,6 +17,10 @@ import ToggleButton from './ToggleButton';
 import ServiceAlertIcon from './ServiceAlertIcon';
 import { AlertSeverityLevelType } from '../constants';
 import { replaceQueryParams } from '../util/queryUtils';
+import {
+  getServiceAlertDescription,
+  getServiceAlertHeader,
+} from '../util/alertUtils';
 
 class CarLeg extends React.Component {
   carpoolOfferModules = {
@@ -163,9 +167,12 @@ class CarLeg extends React.Component {
                   className="inline-icon"
                   severityLevel={AlertSeverityLevelType.Info}
                 />
-                {carParkAlert.alertHeaderText}
+                {getServiceAlertHeader(carParkAlert, this.context.intl.locale)}
                 {': '}
-                {carParkAlert.alertDescriptionText}
+                {getServiceAlertDescription(
+                  carParkAlert,
+                  this.context.intl.locale,
+                )}
               </div>
             )}
             {carParkAlert && (
@@ -283,6 +290,7 @@ CarLeg.contextTypes = {
   config: PropTypes.object.isRequired,
   router: routerShape,
   location: PropTypes.object.isRequired,
+  intl: intlShape.isRequired,
 };
 
 export default CarLeg;

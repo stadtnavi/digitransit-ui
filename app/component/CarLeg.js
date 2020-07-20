@@ -115,7 +115,11 @@ class CarLeg extends React.Component {
           <div className="itinerary-time-column-time">
             {moment(leg.startTime).format('HH:mm')}
           </div>
-          <RouteNumber mode={leg.mode.toLowerCase()} vertical />
+          <RouteNumber
+            mode={leg.mode.toLowerCase()}
+            vertical
+            hasDisruption={!!carParkAlert}
+          />
         </div>
         <ItineraryCircleLine
           index={this.props.index}

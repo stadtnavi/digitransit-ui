@@ -213,9 +213,11 @@ const withRelay = Relay.createContainer(ItineraryTab, {
         legs {
           mode
           alerts {
-            alertHeaderText
-            alertDescriptionText
             alertId
+            alertDescriptionTextTranslations {
+              language
+              text
+            }
           }
           arrivalDelay
           departureDelay

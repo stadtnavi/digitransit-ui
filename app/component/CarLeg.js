@@ -17,10 +17,7 @@ import ToggleButton from './ToggleButton';
 import ServiceAlertIcon from './ServiceAlertIcon';
 import { AlertSeverityLevelType } from '../constants';
 import { replaceQueryParams } from '../util/queryUtils';
-import {
-  getServiceAlertDescription,
-  getServiceAlertHeader,
-} from '../util/alertUtils';
+import { getServiceAlertDescription } from '../util/alertUtils';
 
 class CarLeg extends React.Component {
   carpoolOfferModules = {
@@ -167,8 +164,6 @@ class CarLeg extends React.Component {
                   className="inline-icon"
                   severityLevel={AlertSeverityLevelType.Info}
                 />
-                {getServiceAlertHeader(carParkAlert, this.context.intl.locale)}
-                {': '}
                 {getServiceAlertDescription(
                   carParkAlert,
                   this.context.intl.locale,

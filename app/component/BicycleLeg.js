@@ -20,6 +20,7 @@ import {
 import { isKeyboardSelectionEvent } from '../util/browser';
 import ServiceAlertIcon from './ServiceAlertIcon';
 import { AlertSeverityLevelType } from '../constants';
+import { getServiceAlertDescription } from '../util/alertUtils';
 
 function BicycleLeg({ focusAction, index, leg }, { config }) {
   let stopsDescription;
@@ -148,8 +149,7 @@ function BicycleLeg({ focusAction, index, leg }, { config }) {
                 className="inline-icon"
                 severityLevel={AlertSeverityLevelType.Info}
               />
-              {leg.alerts[0].alertHeaderText}{' '}
-              {leg.alerts[0].alertDescriptionText}
+              {getServiceAlertDescription(leg.alerts[0], 'de')}
             </div>
           )}
           {rentalUri && (

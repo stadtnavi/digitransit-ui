@@ -238,7 +238,7 @@ export default class CarpoolOffer extends React.Component {
           </b>
           : {destination}
         </p>
-        <p>
+        <div>
           <FormattedMessage
             id="add-carpool-offer-frequency"
             defaultMessage="How often do you want to add the offer?"
@@ -268,7 +268,7 @@ export default class CarpoolOffer extends React.Component {
               <FormattedMessage id="recurring" defaultMessage="recurring" />
             </label>
           </div>
-        </p>
+        </div>
         <div className="carpool-checkbox">
           {this.allWeekdays.map(day => this.renderCheckbox(day, isRegularly))}
         </div>

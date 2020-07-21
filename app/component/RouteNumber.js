@@ -84,7 +84,7 @@ function RouteNumber(props, context) {
       <span
         className={cx('vcenter-children', props.className)}
         aria-label={context.intl.formatMessage({
-          id: mode,
+          id: mode === 'car-withoutBox' ? 'car' : mode,
           defaultMessage: 'Vehicle',
         })}
         role="img"

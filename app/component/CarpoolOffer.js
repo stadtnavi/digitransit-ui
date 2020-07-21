@@ -146,19 +146,21 @@ export default class CarpoolOffer extends React.Component {
 
   renderCheckbox(weekday, isRegularly) {
     return (
-      <Checkbox
-        disabled={!isRegularly}
-        checked={isRegularly && this.state.days[weekday]}
-        onChange={e => {
-          this.updateSelectedDays(e.currentTarget.getAttribute('aria-label'));
-          this.setState(prevState => {
-            // eslint-disable-next-line no-param-reassign
-            prevState.days[weekday] = !prevState.days[weekday];
-            return prevState;
-          });
-        }}
-        labelId={weekday}
-      />
+      <div key={weekday}>
+        <Checkbox
+          disabled={!isRegularly}
+          checked={isRegularly && this.state.days[weekday]}
+          onChange={e => {
+            this.updateSelectedDays(e.currentTarget.getAttribute('aria-label'));
+            this.setState(prevState => {
+              // eslint-disable-next-line no-param-reassign
+              prevState.days[weekday] = !prevState.days[weekday];
+              return prevState;
+            });
+          }}
+          labelId={weekday}
+        />
+      </div>
     );
   }
 

@@ -57,7 +57,7 @@ class DynamicParkingLotsPopup extends React.Component {
       );
     }
 
-    return text;
+    return <div className="padding-vertical-small">{text}</div>;
   }
 
   getUrl() {

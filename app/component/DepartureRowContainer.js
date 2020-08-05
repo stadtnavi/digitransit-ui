@@ -105,7 +105,7 @@ const DepartureRow = (
         <Distance distance={distance} />
       </td>
       <td className="td-route-number">
-        {isCarpool ? (
+        {isCarpool() ? (
           <CarpoolRow departure={departure} />
         ) : (
           <RouteNumberContainer
@@ -119,9 +119,11 @@ const DepartureRow = (
         <RouteDestination
           mode={departure.pattern.route.mode}
           destination={
-            headsign ||
-            departure.pattern.headsign ||
-            departure.pattern.route.longName
+            isCarpool()
+              ? departure.pattern.route.longName.replace('nach', '-')
+              : headsign ||
+                departure.pattern.headsign ||
+                departure.pattern.route.longName
           }
         />
       </td>

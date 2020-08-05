@@ -57,10 +57,10 @@ function DepartureTime(props, context) {
   }
 
   minutes = minutesFirstChar + minutesSecondChar;
-  const tmp = Moment(`${hours}:${minutes}`, 'HH:mm').valueOf() / 1000;
+  const departureTime = Moment(`${hours}:${minutes}`, 'HH:mm').valueOf() / 1000;
 
   let shownTime = props.departureTime ? (
-    <LocalTime forceUtc={props.useUTC} time={tmp} />
+    <LocalTime forceUtc={props.useUTC} time={departureTime} />
   ) : null;
   let originalTime = null;
   const isLate =
@@ -72,7 +72,7 @@ function DepartureTime(props, context) {
         <span key="time" className="text-right gray linethrough">
           <LocalTime
             forceUtc={props.useUTC}
-            time={tmp - props.departureDelay}
+            time={departureTime - props.departureDelay}
           />{' '}
         </span>,
       ];
@@ -80,7 +80,7 @@ function DepartureTime(props, context) {
     timeDiffInMinutes < 0 ||
     timeDiffInMinutes > context.config.minutesToDepartureLimit
   ) {
-    shownTime = <LocalTime forceUtc={props.useUTC} time={tmp} />;
+    shownTime = <LocalTime forceUtc={props.useUTC} time={departureTime} />;
   } else if (timeDiffInMinutes === 0) {
     shownTime = <FormattedMessage id="arriving-soon" defaultMessage="Now" />;
   } else {

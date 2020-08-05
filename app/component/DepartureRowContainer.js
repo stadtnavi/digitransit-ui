@@ -36,6 +36,7 @@ const DepartureRow = (
       return (
         <td key={`${key}-td`} className="td-departure-times">
           <DepartureTime
+            gtfsId={key.split(':')[0]}
             key={key}
             departureTime={
               departureTime.serviceDay + departureTime.realtimeDeparture

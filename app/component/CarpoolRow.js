@@ -15,8 +15,8 @@ function CarpoolRow({ departure }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon img="fg_icon" height="1.25" width="1.25" />
-          <Icon img="adac_icon" height="1.25" width="1.25" />
+          <Icon img="fg_icon" height={1.25} width={1.25} />
+          <Icon img="adac_icon" height={1.25} width={1.25} />
         </a>
         <ExternalLinkDecoration />
       </span>

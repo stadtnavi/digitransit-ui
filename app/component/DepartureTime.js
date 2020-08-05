@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 import { intlShape, FormattedMessage } from 'react-intl';
+import Moment from 'moment';
 
 import Icon from './Icon';
 import LocalTime from './LocalTime';
@@ -14,8 +15,52 @@ import {
 } from './ExampleData';
 
 function DepartureTime(props, context) {
+  const toZeroDown = ['1', '2'];
+  const toZeroUp = ['8', '9'];
+  const toFive = ['3', '4', '6', '7'];
+  let minutes = new Moment(props.departureTime * 1000).format('mm');
+  let hours = new Moment(props.departureTime * 1000).format('HH');
+  let minutesFirstChar = minutes.split('')[0];
+  let minutesSecondChar = minutes.split('')[1];
+  const tmpH2 = parseInt(hours, 10) + 1;
+  const tmpMin2 = parseInt(minutesFirstChar, 10) + 1;
+  const timeDiffInMinutes = Math.floor(
+    (props.departureTime - props.currentTime) / 60,
+  );
+
+  if (props.gtfsId === 'mfdz') {
+    // checks the time
+    switch (true) {
+      // rounds second char to 5
+      case toFive.includes(minutesSecondChar):
+        minutesSecondChar = '5';
+        break;
+      // rounds second char to 0
+      case toZeroDown.includes(minutesSecondChar):
+        minutesSecondChar = '0';
+        break;
+      // case here is e.g: time=xy:58 or xy:59; rounds to (xy)++:00
+      case toZeroUp.includes(minutesSecondChar) && minutesFirstChar === '5':
+        minutesFirstChar = '0';
+        minutesSecondChar = '0';
+        hours = tmpH2.toString();
+        break;
+      // rounds to 10,20,30,40,50
+      case toZeroUp.includes(minutesSecondChar):
+        minutesSecondChar = '0';
+        minutesFirstChar = tmpMin2.toString();
+        break;
+      // 0 and 5 are not rounded
+      default:
+        break;
+    }
+  }
+
+  minutes = minutesFirstChar + minutesSecondChar;
+  const tmp = Moment(`${hours}:${minutes}`, 'HH:mm').valueOf() / 1000;
+
   let shownTime = props.departureTime ? (
-    <LocalTime forceUtc={props.useUTC} time={props.departureTime} />
+    <LocalTime forceUtc={props.useUTC} time={tmp} />
   ) : null;
   let originalTime = null;
   const isLate =
@@ -27,32 +72,25 @@ function DepartureTime(props, context) {
         <span key="time" className="text-right gray linethrough">
           <LocalTime
             forceUtc={props.useUTC}
-            time={props.departureTime - props.departureDelay}
+            time={tmp - props.departureDelay}
           />{' '}
         </span>,
       ];
+  } else if (
+    timeDiffInMinutes < 0 ||
+    timeDiffInMinutes > context.config.minutesToDepartureLimit
+  ) {
+    shownTime = <LocalTime forceUtc={props.useUTC} time={tmp} />;
+  } else if (timeDiffInMinutes === 0) {
+    shownTime = <FormattedMessage id="arriving-soon" defaultMessage="Now" />;
   } else {
-    const timeDiffInMinutes = Math.floor(
-      (props.departureTime - props.currentTime) / 60,
+    shownTime = (
+      <FormattedMessage
+        id="departure-time-in-minutes"
+        defaultMessage="{minutes} min"
+        values={{ minutes: timeDiffInMinutes }}
+      />
     );
-    if (
-      timeDiffInMinutes < 0 ||
-      timeDiffInMinutes > context.config.minutesToDepartureLimit
-    ) {
-      shownTime = (
-        <LocalTime forceUtc={props.useUTC} time={props.departureTime} />
-      );
-    } else if (timeDiffInMinutes === 0) {
-      shownTime = <FormattedMessage id="arriving-soon" defaultMessage="Now" />;
-    } else {
-      shownTime = (
-        <FormattedMessage
-          id="departure-time-in-minutes"
-          defaultMessage="{minutes} min"
-          values={{ minutes: timeDiffInMinutes }}
-        />
-      );
-    }
   }
 
   let realtime;
@@ -154,6 +192,7 @@ DepartureTime.propTypes = {
   showCancelationIcon: PropTypes.bool,
   departureDelay: PropTypes.number,
   displayOriginalTime: PropTypes.bool,
+  gtfsId: PropTypes.string,
 };
 
 DepartureTime.defaultProps = {

@@ -159,7 +159,7 @@ export default configMerger(walttiConfig, {
     carpool: 'CARPOOL',
   },
 
-  logo: 'hb/stadtnavi-herrenberg-logo.svg',
+  logo: 'mfdz/logo.svg',
 
   GTMid: '',
 

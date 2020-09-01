@@ -70,7 +70,7 @@ export default configMerger(walttiConfig, {
   },
 
   colors: {
-    primary: '#9fc727',
+    primary: '#005b8c',
   },
 
   sprites: 'assets/svg-sprite.hb.svg',

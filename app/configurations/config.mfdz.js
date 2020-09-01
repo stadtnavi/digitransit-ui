@@ -58,12 +58,6 @@ export default configMerger(walttiConfig, {
     delayThreshold: 60,
   },
 
-  appBarLink: {
-    name: 'Feedback',
-    href: 'https://stadtnavi.de/feedback',
-    target: '_blank'
-  },
-
   contactName: {
     de: 'transportkollektiv',
     default: 'transportkollektiv',

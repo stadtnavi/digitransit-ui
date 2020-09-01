@@ -300,7 +300,7 @@ export default configMerger(walttiConfig, {
   redirectReittiopasParams: true,
 
   themeMap: {
-    hb: 'hb',
+    mfdz: 'mfdz',
   },
 
   transportModes: {

@@ -764,6 +764,7 @@ export default {
     kouvola: 'kouvola',
     tampere: 'tampere',
     mikkeli: 'mikkeli',
+    mfdz: 'mfdz',
     kotka: 'kotka',
     jyvaskyla: 'jyvaskyla',
     lahti: 'lahti',

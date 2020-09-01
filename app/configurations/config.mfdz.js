@@ -59,8 +59,8 @@ export default configMerger(walttiConfig, {
   },
 
   contactName: {
-    de: 'transportkollektiv',
-    default: 'transportkollektiv',
+    de: 'mfdz',
+    default: 'mfdz',
   },
 
   colors: {

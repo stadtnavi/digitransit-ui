@@ -246,48 +246,29 @@ export default configMerger(walttiConfig, {
   aboutThisService: {
     de: [
       {
-        header: 'Über diesen Dienst',
+        header: 'Über uns',
         paragraphs: [
-          'Stadtnavi ist eine Reiseplannungs-Anwendung für die Region Herrenberg. Dieser Dienst umfasst ÖPNV, Fußwege, Radverkehr, PKW-Routing (inklusive Park & Ride) und Fahrgemeinschaften.',
-          'Gefördert durch <br>',
-          '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
-
+          'Mitfahren-BW ist ein Projekt der Initiative <a href="https://mfdz.de/">MITFAHR|DE|ZENTRALE</a>. Mitfahren-BW verbindet Fahrgemeinschaften und ÖPNV in einer intermodalen Routensuche und zeigt damit neue Mobilitätsoptionen für den Weg zum Arbeits- oder Ausbildungsplatz.'
         ],
       },
       {
-        header: 'Digitransit Plattform',
+        header: 'Fahrgemeinschaftsangebote',
         paragraphs: [
-          'Dieser Dienst basiert auf der Digitransit Platform und dem Backend-Dienst OpenTripPlanner. Alle Software ist unter einer offenen Lizenzen verfügbar. Vielen Dank an alle Beteiligten.',        ],
-      },
-      {
-        header: 'Datenquellen',
-        paragraphs: [
-          'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
-          'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> und der <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
-          'Alle Angaben ohne Gewähr.'
-        ],
-      },
-    ],
-    en: [
-      {
-        header: 'About this service',
-        paragraphs: [
-          'Stadtnavi is provided by the city of Herrenberg for route planning in Herrenberg region. The service covers public transport, walking, cycling, private car use and carpooling. Service is built on Digitransit platform and OpenTripPlanner.',
-          '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
+          'Mitfahren-BW ist eine Verbindungssuche. Die Fahrgemeinschafts-Angebote werden uns von unseren Partnern <a href="https://www.fahrgemeinschaft.de/">fahrgemeinschaft.de</a> und <a href="https://www.mifaz.de/de/suche">mifaz.de</a> bereitgestellt.',
+          'Hinweis: Angezeigte Fahrtoptionen sind ohne Gewähr. Setzen Sie sich vor Fahrtantritt mit dem/der Anbieter/in der Fahrt in Verbindung und vereinbaren Sie z.B. Treff- und Zeitpunkt sowie eine eventuelle Kostenbeteiligung.'
         ],
       },
       {
-        header: 'Digitransit platform',
+        header: 'Fahrplandaten',
         paragraphs: [
-          'The Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source. Thanks to everybody working on this!',
+          'Für die ÖPNV-Informationen nutzen wir die durch die Verkehrsverbünde KVV, VVS, VRN und VAG Freiburg bereitgestellten Fahrplandaten sowie Fahrplandaten der Nahverkehrsgesellschaft Baden-Württemberg GmbH.',
+          'Hinweis: Leider können wir keine Echtzeit-Information der Fahrplandaten nutzen. Jegliche Auskunft erfolgt ohne Gewähr.'
         ],
       },
       {
-        header: 'Data sources',
+        header: 'Geodaten',
         paragraphs: [
-          'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
-          'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> and <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
-          'No responsibility is accepted for the accuracy of this information.'
+          'Mitfahren-BW nutzt die Hintergrundkarte \'WebAtlasDE.Light (Graustufen)\' des Bundesamtes für Kartographie und Geodäsie. Zur Adressverortung und Fußgänger- und PKW-Routenermittlung nutzen wir OpenStreetMap. Daten zu Pendlerparkplätzen wurden uns vom Verkehrsministerium Baden-Württemberg bereitgestellt und in Teilen mit OpenStreetMap Daten ergänzt. Haltestellenstandorte beziehen wir aus den Haltestellen-Daten der Elektronischen Fahrplanauskunft Baden-Württemberg. Alle Angaben sind ohne Gewähr. Gerne dürfen Sie uns jedoch eventuelle Fehler rückmelden.'
         ],
       },
     ],

@@ -149,6 +149,8 @@ export default configMerger(walttiConfig, {
     description: APP_DESCRIPTION,
   },
 
+  showNavBarLink: false,
+
   modeToOTP: {
     carpool: 'CARPOOL',
   },

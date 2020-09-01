@@ -349,7 +349,7 @@ export default configMerger(walttiConfig, {
   streetModes: {
     public_transport: {
       availableForSelection: true,
-      defaultValue: true,
+      defaultValue: false,
       exclusive: false,
       icon: 'bus-withoutBox',
     },
@@ -384,7 +384,7 @@ export default configMerger(walttiConfig, {
 
     carpool: {
       availableForSelection: true,
-      defaultValue: false,
+      defaultValue: true,
       exclusive: true,
       icon: 'carpool-withoutBox',
     },

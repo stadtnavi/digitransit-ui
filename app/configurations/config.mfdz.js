@@ -1,5 +1,6 @@
 /* eslint-disable */
 import configMerger from '../util/configMerger';
+import privacy from '../../static/assets/privacy.json';
 
 const CONFIG = 'mfdz';
 const APP_TITLE = 'Mitfahren-BW';
@@ -238,11 +239,12 @@ export default configMerger(walttiConfig, {
       {
         name: 'privacy',
         nameEn: 'Privacy',
-        href: 'https://www.herrenberg.de/datenschutz',
+        route: '/privacy',
       },
     ],
   },
 
+  privacy,
   aboutThisService: {
     de: [
       {

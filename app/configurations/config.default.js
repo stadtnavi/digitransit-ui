@@ -605,6 +605,8 @@ export default {
 
   routeTimetableUrlResolver: {},
 
+  privacy: {},
+  imprint: {},
   aboutThisService: {
     fi: [
       {

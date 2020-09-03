@@ -26,12 +26,7 @@ const PrivacyPage = ({ location }, { config }) => {
       {data.map(
         (section, i) =>
           section.paragraphs ? (
-            <div
-              key={`data-section-${i + 1}`}
-              style={{
-                paddingLeft: 20,
-              }}
-            >
+            <div key={`data-section-${i + 1}`}>
               <SanitizedHTML allowedTags={allowedTags} html={section.header} />
               {section.paragraphs.map((p, j) => (
                 <SanitizedHTML

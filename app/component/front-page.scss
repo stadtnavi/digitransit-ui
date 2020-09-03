@@ -464,9 +464,10 @@ svg.icon.footer-icon {
   margin-right: auto;
   justify-content: center;
   > div {
-    max-width: 600px;
+    max-width: 700px;
     text-align: justify;
     align-self: flex-start;
+    padding-left: 20px;
   }
   h1 {
     font-weight: bold;

@@ -15,6 +15,7 @@ const PrivacyPage = (props, { config }) => {
     'h1',
     'h2',
     'h3',
+    'h4',
   ];
   return (
     <div className="about-page fullscreen">

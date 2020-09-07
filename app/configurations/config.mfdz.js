@@ -109,6 +109,11 @@ export default configMerger(walttiConfig, {
     minZoom: 15,
   },
 
+  carpool: {
+    show: true,
+    minZoom: 10,
+  },
+
   cityBike: {
     showStationId: false,
     useSpacesAvailable: false,

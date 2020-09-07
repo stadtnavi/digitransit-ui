@@ -43,6 +43,10 @@ class MapLayerStore extends Store {
       config.transportModes.citybike &&
       config.transportModes.citybike.availableForSelection;
 
+    this.mapLayers.carpool =
+      config.transportModes.carpool &&
+      config.transportModes.carpool.availableForSelection;
+
     const storedMapLayers = getMapLayerSettings();
     if (Object.keys(storedMapLayers).length > 0) {
       this.mapLayers = {
@@ -86,6 +90,7 @@ export const mapLayerShape = PropTypes.shape({
   }).isRequired,
   showAllBusses: PropTypes.bool,
   geoJson: PropTypes.object,
+  carpool: PropTypes.bool,
 });
 
 export default MapLayerStore;

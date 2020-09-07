@@ -101,6 +101,7 @@ class SelectMapLayersDialog extends React.Component {
       ticketSales,
       geoJson,
       showAllBusses,
+      carpool,
     },
     config,
     lang,
@@ -228,16 +229,17 @@ class SelectMapLayersDialog extends React.Component {
                 }
               />
             )}
-          {isTransportModeEnabled(transportModes.carpool) && (
-            <Checkbox
-              checked={terminal.carpool}
-              defaultMessage="Carpool stops"
-              labelId="map-layer-carpool"
-              onChange={e =>
-                this.updateStopAndTerminalSetting({ carpool: e.target.checked })
-              }
-            />
-          )}
+          {config.carpool &&
+            isTransportModeEnabled(transportModes.carpool) && (
+              <Checkbox
+                checked={carpool}
+                defaultMessage="Carpool stops"
+                labelId="map-layer-carpool"
+                onChange={e =>
+                  this.updateSetting({ carpool: e.target.checked })
+                }
+              />
+            )}
           {config.parkAndRide &&
             config.parkAndRide.showParkAndRide && (
               <Checkbox

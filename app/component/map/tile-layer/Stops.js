@@ -147,11 +147,9 @@ class Stops {
     }
   };
 
+  // Draws all stops except carpool.
   shouldDrawStop = stop => {
-    if (stop.properties.type !== 'CARPOOL') {
-      return true;
-    }
-    return stop.properties.name.indexOf('P+M') !== -1;
+    return stop.properties.type !== 'CARPOOL';
   };
 
   getPromise() {

@@ -9,6 +9,7 @@ import Roadworks from './Roadworks';
 import Stops from './Stops';
 import ParkAndRide from './ParkAndRide';
 import TicketSales from './TicketSales';
+import Carpool from './Carpool';
 
 export default function VectorTileLayerContainer(props, { config }) {
   const layers = [];
@@ -41,6 +42,10 @@ export default function VectorTileLayerContainer(props, { config }) {
 
     if (config.covid19 && config.covid19.show) {
       layers.push(Covid19OpeningHours);
+    }
+
+    if (config.carpool && config.carpool.show) {
+      layers.push(Carpool);
     }
   }
 

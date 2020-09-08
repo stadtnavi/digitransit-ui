@@ -147,11 +147,6 @@ class Stops {
     }
   };
 
-  // Draws all stops except carpool.
-  shouldDrawStop = stop => {
-    return stop.properties.type !== 'CARPOOL';
-  };
-
   getPromise() {
     return fetch(
       `${this.config.URL.STOP_MAP}${this.tile.coords.z +
@@ -197,7 +192,9 @@ class Stops {
                     featureByCode[f.properties.code] = f;
                   }
                 }
-                this.features.push(f);
+                if (feature.properties.type !== 'CARPOOL') {
+                  this.features.push(f);
+                }
               }
             }
             if (this.config.mergeStopsByCode) {
@@ -228,9 +225,7 @@ class Stops {
                   f.properties.type &&
                 f.geom.x === featureByCode[f.properties.code].geom.x &&
                 f.geom.y === featureByCode[f.properties.code].geom.y;
-              if (this.shouldDrawStop(f)) {
-                this.fetchStatusAndDrawStop(f, large);
-              }
+              this.fetchStatusAndDrawStop(f, large);
             });
           }
           if (

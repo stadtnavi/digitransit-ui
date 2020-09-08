@@ -67,9 +67,6 @@ class DynamicParkingLots {
     if (type === 'Park-Ride') {
       return 'p+r';
     }
-    if (type === 'Park-Carpool') {
-      return 'carpark_carpool';
-    }
     if (type === 'Wohnmobilparkplatz') {
       return 'caravan';
     }

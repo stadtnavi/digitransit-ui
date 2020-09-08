@@ -3,7 +3,7 @@ import Protobuf from 'pbf';
 import pick from 'lodash/pick';
 
 import { isBrowser } from '../../../util/browser';
-import { drawRoundIcon } from '../../../util/mapIconUtils';
+import { drawIcon } from '../../../util/mapIconUtils';
 import glfun from '../../../util/glfun';
 
 const getScale = glfun({
@@ -19,19 +19,7 @@ class Carpool {
     this.scaleratio = (isBrowser && window.devicePixelRatio) || 1;
     this.iconSize = 36 * this.scaleratio * getScale(this.tile.coords.z);
 
-    this.promise = this.fetchWithAction(this.fetchAndDrawStatus);
-  }
-
-  drawStop(feature) {
-    drawRoundIcon(
-      this.tile,
-      feature.geom,
-      feature.properties.type,
-      1,
-      feature.properties.platform !== 'null'
-        ? feature.properties.platform
-        : false,
-    );
+    this.promise = this.fetchWithAction(this.drawStop);
   }
 
   fetchWithAction = actionFn =>
@@ -71,13 +59,13 @@ class Carpool {
       );
     });
 
-  fetchAndDrawStatus = f => {
-    return this.drawStop(f);
+  drawStop = f => {
+    drawIcon('icon-icon_carpark_carpool', this.tile, f.geom, this.iconSize);
   };
 
   onTimeChange = () => {
     if (this.tile.coords.z > this.config.carpool.minZoom) {
-      this.fetchWithAction(this.fetchAndDrawStatus);
+      this.fetchWithAction(this.drawStop);
     }
   };
 

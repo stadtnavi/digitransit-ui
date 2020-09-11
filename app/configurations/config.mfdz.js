@@ -396,56 +396,5 @@ export default configMerger(walttiConfig, {
     },
   },
 
-  // adding assets/geoJson/hb-layers layers
-  geoJson: {
-    layers: [
-      {
-        name: {
-          fi: '',
-          en: 'Bicycle parkings',
-          de: 'Fahrrad-Abstellanlagen',
-        },
-        url: '/assets/geojson/hb-layers/bicycle-parking.geojson',
-      },
-      // bicycleinfrastructure includes shops, repair stations,
-      {
-        name: {
-          fi: '',
-          en: 'Bicycle infrastructure',
-          de: "Rund um's Fahrrad",
-        },
-        url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
-      },
-      // Charging stations
-      {
-        name: {
-          fi: '',
-          en: 'Charging stations',
-          de: 'Ladestationen',
-        },
-        url: '/assets/geojson/hb-layers/charging.geojson',
-      },
-      // LoRaWan map layer
-      {
-        name: {
-          fi: '',
-          en: 'LoRaWAN Gateways',
-          de: 'LoRaWAN Gateways',
-        },
-        url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
-        isOffByDefault: true,
-      },
-      // Nette Toilette layer
-      {
-        name: {
-          fi: '',
-          en: 'Public Toilets',
-          de: 'Nette Toilette',
-        },
-        url: '/assets/geojson/hb-layers/toilet.geojson',
-        isOffByDefault: true,
-      },
-    ],
-  },
   staticMessagesUrl: STATIC_MESSAGE_URL,
 });

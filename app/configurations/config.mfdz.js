@@ -111,7 +111,7 @@ export default configMerger(walttiConfig, {
 
   carpool: {
     show: true,
-    minZoom: 10,
+    minZoom: 8,
   },
 
   cityBike: {

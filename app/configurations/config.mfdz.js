@@ -154,6 +154,8 @@ export default configMerger(walttiConfig, {
 
   title: APP_TITLE,
 
+  showDistruptions: false,
+
   favicon: './app/configurations/images/hb/favicon.png',
 
   meta: {
@@ -240,7 +242,7 @@ export default configMerger(walttiConfig, {
 
   footer: {
     content: [
-      { label: `© Stadt Herrenberg ${YEAR}` },
+      { label: `© MFDZ ${YEAR}` },
       {},
       {
         name: 'about-this-service',

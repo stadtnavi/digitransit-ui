@@ -161,9 +161,6 @@ class Map extends React.Component {
       mapUrls.push(
         `${config.URL.OTP}inspector/tile/bike-safety/{z}/{x}/{y}.png`,
       );
-    } else if (currentMapMode === MapMode.Satellite) {
-      mapUrls.push(config.URL.MAP.satellite);
-      mapUrls.push(config.URL.MAP.semiTransparent);
     } else if (currentMapMode === MapMode.Bicycle) {
       mapUrls.push(config.URL.MAP.bicycle);
     } else {

@@ -93,7 +93,9 @@ div.leaflet-container {
   background: none;
   z-index: index($zindex, map-container);
   @include font-map-container;
-
+  .leaflet-layer img {
+    filter: grayscale(70%);
+  }
 }
 
 div.current-location-marker > span > svg.icon {

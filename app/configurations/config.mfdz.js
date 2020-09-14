@@ -369,4 +369,28 @@ export default configMerger(walttiConfig, {
   },
 
   staticMessagesUrl: STATIC_MESSAGE_URL,
+
+  staticMessages: [
+    {
+      id: '2',
+      priority: -1,
+      shouldTrigger: true,
+      content: {
+        en: [
+          {
+            type: 'text',
+            content:
+              'We use cookies to improve our services. By using this site, you agree to its use of cookies.',
+          },
+        ],
+        de: [
+          {
+            type: 'text',
+            content:
+              'Diese Seite benutzt Cookies. Wenn Sie die Seite weiterhin benutzten stimmen Sie dem zu.',
+          },
+        ],
+      },
+    },
+  ],
 });

@@ -210,32 +210,12 @@ export default configMerger(walttiConfig, {
     href: 'https://www.efa-bw.de',
   },
 
-  defaultEndpoint: {
-    address: 'ZOB Herrenberg',
-    lat: 48.5942066,
-    lon: 8.8644041,
+  defaultMapCenter: {
+    lat: 48.775845,
+    lon: 9.182932,
   },
 
-  defaultOrigins: [
-    {
-      icon: 'icon-icon_bus',
-      label: 'ZOB Herrenberg',
-      lat: 48.5942066,
-      lon: 8.8644041,
-    },
-    {
-      icon: 'icon-icon_star',
-      label: 'Krankenhaus',
-      lat: 48.59174,
-      lon: 8.87536,
-    },
-    {
-      icon: 'icon-icon_star',
-      label: 'Waldfriedhof / Schönbuchturm',
-      lat: 48.6020352,
-      lon: 8.9036348,
-    },
-  ],
+  defaultOrigins: [],
 
   footer: {
     content: [

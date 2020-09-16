@@ -17,6 +17,7 @@ import {
 } from '../util/alertUtils';
 import { isCallAgencyDeparture } from '../util/legUtils';
 import { PREFIX_ROUTES, PREFIX_STOPS } from '../util/path';
+import CarpoolRow from './CarpoolRow';
 
 const DepartureRow = (
   { departure, currentTime, distance, displayNextDeparture },
@@ -50,6 +51,10 @@ const DepartureRow = (
       );
     });
   }
+
+  const isCarpool = () => {
+    return departure.pattern.route.mode === 'CARPOOL';
+  };
 
   const getDeparture = val => {
     context.router.push(val);
@@ -100,11 +105,15 @@ const DepartureRow = (
         <Distance distance={distance} />
       </td>
       <td className="td-route-number">
-        <RouteNumberContainer
-          route={departure.pattern.route}
-          hasDisruption={hasActiveAlert}
-          isCallAgency={isCallAgencyDeparture(departure.stoptimes[0])}
-        />
+        {isCarpool() ? (
+          <CarpoolRow departure={departure} iconWidth={1.25} />
+        ) : (
+          <RouteNumberContainer
+            route={departure.pattern.route}
+            hasDisruption={hasActiveAlert}
+            isCallAgency={isCallAgencyDeparture(departure.stoptimes[0])}
+          />
+        )}
       </td>
       <td className="td-destination">
         <RouteDestination

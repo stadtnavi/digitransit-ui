@@ -47,18 +47,16 @@ const express = require('express');
 const expressStaticGzip = require('express-static-gzip');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const logger = require('morgan');
 const {
   Validator,
   ValidationError,
 } = require('express-json-validator-middleware');
-
-const validator = new Validator({ allErrors: true });
-
-const request = require('request');
-const logger = require('morgan');
 const { postCarpoolOffer, bodySchema } = require('./carpool');
 const { retryFetch } = require('../app/util/fetchUtils');
 const config = require('../app/config').getConfiguration();
+
+const validator = new Validator({ allErrors: true });
 
 /* ********* Global ********* */
 const port = config.PORT || 8080;

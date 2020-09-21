@@ -393,4 +393,7 @@ export default configMerger(walttiConfig, {
       },
     },
   ],
+
+  showCarpoolOffer: true,
+  showSaveSearch: true,
 });

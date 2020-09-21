@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { routerShape } from 'react-router';
 
+import ReactDOM from 'react-dom';
+import moment from 'moment';
 import LazilyLoad, { importLazy } from './LazilyLoad';
 import OriginDestinationBar from './OriginDestinationBar';
 import QuickSettingsPanel from './QuickSettingsPanel';
@@ -13,6 +15,7 @@ import { parseLocation, PREFIX_ITINERARY_SUMMARY } from '../util/path';
 import withBreakpoint from '../util/withBreakpoint';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import { MapMode, StreetMode } from '../constants';
+import ToggleButton from './ToggleButton';
 
 class SummaryNavigation extends React.Component {
   static propTypes = {
@@ -44,6 +47,16 @@ class SummaryNavigation extends React.Component {
   customizeSearchModules = {
     Drawer: () => importLazy(import('material-ui/Drawer')),
     CustomizeSearch: () => importLazy(import('./CustomizeSearchNew')),
+  };
+
+  carpoolOfferModules = {
+    Drawer: () => importLazy(import('material-ui/Drawer')),
+    CarpoolOffer: () => importLazy(import('./CarpoolOffer')),
+  };
+
+  saveSearchModules = {
+    Drawer: () => importLazy(import('material-ui/Drawer')),
+    SaveSearch: () => importLazy(import('./SaveSearch')),
   };
 
   componentDidMount() {
@@ -83,28 +96,140 @@ class SummaryNavigation extends React.Component {
       this.context.location.state.customizeSearchOffcanvas) ||
     false;
 
+  getLazilyLoadForCarpool(isOpen) {
+    const { location } = this.context;
+    return (
+      <LazilyLoad modules={this.carpoolOfferModules}>
+        {({ Drawer, CarpoolOffer }) => (
+          <Drawer
+            className="offcanvas"
+            disableSwipeToOpen
+            openSecondary
+            docked={false}
+            open={isOpen}
+            onRequestChange={this.onRequestChange}
+            // Needed for the closing arrow button that's left of the drawer.
+            containerStyle={{
+              background: 'transparent',
+              boxShadow: 'none',
+              overflow: 'visible',
+            }}
+            width={getDrawerWidth(window)}
+          >
+            <CarpoolOffer
+              duration={null}
+              from={this.props.params.from}
+              to={this.props.params.to}
+              start={
+                this.props.startTime ||
+                (location.query &&
+                  location.query.time &&
+                  moment(location.query.time).unix())
+              }
+              onToggleClick={this.toggleOfferCarpool}
+            />
+          </Drawer>
+        )}
+      </LazilyLoad>
+    );
+  }
+
+  getLazilyLoadForSaveSearch(isOpen) {
+    const { location } = this.context;
+    return (
+      <LazilyLoad modules={this.saveSearchModules}>
+        {({ Drawer, SaveSearch }) => (
+          <Drawer
+            className="offcanvas"
+            disableSwipeToOpen
+            openSecondary
+            docked={false}
+            open={isOpen}
+            onRequestChange={this.onRequestChange}
+            // Needed for the closing arrow button that's left of the drawer.
+            containerStyle={{
+              background: 'transparent',
+              boxShadow: 'none',
+              overflow: 'visible',
+            }}
+            width={getDrawerWidth(window)}
+          >
+            <SaveSearch
+              duration={null}
+              from={this.props.params.from}
+              to={this.props.params.to}
+              start={
+                this.props.startTime ||
+                (location.query &&
+                  location.query.time &&
+                  moment(location.query.time).unix())
+              }
+              onToggleClick={this.toggleSaveSearch}
+            />
+          </Drawer>
+        )}
+      </LazilyLoad>
+    );
+  }
+
   toggleCustomizeSearchOffcanvas = () => {
     this.internalSetOffcanvas(!this.getOffcanvasState());
   };
 
-  internalSetOffcanvas = newState => {
+  internalSetOffcanvas = ({
+    customizeSearchOffcanvas,
+    carpoolOfferOffcanvas,
+    saveSearchOffcanvas,
+  }) => {
     addAnalyticsEvent({
       event: 'sendMatomoEvent',
       category: 'ItinerarySettings',
       action: 'ExtraSettingsPanelClick',
-      name: newState ? 'ExtraSettingsPanelOpen' : 'ExtraSettingsPanelClose',
+      name: customizeSearchOffcanvas
+        ? 'ExtraSettingsPanelOpen'
+        : 'ExtraSettingsPanelClose',
     });
-    if (newState) {
+    if (
+      customizeSearchOffcanvas ||
+      carpoolOfferOffcanvas ||
+      saveSearchOffcanvas
+    ) {
       this.context.router.push({
         ...this.context.location,
         state: {
           ...this.context.location.state,
-          customizeSearchOffcanvas: newState,
+          customizeSearchOffcanvas,
+          carpoolOfferOffcanvas,
+          saveSearchOffcanvas,
         },
       });
     } else {
       this.context.router.goBack();
     }
+  };
+
+  getCarpoolOffcanvasState = () =>
+    (this.context.location.state &&
+      this.context.location.state.carpoolOfferOffcanvas) ||
+    false;
+
+  toggleOfferCarpool = () => {
+    this.internalSetOffcanvas({
+      carpoolOfferOffcanvas: !this.getCarpoolOffcanvasState(),
+      saveSearchOffcanvas: false,
+    });
+  };
+
+  getSaveSearchOffcanvasState = () =>
+    (this.context.location.state &&
+      this.context.location.state.saveSearchOffcanvas) ||
+    false;
+
+  toggleSaveSearch = () => {
+    this.internalSetOffcanvas({
+      carpoolOfferOffcanvas: false,
+      saveSearchOffcanvas: !this.getSaveSearchOffcanvasState(),
+    });
   };
 
   renderStreetModeSelector = (config, router) => (
@@ -136,6 +261,8 @@ class SummaryNavigation extends React.Component {
     const { config, router } = this.context;
     const className = cx({ 'bp-large': this.props.breakpoint === 'large' });
     const isOpen = this.getOffcanvasState();
+    const isCarpoolOpen = this.getCarpoolOffcanvasState();
+    const isSaveSearchOpen = this.getSaveSearchOffcanvasState();
 
     return (
       <div className="summary-navigation-container">
@@ -152,7 +279,34 @@ class SummaryNavigation extends React.Component {
               timeSelectorStartTime={this.props.startTime}
               timeSelectorEndTime={this.props.endTime}
               timeSelectorServiceTimeRange={this.props.serviceTimeRange}
-            />
+            >
+              <span className="offcanvas-buttons">
+                {this.context.config.showCarpoolOffer && (
+                  <ToggleButton
+                    className="standalone-btn carpool-offer-btn"
+                    showButtonTitle
+                    label="offer-ride"
+                    onBtnClick={this.toggleOfferCarpool}
+                  />
+                )}
+                {this.context.config.showSaveSearch && (
+                  <ToggleButton
+                    className="standalone-btn carpool-offer-btn"
+                    showButtonTitle
+                    label="save-search"
+                    onBtnClick={this.toggleSaveSearch}
+                  />
+                )}
+              </span>
+              {ReactDOM.createPortal(
+                this.getLazilyLoadForCarpool(isCarpoolOpen),
+                document.getElementById('app'),
+              )}
+              {ReactDOM.createPortal(
+                this.getLazilyLoadForSaveSearch(isSaveSearchOpen),
+                document.getElementById('app'),
+              )}
+            </QuickSettingsPanel>
           </React.Fragment>
         )}
         <LazilyLoad modules={this.customizeSearchModules}>

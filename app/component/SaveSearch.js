@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { intlShape, FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { intlShape, FormattedMessage } from 'react-intl';
 import Moment from 'moment';
 import { routerShape } from 'react-router';
 import Icon from './Icon';
-import Checkbox from './Checkbox';
 import logo from '../../static/img/fahrgemeinschaft-de-rund.png';
 import Loading from './Loading';
 
-export default class CarpoolOffer extends React.Component {
+export default class SaveSearch extends React.Component {
   static contextTypes = {
     intl: intlShape.isRequired,
     config: PropTypes.object.isRequired,
@@ -17,63 +16,19 @@ export default class CarpoolOffer extends React.Component {
 
   static propTypes = {
     onToggleClick: PropTypes.func.isRequired,
-    from: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-    to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+    from: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
     start: PropTypes.number.isRequired,
   };
-
-  allWeekdays = [
-    'monday',
-    'tuesday',
-    'wednesday',
-    'thursday',
-    'friday',
-    'saturday',
-    'sunday',
-  ];
-
-  allWeekdaysFalse = this.allWeekdays.reduce((accumulator, curr) => {
-    accumulator[curr] = false;
-    return accumulator;
-  }, {});
 
   constructor(props) {
     super(props);
     this.state = {
-      isRegularly: false,
-      selectedDays: [],
-      days: this.allWeekdaysFalse,
-      GDPR: false,
       formState: 'initial',
     };
-    this.setRegular = this.setRegular.bind(this);
-    this.setOnce = this.setOnce.bind(this);
     this.finishForm = this.finishForm.bind(this);
     this.close = this.close.bind(this);
   }
-
-  setRegular = () => {
-    this.setState({ isRegularly: true });
-  };
-
-  setOnce = () => {
-    this.setState({
-      isRegularly: false,
-      days: this.allWeekdaysFalse,
-    });
-  };
-
-  updateSelectedDays = day => {
-    if (this.state.selectedDays.includes(day)) {
-      this.state.selectedDays.splice(this.state.selectedDays.indexOf(day), 1);
-    } else {
-      this.state.selectedDays.push(day);
-    }
-  };
-
-  updatePhoneNumber = event => {
-    this.setState({ phoneNumber: event.target.value });
-  };
 
   finishForm = e => {
     e.preventDefault();
@@ -89,23 +44,14 @@ export default class CarpoolOffer extends React.Component {
         lat: this.props.to.lat,
         lon: this.props.to.lon,
       },
-      phoneNumber: this.state.phoneNumber,
       time: {
-        type: this.state.isRegularly ? 'recurring' : 'one-off',
         departureTime: new Moment(this.props.start).format('HH:mm'),
       },
     };
 
-    if (this.state.isRegularly) {
-      carpoolOffer.time.weekdays = this.state.days;
-    } else {
-      carpoolOffer.time.date = new Moment(this.props.start).format(
-        'YYYY-MM-DD',
-      );
-    }
-
     this.setState({ formState: 'sending' });
-    fetch('/carpool-offers', {
+    /*
+    fetch('/saved-searches', {
       method: 'POST',
       headers: new Headers({ 'content-type': 'application/json' }),
       body: JSON.stringify(carpoolOffer),
@@ -116,6 +62,7 @@ export default class CarpoolOffer extends React.Component {
       }
       return response.json();
     });
+     */
   };
 
   getOfferedTimes = () => {
@@ -138,30 +85,7 @@ export default class CarpoolOffer extends React.Component {
     this.context.router.goBack();
     this.setState({
       formState: 'initial',
-      days: this.allWeekdaysFalse,
-      isRegularly: false,
-      GDPR: false,
     });
-  }
-
-  renderCheckbox(weekday, isRegularly) {
-    return (
-      <div key={weekday}>
-        <Checkbox
-          disabled={!isRegularly}
-          checked={isRegularly && this.state.days[weekday]}
-          onChange={e => {
-            this.updateSelectedDays(e.currentTarget.getAttribute('aria-label'));
-            this.setState(prevState => {
-              // eslint-disable-next-line no-param-reassign
-              prevState.days[weekday] = !prevState.days[weekday];
-              return prevState;
-            });
-          }}
-          labelId={weekday}
-        />
-      </div>
-    );
   }
 
   renderSuccessMessage() {
@@ -216,10 +140,6 @@ export default class CarpoolOffer extends React.Component {
     const origin = this.props.from.name || this.props.from.split('::')[0];
     const destination = this.props.to.name || this.props.to.split('::')[0];
     const departure = new Moment(this.props.start).format('LT');
-    const { GDPR, isRegularly } = this.state;
-
-    const policyUrl = 'https://www.fahrgemeinschaft.de/datenschutz.php';
-    const termsUrl = 'https://www.fahrgemeinschaft.de/rules.php';
 
     return (
       <form onSubmit={this.finishForm} className="sidePanelText">
@@ -238,76 +158,6 @@ export default class CarpoolOffer extends React.Component {
           </b>
           : {destination}
         </p>
-        <div>
-          <FormattedMessage
-            id="add-carpool-offer-frequency"
-            defaultMessage="How often do you want to add the offer?"
-          />
-          <div>
-            <label className="radio-label" htmlFor="once">
-              <input
-                onChange={this.setOnce}
-                type="radio"
-                id="once"
-                value="once"
-                name="times"
-                defaultChecked
-              />
-              <FormattedMessage id="once" defaultMessage="once" />
-            </label>
-          </div>
-          <div>
-            <label className="radio-label" htmlFor="regularly">
-              <input
-                onChange={this.setRegular}
-                type="radio"
-                id="regularly"
-                value="regularly"
-                name="times"
-              />
-              <FormattedMessage id="recurring" defaultMessage="recurring" />
-            </label>
-          </div>
-        </div>
-        <div className="carpool-checkbox">
-          {this.allWeekdays.map(day => this.renderCheckbox(day, isRegularly))}
-        </div>
-        <label className="phone-label" htmlFor="phone">
-          <FormattedMessage
-            id="add-phone-number"
-            defaultMessage="Add your phone number"
-          />
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="07032 111111"
-            pattern="\+?[0-9,\-,(,),/, ]+"
-            required
-            onChange={this.updatePhoneNumber}
-          />
-          <br />
-          <FormattedMessage
-            id="phone-number-info"
-            defaultMessage="This will be shown to people interested in the ride."
-          />
-        </label>
-        <div className="gdpr-checkbox">
-          <Checkbox
-            checked={GDPR}
-            onChange={() => {
-              this.setState({ GDPR: !GDPR });
-            }}
-          />
-          <FormattedHTMLMessage
-            id="accept-carpool-policy"
-            values={{ policyUrl, termsUrl }}
-            defaultMessage=""
-          />
-        </div>
-        <button disabled={!GDPR} className="standalone-btn" type="submit">
-          <FormattedMessage id="offer-ride" defaultMessage="Offer carpool" />
-        </button>
       </form>
     );
   }

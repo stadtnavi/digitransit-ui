@@ -154,6 +154,10 @@ export default {
     },
   },
 
+  /* Buttons that would display on the QuickSettingsPanel. */
+  showCarpoolOffer: false,
+  showSaveSearch: false,
+
   maxWalkDistance: 1000,
   maxBikingDistance: 100000,
   itineraryFiltering: 1.5, // drops 66% worse routes

@@ -28,6 +28,7 @@ class QuickSettingsPanel extends React.Component {
     timeSelectorStartTime: PropTypes.number,
     timeSelectorEndTime: PropTypes.number,
     timeSelectorServiceTimeRange: PropTypes.object.isRequired,
+    children: PropTypes.array,
   };
 
   static contextTypes = {
@@ -354,6 +355,7 @@ class QuickSettingsPanel extends React.Component {
                 img="icon-icon_arrow-dropdown"
               />
             </div>
+            {this.props.children}
           </div>
         )}
       </div>

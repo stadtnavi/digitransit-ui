@@ -5,6 +5,7 @@ import Moment from 'moment';
 import { routerShape } from 'react-router';
 import Icon from './Icon';
 import Loading from './Loading';
+import LoginButton from './LoginButton';
 
 export default class SaveSearch extends React.Component {
   static contextTypes = {
@@ -64,22 +65,6 @@ export default class SaveSearch extends React.Component {
      */
   };
 
-  getOfferedTimes = () => {
-    let departureDay = '';
-    const departureTime = new Moment(this.props.start).format('LT');
-    if (this.state.isRegularly) {
-      // If the offer is recurring, return all the selected days as a string.
-      departureDay = this.state.selectedDays.join(', ');
-      departureDay = departureDay.toLowerCase();
-      departureDay =
-        departureDay.charAt(0).toUpperCase() + departureDay.slice(1);
-    } else {
-      // If the offer is one-off, get the date from the epoch time.
-      departureDay = new Moment(this.props.start).format('L');
-    }
-    return { departureDay, departureTime };
-  };
-
   close() {
     this.context.router.goBack();
     this.setState({
@@ -87,12 +72,7 @@ export default class SaveSearch extends React.Component {
     });
   }
 
-  renderSuccessMessage() {
-    const origin = this.props.from.name;
-    const destination = this.props.to.name;
-    const { departureDay, departureTime } = this.getOfferedTimes();
-    const { isRegularly } = this.state;
-
+  renderSuccessMessage(origin, destination, departure) {
     return (
       <div className="sidePanelText">
         <h2>
@@ -100,46 +80,36 @@ export default class SaveSearch extends React.Component {
         </h2>
         <div>
           <p>
-            <FormattedMessage
-              id="carpool-offer-success"
-              values={{ origin, destination }}
-              defaultMessage="Your offer from {origin} to {destination} was added."
-            />
+            <h2>
+              <FormattedMessage id="your-search" defaultMessage="Your search" />
+            </h2>
+            <p>
+              <b>
+                <FormattedMessage id="origin" defaultMessage="Origin" />
+              </b>
+              : {origin} <FormattedMessage id="at-time" defaultMessage="at" />{' '}
+              {departure}{' '}
+              <FormattedMessage id="time-oclock" defaultMessage=" " />
+              <br />
+              <b>
+                <FormattedMessage
+                  id="destination"
+                  defaultMessage="Destination"
+                />
+              </b>
+              : {destination}
+            </p>
           </p>
-          <p>
-            {isRegularly ? (
-              <FormattedMessage
-                id="chosen-times-recurring"
-                defaultMessage="You've set the following times and days: "
-              />
-            ) : (
-              <FormattedMessage
-                id="chosen-times-once"
-                defaultMessage="You've set the following time: "
-              />
-            )}
-            {departureDay} <FormattedMessage id="at-time" defaultMessage="at" />{' '}
-            {departureTime}.
-          </p>
-          <p>
-            <FormattedMessage
-              id="carpool-success-info"
-              defaultMessage="Your offer will be deleted after the day of the ride. Regular ones will be removed after three months."
-            />
-          </p>
+          <button type="submit" className="sidePanel-btn" onClick={this.close}>
+            <FormattedMessage id="close" defaultMessage="Close" />
+          </button>
         </div>
-        <button type="submit" className="sidePanel-btn" onClick={this.close}>
-          <FormattedMessage id="close" defaultMessage="Close" />
-        </button>
+        {this.renderSavedSearches()}
       </div>
     );
   }
 
-  renderForm() {
-    const origin = this.props.from.name || this.props.from.split('::')[0];
-    const destination = this.props.to.name || this.props.to.split('::')[0];
-    const departure = new Moment(this.props.start).format('LT');
-
+  renderForm(origin, destination, departure) {
     return (
       <form onSubmit={this.finishForm} className="sidePanelText">
         <h2>
@@ -157,20 +127,63 @@ export default class SaveSearch extends React.Component {
           </b>
           : {destination}
         </p>
+        <button className="standalone-btn" type="submit">
+          <FormattedMessage id="save-search" defaultMessage="Save search" />
+        </button>
       </form>
     );
   }
 
+  renderLogin = (origin, destination, departure) => {
+    return (
+      <div className="sidePanelText">
+        <h2>
+          <FormattedMessage id="your-search" defaultMessage="Your search" />
+        </h2>
+        <p>
+          <b>
+            <FormattedMessage id="origin" defaultMessage="Origin" />
+          </b>
+          : {origin} <FormattedMessage id="at-time" defaultMessage="at" />{' '}
+          {departure} <FormattedMessage id="time-oclock" defaultMessage=" " />
+          <br />
+          <b>
+            <FormattedMessage id="destination" defaultMessage="Destination" />
+          </b>
+          : {destination}
+        </p>
+        Please log in to save.
+        <LoginButton />
+      </div>
+    );
+  };
+
+  renderSavedSearches = () => {
+    return (
+      <div>
+        <h2>Your already saved searches:</h2>
+      </div>
+    );
+  };
+
   renderBody() {
+    const userLoggedIn = false;
     const { formState } = this.state;
+    const origin = this.props.from.name || this.props.from.split('::')[0];
+    const destination = this.props.to.name || this.props.to.split('::')[0];
+    const departure = new Moment(this.props.start).format('LT');
+
+    if (!userLoggedIn) {
+      return this.renderLogin(origin, destination, departure);
+    }
     if (formState === 'initial') {
-      return this.renderForm();
+      return this.renderForm(origin, destination, departure);
     }
     if (formState === 'sending') {
       return <Loading />;
     }
     if (formState === 'success') {
-      return this.renderSuccessMessage();
+      return this.renderSuccessMessage(origin, destination, departure);
     }
     return null;
   }

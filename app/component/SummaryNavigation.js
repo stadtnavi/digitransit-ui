@@ -292,9 +292,10 @@ class SummaryNavigation extends React.Component {
                 {this.context.config.showSaveSearch && (
                   <ToggleButton
                     className="standalone-btn carpool-offer-btn"
-                    showButtonTitle
+                    icon="save"
                     label="save-search"
                     onBtnClick={this.toggleSaveSearch}
+                    style={{ border: 'none', fontSize: '0.9rem' }}
                   />
                 )}
               </span>

@@ -153,7 +153,7 @@ export default configMerger(walttiConfig, {
 
   title: APP_TITLE,
 
-  showDistruptions: false,
+  showDisruptions: false,
 
   favicon: './app/configurations/images/hb/favicon.png',
 

@@ -81,7 +81,7 @@ const AppBarLarge = (
         <div className="navi-languages right-border navi-margin">
           <LangSelect />
         </div>
-        {config.showDistruptions ? (
+        {config.showDisruptions ? (
           <div className="navi-icons navi-margin padding-horizontal-large">
             <a
               className="noborder"

@@ -59,6 +59,11 @@ export default configMerger(walttiConfig, {
     timeFactor: 0.3,
   },
 
+  showLogin: true,
+  mainMenu: {
+    showDisruptions: false,
+  },
+
   itinerary: {
     delayThreshold: 60,
   },
@@ -152,8 +157,6 @@ export default configMerger(walttiConfig, {
   mergeStopsByCode: true,
 
   title: APP_TITLE,
-
-  showDisruptions: false,
 
   favicon: './app/configurations/images/hb/favicon.png',
 

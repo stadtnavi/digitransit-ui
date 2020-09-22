@@ -143,7 +143,7 @@ export default class SaveSearch extends React.Component {
     return (
       <form onSubmit={this.finishForm} className="sidePanelText">
         <h2>
-          <FormattedMessage id="your-carpool-trip" defaultMessage="Your trip" />
+          <FormattedMessage id="your-search" defaultMessage="Your search" />
         </h2>
         <p>
           <b>

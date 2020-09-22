@@ -193,8 +193,8 @@ export default class SaveSearch extends React.Component {
         <button className="close-offcanvas" onClick={onToggleClick}>
           <Icon className="close-icon" img="icon-icon_close" />
         </button>
+        <Icon img="icon-icon_save" height={8} width={8} />
         {this.renderBody()}
-        <Icon img="icon-icon_save" />
       </div>
     );
   }

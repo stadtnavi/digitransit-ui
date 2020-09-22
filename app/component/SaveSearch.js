@@ -4,7 +4,6 @@ import { intlShape, FormattedMessage } from 'react-intl';
 import Moment from 'moment';
 import { routerShape } from 'react-router';
 import Icon from './Icon';
-import logo from '../../static/img/fahrgemeinschaft-de-rund.png';
 import Loading from './Loading';
 
 export default class SaveSearch extends React.Component {
@@ -32,7 +31,7 @@ export default class SaveSearch extends React.Component {
 
   finishForm = e => {
     e.preventDefault();
-
+    /*
     const carpoolOffer = {
       origin: {
         label: this.props.from.name,
@@ -50,7 +49,7 @@ export default class SaveSearch extends React.Component {
     };
 
     this.setState({ formState: 'sending' });
-    /*
+    
     fetch('/saved-searches', {
       method: 'POST',
       headers: new Headers({ 'content-type': 'application/json' }),
@@ -194,8 +193,8 @@ export default class SaveSearch extends React.Component {
         <button className="close-offcanvas" onClick={onToggleClick}>
           <Icon className="close-icon" img="icon-icon_close" />
         </button>
-        <img alt="Fahrgemeinschaft.de" className="fg_icon" src={logo} />
         {this.renderBody()}
+        <Icon img="icon-icon_save" />
       </div>
     );
   }

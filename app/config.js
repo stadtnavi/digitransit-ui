@@ -106,10 +106,12 @@ export function getNamedConfiguration(configName) {
 
     addMetaData(config); // add dynamic metadata content
 
+    /*
     if (!process.env.OIDC_CLIENT_ID) {
       // disable user account access if backend is not available
       config.showLogin = false;
     }
+     */
 
     const appPathPrefix = config.URL.ASSET_URL || '';
 

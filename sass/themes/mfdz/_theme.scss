@@ -10,6 +10,8 @@ $current-location-color: $primary-color;
 $standalone-btn-color: $primary-color;
 $link-color: $primary-color;
 $desktop-title-color: $primary-color;
+$to-color: $primary-color;
+$from-color: darken($from-color, 20%);
 
 /* Vehicle palette */
 $bus-color: red;

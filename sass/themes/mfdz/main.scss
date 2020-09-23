@@ -32,11 +32,11 @@
 }
 
 .sidePanel-btn:hover {
-  background-color: #666;
+  background-color: #666 !important;
 }
 
 .sidePanel-btn {
-  background-color: #9fc727;
+  background-color: $primary-color !important;
   padding-top: 0.4em;
   padding-right: 0.7em;
   padding-bottom: 0.4em;
@@ -45,7 +45,6 @@
   color: white;
   border-style: solid;
   border-width: 0px;
-  width: 120px;
 }
 
 input[type='radio'] {

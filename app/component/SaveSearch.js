@@ -153,7 +153,7 @@ export default class SaveSearch extends React.Component {
           : {destination}
         </p>
         Please log in to save.
-        <LoginButton />
+        <LoginButton className="sidePanel-btn login-icon" isMobile />
       </div>
     );
   };

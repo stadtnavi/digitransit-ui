@@ -2,25 +2,25 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 import ComponentUsageExample from './ComponentUsageExample';
-import NearbyTabLabel from './NearbyTabLabel';
-import FavouritesTabLabelContainer from './FavouritesTabLabelContainer';
+import SavedSearchesTabLabel from './SavedSearchesTabLabel';
+import OfferedRidesTabLabelContainer from './OfferedRidesTabLabelContainer';
 
 const FrontPagePanelSmall = ({
   selectedPanel,
-  nearbyClicked,
-  favouritesClicked,
+  savedSearchesClicked,
+  offeredRidesClicked,
   mapExpanded,
   children,
   //  location,
 }) => {
   const tabClasses = ['hover'];
-  const nearbyClasses = ['nearby-routes', 'h4'];
-  const favouritesClasses = ['favourites', 'h4'];
+  const savedSearchesClasses = ['h4'];
+  const offeredRidesClasses = ['h4'];
 
   if (selectedPanel === 1) {
-    nearbyClasses.push('selected');
+    savedSearchesClasses.push('selected');
   } else {
-    favouritesClasses.push('selected');
+    offeredRidesClasses.push('selected');
   }
 
   const content = selectedPanel && (
@@ -52,13 +52,13 @@ const FrontPagePanelSmall = ({
           },
         ])}
       >
-        <NearbyTabLabel
-          classes={cx(tabClasses, nearbyClasses)}
-          onClick={nearbyClicked}
+        <SavedSearchesTabLabel
+          classes={cx(tabClasses, savedSearchesClasses)}
+          onClick={savedSearchesClicked}
         />
-        <FavouritesTabLabelContainer
-          classes={cx(tabClasses, favouritesClasses)}
-          onClick={favouritesClicked}
+        <OfferedRidesTabLabelContainer
+          classes={cx(tabClasses, offeredRidesClasses)}
+          onClick={offeredRidesClicked}
         />
       </ul>
       {content}
@@ -90,8 +90,8 @@ FrontPagePanelSmall.defaultProps = {
 
 FrontPagePanelSmall.propTypes = {
   selectedPanel: PropTypes.oneOf([1, 2]),
-  nearbyClicked: PropTypes.func.isRequired,
-  favouritesClicked: PropTypes.func.isRequired,
+  savedSearchesClicked: PropTypes.func.isRequired,
+  offeredRidesClicked: PropTypes.func.isRequired,
   mapExpanded: PropTypes.bool.isRequired,
   children: PropTypes.node,
 };

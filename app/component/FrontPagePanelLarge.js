@@ -1,36 +1,36 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
-import NearbyTabLabel from './NearbyTabLabel';
-import FavouritesTabLabelContainer from './FavouritesTabLabelContainer';
+import SavedSearchesTabLabel from './SavedSearchesTabLabel';
+import OfferedRidesTabLabelContainer from './OfferedRidesTabLabelContainer';
 import ComponentUsageExample from './ComponentUsageExample';
 
 const FrontPagePanelLarge = ({
   selectedPanel,
-  nearbyClicked,
-  favouritesClicked,
+  savedSearchesClicked,
+  offeredRidesClicked,
   children,
 }) => {
   const tabClasses = ['bp-large', 'h4'];
-  const nearbyClasses = ['nearby-routes'];
-  const favouritesClasses = ['favourites'];
+  const savedSearchesClasses = [];
+  const offeredRidesClasses = [];
 
   if (selectedPanel === 1) {
-    nearbyClasses.push('selected');
+    savedSearchesClasses.push('selected');
   } else {
-    favouritesClasses.push('selected');
+    offeredRidesClasses.push('selected');
   }
 
   return (
     <div className="fpcfloat no-select">
       <ul className="tabs-row bp-large cursor-pointer">
-        <NearbyTabLabel
-          classes={cx(tabClasses, nearbyClasses)}
-          onClick={nearbyClicked}
+        <SavedSearchesTabLabel
+          classes={cx(tabClasses, savedSearchesClasses)}
+          onClick={savedSearchesClicked}
         />
-        <FavouritesTabLabelContainer
-          classes={cx(tabClasses, favouritesClasses)}
-          onClick={favouritesClicked}
+        <OfferedRidesTabLabelContainer
+          classes={cx(tabClasses, offeredRidesClasses)}
+          onClick={offeredRidesClicked}
         />
       </ul>
       {children}
@@ -59,8 +59,8 @@ FrontPagePanelLarge.description = () => (
 
 FrontPagePanelLarge.propTypes = {
   selectedPanel: PropTypes.oneOf([1, 2]),
-  nearbyClicked: PropTypes.func.isRequired,
-  favouritesClicked: PropTypes.func.isRequired,
+  savedSearchesClicked: PropTypes.func.isRequired,
+  offeredRidesClicked: PropTypes.func.isRequired,
   children: PropTypes.node,
 };
 

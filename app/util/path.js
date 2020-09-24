@@ -10,8 +10,6 @@ import { addAnalyticsEvent } from './analyticsUtils';
 const debug = d('path.js');
 export const TAB_NEARBY = 'indernaehe';
 export const TAB_FAVOURITES = 'gespeichertesuchen';
-export const TAB_SAVES = 'suchen';
-export const TAB_OFFERS = 'angebotenfahrten';
 export const PREFIX_ROUTES = 'routen';
 export const PREFIX_STOPS = 'haltestellen';
 export const PREFIX_TERMINALS = 'busbahnhoefe';

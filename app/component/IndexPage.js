@@ -22,8 +22,6 @@ import { isBrowser } from '../util/browser';
 import {
   TAB_NEARBY,
   TAB_FAVOURITES,
-  TAB_SAVES,
-  TAB_OFFERS,
   parseLocation,
   isItinerarySearchObjects,
   navigateTo,
@@ -40,8 +38,6 @@ import * as ModeUtils from '../util/modeUtils';
 import withBreakpoint from '../util/withBreakpoint';
 import ComponentUsageExample from './ComponentUsageExample';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
-import SavedSearchesPanel from './SavedSearchesPanel';
-import OfferedRidesPanel from './OfferedRidesPanel';
 
 const debug = d('IndexPage.js');
 
@@ -71,7 +67,7 @@ class IndexPage extends React.Component {
 
   static defaultProps = {
     autoSetOrigin: true,
-    tab: TAB_SAVES,
+    tab: TAB_NEARBY,
   };
 
   constructor(props, context) {
@@ -107,9 +103,9 @@ class IndexPage extends React.Component {
 
   getSelectedTab = () => {
     switch (this.props.tab) {
-      case TAB_OFFERS:
+      case TAB_FAVOURITES:
         return 2;
-      case TAB_SAVES:
+      case TAB_NEARBY:
         return 1;
       default:
         return undefined;
@@ -154,14 +150,6 @@ class IndexPage extends React.Component {
     });
   };
 
-  clickSavedSearches = () => {
-    this.openTab(TAB_SAVES);
-  };
-
-  clickOfferRides = () => {
-    this.openTab(TAB_OFFERS);
-  };
-
   openTab = tab => {
     navigateTo({
       origin: this.props.origin,
@@ -193,14 +181,8 @@ class IndexPage extends React.Component {
       case TAB_FAVOURITES:
         Tab = FavouritesPanel;
         break;
-      case TAB_SAVES:
-        Tab = SavedSearchesPanel;
-        break;
-      case TAB_OFFERS:
-        Tab = OfferedRidesPanel;
-        break;
       default:
-        Tab = SavedSearchesPanel;
+        Tab = NearbyRoutesPanel;
     }
     return (
       <Tab origin={this.props.origin} destination={this.props.destination} />
@@ -257,8 +239,8 @@ class IndexPage extends React.Component {
         <div key="foo" className="fpccontainer">
           <FrontPagePanelLarge
             selectedPanel={selectedMainTab}
-            savedSearchesClicked={this.clickSavedSearches}
-            offeredRidesClicked={this.clickOfferRides}
+            nearbyClicked={this.clickNearby}
+            favouritesClicked={this.clickFavourites}
           >
             {this.renderTab()}
           </FrontPagePanelLarge>
@@ -335,8 +317,8 @@ class IndexPage extends React.Component {
           </div>
           <FrontPagePanelSmall
             selectedPanel={selectedMainTab}
-            savedSearchesClicked={this.clickSavedSearches}
-            offeredRidesClicked={this.clickOfferRides}
+            nearbyClicked={this.clickNearby}
+            favouritesClicked={this.clickFavourites}
             mapExpanded={mapExpanded}
             location={origin}
           >
@@ -414,7 +396,7 @@ const processLocation = (locationString, locationState, intl) => {
   return location;
 };
 
-const tabs = [TAB_SAVES, TAB_OFFERS];
+const tabs = [TAB_FAVOURITES, TAB_NEARBY];
 
 const IndexPageWithPosition = connectToStores(
   IndexPageWithBreakpoint,

@@ -110,7 +110,7 @@
     flex-direction: row;
     color: $link-color;
     margin-left: 0.5em;
-    width: 50%;
+    width: 40%;
     > span {
       margin-left: -1.4rem;
       pointer-events: none;
@@ -119,6 +119,20 @@
       font-size: 0.7rem;
       color: $primary-color;
       margin-top: 1em;
+    }
+  }
+
+  .offcanvas-buttons {
+    display: flex;
+    .carpool-offer-btn {
+      margin: $padding-xsmall;
+      font-size: $font-size-xxsmall;
+      padding: $padding-small;
+      align-self: center;
+      background: transparent;
+      color: $primary-color;
+      border: solid $primary-color 1px;
+      font-weight: $font-weight-bold;
     }
   }
 

@@ -334,6 +334,9 @@ class TileLayerContainer extends GridLayer {
     if (target.layer === 'stop') {
       id = target.feature.properties.gtfsId;
       contents = this.getStopContent(id, target);
+    } else if (target.layer === 'carpool') {
+      id = target.feature.properties.gtfsId;
+      contents = this.getStopContent(id, target);
     } else if (target.layer === 'citybike') {
       ({ id } = target.feature.properties);
       contents = this.getCitybikeContent(id);

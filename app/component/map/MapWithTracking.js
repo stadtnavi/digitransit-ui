@@ -21,7 +21,7 @@ import {
 import triggerMessage from '../../util/messageUtils';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 
-const DEFAULT_ZOOM = 12;
+const DEFAULT_ZOOM = 10;
 const FOCUS_ZOOM = 16;
 
 const onlyUpdateCoordChanges = onlyUpdateForKeys([

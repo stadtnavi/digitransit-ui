@@ -151,6 +151,28 @@ export default config => {
           ]).then(([title, content]) => cb(null, { title, content }));
         }}
       />
+      <Route
+        path="/privacy"
+        getComponents={(location, cb) => {
+          Promise.all([
+            Promise.resolve(Title),
+            import(/* webpackChunkName: "privacy" */ './component/PrivacyPage').then(
+              getDefault,
+            ),
+          ]).then(([title, content]) => cb(null, { title, content }));
+        }}
+      />
+      <Route
+        path="/impressum"
+        getComponents={(location, cb) => {
+          Promise.all([
+            Promise.resolve(Title),
+            import(/* webpackChunkName: "privacy" */ './component/PrivacyPage').then(
+              getDefault,
+            ),
+          ]).then(([title, content]) => cb(null, { title, content }));
+        }}
+      />
       {!config.URL.API_URL.includes('/api.') && (
         <Route
           path="/admin"

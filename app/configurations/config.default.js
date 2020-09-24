@@ -154,6 +154,10 @@ export default {
     },
   },
 
+  /* Buttons that would display on the QuickSettingsPanel. */
+  showCarpoolOffer: false,
+  showSaveSearch: false,
+
   maxWalkDistance: 1000,
   maxBikingDistance: 100000,
   itineraryFiltering: 1.5, // drops 66% worse routes
@@ -605,6 +609,8 @@ export default {
 
   routeTimetableUrlResolver: {},
 
+  privacy: {},
+  imprint: {},
   aboutThisService: {
     fi: [
       {
@@ -764,6 +770,7 @@ export default {
     kouvola: 'kouvola',
     tampere: 'tampere',
     mikkeli: 'mikkeli',
+    mfdz: 'mfdz',
     kotka: 'kotka',
     jyvaskyla: 'jyvaskyla',
     lahti: 'lahti',

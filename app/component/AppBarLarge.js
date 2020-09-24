@@ -81,31 +81,37 @@ const AppBarLarge = (
         <div className="navi-languages right-border navi-margin">
           <LangSelect />
         </div>
-        <div className="navi-icons navi-margin padding-horizontal-large">
-          <a
-            className="noborder"
-            onClick={openDisruptionInfo}
-            aria-label={intl.formatMessage({
-              id: 'disruptions',
-              defaultMessage: 'Disruptions',
-            })}
-          >
-            <Icon img="icon-icon_caution" className="caution-topbar" />
-          </a>
-        </div>
-        <div className="padding-horizontal-large navi-margin">
-          <ExternalLink
-            className="external-top-bar"
-            {...config.appBarLink}
-            onClick={() => {
-              addAnalyticsEvent({
-                category: 'Navigation',
-                action: 'OpenServiceHomeLink',
-                name: null,
-              });
-            }}
-          />
-        </div>
+        {config.mainMenu && config.mainMenu.showDisruptions ? (
+          <div className="navi-icons navi-margin padding-horizontal-large">
+            <a
+              className="noborder"
+              onClick={openDisruptionInfo}
+              aria-label={intl.formatMessage({
+                id: 'disruptions',
+                defaultMessage: 'Disruptions',
+              })}
+            >
+              <Icon img="icon-icon_caution" className="caution-topbar" />
+            </a>
+          </div>
+        ) : null}
+        {config.showNavBarLink ? (
+          <div className="padding-horizontal-large navi-margin">
+            <ExternalLink
+              className="external-top-bar"
+              {...config.appBarLink}
+              onClick={() => {
+                addAnalyticsEvent({
+                  category: 'Navigation',
+                  action: 'OpenServiceHomeLink',
+                  name: null,
+                });
+              }}
+            />
+          </div>
+        ) : (
+          <div style={{ width: '25px' }} />
+        )}
       </div>
       <MessageBar />
       <DisruptionInfo />

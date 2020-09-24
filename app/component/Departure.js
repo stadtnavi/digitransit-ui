@@ -15,6 +15,7 @@ import {
   departure as exampleDeparture,
   realtimeDeparture as exampleRealtimeDeparture,
 } from './ExampleData';
+import CarpoolRow from './CarpoolRow';
 
 function Departure({
   alertSeverityLevel,
@@ -39,6 +40,9 @@ function Departure({
       />
     );
   }
+  const isCarpool = () => {
+    return departure.pattern.route.mode === 'CARPOOL';
+  };
   return (
     <p className={cx('departure', 'route-detail-text', className)}>
       {!staticDeparture && (
@@ -52,12 +56,16 @@ function Departure({
           displayOriginalTime={displayOriginalTime}
         />
       )}
-      <RouteNumberContainer
-        alertSeverityLevel={alertSeverityLevel}
-        route={departure.pattern.route}
-        isCallAgency={isCallAgencyDeparture(departure)}
-        fadeLong
-      />
+      {isCarpool() ? (
+        <CarpoolRow departure={departure} iconWidth={0.95} />
+      ) : (
+        <RouteNumberContainer
+          alertSeverityLevel={alertSeverityLevel}
+          route={departure.pattern.route}
+          isCallAgency={isCallAgencyDeparture(departure)}
+          fadeLong
+        />
+      )}
       <RouteDestination
         mode={mode}
         destination={

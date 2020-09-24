@@ -60,15 +60,12 @@ class DynamicParkingLots {
       );
     });
 
-  getIcon = type => {
+  static getIcon = type => {
     if (type === 'Parkhaus' || type === 'Tiefgarage') {
       return 'covered_carpark';
     }
     if (type === 'Park-Ride') {
       return 'p+r';
-    }
-    if (type === 'Park-Carpool') {
-      return 'carpark_carpool';
     }
     if (type === 'Wohnmobilparkplatz') {
       return 'caravan';
@@ -84,7 +81,7 @@ class DynamicParkingLots {
       return drawRoundIcon(this.tile, geom, 'car');
     }
 
-    const icon = this.getIcon(properties.lot_type);
+    const icon = DynamicParkingLots.getIcon(properties.lot_type);
 
     let isOpenNow = true;
     if (properties.opening_hours) {

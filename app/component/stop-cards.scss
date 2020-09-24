@@ -71,3 +71,15 @@
   margin-right: auto;
   font-size: medium;
 }
+
+#carpool-details {
+  border-collapse: collapse;
+  margin: 0.4em;
+  min-width: 93%;
+  td:nth-child(even) {
+    text-align: right;
+  }
+  tr:nth-child(odd) {
+    background-color: #bbd3e8;
+  }
+}

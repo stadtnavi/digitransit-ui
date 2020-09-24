@@ -213,7 +213,7 @@
   "map-background": "Map background",
   "map-layer-carpool": "Carpool stops",
   "map-layer-citybike": "Bike-Sharing stations",
-  "map-layer-covid-19": "Covid-19 opening hours",
+  "map-layer-covid-19": "Opening hours",
   "map-layer-dynamic-parking-lots": "Parking",
   "map-layer-park-and-ride": "Park & ride sites",
   "map-layer-sharing": "Sharing",
@@ -259,7 +259,7 @@
   "number-of-intermediate-stops": "{number, plural, =0 {No stops} one {1 stop} other {{number} stops} }",
   "number-of-minutes": "{number, plural, =0 {0 minutes} one {1 minute} other {{number} minutes}}",
   "off-canvas-info": "Log in to the service to save your favorites and utilize them on other devices",
-  "offer-ride": "Offer carpool",
+  "offer-ride": "Offer ride",
   "once": "once",
   "opening-hours": "Opening hours",
   "option-default": "Default",
@@ -479,6 +479,7 @@
   "satellite": "Satellite",
   "saturday": "Saturdays",
   "save": "Save",
+  "save-search": "Save search",
   "scooter-availability": "Kick scooters available at the station right now",
   "scooter-availability-short": "Kick scooters",
   "scooter-distance-duration": "Ride your kick scooter {distance} ({duration})",
@@ -619,6 +620,7 @@
   "yesterday": "Yesterday",
   "your-carpool-trip": "Your trip",
   "your-favourites": "Favorites",
+  "your-search": "Your search",
   "zone": "Zone",
   "zones": "Fare zones"
 }

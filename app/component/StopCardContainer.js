@@ -44,6 +44,8 @@ export default Relay.createContainer(StopCardContainer, {
         ) {
           ${DepartureListContainer.getFragment('stoptimes')}
         }
+        lat
+        lon
         ${StopCardHeaderContainer.getFragment('stop')}
       }
     `,

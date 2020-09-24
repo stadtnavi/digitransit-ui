@@ -17,8 +17,8 @@ export default class CarpoolOffer extends React.Component {
 
   static propTypes = {
     onToggleClick: PropTypes.func.isRequired,
-    from: PropTypes.object.isRequired,
-    to: PropTypes.object.isRequired,
+    from: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+    to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     start: PropTypes.number.isRequired,
   };
 
@@ -213,8 +213,8 @@ export default class CarpoolOffer extends React.Component {
   }
 
   renderForm() {
-    const origin = this.props.from.name;
-    const destination = this.props.to.name;
+    const origin = this.props.from.name || this.props.from.split('::')[0];
+    const destination = this.props.to.name || this.props.to.split('::')[0];
     const departure = new Moment(this.props.start).format('LT');
     const { GDPR, isRegularly } = this.state;
 

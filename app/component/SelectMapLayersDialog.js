@@ -101,6 +101,7 @@ class SelectMapLayersDialog extends React.Component {
       ticketSales,
       geoJson,
       showAllBusses,
+      carpool,
     },
     config,
     lang,
@@ -228,16 +229,17 @@ class SelectMapLayersDialog extends React.Component {
                 }
               />
             )}
-          {isTransportModeEnabled(transportModes.carpool) && (
-            <Checkbox
-              checked={terminal.carpool}
-              defaultMessage="Carpool stops"
-              labelId="map-layer-carpool"
-              onChange={e =>
-                this.updateStopAndTerminalSetting({ carpool: e.target.checked })
-              }
-            />
-          )}
+          {config.carpool &&
+            isTransportModeEnabled(transportModes.carpool) && (
+              <Checkbox
+                checked={carpool}
+                defaultMessage="Carpool stops"
+                labelId="map-layer-carpool"
+                onChange={e =>
+                  this.updateSetting({ carpool: e.target.checked })
+                }
+              />
+            )}
           {config.parkAndRide &&
             config.parkAndRide.showParkAndRide && (
               <Checkbox
@@ -254,7 +256,7 @@ class SelectMapLayersDialog extends React.Component {
             config.covid19.show && (
               <Checkbox
                 checked={covid19}
-                defaultMessage="Covid-19 opening hours"
+                defaultMessage="Opening hours"
                 labelId="map-layer-covid-19"
                 onChange={e => {
                   this.updateSetting({ covid19: e.target.checked });
@@ -337,19 +339,6 @@ class SelectMapLayersDialog extends React.Component {
               checked={currentMapMode === MapMode.Default}
             />
             <FormattedMessage id="streets" defaultMessage="Streets" />
-          </label>
-          <label className="radio-label" htmlFor="satellite">
-            <input
-              type="radio"
-              id="satellite"
-              value="satellite"
-              name="mapMode"
-              onChange={() => {
-                this.switchMapLayers(MapMode.Satellite);
-              }}
-              checked={currentMapMode === MapMode.Satellite}
-            />
-            <FormattedMessage id="satellite" defaultMessage="Satellite" />
           </label>
           <label className="radio-label" htmlFor="bicycle">
             <input

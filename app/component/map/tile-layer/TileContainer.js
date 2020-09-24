@@ -9,6 +9,7 @@ class TileContainer {
   constructor(coords, done, props, config) {
     const markersMinZoom = Math.min(
       config.cityBike.cityBikeMinZoom,
+      config.carpool.minZoom,
       config.stopsMinZoom,
       config.terminalStopsMinZoom,
     );
@@ -37,6 +38,12 @@ class TileContainer {
           layerName === 'stop' &&
           (this.coords.z >= config.stopsMinZoom ||
             this.coords.z >= config.terminalStopsMinZoom)
+        ) {
+          return isEnabled;
+        }
+        if (
+          layerName === 'carpool' &&
+          this.coords.z >= config.carpool.minZoom
         ) {
           return isEnabled;
         }

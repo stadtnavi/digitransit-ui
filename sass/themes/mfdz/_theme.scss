@@ -1,0 +1,38 @@
+@import '../../base/waltti';
+
+/* main theme colors */
+$primary-color: #005b8c;
+$secondary-color: darken($primary-color, 20%);
+$hilight-color: $primary-color;
+$action-color: $primary-color;
+$viewpoint-marker-color: $primary-color;
+$current-location-color: $primary-color;
+$standalone-btn-color: $primary-color;
+$link-color: $primary-color;
+$desktop-title-color: $primary-color;
+$to-color: $primary-color;
+$from-color: darken($from-color, 20%);
+
+/* Vehicle palette */
+$bus-color: red;
+$metro-color: blue;
+$rail-color: green;
+$citybike-color: #009fe4;
+
+.car {
+  color: #005ab4;
+}
+
+.top-bar button .navi-logo {
+  width: 350px;
+  height: 62px;
+}
+
+.top-bar section .logo {
+  min-height: 43px;
+  min-width: 200px;
+}
+
+.desktop-title {
+    border-top: 1px solid #dcdcdc;
+}

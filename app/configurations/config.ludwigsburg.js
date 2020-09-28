@@ -1,14 +1,12 @@
 /* eslint-disable */
 import configMerger from '../util/configMerger';
 
-const CONFIG = 'hb';
-const APP_TITLE = 'stadtnavi Herrenberg';
+const CONFIG = 'ludwigsburg';
+const APP_TITLE = 'stadtnavi Ludwigsburg';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
 const API_URL = process.env.API_URL || 'https://api.stadtnavi.de';
-const MAP_URL = process.env.MAP_URL || 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
-const SEMI_TRANSPARENT_MAP_URL = process.env.SEMI_TRANSPARENT_MAP_URL || 'https://api.maptiler.com/maps/ffa4d49e-c68c-46c8-ab3f-60543337cecb/256/{z}/{x}/{y}.png?key=eA0drARBA1uPzLR6StGD';
-const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || `https://pelias.locationiq.org/v1`;
-const LOCATIONIQ_API_KEY = process.env.LOCATIONIQ_API_KEY;
+const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
+const SEMI_TRANSPARENT_MAP_URL = process.env.SEMI_TRANSPARENT_MAP_URL || 'https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png';
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL =
   process.env.STATIC_MESSAGE_URL ||
@@ -45,6 +43,11 @@ export default configMerger(walttiConfig, {
 
   /* disable the "next" column of the Route panel as it can be confusing sometimes: https://github.com/mfdz/digitransit-ui/issues/167 */
   displayNextDeparture: false,
+
+  mainMenu: {
+    showDisruptions: false,
+  },
+
   maxWalkDistance: 15000,
 
   defaultSettings: {
@@ -70,7 +73,7 @@ export default configMerger(walttiConfig, {
   },
 
   colors: {
-    primary: '#9fc727',
+    primary: '#fecc00',
   },
 
   sprites: 'assets/svg-sprite.hb.svg',
@@ -92,7 +95,7 @@ export default configMerger(walttiConfig, {
   },
 
   dynamicParkingLots: {
-    showDynamicParkingLots: true,
+    showDynamicParkingLots: false,
     dynamicParkingLotsSmallIconZoom: 14,
     dynamicParkingLotsMinZoom: 14
   },
@@ -149,7 +152,7 @@ export default configMerger(walttiConfig, {
 
   title: APP_TITLE,
 
-  favicon: './app/configurations/images/hb/favicon.png',
+  favicon: './app/configurations/images/ludwigsburg/favicon.svg',
 
   meta: {
     description: APP_DESCRIPTION,
@@ -159,7 +162,8 @@ export default configMerger(walttiConfig, {
     carpool: 'CARPOOL',
   },
 
-  logo: 'hb/stadtnavi-herrenberg-logo.svg',
+  //textLogo: true,
+  logo: 'ludwigsburg/stadtnavi-ludwigsburg-logo.svg',
 
   GTMid: '',
 
@@ -185,8 +189,8 @@ export default configMerger(walttiConfig, {
     'boundary.rect.max_lat': 48.97661,
     'boundary.rect.min_lon': 9.95635,
     'boundary.rect.max_lon': 8.530883,
-    'focus.point.lat': 48.5957,
-    'focus.point.lon': 8.8675
+    'focus.point.lat': 48.895195,
+    'focus.point.lon': 9.188647
   },
 
   areaPolygon: [
@@ -199,9 +203,10 @@ export default configMerger(walttiConfig, {
   nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
 
   defaultEndpoint: {
-    address: 'ZOB Herrenberg',
-    lat: 48.5942066,
-    lon: 8.8644041,
+    zoomLevel: 14,
+    address: 'Bahnhof Ludwigsburg',
+    lat: 48.8922609,
+    lon: 9.1852056
   },
 
   defaultOrigins: [
@@ -227,7 +232,7 @@ export default configMerger(walttiConfig, {
 
   footer: {
     content: [
-      { label: `© Stadt Herrenberg ${YEAR}` },
+      { label: `© Stadt Ludwigsburg ${YEAR}` },
       {},
       {
         name: 'about-this-service',
@@ -391,7 +396,7 @@ export default configMerger(walttiConfig, {
     },
   },
 
-  // adding assets/geoJson/hb-layers layers
+  // adding assets/geoJson/ludwigsburg-layers layers
   geoJson: {
     layers: [
       {
@@ -400,7 +405,7 @@ export default configMerger(walttiConfig, {
           en: 'Bicycle parkings',
           de: 'Fahrrad-Abstellanlagen',
         },
-        url: '/assets/geojson/hb-layers/bicycle-parking.geojson',
+        url: '/assets/geojson/ludwigsburg-layers/bicycle-parking.geojson',
       },
       // bicycleinfrastructure includes shops, repair stations,
       {
@@ -409,7 +414,7 @@ export default configMerger(walttiConfig, {
           en: 'Bicycle infrastructure',
           de: "Rund um's Fahrrad",
         },
-        url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
+        url: '/assets/geojson/ludwigsburg-layers/bicycleinfrastructure.geojson',
       },
       // Charging stations
       {
@@ -418,18 +423,19 @@ export default configMerger(walttiConfig, {
           en: 'Charging stations',
           de: 'Ladestationen',
         },
-        url: '/assets/geojson/hb-layers/charging.geojson',
+        url: '/assets/geojson/ludwigsburg-layers/charging.geojson',
       },
-      // LoRaWan map layer
+      /* LoRaWan map layer
       {
         name: {
           fi: '',
           en: 'LoRaWAN Gateways',
           de: 'LoRaWAN Gateways',
         },
-        url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
+        url: '/assets/geojson/ludwigsburg-layers/lorawan-gateways.geojson',
         isOffByDefault: true,
       },
+      */
       // Nette Toilette layer
       {
         name: {
@@ -437,7 +443,7 @@ export default configMerger(walttiConfig, {
           en: 'Public Toilets',
           de: 'Nette Toilette',
         },
-        url: '/assets/geojson/hb-layers/toilet.geojson',
+        url: '/assets/geojson/ludwigsburg-layers/toilet.geojson',
         isOffByDefault: true,
       },
     ],

@@ -59,7 +59,7 @@ export default configMerger(walttiConfig, {
     timeFactor: 0.3,
   },
 
-  showLogin: true,
+  showLogin: false,
   mainMenu: {
     showDisruptions: false,
   },
@@ -164,7 +164,8 @@ export default configMerger(walttiConfig, {
     description: APP_DESCRIPTION,
   },
 
-  showNavBarLink: false,
+  showNavBarLink: true,
+  appBarLink: { name: 'Mitfahren', href: `/phpcrud/rides.php` },
 
   modeToOTP: {
     carpool: 'CARPOOL',

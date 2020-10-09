@@ -283,6 +283,8 @@ export default {
     default: 18,
   },
 
+  renderFrontPagePanel: true,
+
   appBarLink: { name: 'Digitransit', href: 'https://www.digitransit.fi/' },
 
   colors: {

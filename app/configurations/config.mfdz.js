@@ -167,6 +167,8 @@ export default configMerger(walttiConfig, {
   showNavBarLink: true,
   appBarLink: { name: 'Mitfahren', href: `/phpcrud/rides.php` },
 
+  renderFrontPagePanel: false,
+
   modeToOTP: {
     carpool: 'CARPOOL',
   },

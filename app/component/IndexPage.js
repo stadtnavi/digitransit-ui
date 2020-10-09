@@ -236,15 +236,18 @@ class IndexPage extends React.Component {
             destinationPlaceHolder="search-destination"
           />
         </div>
-        <div key="foo" className="fpccontainer">
-          <FrontPagePanelLarge
-            selectedPanel={selectedMainTab}
-            nearbyClicked={this.clickNearby}
-            favouritesClicked={this.clickFavourites}
-          >
-            {this.renderTab()}
-          </FrontPagePanelLarge>
-        </div>
+        {config.renderFrontPagePanel && (
+          <div key="foo" className="fpccontainer">
+            <FrontPagePanelLarge
+              selectedPanel={selectedMainTab}
+              nearbyClicked={this.clickNearby}
+              favouritesClicked={this.clickFavourites}
+            >
+              {this.renderTab()}
+            </FrontPagePanelLarge>
+            )
+          </div>
+        )}
         <MapWithTracking
           breakpoint={breakpoint}
           showStops

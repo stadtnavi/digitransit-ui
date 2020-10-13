@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { routerShape } from 'react-router';
+import { Link, routerShape } from 'react-router';
 
 import { FormattedMessage } from 'react-intl';
 import LazilyLoad, { importLazy } from './LazilyLoad';
@@ -133,7 +133,10 @@ class SummaryNavigation extends React.Component {
             >
               <span className="offcanvas-buttons">
                 {this.context.config.showCarpoolOffer && (
-                  <a href={`${config.URL.PHPCRUD_URL}/ride`}>
+                  <Link
+                    to={`${config.URL.PHPCRUD_URL}/ride_offer.php`}
+                    onlyActiveOnIndex
+                  >
                     <button
                       className="standalone-btn carpool-offer-btn"
                       aria-label="offer-ride"
@@ -143,10 +146,13 @@ class SummaryNavigation extends React.Component {
                         defaultMessage="Offer ride"
                       />
                     </button>
-                  </a>
+                  </Link>
                 )}
                 {this.context.config.showSaveSearch && (
-                  <a href={`${config.URL.PHPCRUD_URL}/search`}>
+                  <Link
+                    to={`${config.URL.PHPCRUD_URL}/search_search.php`}
+                    onlyActiveOnIndex
+                  >
                     <button
                       className="standalone-btn carpool-offer-btn"
                       aria-label="save-search"
@@ -154,7 +160,7 @@ class SummaryNavigation extends React.Component {
                     >
                       <Icon img="icon-icon_save" />
                     </button>
-                  </a>
+                  </Link>
                 )}
               </span>
             </QuickSettingsPanel>

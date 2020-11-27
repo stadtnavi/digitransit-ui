@@ -30,6 +30,7 @@ class CityBikePopup extends React.Component {
   };
 
   render() {
+    const type = this.props.station.networks[0];
     return (
       <div className="card">
         <CityBikeCardContainer
@@ -41,13 +42,15 @@ class CityBikePopup extends React.Component {
             station={this.props.station}
           />
         </CityBikeCardContainer>
-        <MarkerPopupBottom
-          location={{
-            address: this.props.station.name,
-            lat: this.props.station.lat,
-            lon: this.props.station.lon,
-          }}
-        />
+        {type !== 'taxi' && type !== 'car-sharing' && (
+          <MarkerPopupBottom
+            location={{
+              address: this.props.station.name,
+              lat: this.props.station.lat,
+              lon: this.props.station.lon,
+            }}
+          />
+        )}
       </div>
     );
   }

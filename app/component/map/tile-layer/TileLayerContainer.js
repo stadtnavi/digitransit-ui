@@ -31,6 +31,7 @@ import { isFeatureLayerEnabled } from '../../../util/mapLayerUtils';
 import MapLayerStore, { mapLayerShape } from '../../../store/MapLayerStore';
 import Covid19OpeningHoursPopup from '../popups/Covid19OpeningHoursPopup';
 import { addAnalyticsEvent } from '../../../util/analyticsUtils';
+import WeatherStationPopup from '../popups/WeatherStationPopup';
 
 const initialState = {
   selectableTargets: undefined,
@@ -327,6 +328,10 @@ class TileLayerContainer extends GridLayer {
     />
   );
 
+  getWeatherContent = ({ feature: { properties } }) => (
+    <WeatherStationPopup {...properties} />
+  );
+
   showOneTargetPopup = () => {
     const target = this.state.selectableTargets[0];
     let id;
@@ -353,6 +358,8 @@ class TileLayerContainer extends GridLayer {
       contents = this.getDynamicParkingLotsContent(target);
     } else if (target.layer === 'roadworks') {
       contents = this.getRoadworkContent(target);
+    } else if (target.layer === 'weatherStations') {
+      contents = this.getWeatherContent(target);
     } else if (target.layer === 'covid19') {
       const {
         feature: {

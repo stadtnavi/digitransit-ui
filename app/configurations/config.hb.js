@@ -37,6 +37,7 @@ export default configMerger(walttiConfig, {
     ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
     COVID19_MAP: `https://tiles.caresteouvert.fr/public.poi_osm_light/{z}/{x}/{y}.pbf`,
     CITYBIKE_MAP: `${API_URL}/map/v1/regiorad-map/`,
+    WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
   },
 
   availableLanguages: ['de', 'en'],
@@ -108,6 +109,12 @@ export default configMerger(walttiConfig, {
     show: false,
     smallIconZoom: 17,
     minZoom: 15
+  },
+
+  weatherStations: {
+    show: true,
+    smallIconZoom: 14,
+    minZoom: 11
   },
 
   cityBike: {

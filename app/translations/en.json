@@ -467,6 +467,7 @@
   "road-condition-snowy": "snow",
   "road-condition-unknown": "unknown",
   "road-condition-wet": "wet",
+  "road-condition-wet-salty": "wet/salty",
   "road-weather": "road weather",
   "route": "Route",
   "route-add-viapoint": "Via point",

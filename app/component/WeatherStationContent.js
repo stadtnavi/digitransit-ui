@@ -62,6 +62,8 @@ const translateRoadCondition = num => {
       return `${prefix}-wet`;
     case 25:
       return `${prefix}-moist-salty`;
+    case 30:
+      return `${prefix}-wet-salty`;
     case 35:
       return `${prefix}-icy`;
     case 40:

@@ -196,7 +196,7 @@
   "itinerary-time.title": "Dauer",
   "itinerary-walk.title": "Gesamte Laufstrecke",
   "journeyplanner.title": "HSL Reiseplaner",
-  "last-updated": "Daten von",
+  "last-updated": "Daten von {time} Uhr",
   "later": "Später",
   "leaves": "Abfahrt",
   "leaving-at": "Abfahrt",

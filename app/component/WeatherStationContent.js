@@ -155,10 +155,11 @@ const WeatherStationContent = ({
         {updatedAt && (
           <tr>
             <td colSpan={2} className="last-updated">
-              <FormattedMessage id="last-updated" defaultMessage="Last updated">
-                {(...content) => `${content} `}
-              </FormattedMessage>
-              {moment(updatedAt).format('HH:mm') || ''}
+              <FormattedMessage
+                id="last-updated"
+                defaultMessage="Last updated"
+                values={{ time: moment(updatedAt).format('LT') || '' }}
+              />
             </td>
           </tr>
         )}

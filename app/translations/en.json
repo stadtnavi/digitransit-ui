@@ -193,7 +193,7 @@
   "itinerary-time.title": "Duration",
   "itinerary-walk.title": "Total walking distance",
   "journeyplanner.title": "HSL Journey Planner",
-  "last-updated": "Last updated",
+  "last-updated": "Last updated {time}",
   "later": "Later",
   "leaves": "Leaves",
   "leaving-at": "Leaving at",

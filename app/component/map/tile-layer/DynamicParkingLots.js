@@ -101,16 +101,31 @@ class DynamicParkingLots {
       geom,
       this.parkingLotImageSize,
     ).then(() => {
-      const { state } = properties;
-      if (state !== 'nodata') {
-        let avail;
-        if (!isOpenNow || state === 'closed' || state === 'full') {
-          avail = 'no';
-        } else if (state === 'few') {
-          avail = 'poor';
-        } else {
-          avail = 'good';
-        }
+      const { state, free, total } = properties;
+      const freeDisabled = properties['free:disabled'];
+      const totalDisabled = properties['total:disabled'];
+
+      const percentFree = free / total;
+      const percentFreeDisabled = freeDisabled / totalDisabled;
+
+      // what percentage needs to be free in order to get a green icon
+      const percentFreeBadgeThreshold = 0.1;
+
+      let avail;
+      if (free === 0 || !isOpenNow || state === 'closed') {
+        avail = 'no';
+      } else if (
+        percentFree < percentFreeBadgeThreshold ||
+        percentFreeDisabled < percentFreeBadgeThreshold
+      ) {
+        avail = 'poor';
+      } else if (
+        percentFree > percentFreeBadgeThreshold ||
+        percentFreeDisabled > percentFreeBadgeThreshold
+      ) {
+        avail = 'good';
+      }
+      if (avail) {
         drawAvailabilityBadge(
           avail,
           this.tile,

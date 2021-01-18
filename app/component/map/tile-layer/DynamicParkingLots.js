@@ -1,6 +1,6 @@
 import { VectorTile } from '@mapbox/vector-tile';
 import Protobuf from 'pbf';
-import pick from 'lodash/pick';
+import { pick, isNumber } from 'lodash';
 
 import SimpleOpeningHours from 'simple-opening-hours';
 import { isBrowser } from '../../../util/browser';
@@ -104,7 +104,10 @@ class DynamicParkingLots {
       const { state, free, total } = properties;
       const freeDisabled = properties['free:disabled'];
       const totalDisabled = properties['total:disabled'];
-
+      const hasBothDisabledAndRegular =
+        isNumber(free) && isNumber(freeDisabled);
+      const hasOnlyRegular = isNumber(free) && !isNumber(freeDisabled);
+      const hasOnlyDisabled = !isNumber(free) && isNumber(freeDisabled);
       const percentFree = free / total;
       const percentFreeDisabled = freeDisabled / totalDisabled;
 
@@ -112,12 +115,19 @@ class DynamicParkingLots {
       const percentFreeBadgeThreshold = 0.1;
 
       let avail;
-      if (free === 0 || !isOpenNow || state === 'closed') {
+      if (
+        (hasOnlyRegular && free === 0) ||
+        (hasOnlyDisabled && freeDisabled === 0) ||
+        !isOpenNow ||
+        state === 'closed'
+      ) {
         avail = 'no';
       } else if (
-        percentFree < percentFreeBadgeThreshold ||
-        percentFreeDisabled < percentFreeBadgeThreshold
+        (hasBothDisabledAndRegular || hasOnlyRegular) &&
+        percentFree < percentFreeBadgeThreshold
       ) {
+        avail = 'poor';
+      } else if (percentFreeDisabled < percentFreeBadgeThreshold) {
         avail = 'poor';
       } else if (
         percentFree > percentFreeBadgeThreshold ||

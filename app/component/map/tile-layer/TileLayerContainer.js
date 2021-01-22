@@ -333,12 +333,13 @@ class TileLayerContainer extends GridLayer {
     <WeatherStationPopup {...properties} />
   );
 
-  getChargingStationContent = ({
-    feature: {
-      properties,
-      geom: { x, y },
-    },
-  }) => <ChargingStationPopup lat={x} lon={y} {...properties} />;
+  getChargingStationContent = ({ feature: { properties } }) => (
+    <ChargingStationPopup
+      lat={this.state.coords.lat}
+      lon={this.state.coords.lng}
+      {...properties}
+    />
+  );
 
   showOneTargetPopup = () => {
     const target = this.state.selectableTargets[0];

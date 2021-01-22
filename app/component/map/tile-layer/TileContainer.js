@@ -83,6 +83,12 @@ class TileContainer {
         ) {
           return isEnabled;
         }
+        if (
+          layerName === 'chargingStations' &&
+          this.coords.z >= config.chargingStations.minZoom
+        ) {
+          return isEnabled;
+        }
         return false;
       })
       .map(Layer => new Layer(this, config, this.props.mapLayers));

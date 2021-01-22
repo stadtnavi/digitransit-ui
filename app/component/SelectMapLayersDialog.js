@@ -95,6 +95,7 @@ class SelectMapLayersDialog extends React.Component {
       parkAndRide,
       covid19,
       weatherStations,
+      chargingStations,
       dynamicParkingLots,
       roadworks,
       stop,
@@ -273,6 +274,21 @@ class SelectMapLayersDialog extends React.Component {
                   this.updateSetting({ weatherStations: e.target.checked });
                   this.sendLayerChangeAnalytic(
                     'WeatherStations',
+                    e.target.checked,
+                  );
+                }}
+              />
+            )}
+          {config.chargingStations &&
+            config.chargingStations.show && (
+              <Checkbox
+                checked={chargingStations}
+                defaultMessage="Charging stations"
+                labelId="map-layer-charging-staions"
+                onChange={e => {
+                  this.updateSetting({ chargingStations: e.target.checked });
+                  this.sendLayerChangeAnalytic(
+                    'ChargingStations',
                     e.target.checked,
                   );
                 }}

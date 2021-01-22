@@ -4,7 +4,7 @@ import pick from 'lodash/pick';
 
 import range from 'lodash-es/range';
 import { isBrowser } from '../../../util/browser';
-import { drawIcon } from '../../../util/mapIconUtils';
+import { drawIcon, drawRoundIcon } from '../../../util/mapIconUtils';
 import glfun from '../../../util/glfun';
 
 const getScale = glfun({
@@ -60,8 +60,11 @@ class ChargingStations {
   };
 
   drawStatus = ({ geom, properties }) => {
-    const icon = ChargingStations.getIcon(properties);
+    if (this.tile.coords.z <= this.config.chargingStations.smallIconZoom) {
+      return drawRoundIcon(this.tile, geom, 'charging-station');
+    }
 
+    const icon = ChargingStations.getIcon(properties);
     return drawIcon(icon, this.tile, geom, this.iconSize);
   };
 

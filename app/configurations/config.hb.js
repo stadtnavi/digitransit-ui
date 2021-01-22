@@ -120,8 +120,8 @@ export default configMerger(walttiConfig, {
 
   chargingStations: {
     show: true,
-    smallIconZoom: 17,
-    minZoom: 11
+    smallIconZoom: 14,
+    minZoom: 14
   },
 
   cityBike: {

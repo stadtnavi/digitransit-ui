@@ -32,6 +32,7 @@ import MapLayerStore, { mapLayerShape } from '../../../store/MapLayerStore';
 import Covid19OpeningHoursPopup from '../popups/Covid19OpeningHoursPopup';
 import { addAnalyticsEvent } from '../../../util/analyticsUtils';
 import WeatherStationPopup from '../popups/WeatherStationPopup';
+import ChargingStationPopup from '../popups/ChargingStationPopup';
 
 const initialState = {
   selectableTargets: undefined,
@@ -332,6 +333,13 @@ class TileLayerContainer extends GridLayer {
     <WeatherStationPopup {...properties} />
   );
 
+  getChargingStationContent = ({
+    feature: {
+      properties,
+      geom: { x, y },
+    },
+  }) => <ChargingStationPopup lat={x} lon={y} {...properties} />;
+
   showOneTargetPopup = () => {
     const target = this.state.selectableTargets[0];
     let id;
@@ -360,6 +368,8 @@ class TileLayerContainer extends GridLayer {
       contents = this.getRoadworkContent(target);
     } else if (target.layer === 'weatherStations') {
       contents = this.getWeatherContent(target);
+    } else if (target.layer === 'chargingStations') {
+      contents = this.getChargingStationContent(target);
     } else if (target.layer === 'covid19') {
       const {
         feature: {

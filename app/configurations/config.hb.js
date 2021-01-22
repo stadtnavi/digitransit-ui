@@ -427,7 +427,7 @@ export default configMerger(walttiConfig, {
         },
         url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
       },
-      // Charging stations
+      /* Charging stations
       {
         name: {
           fi: '',
@@ -435,7 +435,7 @@ export default configMerger(walttiConfig, {
           de: 'Ladestationen',
         },
         url: '/assets/geojson/hb-layers/charging.geojson',
-      },
+      },*/
       // LoRaWan map layer
       {
         name: {

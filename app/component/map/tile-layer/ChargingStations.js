@@ -56,7 +56,7 @@ class ChargingStations {
     });
 
   static getIcon = properties => {
-    return 'icon-icon_bicycle_charging_station';
+    return `icon-icon_${properties.vehicleType}_charging_station`;
   };
 
   drawStatus = ({ geom, properties }) => {

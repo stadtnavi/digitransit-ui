@@ -1,3 +1,7 @@
+// this function removes locations from URLs so that they can be safely
+// sent to matomo
+//
+// see it in Matomo: https://tinyurl.com/y9sd7bhv
 function() {
   const path = window.location.pathname;
   const query = window.location.href.split("?")[1] || "";

@@ -35,6 +35,7 @@ class MarkerPopupBottom extends React.Component {
         closePopup: PropTypes.func.isRequired,
       }).isRequired,
     }).isRequired,
+    reporterUrl: PropTypes.string,
   };
 
   static contextTypes = {
@@ -149,6 +150,7 @@ class MarkerPopupBottom extends React.Component {
 
   /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
   render() {
+    const { reporterUrl } = this.props;
     return (
       <div className="bottom location">
         <div onClick={() => this.routeFrom()} className="route cursor-pointer">
@@ -171,6 +173,18 @@ class MarkerPopupBottom extends React.Component {
               />
             </div>
           )}
+
+        {reporterUrl && (
+          <div
+            onClick={() => window.open(reporterUrl)}
+            className="route cursor-pointer"
+          >
+            <FormattedMessage
+              id="report-defect"
+              defaultMessage="Mangel melden"
+            />
+          </div>
+        )}
         <div onClick={() => this.routeTo()} className="route cursor-pointer">
           <FormattedMessage id="route-here" defaultMessage="Route here" />
         </div>

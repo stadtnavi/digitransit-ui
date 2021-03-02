@@ -78,6 +78,7 @@ class LocationPopup extends React.Component {
                     ? data.zones[0]
                     : undefined,
               ),
+              feature: match,
             },
           }));
           pointName = 'FreeAddress';
@@ -129,7 +130,16 @@ class LocationPopup extends React.Component {
         </div>
       );
     }
-    const { zoneId } = this.state.location;
+    const {
+      zoneId,
+      feature: { postalcode },
+    } = this.state.location;
+    const { lat, lon } = this.props;
+    let reporterUrl = `https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}`;
+    if (postalcode === '71083') {
+      reporterUrl = `https://www.herrenberg.de/tools/mvs_test?lat=${lat}&lng=${lon}`;
+    }
+
     return (
       <Card>
         <div className="card-padding">
@@ -146,7 +156,10 @@ class LocationPopup extends React.Component {
             />
           </CardHeader>
         </div>
-        <MarkerPopupBottom location={this.state.location} />
+        <MarkerPopupBottom
+          location={this.state.location}
+          reporterUrl={reporterUrl}
+        />
       </Card>
     );
   }

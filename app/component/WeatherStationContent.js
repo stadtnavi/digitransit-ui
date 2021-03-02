@@ -98,7 +98,7 @@ const WeatherStationContent = ({
               </FormattedMessage>
             </td>
             <td>
-              {`${airTemperatureSensor.sensorValue}
+              {`${Math.round(airTemperatureSensor.sensorValue)}
               ${airTemperatureSensor.sensorUnit}`}
             </td>
           </tr>
@@ -114,7 +114,7 @@ const WeatherStationContent = ({
               </FormattedMessage>
             </td>
             <td>
-              {`${roadTemperatureSensor.sensorValue}
+              {`${Math.round(roadTemperatureSensor.sensorValue)}
               ${roadTemperatureSensor.sensorUnit}`}
             </td>
           </tr>

@@ -10,11 +10,23 @@ export default class BusPositions {
     this.tile = tile;
     this.config = config;
     const scaleratio = (isBrowser && window.devicePixelRatio) || 1;
-    this.imageSize = 20 * scaleratio;
+    this.imageSize = 23 * scaleratio;
     this.promise = this.getPromise();
   }
 
   static getName = () => 'busPositions';
+
+  static getIconSuffix({ pax }) {
+    const busCapacity = 60;
+    const percentFull = pax / busCapacity * 100;
+    if (percentFull < 70) {
+      return 'green';
+    }
+    if (percentFull < 85) {
+      return 'orange';
+    }
+    return 'red';
+  }
 
   getPromise() {
     return fetch(
@@ -58,8 +70,9 @@ export default class BusPositions {
             if (this.tile.coords.z <= this.config.busPositions.smallIconZoom) {
               return drawRoundIcon(this.tile, feature.geom, 'weather-station');
             }
+            const suffix = BusPositions.getIconSuffix(feature.properties);
             return drawIcon(
-              'icon-icon_bus-live',
+              `icon-icon_bus-live-${suffix}`,
               this.tile,
               feature.geom,
               this.imageSize,

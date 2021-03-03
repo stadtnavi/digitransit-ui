@@ -225,6 +225,7 @@
   "main-mode": "Ich reise mit",
   "map": "Karte",
   "map-background": "Kartenhintergrund",
+  "map-layer-bus-positions": "Buspositionen",
   "map-layer-carpool": "Mitfahrpunkte",
   "map-layer-charging-staions": "Ladestationen",
   "map-layer-citybike": "Leihrad-Stationen",

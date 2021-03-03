@@ -137,7 +137,7 @@ class LocationPopup extends React.Component {
     const { lat, lon } = this.props;
     let reporterUrl = `https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}`;
     if (postalcode === '71083') {
-      reporterUrl = `https://www.herrenberg.de/tools/mvs_test?lat=${lat}&lng=${lon}`;
+      reporterUrl = `https://www.herrenberg.de/tools/mvs_test/?lat=${lat}&lng=${lon}#mvPagePictures`;
     }
 
     return (

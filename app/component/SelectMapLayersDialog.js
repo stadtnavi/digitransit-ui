@@ -96,6 +96,7 @@ class SelectMapLayersDialog extends React.Component {
       covid19,
       weatherStations,
       chargingStations,
+      busPositions,
       dynamicParkingLots,
       roadworks,
       stop,
@@ -289,6 +290,21 @@ class SelectMapLayersDialog extends React.Component {
                   this.updateSetting({ chargingStations: e.target.checked });
                   this.sendLayerChangeAnalytic(
                     'ChargingStations',
+                    e.target.checked,
+                  );
+                }}
+              />
+            )}
+          {config.busPositions &&
+            config.busPositions.show && (
+              <Checkbox
+                checked={busPositions}
+                defaultMessage="Bus positions"
+                labelId="map-layer-bus-positions"
+                onChange={e => {
+                  this.updateSetting({ busPositions: e.target.checked });
+                  this.sendLayerChangeAnalytic(
+                    'BusPositions',
                     e.target.checked,
                   );
                 }}

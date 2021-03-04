@@ -39,6 +39,7 @@ export default configMerger(walttiConfig, {
     CITYBIKE_MAP: `${API_URL}/map/v1/regiorad-map/`,
     WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
     CHARGING_STATIONS_MAP: `${API_URL}/map/v1/charging-stations/`,
+    BUS_POSITIONS_MAP: `${API_URL}/map/v1/bus-positions/`
   },
 
   availableLanguages: ['de', 'en'],
@@ -119,6 +120,12 @@ export default configMerger(walttiConfig, {
   },
 
   chargingStations: {
+    show: true,
+    smallIconZoom: 14,
+    minZoom: 14
+  },
+
+  busPositions: {
     show: true,
     smallIconZoom: 14,
     minZoom: 14

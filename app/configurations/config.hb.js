@@ -414,6 +414,8 @@ export default configMerger(walttiConfig, {
     },
   },
 
+  showAllBusses: true,
+
   // adding assets/geoJson/hb-layers layers
   geoJson: {
     layers: [

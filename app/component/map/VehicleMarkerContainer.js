@@ -1,20 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Relay from 'react-relay/classic';
 import connectToStores from 'fluxible-addons-react/connectToStores';
-
-import TripMarkerPopup from './route/TripMarkerPopup';
-import FuzzyTripMarkerPopup from './route/FuzzyTripMarkerPopup';
-import TripRoute from '../../route/TripRoute';
-import FuzzyTripRoute from '../../route/FuzzyTripRoute';
 import IconWithTail from '../IconWithTail';
 import IconMarker from './IconMarker';
-import Loading from '../Loading';
 
 import { isBrowser } from '../../util/browser';
 
 const MODES_WITH_ICONS = ['bus', 'tram', 'rail', 'subway', 'ferry'];
 
+// eslint-disable-next-line no-unused-vars
 let Popup;
 
 const iconSuffix = occupancyStatus => {
@@ -150,7 +144,7 @@ function VehicleMarkerContainer(props) {
           message.occupancyStatus,
         )}
       >
-        <Popup
+        {/** <Popup
           offset={[106, 0]}
           maxWidth={250}
           minWidth={250}
@@ -184,6 +178,7 @@ function VehicleMarkerContainer(props) {
             }
           />
         </Popup>
+          */}
       </IconMarker>
     ));
 }

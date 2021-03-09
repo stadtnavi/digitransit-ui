@@ -464,6 +464,7 @@
   "remove-via-button-label": "Remove via point {index}",
   "rent-cycle-at": "Rent a bike at {station} station",
   "rent-scooter-at": "Rent a kick scooter at {station} station",
+  "report-defect": "Report defect",
   "required-ticket": "Ticket required for the journey",
   "return-cycle-to": "Return the bike to {station} station",
   "return-scooter-to": "Return the kick scooter to {station} station",

@@ -370,7 +370,7 @@ class MapWithTrackingStateHandler extends React.Component {
         <VehicleMarkerContainer
           key="vehicles"
           useLargeIcon={useLargeIcon}
-          ignoreMode
+          ignoreMode={false}
         />,
       );
     }

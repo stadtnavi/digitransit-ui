@@ -17,6 +17,21 @@ const MODES_WITH_ICONS = ['bus', 'tram', 'rail', 'subway', 'ferry'];
 
 let Popup;
 
+const makeSmallIcon = (heading, useSmallIcon) => {
+  return {
+    element: (
+      <IconWithTail
+        img="icon-icon_all-vehicles-small"
+        rotate={heading}
+        allVehicles
+      />
+    ),
+    className: `vehicle-icon bus ${useSmallIcon ? 'small-map-icon' : ''}`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+  };
+};
+
 function getVehicleIcon(
   mode,
   heading,
@@ -43,26 +58,26 @@ function getVehicleIcon(
           iconSize: [20, 20],
           iconAnchor: [10, 10],
         }
-      : {
-          element: (
-            <IconWithTail
-              img="icon-icon_all-vehicles-small"
-              rotate={heading}
-              allVehicles
-            />
-          ),
-          className: `vehicle-icon bus ${useSmallIcon ? 'small-map-icon' : ''}`,
-          iconSize: [20, 20],
-          iconAnchor: [10, 10],
-        };
+      : makeSmallIcon(heading, useSmallIcon);
   }
   if (MODES_WITH_ICONS.indexOf(mode) !== -1) {
-    return {
-      element: <IconWithTail img={`icon-icon_${mode}-live`} rotate={heading} />,
-      className: `vehicle-icon ${mode} ${useSmallIcon ? 'small-map-icon' : ''}`,
-      iconSize: [20, 20],
-      iconAnchor: [10, 10],
-    };
+    if (useLargeIcon) {
+      return {
+        element: (
+          <IconWithTail
+            img="icon-icon_bus-live-green"
+            rotate={heading}
+            useLargeIcon
+          />
+        ),
+        className: `vehicle-icon ${mode} ${
+          useSmallIcon ? 'small-map-icon' : ''
+        }`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+      };
+    }
+    return makeSmallIcon(heading, useSmallIcon);
   }
 
   return {

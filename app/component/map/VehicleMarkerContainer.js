@@ -17,6 +17,17 @@ const MODES_WITH_ICONS = ['bus', 'tram', 'rail', 'subway', 'ferry'];
 
 let Popup;
 
+const iconSuffix = occupancyStatus => {
+  switch (occupancyStatus) {
+    case 'STANDING_ROOM_ONLY':
+      return 'red';
+    case 'FEW_SEATS_AVAILABLE':
+      return 'orange';
+    default:
+      return 'green';
+  }
+};
+
 const makeSmallIcon = (heading, useSmallIcon) => {
   return {
     element: (
@@ -38,6 +49,7 @@ function getVehicleIcon(
   vehicleNumber,
   useSmallIcon = false,
   useLargeIcon = false,
+  occupancyStatus,
 ) {
   if (!isBrowser) {
     return null;
@@ -62,14 +74,9 @@ function getVehicleIcon(
   }
   if (MODES_WITH_ICONS.indexOf(mode) !== -1) {
     if (useLargeIcon) {
+      const icon = `icon-icon_bus-live-${iconSuffix(occupancyStatus)}`;
       return {
-        element: (
-          <IconWithTail
-            img="icon-icon_bus-live-green"
-            rotate={heading}
-            useLargeIcon
-          />
-        ),
+        element: <IconWithTail img={icon} rotate={heading} useLargeIcon />,
         className: `vehicle-icon ${mode} ${
           useSmallIcon ? 'small-map-icon' : ''
         }`,
@@ -140,6 +147,7 @@ function VehicleMarkerContainer(props) {
           message.shortName ? message.shortName : message.route.split(':')[1],
           false,
           props.useLargeIcon,
+          message.occupancyStatus,
         )}
       >
         <Popup

@@ -38,6 +38,7 @@ describe('gtfsRtParser', () => {
           tripId: 'tampere:5645934646',
           geoHash: ['61;23', '47', '62', '47'],
           shortName: '8',
+          occupancyStatus: 'EMPTY',
         },
       ]);
     });
@@ -68,6 +69,7 @@ describe('gtfsRtParser', () => {
           tripId: 'tampere:5660364646',
           geoHash: ['61;23', '47', '62', '47'],
           shortName: '15',
+          occupancyStatus: 'EMPTY',
         },
       ]);
     });
@@ -98,6 +100,7 @@ describe('gtfsRtParser', () => {
           tripId: undefined,
           geoHash: ['61;23', '47', '62', '47'],
           shortName: undefined,
+          occupancyStatus: 'EMPTY',
         },
       ]);
     });

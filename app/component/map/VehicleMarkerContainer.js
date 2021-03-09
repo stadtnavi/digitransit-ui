@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import connectToStores from 'fluxible-addons-react/connectToStores';
+import { FormattedMessage } from 'react-intl';
 import IconWithTail from '../IconWithTail';
 import IconMarker from './IconMarker';
 
 import { isBrowser } from '../../util/browser';
+import Icon from '../Icon';
 
 const MODES_WITH_ICONS = ['bus', 'tram', 'rail', 'subway', 'ferry'];
 
@@ -116,6 +118,21 @@ function shouldShowVehicle(message, direction, tripStart, pattern, headsign) {
   );
 }
 
+const drawOccupancy = status => {
+  let styles = ['filled', 'transparent', 'transparent'];
+  if (status === 'FEW_SEATS_AVAILABLE') {
+    styles = ['filled', 'filled', 'transparent'];
+  } else if (status === 'STANDING_ROOM_ONLY') {
+    styles = ['filled', 'filled', 'filled'];
+  }
+  return styles.map((fill, idx) => {
+    return (
+      // eslint-disable-next-line react/no-array-index-key
+      <Icon key={idx} img={`icon-person-${fill}`} height={1.2} width={1.2} />
+    );
+  });
+};
+
 function VehicleMarkerContainer(props) {
   return Object.entries(props.vehicles)
     .filter(([, message]) =>
@@ -144,15 +161,28 @@ function VehicleMarkerContainer(props) {
           message.occupancyStatus,
         )}
       >
-        {/** <Popup
+        <Popup
           offset={[106, 0]}
           maxWidth={250}
           minWidth={250}
           className="vehicle-popup"
         >
-          <Relay.RootContainer
-            Component={message.tripId ? TripMarkerPopup : FuzzyTripMarkerPopup}
-            route={
+          <div className="card occupancy-card">
+            <div className="padding-normal">
+              <h2>Bus</h2>
+              <div>{drawOccupancy(message.occupancyStatus)}</div>
+              <div>
+                <FormattedMessage id="occupancy" />:&nbsp;
+                <FormattedMessage
+                  id={`occupancy-status-${message.occupancyStatus}`}
+                  defaultMessage={message.occupancyStatus}
+                />
+              </div>
+            </div>
+          </div>
+          {/** <Relay.RootContainer
+           Component={message.tripId ? TripMarkerPopup : FuzzyTripMarkerPopup}
+           route={
               message.tripId
                 ? new TripRoute({ route: message.route, id: message.tripId })
                 : new FuzzyTripRoute({
@@ -164,21 +194,21 @@ function VehicleMarkerContainer(props) {
                       message.tripStartTime.substring(2, 4) * 60,
                   })
             }
-            renderLoading={() => (
+           renderLoading={() => (
               <div className="card" style={{ height: '12rem' }}>
                 <Loading />
               </div>
             )}
-            renderFetched={data =>
+           renderFetched={data =>
               message.tripId ? (
                 <TripMarkerPopup {...data} message={message} />
               ) : (
                 <FuzzyTripMarkerPopup {...data} message={message} />
               )
             }
-          />
+           />
+           */}
         </Popup>
-          */}
       </IconMarker>
     ));
 }

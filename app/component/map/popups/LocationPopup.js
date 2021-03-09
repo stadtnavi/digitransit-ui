@@ -135,9 +135,11 @@ class LocationPopup extends React.Component {
       feature: { postalcode },
     } = this.state.location;
     const { lat, lon } = this.props;
-    let reporterUrl = `https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}`;
+    // when the BW-wide Mängelmelder is up we can use its URL, too
+    // let reporterUrl = `https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}`;
+    let reporterUrl = null;
     if (postalcode === '71083') {
-      reporterUrl = `https://www.herrenberg.de/tools/mvs_test/?lat=${lat}&lng=${lon}#mvPagePictures`;
+      reporterUrl = `https://www.herrenberg.de/tools/mvs/?lat=${lat}&lng=${lon}#mvPagePictures`;
     }
 
     return (

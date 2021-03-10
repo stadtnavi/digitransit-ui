@@ -11,6 +11,7 @@ import ParkAndRide from './ParkAndRide';
 import TicketSales from './TicketSales';
 import WeatherStations from './WeatherStations';
 import ChargingStations from './ChargingStations';
+import BikeParks from './BikeParks';
 
 export default function VectorTileLayerContainer(props, { config }) {
   const layers = [];
@@ -51,6 +52,9 @@ export default function VectorTileLayerContainer(props, { config }) {
 
     if (config.chargingStations && config.chargingStations.show) {
       layers.push(ChargingStations);
+    }
+    if (config.bikeParks && config.bikeParks.show) {
+      layers.push(BikeParks);
     }
   }
 

@@ -222,6 +222,7 @@
   "main-mode": "I'm travelling by",
   "map": "Map",
   "map-background": "Map background",
+  "map-layer-bike-parks": "Bike parking spaces",
   "map-layer-bus-positions": "Bus positions",
   "map-layer-carpool": "Carpool stops",
   "map-layer-charging-staions": "Charging stations",

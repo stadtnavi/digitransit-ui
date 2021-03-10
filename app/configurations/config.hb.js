@@ -39,7 +39,7 @@ export default configMerger(walttiConfig, {
     CITYBIKE_MAP: `${API_URL}/map/v1/regiorad-map/`,
     WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
     CHARGING_STATIONS_MAP: `${API_URL}/map/v1/charging-stations/`,
-    BUS_POSITIONS_MAP: `${API_URL}/map/v1/bus-positions/`
+    BIKE_PARKS_MAP: `${API_URL}/map/v1/bike-parks/`
   },
 
   availableLanguages: ['de', 'en'],
@@ -125,7 +125,7 @@ export default configMerger(walttiConfig, {
     minZoom: 14
   },
 
-  busPositions: {
+  bikeParks: {
     show: true,
     smallIconZoom: 14,
     minZoom: 14
@@ -419,14 +419,6 @@ export default configMerger(walttiConfig, {
   // adding assets/geoJson/hb-layers layers
   geoJson: {
     layers: [
-      {
-        name: {
-          fi: '',
-          en: 'Bicycle parkings',
-          de: 'Fahrrad-Abstellanlagen',
-        },
-        url: '/assets/geojson/hb-layers/bicycle-parking.geojson',
-      },
       // bicycleinfrastructure includes shops, repair stations,
       {
         name: {

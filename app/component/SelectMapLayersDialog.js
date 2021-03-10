@@ -103,6 +103,7 @@ class SelectMapLayersDialog extends React.Component {
       ticketSales,
       geoJson,
       showAllBusses,
+      bikeParks,
     },
     config,
     lang,
@@ -291,6 +292,18 @@ class SelectMapLayersDialog extends React.Component {
                     'ChargingStations',
                     e.target.checked,
                   );
+                }}
+              />
+            )}
+          {config.bikeParks &&
+            config.bikeParks.show && (
+              <Checkbox
+                checked={bikeParks}
+                defaultMessage="Bike parks"
+                labelId="map-layer-bike-parks"
+                onChange={e => {
+                  this.updateSetting({ bikeParks: e.target.checked });
+                  this.sendLayerChangeAnalytic('BikeParks', e.target.checked);
                 }}
               />
             )}

@@ -176,7 +176,12 @@ class Map extends React.Component {
     }
     */
 
-    const attribution = config.map.attribution[currentMapMode];
+    let attribution = null;
+    if (config.map.attribution) {
+      attribution = config.map.attribution[currentMapMode];
+    } else {
+      attribution = 'default';
+    }
 
     return (
       <div aria-hidden="true">

@@ -33,6 +33,7 @@ import Covid19OpeningHoursPopup from '../popups/Covid19OpeningHoursPopup';
 import { addAnalyticsEvent } from '../../../util/analyticsUtils';
 import WeatherStationPopup from '../popups/WeatherStationPopup';
 import ChargingStationPopup from '../popups/ChargingStationPopup';
+import BikeParkPopup from '../popups/BikeParkPopup';
 
 const initialState = {
   selectableTargets: undefined,
@@ -341,6 +342,14 @@ class TileLayerContainer extends GridLayer {
     />
   );
 
+  getBikeParksContent = ({ feature: { properties } }) => (
+    <BikeParkPopup
+      lat={this.state.coords.lat}
+      lon={this.state.coords.lng}
+      {...properties}
+    />
+  );
+
   showOneTargetPopup = () => {
     const target = this.state.selectableTargets[0];
     let id;
@@ -369,6 +378,8 @@ class TileLayerContainer extends GridLayer {
       contents = this.getRoadworkContent(target);
     } else if (target.layer === 'weatherStations') {
       contents = this.getWeatherContent(target);
+    } else if (target.layer === 'bikeParks') {
+      contents = this.getBikeParksContent(target);
     } else if (target.layer === 'chargingStations') {
       contents = this.getChargingStationContent(target);
     } else if (target.layer === 'covid19') {

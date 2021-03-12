@@ -35,8 +35,21 @@ class BikeParkPopup extends React.Component {
     return null;
   }
 
-  render() {
+  getName() {
+    const { intl } = this.context;
     const { name } = this.props;
+    const cleaned = name.replace('Bicycle parking', '').trim();
+    if (cleaned.length) {
+      return cleaned;
+    }
+    return intl.formatMessage({
+      id: 'bicycle-parking',
+      defaultMessage: 'Bicycle parking',
+    });
+  }
+
+  render() {
+    const name = this.getName();
     return (
       <Card>
         <div className="padding-normal">

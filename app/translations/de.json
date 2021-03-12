@@ -37,6 +37,8 @@
   "bicycle": "Fahrrad",
   "bicycle-charging-station": "Fahrradladestation",
   "bicycle-distance-duration": "Fahrrad {distance} ({duration})",
+  "bicycle-parking": "Fahrradabstellanlage",
+  "bicycle-parking-covered": "überdacht",
   "bicycle-withoutBox": "Fahrrad",
   "bicycle_walk": "Fahrrad & zu Fuß gehen",
   "bike-availability": "Fahrräder verfügbar",

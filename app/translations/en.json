@@ -37,6 +37,8 @@
   "bicycle": "Bicycle",
   "bicycle-charging-station": "Bicycle charging station",
   "bicycle-distance-duration": "Bike {distance} ({duration})",
+  "bicycle-parking": "Bicyle parking",
+  "bicycle-parking-covered": "covered",
   "bicycle-withoutBox": "Bicycle",
   "bicycle_walk": "Bicycle & walk",
   "bike-availability": "Bikes available at the station right now",

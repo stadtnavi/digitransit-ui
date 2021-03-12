@@ -35,9 +35,7 @@ class BikeParkPopup extends React.Component {
     return null;
   }
 
-  getName() {
-    const { intl } = this.context;
-    const { name } = this.props;
+  static getName(name, intl) {
     const cleaned = name.replace('Bicycle parking', '').trim();
     if (cleaned.length) {
       return cleaned;
@@ -49,12 +47,14 @@ class BikeParkPopup extends React.Component {
   }
 
   render() {
-    const name = this.getName();
+    const { intl } = this.context;
+    const { name } = this.props;
+    const cleanedName = BikeParkPopup.getName(name, intl);
     return (
       <Card>
         <div className="padding-normal">
           <CardHeader
-            name={name}
+            name={cleanedName}
             description={this.getCapacity()}
             descClass="padding-vertical-small"
             unlinked
@@ -65,7 +65,7 @@ class BikeParkPopup extends React.Component {
         </div>
         <MarkerPopupBottom
           location={{
-            address: name,
+            address: cleanedName,
             lat: this.props.lat,
             lon: this.props.lon,
           }}

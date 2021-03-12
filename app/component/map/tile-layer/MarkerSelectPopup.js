@@ -14,6 +14,7 @@ import SelectCovid19OpeningHoursRow from './SelectCovid19OpeningHoursRow';
 import RoadworksRow from './RoadworksRow';
 import SelectDynamicParkingLotsRow from './SelectDynamicParkingLotsRow';
 import SelectChargingStationRow from './SelectChargingStationRow';
+import SelectBikeParkRow from './SelectBikeParkRow';
 
 function MarkerSelectPopup(props) {
   const rows = props.options.map(option => {
@@ -93,6 +94,15 @@ function MarkerSelectPopup(props) {
     if (option.layer === 'chargingStations') {
       return (
         <SelectChargingStationRow
+          {...option.feature}
+          key={option.feature.properties.id}
+          selectRow={() => props.selectRow(option)}
+        />
+      );
+    }
+    if (option.layer === 'bikeParks') {
+      return (
+        <SelectBikeParkRow
           {...option.feature}
           key={option.feature.properties.id}
           selectRow={() => props.selectRow(option)}

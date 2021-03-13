@@ -13,10 +13,11 @@ class BikeParkPopup extends React.Component {
   static displayName = 'BikeParkPopup';
 
   static propTypes = {
-    maxCapacity: PropTypes.number,
-    name: PropTypes.string,
+    id: PropTypes.string.isRequired,
     lat: PropTypes.number.isRequired,
     lon: PropTypes.number.isRequired,
+    maxCapacity: PropTypes.number,
+    name: PropTypes.string,
   };
 
   getCapacity() {
@@ -46,6 +47,33 @@ class BikeParkPopup extends React.Component {
     });
   }
 
+  getBookingButton() {
+    const { id } = this.props;
+    if (id === '28353623') {
+      return (
+        <div className="bikebox">
+          <img
+            src="https://backend.openbikebox.next-site.de/static/files/2.jpg"
+            alt=""
+          />
+          <div>
+            <button
+              onClick={() =>
+                window.open(
+                  'https://openbikebox.next-site.de/location/herrenberg-bahnhof/',
+                )
+              }
+              className="standalone-btn cursor-pointer"
+            >
+              Bikebox buchen
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return null;
+  }
+
   render() {
     const { intl } = this.context;
     const { name } = this.props;
@@ -61,7 +89,7 @@ class BikeParkPopup extends React.Component {
             className="padding-medium"
             headingStyle="h2"
           />
-          <div />
+          <div>{this.getBookingButton()}</div>
         </div>
         <MarkerPopupBottom
           location={{

@@ -352,7 +352,7 @@ export default {
     airplane: 'AIRPLANE',
     ferry: 'FERRY',
     walk: 'WALK',
-    bicycle: 'BICYCLE_PARK',
+    bicycle: 'BICYCLE_PARK,WALK',
     car: 'CAR',
     car_park: 'CAR_PARK',
     public_transport: 'WALK',

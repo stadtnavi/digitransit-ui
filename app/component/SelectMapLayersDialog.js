@@ -89,6 +89,61 @@ class SelectMapLayersDialog extends React.Component {
     this.props.setMapMode(mapMode);
   };
 
+  renderMapModeSelector = (config, currentMapMode) => {
+    if (config.CONFIG in GermanConfigs) {
+      return (
+        <div className="checkbox-grouping">
+          <h4>
+            <FormattedMessage
+              id="map-background"
+              defaultMessage="Map background"
+            />
+          </h4>
+          <label className="radio-label" htmlFor="street">
+            <input
+              type="radio"
+              id="street"
+              value="street"
+              name="mapMode"
+              onChange={() => {
+                this.switchMapLayers(MapMode.Default);
+              }}
+              checked={currentMapMode === MapMode.Default}
+            />
+            <FormattedMessage id="streets" defaultMessage="Streets" />
+          </label>
+          <label className="radio-label" htmlFor="satellite">
+            <input
+              type="radio"
+              id="satellite"
+              value="satellite"
+              name="mapMode"
+              onChange={() => {
+                this.switchMapLayers(MapMode.Satellite);
+              }}
+              checked={currentMapMode === MapMode.Satellite}
+            />
+            <FormattedMessage id="satellite" defaultMessage="Satellite" />
+          </label>
+          <label className="radio-label" htmlFor="bicycle">
+            <input
+              type="radio"
+              id="bicycle"
+              value="bicycle"
+              name="mapMode"
+              onChange={() => {
+                this.switchMapLayers(MapMode.Bicycle);
+              }}
+              checked={currentMapMode === MapMode.Bicycle}
+            />
+            <FormattedMessage id="bicycle" defaultMessage="Bicycle" />
+          </label>
+        </div>
+      );
+    }
+    return null;
+  };
+
   renderContents = (
     {
       citybike,
@@ -111,61 +166,6 @@ class SelectMapLayersDialog extends React.Component {
     const isTransportModeEnabled = transportMode =>
       transportMode && transportMode.availableForSelection;
     const transportModes = config.transportModes || {};
-
-    const RenderMapModeSelector = () => {
-      if (config.CONFIG in GermanConfigs) {
-        return (
-          <div className="checkbox-grouping">
-            <h4>
-              <FormattedMessage
-                id="map-background"
-                defaultMessage="Map background"
-              />
-            </h4>
-            <label className="radio-label" htmlFor="street">
-              <input
-                type="radio"
-                id="street"
-                value="street"
-                name="mapMode"
-                onChange={() => {
-                  this.switchMapLayers(MapMode.Default);
-                }}
-                checked={currentMapMode === MapMode.Default}
-              />
-              <FormattedMessage id="streets" defaultMessage="Streets" />
-            </label>
-            <label className="radio-label" htmlFor="satellite">
-              <input
-                type="radio"
-                id="satellite"
-                value="satellite"
-                name="mapMode"
-                onChange={() => {
-                  this.switchMapLayers(MapMode.Satellite);
-                }}
-                checked={currentMapMode === MapMode.Satellite}
-              />
-              <FormattedMessage id="satellite" defaultMessage="Satellite" />
-            </label>
-            <label className="radio-label" htmlFor="bicycle">
-              <input
-                type="radio"
-                id="bicycle"
-                value="bicycle"
-                name="mapMode"
-                onChange={() => {
-                  this.switchMapLayers(MapMode.Bicycle);
-                }}
-                checked={currentMapMode === MapMode.Bicycle}
-              />
-              <FormattedMessage id="bicycle" defaultMessage="Bicycle" />
-            </label>
-          </div>
-        );
-      }
-      return null;
-    };
 
     return (
       <React.Fragment>
@@ -406,7 +406,7 @@ class SelectMapLayersDialog extends React.Component {
               ))}
             </div>
           )}
-        <RenderMapModeSelector />
+        {this.renderMapModeSelector(config, currentMapMode)}
       </React.Fragment>
     );
   };

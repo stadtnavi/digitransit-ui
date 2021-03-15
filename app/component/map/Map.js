@@ -134,6 +134,7 @@ class Map extends React.Component {
   render() {
     const { zoom, boundsOptions } = this.props;
     const { config, router } = this.context;
+    const germanConfigs = ['hb', 'ludwigsburg'];
 
     const center =
       (!this.props.fitBounds &&
@@ -166,6 +167,8 @@ class Map extends React.Component {
       mapUrls.push(config.URL.MAP.semiTransparent);
     } else if (currentMapMode === MapMode.Bicycle) {
       mapUrls.push(config.URL.MAP.bicycle);
+    } else if (!germanConfigs.includes(config.CONFIG)) {
+      mapUrls.push(`${config.URL.MAP.default}{z}/{x}/{y}{size}.png`);
     } else {
       mapUrls.push(config.URL.MAP.default);
     }

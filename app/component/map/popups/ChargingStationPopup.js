@@ -34,7 +34,7 @@ class ChargingStationPopup extends React.Component {
     vehicleType: PropTypes.string.isRequired,
     openingHours: PropTypes.string,
     capacity: PropTypes.number,
-    available: PropTypes.number,
+    occupied: PropTypes.number,
     fee: PropTypes.bool,
     lat: PropTypes.number.isRequired,
     lon: PropTypes.number.isRequired,
@@ -42,15 +42,16 @@ class ChargingStationPopup extends React.Component {
 
   getCapacity() {
     const { intl } = this.context;
-    const { capacity, available } = this.props;
+    const { capacity, occupied } = this.props;
+    const available = capacity - occupied;
 
-    if (typeof available === 'number') {
+    if (typeof available === 'number' && typeof occupied === 'number') {
       return intl.formatMessage(
         {
           id: 'charging-spaces-available',
           defaultMessage: '{available} of {capacity} parking spaces available',
         },
-        this.props,
+        { capacity, available },
       );
     }
 

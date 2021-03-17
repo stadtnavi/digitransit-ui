@@ -38,11 +38,6 @@ export const MapMode = {
   Bicycle: 'bicycle',
 };
 
-export const GermanConfigs = {
-  hb: 'hb',
-  ludwigsburg: 'ludwigsburg',
-};
-
 /**
  * Mode depicts different kinds of mode available as any kind of transportation.
  */

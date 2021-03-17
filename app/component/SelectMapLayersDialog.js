@@ -12,7 +12,7 @@ import MapLayerStore, { mapLayerShape } from '../store/MapLayerStore';
 import ComponentUsageExample from './ComponentUsageExample';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import { replaceQueryParams, clearQueryParams } from '../util/queryUtils';
-import { MapMode, GermanConfigs } from '../constants';
+import { MapMode } from '../constants';
 import { setMapMode } from '../action/MapModeActions';
 
 class SelectMapLayersDialog extends React.Component {
@@ -90,7 +90,8 @@ class SelectMapLayersDialog extends React.Component {
   };
 
   renderMapModeSelector = (config, currentMapMode) => {
-    if (config.CONFIG in GermanConfigs) {
+    const { MAP } = config.URL;
+    if ('satellite' in MAP && 'bicycle' in MAP) {
       return (
         <div className="checkbox-grouping">
           <h4>

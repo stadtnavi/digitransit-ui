@@ -90,57 +90,59 @@ class SelectMapLayersDialog extends React.Component {
   };
 
   renderMapModeSelector = (config, currentMapMode) => {
-    const { MAP } = config.URL;
-    if ('satellite' in MAP && 'bicycle' in MAP) {
-      return (
-        <div className="checkbox-grouping">
-          <h4>
-            <FormattedMessage
-              id="map-background"
-              defaultMessage="Map background"
-            />
-          </h4>
-          <label className="radio-label" htmlFor="street">
-            <input
-              type="radio"
-              id="street"
-              value="street"
-              name="mapMode"
-              onChange={() => {
-                this.switchMapLayers(MapMode.Default);
-              }}
-              checked={currentMapMode === MapMode.Default}
-            />
-            <FormattedMessage id="streets" defaultMessage="Streets" />
-          </label>
-          <label className="radio-label" htmlFor="satellite">
-            <input
-              type="radio"
-              id="satellite"
-              value="satellite"
-              name="mapMode"
-              onChange={() => {
-                this.switchMapLayers(MapMode.Satellite);
-              }}
-              checked={currentMapMode === MapMode.Satellite}
-            />
-            <FormattedMessage id="satellite" defaultMessage="Satellite" />
-          </label>
-          <label className="radio-label" htmlFor="bicycle">
-            <input
-              type="radio"
-              id="bicycle"
-              value="bicycle"
-              name="mapMode"
-              onChange={() => {
-                this.switchMapLayers(MapMode.Bicycle);
-              }}
-              checked={currentMapMode === MapMode.Bicycle}
-            />
-            <FormattedMessage id="bicycle" defaultMessage="Bicycle" />
-          </label>
-        </div>
-      );
+    if (config.URL) {
+      const { MAP } = config.URL;
+      if ('satellite' in MAP && 'bicycle' in MAP) {
+        return (
+          <div className="checkbox-grouping">
+            <h4>
+              <FormattedMessage
+                id="map-background"
+                defaultMessage="Map background"
+              />
+            </h4>
+            <label className="radio-label" htmlFor="street">
+              <input
+                type="radio"
+                id="street"
+                value="street"
+                name="mapMode"
+                onChange={() => {
+                  this.switchMapLayers(MapMode.Default);
+                }}
+                checked={currentMapMode === MapMode.Default}
+              />
+              <FormattedMessage id="streets" defaultMessage="Streets" />
+            </label>
+            <label className="radio-label" htmlFor="satellite">
+              <input
+                type="radio"
+                id="satellite"
+                value="satellite"
+                name="mapMode"
+                onChange={() => {
+                  this.switchMapLayers(MapMode.Satellite);
+                }}
+                checked={currentMapMode === MapMode.Satellite}
+              />
+              <FormattedMessage id="satellite" defaultMessage="Satellite" />
+            </label>
+            <label className="radio-label" htmlFor="bicycle">
+              <input
+                type="radio"
+                id="bicycle"
+                value="bicycle"
+                name="mapMode"
+                onChange={() => {
+                  this.switchMapLayers(MapMode.Bicycle);
+                }}
+                checked={currentMapMode === MapMode.Bicycle}
+              />
+              <FormattedMessage id="bicycle" defaultMessage="Bicycle" />
+            </label>
+          </div>
+        );
+      }
     }
     return null;
   };

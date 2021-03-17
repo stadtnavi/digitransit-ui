@@ -26,7 +26,7 @@ export default {
     MAP_URL,
     OTP: process.env.OTP_URL || `${API_URL}/routing/v1/routers/finland/`,
     MAP: {
-      default: `${MAP_URL}/map/v1/hsl-map/`,
+      default: `${MAP_URL}/map/v1/hsl-map/{z}/{x}/{y}{size}.png`,
       sv: `${MAP_URL}/map/v1/hsl-map-sv/`,
     },
     STOP_MAP: `${MAP_URL}/map/v1/finland-stop-map/`,

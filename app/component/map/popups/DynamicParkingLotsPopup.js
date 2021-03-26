@@ -8,6 +8,7 @@ import CardHeader from '../../CardHeader';
 import { station as exampleStation } from '../../ExampleData';
 import ComponentUsageExample from '../../ComponentUsageExample';
 import OSMOpeningHours from './OSMOpeningHours';
+import DynamicParkingLots from '../tile-layer/DynamicParkingLots';
 
 class DynamicParkingLotsPopup extends React.Component {
   static contextTypes = {
@@ -39,12 +40,12 @@ class DynamicParkingLotsPopup extends React.Component {
 
   getCapacity() {
     return (
-      <span className="inline-block padding-vertical-small">
+      <div className="capacity">
         {this.getCarCapacity()}
         {this.getClosed()}
         <br />
         {this.getWheelchairCapacity()}
-      </span>
+      </div>
     );
   }
 
@@ -154,13 +155,16 @@ class DynamicParkingLotsPopup extends React.Component {
         <div className="padding-normal">
           <CardHeader
             name={this.props.feature.properties.name}
-            description={this.getCapacity()}
             descClass="padding-vertical-small"
             unlinked
             className="padding-medium"
+            icon={`icon-icon_${DynamicParkingLots.getIcon(
+              this.props.feature.properties.lot_type,
+            )}`}
             headingStyle="h2"
           />
           <div>
+            {this.getCapacity()}
             {this.renderOpeningHours()}
             {this.getNotes()}
             {this.getUrl()}

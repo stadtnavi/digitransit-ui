@@ -73,7 +73,7 @@
   "char-left": "characters",
   "charging-free": "Charging is free",
   "charging-not-free": "Charging subject to a fee",
-  "charging-spaces-available": "{capacity} of {available} charging slots available",
+  "charging-spaces-available": "{available} of {capacity} charging slots available",
   "charging-spaces-in-total": "{capacity} charging slots",
   "choose-option": "Select option",
   "choose-stop": "Select stop",

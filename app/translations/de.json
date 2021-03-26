@@ -73,7 +73,7 @@
   "char-left": "Zeichen",
   "charging-free": "Ladevorgang kostenlos",
   "charging-not-free": "Ladevorgang kostenpflichtig",
-  "charging-spaces-available": "{capacity} von {available} Ladeplätzen frei",
+  "charging-spaces-available": "{available} von {capacity} Ladeplätzen frei",
   "charging-spaces-in-total": "{capacity} Ladeplätze",
   "choose-option": "Option auswählen",
   "choose-stop": "Haltestelle auswählen",

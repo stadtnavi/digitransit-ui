@@ -7,6 +7,7 @@ import CardHeader from '../../CardHeader';
 import { station as exampleStation } from '../../ExampleData';
 import ComponentUsageExample from '../../ComponentUsageExample';
 import OSMOpeningHours from './OSMOpeningHours';
+import ChargingStations from '../tile-layer/ChargingStations';
 
 class ChargingStationPopup extends React.Component {
   static contextTypes = {
@@ -116,6 +117,7 @@ class ChargingStationPopup extends React.Component {
             name={normalizedName}
             descClass="padding-vertical-small"
             unlinked
+            icon={ChargingStations.getIcon(this.props)}
             className="padding-medium"
             headingStyle="h2"
           />

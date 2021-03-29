@@ -7,6 +7,7 @@ import IconMarker from './IconMarker';
 
 import { isBrowser } from '../../util/browser';
 import Icon from '../Icon';
+import CardHeader from '../CardHeader';
 
 const MODES_WITH_ICONS = ['bus', 'tram', 'rail', 'subway', 'ferry'];
 
@@ -119,18 +120,22 @@ function shouldShowVehicle(message, direction, tripStart, pattern, headsign) {
 }
 
 const drawOccupancy = status => {
-  let styles = ['filled', 'transparent', 'transparent'];
-  if (status === 'FEW_SEATS_AVAILABLE') {
-    styles = ['filled', 'filled', 'transparent'];
-  } else if (status === 'STANDING_ROOM_ONLY') {
-    styles = ['filled', 'filled', 'filled'];
+  let suffix;
+  switch (status) {
+    case 'STANDING_ROOM_ONLY':
+      suffix = 'high';
+      break;
+    case 'FEW_SEATS_AVAILABLE':
+      suffix = 'medium';
+      break;
+    default:
+      suffix = 'low';
+      break;
   }
-  return styles.map((fill, idx) => {
-    return (
-      // eslint-disable-next-line react/no-array-index-key
-      <Icon key={idx} img={`icon-person-${fill}`} height={1.2} width={1.2} />
-    );
-  });
+  return (
+    // eslint-disable-next-line react/no-array-index-key
+    <Icon img={`occupancy-${suffix}`} height={1.2} width={1.2} />
+  );
 };
 
 function VehicleMarkerContainer(props) {
@@ -144,43 +149,55 @@ function VehicleMarkerContainer(props) {
         props.headsign,
       ),
     )
-    .map(([id, message]) => (
-      <IconMarker
-        key={id}
-        position={{
-          lat: message.lat,
-          lon: message.long,
-        }}
-        zIndexOffset={100}
-        icon={getVehicleIcon(
-          props.ignoreMode ? null : message.mode,
-          message.heading,
-          message.shortName ? message.shortName : message.route.split(':')[1],
-          false,
-          props.useLargeIcon,
-          message.occupancyStatus,
-        )}
-      >
-        <Popup
-          offset={[106, 0]}
-          maxWidth={250}
-          minWidth={250}
-          className="vehicle-popup"
+    .map(([id, message]) => {
+      const icon = getVehicleIcon(
+        props.ignoreMode ? null : message.mode,
+        message.heading,
+        message.shortName ? message.shortName : message.route.split(':')[1],
+        false,
+        props.useLargeIcon,
+        message.occupancyStatus,
+      );
+      return (
+        <IconMarker
+          key={id}
+          position={{
+            lat: message.lat,
+            lon: message.long,
+          }}
+          zIndexOffset={100}
+          icon={icon}
         >
-          <div className="card occupancy-card">
-            <div className="padding-normal">
-              <h2>Bus</h2>
-              <div>{drawOccupancy(message.occupancyStatus)}</div>
-              <div>
-                <FormattedMessage id="occupancy" />:&nbsp;
-                <FormattedMessage
-                  id={`occupancy-status-${message.occupancyStatus}`}
-                  defaultMessage={message.occupancyStatus}
+          <Popup
+            offset={[106, 0]}
+            maxWidth={250}
+            minWidth={250}
+            className="vehicle-popup"
+          >
+            <div className="card occupancy-card">
+              <div className="padding-normal">
+                <CardHeader
+                  name="Bus"
+                  descClass="padding-vertical-small"
+                  unlinked
+                  className="padding-medium"
+                  icon={`icon-icon_bus-live-${iconSuffix(
+                    message.occupancyStatus,
+                  )}`}
+                  headingStyle="h2"
                 />
+                <div className="occupancy-icon">
+                  {drawOccupancy(message.occupancyStatus)}
+                </div>
+                <div>
+                  <FormattedMessage
+                    id={`occupancy-status-${message.occupancyStatus}`}
+                    defaultMessage={message.occupancyStatus}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          {/** <Relay.RootContainer
+            {/** <Relay.RootContainer
            Component={message.tripId ? TripMarkerPopup : FuzzyTripMarkerPopup}
            route={
               message.tripId
@@ -208,9 +225,10 @@ function VehicleMarkerContainer(props) {
             }
            />
            */}
-        </Popup>
-      </IconMarker>
-    ));
+          </Popup>
+        </IconMarker>
+      );
+    });
 }
 
 VehicleMarkerContainer.propTypes = {

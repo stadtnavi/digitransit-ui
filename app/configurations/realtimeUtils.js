@@ -233,7 +233,7 @@ export default {
       return '/gtfsrt/vp/#';
     },
 
-    mqtt: 'wss://api.staging.stadtnavi.eu/mqtt/',
+    mqtt: 'wss://api.stadtnavi.de/mqtt/',
 
     gtfsrt: true,
 

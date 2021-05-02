@@ -12,7 +12,10 @@ import GeoJsonStore from '../store/GeoJsonStore';
 import { updateMapLayers } from '../action/MapLayerActions';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import withGeojsonObjects from './map/withGeojsonObjects';
-import { replaceQueryParams, clearQueryParams } from '../util/queryUtils';
+import { 
+  replaceQueryParams, 
+  clearQueryParams, 
+  getMapMode } from '../util/queryUtils';
 import { MapMode } from '../constants';
 import MapLayerStore, { mapLayerShape } from '../store/MapLayerStore';
 import { setMapMode } from '../action/MapModeActions';
@@ -155,8 +158,12 @@ class MapLayersDialogContent extends React.Component {
       showAllBusses,
       roadworks,
       dynamicParkingLots,
+<<<<<<< HEAD
       weatherStations,
       // currentMapMode,
+=======
+      currentMapMode = getMapMode(this.context.match),
+>>>>>>> fix: the map background fixed
     } = this.props.mapLayers;
     const currentMapMode = this.props.currentMapMode;
     let arr;

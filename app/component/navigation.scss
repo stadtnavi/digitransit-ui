@@ -41,6 +41,27 @@ $offcanvas-link-text-font-size: 15px;
 /* Content */
 $content-background-color: $background-color;
 
+#mainContent .desktop {
+  // so that the layer selector bubble doesn't cause scroll bars
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-basis: 0px;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.top-bar-login {
+  display: flex;
+  flex-direction: row;
+  color: $white;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .top-bar {
   height: 70px;
   min-height: 70px;

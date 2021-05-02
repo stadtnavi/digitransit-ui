@@ -87,11 +87,11 @@ input[type='radio'] {
     top: -3px;
   }
 }
-
-.checkbox-grouping h4 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
+// fix 378
+// .checkbox-grouping h4 {
+//   margin-top: 0;
+//   margin-bottom: 5px;
+// }
 
 .radio-label,
 .phone-label {

@@ -12,7 +12,10 @@ import GeoJsonStore from '../store/GeoJsonStore';
 import { updateMapLayers } from '../action/MapLayerActions';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import withGeojsonObjects from './map/withGeojsonObjects';
-import { replaceQueryParams, clearQueryParams } from '../util/queryUtils';
+import { 
+  replaceQueryParams, 
+  clearQueryParams, 
+  getMapMode } from '../util/queryUtils';
 import { MapMode } from '../constants';
 import MapLayerStore, { mapLayerShape } from '../store/MapLayerStore';
 

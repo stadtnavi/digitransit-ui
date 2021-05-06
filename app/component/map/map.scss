@@ -376,8 +376,6 @@ div.leaflet-marker-icon.vehicle-icon {
       flex-grow: 1;
       text-align: center;
       text-decoration: none;
-      font-weight: 400;
-      font-size: 0.87rem;
 
       &:first-child {
         border-right: 1px solid $light-gray;
@@ -468,15 +466,14 @@ div.leaflet-marker-icon.vehicle-icon {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0 10px 10px;
+    border-radius: 5px;
     background: $white;
-    margin: 0;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-top: 1px solid #ddd;
+    border: solid 1px #ddd;
 
     div,
     a {
-      height: 44px;
+      height: 26px;
       min-width: 100px;
       display: flex;
       font-size: 0.8125em;

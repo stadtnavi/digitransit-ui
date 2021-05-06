@@ -158,7 +158,7 @@ class MapLayersDialogContent extends React.Component {
       weatherStations,
       // currentMapMode,
     } = this.props.mapLayers;
-    const { currentMapMode } = this.props.currentMapMode;
+    const currentMapMode = this.props.currentMapMode;
     let arr;
     if (this.props.geoJson) {
       arr = Object.entries(this.props.geoJson)?.map(([k, v]) => {

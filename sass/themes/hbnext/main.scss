@@ -88,9 +88,28 @@ input[type='radio'] {
 }
 
 .radio-label {
+
   span {
     position: relative;
     top: -3px;
+  }
+  display: flex;
+  align-items: center;
+
+  input[type="radio"]  {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 32px;
+    width: 32px;
+    border: 2px solid #999;
+    border-radius: 50%;
+    transition: 0.2s all linear;
+    margin-right: 15px;
+  }
+
+  input[type="radio"]:checked {
+    border: 10px solid #000f94;
   }
 }
 // fix 378

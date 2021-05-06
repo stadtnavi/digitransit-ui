@@ -12,10 +12,7 @@ import GeoJsonStore from '../store/GeoJsonStore';
 import { updateMapLayers } from '../action/MapLayerActions';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import withGeojsonObjects from './map/withGeojsonObjects';
-import { 
-  replaceQueryParams, 
-  clearQueryParams, 
-  getMapMode } from '../util/queryUtils';
+import { replaceQueryParams, clearQueryParams } from '../util/queryUtils';
 import { MapMode } from '../constants';
 import MapLayerStore, { mapLayerShape } from '../store/MapLayerStore';
 import { setMapMode } from '../action/MapModeActions';
@@ -161,7 +158,11 @@ class MapLayersDialogContent extends React.Component {
       weatherStations,
       // currentMapMode,
     } = this.props.mapLayers;
+<<<<<<< HEAD
     const { currentMapMode } = this.props;
+=======
+    const { currentMapMode } = this.props.currentMapMode;
+>>>>>>> fix: the currentMapMode is working
     let arr;
     if (this.props.geoJson) {
       arr = Object.entries(this.props.geoJson)?.map(([k, v]) => {

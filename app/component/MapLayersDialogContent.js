@@ -155,12 +155,8 @@ class MapLayersDialogContent extends React.Component {
       showAllBusses,
       roadworks,
       dynamicParkingLots,
-<<<<<<< HEAD
       weatherStations,
       // currentMapMode,
-=======
-      currentMapMode = getMapMode(this.context.match),
->>>>>>> fix: the map background fixed
     } = this.props.mapLayers;
     const currentMapMode = this.props.currentMapMode;
     let arr;

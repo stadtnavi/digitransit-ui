@@ -12,12 +12,10 @@ import GeoJsonStore from '../store/GeoJsonStore';
 import { updateMapLayers } from '../action/MapLayerActions';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import withGeojsonObjects from './map/withGeojsonObjects';
-import { 
-  replaceQueryParams, 
-  clearQueryParams, 
-  getMapMode } from '../util/queryUtils';
+import { replaceQueryParams, clearQueryParams } from '../util/queryUtils';
 import { MapMode } from '../constants';
 import MapLayerStore, { mapLayerShape } from '../store/MapLayerStore';
+import { setMapMode } from '../action/MapModeActions';
 
 const transportModeConfigShape = PropTypes.shape({
   availableForSelection: PropTypes.bool,
@@ -144,6 +142,7 @@ class MapLayersDialogContent extends React.Component {
     if (mapMode === MapMode.Default) {
       clearQueryParams(router, match, Object.keys(match.location.query));
     }
+    this.props.setMapMode(mapMode);
   };
 
   render() {
@@ -157,8 +156,9 @@ class MapLayersDialogContent extends React.Component {
       roadworks,
       dynamicParkingLots,
       weatherStations,
-      currentMapMode,
+      // currentMapMode,
     } = this.props.mapLayers;
+    const { currentMapMode } = this.props.currentMapMode;
     let arr;
     if (this.props.geoJson) {
       arr = Object.entries(this.props.geoJson)?.map(([k, v]) => {
@@ -434,6 +434,8 @@ MapLayersDialogContent.propTypes = {
   mapLayers: mapLayerShape.isRequired,
   updateMapLayers: PropTypes.func.isRequired,
   lang: PropTypes.string,
+  currentMapMode: PropTypes.string.isRequired,
+  setMapMode: PropTypes.func.isRequired,
 };
 
 MapLayersDialogContent.contextTypes = {
@@ -481,6 +483,8 @@ const connectedComponent = connectToStores(
     updateMapLayers: mapLayers =>
       executeAction(updateMapLayers, { ...mapLayers }),
     lang: getStore('PreferencesStore').getLanguage(),
+    currentMapMode: getStore('MapModeStore').getMapMode(),
+    setMapMode: mapMode => executeAction(setMapMode, mapMode),
   }),
   {
     config: mapLayersConfigShape,

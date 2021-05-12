@@ -329,9 +329,9 @@ const getMemoizedStopIcon = memoize(
 
 function getSelectedIconCircleOffset(zoom, ratio) {
   if (zoom > 15) {
-    return 94 / ratio;
+    return 194 / ratio;
   }
-  return 78 / ratio;
+  return 160 / ratio;
 }
 
 /**

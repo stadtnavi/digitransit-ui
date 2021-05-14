@@ -7,6 +7,7 @@ import DynamicParkingLots from './DynamicParkingLots';
 import WeatherStations from './WeatherStations';
 import Stops from './Stops';
 import ParkAndRide from './ParkAndRide';
+import { mapLayerShape } from '../../../store/MapLayerStore';
 import BikeParks from './BikeParks';
 import Roadworks from './Roadworks';
 
@@ -15,9 +16,9 @@ export default function VectorTileLayerContainer(props, { config }) {
 
   useEffect(() => {
     const layersToAdd = [];
-    if (props.showStops) {
+
       layersToAdd.push(Stops);
-      if (config.cityBike && config.cityBike.showCityBikes) {
+      if (props.mapLayers.citybike) {
         layersToAdd.push(CityBikes);
       }
 
@@ -25,9 +26,7 @@ export default function VectorTileLayerContainer(props, { config }) {
         layersToAdd.push(BikeParks);
       }
       if (
-        config.parkAndRide &&
-        config.parkAndRide.showParkAndRide &&
-        !props.disableParkAndRide
+        props.mapLayers.parkAndRide
       ) {
         layersToAdd.push(ParkAndRide);
       }
@@ -47,7 +46,6 @@ export default function VectorTileLayerContainer(props, { config }) {
         layersToAdd.push(Roadworks);
       }
       setLayers(layersToAdd);
-    }
   }, [props, config]);
 
   return (
@@ -55,7 +53,8 @@ export default function VectorTileLayerContainer(props, { config }) {
       key="tileLayer"
       pane="markerPane"
       layers={layers}
-      stopsNearYouMode={props.stopsNearYouMode}
+      mapLayers={props.mapLayers}
+      mergeStops={props.mergeStops}
       hilightedStops={props.hilightedStops}
       stopsToShow={props.stopsToShow}
       tileSize={config.map.tileSize || 256}
@@ -68,14 +67,13 @@ export default function VectorTileLayerContainer(props, { config }) {
 }
 
 VectorTileLayerContainer.propTypes = {
+  mapLayers: mapLayerShape.isRequired,
   hilightedStops: PropTypes.arrayOf(PropTypes.string),
   stopsToShow: PropTypes.arrayOf(PropTypes.string),
   disableMapTracking: PropTypes.func,
-  showStops: PropTypes.bool,
-  stopsNearYouMode: PropTypes.string,
+  mergeStops: PropTypes.bool,
   locationPopup: PropTypes.string,
   onSelectLocation: PropTypes.func,
-  disableParkAndRide: PropTypes.bool,
 };
 
 VectorTileLayerContainer.contextTypes = {

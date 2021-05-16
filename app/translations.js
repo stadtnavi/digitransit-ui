@@ -357,6 +357,8 @@ const translations = {
     bicycle: 'Fahrrad',
     'bicycle-distance-duration': 'Fahrrad {duration} ({distance})',
     bicycle_walk: 'Fahrrad schieben',
+    "bicycle-parking": "Fahrradabstellanlage",
+    "bicycle-parking-covered": "überdacht",
     'bike-availability': 'Fahrräder verfügbar',
     'bike-not-allowed-bus': 'Keine Fahrradmitnahme im Bus',
     'bike-not-allowed-tram': 'Keine Fahrradmitnahme in der Straßenbahn',
@@ -569,6 +571,7 @@ const translations = {
     'main-mode': 'Ich reise mit',
     map: 'Karte',
     'map-layer-citybike': 'Leihrad-Stationen',
+    "map-layer-bike-parks": "Fahrradparkplätze",
     'map-layer-park-and-ride': 'Park & Ride-Plätze',
     'map-layer-stop-bus': 'Bushaltestellen',
     'map-layer-stop-ferry': 'Fähren',
@@ -838,7 +841,7 @@ const translations = {
       'Swipe result tabs left arrow. Press Enter or Space to show the previous tab.',
     'swipe-result-tab-right':
       'Swipe result tabs right arrow. Press Enter or Space to show the next tab.',
-    'swipe-result-tabs': 'Swipe result tabs. Switch tabs using arrow keys.',
+    'swipe-result-tabs': 'Switch tabs using arrow keys.',
     'terminal-page.description': 'Terminal - {name}',
     'terminal-page.title': 'Terminal',
     'terminal-page.title-short': 'Terminal - {name}',
@@ -997,6 +1000,8 @@ const translations = {
     bicycle: 'Bike',
     'bicycle-distance-duration': 'Bike {duration} ({distance})',
     bicycle_walk: 'Walking a bike',
+    "bicycle-parking": "Bicyle parking",
+    "bicycle-parking-covered": "covered",
     'bike-availability': 'Bikes available at the station right now',
     'bike-not-allowed-bus': 'Bikes are not allowed on the bus',
     'bike-not-allowed-tram': 'Bikes are not allowed on the tram',
@@ -1223,6 +1228,7 @@ const translations = {
     map: 'Map',
     'map-layer-citybike': 'Citybike stations',
     'map-layer-park-and-ride': 'Park & ride sites',
+    "map-layer-bike-parks": "Bike parking spaces",
     'map-layer-stop-bus': 'Bus stops',
     'map-layer-stop-ferry': 'Ferries',
     'map-layer-stop-tram': 'Tram stops',
@@ -1248,6 +1254,8 @@ const translations = {
     'nearest-favorites-browse-stops': 'Browse and select stops',
     'nearest-favorites-no-favorites':
       'Timetables for the selected stops and vehicles on map',
+    'nearest-no-stops':
+      'Valitun liikennevälineen asemia tai pysäkkejä ei ole lähialueella.',
     'nearest-stops': 'The closest stops',
     'nearest-stops-bus': 'bus stops',
     'nearest-stops-carpool': 'carpool',
@@ -1494,10 +1502,8 @@ const translations = {
     'swipe-disruption-info-header': 'Disruption info swipe result tabs.',
     'swipe-message-bar': 'Message swipe result tabs',
     'swipe-message-bar-header': 'Message swipe result tabs.',
-    'swipe-result-tab-left':
-      'left arrow. Press Enter or Space to show the previous tab.',
-    'swipe-result-tab-right':
-      'right arrow. Press Enter or Space to show the next tab.',
+    'swipe-result-tab-left': 'Press Enter or Space to show the previous tab.',
+    'swipe-result-tab-right': 'Press Enter or Space to show the next tab.',
     'swipe-result-tabs': 'Switch tabs using arrow keys.',
     'swipe-stops-near-you': 'Stops near you swipe result tabs.',
     'swipe-stops-near-you-header': 'Stops near you swipe result tabs',
@@ -2216,6 +2222,8 @@ const translations = {
     'nearest-favorites-browse-stops': 'Selaa ja valitse pysäkkejä',
     'nearest-favorites-no-favorites':
       'Valitsemiesi pysäkkien aikataulut ja ajoneuvot kartalla',
+    'nearest-no-stops':
+      'Valitun liikennevälineen asemia tai pysäkkejä ei ole lähialueella.',
     'nearest-stops': 'Lähimmät pysäkit',
     'nearest-stops-bus': 'bussipysäkit',
     'nearest-stops-citybike': 'pyöräasemat',
@@ -2442,9 +2450,9 @@ const translations = {
     'swipe-message-bar': 'Viestivälilehtien',
     'swipe-message-bar-header': 'Viestivälilehdet.',
     'swipe-result-tab-left':
-      'navigointipainike. Näytä edellinen välilehti painamalla enteriä tai välilyöntiä.',
+      'Navigointipainike. Näytä edellinen välilehti painamalla enteriä tai välilyöntiä.',
     'swipe-result-tab-right':
-      'navigointipainike. Näytä seuraava välilehti painamalla enteriä tai välilyöntiä.',
+      'Navigointipainike. Näytä seuraava välilehti painamalla enteriä tai välilyöntiä.',
     'swipe-result-tabs': 'Selaa välilehtiä nuolinäppäimillä.',
     'swipe-stops-near-you': 'Lähipysäkkinäkymävälilehtien',
     'swipe-stops-near-you-header': 'Lähipysäkkinäkymävälilehdet.',
@@ -3566,7 +3574,7 @@ const translations = {
       'Swipe result tabs left arrow. Press Enter or Space to show the previous tab.',
     'swipe-result-tab-right':
       'Swipe result tabs right arrow. Press Enter or Space to show the next tab.',
-    'swipe-result-tabs': 'Swipe result tabs. Switch tabs using arrow keys.',
+    'swipe-result-tabs': 'Switch tabs using arrow keys.',
     'terminal-page.description': 'Terminalul {name}',
     'terminal-page.title': 'Terminalul {name}',
     'terminal-page.title-short': 'Terminal',
@@ -3939,6 +3947,8 @@ const translations = {
     'nearest-favorites-browse-stops': 'Bläddra och välj hållplatser',
     'nearest-favorites-no-favorites':
       'Tidtabeller och fordon vid de valda hållplatserna på kartan',
+    'nearest-no-stops':
+      'Valitun liikennevälineen asemia tai pysäkkejä ei ole lähialueella.',
     'nearest-stops': 'Närliggande hållplatser',
     'nearest-stops-bus': 'busshållplatser',
     'nearest-stops-citybike': 'cykelstationer',

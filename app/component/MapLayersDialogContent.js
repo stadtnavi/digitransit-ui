@@ -54,7 +54,7 @@ const mapLayersConfigShape = PropTypes.shape({
       sv: PropTypes.string,
     }),
   }),
-  showAllBusses: PropTypes.bool,
+  vehicles: PropTypes.bool,
 });
 
 class MapLayersDialogContent extends React.Component {
@@ -152,7 +152,8 @@ class MapLayersDialogContent extends React.Component {
       stop,
       terminal,
       geoJson,
-      showAllBusses,
+      vehicles,
+      bikeParks,
       roadworks,
       dynamicParkingLots,
       weatherStations,
@@ -187,15 +188,15 @@ class MapLayersDialogContent extends React.Component {
           })}
         </span>
         <div className="checkbox-grouping" />{' '}
-        {this.context.config.showAllBusses && (
+        {this.context.config.vehicles && (
           <div className="checkbox-grouping">
             <Checkbox
               large
-              checked={showAllBusses}
+              checked={vehicles}
               defaultMessage="Moving vehicles"
               labelId="map-layer-vehicles"
               onChange={e => {
-                this.updateSetting({ showAllBusses: e.target.checked });
+                this.updateSetting({ vehicles: e.target.checked });
                 this.sendLayerChangeAnalytic('Vehicles', e.target.checked);
               }}
             />
@@ -313,6 +314,18 @@ class MapLayersDialogContent extends React.Component {
                 }
               />
             )}
+          {this.context.config.bikeParks && this.context.config.bikeParks.show && (
+            <Checkbox
+              large
+              checked={bikeParks}
+              defaultMessage="Bike parks"
+              labelId="map-layer-bike-parks"
+              onChange={e => {
+                this.updateSetting({ bikeParks: e.target.checked });
+                this.sendLayerChangeAnalytic('BikeParks', e.target.checked);
+              }}
+            />
+          )}
           {this.context.config.dynamicParkingLots &&
             this.context.config.dynamicParkingLots.showDynamicParkingLots && (
               <Checkbox

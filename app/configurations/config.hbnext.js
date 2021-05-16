@@ -35,6 +35,7 @@ export default configMerger(walttiConfig, {
         ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
         COVID19_MAP: `https://tiles.caresteouvert.fr/public.poi_osm_light/{z}/{x}/{y}.pbf`,
         CITYBIKE_MAP: `${API_URL}/routing/v1/router/vectorTiles/citybikes/`,
+        BIKE_PARKS_MAP: `${API_URL}/map/v1/bike-parks/`,
         WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
         PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
         PELIAS_REVERSE_GEOCODER: `${
@@ -113,6 +114,12 @@ export default configMerger(walttiConfig, {
         showDynamicParkingLots: true,
         dynamicParkingLotsSmallIconZoom: 14,
         dynamicParkingLotsMinZoom: 14
+    },
+
+    bikeParks: {
+        show: true,
+        smallIconZoom: 14,
+        minZoom: 14
     },
 
     roadworks: {
@@ -236,7 +243,7 @@ export default configMerger(walttiConfig, {
 
     nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
 
-    defaultMapCenter: {
+    defaultEndpoint: {
         lat: 48.5942066,
         lon: 8.8644041,
     },
@@ -411,6 +418,7 @@ export default configMerger(walttiConfig, {
             defaultValue: false,
             nearYouLabel: {
                 de: 'Sharing-Angebote in der Nähe',
+                en: 'Shared mobility near you'
             }
         },
     },
@@ -464,14 +472,6 @@ export default configMerger(walttiConfig, {
     // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
-            {
-                name: {
-                    fi: '',
-                    en: 'Bicycle parkings',
-                    de: 'Fahrrad-Abstellanlagen',
-                },
-                url: '/assets/geojson/hb-layers/bicycle-parking.geojson',
-            },
             // bicycleinfrastructure includes shops, repair stations,
             {
                 name: {

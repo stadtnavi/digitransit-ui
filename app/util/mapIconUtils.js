@@ -2,7 +2,7 @@ import memoize from 'lodash/memoize';
 import getSelector from './get-selector';
 import glfun from './glfun';
 import {
-  BIKESTATION_ON,
+  // BIKESTATION_ON,
   BIKESTATION_OFF,
   BIKESTATION_CLOSED,
 } from './citybikes';
@@ -334,6 +334,34 @@ function getSelectedIconCircleOffset(zoom, ratio) {
   return 160 / ratio;
 }
 
+function drawSelectionCircle(
+  tile,
+  x,
+  y,
+  radius,
+  showAvailabilityBadge = false,
+) {
+  const zoom = tile.coords.z - 1;
+  const selectedCircleOffset = getSelectedIconCircleOffset(zoom, tile.ratio);
+
+  let arc = FULL_CIRCLE;
+  if (showAvailabilityBadge) {
+    arc *= 3 / 4;
+  }
+
+  tile.ctx.beginPath();
+  // eslint-disable-next-line no-param-reassign
+  tile.ctx.lineWidth = 2;
+  tile.ctx.arc(
+    x + selectedCircleOffset,
+    y + 1.85 * selectedCircleOffset,
+    radius - 2,
+    0,
+    arc,
+  );
+  tile.ctx.stroke();
+}
+
 /**
  * Draw stop icon based on type.
  * Determine size from zoom level.
@@ -626,24 +654,10 @@ export function drawCitybikeIcon(
     }
     getImageFromSpriteCache(icon, width, height).then(image => {
       tile.ctx.drawImage(image, x, y);
+      if (isHilighted) {
+        drawSelectionCircle(tile, x, y, radius, false);
+      }
     });
-    if (isHilighted) {
-      const selectedCircleOffset = getSelectedIconCircleOffset(
-        zoom,
-        tile.ratio,
-      );
-      tile.ctx.beginPath();
-      // eslint-disable-next-line no-param-reassign
-      tile.ctx.lineWidth = 2;
-      tile.ctx.arc(
-        x + selectedCircleOffset,
-        y + selectedCircleOffset,
-        radius + 2,
-        0,
-        FULL_CIRCLE,
-      );
-      tile.ctx.stroke();
-    }
   }
   if (style === 'large') {
     const smallCircleRadius = 11 * tile.scaleratio;
@@ -651,10 +665,14 @@ export function drawCitybikeIcon(
     y = geom.y / tile.ratio - height;
     const iconX = x;
     const iconY = y;
-    const showAvailabilityBadge =
-      showAvailability &&
-      (bikesAvailable || bikesAvailable === 0) &&
-      state === BIKESTATION_ON;
+
+    // The state is comming up empty, and bikesAvailable is passed as a very large integer
+    // or as -1 (both of which evaluate to true), rendering the following line useless:
+    //     const showAvailabilityBadge  = showAvailability && bikesAvailable && state === BIKESTATION_ON;
+    // Additionally, it doesn't ensure that bikesAvailable is a number.
+    // Instead, we evaluate only the passed flag, and that bikes is, at least, a positive number.
+    const showAvailabilityBadge = showAvailability && bikesAvailable > 0;
+
     let icon = `${iconName}_station_${color}_large`;
     if (state === BIKESTATION_CLOSED || state === BIKESTATION_OFF) {
       icon = `${iconName}_station_closed_large`;
@@ -671,25 +689,15 @@ export function drawCitybikeIcon(
         tile.ctx.fillStyle = color === 'yellow' ? '#000' : '#fff';
         tile.ctx.textAlign = 'center';
         tile.ctx.textBaseline = 'middle';
-        tile.ctx.fillText(bikesAvailable, x, y);
+        tile.ctx.fillText(
+          bikesAvailable > 10 ? '9+' : Math.round(bikesAvailable),
+          x,
+          y,
+        );
         /* eslint-enable no-param-reassign */
       }
       if (isHilighted) {
-        const selectedCircleOffset = getSelectedIconCircleOffset(
-          zoom,
-          tile.ratio,
-        );
-        tile.ctx.beginPath();
-        // eslint-disable-next-line no-param-reassign
-        tile.ctx.lineWidth = 2;
-        tile.ctx.arc(
-          iconX + selectedCircleOffset,
-          iconY + 1.85 * selectedCircleOffset,
-          radius - 2,
-          0,
-          FULL_CIRCLE * (3 / 4),
-        );
-        tile.ctx.stroke();
+        drawSelectionCircle(tile, iconX, iconY, radius, showAvailabilityBadge);
       }
     });
   }

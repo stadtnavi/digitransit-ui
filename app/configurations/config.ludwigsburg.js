@@ -8,6 +8,7 @@ const API_URL = process.env.API_URL || 'https://api.stadtnavi.de';
 const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
 const SEMI_TRANSPARENT_MAP_URL = process.env.SEMI_TRANSPARENT_MAP_URL || 'https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png';
 const YEAR = 1900 + new Date().getYear();
+const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.stadtnavi.eu/pelias/v1";
 const STATIC_MESSAGE_URL =
   process.env.STATIC_MESSAGE_URL ||
   '/assets/messages/message.hb.json';
@@ -31,7 +32,8 @@ export default configMerger(walttiConfig, {
     },
     STOP_MAP: `${API_URL}/map/v1/stop-map/`,
     DYNAMICPARKINGLOTS_MAP: `${API_URL}/map/v1/hb-parking-map/`,
-    ROADWORKS_MAP: `${API_URL}/map/v1/roadworks-bw-map/`,
+    ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
+    GEOCODING_BASE_URL: GEOCODING_BASE_URL,
     COVID19_MAP: `https://tiles.caresteouvert.fr/public.poi_osm_light/{z}/{x}/{y}.pbf`,
     CITYBIKE_MAP: `${API_URL}/map/v1/regiorad-map/`,
   },

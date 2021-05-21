@@ -15,6 +15,7 @@ import {
   getMapIconScale,
 } from '../../util/mapIconUtils';
 import PopupHeader from './PopupHeader';
+import OSMOpeningHours from './popups/OSMOpeningHours';
 
 /**
  * The minimum radius at which the default round icon is visible.
@@ -179,7 +180,11 @@ const PointFeatureMarker = ({
           header={useDescriptionAsHeader ? description : header}
           subHeader={useDescriptionAsHeader ? '' : description}
         />
-        {popupContent && <div className="card-text">{popupContent}</div>}
+        {popupContent && (
+          <div className="location-popup-wrapper">
+            <OSMOpeningHours openingHours={popupContent} displayStatus />
+          </div>
+        )}
         {(locationPopup === 'all' || locationPopup === 'origindestination') && (
           <MarkerPopupBottom
             location={{

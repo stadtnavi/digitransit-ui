@@ -159,8 +159,8 @@ export default configMerger(walttiConfig, {
       "car-sharing": {
         icon: 'car-sharing',
         name: {
-          de: 'Car-Sharing',
-          en: 'car sharing',
+          de: 'Stadtmobil Car-Sharing',
+          en: 'stadtmobil car sharing',
         },
         type: 'car-sharing',
       },

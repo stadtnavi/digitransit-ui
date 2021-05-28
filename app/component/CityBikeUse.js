@@ -7,15 +7,22 @@ import ComponentUsageExample from './ComponentUsageExample';
 import { cityBikeUrl as exampleUrl } from './ExampleData';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 
+function getIdByType(type) {
+  switch (type) {
+    case 'scooter':
+      return 'scooter';
+    case 'car-sharing':
+      return 'carshare';
+    default:
+      return 'citybike';
+  }
+}
+
 const CityBikeUse = ({ url, type }) => (
   <div className="city-bike-use-container">
     <p className="sub-header-h4 text-center">
       <FormattedMessage
-        id={
-          type === 'scooter'
-            ? 'scooter-register-required'
-            : 'citybike-register-required'
-        }
+        id={`${getIdByType(type)}-register-required`}
         defaultMessage="To use city bikes, you need to register"
       />
     </p>
@@ -30,7 +37,10 @@ const CityBikeUse = ({ url, type }) => (
           });
         }}
       >
-        <FormattedMessage id="use-citybike" defaultMessage="Start using" />
+        <FormattedMessage
+          id={`use-${getIdByType(type)}`}
+          defaultMessage="Start using"
+        />
       </button>
     </a>
   </div>

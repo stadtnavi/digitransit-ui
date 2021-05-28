@@ -13,8 +13,6 @@ import { matchShape, routerShape } from 'found';
 import pickBy from 'lodash/pickBy';
 import { mapLayerShape } from '../../../store/MapLayerStore';
 import MarkerSelectPopup from './MarkerSelectPopup';
-import ParkAndRideHubPopup from '../popups/ParkAndRideHubPopupContainer';
-import ParkAndRideFacilityPopup from '../popups/ParkAndRideFacilityPopupContainer';
 import LocationPopup from '../popups/LocationPopup';
 import TileContainer from './TileContainer';
 import { isFeatureLayerEnabled } from '../../../util/mapLayerUtils';
@@ -28,6 +26,7 @@ import {
   PREFIX_ROADWORKS,
   PREFIX_CHARGING_STATIONS,
   PREFIX_BIKE_PARKS,
+  PREFIX_PARK_AND_RIDE_FACILITIES,
 } from '../../../util/path';
 import DynamicParkingLotsPopup from '../popups/DynamicParkingLotsPopup';
 import SelectVehicleContainer from './SelectVehicleContainer';
@@ -295,21 +294,29 @@ class TileLayerContainer extends GridLayer {
           this.state.selectableTargets[0].layer === 'parkAndRide' &&
           this.state.selectableTargets[0].feature.properties.facilityIds
         ) {
-          id = this.state.selectableTargets[0].feature.properties.facilityIds;
-          contents = (
-            <ParkAndRideHubPopup
-              ids={JSON.parse(id).map(i => i.toString())}
-              name={
-                JSON.parse(
-                  this.state.selectableTargets[0].feature.properties.name,
-                )[this.context.intl.locale]
-              }
-              coords={this.state.coords}
-              context={this.context}
-              onSelectLocation={this.props.onSelectLocation}
-              locationPopup={this.props.locationPopup}
-            />
+          const {
+            facilityIds: Ids,
+            name,
+          } = this.state.selectableTargets[0].feature.properties;
+          const facilityIds = JSON.parse(Ids).map(i => i.toString());
+          const facilityName = JSON.parse(name)[this.context.intl.locale];
+          const { lat, lng } = this.state.coords;
+          const params = pickBy(
+            {
+              lat,
+              lng,
+              facilityIds,
+              facilityName,
+            },
+            value => value !== undefined,
           );
+          this.setState({ selectableTargets: undefined });
+          this.context.router.push(
+            `/${PREFIX_PARK_AND_RIDE_FACILITIES}?${new URLSearchParams(
+              params,
+            ).toString()}`,
+          );
+          showPopup = false;
         } else if (this.state.selectableTargets[0].layer === 'roadworks') {
           const {
             starttime,
@@ -339,7 +346,7 @@ class TileLayerContainer extends GridLayer {
           );
           showPopup = false;
         } else if (this.state.selectableTargets[0].layer === 'parkAndRide') {
-          ({ id } = this.state.selectableTargets[0].feature);
+          /* ({ id } = this.state.selectableTargets[0].feature);
           contents = (
             <ParkAndRideFacilityPopup
               id={id.toString()}
@@ -353,7 +360,7 @@ class TileLayerContainer extends GridLayer {
               onSelectLocation={this.props.onSelectLocation}
               locationPopup={this.props.locationPopup}
             />
-          );
+          ); */
         } else if (
           this.state.selectableTargets[0].layer === 'realTimeVehicle'
         ) {

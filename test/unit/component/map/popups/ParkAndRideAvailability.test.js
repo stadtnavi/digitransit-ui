@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { mockChildContextTypes } from '../../../helpers/mock-context';
-import ParkAndRideAvailability from '../../../../../app/component/map/popups/ParkAndRideAvailability';
+import ParkAndRideAvailability from '../../../../../app/component/map/sidebar/parkAndRide/ParkAndRideAvailability';
 import Availability from '../../../../../app/component/Availability';
 import { mountWithIntl } from '../../../helpers/mock-intl-enzyme';
 

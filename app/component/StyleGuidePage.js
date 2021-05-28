@@ -32,7 +32,7 @@ import RouteStop from './RouteStop';
 import RouteAlertsRow from './RouteAlertsRow';
 import ModeFilter from './ModeFilter';
 import Availability from './Availability';
-import ParkAndRideAvailability from './map/popups/ParkAndRideAvailability';
+import ParkAndRideAvailability from './map/sidebar/parkAndRide/ParkAndRideAvailability';
 import AppBar from './AppBar';
 import StopPageHeader from './StopPageHeader';
 import StopCardHeader from './StopCardHeader';

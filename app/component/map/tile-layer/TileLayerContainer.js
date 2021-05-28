@@ -27,6 +27,7 @@ import {
 } from '../../../util/path';
 import DynamicParkingLotsPopup from '../popups/DynamicParkingLotsPopup';
 import BikeParkPopup from '../popups/BikeParkPopup';
+import CityBikePopup from '../popups/CityBikePopup';
 import SelectVehicleContainer from './SelectVehicleContainer';
 import WeatherStationPopup from '../popups/WeatherStationPopup';
 import RoadworksPopup from '../popups/RoadworksPopup';
@@ -360,6 +361,16 @@ class TileLayerContainer extends GridLayer {
               icon={`icon-icon_${DynamicParkingLots.getIcon(
                 this.state.selectableTargets[0].feature.properties.lot_type,
               )}`}
+            />
+          );
+        } else if (this.state.selectableTargets[0].layer === 'citybike') {
+          const props = this.state.selectableTargets[0].feature.properties;
+          contents = (
+            <CityBikePopup
+              onSelectLocation={this.props.onSelectLocation}
+              lat={this.state.coords.lat}
+              lon={this.state.coords.lng}
+              {...props}
             />
           );
         } else if (this.state.selectableTargets[0].layer === 'bikeParks') {

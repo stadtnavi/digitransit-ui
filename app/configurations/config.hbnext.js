@@ -586,7 +586,7 @@ export default configMerger(walttiConfig, {
         'lot_type:Parkhaus'
     ],
 
-    suggestCarMinDistance: 800,
+    suggestCarMinDistance: 1000,
     suggestWalkMaxDistance: 3000,
     suggestBikeAndPublicMinDistance: 3000,
     suggestBikeAndParkMinDistance: 3000,

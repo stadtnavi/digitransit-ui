@@ -175,7 +175,7 @@ const getShouldMakeParkRideQuery = (
   defaultSettings,
 ) => {
   const noCarMinDistance =
-    settings.walkReluctance === config.defaultOptions.walkReluctance.least ||
+    settings.walkReluctance === config.defaultOptions.walkReluctance?.least ||
     !!settings.accessibilityOption;
   return (
     (noCarMinDistance || linearDistance > config.suggestCarMinDistance) &&
@@ -192,7 +192,7 @@ const getShouldMakeCarQuery = (
   defaultSettings,
 ) => {
   const noCarMinDistance =
-    settings.walkReluctance === config.defaultOptions.walkReluctance.least ||
+    settings.walkReluctance === config.defaultOptions.walkReluctance?.least ||
     !!settings.accessibilityOption;
   return (
     (noCarMinDistance || linearDistance > config.suggestCarMinDistance) &&

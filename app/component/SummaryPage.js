@@ -994,9 +994,18 @@ class SummaryPage extends React.Component {
             this.makeWeatherQuery();
           },
         );
-        // Remove bikeAndPublicPlan and bikeParkPlan itineraries if all public transport itineraries would last less.
+        // Remove parkRidePlan, bikeAndPublicPlan and bikeParkPlan itineraries if all public transport itineraries would last less.
+        const longestPublicItinerary = this.findLongestPublicItinerary();
         if (
-          this.findLongestPublicItinerary() <
+          longestPublicItinerary <
+          this.findShortestDuration(this.state.parkRidePlan?.itineraries)
+        ) {
+          this.setState({
+            parkRidePlan: undefined,
+          });
+        }
+        if (
+          longestPublicItinerary <
           this.findShortestDuration(this.state.bikeAndPublicPlan?.itineraries)
         ) {
           this.setState({
@@ -1004,7 +1013,7 @@ class SummaryPage extends React.Component {
           });
         }
         if (
-          this.findLongestPublicItinerary() <
+          longestPublicItinerary <
           this.findShortestDuration(this.state.bikeParkPlan?.itineraries)
         ) {
           this.setState({

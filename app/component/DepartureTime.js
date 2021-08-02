@@ -74,6 +74,11 @@ function DepartureTime(props, context) {
           })} `}
         <LocalTime forceUtc={props.useUTC} time={departureTime} />
       </span>
+      {props.realtime && isLate && (
+        <span key="time" className="time original-time">
+          <LocalTime forceUtc={props.useUTC} time={props.scheduledDeparture} />
+        </span>
+      )}
       {props.canceled && props.showCancelationIcon && (
         <Icon className="caution" img="icon-icon_caution" />
       )}

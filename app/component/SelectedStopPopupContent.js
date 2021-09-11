@@ -1,10 +1,21 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const SelectedStopPopupContent = ({ stop }) => (
+import { FormattedMessage } from 'react-intl';
+
+const SelectedStopPopupContent = ({ stop, citybike }) => (
   <div className="origin-popup">
     <div className="origin-popup-header">
-      <div className="selected-stop-header">{stop.name}</div>
+      <div className="selected-stop-header">
+        {!stop.name && citybike ? (
+          <FormattedMessage
+            id="tier-reutlingen-station-no-id"
+            defaultMessage="Scooter"
+          />
+        ) : (
+          stop.name
+        )}
+      </div>
     </div>
     {(stop.code || stop.desc) && (
       <div>
@@ -22,6 +33,11 @@ const SelectedStopPopupContent = ({ stop }) => (
 
 SelectedStopPopupContent.propTypes = {
   stop: PropTypes.object.isRequired,
+  citybike: PropTypes.bool,
+};
+
+SelectedStopPopupContent.defaultProps = {
+  citybike: false,
 };
 
 SelectedStopPopupContent.displayName = 'SelectedStopPopupContent';

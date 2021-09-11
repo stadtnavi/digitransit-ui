@@ -103,7 +103,7 @@ const StopPageMap = (
   if (breakpoint === 'large') {
     leafletObjs.push(
       <SelectedStopPopup lat={stop.lat} lon={stop.lon} key="SelectedStopPopup">
-        <SelectedStopPopupContent stop={stop} />
+        <SelectedStopPopupContent stop={stop} citybike />
       </SelectedStopPopup>,
     );
   } else {
@@ -191,10 +191,12 @@ StopPageMap.propTypes = {
   currentTime: PropTypes.number.isRequired,
   mapLayers: mapLayerShape.isRequired,
   mapLayerOptions: mapLayerOptionsShape.isRequired,
+  citybike: PropTypes.bool,
 };
 
 StopPageMap.defaultProps = {
   stop: undefined,
+  citybike: false,
 };
 
 const componentWithBreakpoint = withBreakpoint(StopPageMap);

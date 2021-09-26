@@ -3,14 +3,14 @@ import React from 'react';
 
 import { FormattedMessage } from 'react-intl';
 
-const SelectedStopPopupContent = ({ stop, citybike }) => (
+const SelectedStopPopupContent = ({ stop }) => (
   <div className="origin-popup">
     <div className="origin-popup-header">
       <div className="selected-stop-header">
-        {!stop.name && citybike ? (
+        {!stop.name || stop.networks[0] === 'tier_REUTLINGEN' ? (
           <FormattedMessage
-            id="tier-reutlingen-station-no-id"
-            defaultMessage="Scooter"
+            id={`${stop.networks}-station-no-id`}
+            defaultMessage="Station"
           />
         ) : (
           stop.name
@@ -33,11 +33,10 @@ const SelectedStopPopupContent = ({ stop, citybike }) => (
 
 SelectedStopPopupContent.propTypes = {
   stop: PropTypes.object.isRequired,
-  citybike: PropTypes.bool,
-};
-
-SelectedStopPopupContent.defaultProps = {
-  citybike: false,
+  networks: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
 };
 
 SelectedStopPopupContent.displayName = 'SelectedStopPopupContent';

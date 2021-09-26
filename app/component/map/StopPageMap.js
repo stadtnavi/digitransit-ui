@@ -103,7 +103,7 @@ const StopPageMap = (
   if (breakpoint === 'large') {
     leafletObjs.push(
       <SelectedStopPopup lat={stop.lat} lon={stop.lon} key="SelectedStopPopup">
-        <SelectedStopPopupContent stop={stop} citybike />
+        <SelectedStopPopupContent stop={stop} />
       </SelectedStopPopup>,
     );
   } else {

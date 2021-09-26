@@ -19,6 +19,10 @@ BikeRentalStationPageMapContainer.propTypes = {
     lat: PropTypes.number.isRequired,
     lon: PropTypes.number.isRequired,
     name: PropTypes.string,
+    networks: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
   }),
 };
 
@@ -34,6 +38,7 @@ const containerComponent = createFragmentContainer(
         lat
         lon
         name
+        networks
       }
     `,
   },

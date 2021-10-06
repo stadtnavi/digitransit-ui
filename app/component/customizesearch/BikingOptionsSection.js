@@ -10,6 +10,7 @@ import SearchSettingsDropdown, {
 } from '../SearchSettingsDropdown';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 import { findNearestOption } from '../../util/planParamUtil';
+import { BicycleParkingFilter } from '../../constants';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class BikingOptionsSection extends React.Component {
@@ -17,6 +18,28 @@ class BikingOptionsSection extends React.Component {
     const { defaultSettings, bikeSpeed } = this.props;
     const { intl } = this.context;
     const options = getFiveStepOptionsNumerical(this.props.bikeSpeedOptions);
+
+    const parkingOptions = [
+      {
+        title: intl.formatMessage({
+          id: `bicycle-parking-filter-${BicycleParkingFilter.All}`,
+        }),
+        value: BicycleParkingFilter.All,
+      },
+      {
+        title: intl.formatMessage({
+          id: `bicycle-parking-filter-${BicycleParkingFilter.FreeOnly}`,
+        }),
+        value: BicycleParkingFilter.FreeOnly,
+      },
+      {
+        title: intl.formatMessage({
+          id: `bicycle-parking-filter-${BicycleParkingFilter.SecurePreferred}`,
+        }),
+        value: BicycleParkingFilter.SecurePreferred,
+      },
+    ];
+
     const currentSelection =
       options.find(option => option.value === bikeSpeed) ||
       options.find(
@@ -24,8 +47,31 @@ class BikingOptionsSection extends React.Component {
           option.value ===
           findNearestOption(bikeSpeed, this.props.bikeSpeedOptions),
       );
+
+    const currentParkingFilter = parkingOptions.find(
+      f => f.value === this.props.bicycleParkingFilter,
+    );
     return (
       <React.Fragment>
+        <SearchSettingsDropdown
+          name="bike-parking-selector"
+          currentSelection={currentParkingFilter}
+          defaultValue={defaultSettings.bicycleParkingFilter}
+          onOptionSelected={value => {
+            this.context.executeAction(saveRoutingSettings, {
+              bicycleParkingFilter: value,
+            });
+            addAnalyticsEvent({
+              category: 'ItinerarySettings',
+              action: 'ChangeBicycleParkingFilter',
+              name: value,
+            });
+          }}
+          options={parkingOptions}
+          formatOptions
+          labelText={intl.formatMessage({ id: 'bicycle-parking-filter' })}
+          translateLabels={false}
+        />
         <SearchSettingsDropdown
           name="bike-speed-selector"
           currentSelection={currentSelection}
@@ -52,9 +98,11 @@ class BikingOptionsSection extends React.Component {
 
 BikingOptionsSection.propTypes = {
   bikeSpeed: valueShape.isRequired,
+  bicycleParkingFilter: PropTypes.string.isRequired,
   bikeSpeedOptions: PropTypes.array.isRequired,
   defaultSettings: PropTypes.shape({
     bikeSpeed: PropTypes.number.isRequired,
+    bicycleParkingFilter: PropTypes.string.isRequired,
   }).isRequired,
 };
 

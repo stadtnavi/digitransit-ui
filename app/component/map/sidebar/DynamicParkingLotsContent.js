@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage, intlShape } from 'react-intl';
 import { createFragmentContainer, graphql } from 'react-relay';
-import { station as exampleStation } from '../../ExampleData';
-import ComponentUsageExample from '../../ComponentUsageExample';
 import OSMOpeningHours from '../popups/OSMOpeningHours';
 import SidebarContainer from './SidebarContainer';
 
@@ -33,20 +31,6 @@ class DynamicParkingLotsContent extends React.Component {
   static contextTypes = {
     getStore: PropTypes.func.isRequired,
   };
-
-  static description = (
-    <div>
-      <p>Renders a citybike popup.</p>
-      <ComponentUsageExample description="">
-        <DynamicParkingLotsContent
-          context="context object here"
-          station={exampleStation}
-        >
-          Im content of a citybike card
-        </DynamicParkingLotsContent>
-      </ComponentUsageExample>
-    </div>
-  );
 
   static displayName = 'ParkingLotPopup';
 
@@ -150,7 +134,12 @@ class DynamicParkingLotsContent extends React.Component {
 
   render() {
     const { lat, lon, name, note } = this.props.vehicleParking;
-    const { lotType } = this.props.vehicleParking.tags;
+
+    const tags = this.props.vehicleParking.tags.reduce((newTags, tag) => {
+      return { ...newTags, [tag.split(':')[0]]: tag.split(':')[1] };
+    }, {});
+    const lotType = tags.lot_type;
+
     return (
       <SidebarContainer
         icon={`icon-icon_${getIcon(lotType)}`}

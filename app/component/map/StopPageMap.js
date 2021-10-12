@@ -191,12 +191,10 @@ StopPageMap.propTypes = {
   currentTime: PropTypes.number.isRequired,
   mapLayers: mapLayerShape.isRequired,
   mapLayerOptions: mapLayerOptionsShape.isRequired,
-  citybike: PropTypes.bool,
 };
 
 StopPageMap.defaultProps = {
   stop: undefined,
-  citybike: false,
 };
 
 const componentWithBreakpoint = withBreakpoint(StopPageMap);

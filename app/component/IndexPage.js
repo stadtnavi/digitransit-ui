@@ -262,6 +262,8 @@ class IndexPage extends React.Component {
       onGeolocationStart: this.onSelectLocation,
       fromMap: this.props.fromMap,
       fontWeights,
+      modeIconColors: config.colors.iconColors,
+      modeSet: config.searchIconModeSet,
     };
 
     const stopRouteSearchProps = {
@@ -279,8 +281,8 @@ class IndexPage extends React.Component {
       targets: stopAndRouteSearchTargets,
       fontWeights,
       modeIconColors: config.colors.iconColors,
+      modeSet: config.searchIconModeSet,
     };
-
     const transportModes = getTransportModes(config);
     const nearYouModes = getNearYouModes(config);
 

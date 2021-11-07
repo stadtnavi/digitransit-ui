@@ -12,7 +12,7 @@ import {
 } from '../util/citybikes';
 
 const CityBikeNetworkSelector = (
-  { isUsingCitybike, currentOptions },
+  { currentOptions },
   { config, getStore, executeAction },
 ) => (
   <React.Fragment>
@@ -28,12 +28,14 @@ const CityBikeNetworkSelector = (
             htmlFor={`settings-toggle-bike-${network.networkName}`}
             className="toggle-label"
           >
+          <div className="mode-icon">
             <Icon
               className={`${network.icon}-icon`}
               img={`icon-icon_${network.icon}`}
               height={1}
               width={1}
             />
+          </div>
             <span className="network-name">
               {getCityBikeNetworkName(
                 getCityBikeNetworkConfig(network.networkName, config),
@@ -44,7 +46,7 @@ const CityBikeNetworkSelector = (
           <Toggle
             id={`settings-toggle-bike-${network.networkName}`}
             toggled={
-              isUsingCitybike &&
+              !!currentOptions &&
               currentOptions.filter(
                 option =>
                   option.toLowerCase() === network.networkName.toLowerCase(),
@@ -55,8 +57,6 @@ const CityBikeNetworkSelector = (
                 allowedBikeRentalNetworks: updateCitybikeNetworks(
                   getCitybikeNetworks(config),
                   network.networkName,
-                  config,
-                  isUsingCitybike,
                 ),
               });
             }}
@@ -68,7 +68,6 @@ const CityBikeNetworkSelector = (
 
 CityBikeNetworkSelector.propTypes = {
   currentOptions: PropTypes.array.isRequired,
-  isUsingCitybike: PropTypes.bool.isRequired,
 };
 
 CityBikeNetworkSelector.contextTypes = {

@@ -5,6 +5,7 @@ import { createFragmentContainer, graphql } from 'react-relay';
 import cx from 'classnames';
 import { matchShape, routerShape } from 'found';
 import { FormattedMessage, intlShape } from 'react-intl';
+import connectToStores from 'fluxible-addons-react/connectToStores';
 
 import Icon from './Icon';
 import TicketInformation from './TicketInformation';
@@ -45,6 +46,7 @@ class ItineraryTab extends React.Component {
     focusToPoint: PropTypes.func.isRequired,
     focusToLeg: PropTypes.func.isRequired,
     isMobile: PropTypes.bool.isRequired,
+    currentTime: PropTypes.number.isRequired,
     hideTitle: PropTypes.bool,
     toggleCarpoolDrawer: PropTypes.func,
   };
@@ -54,7 +56,7 @@ class ItineraryTab extends React.Component {
     router: routerShape.isRequired,
     match: matchShape.isRequired,
     intl: intlShape.isRequired,
-    getStore: PropTypes.func,
+    getStore: PropTypes.func.isRequired,
   };
 
   state = {
@@ -92,8 +94,8 @@ class ItineraryTab extends React.Component {
     });
   };
 
-  getFutureText = startTime => {
-    const refTime = getCurrentMillis();
+  getFutureText = (startTime, currentTime) => {
+    const refTime = getCurrentMillis(currentTime);
     if (isToday(startTime, refTime)) {
       return '';
     }
@@ -114,7 +116,7 @@ class ItineraryTab extends React.Component {
     const walkingDuration = getTotalWalkingDuration(compressedItinerary);
     const bikingDistance = getTotalBikingDistance(compressedItinerary);
     const bikingDuration = getTotalBikingDuration(compressedItinerary);
-    const futureText = this.getFutureText(itinerary.startTime);
+    const futureText = this.getFutureText(itinerary.startTime, this.props.currentTime);
     const isMultiRow =
       walkingDistance > 0 && bikingDistance > 0 && futureText !== '';
     const extraProps = {
@@ -166,7 +168,7 @@ class ItineraryTab extends React.Component {
 
     const fares = getFares(this.state.fares, getRoutes(itinerary.legs), config, this.state.lang)
     const extraProps = this.setExtraProps(itinerary);
-    const legsWithRentalBike = itinerary.legs.filter(leg => legContainsRentalBike(leg));
+    const legsWithRentalBike = compressLegs(itinerary.legs).filter(leg => legContainsRentalBike(leg));
     const rentalBikeNetworks = new Set();
     let showRentalBikeDurationWarning = false;
     if (legsWithRentalBike.length > 0) {
@@ -233,11 +235,18 @@ class ItineraryTab extends React.Component {
                     isMultiRow={extraProps.isMultiRow}
                     isMobile={this.props.isMobile}
                   />
-                  <div className="summary-divider" />
                 </div>
               </>
             ),
             showRentalBikeDurationWarning && <CityBikeDurationInfo networks={Array.from(rentalBikeNetworks)} config={config} />,
+            shouldShowFareInfo(config) && (
+              <TicketInformation
+                fares={fares}
+                zones={getZones(itinerary.legs)}
+                legs={itinerary.legs}
+                loaded={this.state.fetchedFares}
+              />
+            ),
             <div
               className={cx('momentum-scroll itinerary-tabs__scroll', {
                 multirow: extraProps.isMultiRow,
@@ -275,14 +284,6 @@ class ItineraryTab extends React.Component {
                   focusToLeg={this.props.focusToLeg}
                   toggleCarpoolDrawer={this.props.toggleCarpoolDrawer}
                 />
-                {shouldShowFareInfo(config) && (
-                  <TicketInformation
-                    fares={fares}
-                    zones={getZones(itinerary.legs)}
-                    legs={itinerary.legs}
-                    loaded={this.state.fetchedFares}
-                  />
-                )}
                 {config.showRouteInformation && <RouteInformation />}
               </div>
               {this.shouldShowDisclaimer(config) && (
@@ -302,7 +303,13 @@ class ItineraryTab extends React.Component {
   }
 }
 
-const withRelay = createFragmentContainer(ItineraryTab, {
+const withRelay = createFragmentContainer(
+  connectToStores(
+    ItineraryTab,
+    ['TimeStore'],
+  context => ({
+    currentTime: context.getStore('TimeStore').getCurrentTime().unix(),
+  })), {
   plan: graphql`
     fragment ItineraryTab_plan on Plan {
       date

@@ -27,8 +27,6 @@ export default configMerger(walttiConfig, {
 
   title: APP_TITLE,
 
-  textLogo: false, // title text instead of logo img
-
   logo: 'lappeenranta/logo.png',
 
   favicon: './app/configurations/images/lappeenranta/bussi_fin.jpeg',
@@ -96,13 +94,10 @@ export default configMerger(walttiConfig, {
     content: [
       {
         name: 'about-this-service',
-        nameEn: 'About this service',
         route: '/tietoja-palvelusta',
-        icon: 'icon-icon_info',
       },
       {
         name: 'accessibility-statement',
-        nameEn: 'Accessibility statement',
         href:
           'https://kauppa.waltti.fi/media/authority/154/files/Saavutettavuusseloste_Waltti-reittiopas_JyQfJhC.htm',
       },
@@ -157,6 +152,14 @@ export default configMerger(walttiConfig, {
         },
         url: 'https://ckan.saita.fi/geojson/pyorailyreitit_lpr.geojson',
         isOffByDefault: true,
+      },
+      {
+        name: {
+          fi: 'Vyöhykkeet',
+          sv: 'Zoner',
+          en: 'Zones',
+        },
+        url: '/assets/geojson/lpr_zone_lines_20211008.geojson',
       },
     ],
   },

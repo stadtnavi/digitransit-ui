@@ -6,9 +6,8 @@ import { FormattedMessage, intlShape } from 'react-intl';
 import { v4 as uuid } from 'uuid';
 import ExternalLink from './ExternalLink';
 import { renderZoneTicket } from './ZoneTicket';
-import { getAlternativeFares } from '../util/fareUtils';
-import { addAnalyticsEvent } from '../util/analyticsUtils';
 import Icon from './Icon';
+import { getAlternativeFares } from '../util/fareUtils';
 
 const getUnknownFareRoute = (fares, route) => {
   for (let i = 0; i < fares.length; i++) {
@@ -62,19 +61,12 @@ export default function TicketInformation(
   const faresInfo = fares.map((fare, i) => {
     let header;
     if (i === 0) {
-      header = (
-        <div>
-          <FormattedMessage
-            id={
-              isMultiComponent
-                ? 'itinerary-tickets.title'
-                : 'itinerary-ticket.title'
-            }
-            defaultMessage="Required tickets"
-          />
-          :
-        </div>
-      );
+      header = `${intl.formatMessage({
+        id: isMultiComponent
+          ? 'itinerary-tickets.title'
+          : 'itinerary-ticket.title',
+        defaultMessage: 'Required tickets',
+      })}:`;
     }
 
     const ticketUrl = () => {

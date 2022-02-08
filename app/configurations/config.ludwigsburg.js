@@ -53,10 +53,6 @@ export default configMerger(parentConfig, {
         showDisruptions: false,
     },
 
-    modeToOTP: {
-        citybike: 'BICYCLE_RENT,SCOOTER_RENT',
-    },
-
     availableLanguages: ['de', 'en'],
     defaultLanguage: 'de',
 

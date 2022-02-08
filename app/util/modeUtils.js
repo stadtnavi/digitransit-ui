@@ -175,9 +175,7 @@ export const filterModes = (config, modes, from, to, intermediatePlaces) => {
           ...intermediatePlaces,
         ]),
       )
-      // split and flat to multiplex citybike to BICYCLE_RENT,SCOOTER_RENT
-      .map(mode => getOTPMode(config, mode).split(','))
-      .reduce((acc, val) => acc.concat(val), [])
+      .map(mode => getOTPMode(config, mode))
       .filter(mode => !!mode)
       .sort(),
   );

@@ -1,9 +1,9 @@
 /* eslint-disable */
 import configMerger from '../util/configMerger';
 
-const CONFIG = 'hbnext';
-const APP_TITLE = 'stadtnavi Herrenberg';
-const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
+const CONFIG = 'vpe';
+const APP_TITLE = 'mobi VPE';
+const APP_DESCRIPTION = 'Verbindungssuche des VPE';
 const API_URL = process.env.API_URL || 'https://api.dev.stadtnavi.eu';
 const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
 const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png";
@@ -11,18 +11,16 @@ const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.sta
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||
-    '/assets/messages/message.hb.json';
+    '/assets/messages/message.vpe.json';
 
 const walttiConfig = require('./config.waltti.js').default;
 
-const realtimeHbg = require('./realtimeUtils').default.hbg;
 const hostname = new URL(API_URL);
-realtimeHbg.mqtt = `wss://${hostname.host}/mqtt/`;
 
-const minLat = 47.6020;
-const maxLat = 49.0050;
-const minLon = 8.4087;
-const maxLon = 9.9014;
+const minLat = 47.305;
+const maxLat = 50.008;
+const minLon = 5.620;
+const maxLon = 12.387;
 
 export default configMerger(walttiConfig, {
     CONFIG,
@@ -36,13 +34,11 @@ export default configMerger(walttiConfig, {
         },
         STOP_MAP: `${API_URL}/routing/v1/router/vectorTiles/stops/`,
         DYNAMICPARKINGLOTS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
-        COVID19_MAP: `https://tiles.caresteouvert.fr/public.poi_osm_light/{z}/{x}/{y}.pbf`,
+        //ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
         CITYBIKE_MAP: `${API_URL}/routing/v1/router/vectorTiles/citybikes/`,
         BIKE_PARKS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
         CHARGING_STATIONS_MAP: `${API_URL}/tiles/charging-stations/`,
-        CHARGING_STATION_DETAILS_API: 'https://api.ocpdb.de/api/ocpi/2.2/location/',
+        CHARGING_STATION_DETAILS_API: `${API_URL}/charging-stations/2.2/location/`,
         PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
         PELIAS_REVERSE_GEOCODER: `${
             process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
@@ -86,24 +82,24 @@ export default configMerger(walttiConfig, {
     },
 
     appBarLink: {
-        name: 'Feedback',
-        href: 'https://stadtnavi.de/feedback',
+        name: 'Kontakt',
+        href: 'https://www.vpe.de/kontakt/',
         target: '_blank'
     },
 
     contactName: {
-        de: 'transportkollektiv',
-        default: 'transportkollektiv',
+        de: 'VPE GmbH',
+        default: 'VPE GmbH',
     },
 
     colors: {
-        primary: '#9fc727',
+        primary: '#1CA438',
         iconColors: {
             'mode-bus': '#ff0000',
             'mode-car': '#007AC9',
             'mode-rail': '#008000',
             'mode-subway': '#0000ff',
-            'mode-citybike': '#ff834a',
+            'mode-citybike': '#0e1a50',
             'mode-charging-station': '#00b096',
             'mode-bike-park': '#005ab4',
             'mode-carpool': '#9fc727',
@@ -121,11 +117,6 @@ export default configMerger(walttiConfig, {
             width: 600,
             height: 300,
         },
-
-        twitter: {
-            card: 'summary_large_image',
-            site: '@TUGHerrenberg',
-        },
     },
 
     dynamicParkingLots: {
@@ -140,25 +131,6 @@ export default configMerger(walttiConfig, {
         minZoom: 14
     },
 
-    roadworks: {
-        showRoadworks: true,
-        roadworksSmallIconZoom: 16,
-        roadworksMinZoom: 10
-    },
-
-    covid19: {
-        show: false,
-        smallIconZoom: 17,
-        minZoom: 15
-    },
-
-
-    weatherStations: {
-        show: true,
-        smallIconZoom: 17,
-        minZoom: 15
-    },
-
     chargingStations: {
         show: true,
         smallIconZoom: 14,
@@ -171,85 +143,7 @@ export default configMerger(walttiConfig, {
         useSpacesAvailable: false,
         showCityBikes: true,
         networks: {
-            'de.mfdz.flinkster.cab.regiorad_stuttgart': {
-                icon: 'regiorad',
-                name: {
-                    de: 'RegioRad',
-                    en: 'RegioRad',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://www.regioradstuttgart.de/de',
-                    en: 'https://www.regioradstuttgart.de/',
-                },
-                visibleInSettingsUi: true,
-                hideCode: true,
-                enabled: true,
-                season: {
-                    // 1.1. - 31.12.
-                    start: new Date(new Date().getFullYear(), 0, 1),
-                    end: new Date(new Date().getFullYear(), 11, 31),
-                },
-            },
-            'tier_LUDWIGSBURG': {
-                icon: 'scooter',
-                name: {
-                    de: 'TIER Ludwigsburg',
-                    en: 'TIER Ludwigsburg',
-                },
-                type: 'scooter',
-                url: {
-                    de: 'https://www.tier.app/de',
-                    en: 'https://www.tier.app/',
-                },
-                visibleInSettingsUi: true,
-                hideCode: true,
-                enabled: true,
-            },
-            'taxi': {
-                icon: 'taxi',
-                name: {
-                    de: 'Taxi',
-                    en: 'Taxi',
-                },
-                type: 'taxi',
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
-            "car-sharing": {
-                icon: 'car-sharing',
-                name: {
-                    de: 'Carsharing',
-                    en: 'Car sharing',
-                },
-                type: 'car-sharing',
-                url: {
-                    de: 'https://stuttgart.stadtmobil.de/privatkunden/',
-                    en: 'https://stuttgart.stadtmobil.de/privatkunden/',
-                },
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
-            "cargo-bike": {
-                icon: 'cargobike',
-                name: {
-                    de: 'Freie Lastenräder Herrenberg',
-                    en: 'Free cargo bikes Herrenberg',
-                },
-                type: 'cargo-bike',
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
-            "de.openbikebox.stadt-herrenberg": {
-                icon: 'cargobike',
-                name: {
-                    de: 'Lastenrad Herrenberg',
-                    en: 'Cargo bike Herrenberg',
-                },
-                type: 'cargo-bike',
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
+            
         }
     },
 
@@ -257,7 +151,7 @@ export default configMerger(walttiConfig, {
 
     title: APP_TITLE,
 
-    favicon: './app/configurations/images/hbnext/favicon.png',
+    favicon: 'https://www.vpe.de/wp-content/themes/VPE2018/images/3e39e5ce308fe1cd2878ef4df5ceeb00_favicon.png',
 
     meta: {
         description: APP_DESCRIPTION,
@@ -266,8 +160,6 @@ export default configMerger(walttiConfig, {
     modeToOTP: {
         carpool: 'CARPOOL',
     },
-
-    logo: 'hbnext/stadtnavi-herrenberg-logo.svg',
 
     GTMid: '',
 
@@ -292,25 +184,23 @@ export default configMerger(walttiConfig, {
             }
         },
         attribution: {
-            'default': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>',
-            'satellite': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href="https://www.lgl-bw.de/">LGL BW</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>',
-            'bicycle': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href=https://www.cyclosm.org/#map=12/52.3728/4.8936/cyclosmx>CyclOSM</a>, © <a tabindex=-1 href="https://www.openstreetmap.fr/">OSM-FR</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>',
+            'default': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://vpe.de/>VPE GmbH</a>',
+            'satellite': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href="https://www.lgl-bw.de/">LGL BW</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://vpe.de/>VPE GmbH</a>',
+            'bicycle': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href=https://www.cyclosm.org/#map=12/52.3728/4.8936/cyclosmx>CyclOSM</a>, © <a tabindex=-1 href="https://www.openstreetmap.fr/">OSM-FR</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://vpe.de/>VPE GmbH</a>',
         },
     },
 
     feedIds: ['hbg'],
 
-    realtime: { hbg: realtimeHbg },
-
     searchSources: ['oa', 'osm'],
 
     searchParams: {
-        'boundary.rect.min_lat': 48.34164,
-        'boundary.rect.max_lat': 48.97661,
-        'boundary.rect.min_lon': 9.95635,
-        'boundary.rect.max_lon': 8.530883,
-        'focus.point.lat': 48.5957,
-        'focus.point.lon': 8.8675
+        'boundary.rect.min_lat': 47.305,
+        'boundary.rect.max_lat': 50.008,
+        'boundary.rect.min_lon': 5.620,
+        'boundary.rect.max_lon': 12.387,
+        'focus.point.lat': 48.8910,
+        'focus.point.lon': 8.7033
     },
 
     areaPolygon: [
@@ -323,35 +213,13 @@ export default configMerger(walttiConfig, {
     nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
 
     defaultEndpoint: {
-        lat: 48.5942066,
-        lon: 8.8644041,
+        lat: 48.8910,
+        lon: 8.7033,
     },
-
-
-    defaultOrigins: [
-        {
-            icon: 'icon-icon_bus',
-            label: 'ZOB Herrenberg',
-            lat: 48.5942066,
-            lon: 8.8644041,
-        },
-        {
-            icon: 'icon-icon_star',
-            label: 'Krankenhaus',
-            lat: 48.59174,
-            lon: 8.87536,
-        },
-        {
-            icon: 'icon-icon_star',
-            label: 'Waldfriedhof / Schönbuchturm',
-            lat: 48.6020352,
-            lon: 8.9036348,
-        },
-    ],
 
     menu: {
         copyright: {
-            label: `© Stadt Herrenberg ${YEAR}`
+            label: `© VPE GmbH ${YEAR}`
         },
         content: [
             {
@@ -363,12 +231,12 @@ export default configMerger(walttiConfig, {
             {
                 name: 'imprint',
                 nameEn: 'Imprint',
-                href: 'https://www.herrenberg.de/impressum',
+                href: 'https://www.vpe.de/impressum/',
             },
             {
                 name: 'privacy',
                 nameEn: 'Privacy',
-                href: 'https://www.herrenberg.de/datenschutz',
+                href: 'https://www.vpe.de/datenschutz/',
             },
         ],
     },
@@ -378,22 +246,14 @@ export default configMerger(walttiConfig, {
             {
                 header: 'Über diesen Dienst',
                 paragraphs: [
-                    'stadtnavi ist eine Reiseplanungs-Anwendung für die Stadt Herrenberg und Umgebung. Dieser Dienst umfasst ÖPNV, Fußwege, Radverkehr, Straßen- und Parkplatzinformationen, Ladeinfrastruktur und Sharing-Angebote. Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt.',
-                    'Gefördert durch <br>',
-                    '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
-
+                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                    
                 ],
-            },
-            {
-                header: 'Mitmachen',
-                paragraphs: [
-                    'Die Stadt Herrenberg hat diese App im Rahmen der Modellstadt, gefördert durch das Bundesministerium für Verkehr und digitale Infrastruktur (BMVI) entwickelt. stadtnavi Anwendung ist eine Open Source Lösung und kann von anderen Kommunen und Akteuren unter ihrem Namen und Erscheinungsbild verwendet und an individuelle Bedürfnisse angepasst und weiterentwickelt werden (White Label Lösung). Mitmachen ist gewünscht!',
-                ]
             },
             {
                 header: 'Digitransit Plattform',
                 paragraphs: [
-                    'Dieser Dienst basiert auf der Digitransit Platform und dem Backend-Dienst OpenTripPlanner. Alle Software ist unter einer offenen Lizenzen verfügbar. Vielen Dank an alle Beteiligten.',
+                    'Dieser Dienst basiert auf der Digitransit Platform und dem Backend-Dienst OpenTripPlanner. Alle Software ist unter einer offenen Lizenzen verfügbar. Vielen Dank an alle Beitragenden.',
                     'Der gesamte Quellcode der Plattform, die aus vielen verschiedenen Komponenten besteht, ist auf <a href="https://github.com/stadtnavi/">Github</a> verfügbar.'
                 ],
             },
@@ -401,7 +261,7 @@ export default configMerger(walttiConfig, {
                 header: 'Datenquellen',
                 paragraphs: [
                     'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
-                    'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> und der <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
+                    'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
                     'Alle Angaben ohne Gewähr.'
                 ],
             },
@@ -410,15 +270,8 @@ export default configMerger(walttiConfig, {
             {
                 header: 'About this service',
                 paragraphs: [
-                    'stadtnavi is a travel planning application for the city of Herrenberg and its surroundings. This service includes public transport, footpaths, cycling, street and parking information, charging infrastructure and sharing offerings. The mobility offerings are connected through intermodal routing.',
-                    '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
+                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
                 ],
-            },
-            {
-                header: 'Contribute',
-                paragraphs: [
-                    'The city of Herrenberg has developed this app, funded by the Federal Ministry of Transport and Digital Infrastructure (BMVI), as model city. The stadtnavi app is an open source solution and can be used, customized and further developed by other municipalities to meet individual needs (white lable solution). Participation is welcome!',
-                ]
             },
             {
                 header: 'Digitransit platform',
@@ -430,7 +283,7 @@ export default configMerger(walttiConfig, {
                 header: 'Data sources',
                 paragraphs: [
                     'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
-                    'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> and <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
+                    'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
                     'No responsibility is accepted for the accuracy of this information.'
                 ],
             },
@@ -438,10 +291,6 @@ export default configMerger(walttiConfig, {
     },
 
     redirectReittiopasParams: true,
-
-    themeMap: {
-        hbnext: 'hbnext'
-    },
 
     transportModes: {
 
@@ -579,6 +428,7 @@ export default configMerger(walttiConfig, {
     geoJson: {
         layers: [
             // bicycleinfrastructure includes shops, repair stations,
+            /* 
             {
                 name: {
                     fi: '',
@@ -586,7 +436,6 @@ export default configMerger(walttiConfig, {
                     de: "Service Stationen und Läden",
                 },
                 url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
-                icon: 'icon-icon_bike_repair',
             },
             // LoRaWan map layer
             {
@@ -597,7 +446,6 @@ export default configMerger(walttiConfig, {
                 },
                 url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
                 isOffByDefault: true,
-                icon: 'icon-icon_gateways',
             },
             // Nette Toilette layer
             {
@@ -608,8 +456,8 @@ export default configMerger(walttiConfig, {
                 },
                 url: '/assets/geojson/hb-layers/toilet.geojson',
                 isOffByDefault: true,
-                icon: 'icon-icon_public_toilets',
             },
+            */
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
@@ -626,7 +474,7 @@ export default configMerger(walttiConfig, {
     suggestBikeAndParkMinDistance: 3000,
 
     // live bus locations
-    vehicles: true,
+    vehicles: false,
     showVehiclesOnSummaryPage: false,
     showVehiclesOnStopPage: true,
 

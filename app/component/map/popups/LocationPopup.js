@@ -130,10 +130,10 @@ class LocationPopup extends React.Component {
       feature: { postalcode },
     } = this.state;
 
-    let reporterUrl = config.issueTrackerUrl;
-    if (postalcode === '71083') {
-      reporterUrl = `https://www.herrenberg.de/tools/mvs/?lat=${lat}&lng=${lon}#mvPagePictures`;
-    } else if (reporterUrl) {
+    let reporterUrl =
+      (config.issueTrackerUrls && config.issueTrackerUrls[postalcode]) ||
+      config.issueTrackerUrl;
+    if (reporterUrl) {
       /* eslint-disable no-template-curly-in-string */
       reporterUrl = reporterUrl.replace('${lat}', lat);
       reporterUrl = reporterUrl.replace('${lon}', lon);

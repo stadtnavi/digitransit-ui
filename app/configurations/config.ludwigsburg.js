@@ -53,6 +53,10 @@ export default configMerger(parentConfig, {
         showDisruptions: false,
     },
 
+    transportModes: {
+        carpool: {availableForSelection: false}
+    },
+
     availableLanguages: ['de', 'en'],
     defaultLanguage: 'de',
 

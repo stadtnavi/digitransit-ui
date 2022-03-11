@@ -74,7 +74,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=10.19.0",
+    "node": ">=12.22.10",
     "npm": ">=3.0"
   },
   "browserslist": [
@@ -165,7 +165,7 @@
     "htm-to-json": "0.1.4",
     "i18next": "19.8.4",
     "intl": "1.2.5",
-    "leaflet": "1.6.0",
+    "leaflet": "1.7.1",
     "lodash": "4.17.19",
     "lru-cache": "6.0.0",
     "moment": "2.29.1",
@@ -192,7 +192,8 @@
     "react-dom": "16.13.0",
     "react-helmet": "6.1.0",
     "react-intl": "2.8.0",
-    "react-leaflet": "2.7.0",
+    "react-leaflet": "2.8.0",
+    "react-leaflet-universal": "2.2.1",
     "react-motion": "0.5.2",
     "react-relay": "10.0.1",
     "react-relay-network-modern": "5.0.0",
@@ -218,7 +219,7 @@
     "@babel/cli": "7.11.5",
     "@babel/plugin-proposal-object-rest-spread": "7.12.1",
     "@babel/plugin-transform-runtime": "7.11.5",
-    "@babel/runtime": "7.11.2",
+    "@babel/runtime": "7.17.2",
     "@commitlint/cli": "9.1.2",
     "@commitlint/config-conventional": "9.1.2",
     "@lerna/batch-packages": "3.16.0",

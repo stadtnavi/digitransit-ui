@@ -212,6 +212,11 @@ export default configMerger(walttiConfig, {
     ],
 
     nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
+    ticketingUrls: {
+        web: "https://reiseauskunft.bahn.de/bin/query.exe/dn?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
+        ios: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
+        android: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1"
+    },
 
     defaultEndpoint: {
         lat: 48.8910,

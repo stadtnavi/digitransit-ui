@@ -151,7 +151,8 @@ export default configMerger(walttiConfig, {
 
     title: APP_TITLE,
 
-    favicon: 'https://www.vpe.de/wp-content/themes/VPE2018/images/3e39e5ce308fe1cd2878ef4df5ceeb00_favicon.png',
+    favicon: './app/configurations/images/vpe/favicon.png',
+    logo: 'vpe/logo_mit_schrift.svg',
 
     meta: {
         description: APP_DESCRIPTION,

@@ -276,10 +276,12 @@ module.exports = {
       lodash: 'lodash-es',
       'lodash.merge': 'lodash-es/merge',
       moment$: 'moment/moment.js',
+      // TODO Check, if these patches are still required
       'babel-runtime/helpers/slicedToArray': path.join(
         __dirname,
         'app/util/slicedToArray',
       ),
+      // TODO Check, if these patches are still required
       'babel-runtime/core-js/get-iterator': path.join(
         __dirname,
         'app/util/getIterator',

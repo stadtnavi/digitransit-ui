@@ -111,7 +111,7 @@ export default configMerger(parentConfig, {
 
     title: APP_TITLE,
 
-    favicon: './app/configurations/images/ludwigsburg/favicon.svg',
+    favicon: './app/configurations/images/ludwigsburg/favicon.png',
     logo: 'ludwigsburg/stadtnavi-ludwigsburg-logo.svg',
 
     GTMid: '',

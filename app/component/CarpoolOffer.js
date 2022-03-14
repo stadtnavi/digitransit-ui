@@ -6,6 +6,7 @@ import { routerShape } from 'found';
 import Icon from './Icon';
 import Checkbox from './Checkbox';
 import Loading from './Loading';
+import ErrorHandlerSSR from './ErrorHandlerSSR';
 
 export default class CarpoolOffer extends React.Component {
   static contextTypes = {
@@ -117,12 +118,19 @@ export default class CarpoolOffer extends React.Component {
       headers: new Headers({ 'content-type': 'application/json' }),
       body: JSON.stringify(carpoolOffer),
       // eslint-disable-next-line func-names
-    }).then(response => {
-      if (response.status === 200) {
-        this.setState({ formState: 'success' });
-      }
-      return response.json();
-    });
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.status !== 'success') {
+          this.setState({ formState: 'failed' });
+        } else {
+          this.setState({ formState: 'success' });
+        }
+        return result;
+      })
+      .catch(() => {
+        this.setState({ formState: 'failed' });
+      });
   };
 
   getOfferedTimes = () => {
@@ -166,7 +174,16 @@ export default class CarpoolOffer extends React.Component {
             });
           }}
           labelId={weekday}
+          defaultMessage={weekday}
         />
+      </div>
+    );
+  }
+
+  renderFailedMessage() {
+    return (
+      <div className="sidePanelText">
+        <ErrorHandlerSSR retry={this.resetState} />
       </div>
     );
   }
@@ -204,7 +221,8 @@ export default class CarpoolOffer extends React.Component {
               />
             )}
             {departureDay} <FormattedMessage id="at-time" defaultMessage="at" />{' '}
-            {departureTime}.
+            {departureTime}{' '}
+            <FormattedMessage id="time-oclock" defaultMessage=" " />.
           </p>
           <p>
             <FormattedMessage
@@ -240,7 +258,7 @@ export default class CarpoolOffer extends React.Component {
             <FormattedMessage id="origin" defaultMessage="Origin" />
           </b>
           : {origin} <FormattedMessage id="at-time" defaultMessage="at" />{' '}
-          {departure} <FormattedMessage id="time-oclock" defaultMessage=" " />
+          {departure} <FormattedMessage id="time-oclock" defaultMessage=" " />.
           <br />
           <b>
             <FormattedMessage id="destination" defaultMessage="Destination" />
@@ -296,6 +314,7 @@ export default class CarpoolOffer extends React.Component {
             required
             onChange={this.updateEmail}
           />
+          <br />
           <FormattedMessage
             id="email-info"
             defaultMessage="This will be not be shown to people interested in the ride."
@@ -355,6 +374,9 @@ export default class CarpoolOffer extends React.Component {
     }
     if (formState === 'success') {
       return this.renderSuccessMessage();
+    }
+    if (formState === 'failed') {
+      return this.renderFailedMessage();
     }
     return null;
   }

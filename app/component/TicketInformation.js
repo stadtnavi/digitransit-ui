@@ -115,9 +115,11 @@ export default function TicketInformation(
     return (
       <div key={uuid()}>
         <div key={uuid()} className="ticket-container">
-          <div className="icon-container">
-            <Icon className="info" img="icon-icon_info" />
-          </div>
+          {config.ticketingLogo && (
+            <div className="icon-container">
+              <Icon className="info" img={config.ticketingLogo} />
+            </div>
+          )}
           <div className="ticket-info-container">
             <div className="ticket-type-title">{header}</div>
             <div

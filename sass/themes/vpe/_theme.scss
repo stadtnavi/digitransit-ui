@@ -24,6 +24,15 @@ $bike-color: #005ab4;
   color: #005ab4;
 }
 
+.ticket-container .icon-container {
+  padding: 8px 4px;
+  display: inline-block;
+}
+.ticket-container .icon-container .icon{
+  height: 50px;
+  width: 50px;
+}
+
 .logo-title {
   vertical-align: middle;
   color: #fff;

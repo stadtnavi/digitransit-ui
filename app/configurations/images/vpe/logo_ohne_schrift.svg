@@ -9,8 +9,8 @@
    viewBox="0 0 153.07 204.09"
    style="enable-background:new 0 0 153.07 204.09;"
    xml:space="preserve"
-   sodipodi:docname="VPE-LOGO-weisser-HG-ohneSchrift.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="logo_ohne_schrift.svg"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,13 +25,13 @@
    inkscape:pagecheckerboard="0"
    showgrid="false"
    inkscape:zoom="3.1897693"
-   inkscape:cx="76.651312"
-   inkscape:cy="102.20175"
-   inkscape:window-width="1600"
-   inkscape:window-height="837"
-   inkscape:window-x="-8"
-   inkscape:window-y="-8"
-   inkscape:window-maximized="1"
+   inkscape:cx="76.651311"
+   inkscape:cy="102.3585"
+   inkscape:window-width="1377"
+   inkscape:window-height="997"
+   inkscape:window-x="0"
+   inkscape:window-y="25"
+   inkscape:window-maximized="0"
    inkscape:current-layer="Ebene_1" />
 <style
    type="text/css"
@@ -42,13 +42,14 @@
 	.st3{fill:#05A535;}
 </style>
 <g
-   id="Ebene_2">
+   id="Ebene_2"
+   transform="matrix(1.1456676,0,0,1.0010453,-8.1442531,2.9486613)">
 	<rect
-   x="-2.61"
+   x="-2.6099999"
    y="-1.72"
    class="st0"
    width="157.52"
-   height="208.66"
+   height="180"
    id="rect4" />
 </g>
 

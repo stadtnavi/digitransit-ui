@@ -2,7 +2,7 @@
 import configMerger from '../util/configMerger';
 
 const CONFIG = 'vpe';
-const APP_TITLE = 'mobi VPE';
+const APP_TITLE = 'VPE mobi';
 const APP_DESCRIPTION = 'Verbindungssuche des VPE';
 const API_URL = process.env.API_URL || 'https://api.dev.stadtnavi.eu';
 const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
@@ -150,9 +150,9 @@ export default configMerger(walttiConfig, {
     mergeStopsByCode: true,
 
     title: APP_TITLE,
-
+    showTitles: true,
     favicon: './app/configurations/images/vpe/favicon.png',
-    logo: 'vpe/logo_mit_schrift.svg',
+    logo: 'vpe/logo_ohne_schrift.svg',
 
     meta: {
         description: APP_DESCRIPTION,
@@ -217,6 +217,7 @@ export default configMerger(walttiConfig, {
         ios: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
         android: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1"
     },
+    ticketingLogo: 'icon-ticketing_db',
 
     defaultEndpoint: {
         lat: 48.8910,

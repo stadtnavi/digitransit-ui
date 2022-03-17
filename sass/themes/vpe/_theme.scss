@@ -24,14 +24,26 @@ $bike-color: #005ab4;
   color: #005ab4;
 }
 
+.logo-title {
+  vertical-align: middle;
+  color: #fff;
+  padding: 30px 10px 0px 20px;
+  font-size: 24px;
+}
+
+.top-bar .logo {
+  min-width: 50px !important;
+}
+
 .top-bar button .navi-logo {
-  width: 350px;
-  height: 62px;
+  min-width: 50px;
+  width: 200px;
+  height: 50px;
 }
 
 .top-bar section .logo {
-  width: 350px;
-  height: 62px;
+  width: 200px;
+  height: 50px;
 }
 
 .top-bar .icon {
@@ -40,7 +52,7 @@ $bike-color: #005ab4;
 
 @media screen and (max-width: 400px) {
   .top-bar section .logo {
-    height: 43px;
+    height: 50px;
     width: 200px;
   }
 }

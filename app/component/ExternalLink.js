@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ExternalLinkDecoration from './ExternalLinkDecoration';
 
 const ExternalLink = ({ name, children, href, className, onClick }) =>
   (name || children !== undefined) && (
@@ -19,6 +20,7 @@ const ExternalLink = ({ name, children, href, className, onClick }) =>
         >
           {name || children}
         </a>
+        <ExternalLinkDecoration />
       </span>
     </span>
   );

@@ -4,10 +4,12 @@ import React from 'react';
 import { FormattedMessage, intlShape } from 'react-intl';
 
 import { v4 as uuid } from 'uuid';
+import Moment from 'moment';
 import ExternalLink from './ExternalLink';
 import { renderZoneTicket } from './ZoneTicket';
 import { getAlternativeFares } from '../util/fareUtils';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
+import { isMobile, isIOS } from '../util/browser';
 import Icon from './Icon';
 
 const getUnknownFareRoute = (fares, route) => {
@@ -78,6 +80,28 @@ export default function TicketInformation(
     }
 
     const ticketUrl = () => {
+      const transitLegs = legs.filter(leg => leg.transitLeg);
+      let browserType;
+      if (isMobile && isIOS) {
+        browserType = 'ios';
+      } else if (isMobile && !isIOS) {
+        browserType = 'android';
+      } else {
+        browserType = 'web';
+      }
+      if (
+        config.ticketingUrls &&
+        config.ticketingUrls[browserType] &&
+        transitLegs.length > 0
+      ) {
+        let url = config.ticketingUrls[browserType];
+        const startTime = new Moment(transitLegs[0].startTime);
+        url = url.replace('{startStopName}', transitLegs[0].from.name);
+        url = url.replace('{destStopName}', transitLegs.slice(-1)[0].to.name);
+        url = url.replace('{date}', startTime.format('DD.MM.YYYY'));
+        url = url.replace('{time}', startTime.format('HH:MM'));
+        return url;
+      }
       if (fare.agency && fare.agency.fareUrl) {
         return fare.agency.fareUrl;
       }
@@ -87,9 +111,15 @@ export default function TicketInformation(
       return null;
     };
 
+    const ticketurl = ticketUrl();
     return (
       <div key={uuid()}>
         <div key={uuid()} className="ticket-container">
+          {config.ticketingLogo && (
+            <div className="icon-container">
+              <Icon className="info" img={config.ticketingLogo} />
+            </div>
+          )}
           <div className="ticket-info-container">
             <div className="ticket-type-title">{header}</div>
             <div
@@ -167,19 +197,22 @@ export default function TicketInformation(
                   </ExternalLink>
                 </div>
               )}
-          {ticketUrl() && (
+          {/* In case we've got a ticketUrl, we display it in a button */}
+          {ticketurl && (
             <div
               className="ticket-type-agency-link"
               key={i} // eslint-disable-line react/no-array-index-key
             >
               <ExternalLink
                 className="itinerary-ticket-external-link"
-                href={ticketUrl()}
+                href={ticketurl}
               >
                 {intl.formatMessage({ id: 'buy-ticket' })}
               </ExternalLink>
             </div>
           )}
+          {/* ticketLink is an optional configurable, static link to an
+              external page with instructions how to buy a ticket */}
           {config.ticketLink && (
             <ExternalLink
               className="itinerary-ticket-external-link"

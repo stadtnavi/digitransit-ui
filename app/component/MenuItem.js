@@ -6,7 +6,7 @@ import Icon from './Icon';
 
 const mapToLink = (href, children, onClick) => (
   <span className="cursor-pointer">
-    <a href={href} onClick={onClick}>
+    <a href={href} onClick={onClick} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   </span>

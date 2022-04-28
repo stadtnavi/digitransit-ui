@@ -143,7 +143,20 @@ export default configMerger(walttiConfig, {
         useSpacesAvailable: false,
         showCityBikes: true,
         networks: {
-            
+            "car-sharing": {
+                icon: 'car-sharing',
+                name: {
+                    de: 'Carsharing',
+                    en: 'Car sharing',
+                },
+                type: 'car-sharing',
+                url: {
+                    de: 'https://pforzheim.stadtmobil.de/privatkunden/',
+                    en: 'https://pforzheim.stadtmobil.de/privatkunden/',
+                },
+                visibleInSettingsUi: false,
+                enabled: true,
+            }
         }
     },
 

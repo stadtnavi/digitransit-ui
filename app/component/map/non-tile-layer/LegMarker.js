@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { withLeaflet } from 'react-leaflet/es/context';
+import { useMap } from 'react-leaflet';
 import Icon from '../../Icon';
 
 import { isBrowser } from '../../../util/browser';
 
 /* eslint-disable global-require */
 
-const Marker = isBrowser && require('react-leaflet/es/Marker').default;
+const Marker = isBrowser && require('react-leaflet/esm/Marker').default;
 const L = isBrowser && require('leaflet');
 
 /* eslint-enable global-require */
@@ -34,11 +34,15 @@ class LegMarker extends React.Component {
   };
 
   componentDidMount() {
-    this.props.leaflet.map.on('zoomend', this.onMapZoom);
+    const mapInstance = useMap();
+    mapInstance.on('zoomend', this.onMapZoom);
+    // this.props.leaflet.map.on('zoomend', this.onMapZoom);
   }
 
   componentWillUnmount = () => {
-    this.props.leaflet.map.off('zoomend', this.onMapZoom);
+    const mapInstance = useMap();
+    mapInstance.on('zoomend', this.onMapZoom);
+    // this.props.leaflet.map.off('zoomend', this.onMapZoom);
   };
 
   onMapZoom = () => {
@@ -89,4 +93,4 @@ class LegMarker extends React.Component {
   }
 }
 
-export default withLeaflet(LegMarker);
+export default LegMarker;

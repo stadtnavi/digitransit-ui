@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import LeafletMap from 'react-leaflet/es/Map';
-import TileLayer from 'react-leaflet/es/TileLayer';
-import AttributionControl from 'react-leaflet/es/AttributionControl';
-import ScaleControl from 'react-leaflet/es/ScaleControl';
-import ZoomControl from 'react-leaflet/es/ZoomControl';
+import { MapContainer } from 'react-leaflet';
+import { TileLayer } from 'react-leaflet/esm/TileLayer';
+import { AttributionControl } from 'react-leaflet/esm/AttributionControl';
+import { ScaleControl } from 'react-leaflet/esm/ScaleControl';
+import { ZoomControl } from 'react-leaflet/esm/ZoomControl';
 import L from 'leaflet';
 import get from 'lodash/get';
 import isString from 'lodash/isString';
@@ -274,7 +274,7 @@ export default class Map extends React.Component {
         >
           {this.props.bottomButtons}
         </span>
-        <LeafletMap
+        <MapContainer
           {...naviProps}
           className={`z${this.state.zoom}`}
           keyboard={false}
@@ -340,7 +340,7 @@ export default class Map extends React.Component {
           </BreakpointConsumer>
           {leafletObjNew}
           <PositionMarker key="position" />
-        </LeafletMap>
+        </MapContainer>
       </div>
     );
   }

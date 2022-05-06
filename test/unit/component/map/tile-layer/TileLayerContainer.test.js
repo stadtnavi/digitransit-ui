@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { LeafletProvider } from 'react-leaflet/es/context';
 import sinon from 'sinon';
 import { ReactRelayContext } from 'react-relay';
 
@@ -25,26 +24,9 @@ describe('<TileLayerContainer />', () => {
       mapLayers: { stop: {}, terminal: {} },
     };
     const wrapper = mountWithIntl(
-      <LeafletProvider
-        value={{
-          map: {
-            addEventParent: () => {},
-            addLayer: () => {},
-            closePopup: () => {},
-            on: () => {},
-            openPopup: () => {},
-            options: {
-              maxZoom: 16,
-              minZoom: 10,
-            },
-            removeEventParent: () => {},
-          },
-        }}
-      >
-        <ReactRelayContext.Provider value={{ environment: {} }}>
-          <TileLayerContainer {...props} />
-        </ReactRelayContext.Provider>
-      </LeafletProvider>,
+      <ReactRelayContext.Provider value={{ environment: {} }}>
+        <TileLayerContainer {...props} />
+      </ReactRelayContext.Provider>,
       {
         context: {
           ...mockContext,

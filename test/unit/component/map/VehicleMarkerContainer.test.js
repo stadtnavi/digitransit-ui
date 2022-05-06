@@ -2,8 +2,6 @@ import React from 'react';
 import sinon from 'sinon';
 
 import { ReactRelayContext } from 'react-relay';
-import { LeafletProvider } from 'react-leaflet/es/context';
-
 import { mountWithIntl } from '../../helpers/mock-intl-enzyme';
 import {
   Component as VehicleMarkerContainer,
@@ -41,11 +39,9 @@ describe('<VehicleMarkerContainer />', () => {
       const environment = {};
       const addLayer = sinon.spy();
       const wrapper = mountWithIntl(
-        <LeafletProvider value={{ layerContainer: { addLayer } }}>
-          <ReactRelayContext.Provider value={{ environment }}>
-            <VehicleMarkerContainer {...defaultProps} />
-          </ReactRelayContext.Provider>
-        </LeafletProvider>,
+        <ReactRelayContext.Provider value={{ environment }}>
+          <VehicleMarkerContainer {...defaultProps} />
+        </ReactRelayContext.Provider>,
       );
       expect(wrapper.children.length).to.equal(1);
       expect(addLayer.callCount).to.equal(1);

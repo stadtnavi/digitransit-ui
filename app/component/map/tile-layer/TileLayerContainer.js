@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { intlShape } from 'react-intl';
 import { ReactRelayContext } from 'react-relay';
-import GridLayer from 'react-leaflet/es/GridLayer';
+import { useMap, TileLayer, Popup } from 'react-leaflet';
 import SphericalMercator from '@mapbox/sphericalmercator';
 import lodashFilter from 'lodash/filter';
 import isEqual from 'lodash/isEqual';
-import Popup from 'react-leaflet/es/Popup';
-import { withLeaflet } from 'react-leaflet/es/context';
 import { matchShape, routerShape } from 'found';
 import { mapLayerShape } from '../../../store/MapLayerStore';
 import MarkerSelectPopup from './MarkerSelectPopup';
@@ -36,7 +34,7 @@ const initialState = {
 // TODO eslint doesn't know that TileLayerContainer is a react component,
 //      because it doesn't inherit it directly. This will force the detection
 /** @extends React.Component */
-class TileLayerContainer extends GridLayer {
+class TileLayerContainer extends TileLayer {
   static propTypes = {
     tileSize: PropTypes.number.isRequired,
     zoomOffset: PropTypes.number.isRequired,
@@ -44,17 +42,6 @@ class TileLayerContainer extends GridLayer {
     onSelectLocation: PropTypes.func,
     mergeStops: PropTypes.bool,
     mapLayers: mapLayerShape.isRequired,
-    leaflet: PropTypes.shape({
-      map: PropTypes.shape({
-        addLayer: PropTypes.func.isRequired,
-        addEventParent: PropTypes.func.isRequired,
-        closePopup: PropTypes.func.isRequired,
-        removeEventParent: PropTypes.func.isRequired,
-        _popup: PropTypes.shape({
-          isOpen: PropTypes.func,
-        }),
-      }).isRequired,
-    }).isRequired,
     relayEnvironment: PropTypes.object.isRequired,
     hilightedStops: PropTypes.arrayOf(PropTypes.string),
     stopsToShow: PropTypes.arrayOf(PropTypes.string),
@@ -97,7 +84,10 @@ class TileLayerContainer extends GridLayer {
   componentDidMount() {
     super.componentDidMount();
     this.context.getStore('TimeStore').addChangeListener(this.onTimeChange);
-    this.props.leaflet.map.addEventParent(this.leafletElement);
+    const mapInstance = useMap();
+    mapInstance.addEventParent(this.leafletElement);
+    // this.props.leaflet.map.addEventParent(this.leafletElement);
+
     this.leafletElement.on('click contextmenu', this.onClick);
   }
 
@@ -174,12 +164,9 @@ class TileLayerContainer extends GridLayer {
       coords,
       forceOpen = false,
     ) => {
-      const {
-        leaflet: { map },
-        mapLayers,
-      } = this.props;
+      const { mapLayers } = this.props;
       const { coords: prevCoords } = this.state;
-      const popup = map._popup; // eslint-disable-line no-underscore-dangle
+      const popup = useMap()._popup; // eslint-disable-line no-underscore-dangle
       // navigate to citybike stop page if single stop is clicked
       if (
         selectableTargets.length === 1 &&
@@ -240,7 +227,7 @@ class TileLayerContainer extends GridLayer {
         popup.isOpen() &&
         (!forceOpen || (coords && coords.equals(prevCoords)))
       ) {
-        map.closePopup();
+        useMap().closePopup();
         return;
       }
 
@@ -410,20 +397,18 @@ class TileLayerContainer extends GridLayer {
   }
 }
 
-const connectedComponent = withLeaflet(
-  connectToStores(
-    props => (
-      <ReactRelayContext.Consumer>
-        {({ environment }) => (
-          <TileLayerContainer {...props} relayEnvironment={environment} />
-        )}
-      </ReactRelayContext.Consumer>
-    ),
-    [RealTimeInformationStore],
-    context => ({
-      vehicles: context.getStore(RealTimeInformationStore).vehicles,
-    }),
+const connectedComponent = connectToStores(
+  props => (
+    <ReactRelayContext.Consumer>
+      {({ environment }) => (
+        <TileLayerContainer {...props} relayEnvironment={environment} />
+      )}
+    </ReactRelayContext.Consumer>
   ),
+  [RealTimeInformationStore],
+  context => ({
+    vehicles: context.getStore(RealTimeInformationStore).vehicles,
+  }),
 );
 
 export { connectedComponent as default, TileLayerContainer as Component };

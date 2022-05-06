@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { withLeaflet } from 'react-leaflet/es/context';
+import { useMap } from 'react-leaflet';
 import { dtLocationShape } from '../../util/shapes';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 
@@ -10,11 +10,6 @@ class MarkerPopupBottom extends React.Component {
 
   static propTypes = {
     location: dtLocationShape.isRequired,
-    leaflet: PropTypes.shape({
-      map: PropTypes.shape({
-        closePopup: PropTypes.func.isRequired,
-      }).isRequired,
-    }).isRequired,
     onSelectLocation: PropTypes.func.isRequired,
     locationPopup: PropTypes.string,
   };
@@ -30,7 +25,8 @@ class MarkerPopupBottom extends React.Component {
       name: 'MapPopup',
     });
     this.props.onSelectLocation(this.props.location, 'origin');
-    this.props.leaflet.map.closePopup();
+    const mapInstance = useMap();
+    mapInstance.closePopup();
   };
 
   routeTo = () => {
@@ -40,7 +36,7 @@ class MarkerPopupBottom extends React.Component {
       name: 'MapPopup',
     });
     this.props.onSelectLocation(this.props.location, 'destination');
-    this.props.leaflet.map.closePopup();
+    useMap().closePopup();
   };
 
   routeAddViaPoint = () => {
@@ -50,7 +46,7 @@ class MarkerPopupBottom extends React.Component {
       name: 'MapPopup',
     });
     this.props.onSelectLocation(this.props.location, 'via');
-    this.props.leaflet.map.closePopup();
+    useMap().closePopup();
   };
 
   /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
@@ -82,9 +78,4 @@ class MarkerPopupBottom extends React.Component {
   }
 }
 
-const markerPopupBottomWithLeaflet = withLeaflet(MarkerPopupBottom);
-
-export {
-  markerPopupBottomWithLeaflet as default,
-  MarkerPopupBottom as Component,
-};
+export { MarkerPopupBottom as default, MarkerPopupBottom as Component };

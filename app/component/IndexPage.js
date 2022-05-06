@@ -384,13 +384,12 @@ class IndexPage extends React.Component {
                   <>{NearStops(CtrlPanel)}</>
                   <StopRouteSearch {...stopRouteSearchProps} />
                   <CtrlPanel.SeparatorLine />
-                  {!trafficNowLink ||
-                    (trafficNowLink[lang] !== '' && (
-                      <TrafficNowLink
-                        lang={lang}
-                        handleClick={this.trafficNowHandler}
-                      />
-                    ))}
+                  {trafficNowLink && trafficNowLink[lang] !== '' && (
+                    <TrafficNowLink
+                      lang={lang}
+                      handleClick={this.trafficNowHandler}
+                    />
+                  )}
                 </CtrlPanel>
               </div>
               {(showSpinner && <OverlayWithSpinner />) || null}

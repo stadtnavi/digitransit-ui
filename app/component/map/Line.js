@@ -8,7 +8,7 @@ let Polyline;
 
 /* eslint-disable global-require */
 if (isBrowser) {
-  Polyline = require('react-leaflet/es/Polyline').default;
+  Polyline = require('react-leaflet/esm/Polyline').default;
 }
 /* eslint-enable global-require */
 

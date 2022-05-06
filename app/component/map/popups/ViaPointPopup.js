@@ -11,7 +11,7 @@ import { locationToOTP } from '../../../util/otpStrings';
 import Card from '../../Card';
 import { isBrowser } from '../../../util/browser';
 
-const Popup = isBrowser ? require('react-leaflet/es/Popup').default : null; // eslint-disable-line global-require
+const Popup = isBrowser ? require('react-leaflet/esm/Popup').default : null; // eslint-disable-line global-require
 
 const filterViaPoint = (allPoints, pointToRemove) => {
   return allPoints.filter(

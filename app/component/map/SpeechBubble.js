@@ -7,7 +7,7 @@ let Marker;
 /* eslint-disable global-require */
 if (isBrowser) {
   L = require('leaflet');
-  Marker = require('react-leaflet/es/Marker').default;
+  Marker = require('react-leaflet/esm/Marker').default;
 }
 
 export default function SpeechBubble({ position, text, flip }) {

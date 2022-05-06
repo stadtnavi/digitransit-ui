@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import L from 'leaflet';
 import React from 'react';
-import LeafletGeoJson from 'react-leaflet/es/GeoJSON';
+import LeafletGeoJson from 'react-leaflet/esm/GeoJSON';
 
 import GeoJSON, {
   getIcons,

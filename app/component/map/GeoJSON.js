@@ -13,7 +13,7 @@ let Geojson;
 
 /* eslint-disable global-require */
 if (isBrowser) {
-  Geojson = require('react-leaflet/es/GeoJSON').default;
+  Geojson = require('react-leaflet/esm/GeoJSON').default;
 }
 /* eslint-enable global-require */
 

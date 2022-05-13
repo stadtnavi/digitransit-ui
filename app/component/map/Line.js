@@ -34,10 +34,10 @@ export default class Line extends React.Component {
     // same SVG, so CSS z-index can't be used.
     if (this.props.thin) {
       if (this.line) {
-        this.line.leafletElement.bringToBack();
+        this.line.bringToBack();
       }
       if (this.halo) {
-        this.halo.leafletElement.bringToBack();
+        this.halo.bringToBack();
       }
     }
   }
@@ -45,7 +45,7 @@ export default class Line extends React.Component {
   componentDidUpdate() {
     if (!(this.props.passive && this.props.thin) && this.line) {
       if (!this.props.opaque) {
-        this.line.leafletElement.bringToFront();
+        this.line.bringToFront();
       }
     }
   }

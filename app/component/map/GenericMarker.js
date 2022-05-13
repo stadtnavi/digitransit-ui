@@ -46,10 +46,11 @@ class GenericMarker extends React.Component {
     onClick: () => {},
   };
 
-  state = { zoom: useMap().getZoom() };
+  state = { zoom: 0 };
 
   // eslint-disable-next-line sort-keys
   UNSAFE_componentDidMount() {
+    this.setState({ zoom: useMap().getZoom() });
     useMapEvent('zoomend', this.onMapMove);
   }
 
@@ -64,7 +65,9 @@ class GenericMarker extends React.Component {
     <Marker
       position={{ lat: this.props.position.lat, lng: this.props.position.lon }}
       icon={this.props.getIcon(this.state.zoom)}
-      onClick={this.props.onClick}
+      eventHandler={{
+        onclick: this.props.onClick,
+      }}
       keyboard={false}
     >
       {this.props.children && (

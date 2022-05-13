@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { useMap, useMapEvent } from 'react-leaflet';
 import Icon from '../../Icon';
 
@@ -10,79 +10,70 @@ import { isBrowser } from '../../../util/browser';
 const Marker = isBrowser && require('react-leaflet').Marker;
 const L = isBrowser && require('leaflet');
 
-/* eslint-enable global-require */
+function LegMarker(props) {
+  const mapInstance = useMap();
 
-class LegMarker extends React.Component {
-  static propTypes = {
-    leg: PropTypes.object.isRequired,
-    mode: PropTypes.string.isRequired,
-    color: PropTypes.string,
-    zIndexOffset: PropTypes.number,
-    wide: PropTypes.bool,
-  };
+  function isVisible() {
+    if (!isBrowser) {
+      return false;
+    }
+    const p1 = mapInstance.latLngToLayerPoint(props.leg.from);
+    const p2 = mapInstance.latLngToLayerPoint(props.leg.to);
 
-  static defaultProps = {
-    color: 'currentColor',
-    zIndexOffset: undefined,
-  };
-
-  componentDidMount() {
-    useMapEvent('zoomend', this.onMapZoom);
-    // this.props.leaflet.map.on('zoomend', this.onMapZoom);
+    const minDistanceToShow = 64;
+    return minDistanceToShow <= p1.distanceTo(p2);
   }
 
-  componentWillUnmount = () => {
-    // TODO still required? or implicitly deregistered on unmount
-    // useMapEvent('zoomend', this.onMapZoom);
-    // this.props.leaflet.map.off('zoomend', this.onMapZoom);
-  };
+  const [visible, setVisible] = useState(isVisible());
 
-  onMapZoom = () => {
-    this.forceUpdate();
-  };
+  useMapEvent('zoomend', () => {
+    setVisible(isVisible());
+  });
 
-  getLegMarker() {
-    const color = this.props.color ? this.props.color : 'currentColor';
-    const className = this.props.wide ? 'wide' : '';
-    return (
+  const color = props.color ? props.color : 'currentColor';
+  const className = props.wide ? 'wide' : '';
+
+  return (
+    visible && (
       <Marker
-        key={`${this.props.leg.name}_text`}
+        key={`${props.leg.name}_text`}
         position={{
-          lat: this.props.leg.lat,
-          lng: this.props.leg.lon,
+          lat: props.leg.lat,
+          lng: props.leg.lon,
         }}
         interactive={false}
         icon={L.divIcon({
           html: `
             <div class="${className}" style="background-color: ${color}">
             ${Icon.asString({
-              img: `icon-icon_${this.props.mode}`,
+              img: `icon-icon_${props.mode}`,
               className: 'map-route-icon',
               color,
             })}
-              <span class="map-route-number">${this.props.leg.name}</span>
+              <span class="map-route-number">${props.leg.name}</span>
             </div>`,
-          className: `legmarker ${this.props.mode}`,
+          className: `legmarker ${props.mode}`,
           iconSize: null,
         })}
-        zIndexOffset={this.props.zIndexOffset}
+        zIndexOffset={props.zIndexOffset}
         keyboard={false}
       />
-    );
-  }
-
-  render() {
-    if (!isBrowser) {
-      return '';
-    }
-
-    const p1 = useMap().latLngToLayerPoint(this.props.leg.from);
-    const p2 = useMap().latLngToLayerPoint(this.props.leg.to);
-    const distance = p1.distanceTo(p2);
-    const minDistanceToShow = 64;
-
-    return <div>{distance >= minDistanceToShow && this.getLegMarker()}</div>;
-  }
+    )
+  );
 }
+
+LegMarker.propTypes = {
+  leg: PropTypes.object.isRequired,
+  mode: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  zIndexOffset: PropTypes.number,
+  wide: PropTypes.bool,
+};
+
+LegMarker.defaultProps = {
+  color: 'currentColor',
+  zIndexOffset: undefined,
+  wide: false,
+};
 
 export default LegMarker;

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { intlShape } from 'react-intl';
 import { ReactRelayContext } from 'react-relay';
-import { useMap, TileLayer, Popup } from 'react-leaflet';
+import { useMap, Popup } from 'react-leaflet';
 import SphericalMercator from '@mapbox/sphericalmercator';
+import { GridLayer as LeafletGridLayer } from 'leaflet';
 import lodashFilter from 'lodash/filter';
 import isEqual from 'lodash/isEqual';
 import { matchShape, routerShape } from 'found';
@@ -34,7 +35,7 @@ const initialState = {
 // TODO eslint doesn't know that TileLayerContainer is a react component,
 //      because it doesn't inherit it directly. This will force the detection
 /** @extends React.Component */
-class TileLayerContainer extends TileLayer {
+class TileLayerContainer extends React.Component {
   static propTypes = {
     tileSize: PropTypes.number.isRequired,
     zoomOffset: PropTypes.number.isRequired,
@@ -78,11 +79,17 @@ class TileLayerContainer extends TileLayer {
     this.state = {
       ...initialState,
     };
+    this.leafletElement = this.createLeafletElement(props);
     this.leafletElement.createTile = this.createTile;
   }
 
-  componentDidMount() {
-    super.componentDidMount();
+  createLeafletElement(props) {
+    return new LeafletGridLayer(props);
+  }
+
+  UNSAFE_componentDidMount() {
+    // TODO Inline former super logic
+    //super.componentDidMount();
     this.context.getStore('TimeStore').addChangeListener(this.onTimeChange);
     const mapInstance = useMap();
     mapInstance.addEventParent(this.leafletElement);

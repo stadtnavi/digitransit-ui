@@ -8,12 +8,15 @@ let Marker;
 let Popup;
 let L;
 let useMap;
+let useMapEvent;
+
 /* eslint-disable global-require */
 // TODO When server side rendering is re-enabled,
 //      these need to be loaded only when isBrowser is true.
 //      Perhaps still using the require from webpack?
 if (isBrowser) {
   useMap = require('react-leaflet').useMap;
+  useMapEvent = require('react-leaflet').useMapEvent;
   Marker = require('react-leaflet').Marker;
   Popup = require('react-leaflet').Popup;
   L = require('leaflet');
@@ -35,13 +38,6 @@ class GenericMarker extends React.Component {
     name: PropTypes.string,
     maxWidth: PropTypes.number,
     children: PropTypes.node,
-    leaflet: PropTypes.shape({
-      map: PropTypes.shape({
-        getZoom: PropTypes.func.isRequired,
-        on: PropTypes.func.isRequired,
-        off: PropTypes.func.isRequired,
-      }).isRequired,
-    }).isRequired,
     onClick: PropTypes.func,
   };
 
@@ -52,15 +48,17 @@ class GenericMarker extends React.Component {
 
   state = { zoom: useMap().getZoom() };
 
-  componentDidMount() {
-    this.props.leaflet.map.on('zoomend', this.onMapMove);
+  // eslint-disable-next-line sort-keys
+  UNSAFE_componentDidMount() {
+    useMapEvent('zoomend', this.onMapMove);
   }
 
   componentWillUnmount() {
-    this.props.leaflet.map.off('zoomend', this.onMapMove);
+    // TODO implicitly removed?
+    // this.props.leaflet.map.off('zoomend', this.onMapMove);
   }
 
-  onMapMove = () => this.setState({ zoom: this.props.leaflet.map.getZoom() });
+  onMapMove = () => this.setState({ zoom: useMap().getZoom() });
 
   getMarker = () => (
     <Marker

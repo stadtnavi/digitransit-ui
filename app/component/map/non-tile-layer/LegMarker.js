@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { useMap } from 'react-leaflet';
+import { useMap, useMapEvent } from 'react-leaflet';
 import Icon from '../../Icon';
 
 import { isBrowser } from '../../../util/browser';
@@ -17,13 +17,6 @@ class LegMarker extends React.Component {
     leg: PropTypes.object.isRequired,
     mode: PropTypes.string.isRequired,
     color: PropTypes.string,
-    leaflet: PropTypes.shape({
-      map: PropTypes.shape({
-        latLngToLayerPoint: PropTypes.func.isRequired,
-        on: PropTypes.func.isRequired,
-        off: PropTypes.func.isRequired,
-      }).isRequired,
-    }).isRequired,
     zIndexOffset: PropTypes.number,
     wide: PropTypes.bool,
   };
@@ -34,14 +27,13 @@ class LegMarker extends React.Component {
   };
 
   componentDidMount() {
-    const mapInstance = useMap();
-    mapInstance.on('zoomend', this.onMapZoom);
+    useMapEvent('zoomend', this.onMapZoom);
     // this.props.leaflet.map.on('zoomend', this.onMapZoom);
   }
 
   componentWillUnmount = () => {
-    const mapInstance = useMap();
-    mapInstance.on('zoomend', this.onMapZoom);
+    // TODO still required? or implicitly deregistered on unmount
+    // useMapEvent('zoomend', this.onMapZoom);
     // this.props.leaflet.map.off('zoomend', this.onMapZoom);
   };
 
@@ -84,8 +76,8 @@ class LegMarker extends React.Component {
       return '';
     }
 
-    const p1 = this.props.leaflet.map.latLngToLayerPoint(this.props.leg.from);
-    const p2 = this.props.leaflet.map.latLngToLayerPoint(this.props.leg.to);
+    const p1 = useMap().latLngToLayerPoint(this.props.leg.from);
+    const p2 = useMap().latLngToLayerPoint(this.props.leg.to);
     const distance = p1.distanceTo(p2);
     const minDistanceToShow = 64;
 

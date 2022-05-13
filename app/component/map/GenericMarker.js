@@ -14,8 +14,8 @@ let useMap;
 //      Perhaps still using the require from webpack?
 if (isBrowser) {
   useMap = require('react-leaflet').useMap;
-  Marker = require('react-leaflet/esm/Marker').default;
-  Popup = require('react-leaflet/esm/Popup').default;
+  Marker = require('react-leaflet').Marker;
+  Popup = require('react-leaflet').Popup;
   L = require('leaflet');
 }
 /* eslint-enable global-require */
@@ -87,7 +87,7 @@ class GenericMarker extends React.Component {
   getNameMarker() {
     if (
       !this.props.renderName ||
-      this.props.leaflet.map.getZoom() <
+      useMap().getZoom() <
         this.context.config.map.genericMarker.nameMarkerMinZoom
     ) {
       return false;

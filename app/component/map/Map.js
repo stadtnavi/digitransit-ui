@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { MapContainer } from 'react-leaflet';
+import {
+  MapContainer,
+  AttributionControl,
+  ScaleControl,
+  ZoomControl,
+} from 'react-leaflet';
 import { TileLayer } from 'react-leaflet/esm/TileLayer';
-import { AttributionControl } from 'react-leaflet/esm/AttributionControl';
-import { ScaleControl } from 'react-leaflet/esm/ScaleControl';
-import { ZoomControl } from 'react-leaflet/esm/ZoomControl';
+
 import L from 'leaflet';
 import get from 'lodash/get';
 import isString from 'lodash/isString';

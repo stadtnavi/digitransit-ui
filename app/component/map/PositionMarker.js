@@ -11,7 +11,7 @@ let L;
 
 /* eslint-disable global-require */
 if (isBrowser) {
-  Marker = require('react-leaflet/esm/Marker').default;
+  Marker = require('react-leaflet').Marker;
   L = require('leaflet');
 }
 /* eslint-enable global-require */

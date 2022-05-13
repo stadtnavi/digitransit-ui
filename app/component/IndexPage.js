@@ -433,14 +433,13 @@ class IndexPage extends React.Component {
                     <StopRouteSearch isMobile {...stopRouteSearchProps} />
                   </div>
                   <CtrlPanel.SeparatorLine usePaddingBottom20 />
-                  {!trafficNowLink ||
-                    (trafficNowLink[lang] !== '' && (
-                      <TrafficNowLink
-                        lang={lang}
-                        handleClick={this.trafficNowHandler}
-                        fontWeights={fontWeights}
-                      />
-                    ))}
+                  {trafficNowLink && trafficNowLink[lang] !== '' && (
+                    <TrafficNowLink
+                      lang={lang}
+                      handleClick={this.trafficNowHandler}
+                      fontWeights={fontWeights}
+                    />
+                  )}
                 </CtrlPanel>
               </div>
             </div>

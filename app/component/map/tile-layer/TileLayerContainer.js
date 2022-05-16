@@ -1,14 +1,13 @@
 import connectToStores from 'fluxible-addons-react/connectToStores';
 import PropTypes from 'prop-types';
-import React from 'react';
-import { intlShape } from 'react-intl';
+import React, { useState, useEffect, useRef } from 'react';
 import { ReactRelayContext } from 'react-relay';
 import { useMap, Popup } from 'react-leaflet';
 import SphericalMercator from '@mapbox/sphericalmercator';
 import { GridLayer as LeafletGridLayer } from 'leaflet';
 import lodashFilter from 'lodash/filter';
-import isEqual from 'lodash/isEqual';
-import { matchShape, routerShape } from 'found';
+// TODO used in componentDidUpdate import isEqual from 'lodash/isEqual';
+import { routerShape } from 'found';
 import { mapLayerShape } from '../../../store/MapLayerStore';
 import MarkerSelectPopup from './MarkerSelectPopup';
 import LocationPopup from '../popups/LocationPopup';
@@ -26,245 +25,27 @@ import {
 } from '../../../util/path';
 import SelectVehicleContainer from './SelectVehicleContainer';
 
-const initialState = {
-  selectableTargets: undefined,
-  coords: undefined,
-  showSpinner: true,
-};
+function TileLayerContainer(props, { getStore, config, router }) {
+  const [selectableTargets, setSelectableTargets] = useState(null);
+  const [coords, setCoords] = useState(null);
 
-// TODO eslint doesn't know that TileLayerContainer is a react component,
-//      because it doesn't inherit it directly. This will force the detection
-/** @extends React.Component */
-class TileLayerContainer extends React.Component {
-  static propTypes = {
-    tileSize: PropTypes.number.isRequired,
-    zoomOffset: PropTypes.number.isRequired,
-    locationPopup: PropTypes.string, // all, none, reversegeocoding, origindestination
-    onSelectLocation: PropTypes.func,
-    mergeStops: PropTypes.bool,
-    mapLayers: mapLayerShape.isRequired,
-    relayEnvironment: PropTypes.object.isRequired,
-    hilightedStops: PropTypes.arrayOf(PropTypes.string),
-    stopsToShow: PropTypes.arrayOf(PropTypes.string),
-    vehicles: PropTypes.object,
-  };
+  const mapInstance = useMap();
+  const popupEl = useRef(null);
 
-  static contextTypes = {
-    getStore: PropTypes.func.isRequired,
-    intl: intlShape.isRequired,
-    config: PropTypes.object.isRequired,
-    match: matchShape.isRequired,
-    router: routerShape.isRequired,
-  };
-
-  PopupOptions = {
-    offset: [0, 0],
-    autoPanPaddingTopLeft: [5, 125],
-    className: 'popup',
-    ref: 'popup',
-    onClose: () => this.setState({ ...initialState }),
-    autoPan: false,
-    onOpen: () => this.sendAnalytics(),
-    relayEnvironment: PropTypes.object.isRequired,
-  };
-
-  merc = new SphericalMercator({
-    size: this.props.tileSize || 256,
-  });
-
-  constructor(props, context) {
-    super(props, context);
-    // Required as it is not passed upwards through the whole inherittance chain
-    this.context = context;
-    this.state = {
-      ...initialState,
-    };
-    this.leafletElement = this.createLeafletElement(props);
-    this.leafletElement.createTile = this.createTile;
-  }
-
-  createLeafletElement(props) {
-    return new LeafletGridLayer(props);
-  }
-
-  UNSAFE_componentDidMount() {
-    // TODO Inline former super logic
-    //super.componentDidMount();
-    this.context.getStore('TimeStore').addChangeListener(this.onTimeChange);
-    const mapInstance = useMap();
-    mapInstance.addEventParent(this.leafletElement);
-    // this.props.leaflet.map.addEventParent(this.leafletElement);
-
-    this.leafletElement.on('click contextmenu', this.onClick);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.context.popupContainer != null) {
-      this.context.popupContainer.openPopup();
-    }
-    if (!isEqual(prevProps.mapLayers, this.props.mapLayers)) {
-      this.leafletElement.redraw();
-    }
-    if (!isEqual(prevProps.hilightedStops, this.props.hilightedStops)) {
-      this.leafletElement.redraw();
-    }
-  }
-
-  componentWillUnmount() {
-    this.context.getStore('TimeStore').removeChangeListener(this.onTimeChange);
-    this.leafletElement.off('click contextmenu', this.onClick);
-  }
-
-  onTimeChange = e => {
-    let activeTiles;
-
-    if (e.currentTime) {
-      /* eslint-disable no-underscore-dangle */
-      activeTiles = lodashFilter(
-        this.leafletElement._tiles,
-        tile => tile.active,
-      );
-      /* eslint-enable no-underscore-dangle */
-      activeTiles.forEach(
-        tile =>
-          tile.el.layers &&
-          tile.el.layers.forEach(layer => {
-            if (layer.onTimeChange) {
-              layer.onTimeChange();
-            }
-          }),
-      );
-    }
-  };
-
-  onClick = e => {
-    /* eslint-disable no-underscore-dangle */
-    Object.keys(this.leafletElement._tiles)
-      .filter(key => this.leafletElement._tiles[key].active)
-      .filter(key => this.leafletElement._keyToBounds(key).contains(e.latlng))
-      .forEach(key =>
-        this.leafletElement._tiles[key].el.onMapClick(
-          e,
-          this.merc.px(
-            [e.latlng.lng, e.latlng.lat],
-            Number(key.split(':')[2]) + this.props.zoomOffset,
-          ),
-        ),
-      );
-    /* eslint-enable no-underscore-dangle */
-  };
-
-  createTile = (tileCoords, done) => {
-    const tile = new TileContainer(
-      tileCoords,
-      done,
-      this.props,
-      this.context.config,
-      this.props.mergeStops,
-      this.props.relayEnvironment,
-      this.props.hilightedStops,
-      this.props.vehicles,
-      this.props.stopsToShow,
-    );
-    tile.onSelectableTargetClicked = (
-      selectableTargets,
-      coords,
-      forceOpen = false,
-    ) => {
-      const { mapLayers } = this.props;
-      const { coords: prevCoords } = this.state;
-      const popup = useMap()._popup; // eslint-disable-line no-underscore-dangle
-      // navigate to citybike stop page if single stop is clicked
-      if (
-        selectableTargets.length === 1 &&
-        selectableTargets[0].layer === 'citybike'
-      ) {
-        this.context.router.push(
-          `/${PREFIX_BIKESTATIONS}/${encodeURIComponent(
-            selectableTargets[0].feature.properties.id,
-          )}`,
-        );
-        return;
-      }
-      // ... Or to stop page
-      if (
-        selectableTargets.length === 1 &&
-        selectableTargets[0].layer === 'stop'
-      ) {
-        const prefix = selectableTargets[0].feature.properties.stops
-          ? PREFIX_TERMINALS
-          : PREFIX_STOPS;
-        this.context.router.push(
-          `/${prefix}/${encodeURIComponent(
-            selectableTargets[0].feature.properties.gtfsId,
-          )}`,
-        );
-        return;
-      }
-      if (
-        selectableTargets.length === 1 &&
-        selectableTargets[0].layer === 'parkAndRide' &&
-        (selectableTargets[0].feature.properties.facility ||
-          selectableTargets[0].feature.properties.facilities.length === 1)
-      ) {
-        const carParkId =
-          selectableTargets[0].feature.properties?.facility?.carParkId ||
-          selectableTargets[0].feature.properties?.facilities[0]?.carParkId;
-        if (carParkId) {
-          this.context.router.push(
-            `/${PREFIX_CARPARK}/${encodeURIComponent(carParkId)}`,
-          );
-          return;
-        }
-      }
-      if (
-        selectableTargets.length === 1 &&
-        selectableTargets[0].layer === 'parkAndRideForBikes' &&
-        selectableTargets[0].feature.properties.facility
-      ) {
-        this.context.router.push(
-          `/${PREFIX_BIKEPARK}/${encodeURIComponent(
-            selectableTargets[0].feature.properties.facility.bikeParkId,
-          )}`,
-        );
-        return;
-      }
-      if (
-        popup &&
-        popup.isOpen() &&
-        (!forceOpen || (coords && coords.equals(prevCoords)))
-      ) {
-        useMap().closePopup();
-        return;
-      }
-
-      this.setState({
-        selectableTargets: selectableTargets.filter(
-          target =>
-            target.layer === 'realTimeVehicle' ||
-            isFeatureLayerEnabled(target.feature, target.layer, mapLayers),
-        ),
-        coords,
-      });
-    };
-
-    return tile.el;
-  };
-
-  selectRow = option => this.setState({ selectableTargets: [option] });
+  let leafletElement = null;
 
   /**
    * Send an analytics event on opening popup
    */
-  sendAnalytics() {
+  const sendAnalytics = () => {
     let name = null;
     let type = null;
-    if (this.state.selectableTargets.length === 0) {
+    if (selectableTargets.length === 0) {
       return;
       // event for clicking somewhere else on the map will be handled in LocationPopup
     }
-    if (this.state.selectableTargets.length === 1) {
-      const target = this.state.selectableTargets[0];
+    if (selectableTargets.length === 1) {
+      const target = selectableTargets[0];
       const { properties } = target.feature;
       name = target.layer;
       switch (name) {
@@ -282,7 +63,7 @@ class TileLayerContainer extends React.Component {
     }
     const pathPrefixMatch = window.location.pathname.match(/^\/([a-z]{2,})\//);
     const context =
-      pathPrefixMatch && pathPrefixMatch[1] !== this.context.config.indexPath
+      pathPrefixMatch && pathPrefixMatch[1] !== config.indexPath
         ? pathPrefixMatch[1]
         : 'index';
     addAnalyticsEvent({
@@ -292,117 +73,310 @@ class TileLayerContainer extends React.Component {
       type,
       source: context,
     });
-  }
+  };
 
-  render() {
-    let popup = null;
-    let latlng = this.state.coords;
-    let contents;
-    const breakpoint = getClientBreakpoint(); // DT-3470
-    let showPopup = true; // DT-3470
+  const PopupOptions = {
+    offset: [0, 0],
+    autoPanPaddingTopLeft: [5, 125],
+    className: 'popup',
+    ref: popupEl,
+    onClose: () => {
+      setSelectableTargets(null);
+      setCoords(null);
+    },
+    autoPan: false,
+    onOpen: () => sendAnalytics(),
+    relayEnvironment: PropTypes.object.isRequired,
+  };
 
-    if (typeof this.state.selectableTargets !== 'undefined') {
-      if (this.state.selectableTargets.length === 1) {
-        let id;
-        if (
-          this.state.selectableTargets[0].layer === 'parkAndRide' &&
-          this.state.selectableTargets[0].feature.properties.facilityIds
-        ) {
-          id = this.state.selectableTargets[0].feature.properties.facilityIds;
-          contents = (
-            <MarkerSelectPopup
-              selectRow={this.selectRow}
-              options={this.state.selectableTargets}
-              colors={this.context.config.colors}
-            />
-          );
-        } else if (
-          this.state.selectableTargets[0].layer === 'realTimeVehicle'
-        ) {
-          const { vehicle } = this.state.selectableTargets[0].feature;
-          const realTimeInfoVehicle = this.props.vehicles[vehicle.id];
-          if (realTimeInfoVehicle) {
-            latlng = {
-              lat: realTimeInfoVehicle.lat,
-              lng: realTimeInfoVehicle.long,
-            };
-          }
-          this.PopupOptions.className = 'vehicle-popup';
+  const merc = new SphericalMercator({
+    size: props.tileSize || 256,
+  });
 
-          contents = <SelectVehicleContainer vehicle={vehicle} />;
-        }
-        popup = (
-          <Popup
-            {...this.PopupOptions}
-            key={id}
-            position={latlng}
-            className={`${this.PopupOptions.className} ${
-              this.PopupOptions.className === 'vehicle-popup'
-                ? 'single-popup'
-                : 'choice-popup'
-            }`}
-          >
-            {contents}
-          </Popup>
-        );
-      } else if (this.state.selectableTargets.length > 1) {
-        if (
-          !this.context.config.map.showStopMarkerPopupOnMobile &&
-          breakpoint === 'small'
-        ) {
-          // DT-3470
-          showPopup = false;
-        }
-        popup = (
-          <Popup
-            key={this.state.coords.toString()}
-            {...this.PopupOptions}
-            position={this.state.coords}
-            maxWidth="300px"
-            className={`${this.PopupOptions.className} choice-popup`}
-          >
-            <MarkerSelectPopup
-              selectRow={this.selectRow}
-              options={this.state.selectableTargets}
-              colors={this.context.config.colors}
-            />
-          </Popup>
-        );
-      } else if (this.state.selectableTargets.length === 0) {
-        if (
-          !this.context.config.map.showStopMarkerPopupOnMobile &&
-          breakpoint === 'small'
-        ) {
-          // DT-3470
-          showPopup = false;
-        }
-        popup = this.props.locationPopup !== 'none' && (
-          <Popup
-            key={this.state.coords.toString()}
-            {...this.PopupOptions}
-            maxHeight={220}
-            maxWidth="auto"
-            position={this.state.coords}
-            className={`${this.PopupOptions.className} ${
-              this.props.locationPopup === 'all'
-                ? 'single-popup'
-                : 'narrow-popup'
-            }`}
-          >
-            <LocationPopup
-              lat={this.state.coords.lat}
-              lon={this.state.coords.lng}
-              onSelectLocation={this.props.onSelectLocation}
-              locationPopup={this.props.locationPopup}
-            />
-          </Popup>
-        );
-      }
+  const onTimeChange = e => {
+    let activeTiles;
+
+    if (e.currentTime) {
+      /* eslint-disable no-underscore-dangle */
+      activeTiles = lodashFilter(leafletElement._tiles, tile => tile.active);
+      /* eslint-enable no-underscore-dangle */
+      activeTiles.forEach(
+        tile =>
+          tile.el.layers &&
+          tile.el.layers.forEach(layer => {
+            if (layer.onTimeChange) {
+              layer.onTimeChange();
+            }
+          }),
+      );
     }
+  };
 
-    return showPopup ? popup : null;
+  const onClick = e => {
+    /* eslint-disable no-underscore-dangle */
+    Object.keys(leafletElement._tiles)
+      .filter(key => leafletElement._tiles[key].active)
+      .filter(key => leafletElement._keyToBounds(key).contains(e.latlng))
+      .forEach(key =>
+        leafletElement._tiles[key].el.onMapClick(
+          e,
+          merc.px(
+            [e.latlng.lng, e.latlng.lat],
+            Number(key.split(':')[2]) + props.zoomOffset,
+          ),
+        ),
+      );
+    /* eslint-enable no-underscore-dangle */
+  };
+
+  const onSelectRow = option => setSelectableTargets([option]);
+
+  // Factory method
+  const createTile = (tileCoords, done) => {
+    const tile = new TileContainer(
+      tileCoords,
+      done,
+      props,
+      config,
+      props.mergeStops,
+      props.relayEnvironment,
+      props.hilightedStops,
+      props.vehicles,
+      props.stopsToShow,
+    );
+    tile.onSelectableTargetClicked = (
+      selectableTargetsClicked,
+      newCoords,
+      forceOpen = false,
+    ) => {
+      const { mapLayers } = props;
+      const popup = mapInstance._popup; // eslint-disable-line no-underscore-dangle
+      // navigate to citybike stop page if single stop is clicked
+      if (
+        selectableTargetsClicked.length === 1 &&
+        selectableTargetsClicked[0].layer === 'citybike'
+      ) {
+        router.push(
+          `/${PREFIX_BIKESTATIONS}/${encodeURIComponent(
+            selectableTargetsClicked[0].feature.properties.id,
+          )}`,
+        );
+        return;
+      }
+      // ... Or to stop page
+      if (
+        selectableTargetsClicked.length === 1 &&
+        selectableTargetsClicked[0].layer === 'stop'
+      ) {
+        const prefix = selectableTargetsClicked[0].feature.properties.stops
+          ? PREFIX_TERMINALS
+          : PREFIX_STOPS;
+        router.push(
+          `/${prefix}/${encodeURIComponent(
+            selectableTargetsClicked[0].feature.properties.gtfsId,
+          )}`,
+        );
+        return;
+      }
+      if (
+        selectableTargetsClicked.length === 1 &&
+        selectableTargetsClicked[0].layer === 'parkAndRide' &&
+        (selectableTargetsClicked[0].feature.properties.facility ||
+          selectableTargetsClicked[0].feature.properties.facilities.length ===
+            1)
+      ) {
+        const carParkId =
+          selectableTargetsClicked[0].feature.properties?.facility?.carParkId ||
+          selectableTargetsClicked[0].feature.properties?.facilities[0]
+            ?.carParkId;
+        if (carParkId) {
+          router.push(`/${PREFIX_CARPARK}/${encodeURIComponent(carParkId)}`);
+          return;
+        }
+      }
+      if (
+        selectableTargetsClicked.length === 1 &&
+        selectableTargetsClicked[0].layer === 'parkAndRideForBikes' &&
+        selectableTargetsClicked[0].feature.properties.facility
+      ) {
+        router.push(
+          `/${PREFIX_BIKEPARK}/${encodeURIComponent(
+            selectableTargets[0].feature.properties.facility.bikeParkId,
+          )}`,
+        );
+        return;
+      }
+      if (
+        popup &&
+        popup.isOpen() &&
+        (!forceOpen || (newCoords && newCoords.equals(coords)))
+      ) {
+        mapInstance.closePopup();
+        return;
+      }
+
+      setCoords(newCoords);
+      setSelectableTargets(
+        selectableTargetsClicked.filter(
+          target =>
+            target.layer === 'realTimeVehicle' ||
+            isFeatureLayerEnabled(target.feature, target.layer, mapLayers),
+        ),
+      );
+    };
+
+    return tile.el;
+  };
+
+  useEffect(() => {
+    leafletElement = new LeafletGridLayer(props);
+    leafletElement.createTile = createTile;
+    mapInstance.addLayer(leafletElement);
+    mapInstance.addEventParent(leafletElement);
+    // this.props.leaflet.map.addEventParent(this.leafletElement);
+
+    leafletElement.on('click contextmenu', onClick);
+    return () => {
+      leafletElement.off('click contextmenu', onClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    getStore('TimeStore').addChangeListener(onTimeChange);
+    return () => {
+      getStore('TimeStore').removeChangeListener(onTimeChange);
+    };
+  }, []);
+
+  /* TODO componentDidUpdate still needs to be reworked 
+  useEffect(() => {
+    if (popupContainer != null) {
+      popupContainer.openPopup();
+    }
+    if (!isEqual(prevProps.mapLayers, this.props.mapLayers)) {
+      leafletElement.redraw();
+    }
+    if (!isEqual(prevProps.hilightedStops, this.props.hilightedStops)) {
+      leafletElement.redraw();
+    }
+  } */
+
+  let popup = null;
+  let latlng = coords;
+  let contents;
+  const breakpoint = getClientBreakpoint(); // DT-3470
+  let showPopup = true; // DT-3470
+
+  if (selectableTargets !== null) {
+    if (selectableTargets.length === 1) {
+      let id;
+      if (
+        selectableTargets[0].layer === 'parkAndRide' &&
+        selectableTargets[0].feature.properties.facilityIds
+      ) {
+        id = selectableTargets[0].feature.properties.facilityIds;
+        contents = (
+          <MarkerSelectPopup
+            selectRow={onSelectRow}
+            options={selectableTargets}
+            colors={config.colors}
+          />
+        );
+      } else if (selectableTargets[0].layer === 'realTimeVehicle') {
+        const vehicle = selectableTargets[0].feature;
+        const realTimeInfoVehicle = props.vehicles[vehicle.id];
+        if (realTimeInfoVehicle) {
+          latlng = {
+            lat: realTimeInfoVehicle.lat,
+            lng: realTimeInfoVehicle.long,
+          };
+        }
+        PopupOptions.className = 'vehicle-popup';
+
+        contents = <SelectVehicleContainer vehicle={vehicle} />;
+      }
+      popup = (
+        <Popup
+          {...PopupOptions}
+          key={id}
+          position={latlng}
+          className={`${PopupOptions.className} ${
+            PopupOptions.className === 'vehicle-popup'
+              ? 'single-popup'
+              : 'choice-popup'
+          }`}
+        >
+          {contents}
+        </Popup>
+      );
+    } else if (selectableTargets.length > 1) {
+      if (!config.map.showStopMarkerPopupOnMobile && breakpoint === 'small') {
+        // DT-3470
+        showPopup = false;
+      }
+      popup = (
+        <Popup
+          key={coords.toString()}
+          {...PopupOptions}
+          position={coords}
+          maxWidth="300px"
+          className={`${PopupOptions.className} choice-popup`}
+        >
+          <MarkerSelectPopup
+            selectRow={onSelectRow}
+            options={selectableTargets}
+            colors={config.colors}
+          />
+        </Popup>
+      );
+    } else if (selectableTargets.length === 0) {
+      if (!config.map.showStopMarkerPopupOnMobile && breakpoint === 'small') {
+        // DT-3470
+        showPopup = false;
+      }
+      popup = props.locationPopup !== 'none' && (
+        <Popup
+          key={coords.toString()}
+          {...PopupOptions}
+          maxHeight={220}
+          maxWidth="auto"
+          position={coords}
+          className={`${PopupOptions.className} ${
+            props.locationPopup === 'all' ? 'single-popup' : 'narrow-popup'
+          }`}
+        >
+          <LocationPopup
+            lat={coords.lat}
+            lon={coords.lng}
+            onSelectLocation={props.onSelectLocation}
+            locationPopup={props.locationPopup}
+          />
+        </Popup>
+      );
+    }
   }
+
+  return showPopup ? popup : null;
 }
+
+TileLayerContainer.propTypes = {
+  tileSize: PropTypes.number.isRequired,
+  zoomOffset: PropTypes.number.isRequired,
+  locationPopup: PropTypes.string, // all, none, reversegeocoding, origindestination
+  onSelectLocation: PropTypes.func,
+  mergeStops: PropTypes.bool,
+  mapLayers: mapLayerShape.isRequired,
+  relayEnvironment: PropTypes.object.isRequired,
+  hilightedStops: PropTypes.arrayOf(PropTypes.string),
+  stopsToShow: PropTypes.arrayOf(PropTypes.string),
+  vehicles: PropTypes.object,
+};
+
+TileLayerContainer.contextTypes = {
+  getStore: PropTypes.func.isRequired,
+  config: PropTypes.object.isRequired,
+  router: routerShape.isRequired,
+};
 
 const connectedComponent = connectToStores(
   props => (

@@ -340,7 +340,7 @@ export default configMerger(walttiConfig, {
 
         tram: {
             availableForSelection: true,
-            defaultValue: false,
+            defaultValue: true,
             nearYouLabel: {
                 de: 'S-Bahnhaltestellen in der Nähe',
             }
@@ -363,7 +363,7 @@ export default configMerger(walttiConfig, {
 
         ferry: {
             availableForSelection: true,
-            defaultValue: false,
+            defaultValue: true,
             nearYouLabel: {
                 de: 'Fähranleger in der Nähe',
             }

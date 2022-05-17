@@ -532,37 +532,19 @@ export default configMerger(walttiConfig, {
     // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
-            // bicycleinfrastructure includes shops, repair stations,
-            /* 
+            // Bicycle network layer
             {
                 name: {
-                    fi: '',
-                    en: 'Service stations and stores',
-                    de: "Service Stationen und Läden",
+                  fi: '',
+                  en: "Bicycle network",
+                  de: 'Radnetz Kreis Reutlingen',
                 },
-                url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
+                category: 'bicycle',
+                url: 'https://data.gtfs.de/reutlingen/radnetz.json',
+                icon: 'icon-icon_radnetz',
+                isOffByDefault: false,
+                minZoom: 12
             },
-            // LoRaWan map layer
-            {
-                name: {
-                    fi: '',
-                    en: 'LoRaWAN Gateways',
-                    de: 'LoRaWAN Gateways',
-                },
-                url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
-                isOffByDefault: true,
-            },
-            // Nette Toilette layer
-            {
-                name: {
-                    fi: '',
-                    en: 'Public Toilets',
-                    de: 'Nette Toilette',
-                },
-                url: '/assets/geojson/hb-layers/toilet.geojson',
-                isOffByDefault: true,
-            },
-            */
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,

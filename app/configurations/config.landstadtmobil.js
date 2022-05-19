@@ -540,7 +540,7 @@ export default configMerger(walttiConfig, {
                   de: 'Radnetz Kreis Reutlingen',
                 },
                 category: 'bicycle',
-                url: 'https://data.gtfs.de/reutlingen/radnetz.json',
+                url: 'https://data.mfdz.de/reutlingen/radnetz.json',
                 icon: 'icon-icon_radnetz',
                 isOffByDefault: false,
                 minZoom: 12

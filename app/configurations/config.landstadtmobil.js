@@ -167,7 +167,7 @@ export default configMerger(walttiConfig, {
                 enabled: true,
                 hideCode: true,
             },
-            'tier_REUTLINGEN': {
+            'tier_reutlingen': {
                 icon: 'tier_scooter',
                 name: {
                     de: 'TIER Reutlingen',
@@ -182,7 +182,7 @@ export default configMerger(walttiConfig, {
                 enabled: true,
                 hideCode: true,
             },
-            'tier_MUNSINGEN': {
+            'tier_munsingen': {
                 icon: 'tier_bicycle',
                 name: {
                     de: 'TIER Münsingen',

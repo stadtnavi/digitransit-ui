@@ -85,7 +85,7 @@ export default configMerger(walttiConfig, {
 
     appBarLink: {
         name: 'Feedback',
-        href: 'https://stadtnavi.de/feedback',
+        href: 'mailto:J.Baisch-Nipatsiripol@kreis-reutlingen.de?subject=landstadtmobil Feedback',
         target: '_blank'
     },
 

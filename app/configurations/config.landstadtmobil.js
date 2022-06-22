@@ -85,7 +85,7 @@ export default configMerger(walttiConfig, {
 
     appBarLink: {
         name: 'Feedback',
-        href: 'https://stadtnavi.de/feedback',
+        href: 'mailto:nachhaltige-entwicklung@kreis-reutlingen.de?subject=landstadtmobil Feedback',
         target: '_blank'
     },
 
@@ -167,7 +167,7 @@ export default configMerger(walttiConfig, {
                 enabled: true,
                 hideCode: true,
             },
-            'tier_REUTLINGEN': {
+            'tier_reutlingen': {
                 icon: 'tier_scooter',
                 name: {
                     de: 'TIER Reutlingen',
@@ -182,7 +182,7 @@ export default configMerger(walttiConfig, {
                 enabled: true,
                 hideCode: true,
             },
-            'tier_MUNSINGEN': {
+            'tier_munsingen': {
                 icon: 'tier_bicycle',
                 name: {
                     de: 'TIER Münsingen',
@@ -302,6 +302,43 @@ export default configMerger(walttiConfig, {
                 href: 'https://www.kreis-reutlingen.de/de/impressum',
             }
         ],
+    },
+
+    welcomeMessage: {
+        de: {
+            header: 'Herzlich Willkommen auf landstadtmobil.de!',
+            paragraphs: [
+                'Auf dieser Plattform können Sie bequem und schnell die beste '+
+                  'Route für Ihre Strecke berechnen. Einfach Start- und Zielort '+
+                  'eingeben und loslegen. Im Anschluss können Sie hier auf der '+
+                  'linken Seite unter Einstellungen festlegen, welche Verkehrsmittel '+
+                  'in die Routenplanung integriert werden sollen: ÖPNV, Sharing-Angebote, '+
+                  'Auto oder Fahrrad. Ist auf Ihrer Strecke eine Mitfahrgelegenheit verfügbar, '+
+                  'wird Ihnen diese angezeigt. Sind Sie selbst mit dem Auto unterwegs, '+
+                  'können Sie direkt eine Fahrgemeinschaft anbieten und jemanden mitnehmen. '+
+                  'Nutzen Sie gerne diese umweltfreundliche Möglichkeit, um Ihre nächste Reise zu planen.',
+                  'Unten rechts können Sie die verschiedenen Kartendaten ein- oder ausblenden. '+
+                  'Oben rechts können Sie auf das Menü-Symbol klicken und weitere Informationen '+
+                  'erhalten sowie uns Feedback zur Plattform zukommen lassen. ',
+                  'Wir wünschen eine gute Planung und viel Spaß bei der nächsten Fahrt!'
+            ]
+        },
+        en: {
+            header: 'Welcome to landstadtmobil.de!',
+            paragraphs: [
+                'On this platform you can easily and quickly find '+
+                'the best route for your journey. Simply enter your start and destination '+
+                'and get started. You can then specify which means of transport should be'+
+                ' integrated into the route planning on the left-hand side under Settings:'+
+                ' public transport, sharing offers, car or bicycle. If you are traveling by'+
+                ' car yourself, you can offer a carpool and take someone with you. '+
+                'Feel free to use this eco-friendly way to plan your next trip.',
+                'At the bottom right you can show or hide the various map layers. '+
+                'You can click the menu icon at the top right to get more information'+
+                'and give us feedback about the platform.',
+                'We wish you good planning and lots of fun on your next trip!'
+            ]
+        },
     },
 
     aboutThisService: {
@@ -532,37 +569,19 @@ export default configMerger(walttiConfig, {
     // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
-            // bicycleinfrastructure includes shops, repair stations,
-            /* 
+            // Bicycle network layer
             {
                 name: {
-                    fi: '',
-                    en: 'Service stations and stores',
-                    de: "Service Stationen und Läden",
+                  fi: '',
+                  en: "Bicycle network",
+                  de: 'Radnetz Kreis Reutlingen',
                 },
-                url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
+                category: 'bicycle',
+                url: 'https://data.mfdz.de/reutlingen/radnetz.json',
+                icon: 'icon-icon_radnetz',
+                isOffByDefault: false,
+                minZoom: 12
             },
-            // LoRaWan map layer
-            {
-                name: {
-                    fi: '',
-                    en: 'LoRaWAN Gateways',
-                    de: 'LoRaWAN Gateways',
-                },
-                url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
-                isOffByDefault: true,
-            },
-            // Nette Toilette layer
-            {
-                name: {
-                    fi: '',
-                    en: 'Public Toilets',
-                    de: 'Nette Toilette',
-                },
-                url: '/assets/geojson/hb-layers/toilet.geojson',
-                isOffByDefault: true,
-            },
-            */
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,

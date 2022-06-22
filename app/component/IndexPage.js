@@ -350,6 +350,38 @@ class IndexPage extends React.Component {
       return <></>;
     };
 
+    const bottomPanel = (CtrlPanel, TrafficNowLink) => {
+      if (config.welcomeMessage) {
+        const welcome = config.welcomeMessage[lang];
+
+        return (
+          <div>
+            <h2>{welcome.header}</h2>
+            {welcome.paragraphs &&
+              welcome.paragraphs.map((p, j) => (
+                // eslint-disable-next-line
+                <p key={`welcome-message-p-${j}`}>{p}</p>
+              ))}
+          </div>
+        );
+      }
+      return (
+        <>
+          <>{NearStops(CtrlPanel)}</>
+          {stopRouteSearch(false)}
+          <CtrlPanel.SeparatorLine />
+
+          {!trafficNowLink ||
+            (trafficNowLink[lang] !== '' && (
+              <TrafficNowLink
+                lang={lang}
+                handleClick={this.trafficNowHandler}
+              />
+            ))}
+        </>
+      );
+    };
+
     return (
       <LazilyLoad modules={modules}>
         {({
@@ -401,17 +433,7 @@ class IndexPage extends React.Component {
                     lang={lang}
                   />
                   <CtrlPanel.SeparatorLine usePaddingBottom20 />
-                  <>{NearStops(CtrlPanel)}</>
-                  {stopRouteSearch(false)}
-                  <CtrlPanel.SeparatorLine />
-
-                  {!trafficNowLink ||
-                    (trafficNowLink[lang] !== '' && (
-                      <TrafficNowLink
-                        lang={lang}
-                        handleClick={this.trafficNowHandler}
-                      />
-                    ))}
+                  {bottomPanel(CtrlPanel, TrafficNowLink)}
                 </CtrlPanel>
               </div>
               {(showSpinner && <OverlayWithSpinner />) || null}
@@ -450,17 +472,7 @@ class IndexPage extends React.Component {
                     isMobile
                   />
                   <CtrlPanel.SeparatorLine />
-                  <>{NearStops(CtrlPanel)}</>
-                  {stopRouteSearch(false)}
-                  <CtrlPanel.SeparatorLine usePaddingBottom20 />
-                  {!trafficNowLink ||
-                    (trafficNowLink[lang] !== '' && (
-                      <TrafficNowLink
-                        lang={lang}
-                        handleClick={this.trafficNowHandler}
-                        fontWeights={fontWeights}
-                      />
-                    ))}
+                  {bottomPanel(CtrlPanel, TrafficNowLink)}
                 </CtrlPanel>
               </div>
             </div>

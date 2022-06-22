@@ -2,7 +2,7 @@
 import configMerger from '../util/configMerger';
 
 const CONFIG = 'vpe';
-const APP_TITLE = 'mobi VPE';
+const APP_TITLE = 'VPE mobi';
 const APP_DESCRIPTION = 'Verbindungssuche des VPE';
 const API_URL = process.env.API_URL || 'https://api.dev.stadtnavi.eu';
 const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
@@ -56,7 +56,7 @@ export default configMerger(walttiConfig, {
 
     availableLanguages: ['de', 'en'],
     defaultLanguage: 'de',
-    issueTrackerUrl: 'https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}',
+    issueTrackerUrl: 'https://mangel.vpe.de/tools/index.php?lat=${lat}&lng=${lon}',
 
     MATOMO_URL: process.env.MATOMO_URL,
 
@@ -143,15 +143,29 @@ export default configMerger(walttiConfig, {
         useSpacesAvailable: false,
         showCityBikes: true,
         networks: {
-            
+            "car-sharing": {
+                icon: 'car-sharing',
+                name: {
+                    de: 'Carsharing',
+                    en: 'Car sharing',
+                },
+                type: 'car-sharing',
+                url: {
+                    de: 'https://pforzheim.stadtmobil.de/privatkunden/',
+                    en: 'https://pforzheim.stadtmobil.de/privatkunden/',
+                },
+                visibleInSettingsUi: false,
+                enabled: true,
+            }
         }
     },
 
     mergeStopsByCode: true,
 
     title: APP_TITLE,
-
-    favicon: 'https://www.vpe.de/wp-content/themes/VPE2018/images/3e39e5ce308fe1cd2878ef4df5ceeb00_favicon.png',
+    showTitles: true,
+    favicon: './app/configurations/images/vpe/favicon.png',
+    logo: 'vpe/logo_ohne_schrift.svg',
 
     meta: {
         description: APP_DESCRIPTION,
@@ -211,6 +225,12 @@ export default configMerger(walttiConfig, {
     ],
 
     nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
+    ticketingUrls: {
+        web: "https://reiseauskunft.bahn.de/bin/query.exe/dn?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
+        ios: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
+        android: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1"
+    },
+    ticketingLogo: 'icon-ticketing_db',
 
     defaultEndpoint: {
         lat: 48.8910,
@@ -246,15 +266,15 @@ export default configMerger(walttiConfig, {
             {
                 header: 'Über diesen Dienst',
                 paragraphs: [
-                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-                    
+                    'VPE mobi ist eine Reiseplanungs-Anwendung für den Verkehrsverbund Pforzheim-Enzkreis und Umgebung. Dieser Dienst umfasst zunächst Informationen zu ÖPNV, Fußwegen, Radverkehr und Straßen. Im weiteren Ausbau wird der Service um weitere Informationen ergänzt. Die Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt. Das bedeutet egal, ob man den Weg zu Fuß, mit dem Fahrrad oder dem Auto zurücklegt, <b>VPE mobi</b> findet die optimale Verbindung für Sie.',
                 ],
             },
             {
-                header: 'Digitransit Plattform',
+                header: 'Entwicklung',
                 paragraphs: [
-                    'Dieser Dienst basiert auf der Digitransit Platform und dem Backend-Dienst OpenTripPlanner. Alle Software ist unter einer offenen Lizenzen verfügbar. Vielen Dank an alle Beitragenden.',
-                    'Der gesamte Quellcode der Plattform, die aus vielen verschiedenen Komponenten besteht, ist auf <a href="https://github.com/stadtnavi/">Github</a> verfügbar.'
+                    'Grundlage für unser Angebot ist die Entwicklung von stadtnavi der Stadt Herrenberg. Die Stadt Herrenberg hat diese Anwendung im Rahmen des Modellstadt-Projekts, gefördert durch das Bundesministerium für Verkehr und digitale Infrastruktur (BMVI), entwickelt. Es handelt sich hier um eine Open Source Lösung und kann von anderen Kommunen und Akteuren unter ihrem Namen und Erscheinungsbild verwendet und an individuelle Bedürfnisse angepasst und weiterentwickelt werden (White Label Lösung). Mitmachen ist gewünscht.',
+                    'Der gesamte Quellcode der Plattform, die aus vielen verschiedenen Komponenten besteht, ist auf <a href="https://github.com/stadtnavi/">Github</a> verfügbar.',
+                    'Von unserer Seite ein herzliches Dankeschön an alle Beitragenden!'
                 ],
             },
             {
@@ -262,6 +282,7 @@ export default configMerger(walttiConfig, {
                 paragraphs: [
                     'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
                     'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
+                    'Sharing-Daten: Car-Sharing-Standorte bereitgestellt durch <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
                     'Alle Angaben ohne Gewähr.'
                 ],
             },
@@ -270,13 +291,14 @@ export default configMerger(walttiConfig, {
             {
                 header: 'About this service',
                 paragraphs: [
-                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                    'VPE mobi is a travel planning application for the transport agency Pforzheim-Enzkreis and the surrounding area. This service initially includes information on public transport, footpaths, bicycle and car-based mobility. Further information will be added to the service as it expands further. The mobility offers are interconnected by intermodal routing. No matter whether you travel on foot, by bike or by car, <b>VPE mobi</b> will find the best connections for you.',
                 ],
             },
             {
-                header: 'Digitransit platform',
+                header: 'Development',
                 paragraphs: [
-                    'The Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source. Thanks to everybody working on this!',
+                    'The basis for this offer is the development of stadtnavi in the city of Herrenberg. The city of Herrenberg developed this application as part of the "Modellstadt" project, funded by the Federal Ministry of Transport and Digital Infrastructure (BMVI). This is an open source solution and can be used by other municipalities and stakeholders under their name and appearance and adapted and further developed to suit individual needs (white label solution). Participation is welcomed.',
+                    'The Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source and available at <a href="https://github.com/stadtnavi/">GitHub</a>. Thanks to everybody working on this!',
                 ],
             },
             {
@@ -284,6 +306,7 @@ export default configMerger(walttiConfig, {
                 paragraphs: [
                     'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
                     'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
+                    'Sharing data: carsharing locations are provided by <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
                     'No responsibility is accepted for the accuracy of this information.'
                 ],
             },
@@ -316,10 +339,10 @@ export default configMerger(walttiConfig, {
         },
 
         tram: {
-            availableForSelection: false,
-            defaultValue: false,
+            availableForSelection: true,
+            defaultValue: true,
             nearYouLabel: {
-                de: 'Tramhaltestellen in der Nähe',
+                de: 'S-Bahnhaltestellen in der Nähe',
             }
         },
 
@@ -339,8 +362,8 @@ export default configMerger(walttiConfig, {
         },
 
         ferry: {
-            availableForSelection: false,
-            defaultValue: false,
+            availableForSelection: true,
+            defaultValue: true,
             nearYouLabel: {
                 de: 'Fähranleger in der Nähe',
             }

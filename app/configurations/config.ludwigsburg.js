@@ -169,7 +169,7 @@ export default configMerger(parentConfig, {
             {
                 name: 'privacy',
                 nameEn: 'Privacy',
-                href: 'https://www.swlb.de/datenschutz',
+                href: 'https://www.ludwigsburg.de/start/datenschutz/datenschutz+-+stadtnavi.html',
             },
         ],
     },

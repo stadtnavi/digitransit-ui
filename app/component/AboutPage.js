@@ -13,7 +13,11 @@ const AboutPage = ({ currentLanguage }, { config }) => {
         {about.map((section, i) =>
           (section.paragraphs && section.paragraphs.length) || section.link ? (
             <div key={`about-section-${i}`}>
-              <h1 className="about-header">{section.header}</h1>
+              {i === 0 ? (
+                <h1 className="about-header">{section.header}</h1>
+              ) : (
+                <h2 className="about-header">{section.header}</h2>
+              )}
               {section.paragraphs &&
                 section.paragraphs.map((p, j) => (
                   // eslint-disable-next-line react/no-danger

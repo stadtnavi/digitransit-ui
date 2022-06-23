@@ -106,7 +106,10 @@ export default configMerger(parentConfig, {
         },
     },
 
-    
+    weatherStations: {
+        show: false,
+    },
+ 
     mergeStopsByCode: true,
 
     title: APP_TITLE,

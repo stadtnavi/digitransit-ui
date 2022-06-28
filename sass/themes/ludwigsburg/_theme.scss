@@ -8,7 +8,10 @@ $action-color: $primary-color;
 $viewpoint-marker-color: $primary-color;
 $current-location-color: $primary-color;
 $standalone-btn-color: $primary-color;
-$link-color: $primary-color;
+$link-color: black;
+$link-bgcolor: $primary-color;
+$offcanvas-link-color: black;
+
 $desktop-title-color: $primary-color;
 $top-bar-color: $primary-color;
 
@@ -18,6 +21,15 @@ $metro-color: blue;
 $rail-color: green;
 $citybike-color: #009fe4;
 $carpool-color: $primary-color;
+
+.link {
+  color: $link-color;
+  text-decoration: underline;
+}
+
+.link:hover {
+  background-color: $link-bgcolor;
+}
 
 .car {
   color: #005ab4;
@@ -46,4 +58,32 @@ $carpool-color: $primary-color;
 
 .charging-station {
   color: #00b096;
+}
+
+#lang-select  {
+  .lang {
+    color: $link-color !important;
+    &.selected {
+      color: $white !important;
+    }
+  }
+
+  .lang:hover {
+    background-color: $link-bgcolor !important;
+  }
+}
+
+.main-menu span {
+    color: $link-color !important;
+    text-decoration: none;
+    &:hover {
+      background-color: $link-bgcolor !important;
+    }
+}
+
+.main-menu a {
+    color: $link-color !important;
+    &:hover {
+      background-color: $link-bgcolor !important;
+    }
 }

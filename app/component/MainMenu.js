@@ -35,21 +35,23 @@ function MainMenu(props, { config, intl, executeAction }) {
         {config.mainMenu.showFrontPageLink && (
           <div className="offcanvas-section">
             {props.homeUrl !== undefined && (
-              <Link
-                id="frontpage"
-                to={props.homeUrl}
-                onClick={() => {
-                  executeAction(storeOrigin, {});
-                  executeAction(storeDestination, {});
-                  addAnalyticsEvent({
-                    category: 'Navigation',
-                    action: 'Home',
-                    name: null,
-                  });
-                }}
-              >
-                <FormattedMessage id="frontpage" defaultMessage="Frontpage" />
-              </Link>
+              <span className="menu-item">
+                <Link
+                  id="frontpage"
+                  to={props.homeUrl}
+                  onClick={() => {
+                    executeAction(storeOrigin, {});
+                    executeAction(storeDestination, {});
+                    addAnalyticsEvent({
+                      category: 'Navigation',
+                      action: 'Home',
+                      name: null,
+                    });
+                  }}
+                >
+                  <FormattedMessage id="frontpage" defaultMessage="Frontpage" />
+                </Link>
+              </span>
             )}
           </div>
         )}
@@ -60,19 +62,21 @@ function MainMenu(props, { config, intl, executeAction }) {
         )}
         {config.appBarLink && config.appBarLink.name && config.appBarLink.href && (
           <div className="offcanvas-section">
-            <a
-              id="appBarLink"
-              href={config.appBarLink.href}
-              onClick={() => {
-                addAnalyticsEvent({
-                  category: 'Navigation',
-                  action: 'appBarLink',
-                  name: null,
-                });
-              }}
-            >
-              {config.appBarLink.name}
-            </a>
+            <span className="menu-item">
+              <a
+                id="appBarLink"
+                href={config.appBarLink.href}
+                onClick={() => {
+                  addAnalyticsEvent({
+                    category: 'Navigation',
+                    action: 'appBarLink',
+                    name: null,
+                  });
+                }}
+              >
+                {config.appBarLink.name}
+              </a>
+            </span>
           </div>
         )}
       </section>

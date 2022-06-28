@@ -27,7 +27,7 @@ const AboutPage = ({ currentLanguage }, { config }) => {
                   />
                 ))}
               {section.link && (
-                <a href={section.link}>
+                <a href={section.link} className="link">
                   <FormattedMessage
                     id="extra-info"
                     defaultMessage="More information"

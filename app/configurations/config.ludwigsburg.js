@@ -180,6 +180,7 @@ export default configMerger(parentConfig, {
                 header: 'Über diesen Dienst',
                 paragraphs: [
                     'stadtnavi Ludwigsburg ist eine Reiseplanungs-Anwendung für die Stadt Ludwigsburg und Umgebung. Dieser Dienst umfasst ÖPNV, Fußwege, Radverkehr, Straßen- und Parkplatzinformationen, Ladeinfrastruktur und Sharing-Angebote. Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt.',
+                    '<a href=""><img src="img/BMDV_Fz_2021_Web2x_de.gif"/></a>',
                 ],
             },
             {
@@ -210,6 +211,7 @@ export default configMerger(parentConfig, {
                 header: 'About this service',
                 paragraphs: [
                     'stadtnavi Ludwigsburg is a travel planning application for the city of Ludwigsburg and its surroundings. This service includes public transport, footpaths, cycling, street and parking information, charging infrastructure and sharing offerings. The mobility offerings are connected through intermodal routing.',
+                    '<a href=""><img src="img/BMDV_Fz_2021_Web2x_de.gif"/></a>',
                 ],
             },
             {

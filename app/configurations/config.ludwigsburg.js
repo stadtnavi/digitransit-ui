@@ -62,7 +62,7 @@ export default configMerger(parentConfig, {
 
     appBarLink: {
         name: 'Feedback',
-        href: 'https://stadtnavi.de/feedback',
+        href: 'mailto:mobilitaet@ludwigsburg.de?subject=stadtnavi Ludwigsburg Feedback',
         target: '_blank'
     },
 

@@ -9930,7 +9930,7 @@ __metadata:
     jest-image-snapshot: 4.5.0
     jest-playwright-preset: 1.6.0
     jsdom: 13.2.0
-    leaflet: 1.6.0
+    leaflet: 1.8.0
     lerna: 3.20.2
     lint-staged: 10.3.0
     lodash: 4.17.19
@@ -16687,10 +16687,10 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"leaflet@npm:1.6.0":
-  version: 1.6.0
-  resolution: "leaflet@npm:1.6.0"
-  checksum: de9cc64bfaa767fb2a6a437f5621aafc356f4201cded36a25d8c4e3802085638791e737d127e4d9981b678f802b6757e8053936baad68c62bf80f39b0d063d4b
+"leaflet@npm:1.8.0":
+  version: 1.8.0
+  resolution: "leaflet@npm:1.8.0"
+  checksum: 138a4f32cd7237c2048882dc492429e6fb477f37632b0211df3c62c2b386a0e796dc78aaa9bd6cbaa6077606b8798f1c9e51b4c8e9793ef43722f0eb93349236
   languageName: node
   linkType: hard
 

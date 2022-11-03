@@ -9930,7 +9930,7 @@ __metadata:
     jest-image-snapshot: 4.5.0
     jest-playwright-preset: 1.6.0
     jsdom: 13.2.0
-    leaflet: 1.8.0
+    leaflet: "github:stadtnavi/Leaflet#v1.8.0-beta"
     lerna: 3.20.2
     lint-staged: 10.3.0
     lodash: 4.17.19
@@ -16687,10 +16687,10 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"leaflet@npm:1.8.0":
-  version: 1.8.0
-  resolution: "leaflet@npm:1.8.0"
-  checksum: 138a4f32cd7237c2048882dc492429e6fb477f37632b0211df3c62c2b386a0e796dc78aaa9bd6cbaa6077606b8798f1c9e51b4c8e9793ef43722f0eb93349236
+"leaflet@github:stadtnavi/Leaflet#v1.8.0-beta":
+  version: 1.7.1
+  resolution: "leaflet@https://github.com/stadtnavi/Leaflet.git#commit=0479c7382afea72fc17b02046bc571f84d413c6d"
+  checksum: 85557833a0c373ec948840ce356bbc7029b0eb22fae3c3d3cc9ef7d48f1de2c0538a5b1e6aee6b55ed463a19492b0b5153070f3d0e00d6f2381b69587b35a7f4
   languageName: node
   linkType: hard
 

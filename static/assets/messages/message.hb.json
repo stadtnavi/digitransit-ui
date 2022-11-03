@@ -4,62 +4,36 @@
       "content": {
         "en": [
           {
-            "content": "Now available as native App!",
+            "content": "stadtnavi is nominated!",
             "type": "heading"
           },
           {
-            "content": "stadtnavi now is available as native app for your mobile phone. Test the",
+            "content": "stadtnavi is nominated for the Mobilitätspreis BW.",
             "type": "text"
           },
           {
             "type": "a",
-            "content": "iOS",
-            "href": "https://apps.apple.com/us/app/stadtnavi-herrenberg/id1573166501"
-          },
-          {
-            "content": "or",
-            "type": "text"
-          },
-          {
-            "type": "a",
-            "content": "Android",
-            "href": "https://play.google.com/store/apps/details?id=de.stadtnavi.herrenberg"
-          },
-          {
-            "content": "version of the app today and share your feedback with us.",
-            "type": "text"
+            "content": "Vote now for stadtavi",
+            "href": "https://www.kea-bw.de/nachhaltige-mobilitaet/wmm/abstimmung"
           }
         ],
         "de": [
           {
-            "content": "Jetzt auch als App für Ihr Mobiltelefon verfügbar",
+            "content": "stadtnavi nominiert für Mobilitätspreis BW",
             "type": "heading"
           },
           {
-            "content": "stadtnavi gibt es jetzt auch als native App für Ihr Mobiltelefon. Testen Sie die",
+            "content": "stadtnavi ist für den baden-württembergischen Mobilitätspreis nominiert.",
             "type": "text"
           },
           {
             "type": "a",
-            "content": "iOS",
-            "href": "https://apps.apple.com/us/app/stadtnavi-herrenberg/id1573166501"
-          },
-          {
-            "content": "oder",
-            "type": "text"
-          },
-          {
-            "type": "a",
-            "content": "Android",
-            "href": "https://play.google.com/store/apps/details?id=de.stadtnavi.herrenberg"
-          },
-          {
-            "content": "Version der App und teilen Sie uns Ihr Feedback mit.",
-            "type": "text"
+            "content": "Stimmen Sie jetzt ab!",
+            "href": "https://www.kea-bw.de/nachhaltige-mobilitaet/wmm/abstimmung"
           }]
       },
       "type": "info",
-      "id": "202106250848",
+      "id": "202211031136",
       "persistence": "repeat",
       "icon": "info"
     }

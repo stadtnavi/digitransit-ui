@@ -122,30 +122,95 @@ const LayerCategoryDropdown = (
           {options
             .filter(option => option)
             .map(option => (
-              <div
-                key={option.key || option.labelId}
-                className="layer-category-dropdown-option"
-              >
-                <Checkbox
-                  checked={option.checked}
-                  className="layer-category-dropdown-checkbox"
-                  icon="icon-icon_check-white"
-                  showLabel={false}
-                  onChange={e => {
-                    onChange(updateSettings(option.settings, e.target.checked));
-                  }}
-                />
-                <Icon
-                  className="layer-category-dropdown-header-icon"
-                  img={option.icon}
-                  viewBox="0 0 15 11"
-                  width={1.875}
-                  height={1.25}
-                />
-                <Message
-                  labelId={option.labelId}
-                  defaultMessage={option.defaultMessage}
-                />
+              <div key={option.key || option.labelId}>
+                <div className="layer-category-dropdown-option">
+                  <Checkbox
+                    checked={option.checked}
+                    className="layer-category-dropdown-checkbox"
+                    icon="icon-icon_check-white"
+                    showLabel={false}
+                    onChange={e => {
+                      onChange(
+                        updateSettings(option.settings, e.target.checked),
+                      );
+                    }}
+                  />
+                  <Icon
+                    className="layer-category-dropdown-header-icon"
+                    img={option.icon}
+                    viewBox="0 0 15 11"
+                    width={1.875}
+                    height={1.25}
+                  />
+                  <Message
+                    labelId={option.labelId}
+                    defaultMessage={option.defaultMessage}
+                  />
+                </div>
+                {option.checked &&
+                option.defaultMessage === 'Radnetz Ludwigsburg' ? (
+                  <div>
+                    <div className="layer-category-dropdown-legend">
+                      <span>
+                        <svg
+                          height="10"
+                          width="20"
+                          viewBox="0 0 20 10"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 5 H 20"
+                            stroke="#006400"
+                            style={{ strokeWidth: '2' }}
+                          />
+                        </svg>
+                      </span>
+                      <span style={{ paddingLeft: '0.7em' }}>
+                        Radweg / Fahrradstraße
+                      </span>
+                    </div>
+                    <div className="layer-category-dropdown-legend">
+                      <span>
+                        <svg
+                          height="10"
+                          width="20"
+                          viewBox="0 0 20 10"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 5 H 20"
+                            stroke="#006400"
+                            style={{ strokeWidth: '2', strokeDasharray: '3' }}
+                          />
+                        </svg>
+                      </span>
+                      <span style={{ paddingLeft: '0.7em' }}>
+                        Schutzstreifen
+                      </span>
+                    </div>
+                    <div className="layer-category-dropdown-legend">
+                      <span>
+                        <svg
+                          height="10"
+                          width="20"
+                          viewBox="0 0 20 10"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 5 H 20"
+                            stroke="#ADE2B1"
+                            style={{ strokeWidth: '5' }}
+                          />
+                        </svg>
+                      </span>
+                      <span style={{ paddingLeft: '0.7em' }}>
+                        Radnetz mit Mischverkehr
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <span />
+                )}
               </div>
             ))}
         </div>

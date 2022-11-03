@@ -123,7 +123,8 @@ class Stops {
               if (
                 isFeatureLayerEnabled(feature, 'stop', this.mapLayers) &&
                 feature.properties.type &&
-                (feature.properties.parentStation === 'null' ||
+                (!feature.properties.parentStation ||
+                  feature.properties.parentStation === 'null' ||
                   drawPlatforms ||
                   (feature.properties.type === 'RAIL' && drawRailPlatforms))
               ) {

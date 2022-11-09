@@ -277,6 +277,7 @@ export default configMerger(walttiConfig, {
                 header: 'Entwicklung',
                 paragraphs: [
                     'Grundlage für unser Angebot ist die Entwicklung von stadtnavi der Stadt Herrenberg. Die Stadt Herrenberg hat diese Anwendung im Rahmen des Modellstadt-Projekts, gefördert durch das Bundesministerium für Verkehr und digitale Infrastruktur (BMVI), entwickelt. Es handelt sich hier um eine Open Source Lösung und kann von anderen Kommunen und Akteuren unter ihrem Namen und Erscheinungsbild verwendet und an individuelle Bedürfnisse angepasst und weiterentwickelt werden (White Label Lösung). Mitmachen ist gewünscht.',
+                    'Stadtnavi basiert wiederum auf der Digitransit Platform und dem Backend-Dienst OpenTripPlanner. Alle Software ist unter einer offenen Lizenzen verfügbar.',
                     'Der gesamte Quellcode der Plattform, die aus vielen verschiedenen Komponenten besteht, ist auf <a href="https://github.com/stadtnavi/">Github</a> verfügbar.',
                     'Von unserer Seite ein herzliches Dankeschön an alle Beitragenden!'
                 ],
@@ -302,6 +303,7 @@ export default configMerger(walttiConfig, {
                 header: 'Development',
                 paragraphs: [
                     'The basis for this offer is the development of stadtnavi in the city of Herrenberg. The city of Herrenberg developed this application as part of the "Modellstadt" project, funded by the Federal Ministry of Transport and Digital Infrastructure (BMVI). This is an open source solution and can be used by other municipalities and stakeholders under their name and appearance and adapted and further developed to suit individual needs (white label solution). Participation is welcomed.',
+                    'Stadtnavi is in turn based on the Digitransit Platform and the backend service OpenTripPlanner. All software is available under an open license.',
                     'The Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source and available at <a href="https://github.com/stadtnavi/">GitHub</a>. Thanks to everybody working on this!',
                 ],
             },

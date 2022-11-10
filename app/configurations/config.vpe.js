@@ -270,7 +270,7 @@ export default configMerger(walttiConfig, {
             {
                 header: 'Über diesen Dienst',
                 paragraphs: [
-                    'VPE mobi ist eine Reiseplanungs-Anwendung für den Verkehrsverbund Pforzheim-Enzkreis und Umgebung. Dieser Dienst umfasst zunächst Informationen zu ÖPNV, Fußwegen, Radverkehr und Straßen. Im weiteren Ausbau wird der Service um weitere Informationen ergänzt. Die Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt. Das bedeutet egal, ob man den Weg zu Fuß, mit dem Fahrrad oder dem Auto zurücklegt, <b>VPE mobi</b> findet die optimale Verbindung für Sie.',
+                    '<b>VPE</b>mobi ist eine Reiseplanungs-Anwendung für den Verkehrsverbund Pforzheim-Enzkreis und Umgebung. Dieser Dienst umfasst zunächst Informationen zu ÖPNV, Fußwegen, Radverkehr und Straßen. Im weiteren Ausbau wird der Service um weitere Informationen ergänzt. Die Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt. Das bedeutet egal, ob man den Weg zu Fuß, mit dem Fahrrad oder dem Auto zurücklegt, <b>VPE</b>mobi findet die optimale Verbindung für Sie.',
                 ],
             },
             {
@@ -296,7 +296,7 @@ export default configMerger(walttiConfig, {
             {
                 header: 'About this service',
                 paragraphs: [
-                    'VPE mobi is a travel planning application for the transport agency Pforzheim-Enzkreis and the surrounding area. This service initially includes information on public transport, footpaths, bicycle and car-based mobility. Further information will be added to the service as it expands further. The mobility offers are interconnected by intermodal routing. No matter whether you travel on foot, by bike or by car, <b>VPE mobi</b> will find the best connections for you.',
+                    '<b>VPE</b>mobi is a travel planning application for the transport agency Pforzheim-Enzkreis and the surrounding area. This service initially includes information on public transport, footpaths, bicycle and car-based mobility. Further information will be added to the service as it expands further. The mobility offers are interconnected by intermodal routing. No matter whether you travel on foot, by bike or by car, <b>VPE</b>mobi will find the best connections for you.',
                 ],
             },
             {

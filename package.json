@@ -165,7 +165,7 @@
     "htm-to-json": "0.1.4",
     "i18next": "19.8.4",
     "intl": "1.2.5",
-    "leaflet": "github:stadtnavi/Leaflet#v1.8.0-beta",
+    "leaflet": "1.6.0",
     "lodash": "4.17.19",
     "lru-cache": "6.0.0",
     "moment": "2.29.1",

@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FormattedMessage, intlShape } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage, intlShape } from 'react-intl';
 
 import { v4 as uuid } from 'uuid';
 import Moment from 'moment';
@@ -231,7 +231,9 @@ export default function TicketInformation(
         </div>
         <div key={uuid()} className="ticket-container">
           <div className="ticket-info-container small">
-            <FormattedMessage id="fares-disclaimer" />
+            <FormattedHTMLMessage
+              id={config.faresDisclaimer || 'fares-disclaimer'}
+            />
           </div>
         </div>
       </div>

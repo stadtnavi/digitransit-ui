@@ -234,6 +234,7 @@ export default configMerger(walttiConfig, {
         ios: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
         android: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1"
     },
+    faresDisclaimer: 'Sie verlassen mit dem Ticketkauf die Seiten des VPE und benutzen dann den Ticketshop der Deutschen Bahn. Für deren Inhalte übernehmen wir keine Verantwortung. <br/><br/> Tarifauskünfte werden durch die Nahverkehrsgesellschaft Baden-Württemberg mbH (NVBW) zur Verfügung gestellt. Alle Angaben ohne Gewähr.',
     ticketingLogo: 'icon-ticketing_db',
 
     defaultEndpoint: {

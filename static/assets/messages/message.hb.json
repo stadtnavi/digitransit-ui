@@ -4,36 +4,36 @@
       "content": {
         "en": [
           {
-            "content": "stadtnavi is nominated!",
+            "content": "Mobility award for stadtnavi!",
             "type": "heading"
           },
           {
-            "content": "stadtnavi is nominated for the Mobilitätspreis BW.",
+            "content": "stadtnavi was awarded the Baden-Württemberg mobility prize in the category 'Multimodality and more quality of life through fewer cars' in the state competition ",
             "type": "text"
           },
           {
             "type": "a",
-            "content": "Vote now for stadtavi",
-            "href": "https://www.kea-bw.de/nachhaltige-mobilitaet/wmm/abstimmung"
+            "content": " 'Wir machen Mobilitäswende'.",
+            "href": "https://www.herrenberg.de/Mobilitaet/stadtnavi"
           }
         ],
         "de": [
           {
-            "content": "stadtnavi nominiert für Mobilitätspreis BW",
+            "content": "stadtnavi mit Mobilitätspreis BW ausgezeichnet",
             "type": "heading"
           },
           {
-            "content": "stadtnavi ist für den baden-württembergischen Mobilitätspreis nominiert.",
+            "content": "stadtnavi wurde mit dem baden-württembergischen Mobilitätspreis in der Kategorie 'Multimodalität und mehr Lebensqualität durch weniger Autos' ",
             "type": "text"
           },
           {
             "type": "a",
-            "content": "Stimmen Sie jetzt ab!",
-            "href": "https://www.kea-bw.de/nachhaltige-mobilitaet/wmm/abstimmung"
+            "content": " ausgezeichnet.",
+            "href": "https://www.herrenberg.de/Mobilitaet/stadtnavi"
           }]
       },
       "type": "info",
-      "id": "202211031136",
+      "id": "202212021650",
       "persistence": "repeat",
       "icon": "info"
     }

@@ -35,13 +35,21 @@ class ChargingStations {
     this.promise = this.fetchWithAction(this.drawStatus);
   }
 
-  fetchWithAction = actionFn =>
-    fetch(
-      `${this.config.URL.CHARGING_STATIONS_MAP}` +
-        `${this.tile.coords.z + (this.tile.props.zoomOffset || 0)}/` +
-        `${this.tile.coords.x}/${this.tile.coords.y}.mvt`,
-    ).then(res => {
-      if (res.status !== 200) {
+  // map display is language independent, so no lang param required
+  getPromise = () => this.fetchWithAction(this.drawStatus);
+
+  fetchWithAction = actionFn => {
+    const url = this.config.URL.CHARGING_STATIONS_MAP.replaceAll(
+      '{x}',
+      this.tile.coords.x,
+    )
+      .replaceAll('{y}', this.tile.coords.y)
+      .replaceAll(
+        '{z}',
+        this.tile.coords.z + (this.tile.props.zoomOffset || 0),
+      );
+    return fetch(url).then(res => {
+      if (!res.ok) {
         return undefined;
       }
 
@@ -66,6 +74,7 @@ class ChargingStations {
         err => console.error(err),
       );
     });
+  };
 
   drawStatus = ({ geom, properties }) => {
     if (this.tile.coords.z <= this.config.chargingStations.smallIconZoom) {
@@ -82,8 +91,8 @@ class ChargingStations {
 
     const icon = getIcon(properties);
     return drawIcon(icon, this.tile, geom, this.iconSize).then(() => {
-      const { c, ca, cu } = properties;
-      const availableStatus = this.getAvailabilityStatus(c, ca, cu);
+      const { c, ca, cu, cs } = properties;
+      const availableStatus = this.getAvailabilityStatus(c, ca, cu + cs);
       if (availableStatus) {
         drawAvailabilityBadge(
           availableStatus,
@@ -99,7 +108,7 @@ class ChargingStations {
 
   onTimeChange = () => {
     if (this.tile.coords.z > this.config.chargingStations.minZoom) {
-      this.fetchWithAction(this.drawStatus);
+      this.promise = this.fetchWithAction(this.drawStatus);
     }
   };
 

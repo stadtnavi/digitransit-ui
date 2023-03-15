@@ -58,8 +58,9 @@ const getConnectors = evses => {
       ...previous,
       ...evse.connectors.map(connector => {
         return {
+          id: String(connector.evse_id),
           standard: connector.standard,
-          maxAmperage: connector.max_amperage,
+          maxPower: connector.max_electric_power,
         };
       }),
     ],
@@ -69,12 +70,20 @@ const getConnectors = evses => {
     new Map(connectors?.map(item => [item.standard, item])).values(),
   );
 
-  return uniqueConnectors?.map(connector => ({
-    icon: CONNECTOR_ICONS_MAP[connector.standard],
-    text: `${CONNECTOR_TYPES_MAP[connector.standard] || connector.standard} - ${
-      connector.maxAmperage
-    } kW`,
-  }));
+  return uniqueConnectors?.map(connector => {
+    let text = '';
+    if (Number.isInteger(connector.maxPower)) {
+      const powerInKw = Math.floor(connector.maxPower / 1000);
+      text = `${
+        CONNECTOR_TYPES_MAP[connector.standard] || connector.standard
+      } - ${powerInKw} kW`;
+    }
+    return {
+      id: connector.id,
+      icon: CONNECTOR_ICONS_MAP[connector.standard],
+      text,
+    };
+  });
 };
 
 const ChargingStationContent = ({ match }, { intl, config }) => {
@@ -100,7 +109,7 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
     const available = details.evses?.filter(evse => evse.status === 'AVAILABLE')
       .length;
     const capacityUnknown = details.evses?.filter(
-      evse => evse.status === 'UNKNOWN',
+      evse => evse.status === 'UNKNOWN' || evse.status === 'STATIC',
     ).length;
     const capacity = details.evses?.length;
     const body = {
@@ -160,15 +169,19 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
 
   const getOpeningTimes = () => {
     const openingTimes = details?.opening_times;
+    if (!openingTimes?.twentyfourseven) {
+      return null;
+    }
     return (
-      openingTimes?.twentyfourseven && (
-        <div>
+      <div className="text-light opening-times-container">
+        <Icon className="sidebar-info-icon" img="icon-icon_schedule" />
+        <span className="text-alignment">
           {intl.formatMessage({
             id: 'open-24-7',
             defaultMessage: 'Open 24/7',
           })}
-        </div>
-      )
+        </span>
+      </div>
     );
   };
 
@@ -182,68 +195,54 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
     );
   };
 
-  const getPhoneNumber = () => {
+  const getPhoneInfo = () => {
     const { evses } = details;
     const phone = evses ? evses[0].phone : undefined;
+    if (!phone) {
+      return null;
+    }
     return (
-      (phone && <div>{phone.replace('00', '+')}</div>) || (
-        <div>
-          {' '}
-          {intl.formatMessage({
-            id: 'charging-payment-unknown',
-            defaultMessage: 'Unknown',
-          })}
-        </div>
-      )
+      <div className="text-light sidebar-info-container">
+        <Icon className="sidebar-info-icon" img="icon-icon_call" />
+        <span className="text-alignment">
+          <div>{phone.replace('00', '+')}</div>
+        </span>
+      </div>
     );
   };
 
-  const getPaymentTypes = () => {
-    const capabilities = details?.evses
-      ? details.evses[0].capabilities
-      : undefined;
-    const supportsRfid = capabilities?.includes('RFID_READER');
-    const rfidMessage = intl.formatMessage({
-      id: 'charging-payment-rfid',
-      defaultMessage: 'RFID',
-    });
-    const supportsCreditCard = capabilities?.includes('CREDIT_CARD_PAYABLE');
-    const creditCardMessage = intl.formatMessage({
-      id: 'charging-payment-credit',
-      defaultMessage: 'Credit Card',
-    });
-    const supportsDebitCard = capabilities?.includes('DEBIT_CARD_PAYABLE');
-    const debitCardMessage = intl.formatMessage({
-      id: 'charging-payment-debit',
-      defaultMessage: 'Debit Card',
-    });
-    const supportsContactless = capabilities?.includes(
-      'CONTACTLESS_CARD_SUPPORT',
-    );
-    const contactlessMessage = intl.formatMessage({
-      id: 'charging-payment-contactless',
-      defaultMessage: 'Contactless',
-    });
-    const unknownPaymentMessage = intl.formatMessage({
-      id: 'charging-payment-unknown',
-      defaultMessage: 'Unknown',
-    });
+  const knownPaymentTypes = [
+    ['RFID_READER', 'charging-payment-rfid', 'RFID'],
+    ['CREDIT_CARD_PAYABLE', 'charging-payment-credit', 'Credit Card'],
+    ['DEBIT_CARD_PAYABLE', 'charging-payment-debit', 'Debit Card'],
+    ['CONTACTLESS_CARD_SUPPORT', 'charging-payment-contactless', 'Contactless'],
+  ];
 
+  const getPaymentTypes = () => {
+    const capabilities = (details.evses || [])[0]?.capabilities || [];
+    const paymentTypes = knownPaymentTypes
+      .filter(([identifier]) => capabilities.includes(identifier))
+      .map(([identifier, messageId, defaultMessage]) => {
+        return (
+          <span key={identifier}>
+            {intl.formatMessage({
+              id: messageId,
+              defaultMessage,
+            })}
+          </span>
+        );
+      })
+      .reduce((acc, paymentType) => [...acc, ', ', paymentType], [])
+      .slice(1);
+
+    if (paymentTypes.length === 0) {
+      return null;
+    }
     return (
-      capabilities && (
-        <div>
-          {supportsRfid && <span>{`${rfidMessage}`}</span>}
-          {supportsCreditCard && <span>{`, ${creditCardMessage}`}</span>}
-          {supportsDebitCard && <span>{`, ${debitCardMessage}`}</span>}
-          {supportsContactless && <span>{`, ${contactlessMessage}`}</span>}
-          {!(
-            supportsRfid ||
-            supportsCreditCard ||
-            supportsDebitCard ||
-            supportsContactless
-          ) && <span>{`${unknownPaymentMessage}`}</span>}
-        </div>
-      )
+      <div className="text-light sidebar-info-container">
+        <Icon className="sidebar-info-icon" img="icon-icon_payment" />
+        <span className="text-alignment">{paymentTypes}</span>
+      </div>
     );
   };
 
@@ -255,20 +254,17 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
         lat: Number(lat),
         lon: Number(lng),
       }}
-      name={details.name}
+      name={details.name || details.address}
       icon={getIcon(match.location.query)}
       newLayout
     >
       <div className="content">
-        <div className="text-light opening-times-container">
-          <Icon className="sidebar-info-icon" img="icon-icon_schedule" />
-          <span className="text-alignment">{getOpeningTimes()}</span>
-        </div>
+        {getOpeningTimes()}
         <div className="divider" />
         <div className="sidebar-info-container">
           <div className="connector-container">
             {connectors.map(connector => (
-              <div key={connector.text}>
+              <div key={connector.id}>
                 <span className="connector-icon">{connector.icon}</span>
                 <span className="text-alignment">{connector.text}</span>
               </div>
@@ -277,18 +273,12 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
           {getCapacity()}
         </div>
         <div className="divider" />
-        <div className="text-light sidebar-info-container">
-          <Icon className="sidebar-info-icon" img="icon-icon_payment" />
-          <span className="text-alignment">{getPaymentTypes()}</span>
-        </div>
+        {getPaymentTypes()}
         <div className="text-light sidebar-info-container">
           <Icon className="sidebar-info-icon" img="icon-icon_place" />
           <span className="text-alignment">{getAddress()}</span>
         </div>
-        <div className="text-light sidebar-info-container">
-          <Icon className="sidebar-info-icon" img="icon-icon_call" />
-          <span className="text-alignment">{getPhoneNumber()}</span>
-        </div>
+        {getPhoneInfo()}
         <div className="divider" />
         {getDirectDeepLink()}
       </div>

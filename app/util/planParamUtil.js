@@ -176,8 +176,11 @@ const getShouldMakeParkRideQuery = (
   settings,
   defaultSettings,
 ) => {
+  const noCarMinDistance =
+    settings.walkReluctance === config.defaultOptions.walkReluctance?.least ||
+    !!settings.accessibilityOption;
   return (
-    linearDistance > config.suggestCarMinDistance &&
+    (noCarMinDistance || linearDistance > config.suggestCarMinDistance) &&
     (settings.includeParkAndRideSuggestions !== undefined
       ? settings.includeParkAndRideSuggestions
       : defaultSettings.includeParkAndRideSuggestions)
@@ -190,8 +193,11 @@ const getShouldMakeCarQuery = (
   settings,
   defaultSettings,
 ) => {
+  const noCarMinDistance =
+    settings.walkReluctance === config.defaultOptions.walkReluctance?.least ||
+    !!settings.accessibilityOption;
   return (
-    linearDistance > config.suggestCarMinDistance &&
+    (noCarMinDistance || linearDistance > config.suggestCarMinDistance) &&
     (settings.includeCarSuggestions !== undefined
       ? settings.includeCarSuggestions
       : defaultSettings.includeCarSuggestions)

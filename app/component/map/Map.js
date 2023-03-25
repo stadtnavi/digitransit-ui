@@ -364,10 +364,14 @@ class Map extends React.Component {
     const mapUrls = [];
     if (isDebugTiles) {
       mapUrls.push(`${config.URL.OTP}inspector/tile/traversal/{z}/{x}/{y}.png`);
-    } else if (currentMapMode === MapMode.Satellite) {
+    } else if (
+      currentMapMode === MapMode.Satellite &&
+      config.URL.MAP.satellite &&
+      config.URL.MAP.semiTransparent
+    ) {
       mapUrls.push(config.URL.MAP.satellite);
       mapUrls.push(config.URL.MAP.semiTransparent);
-    } else if (currentMapMode === MapMode.Bicycle) {
+    } else if (currentMapMode === MapMode.Bicycle && config.URL.MAP.bicycle) {
       mapUrls.push(config.URL.MAP.bicycle);
     } else {
       mapUrls.push(config.URL.MAP.default);

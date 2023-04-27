@@ -37,7 +37,7 @@ export default configMerger(walttiConfig, {
         //ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
         CITYBIKE_MAP: `${API_URL}/routing/v1/router/vectorTiles/citybikes/`,
         BIKE_PARKS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        CHARGING_STATIONS_MAP: `${API_URL}/tiles/charging-stations/`,
+        CHARGING_STATIONS_MAP: `${API_URL}/tiles/charging-stations/{z}/{x}/{y}.mvt`,
         CHARGING_STATION_DETAILS_API: `${API_URL}/charging-stations/2.2/location/`,
         PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
         PELIAS_REVERSE_GEOCODER: `${

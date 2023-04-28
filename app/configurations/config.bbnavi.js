@@ -236,6 +236,48 @@ export default configMerger(walttiConfig, {
         useSpacesAvailable: false,
         showCityBikes: true,
         networks: {
+            'flotte-berlin': {
+                icon: 'cargobike',
+                name: {
+                    de: 'fLotte (Berlin)',
+                    en: 'fLotte (Berlin)',
+                },
+                type: 'citybike',
+                url: {
+                    de: 'https://flotte-berlin.de/',
+                    en: 'https://flotte-berlin.de/',
+                },
+                visibleInSettingsUi: true,
+                enabled: true,
+            },
+            'flotte-brandenburg': {
+                icon: 'cargobike',
+                name: {
+                    de: 'fLotte (Brandenburg)',
+                    en: 'fLotte (Brandenburg)',
+                },
+                type: 'citybike',
+                url: {
+                    de: 'http://www.flotte-brandenburg.de/',
+                    en: 'http://www.flotte-brandenburg.de/',
+                },
+                visibleInSettingsUi: true,
+                enabled: true,
+            },
+            'flotte-potsdam': {
+                icon: 'cargobike',
+                name: {
+                    de: 'fLotte (Potsdam)',
+                    en: 'fLotte (Potsdam)',
+                },
+                type: 'citybike',
+                url: {
+                    de: 'https://flotte-potsdam.de/',
+                    en: 'https://flotte-potsdam.de/',
+                },
+                visibleInSettingsUi: true,
+                enabled: true,
+            },
             'nextbike_dc': {
                 icon: 'nextbike',
                 name: {

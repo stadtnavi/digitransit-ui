@@ -10,6 +10,7 @@ import {
   filterModes,
   getDefaultModes,
   getModes,
+  getOTPMode,
   modesAsOTPModes,
   getBicycleCompatibleModes,
   isTransportModeAvailable,
@@ -228,7 +229,7 @@ export const preparePlanParams = (config, useDefaultModes) => (
     intermediatePlaces,
   });
   const modesOrDefault = useDefaultModes
-    ? getDefaultModes(config)
+    ? getDefaultModes(config).map(mode => getOTPMode(config, mode))
     : filterModes(
         config,
         getModes(config),

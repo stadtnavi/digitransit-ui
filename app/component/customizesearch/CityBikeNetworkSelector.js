@@ -35,6 +35,7 @@ const CityBikeNetworkSelector = (
               img={`icon-icon_${network.icon}`}
               height={1}
               width={1}
+              color={network.backgroundColor}
             />
           </div>
           <span className="mode-name">

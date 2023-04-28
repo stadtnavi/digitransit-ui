@@ -238,6 +238,7 @@ export default configMerger(walttiConfig, {
         networks: {
             'flotte-berlin': {
                 icon: 'cargobike',
+                backgroundColor: '#7FC600',
                 name: {
                     de: 'fLotte (Berlin)',
                     en: 'fLotte (Berlin)',
@@ -252,6 +253,7 @@ export default configMerger(walttiConfig, {
             },
             'flotte-brandenburg': {
                 icon: 'cargobike',
+                backgroundColor: '#CF0610',
                 name: {
                     de: 'fLotte (Brandenburg)',
                     en: 'fLotte (Brandenburg)',
@@ -266,6 +268,7 @@ export default configMerger(walttiConfig, {
             },
             'flotte-potsdam': {
                 icon: 'cargobike',
+                backgroundColor: '#0087BD',
                 name: {
                     de: 'fLotte (Potsdam)',
                     en: 'fLotte (Potsdam)',
@@ -276,7 +279,7 @@ export default configMerger(walttiConfig, {
                     en: 'https://flotte-potsdam.de/',
                 },
                 visibleInSettingsUi: true,
-                enabled: true,
+                enabled: true,           
             },
             'nextbike_dc': {
                 icon: 'nextbike',
@@ -336,6 +339,7 @@ export default configMerger(walttiConfig, {
             },
             'barshare-other': {
                 icon: 'cargobike',
+                backgroundColor: '#779816',
                 name: {
                     de: 'BARshare Lastenrad',
                     en: 'BARshare cargo bike',

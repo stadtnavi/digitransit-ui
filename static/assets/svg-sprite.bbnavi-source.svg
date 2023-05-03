@@ -1373,6 +1373,42 @@
       <use xlink:href="#icon-icon_citybike" style="--operatorbg: #bbb;--operatorfg: #333"/>
     </symbol>
     <!--barshare-bike icons END-->
+    <!--barshare-cargobike icons START-->
+    <symbol id="icon-icon_barshare-cargobike_station_red_small">
+      <use xlink:href="#icon-icon_cargobike_station_small" style="--badgecolor: #dc0451;--operatorbg: #779816;--operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_station_yellow_small">
+      <use xlink:href="#icon-icon_cargobike_station_small" style="--badgecolor: #FBB800;--operatorbg: #779816;--operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_station_green_small">
+      <use xlink:href="#icon-icon_cargobike_station_small" style="--badgecolor: #008854;--operatorbg: #779816;--operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_station_closed_small">
+      <use xlink:href="#icon-icon_cargobike_station_small" style="--badgecolor: #dc0451;--operatorbg: #bbb;--operatorfg: #000"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_station_red_large">
+      <use xlink:href="#icon-icon_cargobike_station_large" style="--badgecolor: #dc0451;--operatorbg: #779816;--operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_station_yellow_large">
+      <use xlink:href="#icon-icon_cargobike_station_large" style="--badgecolor: #FBB800;--operatorbg: #779816;--operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_station_green_large">
+      <use xlink:href="#icon-icon_cargobike_station_large" style="--badgecolor: #008854;--operatorbg: #779816;--operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_station_closed_large">
+      <use xlink:href="#icon-icon_cargobike_station_large" style="--badgecolor: #dc0451;--operatorbg: #bbb;--operatorfg: #000"/>
+      <path fill="#fff" transform="scale(4 4) translate(35.6 6.6) rotate(45) translate(0 -10)" d="m7.2 2.5412c0.46782 0 0.84706 0.37924 0.84706 0.84706l-8.8235e-4 2.9639 2.9656 7.6471e-4c0.46782 0 0.84706 0.37924 0.84706 0.84706s-0.37924 0.84706-0.84706 0.84706l-2.9656-8.8235e-4 8.8235e-4 2.9656c0 0.46782-0.37924 0.84706-0.84706 0.84706s-0.84706-0.37924-0.84706-0.84706l-7.6471e-4 -2.9656-2.9639 8.8235e-4c-0.46782 0-0.84706-0.37924-0.84706-0.84706s0.37924-0.84706 0.84706-0.84706l2.9639-7.6471e-4 7.6471e-4 -2.9639c0-0.46782 0.37924-0.84706 0.84706-0.84706z"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike-lollipop">
+      <use xlink:href="#icon-icon_cargobike-lollipop-base" style="-badgecolor: #008854;-operatorbg: #779816;-operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike">
+      <use xlink:href="#icon-icon_cargobike" style="--operatorbg: #779816;--operatorfg: #fff"/>
+    </symbol>
+    <symbol id="icon-icon_barshare-cargobike_off">
+      <use xlink:href="#icon-icon_cargobike" style="--operatorbg: #bbb;--operatorfg: #333"/>
+    </symbol>
+    <!--barshare-cargobike icons END-->
     <!--flotte-berlin icons START-->
     <symbol id="icon-icon_flotte-berlin_station_red_small">
       <use xlink:href="#icon-icon_cargobike_station_small" style="--badgecolor: #dc0451;--operatorbg: #7fc600;--operatorfg: #fff"/>

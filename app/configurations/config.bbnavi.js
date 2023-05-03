@@ -335,7 +335,7 @@ export default configMerger(walttiConfig, {
                 enabled: true,
             },
             'barshare-other': {
-                icon: 'cargobike',
+                icon: 'barshare-cargobike',
                 name: {
                     de: 'BARshare Lastenrad',
                     en: 'BARshare cargo bike',

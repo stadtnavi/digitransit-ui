@@ -265,9 +265,9 @@ export const showModeSettings = config =>
  * @returns {String[]} returns user set modes or default modes
  */
 export const getModes = config => {
-  const { modes, allowedBikeRentalNetworks } = getCustomizedSettings();
-  const activeAndAllowedBikeRentalNetworks = allowedBikeRentalNetworks
-    ? allowedBikeRentalNetworks.filter(x => networkIsActive(config, x))
+  const { modes, allowedVehicleRentalNetworks } = getCustomizedSettings();
+  const activeAndAllowedVehicleRentalNetworks = allowedVehicleRentalNetworks
+    ? allowedVehicleRentalNetworks.filter(x => networkIsActive(config, x))
     : [];
   if (showModeSettings(config) && Array.isArray(modes) && modes.length > 0) {
     const transportModes = modes.filter(mode =>
@@ -275,8 +275,8 @@ export const getModes = config => {
     );
     const modesWithWalk = [...transportModes, 'WALK'];
     if (
-      activeAndAllowedBikeRentalNetworks &&
-      activeAndAllowedBikeRentalNetworks.length > 0 &&
+      activeAndAllowedVehicleRentalNetworks &&
+      activeAndAllowedVehicleRentalNetworks.length > 0 &&
       modesWithWalk.indexOf(TransportMode.Citybike) === -1
     ) {
       modesWithWalk.push(TransportMode.Citybike);
@@ -284,8 +284,8 @@ export const getModes = config => {
     return modesWithWalk;
   }
   if (
-    Array.isArray(activeAndAllowedBikeRentalNetworks) &&
-    activeAndAllowedBikeRentalNetworks.length > 0
+    Array.isArray(activeAndAllowedVehicleRentalNetworks) &&
+    activeAndAllowedVehicleRentalNetworks.length > 0
   ) {
     const modesWithCitybike = getDefaultModes(config);
     modesWithCitybike.push(TransportMode.Citybike);

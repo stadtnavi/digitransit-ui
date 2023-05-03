@@ -58,7 +58,7 @@ const CityBikeNetworkSelector = (
                 network.networkName,
               );
               const modes = getModes(config);
-              const newSettings = { allowedBikeRentalNetworks: newNetworks };
+              const newSettings = { allowedVehicleRentalNetworks: newNetworks };
               if (newNetworks.length > 0) {
                 if (modes.indexOf(TransportMode.Citybike) === -1) {
                   newSettings.modes = xor(modes, [TransportMode.Citybike]);

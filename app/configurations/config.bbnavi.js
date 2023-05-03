@@ -265,7 +265,7 @@ export default configMerger(walttiConfig, {
                 enabled: true,
             },
             'barshare-bike': {
-                icon: 'regiorad',
+                icon: 'barshare-bike',
                 name: {
                     de: 'BARshare E-Bike',
                     en: 'BARshare E-Bike',

@@ -54,14 +54,12 @@ const StreetModeSelectorPanel = (
                   id="bicycle"
                   defaultMessage="bicycle"
                 />
+                <Toggle
+                  id="settings-toggle-bicycle"
+                  toggled={currentSettings.includeBikeSuggestions}
+                  onToggle={() => onToggle('includeBikeSuggestions', 'OwnBike')}
+                />
               </label>
-            </div>
-            <div>
-              <Toggle
-                id="settings-toggle-bicycle"
-                toggled={currentSettings.includeBikeSuggestions}
-                onToggle={() => onToggle('includeBikeSuggestions', 'OwnBike')}
-              />
             </div>
           </div>
           {!config.includePublicWithBikePlan ||

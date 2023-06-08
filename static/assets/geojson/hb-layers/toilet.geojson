@@ -93,35 +93,13 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Nette Toilette \"Dolce Vita\"",
-        "name_en": "Public toilet \"Dolce Vita\"",
-        "name_de": "Nette Toilette \"Dolce Vita\"",
-        "popupContent": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Sa 10:00-23:00, So 15:00-20:00, Barrierefrei: ja",
-        "popupContent_de": "Wickelm\u00f6glichkeit: nein, \u00d6ffnungszeiten: Mo-Sa 10:00-23:00, So 15:00-20:00, Barrierefrei: ja",
-        "popupContent_en": "Changing table: no, Opening hours: Mo-Sa 10:00-23:00, Su 15:00-20:00, Wheelchair: yes",
-        "id": "Nette Toilette_4",
-        "icon": {
-          "id": "toiletIcon"
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8712301,
-          48.5947857
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Nette Toilette \"Edeka Center\"",
         "name_en": "Public toilet \"Edeka Center\"",
         "name_de": "Nette Toilette \"Edeka Center\"",
         "popupContent": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Fr 08:00-22:00; Sa 08:00-22:00;Barrierefrei: ja",
         "popupContent_de": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Fr 08:00-22:00; Sa 08:00-22:00;Barrierefrei: ja",
         "popupContent_en": "Changing table: yes, Opening hours: Mo-Fr 08:00-22:00; Sa 08:00-22:00;Wheelchair: yes",
-        "id": "Nette Toilette_5",
+        "id": "Nette Toilette_4",
         "icon": {
           "id": "toiletIcon"
         }
@@ -143,7 +121,7 @@
         "popupContent": "Wickelm\u00f6glichkeit: ja, Telefon: +49 7032 9553280, \u00d6ffnungszeiten: Mo-Fr 17:00-24:00; Sa 17:00-24:00; So 09:30-24:00; PH 09:30-24:00, Barrierefrei: nein",
         "popupContent_de": "Wickelm\u00f6glichkeit: ja, Telefon: +49 7032 9553280, \u00d6ffnungszeiten: Mo-Fr 17:00-24:00; Sa 17:00-24:00; So 09:30-24:00; PH 09:30-24:00, Barrierefrei: nein",
         "popupContent_en": "Changing table: yes, Phone: +49 7032 9553280, Opening hours: Mo-Fr 17:00-24:00; Sa 17:00-24:00; Su 09:30-24:00; PH 09:30-24:00, Wheelchair: no",
-        "id": "Nette Toilette_6",
+        "id": "Nette Toilette_5",
         "icon": {
           "id": "toiletIcon"
         }
@@ -162,10 +140,10 @@
         "name_en": "Public toilet \"Waldseilgarten\"",
         "name_de": "Nette Toilette \"Waldseilgarten\"",
         "name": "Nette Toilette \"Waldseilgarten\"",
-        "popupContent": "Wickelm\u00f6glichkeit: ja, Barrierefrei: ja",
-        "popupContent_de": "Wickelm\u00f6glichkeit: ja, Barrierefrei: ja",
-        "popupContent_en": "Changing table: yes, Wheelchair: yes",
-        "id": "Nette Toilette_7",
+        "popupContent": "Wickelm\u00f6glichkeit: ja, Geb\u00fchrenpflichtig: nein, Barrierefrei: ja",
+        "popupContent_de": "Wickelm\u00f6glichkeit: ja, Geb\u00fchrenpflichtig: nein, Barrierefrei: ja",
+        "popupContent_en": "Changing table: yes, Fee: no, Wheelchair: yes",
+        "id": "Nette Toilette_6",
         "icon": {
           "id": "toiletIcon"
         }
@@ -184,10 +162,10 @@
         "name": "Nette Toilette \"Naturfreundehaus\"",
         "name_en": "Public toilet \"Naturfreundehaus\"",
         "name_de": "Nette Toilette \"Naturfreundehaus\"",
-        "popupContent": "Wickelm\u00f6glichkeit: ja, Barrierefrei: begrenzt",
-        "popupContent_de": "Wickelm\u00f6glichkeit: ja, Barrierefrei: begrenzt",
-        "popupContent_en": "Changing table: yes, Wheelchair: limited",
-        "id": "Nette Toilette_8",
+        "popupContent": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mi-So 12:00-21:00, Barrierefrei: begrenzt",
+        "popupContent_de": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mi-So 12:00-21:00, Barrierefrei: begrenzt",
+        "popupContent_en": "Changing table: yes, Opening hours: We-Su 12:00-21:00, Wheelchair: limited",
+        "id": "Nette Toilette_7",
         "icon": {
           "id": "toiletIcon"
         }
@@ -209,7 +187,7 @@
         "popupContent": "Wickelm\u00f6glichkeit: ja, Telefon: +49 7032 330207, \u00d6ffnungszeiten: Mo-So 09:00-24:00, Barrierefrei: ja",
         "popupContent_de": "Wickelm\u00f6glichkeit: ja, Telefon: +49 7032 330207, \u00d6ffnungszeiten: Mo-So 09:00-24:00, Barrierefrei: ja",
         "popupContent_en": "Changing table: yes, Phone: +49 7032 330207, Opening hours: Mo-Su 09:00-24:00, Wheelchair: yes",
-        "id": "Nette Toilette_9",
+        "id": "Nette Toilette_8",
         "icon": {
           "id": "toiletIcon"
         }
@@ -231,7 +209,7 @@
         "popupContent": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Mi 08:30-17:00; Do 08:30-18:30; Fr 08:30-12:00; Sa 09:30-12:00, Barrierefrei: ja",
         "popupContent_de": "Wickelm\u00f6glichkeit: ja, \u00d6ffnungszeiten: Mo-Mi 08:30-17:00; Do 08:30-18:30; Fr 08:30-12:00; Sa 09:30-12:00, Barrierefrei: ja",
         "popupContent_en": "Changing table: yes, Opening hours: Mo-We 08:30-17:00; Th 08:30-18:30; Fr 08:30-12:00; Sa 09:30-12:00, Wheelchair: yes",
-        "id": "Nette Toilette_10",
+        "id": "Nette Toilette_9",
         "icon": {
           "id": "toiletIcon"
         }

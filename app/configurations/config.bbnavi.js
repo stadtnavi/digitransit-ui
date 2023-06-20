@@ -278,11 +278,25 @@ export default configMerger(walttiConfig, {
                 visibleInSettingsUi: true,
                 enabled: true,
             },
-            'nextbike_dc': {
+            'nextbike_bn': {
                 icon: 'nextbike',
                 name: {
-                    de: 'Nextbike (Potsdam)',
-                    en: 'Nextbike (Potsdam)',
+                    de: 'Nextbike (Berlin)',
+                    en: 'Nextbike (Berlin)',
+                },
+                type: 'citybike',
+                url: {
+                    de: 'https://www.nextbike.de/de/standorte/',
+                    en: 'https://www.nextbike.de/en/standorte/',
+                },
+                visibleInSettingsUi: true,
+                enabled: true,
+            }, 
+            'nextbike_ed': {
+                icon: 'nextbike',
+                name: {
+                    de: 'Nextbike (Grünheide)',
+                    en: 'Nextbike (Grünheide)',
                 },
                 type: 'citybike',
                 url: {
@@ -292,11 +306,11 @@ export default configMerger(walttiConfig, {
                 visibleInSettingsUi: true,
                 enabled: true,
             },
-            'nextbike_bn': {
+            'nextbike_dc': {
                 icon: 'nextbike',
                 name: {
-                    de: 'Nextbike (Berlin)',
-                    en: 'Nextbike (Berlin)',
+                    de: 'Nextbike (Potsdam)',
+                    en: 'Nextbike (Potsdam)',
                 },
                 type: 'citybike',
                 url: {

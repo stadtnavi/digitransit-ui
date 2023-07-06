@@ -1,0 +1,13 @@
+@import 'theme';
+@import '../../main';
+
+@import '~klaro/src/scss/klaro.scss';
+@import 'klaro';
+
+@import '../hbnext/stadtnavi';
+
+.carpool-leg-details-link {
+  a.external-link {
+    color: $link-color;
+  }
+}

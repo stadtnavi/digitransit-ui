@@ -1,4 +1,7 @@
 import get from 'lodash/get';
+import trimEnd from 'lodash/trimEnd';
+import trimStart from 'lodash/trimStart';
+import toPairs from 'lodash/toPairs';
 import {
   otpToLocation,
   locationToOTP,
@@ -16,20 +19,73 @@ export const PREFIX_ITINERARY_SUMMARY = 'reiseplan';
 export const PREFIX_DISRUPTION = 'stoerungen';
 export const PREFIX_TIMETABLE = 'fahrplan';
 export const PREFIX_ROADWORKS = 'baustellen';
-export const PREFIX_BIKE_PARKS = 'fahrradparkplaetze';
+export const PREFIX_BIKEPARK = 'fahrradparkplaetze';
 export const PREFIX_CHARGING_STATIONS = 'ladestationen';
-export const PREFIX_DYNAMIC_PARKING_LOTS = 'parkplaetze';
+export const PREFIX_CARPARK = 'parkplaetze';
 export const PREFIX_ROAD_WEATHER = 'strassenwetter';
+export const PREFIX_DATAHUB_POI = 'datahub-poi';
 export const PREFIX_GEOJSON = 'geojson';
 export const stopUrl = id => id;
 export const LOCAL_STORAGE_EMITTER_PATH = '/local-storage-emitter';
+export const EMBEDDED_SEARCH_PATH = '/haku';
 
-export const createReturnPath = (path, origin, destination) => {
+/**
+ * Join argument with slash separator.
+ *
+ * @param  {Array.<string>} segments Path segments.
+ * @returns {string}
+ *
+ * @example
+ * pathJoin("my/", "path") // my/path
+ */
+export const pathJoin = segments =>
+  segments
+    .reduce((acc, segment, i, arr) => {
+      let output = String(segment);
+      output = i > 0 ? trimStart(output, '/') : output;
+      output = i < arr.length - 1 ? trimEnd(output, '/') : output;
+      return acc.concat(output);
+    }, [])
+    .join('/');
+
+export const joinPrefixAndId = (prefix, id) => {
+  // The prefix might contain intentional path separators, so we don't encode it here
+  return `/${prefix}/${encodeURIComponent(id)}`;
+};
+/**
+ * @param {Object.<string, string>} params
+ * @returns {string}
+ */
+export const buildQueryString = params => {
+  return toPairs(params)
+    .map(keyVal => keyVal.join('='))
+    .join('&');
+};
+
+export const buildURL = (pathSegments = []) => {
+  const urlOrigin =
+    typeof window !== 'undefined'
+      ? window.location.origin // eslint-disable-line compat/compat
+      : 'url://builder/';
+
+  // build valid url
+  const url = new URL(urlOrigin); // eslint-disable-line compat/compat
+  url.pathname = pathJoin(pathSegments);
+  return url;
+};
+
+export const createReturnPath = (
+  path,
+  origin,
+  destination,
+  hash = undefined,
+) => {
   const returnUrl = path === '' ? '' : `/${path}`;
   return [
     returnUrl,
     encodeURIComponent(decodeURIComponent(origin)),
     encodeURIComponent(decodeURIComponent(destination)),
+    hash || '',
   ].join('/');
 };
 
@@ -112,6 +168,20 @@ export const getStopRoutePath = searchObj => {
       path = `/${PREFIX_BIKESTATIONS}/`;
       id = searchObj.properties.labelId;
       break;
+    case 'carpark':
+      path = `/${PREFIX_CARPARK}/`;
+      id =
+        searchObj.properties.id.indexOf(':') === -1
+          ? searchObj.properties.id
+          : searchObj.properties.id.split(':')[1];
+      break;
+    case 'bikepark':
+      path = `/${PREFIX_BIKEPARK}/`;
+      id =
+        searchObj.properties.id.indexOf(':') === -1
+          ? searchObj.properties.id
+          : searchObj.properties.id.split(':')[1];
+      break;
     default:
       path = `/${PREFIX_STOPS}/`;
       id = id.replace('GTFS:', '').replace(':', '%3A');
@@ -164,4 +234,15 @@ export const getHomeUrl = (origin, indexPath) => {
   const homeUrl = getPathWithEndpointObjects(origin, {}, indexPath);
 
   return homeUrl;
+};
+
+export const getDatahubPoiPath = (datahubId, name, latitude, longitude) => {
+  const searchParams = new URLSearchParams({
+    datahubId,
+    name,
+    // We follow SidebarMap's parameter naming here.
+    lat: latitude,
+    lng: longitude,
+  }).toString();
+  return `/${PREFIX_DATAHUB_POI}?${searchParams}`;
 };

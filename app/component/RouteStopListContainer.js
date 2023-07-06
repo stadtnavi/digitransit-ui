@@ -7,21 +7,30 @@ import groupBy from 'lodash/groupBy';
 import values from 'lodash/values';
 import cx from 'classnames';
 import { FormattedMessage } from 'react-intl';
+import moment from 'moment';
 
 import RouteStop from './RouteStop';
 import withBreakpoint from '../util/withBreakpoint';
+import { getRouteMode } from '../util/modeUtils';
+import { PatternShape, VehicleShape } from '../util/shapes';
 
 class RouteStopListContainer extends React.PureComponent {
   static propTypes = {
-    pattern: PropTypes.object.isRequired,
+    pattern: PatternShape.isRequired,
     patternId: PropTypes.string.isRequired,
     className: PropTypes.string,
-    vehicles: PropTypes.object,
-    currentTime: PropTypes.object.isRequired,
+    vehicles: PropTypes.objectOf(VehicleShape),
+    currentTime: PropTypes.instanceOf(moment).isRequired,
     relay: PropTypes.shape({
       refetch: PropTypes.func.isRequired,
     }).isRequired,
     breakpoint: PropTypes.string.isRequired,
+    hideDepartures: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    className: undefined,
+    vehicles: [],
   };
 
   static contextTypes = {
@@ -32,7 +41,7 @@ class RouteStopListContainer extends React.PureComponent {
   getStops() {
     const { stops } = this.props.pattern;
 
-    const mode = this.props.pattern.route.mode.toLowerCase();
+    const mode = getRouteMode(this.props.pattern.route);
     const vehicles = groupBy(
       values(this.props.vehicles).filter(
         vehicle =>
@@ -45,6 +54,7 @@ class RouteStopListContainer extends React.PureComponent {
     return stops.map((stop, i) => {
       const idx = i; // DT-3159: using in key of RouteStop component
       const nextStop = stops[i + 1];
+      const prevStop = stops[i - 1];
 
       const prevStopPattern =
         i > 0 ? stops[i - 1].stopTimesForPattern[0] : null;
@@ -58,6 +68,7 @@ class RouteStopListContainer extends React.PureComponent {
           key={`${stop.gtfsId}-${this.props.pattern}-${idx}`}
           stop={stop}
           nextStop={nextStop}
+          prevStop={prevStop}
           mode={mode}
           vehicle={vehicles[stop.gtfsId] ? vehicles[stop.gtfsId][0] : null}
           currentTime={this.props.currentTime.unix()}
@@ -72,6 +83,7 @@ class RouteStopListContainer extends React.PureComponent {
             prevStopPattern ? prevStopPattern.scheduledDeparture : null
           }
           patternId={this.props.patternId.split('-')[1]}
+          hideDepartures={this.props.hideDepartures}
         />
       );
     });
@@ -94,7 +106,7 @@ class RouteStopListContainer extends React.PureComponent {
 
   render() {
     return (
-      <>
+      <div role="tabpanel" aria-labelledby="route-tab">
         <span className="sr-only">
           <FormattedMessage
             id="stop-list-update.sr-instructions"
@@ -104,7 +116,7 @@ class RouteStopListContainer extends React.PureComponent {
         <ul className={cx('route-stop-list', this.props.className)}>
           {this.getStops()}
         </ul>
-      </>
+      </div>
     );
   }
 }
@@ -130,6 +142,7 @@ const containerComponent = createRefetchContainer(
           mode
           color
           shortName
+          type
         }
         stops {
           alerts {

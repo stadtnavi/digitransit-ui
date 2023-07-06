@@ -10,10 +10,16 @@ import { getStopRoutePath } from '../util/path';
 const DTAutoSuggestWithSearchContext = withSearchContext(DTAutoSuggest);
 const searchSources = ['Favourite', 'History', 'Datasource'];
 
-function StopsNearYouSearch({ mode, breakpoint, lang }, { router }) {
+function StopsNearYouSearch({ mode, breakpoint, lang }, { router, config }) {
   const isMobile = breakpoint !== 'large';
   const transportMode = `route-${mode}`;
 
+  const filter = config.stopSearchFilter
+    ? (results, transportmode, type) =>
+        filterSearchResultsByMode(results, transportmode, type).filter(
+          config.stopSearchFilter,
+        )
+    : filterSearchResultsByMode;
   const selectHandler = item => {
     router.push(getStopRoutePath(item));
   };
@@ -30,13 +36,16 @@ function StopsNearYouSearch({ mode, breakpoint, lang }, { router }) {
           transportMode={transportMode}
           geocodingSize={40}
           value=""
-          filterResults={filterSearchResultsByMode}
+          filterResults={filter}
           sources={searchSources}
           targets={
             mode === 'CITYBIKE' ? ['BikeRentalStations'] : ['Stops', 'Routes']
           }
           isMobile={isMobile}
           selectHandler={selectHandler} // prop for context handler
+          getAutoSuggestIcons={config.getAutoSuggestIcons}
+          modeIconColors={config.colors.iconColors}
+          modeSet={config.iconModeSet}
         />
       </div>
     </div>
@@ -51,6 +60,7 @@ StopsNearYouSearch.propTypes = {
 
 StopsNearYouSearch.contextTypes = {
   router: routerShape.isRequired,
+  config: PropTypes.object.isRequired,
 };
 
 export default pure(StopsNearYouSearch);

@@ -1,40 +1,40 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { intlShape } from 'react-intl';
-
+import Link from 'found/Link';
 import Icon from '../../Icon';
+import { PREFIX_BIKEPARK, PREFIX_CARPARK } from '../../../util/path';
 
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-function SelectParkAndRideRow(props, { intl }) {
+function SelectParkAndRideRow(props) {
+  const { name, bikeParkId, carParkId } = props;
+
+  const id = bikeParkId || carParkId;
+  const img = carParkId ? 'icon-icon_car-park' : 'icon-icon_bike-park';
+  const PREFIX = carParkId ? PREFIX_CARPARK : PREFIX_BIKEPARK;
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-    <div className="stop-popup-choose-row" onClick={props.selectRow}>
-      <div className="padding-vertical-normal select-row-icon">
-        <Icon img="icon-icon_car" color={props.colors.primary} />
-      </div>
+    <Link
+      className="stop-popup-choose-row"
+      to={`/${PREFIX}/${encodeURIComponent(id)}`}
+    >
+      <span className="choose-row-left-column" aria-hidden="true">
+        <Icon img={img} />
+      </span>
       <span className="choose-row-center-column">
-        <h5 className="choose-row-header">
-          {JSON.parse(props.name)[intl.locale]}
-        </h5>
+        <h5 className="choose-row-header">{name}</h5>
       </span>
       <span className="choose-row-right-column">
         <Icon img="icon-icon_arrow-collapse--right" />
       </span>
-      <hr className="no-margin gray" />
-    </div>
+    </Link>
   );
 }
 
 SelectParkAndRideRow.displayName = 'SelectParkAndRideRow';
 
 SelectParkAndRideRow.propTypes = {
-  selectRow: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  colors: PropTypes.object.isRequired,
-};
-
-SelectParkAndRideRow.contextTypes = {
-  intl: intlShape,
+  bikeParkId: PropTypes.string,
+  carParkId: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default SelectParkAndRideRow;

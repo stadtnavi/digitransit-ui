@@ -13,7 +13,6 @@ import {
   RelayNetworkLayer,
   urlMiddleware,
   retryMiddleware,
-  batchMiddleware,
   errorMiddleware,
   // cacheMiddleware,
 } from 'react-relay-network-modern';
@@ -24,6 +23,9 @@ import { Environment, RecordSource, Store } from 'relay-runtime';
 import { ReactRelayContext } from 'react-relay';
 
 import { setRelayEnvironment } from '@digitransit-search-util/digitransit-search-util-query-utils';
+
+// Import Klaro without styles
+import * as Klaro from 'klaro/dist/klaro-no-css';
 
 import { historyMiddlewares, render } from './routes';
 
@@ -130,6 +132,17 @@ async function init() {
 
   relaySSRMiddleware.debug = false;
 
+  // Query parameter is used instead of header because browsers send
+  // OPTIONS queries where you can't define headers
+  const queryParameters = config.hasAPISubscriptionQueryParameter
+    ? `?${config.API_SUBSCRIPTION_QUERY_PARAMETER_NAME}=${config.API_SUBSCRIPTION_TOKEN}`
+    : '';
+
+  const language = context
+    .getComponentContext()
+    .getStore('PreferencesStore')
+    .getLanguage();
+
   const network = new RelayNetworkLayer([
     relaySSRMiddleware.getMiddleware(),
     // Cache middleware currently causes previuosly requested routes to be not shown to the user again.
@@ -139,10 +152,8 @@ async function init() {
       ttl: 60 * 60 * 1000,
     }), */
     urlMiddleware({
-      url: () => Promise.resolve(`${config.URL.OTP}index/graphql`),
-    }),
-    batchMiddleware({
-      batchUrl: () => Promise.resolve(`${config.URL.OTP}index/graphql/batch`),
+      url: () =>
+        Promise.resolve(`${config.URL.OTP}index/graphql${queryParameters}`),
     }),
     errorMiddleware(),
     retryMiddleware({
@@ -151,6 +162,7 @@ async function init() {
     next => async req => {
       // eslint-disable-next-line no-param-reassign
       req.fetchOpts.headers.OTPTimeout = config.OTPTimeout;
+      req.fetchOpts.headers['Accept-Language'] = language;
       return next(req);
     },
   ]);
@@ -193,11 +205,6 @@ async function init() {
     .getComponentContext()
     .getStore('MessageStore')
     .addConfigMessages(config);
-
-  const language = context
-    .getComponentContext()
-    .getStore('PreferencesStore')
-    .getLanguage();
 
   configureMoment(language, config);
 
@@ -290,6 +297,13 @@ async function init() {
       );
     }
   });
+
+  // Cookie banner:
+  // Assign the Klaro module to the window, so that we can access it in JS
+  window.klaro = Klaro;
+  window.klaroConfig = config.klaro;
+  // Set up Klaro with the config
+  Klaro.setup(config.klaro);
 }
 
 init();

@@ -3,7 +3,7 @@ import Protobuf from 'pbf';
 import pick from 'lodash/pick';
 import last from 'lodash/last';
 
-import range from 'lodash-es/range';
+import range from 'lodash/range';
 import { isBrowser } from '../../../util/browser';
 import { drawIcon } from '../../../util/mapIconUtils';
 import glfun from '../../../util/glfun';
@@ -32,9 +32,9 @@ class Roadworks {
 
     this.scaleratio = (isBrowser && window.devicePixelRatio) || 1;
     this.iconSize = 20 * this.scaleratio * getScale(this.tile.coords.z);
-
-    this.promise = this.fetchWithAction(this.drawStatus);
   }
+
+  getPromise = () => this.fetchWithAction(this.drawStatus);
 
   fetchWithAction = actionFn =>
     fetch(

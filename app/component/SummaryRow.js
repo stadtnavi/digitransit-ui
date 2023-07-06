@@ -15,6 +15,7 @@ import {
   compressLegs,
   getLegBadgeProps,
   isCallAgencyPickupType,
+  getInterliningLegs,
 } from '../util/legUtils';
 import { dateOrEmpty, isTomorrow } from '../util/timeUtils';
 import withBreakpoint from '../util/withBreakpoint';
@@ -24,7 +25,9 @@ import {
   getCityBikeNetworkIcon,
   getCityBikeNetworkConfig,
   getCityBikeNetworkId,
+  getCitybikeCapacity,
 } from '../util/citybikes';
+import { getRouteMode } from '../util/modeUtils';
 
 const Leg = ({
   mode,
@@ -68,6 +71,7 @@ export const RouteLeg = ({
 }) => {
   const isCallAgency = isCallAgencyPickupType(leg);
   let routeNumber;
+  const mode = getRouteMode(leg.route);
   if (isCallAgency) {
     const message = intl.formatMessage({
       id: 'pay-attention',
@@ -91,7 +95,7 @@ export const RouteLeg = ({
         route={leg.route}
         className={cx('line', leg.mode.toLowerCase())}
         interliningWithRoute={interliningWithRoute}
-        mode={leg.mode}
+        mode={mode}
         vertical
         withBar
         isTransitLeg={isTransitLeg}
@@ -101,7 +105,7 @@ export const RouteLeg = ({
   }
   return (
     <Leg
-      mode={leg.mode}
+      mode={mode}
       routeNumber={routeNumber}
       large={large}
       legLength={legLength}
@@ -210,8 +214,15 @@ const bikeWasParked = legs => {
 };
 
 const SummaryRow = (
-  { data, breakpoint, intermediatePlaces, zones, ...props },
-  { intl, intl: { formatMessage }, config, context },
+  {
+    data,
+    breakpoint,
+    intermediatePlaces,
+    zones,
+    onlyHasWalkingItineraries,
+    ...props
+  },
+  { intl, intl: { formatMessage }, config },
 ) => {
   const isTransitLeg = leg => leg.transitLeg;
   const isLegOnFoot = leg => leg.mode === 'WALK' || leg.mode === 'BICYCLE_WALK';
@@ -274,7 +285,6 @@ const SummaryRow = (
   let showRentalBikeDurationWarning = false;
   const citybikeNetworks = new Set();
   let citybikeicon;
-
   compressedLegs.forEach((leg, i) => {
     let interliningWithRoute;
     let renderBar = true;
@@ -289,8 +299,7 @@ const SummaryRow = (
     let legLength =
       ((leg.endTime - leg.startTime) / durationWithoutSlack) * 100; // length of the current leg in %
 
-    const longName =
-      leg.route && leg.route.shortName && leg.route.shortName.length > 5;
+    const longName = !leg?.route?.shortName || leg?.route?.shortName.length > 5;
 
     if (
       nextLeg &&
@@ -310,10 +319,18 @@ const SummaryRow = (
       }
     }
 
-    if (nextLeg?.interlineWithPreviousLeg) {
-      interliningWithRoute = nextLeg.route.shortName;
+    const [interliningLines, interliningLegs] = getInterliningLegs(
+      compressedLegs,
+      i,
+    );
+
+    const lastLegWithInterline = interliningLegs[interliningLegs.length - 1];
+    if (lastLegWithInterline) {
+      interliningWithRoute = interliningLines.join(' / ');
       legLength =
-        ((nextLeg.endTime - leg.startTime) / durationWithoutSlack) * 100;
+        ((lastLegWithInterline.endTime - leg.startTime) /
+          durationWithoutSlack) *
+        100;
     }
     legLength += addition;
     addition = 0;
@@ -424,7 +441,7 @@ const SummaryRow = (
             key={`${leg.mode}_${leg.startTime}_car_park_indicator`}
           >
             <Icon
-              img="icon-icon_car_park-withoutBox"
+              img="icon-icon_car-park"
               className="itinerary-icon car_park"
             />
           </div>,
@@ -569,7 +586,10 @@ const SummaryRow = (
             }}
           />
           <div>
-            {context.config.cityBike.capacity !== BIKEAVL_UNKNOWN && (
+            {getCitybikeCapacity(
+              config,
+              firstDeparture.from.bikeRentalStation.networks[0],
+            ) !== BIKEAVL_UNKNOWN && (
               <FormattedMessage
                 id="bikes-available"
                 values={{
@@ -627,6 +647,7 @@ const SummaryRow = (
       passive: props.passive,
       'bp-large': breakpoint === 'large',
       'cancelled-itinerary': props.isCancelled,
+      'no-border': onlyHasWalkingItineraries,
     },
   ]);
 
@@ -853,6 +874,7 @@ SummaryRow.propTypes = {
   showCancelled: PropTypes.bool,
   zones: PropTypes.arrayOf(PropTypes.string),
   delayThreshold: PropTypes.number,
+  onlyHasWalkingItineraries: PropTypes.bool,
 };
 
 SummaryRow.defaultProps = {

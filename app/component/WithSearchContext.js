@@ -23,7 +23,10 @@ const PATH_OPTS = {
   itinerarySummaryPrefix: PREFIX_ITINERARY_SUMMARY,
 };
 
-export default function withSearchContext(WrappedComponent) {
+export default function withSearchContext(
+  WrappedComponent,
+  embeddedSearch = false,
+) {
   class ComponentWithSearchContext extends React.Component {
     static contextTypes = {
       config: PropTypes.object.isRequired,
@@ -39,6 +42,7 @@ export default function withSearchContext(WrappedComponent) {
       fromMap: PropTypes.string,
       isMobile: PropTypes.bool,
       showMultiPointControls: PropTypes.bool,
+      favouriteContext: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -126,6 +130,20 @@ export default function withSearchContext(WrappedComponent) {
       } else if (id !== 'stop-route-station' && item.type !== 'FutureRoute') {
         let location;
         if (item.type === 'CurrentLocation') {
+          if (embeddedSearch) {
+            this.props.selectHandler(
+              {
+                type: 'CurrentLocation',
+                status: 'no-location',
+                address: this.context.intl.formatMessage({
+                  id: 'own-position',
+                  defaultMessage: 'Own Location',
+                }),
+              },
+              id,
+            );
+            return;
+          }
           // item is already a location.
           location = item;
           if (
@@ -205,6 +223,8 @@ export default function withSearchContext(WrappedComponent) {
         titleId = 'select-from-map-origin';
       } else if (id === 'destination') {
         titleId = 'select-from-map-destination';
+      } else if (id === 'favourite') {
+        titleId = 'select-from-map-favourite';
       } else if (id === parseInt(id, 10)) {
         // id = via point index
         titleId = 'select-from-map-viaPoint';
@@ -215,6 +235,7 @@ export default function withSearchContext(WrappedComponent) {
           <FromMapModal
             onClose={() => this.setState({ fromMap: undefined })}
             titleId={titleId}
+            favouriteContext={this.props.favouriteContext}
           >
             <SelectFromMap type={id} onConfirm={this.confirmMapSelection} />
           </FromMapModal>

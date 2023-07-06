@@ -37,7 +37,7 @@ function WalkLeg(
   // If mode is not WALK, WalkLeg should get information from "to".
   const toOrFrom = leg.mode !== 'WALK' ? 'to' : 'from';
   const modeClassName = 'walk';
-  const fromMode = leg[toOrFrom].stop ? leg[toOrFrom].stop.vehicleMode : '';
+  const fromMode = (leg[toOrFrom].stop && leg[toOrFrom].stop.vehicleMode) || '';
   const isFirstLeg = i => i === 0;
   const [address, place] = splitStringToAddressAndPlace(leg[toOrFrom].name);
 
@@ -79,6 +79,12 @@ function WalkLeg(
           id="itinerary-details.walk-leg"
           values={{
             time: moment(leg.startTime).format('HH:mm'),
+            to: intl.formatMessage({
+              id: `modes.to-${
+                leg.to.stop?.vehicleMode?.toLowerCase() || 'place'
+              }`,
+              defaultMessage: 'modes.to-stop',
+            }),
             distance,
             duration,
             origin: leg[toOrFrom] ? leg[toOrFrom].name : '',
@@ -230,22 +236,24 @@ function WalkLeg(
                 </div>
               )}
             </div>
-            <div
-              className="itinerary-map-action"
-              onClick={focusAction}
-              onKeyPress={e => isKeyboardSelectionEvent(e) && focusAction(e)}
-              role="button"
-              tabIndex="0"
-              aria-label={intl.formatMessage(
-                { id: 'itinerary-summary.show-on-map' },
-                { target: leg[toOrFrom].name || '' },
-              )}
-            >
-              <Icon
-                img="icon-icon_show-on-map"
-                className="itinerary-search-icon"
-              />
-            </div>
+            {!returnNotice && (
+              <div
+                className="itinerary-map-action"
+                onClick={focusAction}
+                onKeyPress={e => isKeyboardSelectionEvent(e) && focusAction(e)}
+                role="button"
+                tabIndex="0"
+                aria-label={intl.formatMessage(
+                  { id: 'itinerary-summary.show-on-map' },
+                  { target: leg[toOrFrom].name || '' },
+                )}
+              >
+                <Icon
+                  img="icon-icon_show-on-map"
+                  className="itinerary-search-icon"
+                />
+              </div>
+            )}
           </div>
         )}
 
@@ -324,6 +332,8 @@ WalkLeg.propTypes = {
   leg: walkLegShape.isRequired,
   previousLeg: walkLegShape,
   focusToLeg: PropTypes.func.isRequired,
+  // This is not necessarily the `leg`'s start time!
+  // Usually, it seems to be the previous leg's end time.
   startTime: PropTypes.number.isRequired,
 };
 

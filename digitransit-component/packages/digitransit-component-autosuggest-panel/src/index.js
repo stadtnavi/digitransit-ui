@@ -113,9 +113,19 @@ ItinerarySearchControl.propTypes = {
  *   set: true,
  *   ready: true,
  * }
- * onSelect() {
+ * onSelect(item, id) {
  *  return null;  // Define what to do when a suggestion is being selected. None by default.
  *  }
+ * onClear(id) {
+ *  return null;  // Define what to do when a suggestion is being selected. None by default.
+ * }
+ * const getAutoSuggestIcons: {
+ *   // Called for every city bike station rendered as a search suggestion. Should return the icon and
+ *   // color used for that station. Two icons are available, 'citybike-stop-digitransit' anditybike-stop-digitransit-secondary'.
+ *   citybikes: station => {
+ *      return ['citybike-stop-digitransit', '#f2b62d'];
+ *   }
+ * }
  * const targets = ['Locations', 'Stops', 'Routes']; // Defines what you are searching. all available options are Locations, Stops, Routes, BikeRentalStations, FutureRoutes, MapPosition and CurrentPosition. Leave empty to search all targets.
  * const sources = ['Favourite', 'History', 'Datasource'] // Defines where you are searching. all available are: Favourite, History (previously searched searches), and Datasource. Leave empty to use all sources.
  * <DTAutosuggestPanel
@@ -129,7 +139,9 @@ ItinerarySearchControl.propTypes = {
  *    updateViaPoints={() => return []} // Optional. If showMultiPointControls is set to true, define how to update your via point list with this function. Currenlty no default implementation is given.
  *    swapOrder={() => return null} // Optional. If showMultiPointControls is set to true, define how to swap order of your points (origin, destination, viapoints). Currently no default implementation is given.
  *    searchContext={searchContext}
+ *    getAutoSuggestIcons={getAutoSuggestIcons}
  *    onSelect={this.onSelect}
+ *    onClear={this.onClear}
  *    lang="fi" // Define language fi sv or en.
  *    addAnalyticsEvent={null} // Optional. you can record an analytics event if you wish. if passed, component will pass an category, action, name parameters to addAnalyticsEvent
  *    disableAutoFocus={false} // Optional. use this to disable autofocus completely from DTAutosuggestPanel
@@ -138,6 +150,7 @@ ItinerarySearchControl.propTypes = {
  *    isMobile  // Optional. Defaults to false. Whether to use mobile search.
  *    originMobileLabel="Origin label" // Optional. Custom label text for origin field on mobile.
  *    destinationMobileLabel="Destination label" // Optional. Custom label text for destination field on mobile.
+ *    handleFocusChange={() => {}} // Optional. If defined overrides default onFocusChange behaviour
  */
 class DTAutosuggestPanel extends React.Component {
   static propTypes = {
@@ -154,6 +167,7 @@ class DTAutosuggestPanel extends React.Component {
     searchPanelText: PropTypes.string,
     searchContext: PropTypes.any.isRequired,
     onSelect: PropTypes.func,
+    onClear: PropTypes.func,
     addAnalyticsEvent: PropTypes.func,
     lang: PropTypes.string,
     disableAutoFocus: PropTypes.bool,
@@ -166,9 +180,15 @@ class DTAutosuggestPanel extends React.Component {
     originMobileLabel: PropTypes.string,
     destinationMobileLabel: PropTypes.string,
     refPoint: PropTypes.object,
+    modeSet: PropTypes.string,
+    modeIconColors: PropTypes.object,
+    getAutoSuggestIcons: PropTypes.object,
     fontWeights: PropTypes.shape({
       medium: PropTypes.number,
     }),
+    showScroll: PropTypes.bool,
+    onFocusChange: PropTypes.func,
+    isEmbedded: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -189,9 +209,14 @@ class DTAutosuggestPanel extends React.Component {
     hoverColor: '#0062a1',
     originMobileLabel: null,
     destinationMobileLabel: null,
+    modeSet: undefined,
+    modeIconColors: undefined,
     fontWeights: {
       medium: 500,
     },
+    showScroll: false,
+    onFocusChange: undefined,
+    isEmbedded: false,
   };
 
   constructor(props) {
@@ -378,6 +403,7 @@ class DTAutosuggestPanel extends React.Component {
       originMobileLabel,
       destinationMobileLabel,
       fontWeights,
+      onFocusChange,
     } = this.props;
     const { activeSlackInputs } = this.state;
     const slackTime = this.getSlackTimeOptions();
@@ -427,8 +453,10 @@ class DTAutosuggestPanel extends React.Component {
             placeholder={this.props.originPlaceHolder}
             value={this.value(origin)}
             searchContext={searchContext}
+            getAutoSuggestIcons={this.props.getAutoSuggestIcons}
             onSelect={this.props.onSelect}
-            focusChange={this.handleFocusChange}
+            onClear={this.props.onClear}
+            focusChange={onFocusChange || this.handleFocusChange}
             lang={this.props.lang}
             sources={this.props.sources}
             targets={this.props.targets}
@@ -438,6 +466,10 @@ class DTAutosuggestPanel extends React.Component {
             hoverColor={this.props.hoverColor}
             mobileLabel={originMobileLabel}
             fontWeights={this.props.fontWeights}
+            modeSet={this.props.modeSet}
+            modeIconColors={this.props.modeIconColors}
+            showScroll={this.props.showScroll}
+            isEmbedded={this.props.isEmbedded}
           />
           <ItinerarySearchControl
             className={styles.opposite}
@@ -502,6 +534,7 @@ class DTAutosuggestPanel extends React.Component {
                       refPoint={this.props.refPoint}
                       value={(o && o.address) || ''}
                       onSelect={this.props.onSelect}
+                      onClear={this.props.onClear}
                       handleViaPoints={item =>
                         this.handleViaPointLocationSelected(item, i)
                       }
@@ -509,10 +542,14 @@ class DTAutosuggestPanel extends React.Component {
                       sources={this.props.sources}
                       targets={this.props.targets}
                       filterResults={this.props.filterResults}
+                      getAutoSuggestIcons={this.props.getAutoSuggestIcons}
                       isMobile={this.props.isMobile}
                       color={this.props.color}
                       hoverColor={this.props.hoverColor}
                       fontWeights={this.props.fontWeights}
+                      modeSet={this.props.modeSet}
+                      modeIconColors={this.props.modeIconColors}
+                      showScroll={this.props.showScroll}
                     />
                   </div>
                   <ItinerarySearchControl
@@ -599,8 +636,10 @@ class DTAutosuggestPanel extends React.Component {
             storeRef={this.storeReference}
             placeholder={this.props.destinationPlaceHolder}
             className={this.class(this.props.destination)}
+            getAutoSuggestIcons={this.props.getAutoSuggestIcons}
             searchContext={searchContext}
             onSelect={this.props.onSelect}
+            onClear={this.props.onClear}
             refPoint={this.props.refPoint}
             value={this.value(this.props.destination)}
             lang={this.props.lang}
@@ -612,25 +651,32 @@ class DTAutosuggestPanel extends React.Component {
             hoverColor={this.props.hoverColor}
             mobileLabel={destinationMobileLabel}
             fontWeights={this.props.fontWeights}
+            modeSet={this.props.modeSet}
+            modeIconColors={this.props.modeIconColors}
+            showScroll={this.props.showScroll}
+            isEmbedded={this.props.isEmbedded}
           />
-          <ItinerarySearchControl
-            className={cx(styles['add-via-point'], styles.more, {
-              collapsed: viaPoints.length > 4,
-            })}
-            enabled={showMultiPointControls}
-            onClick={() => this.handleAddViaPointClick()}
-            onKeyPress={e =>
-              this.isKeyboardSelectionEvent(e) && this.handleAddViaPointClick()
-            }
-            aria-label={i18next.t('add-via-button-label')}
-          >
-            <Icon
-              img="viapoint"
-              width={1.25}
-              height={1.375}
-              color={this.props.color}
-            />
-          </ItinerarySearchControl>
+          {showMultiPointControls && (
+            <ItinerarySearchControl
+              className={cx(styles['add-via-point'], styles.more, {
+                collapsed: viaPoints.length > 4,
+              })}
+              enabled={showMultiPointControls}
+              onClick={() => this.handleAddViaPointClick()}
+              onKeyPress={e =>
+                this.isKeyboardSelectionEvent(e) &&
+                this.handleAddViaPointClick()
+              }
+              aria-label={i18next.t('add-via-button-label')}
+            >
+              <Icon
+                img="viapoint"
+                width={1.25}
+                height={1.375}
+                color={this.props.color}
+              />
+            </ItinerarySearchControl>
+          )}
         </div>
       </div>
     );

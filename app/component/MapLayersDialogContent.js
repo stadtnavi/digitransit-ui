@@ -4,8 +4,7 @@ import cx from 'classnames';
 import React from 'react';
 import { intlShape, FormattedMessage } from 'react-intl';
 import connectToStores from 'fluxible-addons-react/connectToStores';
-import { matchShape, routerShape, withRouter } from 'found';
-import merge from 'lodash/merge';
+import { routerShape, withRouter } from 'found';
 import { isKeyboardSelectionEvent } from '../util/browser';
 import Icon from './Icon';
 import GeoJsonStore from '../store/GeoJsonStore';
@@ -13,7 +12,6 @@ import MapLayerStore, { mapLayerShape } from '../store/MapLayerStore';
 import { updateMapLayers } from '../action/MapLayerActions';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import withGeojsonObjects from './map/withGeojsonObjects';
-import { replaceQueryParams, clearQueryParams } from '../util/queryUtils';
 import { MapMode } from '../constants';
 import { setMapMode } from '../action/MapModeActions';
 import LayerCategoryDropdown from './LayerCategoryDropdown';
@@ -43,7 +41,7 @@ const mapLayersConfigShape = PropTypes.shape({
     ),
   }),
   parkAndRide: PropTypes.shape({
-    showParkAndRide: PropTypes.bool,
+    show: PropTypes.bool,
   }),
   transportModes: PropTypes.shape({
     bus: transportModeConfigShape,
@@ -70,6 +68,7 @@ class MapLayersDialogContent extends React.Component {
     setOpen: PropTypes.func.isRequired,
     updateMapLayers: PropTypes.func,
     lang: PropTypes.string.isRequired,
+    mapMode: PropTypes.oneOf(Object.keys(MapMode)),
     open: PropTypes.bool.isRequired,
     geoJson: PropTypes.object,
   };
@@ -95,11 +94,10 @@ class MapLayersDialogContent extends React.Component {
   }
 
   updateSetting = newSetting => {
-    this.props.updateMapLayers({
-      ...newSetting,
-    });
+    this.props.updateMapLayers(newSetting);
   };
 
+  // todo: not used?
   updateStopAndTerminalSetting = newSetting => {
     const { mapLayers } = this.props;
     const stop = {
@@ -113,6 +111,7 @@ class MapLayersDialogContent extends React.Component {
     this.updateSetting({ stop, terminal });
   };
 
+  // todo: not used?
   updateStopSetting = newSetting => {
     const stop = {
       ...newSetting,
@@ -120,6 +119,7 @@ class MapLayersDialogContent extends React.Component {
     this.updateSetting({ stop });
   };
 
+  // todo: not used?
   updateGeoJsonSetting = newSetting => {
     const geoJson = {
       ...this.props.mapLayers.geoJson,
@@ -128,32 +128,22 @@ class MapLayersDialogContent extends React.Component {
     this.updateSetting({ geoJson });
   };
 
-  switchMapLayers = mode => {
-    const mapMode = mode;
-    const { router, match } = this.context;
-    replaceQueryParams(router, match, { mapMode });
-    if (mapMode === MapMode.Default) {
-      clearQueryParams(router, match, ['mapMode']);
-    }
-    this.props.setMapMode(mapMode);
-  };
-
   render() {
     const {
       citybike,
       parkAndRide,
+      parkAndRideForBikes,
       stop,
       terminal,
       geoJson,
       vehicles,
-      bikeParks,
       roadworks,
-      dynamicParkingLots,
       weatherStations,
+      datahubTiles,
       chargingStations,
     } = this.props.mapLayers;
-    const currentMapMode =
-      this.context.match.location.query.mapMode || MapMode.Default;
+    const { mapMode: currentMapMode } = this.props;
+
     let geoJsonLayers;
     if (this.props.geoJson) {
       geoJsonLayers = Object.entries(this.props.geoJson)?.map(([k, v]) => {
@@ -182,6 +172,21 @@ class MapLayersDialogContent extends React.Component {
       layer => layer.name.en === 'Bicycle network',
     );
 
+    const { config } = this.context;
+    const datahubLayers =
+      config.datahubTiles && config.datahubTiles.show
+        ? config.datahubTiles.layers
+        : [];
+    const datahubBicycleLayers = datahubLayers.map(layer => {
+      return {
+        checked: datahubTiles[layer.name],
+        defaultMessage: layer.name,
+        labelId: layer.labelId,
+        icon: layer.icon,
+        settings: { datahubTiles: layer.name },
+      };
+    });
+
     return (
       <>
         <button
@@ -208,9 +213,7 @@ class MapLayersDialogContent extends React.Component {
                 defaultMessage: 'Public Transit',
               })}
               icon="icon-icon_material_rail"
-              onChange={newSettings => {
-                this.updateSetting(merge(this.props.mapLayers, newSettings));
-              }}
+              onChange={this.updateSetting}
               options={[
                 isTransportModeEnabled(transportModes.bus) && {
                   checked: stop.bus,
@@ -266,17 +269,15 @@ class MapLayersDialogContent extends React.Component {
                 defaultMessage: 'Bicycle',
               })}
               icon="icon-icon_material_bike"
-              onChange={newSettings => {
-                this.updateSetting(merge(this.props.mapLayers, newSettings));
-              }}
+              onChange={this.updateSetting}
               options={[
-                this.context.config.bikeParks &&
-                  this.context.config.bikeParks.show && {
-                    checked: bikeParks,
+                this.context.config.parkAndRideForBikes &&
+                  this.context.config.parkAndRideForBikes.show && {
+                    checked: parkAndRideForBikes,
                     defaultMessage: 'Bike parks',
-                    labelId: 'map-layer-bike-parks',
+                    labelId: 'map-layer-bike-parks', // todo: rename?
                     icon: 'icon-bike-park',
-                    settings: 'bikeParks',
+                    settings: 'parkAndRideForBikes',
                   },
                 bikeServiceLayer && {
                   checked:
@@ -300,6 +301,7 @@ class MapLayersDialogContent extends React.Component {
                   icon: cycleNetworkLayer.icon,
                   settings: { geoJson: cycleNetworkLayer.url },
                 },
+                ...datahubBicycleLayers,
               ]}
             />
             <LayerCategoryDropdown
@@ -308,9 +310,7 @@ class MapLayersDialogContent extends React.Component {
                 defaultMessage: 'Sharing',
               })}
               icon="icon-icon_material_bike_scooter"
-              onChange={newSettings => {
-                this.updateSetting(merge(this.props.mapLayers, newSettings));
-              }}
+              onChange={this.updateSetting}
               options={[
                 showCityBikes(this.context.config?.cityBike?.networks) && {
                   checked: citybike,
@@ -335,21 +335,10 @@ class MapLayersDialogContent extends React.Component {
                 defaultMessage: 'Car',
               })}
               icon="icon-icon_material_car"
-              onChange={newSettings => {
-                this.updateSetting(merge(this.props.mapLayers, newSettings));
-              }}
+              onChange={this.updateSetting}
               options={[
-                this.context.config.dynamicParkingLots &&
-                  this.context.config.dynamicParkingLots
-                    .showDynamicParkingLots && {
-                    checked: dynamicParkingLots,
-                    defaultMessage: 'Parking',
-                    labelId: 'map-layer-dynamic-parking-lots',
-                    icon: 'icon-icon_open_carpark',
-                    settings: 'dynamicParkingLots',
-                  },
                 this.context.config.parkAndRide &&
-                  this.context.config.parkAndRide.showParkAndRide && {
+                  this.context.config.parkAndRide.show && {
                     checked: parkAndRide,
                     disabled: !!this.props.mapLayerOptions?.parkAndRide
                       ?.isLocked,
@@ -385,9 +374,7 @@ class MapLayersDialogContent extends React.Component {
                 defaultMessage: 'Others',
               })}
               icon="icon-icon_material_map"
-              onChange={newSettings => {
-                this.updateSetting(merge(this.props.mapLayers, newSettings));
-              }}
+              onChange={this.updateSetting}
               options={[
                 publicToiletsLayer && {
                   checked:
@@ -436,67 +423,129 @@ class MapLayersDialogContent extends React.Component {
           </p>
 
           <div className="panel-maptype-container">
-            <button
-              type="button"
-              className={cx(
-                'panel-maptype-button',
-                currentMapMode === MapMode.Default && 'checked',
-              )}
-              onClick={() => {
-                this.switchMapLayers(MapMode.Default);
-              }}
-            >
-              <img
-                alt="street"
-                className={cx(
-                  'panel-maptype-image',
-                  currentMapMode === MapMode.Default && 'checked',
-                )}
-                src="/img/maptype-streets.png"
-              />
-              <FormattedMessage id="streets" defaultMessage="Streets" />
-            </button>
-            <button
-              type="button"
-              className={cx(
-                'panel-maptype-button',
-                currentMapMode === MapMode.Satellite && 'checked',
-              )}
-              onClick={() => {
-                this.switchMapLayers(MapMode.Satellite);
-              }}
-            >
-              <img
-                alt="satellite"
-                className={cx(
-                  'panel-maptype-image',
-                  currentMapMode === MapMode.Satellite && 'checked',
-                )}
-                src="/img/maptype-satellite.png"
-              />
-              <FormattedMessage id="satellite" defaultMessage="Satellite" />
-            </button>
-            <button
-              type="button"
-              className={cx(
-                'panel-maptype-button',
-                currentMapMode === MapMode.Bicycle && 'checked',
-              )}
-              onClick={() => {
-                this.switchMapLayers(MapMode.Bicycle);
-              }}
-            >
-              <img
-                alt="bicycle"
-                className={cx(
-                  'panel-maptype-image',
-                  currentMapMode === MapMode.Bicycle && 'checked',
-                )}
-                src="/img/maptype-terrain.png"
-              />
-              <FormattedMessage id="bicycle" defaultMessage="Bicycle" />
-            </button>
+            {config.backgroundMaps?.map(bgMapConfig => {
+              const {
+                mapMode,
+                messageId,
+                defaultMessage,
+                previewImage,
+              } = bgMapConfig;
+              const isCurrent = currentMapMode === mapMode;
+              return (
+                <button
+                  key={mapMode}
+                  type="button"
+                  className={cx('panel-maptype-button', isCurrent && 'checked')}
+                  onClick={() => {
+                    this.props.setMapMode(mapMode);
+                  }}
+                >
+                  <img
+                    alt={defaultMessage}
+                    className={cx(
+                      'panel-maptype-image',
+                      isCurrent && 'checked',
+                    )}
+                    src={previewImage}
+                  />
+                  <FormattedMessage
+                    id={messageId}
+                    defaultMessage={defaultMessage}
+                  />
+                </button>
+              );
+            })}
           </div>
+
+          {currentMapMode === MapMode.Bicycle ? (
+            <>
+              <p className="panel-cycling-map-legend-title">
+                <FormattedMessage
+                  id="cycling-map-legend-title"
+                  defaultMessage="legend"
+                />
+              </p>
+              <ul className="panel-cycling-map-legend-container">
+                <li>
+                  <Icon
+                    img="icon-icon_cycling-map-legend-bike-parking"
+                    width={1.5}
+                    height={1.5}
+                  />
+                  <FormattedMessage
+                    id="cycling-map-legend-bike-parking"
+                    defaultMessage="bicycle parking"
+                  />
+                </li>
+                <li>
+                  <Icon
+                    img="icon-icon_cycling-map-legend-bike-parking-covered"
+                    width={1.5}
+                    height={1.5}
+                  />
+                  <FormattedMessage
+                    id="cycling-map-legend-bike-parking-covered"
+                    defaultMessage="covered bicycle parking"
+                  />
+                </li>
+                <li>
+                  <Icon
+                    img="icon-icon_cycling-map-legend-bike-parking-lockable"
+                    width={1.5}
+                    height={1.5}
+                  />
+                  <FormattedMessage
+                    id="cycling-map-legend-bike-parking-lockable"
+                    defaultMessage="lockable bicycle parking"
+                  />
+                </li>
+                <li>
+                  <Icon
+                    img="icon-icon_cycling-map-legend-bike-repair"
+                    width={1.5}
+                    height={1.5}
+                  />
+                  <FormattedMessage
+                    id="cycling-map-legend-bike-repair"
+                    defaultMessage="bicycle repair shop"
+                  />
+                </li>
+                <li>
+                  <Icon
+                    img="icon-icon_cycling-map-legend-bike-lane"
+                    width={1.5}
+                    height={1.5}
+                  />
+                  <FormattedMessage
+                    id="cycling-map-legend-bike-lane"
+                    defaultMessage="bicycle lane"
+                  />
+                </li>
+                <li>
+                  <Icon
+                    img="icon-icon_cycling-map-legend-major-cycling-route"
+                    width={1.5}
+                    height={1.5}
+                  />
+                  <FormattedMessage
+                    id="cycling-map-legend-major-cycling-route"
+                    defaultMessage="major cycling route"
+                  />
+                </li>
+                <li>
+                  <Icon
+                    img="icon-icon_cycling-map-legend-local-cycling-route"
+                    width={1.5}
+                    height={1.5}
+                  />
+                  <FormattedMessage
+                    id="cycling-map-legend-local-cycling-route"
+                    defaultMessage="local cycling route"
+                  />
+                </li>
+              </ul>
+            </>
+          ) : null}
         </div>
       </>
     );
@@ -514,7 +563,6 @@ MapLayersDialogContent.contextTypes = {
   config: PropTypes.object.isRequired,
   intl: intlShape.isRequired,
   router: routerShape.isRequired,
-  match: matchShape.isRequired,
 };
 /**
  * Retrieves the list of geojson layers in use from the configuration or
@@ -551,9 +599,9 @@ const connectedComponent = connectToStores(
       },
     },
     mapLayers: getStore(MapLayerStore).getMapLayers(),
-    updateMapLayers: mapLayers =>
-      executeAction(updateMapLayers, { ...mapLayers }),
+    updateMapLayers: mapLayers => executeAction(updateMapLayers, mapLayers),
     lang: getStore('PreferencesStore').getLanguage(),
+    mapMode: getStore('MapModeStore').getMapMode(),
     setMapMode: mapMode => executeAction(setMapMode, mapMode),
   }),
   {

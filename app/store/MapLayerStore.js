@@ -1,18 +1,22 @@
 import Store from 'fluxible/addons/BaseStore';
 import PropTypes from 'prop-types';
+import defaultsDeep from 'lodash/defaultsDeep';
+import cloneDeep from 'lodash/cloneDeep';
 import { setMapLayerSettings, getMapLayerSettings } from './localStorage';
 import { showCityBikes } from '../util/modeUtils';
 
 class MapLayerStore extends Store {
   static defaultLayers = {
-    dynamicParkingLots: true,
-    parkAndRide: false,
+    parkAndRide: true,
+    parkAndRideForBikes: true,
     stop: {
       bus: true,
       ferry: true,
       rail: true,
       subway: true,
       tram: true,
+      carpool: true,
+      funicular: true,
     },
     terminal: {
       bus: true,
@@ -20,10 +24,14 @@ class MapLayerStore extends Store {
       rail: true,
       subway: true,
       tram: true,
+      carpool: true,
     },
     vehicles: false,
     geoJson: {},
-    bikeParks: true,
+    datahubTiles: {},
+    weatherStations: false,
+    chargingStations: false,
+    roadworks: false,
   };
 
   static handlers = {
@@ -40,11 +48,24 @@ class MapLayerStore extends Store {
     const { config } = dispatcher.getContext();
     this.mapLayers.citybike = showCityBikes(config.cityBike?.networks);
 
+    const datahubLayers =
+      (config.datahubTiles && config.datahubTiles.layers) || [];
+    this.mapLayers.datahubTiles = Object.fromEntries(
+      datahubLayers.map(l => [l.name, true]),
+    );
+
+    this.mapLayers.weatherStations = !!config.weatherStations?.show;
+    this.mapLayers.chargingStations = !!config.chargingStations?.show;
+    this.mapLayers.roadworks = !!config.roadworks?.show;
+
     const storedMapLayers = getMapLayerSettings();
     if (Object.keys(storedMapLayers).length > 0) {
       this.mapLayers = {
         ...this.mapLayers,
         ...storedMapLayers,
+        // todo: stop?
+        // todo: geoJson?
+        // todo: datahubTiles?
         terminal: { ...this.mapLayers.terminal, ...storedMapLayers.terminal },
       };
     }
@@ -83,14 +104,7 @@ class MapLayerStore extends Store {
   };
 
   updateMapLayers = mapLayers => {
-    this.mapLayers = {
-      ...this.mapLayers,
-      ...mapLayers,
-      stop: {
-        ...this.mapLayers.stop,
-        ...mapLayers.stop,
-      },
-    };
+    this.mapLayers = defaultsDeep(cloneDeep(mapLayers), this.mapLayers);
     setMapLayerSettings({ ...this.mapLayers });
     this.emitChange();
   };
@@ -99,13 +113,14 @@ class MapLayerStore extends Store {
 export const mapLayerShape = PropTypes.shape({
   citybike: PropTypes.bool,
   parkAndRide: PropTypes.bool,
-  dynamicParkingLots: PropTypes.bool,
+  parkAndRideForBikes: PropTypes.bool,
   stop: PropTypes.shape({
     bus: PropTypes.bool,
     ferry: PropTypes.bool,
     rail: PropTypes.bool,
     subway: PropTypes.bool,
     tram: PropTypes.bool,
+    funicular: PropTypes.bool,
   }).isRequired,
   terminal: PropTypes.shape({
     bus: PropTypes.bool,
@@ -114,6 +129,11 @@ export const mapLayerShape = PropTypes.shape({
   }).isRequired,
   vehicles: PropTypes.bool,
   geoJson: PropTypes.object,
+  // Because the keys of this object depend on the config, but the config is being fetched asynchronously, we can't describe the shape here.
+  datahubTiles: PropTypes.objectOf(PropTypes.bool),
+  weatherStations: PropTypes.bool,
+  chargingStations: PropTypes.bool,
+  roadworks: PropTypes.bool,
 });
 
 export default MapLayerStore;

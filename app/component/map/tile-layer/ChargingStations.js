@@ -31,8 +31,6 @@ class ChargingStations {
     this.availabilityImageSize =
       14 * this.scaleratio * getScale(this.tile.coords.z);
     this.iconSize = 20 * this.scaleratio * getScale(this.tile.coords.z);
-
-    this.promise = this.fetchWithAction(this.drawStatus);
   }
 
   // map display is language independent, so no lang param required

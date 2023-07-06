@@ -14,11 +14,13 @@ export default class WeatherStations {
     this.config = config;
     const scaleratio = (isBrowser && window.devicePixelRatio) || 1;
     this.imageSize = 20 * scaleratio;
-    this.promise = this.getPromise();
   }
 
   static getName = () => 'weatherStations';
 
+  // Retrieves WEATHER_STATIONS_MAP tile and draws every retrieved on the map
+  // (either as point, if zoomLevel is less than config.weatherStations.smallIconZoom
+  // or via drawWeatherStationIcon). The layer is not language-dependent.
   getPromise() {
     return fetch(
       `${this.config.URL.WEATHER_STATIONS_MAP}${

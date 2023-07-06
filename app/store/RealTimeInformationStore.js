@@ -1,4 +1,5 @@
 import Store from 'fluxible/addons/BaseStore';
+import moment from 'moment';
 import events from '../util/events';
 
 class RealTimeInformationStore extends Store {
@@ -46,31 +47,44 @@ class RealTimeInformationStore extends Store {
     }
     this.client = undefined;
     this.topics = undefined;
+    this.topicsByRoute = undefined;
     this.vehicles = {};
     this.emitChange();
   }
 
   resetClient() {
     this.topics = undefined;
+    this.topicsByRoute = undefined;
     this.vehicles = {};
     this.emitChange();
   }
 
   handleMessage(message) {
     if (message) {
+      const receivedAt = moment().unix();
       if (Array.isArray(message)) {
         message.forEach(msg => {
-          this.vehicles[msg.id] = msg;
+          if (
+            !this.topicsByRoute ||
+            this.topicsByRoute[msg.route.split(':')[1]]
+          ) {
+            // Filter out old messages
+            this.vehicles[msg.id] = { ...msg, receivedAt };
+          }
         });
-      } else {
-        this.vehicles[message.id] = message;
+      } else if (
+        !this.topicsByRoute ||
+        this.topicsByRoute[message.route.split(':')[1]]
+      ) {
+        this.vehicles[message.id] = { ...message, receivedAt };
       }
       this.conditionalEmit();
     }
   }
 
-  setTopics(topics) {
+  setTopics({ topics, topicsByRoute }) {
     this.topics = topics;
+    this.topicsByRoute = topicsByRoute;
   }
 
   getVehicle = id => this.vehicles[id];

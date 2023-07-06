@@ -1,5 +1,8 @@
 
 @function navbar-icon-color($color) {
+  @if $nav-content-color { // if defined in theme, return nav-content-color
+    @return $nav-content-color
+  }
   $background-color-brightness: (red($color)*299)+(green($color)*587)+(blue($color)*114)/1000;
   $light-color-lightness: round((red(#ffffff)*299)+(green(#ffffff)*587)+(blue(#ffffff)*114)/1000);
   @if abs($background-color-brightness) < ($light-color-lightness / 3) {
@@ -115,6 +118,26 @@ $content-background-color: $background-color;
   background: $top-bar-color;
   .logo {
     min-height: 30px;
+  }
+}
+
+.app-bar--small {
+  .top-bar {
+    background: transparent;
+    float: right;
+
+    section.title {
+      padding-right: 0.7em;
+    }
+
+    section .logo {
+      min-width: 7em;
+    }
+  }
+
+  &-with-map {
+    position: absolute;
+    width: 100%;
   }
 }
 
@@ -523,13 +546,17 @@ $content-background-color: $background-color;
       display: none;
     }
   }
-  .disruption-info .icon.disruption-info {
-    font-family: $heading-font-family;
-    padding-left: 0;
-    margin-left: 10px;
-    width: 24px;
-    fill: #dc0451;
-    height: 21px;
+  .disruption-info {
+    height: 35px;
+    align-items: center;
+    .icon.disruption-info {
+      font-family: $heading-font-family;
+      padding-left: 0;
+      margin-left: 10px;
+      width: 24px;
+      fill: #dc0451;
+      height: 21px;
+    }
   }
 }
 
@@ -915,11 +942,4 @@ section.content {
     font-size: $font-size-xxsmall;
     text-decoration: none;
   }
-}
-
-.hsl-header-container {
-    p {
-	margin-block-start: 0;
-	margin-block-end: 0;
-    }
 }

@@ -10,11 +10,14 @@ import Loading from './Loading';
 import RouteAgencyInfo from './RouteAgencyInfo';
 import RouteNumber from './RouteNumber';
 import RoutePageControlPanel from './RoutePageControlPanel';
-import { PREFIX_ROUTES } from '../util/path';
+import { PREFIX_DISRUPTION, PREFIX_ROUTES } from '../util/path';
 import withBreakpoint from '../util/withBreakpoint';
 import BackButton from './BackButton'; // DT-3472
 import { isBrowser } from '../util/browser';
 import LazilyLoad, { importLazy } from './LazilyLoad';
+import { getRouteMode } from '../util/modeUtils';
+import AlertBanner from './AlertBanner';
+import { hasMeaningfulData } from '../util/alertUtils';
 
 const modules = {
   FavouriteRouteContainer: () =>
@@ -40,7 +43,7 @@ class RoutePage extends React.Component {
 
   componentDidMount() {
     // Throw error in client side if relay fails to fetch data
-    if (this.props.error) {
+    if (this.props.error && !this.props.route) {
       throw this.props.error.message;
     }
   }
@@ -50,9 +53,10 @@ class RoutePage extends React.Component {
     const { breakpoint, router, route, error } = this.props;
     const { config } = this.context;
     const tripId = this.props.match.params?.tripId;
+    const patternId = this.props.match.params?.patternId;
 
     // Render something in client side to clear SSR
-    if (isBrowser && error) {
+    if (isBrowser && error && !route) {
       return <Loading />;
     }
 
@@ -67,6 +71,10 @@ class RoutePage extends React.Component {
       }
       return null;
     }
+    const mode = getRouteMode(route);
+    const label = route.shortName ? route.shortName : route.longName || '';
+    const headsign =
+      patternId && route.patterns.find(p => p.code === patternId).headsign;
 
     return (
       <div className={cx('route-page-container')}>
@@ -93,28 +101,26 @@ class RoutePage extends React.Component {
             <div aria-hidden="true">
               <RouteNumber
                 color={route.color ? `#${route.color}` : null}
-                mode={route.mode}
+                mode={mode}
                 text=""
               />
             </div>
             <div className="route-info">
               <h1
-                className={cx('route-short-name', route.mode.toLowerCase())}
+                className={cx('route-short-name', mode.toLowerCase())}
                 style={{ color: route.color ? `#${route.color}` : null }}
               >
                 <span className="sr-only" style={{ whiteSpace: 'pre' }}>
                   {this.context.intl.formatMessage({
-                    id: route.mode.toLowerCase(),
+                    id: mode.toLowerCase(),
                   })}{' '}
                 </span>
-                {route.shortName}
+                {label}
               </h1>
-              {tripId && route.patterns[1]?.headsign && (
+              {tripId && headsign && (
                 <div className="trip-destination">
                   <Icon className="in-text-arrow" img="icon-icon_arrow-right" />
-                  <div className="destination-headsign">
-                    {route.patterns[1].headsign}
-                  </div>
+                  <div className="destination-headsign">{headsign}</div>
                 </div>
               )}
             </div>
@@ -129,11 +135,19 @@ class RoutePage extends React.Component {
               </LazilyLoad>
             )}
           </div>
+          {tripId && hasMeaningfulData(route.alerts) && (
+            <div className="trip-page-alert-container">
+              <AlertBanner
+                alerts={route.alerts}
+                linkAddress={`/${PREFIX_ROUTES}/${this.props.match.params.routeId}/${PREFIX_DISRUPTION}/${this.props.match.params.patternId}`}
+              />
+            </div>
+          )}
           <RouteAgencyInfo route={route} />
         </div>
         {route &&
           route.patterns &&
-          this.props.match.params.type === 'hairiot' && (
+          this.props.match.params.type === PREFIX_DISRUPTION && (
             <RoutePageControlPanel
               match={this.props.match}
               route={route}
@@ -162,9 +176,16 @@ const containerComponent = createFragmentContainer(withBreakpoint(RoutePage), {
         alertSeverityLevel
         effectiveEndDate
         effectiveStartDate
-        trip {
-          pattern {
-            code
+        alertDescriptionTextTranslations {
+          language
+          text
+        }
+        entities {
+          __typename
+          ... on Route {
+            patterns {
+              code
+            }
           }
         }
       }

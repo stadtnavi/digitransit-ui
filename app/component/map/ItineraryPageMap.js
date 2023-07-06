@@ -19,6 +19,9 @@ function ItineraryPageMap(
     viaPoints,
     breakpoint,
     showVehicles,
+    topics,
+    onlyHasWalkingItineraries,
+    loading,
     ...rest
   },
   { match, router, executeAction, config },
@@ -27,7 +30,9 @@ function ItineraryPageMap(
   const leafletObjs = [];
 
   if (showVehicles) {
-    leafletObjs.push(<VehicleMarkerContainer key="vehicles" useLargeIcon />);
+    leafletObjs.push(
+      <VehicleMarkerContainer key="vehicles" useLargeIcon topics={topics} />,
+    );
   }
   if (!showActive) {
     itineraries.forEach((itinerary, i) => {
@@ -52,29 +57,19 @@ function ItineraryPageMap(
         legs={itineraries[activeIndex].legs}
         showTransferLabels={showActive}
         showIntermediateStops
+        onlyHasWalkingItineraries={onlyHasWalkingItineraries}
+        loading={loading}
       />,
     );
   }
 
   if (from.lat && from.lon) {
     leafletObjs.push(
-      <LocationMarker
-        key="fromMarker"
-        position={from}
-        type="from"
-        streetMode={hash}
-      />,
+      <LocationMarker key="fromMarker" position={from} type="from" />,
     );
   }
   if (to.lat && to.lon) {
-    leafletObjs.push(
-      <LocationMarker
-        key="toMarker"
-        position={to}
-        type="to"
-        streetMode={hash}
-      />,
-    );
+    leafletObjs.push(<LocationMarker key="toMarker" position={to} type="to" />);
   }
   viaPoints.forEach((via, i) => {
     leafletObjs.push(<LocationMarker key={`via_${i}`} position={via} />);
@@ -109,12 +104,15 @@ function ItineraryPageMap(
 ItineraryPageMap.propTypes = {
   itineraries: PropTypes.array.isRequired,
   activeIndex: PropTypes.number.isRequired,
+  topics: PropTypes.array,
   showActive: PropTypes.bool,
   breakpoint: PropTypes.string.isRequired,
   showVehicles: PropTypes.bool,
   from: PropTypes.object.isRequired,
   to: PropTypes.object.isRequired,
   viaPoints: PropTypes.array.isRequired,
+  onlyHasWalkingItineraries: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
 ItineraryPageMap.contextTypes = {

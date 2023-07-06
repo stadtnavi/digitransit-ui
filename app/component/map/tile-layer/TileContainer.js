@@ -1,4 +1,4 @@
-import flatten from 'lodash/flatten';
+import flatMap from 'lodash/flatMap';
 import omit from 'lodash/omit';
 import L from 'leaflet';
 import { isEqual, some } from 'lodash';
@@ -20,6 +20,7 @@ class TileContainer {
     hilightedStops,
     vehicles,
     stopsToShow,
+    lang,
   ) {
     const markersMinZoom = Math.min(
       getCityBikeMinZoomOnStopsNearYou(
@@ -70,6 +71,15 @@ class TileContainer {
       .filter(Layer => {
         const layerName = Layer.getName();
 
+        // Because the Datahub layers are nested, we check differently if they're enabled.
+        if (layerName === 'datahubTiles') {
+          const { name: datahubLayerName } = Layer.layerConfig;
+          const isEnabled = Boolean(
+            props.mapLayers.datahubTiles[datahubLayerName],
+          );
+          return isEnabled;
+        }
+
         // stops and terminals are drawn on same layer
         const isEnabled =
           isLayerEnabled(layerName, this.props.mapLayers) ||
@@ -95,15 +105,10 @@ class TileContainer {
           return isEnabled;
         }
         if (
-          layerName === 'parkAndRide' &&
+          (layerName === 'parkAndRide' ||
+            layerName === 'parkAndRideForBikes') &&
           config.parkAndRide &&
-          this.coords.z >= config.parkAndRide.parkAndRideMinZoom
-        ) {
-          return isEnabled;
-        }
-        if (
-          layerName === 'dynamicParkingLots' &&
-          this.coords.z >= config.dynamicParkingLots.dynamicParkingLotsMinZoom
+          this.coords.z >= config.parkAndRide.minZoom
         ) {
           return isEnabled;
         }
@@ -116,12 +121,6 @@ class TileContainer {
         if (
           layerName === 'chargingStations' &&
           this.coords.z >= config.chargingStations.minZoom
-        ) {
-          return isEnabled;
-        }
-        if (
-          layerName === 'bikeParks' &&
-          this.coords.z >= config.bikeParks.minZoom
         ) {
           return isEnabled;
         }
@@ -146,7 +145,7 @@ class TileContainer {
 
     this.el.layers = this.layers.map(layer => omit(layer, 'tile'));
 
-    Promise.all(this.layers.map(layer => layer.promise)).then(() =>
+    Promise.all(this.layers.map(layer => layer.getPromise(lang))).then(() =>
       done(null, this.el),
     );
   }
@@ -217,15 +216,16 @@ class TileContainer {
         (point[1] * this.scaleratio) % this.tileSize,
       ];
 
-      features = flatten(
-        this.layers.map(
-          layer =>
-            layer.features &&
-            layer.features.map(feature => ({
+      features = flatMap(this.layers, layer =>
+        layer.features
+          ? layer.features.map(feature => ({
               layer: layer.constructor.getName(),
+              // todo: this is really ugly!
+              layerConfig: layer.constructor.layerConfig,
               feature,
-            })),
-        ),
+              coords: this.project(feature.geom),
+            }))
+          : [],
       );
       features = projectedVehicles.concat(features);
 

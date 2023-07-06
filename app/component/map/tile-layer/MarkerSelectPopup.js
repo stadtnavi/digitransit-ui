@@ -7,10 +7,9 @@ import SelectCityBikeRow from './SelectCityBikeRow';
 import SelectParkAndRideRow from './SelectParkAndRideRow';
 import SelectVehicleContainer from './SelectVehicleContainer';
 import SelectCarpoolRow from './SelectCarpoolRow';
-import SelectBikeParkRow from './SelectBikeParkRow';
-import SelectDynamicParkingLotsRow from './SelectDynamicParkingLotsRow';
 import SelectRoadworksRow from './SelectRoadworksRow';
 import SelectChargingStationRow from './SelectChargingStationRow';
+import SelectDatahubPoiRow from './SelectDatahubPoiRow';
 
 function MarkerSelectPopup(props) {
   const hasStop = () =>
@@ -19,29 +18,40 @@ function MarkerSelectPopup(props) {
   const hasVehicle = () =>
     props.options.find(option => option.layer === 'realTimeVehicle');
 
+  const getRowForParking = (parking, layer) =>
+    ((layer === 'parkAndRide' && parking.carPlaces) ||
+      (layer === 'parkAndRideForBikes' && parking.bicyclePlaces)) && (
+      <SelectParkAndRideRow
+        key={parking.id}
+        name={parking.name}
+        carParkId={layer === 'parkAndRide' ? parking.id : undefined}
+        bikeParkId={layer === 'parkAndRideForBikes' ? parking.id : undefined}
+      />
+    );
+
   const rows = props.options.map(option => {
-    if (option.layer === 'stop' && option.feature.properties.stops) {
+    if (option.layer === 'datahubTiles') {
+      const { lat, lon } = option.coords;
       return (
-        <SelectStopRow
-          terminal
-          gtfsId={option.feature.properties.gtfsId}
-          code={option.feature.properties.code || null}
+        <SelectDatahubPoiRow
+          datahubId={option.feature.properties.datahub_id}
           name={option.feature.properties.name}
-          type={option.feature.properties.type}
-          key={option.feature.properties.gtfsId}
-          desc={option.feature.properties.desc}
+          description={option.feature.properties.tag_name}
+          latitude={lat}
+          longitude={lon}
+          // todo: use option.feature.properties.svg_icon?
+          icon={option.layerConfig.icon}
         />
       );
     }
+
     if (option.layer === 'stop') {
       return (
         <SelectStopRow
-          gtfsId={option.feature.properties.gtfsId}
-          code={option.feature.properties.code || null}
-          name={option.feature.properties.name}
-          type={option.feature.properties.type}
+          terminal={!!option.feature.properties.stops}
+          {...option.feature.properties}
           key={option.feature.properties.gtfsId}
-          desc={option.feature.properties.desc}
+          colors={props.colors}
         />
       );
     }
@@ -50,26 +60,30 @@ function MarkerSelectPopup(props) {
         <SelectCityBikeRow
           {...option.feature.properties}
           key={`citybike:${option.feature.properties.id}`}
-          selectRow={() => props.selectRow(option)}
-          name={option.feature.properties.name}
-          desc={option.feature.properties.desc}
         />
       );
     }
-    if (option.layer === 'parkAndRide') {
-      return (
-        <SelectParkAndRideRow
-          {...option.feature.properties}
-          key={
-            Array.isArray(option.feature.properties.facilities) &&
-            option.feature.properties.facilities.length > 0 &&
-            option.feature.properties.facilities[0].id
-          }
-          selectRow={() => props.selectRow(option)}
-          colors={props.colors}
-        />
-      );
+
+    if (
+      option.layer === 'parkAndRide' ||
+      option.layer === 'parkAndRideForBikes'
+    ) {
+      if (option.feature.properties.vehicleParking) {
+        const { vehicleParking } = option.feature.properties;
+        if (Array.isArray(vehicleParking) && vehicleParking.length > 0) {
+          return (
+            <React.Fragment key="parkAndRideOptions">
+              {vehicleParking.map(parking => {
+                return getRowForParking(parking, option.layer);
+              })}
+            </React.Fragment>
+          );
+        }
+      } else {
+        return getRowForParking(option.feature.properties, option.layer);
+      }
     }
+
     if (option.layer === 'realTimeVehicle') {
       return (
         <SelectVehicleContainer
@@ -84,25 +98,6 @@ function MarkerSelectPopup(props) {
         <SelectCarpoolRow
           {...option.feature}
           key={option.feature.properties.name}
-          selectRow={() => props.selectRow(option)}
-        />
-      );
-    }
-    if (option.layer === 'dynamicParkingLots') {
-      return (
-        <SelectDynamicParkingLotsRow
-          {...option.feature}
-          key={option.feature.properties.name}
-          selectRow={() => props.selectRow(option)}
-        />
-      );
-    }
-    if (option.layer === 'bikeParks') {
-      return (
-        <SelectBikeParkRow
-          {...option.feature}
-          key={option.feature.properties.id}
-          selectRow={() => props.selectRow(option)}
         />
       );
     }
@@ -111,7 +106,6 @@ function MarkerSelectPopup(props) {
         <SelectRoadworksRow
           {...option.feature}
           key={option.feature.properties.id}
-          selectRow={() => props.selectRow(option)}
         />
       );
     }
@@ -121,13 +115,11 @@ function MarkerSelectPopup(props) {
         <SelectChargingStationRow
           {...option.feature}
           key={option.feature.properties.id}
-          selectRow={() => props.selectRow(option)}
         />
       );
     }
     return null;
   });
-
   let id = 'choose-stop';
   if (hasStop() && hasVehicle()) {
     id = 'choose-stop-or-vehicle';

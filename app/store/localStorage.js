@@ -124,9 +124,9 @@ export function setCustomizedSettings(data) {
       data.includeBikeSuggestions,
       oldSettings.includeBikeSuggestions,
     ),
-    useCarParkAvailabilityInformation: getValueOrDefault(
-      data.useCarParkAvailabilityInformation,
-      oldSettings.useCarParkAvailabilityInformation,
+    useVehicleParkingAvailabilityInformation: getValueOrDefault(
+      data.useVehicleParkingAvailabilityInformation,
+      oldSettings.useVehicleParkingAvailabilityInformation,
     ),
     includeCarSuggestions: getValueOrDefault(
       data.includeCarSuggestions,
@@ -135,6 +135,10 @@ export function setCustomizedSettings(data) {
     includeParkAndRideSuggestions: getValueOrDefault(
       data.includeParkAndRideSuggestions,
       oldSettings.includeParkAndRideSuggestions,
+    ),
+    showBikeAndParkItineraries: getValueOrDefault(
+      data.showBikeAndParkItineraries,
+      oldSettings.showBikeAndParkItineraries,
     ),
   };
 

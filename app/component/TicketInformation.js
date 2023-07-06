@@ -153,50 +153,28 @@ export default function TicketInformation(
               )}
             </div>
           </div>
-          {fare.isUnknown
-            ? fare.agency &&
-              fare.agency.fareUrl &&
-              !config.hideExternalOperator(fare.agency) && (
-                <div
-                  className="ticket-type-agency-link"
-                  key={i} // eslint-disable-line react/no-array-index-key
+          {fare.agency &&
+            fare.agency.fareUrl &&
+            (!fare.isUnknown || !config.hideExternalOperator(fare.agency)) && (
+              <div
+                className="ticket-type-agency-link"
+                key={i} // eslint-disable-line react/no-array-index-key
+              >
+                <ExternalLink
+                  className="itinerary-ticket-external-link"
+                  href={fare.agency.fareUrl}
+                  onClick={() => {
+                    addAnalyticsEvent({
+                      category: 'Itinerary',
+                      action: 'OpenHowToBuyTicket',
+                      name: null,
+                    });
+                  }}
                 >
-                  <ExternalLink
-                    className="itinerary-ticket-external-link"
-                    href={fare.agency.fareUrl}
-                    onClick={() => {
-                      addAnalyticsEvent({
-                        category: 'Itinerary',
-                        action: 'OpenHowToBuyTicket',
-                        name: null,
-                      });
-                    }}
-                  >
-                    {intl.formatMessage({ id: 'extra-info' })}
-                  </ExternalLink>
-                </div>
-              )
-            : fare.agency &&
-              fare.agency.fareUrl && (
-                <div
-                  className="ticket-type-agency-link"
-                  key={i} // eslint-disable-line react/no-array-index-key
-                >
-                  <ExternalLink
-                    className="itinerary-ticket-external-link"
-                    href={fare.agency.fareUrl}
-                    onClick={() => {
-                      addAnalyticsEvent({
-                        category: 'Itinerary',
-                        action: 'OpenHowToBuyTicket',
-                        name: null,
-                      });
-                    }}
-                  >
-                    {intl.formatMessage({ id: 'extra-info' })}
-                  </ExternalLink>
-                </div>
-              )}
+                  {intl.formatMessage({ id: 'extra-info' })}
+                </ExternalLink>
+              </div>
+            )}
           {/* In case we've got a ticketUrl, we display it in a button */}
           {ticketurl && (
             <div

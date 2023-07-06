@@ -61,14 +61,30 @@ describe('planParamUtil', () => {
     it('should return mode defaults from config if modes are missing from the localStorage', () => {
       const params = utils.preparePlanParams(config, false)(...defaultProps);
       const { modes } = params;
-      expect(modes).to.deep.equal([{ mode: 'BUS' }, { mode: 'WALK' }]);
+      expect(modes).to.deep.equal([
+        // In bbnavi, we always want direct Flex routing by default.
+        { mode: 'FLEX', qualifier: 'DIRECT' },
+        { mode: 'FLEX', qualifier: 'ACCESS' },
+        { mode: 'FLEX', qualifier: 'EGRESS' },
+
+        { mode: 'BUS' },
+        { mode: 'WALK' },
+      ]);
     });
 
     it('should ignore localstorage modes if useDefaultModes is true', () => {
       setCustomizedSettings({ modes: ['BUS', 'SUBWAY'] });
       const params = utils.preparePlanParams(config, true)(...defaultProps);
       const { modes } = params;
-      expect(modes).to.deep.equal([{ mode: 'BUS' }, { mode: 'WALK' }]);
+      expect(modes).to.deep.equal([
+        // In bbnavi, we always want direct Flex routing by default.
+        { mode: 'FLEX', qualifier: 'DIRECT' },
+        { mode: 'FLEX', qualifier: 'ACCESS' },
+        { mode: 'FLEX', qualifier: 'EGRESS' },
+
+        { mode: 'BUS' },
+        { mode: 'WALK' },
+      ]);
     });
 
     it('should use bikeSpeed from localStorage to find closest possible option in config', () => {
@@ -276,25 +292,6 @@ describe('planParamUtil', () => {
       expect(missing).to.deep.equal([]);
     });
 
-    it('should have disableRemainingWeightHeuristic as false when CITYBIKE is not selected nor BICYCLE + TRANSIT + viapoints at the same time', () => {
-      setCustomizedSettings({
-        modes: ['BICYCLE', 'FERRY', 'SUBWAY', 'RAIL'],
-      });
-      const params = utils.preparePlanParams(defaultConfig, false)(
-        {
-          from,
-          to,
-        },
-        {
-          location: {
-            query: {},
-          },
-        },
-      );
-      const { disableRemainingWeightHeuristic } = params;
-      expect(disableRemainingWeightHeuristic).to.equal(false);
-    });
-
     it('should not include CITYBIKE in bikepark modes', () => {
       setCustomizedSettings({
         modes: ['CITYBIKE', 'BUS'],
@@ -318,37 +315,17 @@ describe('planParamUtil', () => {
       ]);
     });
 
-    it('should have disableRemainingWeightHeuristic as true when CITYBIKE is selected', () => {
-      setCustomizedSettings({
-        modes: ['CITYBIKE', 'BUS', 'TRAM', 'FERRY', 'SUBWAY', 'RAIL'],
-      });
-      const params = utils.preparePlanParams(defaultConfig, false)(
-        {
-          from,
-          to,
-        },
-        {
-          location: {
-            query: {},
-          },
-        },
-      );
-      const { disableRemainingWeightHeuristic } = params;
-      expect(disableRemainingWeightHeuristic).to.equal(
-        defaultConfig.transportModes.citybike.availableForSelection,
-      );
-    });
-
     it('should use same letter case for citybike networks from custom settings as in default settings', () => {
       setCustomizedSettings({
-        allowedVehicleRentalNetworks: ['FOO'],
+        // On purpose, bar is not included here.
+        allowedVehicleRentalNetworks: ['FoO', 'baz'],
       });
       const configWithCitybikes = {
         ...defaultConfig,
         cityBike: {
           capacity: 'Bikes on station',
           networks: {
-            foo: {
+            FoO: {
               enabled: true,
               icon: 'citybike',
               name: {
@@ -361,6 +338,14 @@ describe('planParamUtil', () => {
               icon: 'citybike',
               name: {
                 en: 'Bar bikes',
+              },
+              type: 'citybike',
+            },
+            BAZ: {
+              enabled: true,
+              icon: 'citybike',
+              name: {
+                en: 'Baaaz',
               },
               type: 'citybike',
             },
@@ -379,7 +364,8 @@ describe('planParamUtil', () => {
         },
       );
       const { allowedVehicleRentalNetworks } = params;
-      expect(allowedVehicleRentalNetworks).to.deep.equal(['foo']);
+      // We expect `config.cityBike.network`'s casing here.
+      expect(allowedVehicleRentalNetworks).to.deep.equal(['FoO', 'BAZ']);
     });
   });
 

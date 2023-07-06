@@ -12,6 +12,7 @@ import LazilyLoad, { importLazy } from './LazilyLoad';
 
 const modules = {
   AppBar: () => importLazy(import('./AppBar')),
+  AppBarSmall: () => importLazy(import('./AppBarSmall')),
   AppBarHsl: () => importLazy(import('./AppBarHsl')),
   MessageBar: () => importLazy(import('./MessageBar')),
 };
@@ -33,7 +34,9 @@ const AppBarContainer = ({
   executeAction,
   homeUrl,
   logo,
+  logoSmall,
   user,
+  favourites,
   style,
   lang,
   breakpoint,
@@ -59,15 +62,29 @@ const AppBarContainer = ({
         />
       </a>
       <LazilyLoad modules={modules}>
-        {({ AppBar, AppBarHsl, MessageBar }) =>
+        {/* eslint-disable no-nested-ternary */}
+        {({ AppBar, AppBarSmall, AppBarHsl, MessageBar }) =>
           style === 'hsl' ? (
             <div
               className="hsl-header-container"
               style={{ display: isClient ? 'block' : 'none' }}
             >
-              <AppBarHsl user={user} lang={lang} />
+              <AppBarHsl user={user} lang={lang} favourites={favourites} />
               <MessageBar breakpoint={breakpoint} />{' '}
             </div>
+          ) : navigator?.userAgent?.endsWith('smart-village-app') &&
+            breakpoint !== 'large' ? (
+            <AppBarSmall
+              {...args}
+              showLogo
+              logo={logoSmall}
+              breakpoint={breakpoint}
+              titleClicked={() => {
+                executeAction(storeOrigin, {});
+                executeAction(storeDestination, {});
+                router.push(homeUrl);
+              }}
+            />
           ) : (
             <AppBar
               {...args}
@@ -84,6 +101,7 @@ const AppBarContainer = ({
             />
           )
         }
+        {/* eslint-enable no-nested-ternary */}
       </LazilyLoad>
     </>
   );
@@ -95,9 +113,11 @@ AppBarContainer.propTypes = {
   executeAction: PropTypes.func,
   homeUrl: PropTypes.string.isRequired,
   logo: PropTypes.string,
+  logoSmall: PropTypes.string,
   user: PropTypes.object,
-  style: PropTypes.string.isRequired, // DT-3375
-  lang: PropTypes.string, // DT-3376
+  favourites: PropTypes.array,
+  style: PropTypes.string.isRequired,
+  lang: PropTypes.string,
   breakpoint: PropTypes.string.isRequired,
 };
 
@@ -109,10 +129,11 @@ const WithContext = connectToStores(
     router: routerShape.isRequired,
     executeAction: PropTypes.func,
   })(AppBarContainerWithBreakpoint),
-  ['UserStore', 'PreferencesStore'],
+  ['FavouriteStore', 'UserStore', 'PreferencesStore'],
   context => ({
     user: context.getStore('UserStore').getUser(),
-    lang: context.getStore('PreferencesStore').getLanguage(), // DT-3376
+    lang: context.getStore('PreferencesStore').getLanguage(),
+    favourites: context.getStore('FavouriteStore').getFavourites(),
   }),
 );
 

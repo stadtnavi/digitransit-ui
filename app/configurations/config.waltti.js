@@ -1,16 +1,36 @@
 const API_URL = process.env.API_URL || 'https://dev-api.digitransit.fi';
+const OTP_URL = process.env.OTP_URL || `${API_URL}/routing/v2/routers/waltti/`;
 const MAP_URL =
   process.env.MAP_URL || 'https://digitransit-dev-cdn-origin.azureedge.net';
-const MAP_PATH_PREFIX = process.env.MAP_PATH_PREFIX || '';
+const POI_MAP_PREFIX = `${MAP_URL}/map/v3/waltti`;
 const APP_DESCRIPTION = 'Uusi Reittiopas';
 const YEAR = 1900 + new Date().getYear();
+const HSLParkAndRideUtils = require('../util/ParkAndRideUtils').default.HSL;
 
 export default {
   YEAR,
   URL: {
-    OTP: process.env.OTP_URL || `${API_URL}/routing/v1/routers/waltti/`,
-    STOP_MAP: `${MAP_URL}/map/v1/${MAP_PATH_PREFIX}waltti-stop-map/`,
-    CITYBIKE_MAP: `${MAP_URL}/map/v1/${MAP_PATH_PREFIX}waltti-citybike-map/`,
+    OTP: OTP_URL,
+    STOP_MAP: {
+      default: `${POI_MAP_PREFIX}/fi/stops,stations/`,
+      sv: `${POI_MAP_PREFIX}/sv/stops,stations/`,
+    },
+    RENTAL_STATION_MAP: {
+      default: `${POI_MAP_PREFIX}/fi/rentalStations/`,
+    },
+    REALTIME_RENTAL_STATION_MAP: {
+      default: `${POI_MAP_PREFIX}/fi/realtimeRentalStations/`,
+    },
+    PARK_AND_RIDE_MAP: {
+      default: `${POI_MAP_PREFIX}/en/vehicleParking/`,
+      sv: `${POI_MAP_PREFIX}/sv/vehicleParking/`,
+      fi: `${POI_MAP_PREFIX}/fi/vehicleParking/`,
+    },
+    PARK_AND_RIDE_GROUP_MAP: {
+      default: `${POI_MAP_PREFIX}/en/vehicleParkingGroups/`,
+      sv: `${POI_MAP_PREFIX}/sv/vehicleParkingGroups/`,
+      fi: `${POI_MAP_PREFIX}/fi/vehicleParkingGroups/`,
+    },
   },
 
   contactName: {
@@ -119,17 +139,55 @@ export default {
         en: 'The closest ferry piers',
       },
     },
+
+    funicular: {
+      availableForSelection: false,
+      defaultValue: false,
+    },
   },
+
+  nearbyModeSet: 'waltti',
 
   redirectReittiopasParams: true,
   queryMaxAgeDays: 14,
 
-  nationalServiceLink: { name: 'matka.fi', href: 'https://opas.matka.fi/' },
+  nationalServiceLink: {
+    fi: {
+      name: 'matka.fi',
+      href: 'https://opas.matka.fi/',
+    },
+    sv: {
+      name: 'matka.fi',
+      href: 'https://opas.matka.fi/sv/',
+    },
+    en: {
+      name: 'matka.fi',
+      href: 'https://opas.matka.fi/en/',
+    },
+  },
 
   showNearYouButtons: true,
   allowLogin: false,
 
   messageBarAlerts: true,
+
+  // DT-5494
+  includeCarSuggestions: true,
+  includeParkAndRideSuggestions: true,
+  // Include both bike and park and bike and public
+  includePublicWithBikePlan: false,
+  // Park and ride and car suggestions separated into two switches
+  separatedParkAndRideSwitch: true,
+  showBikeAndParkItineraries: true,
+  parkingAreaSources: ['liipi'],
+
+  parkAndRide: {
+    showParkAndRide: false,
+    parkAndRideMinZoom: 13,
+    pageContent: {
+      default: HSLParkAndRideUtils,
+    },
+  },
 
   hostnames: [
     // DEV hostnames

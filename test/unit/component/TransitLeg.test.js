@@ -15,6 +15,7 @@ import { mockContext } from '../helpers/mock-context';
 
 const defaultProps = {
   children: <div />,
+  interliningLegs: [],
   focusAction: () => {},
   index: 0,
   lang: 'fi',
@@ -304,6 +305,15 @@ describe('<TransitLeg />', () => {
               code: 'E2502',
               gtfsId: 'HSL:2252202',
               name: 'Leppäsolmu',
+              zoneId: 'B',
+            },
+          },
+          {
+            arrivalTime: 1540990270000,
+            stop: {
+              code: 'E2506',
+              gtfsId: 'HSL:123456',
+              name: 'Turvesolmu',
               zoneId: 'B',
             },
           },
@@ -639,6 +649,7 @@ describe('<TransitLeg />', () => {
             arrivalTime: 1553856410,
             stop: {
               gtfsId: 'foobar',
+              name: 'Foo',
               alerts: [
                 {
                   alertSeverityLevel: AlertSeverityLevelType.Warning,
@@ -728,7 +739,7 @@ describe('<TransitLeg />', () => {
           zones: { itinerary: true },
           showTicketInformation: true,
           availableTickets: { HSL: { 'HSL:A': { price: 5.5, zones: ['A'] } } },
-          feedIds: ['HSL', 'HSLlautta'],
+          feedIds: ['HSL'],
           colors: { primary: '#007ac9' },
           hideExternalOperator: () => false,
         },
@@ -785,7 +796,7 @@ describe('<TransitLeg />', () => {
           zones: { itinerary: true },
           showTicketInformation: true,
           availableTickets: { HSL: { 'foo:A': { price: 5.5, zones: ['A'] } } },
-          feedIds: ['HSL', 'HSLlautta'],
+          feedIds: ['HSL'],
           colors: { primary: '#007ac9' },
           hideExternalOperator: () => false,
         },

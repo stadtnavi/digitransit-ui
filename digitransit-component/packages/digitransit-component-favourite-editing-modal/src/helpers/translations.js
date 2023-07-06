@@ -26,6 +26,8 @@ const translations = {
     'input-placeholder': 'Give the name a place (optional)',
     save: 'Save',
     'save-place': 'Save place',
+    up: 'Move favourite up',
+    down: 'Move favourite down',
   },
   fi: {
     cancel: 'Peruuta',
@@ -40,13 +42,15 @@ const translations = {
     'input-placeholder': 'Anna paikalle nimi (vapaaehtoinen)',
     save: 'Tallenna',
     'save-place': 'Tallenna paikka',
+    up: 'Siirrä suosikkisijaintia ylöpäin',
+    down: 'Siirrä suosikkisijaintia alaspäin',
   },
   sv: {
     cancel: 'Avbryt',
     delete: 'Ta bort',
     'delete-place-header': 'Vill du ta bort platsen?',
     'delete-place-name': 'Ta bort platsen: {{favourite.name}}',
-    'edit-places': 'Rediger platser',
+    'edit-places': 'Redigera platser',
     'edit-place-name': 'Edit place: {{favourite.name}}',
     'edit-modal-on-open': 'Favourite editing modal.',
     'choose-icon': 'Välj platsens ikon',
@@ -54,6 +58,8 @@ const translations = {
     'input-placeholder': 'Ange platsens namn (frivilligt)',
     save: 'Spara',
     'save-place': 'Spara plats',
+    up: 'Flytta favoriten uppåt',
+    down: 'Flytta favoriten nedåt',
   },
 };
 

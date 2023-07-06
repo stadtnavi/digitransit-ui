@@ -1,67 +1,81 @@
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import TileLayerContainer from './TileLayerContainer';
-import CityBikes from './CityBikes';
-import DynamicParkingLots from './DynamicParkingLots';
+import BikeRentalStations from './BikeRentalStations';
+import RentalVehicles from './RentalVehicles';
 import WeatherStations from './WeatherStations';
+import DatahubTiles from './DatahubTiles';
 import Stops from './Stops';
-import ParkAndRide from './ParkAndRide';
-import BikeParks from './BikeParks';
+import ParkAndRideForCars from './ParkAndRideForCars.bbnavi';
+import ParkAndRideForBikes from './ParkAndRideForBikes.bbnavi';
 import Roadworks from './Roadworks';
 import ChargingStations from './ChargingStations';
 import { mapLayerShape } from '../../../store/MapLayerStore';
 import Loading from '../../Loading';
 
 export default function VectorTileLayerContainer(props, { config }) {
-  const [layers, setLayers] = useState([]);
-  const [mapLayers, setMapLayers] = useState([]);
+  const layers = [];
 
-  useEffect(() => {
-    const layersToAdd = [];
+  layers.push(Stops);
 
-    layersToAdd.push(Stops);
-    if (props.mapLayers.citybike) {
-      layersToAdd.push(CityBikes);
+  if (props.mapLayers.citybike) {
+    layers.push(BikeRentalStations);
+    if (config.URL.RENTAL_VEHICLE_MAP) {
+      layers.push(RentalVehicles);
     }
+  }
 
-    if (config.bikeParks && config.bikeParks.show) {
-      layersToAdd.push(BikeParks);
-    }
-    if (props.mapLayers.parkAndRide) {
-      layersToAdd.push(ParkAndRide);
-    }
+  if (props.mapLayers.parkAndRide) {
+    layers.push(ParkAndRideForCars);
+  }
+  if (props.mapLayers.parkAndRideForBikes) {
+    layers.push(ParkAndRideForBikes);
+  }
 
-    if (
-      config.dynamicParkingLots &&
-      config.dynamicParkingLots.showDynamicParkingLots
-    ) {
-      layersToAdd.push(DynamicParkingLots);
-    }
+  if (props.mapLayers.weatherStations) {
+    layers.push(WeatherStations);
+  }
 
-    if (config.weatherStations && config.weatherStations.show) {
-      layersToAdd.push(WeatherStations);
-    }
+  if (config.datahubTiles && props.mapLayers.datahubTiles) {
+    config.datahubTiles.layers.forEach(layerConfig => {
+      // Don't render tile layer if it isn't enabled.
+      if (!props.mapLayers.datahubTiles[layerConfig.name]) {
+        return;
+      }
 
-    if (config.chargingStations && config.chargingStations.show) {
-      layersToAdd.push(ChargingStations);
-    }
+      // Technically, we just need to pass the layer's base URL into the instance.
+      // To follow this code base's style, we use a "wrapper class" instead of a closure.
+      class DatahubTilesWithLayer extends DatahubTiles {
+        // eslint-disable-next-line no-shadow
+        constructor(tile, config) {
+          super(tile, layerConfig, config);
+        }
 
-    if (config.roadworks && config.roadworks.showRoadworks) {
-      layersToAdd.push(Roadworks);
-    }
+        static getName = () => 'datahubTiles';
 
-    setLayers(layersToAdd);
-    // For some reason this is needed, to release deep object references and update map layers properly.
-    setMapLayers(JSON.parse(JSON.stringify(props.mapLayers)));
-  }, [props, config]);
+        // We need this as a static property so that `TileContainer` can check if
+        // this layer is enabled *before* creating instances from the class.
+        static layerConfig = layerConfig;
+      }
+      layers.push(DatahubTilesWithLayer);
+    });
+  }
+
+  if (props.mapLayers.chargingStations) {
+    layers.push(ChargingStations);
+  }
+
+  if (props.mapLayers.roadworks) {
+    layers.push(Roadworks);
+  }
 
   return layers.length !== 0 ? (
     <TileLayerContainer
       key="tileLayer"
       pane="markerPane"
       layers={layers}
-      mapLayers={mapLayers}
+      mapLayers={props.mapLayers}
       mergeStops={props.mergeStops}
       hilightedStops={props.hilightedStops}
       stopsToShow={props.stopsToShow}

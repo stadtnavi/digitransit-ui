@@ -24,8 +24,8 @@ function SeparatorLine({ usePaddingBottom20 }) {
     ? styles['separator-div2']
     : styles['separator-div'];
   return (
-    <div id="SeparatorDiv" className={className}>
-      <div id="SeparatorLine" className={styles['separator-line']} />
+    <div className={className}>
+      <div className={styles['separator-line']} />
     </div>
   );
 }
@@ -99,6 +99,7 @@ function BubbleDialog({ title, content, closeDialog, shouldRender, lang }) {
           </div>
           <button
             className={styles['nearby-stops-bubble-dialog-close']}
+            aria-label={i18next.t('close-nearby-teaser')}
             onClick={event => {
               event.preventDefault();
               closeDialog();
@@ -163,6 +164,22 @@ BubbleDialog.propTypes = {
  *    />
  *
  */
+
+const validNearYouModes = [
+  'favorite',
+  'bus',
+  'tram',
+  'rail',
+  'subway',
+  'airplane',
+  'ferry',
+  'citybike',
+];
+
+function getIconName(mode, modeSet) {
+  return modeSet === 'default' ? `mode-${mode}` : `mode-${modeSet}-${mode}`;
+}
+
 function NearStopsAndRoutes({
   modeArray,
   urlPrefix,
@@ -176,6 +193,7 @@ function NearStopsAndRoutes({
   buttonStyle,
   title,
   modes,
+  modeSet,
   modeIconColors,
   fontWeights,
   showTeaser,
@@ -210,91 +228,93 @@ function NearStopsAndRoutes({
     urlParts.splice(urlParts.length - 1, 0, language);
     urlStart = urlParts.join('/');
   }
-  const buttons = modeArray.map(mode => {
-    const withAlert = modesWithAlerts.includes(mode.toUpperCase());
-    let url = `${urlStart}/${mode.toUpperCase()}/POS`;
-    if (origin.lat && origin.lon) {
-      url += `/${encodeURIComponent(origin.address)}::${origin.lat},${
-        origin.lon
-      }`;
-    }
+  const buttons = modeArray
+    .filter(mode => validNearYouModes.includes(mode))
+    .map(mode => {
+      const withAlert = modesWithAlerts.includes(mode.toUpperCase());
+      let url = `${urlStart}/${mode.toUpperCase()}/POS`;
+      if (origin.lat && origin.lon) {
+        url += `/${encodeURIComponent(origin.address)}::${origin.lat},${
+          origin.lon
+        }`;
+      }
 
-    const modeButton = !modes ? (
-      <>
-        <span className={styles['sr-only']}>
-          {i18next.t(`pick-mode-${mode}`, { lng: language })}
-        </span>
-        <span className={styles['transport-mode-icon-container']}>
-          <span className={styles['transport-mode-icon-with-icon']}>
-            <Icon
-              img={mode === 'favorite' ? 'star' : `mode-${mode}`}
-              color={modeIconColors[`mode-${mode}`]}
-            />
-            {withAlert && (
-              <span className={styles['transport-mode-alert-icon']}>
-                <Icon img="caution" color="#dc0451" />
-              </span>
-            )}
+      const modeButton = !modes ? (
+        <>
+          <span className={styles['sr-only']}>
+            {i18next.t(`pick-mode-${mode}`, { lng: language })}
           </span>
-        </span>
-      </>
-    ) : (
-      <>
-        <span className={styles['sr-only']}>
-          {i18next.t(`pick-mode-${mode}`, { lng: language })}
-        </span>
-        <span className={styles['transport-mode-icon-container']}>
-          <span
-            className={styles['transport-mode-icon-with-icon']}
-            style={{
-              '--bckColor': `${
-                modes[mode]['color']
-                  ? modes[mode]['color']
-                  : modeIconColors[`mode-${mode}`] || buttonStyle['color']
-              }`,
-              '--borderRadius': `${buttonStyle.borderRadius}`,
-            }}
+          <span className={styles['transport-mode-icon-container']}>
+            <span className={styles['transport-mode-icon-with-icon']}>
+              <Icon
+                img={mode === 'favorite' ? 'star' : getIconName(mode, modeSet)}
+                color={modeIconColors[`mode-${mode}`]}
+              />
+              {withAlert && (
+                <span className={styles['transport-mode-alert-icon']}>
+                  <Icon img="caution" color="#dc0451" />
+                </span>
+              )}
+            </span>
+          </span>
+        </>
+      ) : (
+        <>
+          <span className={styles['sr-only']}>
+            {i18next.t(`pick-mode-${mode}`, { lng: language })}
+          </span>
+          <span className={styles['transport-mode-icon-container']}>
+            <span
+              className={styles['transport-mode-icon-with-icon']}
+              style={{
+                '--bckColor': `${
+                  modes[mode]['color']
+                    ? modes[mode]['color']
+                    : modeIconColors[`mode-${mode}`] || buttonStyle['color']
+                }`,
+                '--borderRadius': `${buttonStyle.borderRadius}`,
+              }}
+            >
+              <Icon img={getIconName(mode, modeSet)} />
+              {withAlert && (
+                <span className={styles['transport-mode-alert-icon']}>
+                  <Icon img="caution" color="#dc0451" />
+                </span>
+              )}
+            </span>
+            <span className={styles['transport-mode-title']}>
+              {modes[mode]['nearYouLabel'][language]}
+            </span>
+          </span>
+        </>
+      );
+
+      if (onClick) {
+        return (
+          <div
+            key={mode}
+            role="link"
+            tabIndex="0"
+            onKeyDown={e => onClick(url, e)}
+            onClick={() => onClick(url)}
           >
-            <Icon img={`${mode}-waltti`} />
-            {withAlert && (
-              <span className={styles['transport-mode-alert-icon']}>
-                <Icon img="caution" color="#dc0451" />
-              </span>
-            )}
-          </span>
-          <span className={styles['transport-mode-title']}>
-            {modes[mode]['nearYouLabel'][language]}
-          </span>
-        </span>
-      </>
-    );
-
-    if (onClick) {
+            {modeButton}
+          </div>
+        );
+      }
+      if (LinkComponent) {
+        return (
+          <LinkComponent to={url} key={mode}>
+            {modeButton}
+          </LinkComponent>
+        );
+      }
       return (
-        <div
-          key={mode}
-          role="link"
-          tabIndex="0"
-          onKeyDown={e => onClick(url, e)}
-          onClick={() => onClick(url)}
-        >
+        <a href={url} key={mode}>
           {modeButton}
-        </div>
+        </a>
       );
-    }
-    if (LinkComponent) {
-      return (
-        <LinkComponent to={url} key={mode}>
-          {modeButton}
-        </LinkComponent>
-      );
-    }
-    return (
-      <a href={url} key={mode}>
-        {modeButton}
-      </a>
-    );
-  });
+    });
 
   return (
     <div
@@ -353,6 +373,7 @@ NearStopsAndRoutes.propTypes = {
   title: PropTypes.object,
   modes: PropTypes.object,
   modeIconColors: PropTypes.object,
+  modeSet: PropTypes.string,
   fontWeights: PropTypes.shape({
     medium: PropTypes.number,
   }),
@@ -376,6 +397,7 @@ NearStopsAndRoutes.defaultProps = {
     'mode-ferry': '#007A97',
     'mode-citybike': '#F2B62D',
   },
+  modeSet: 'default',
   fontWeights: {
     medium: 500,
   },

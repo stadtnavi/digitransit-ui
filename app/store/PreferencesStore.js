@@ -27,7 +27,7 @@ class PreferencesStore extends Store {
     } else {
       this.language = language;
     }
-    this.settingsOpen = null;
+    this.settingsOpen = false;
   }
 
   getLanguage() {
@@ -43,6 +43,8 @@ class PreferencesStore extends Store {
       // Good up to one year
       maxAge: 365 * 24 * 60 * 60,
       path: '/',
+      Secure: true,
+      SameSite: 'Strict',
     });
     this.language = language;
     this.emitChange();

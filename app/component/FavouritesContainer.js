@@ -18,7 +18,7 @@ import {
 import FavouriteStore from '../store/FavouriteStore';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import { LightenDarkenColor } from '../util/colorUtils';
-import { showCityBikes } from '../util/modeUtils';
+import { useCitybikes } from '../util/modeUtils';
 
 const AutoSuggestWithSearchContext = withSearchContext(AutoSuggest);
 
@@ -323,13 +323,16 @@ class FavouritesContainer extends React.Component {
     const isLoading =
       this.props.favouriteStatus === FavouriteStore.STATUS_FETCHING_OR_UPDATING;
     const { requireLoggedIn, isLoggedIn } = this.props;
-    const targets = ['Locations', 'CurrentPosition'];
+    const targets = ['Locations', 'CurrentPosition', 'MapPosition'];
     const { fontWeights } = this.context.config;
     const favouritePlaces = this.props.favourites.filter(
       item => item.type === 'place',
     );
-    if (showCityBikes(this.context.config.cityBike?.networks)) {
+    if (useCitybikes(this.context.config.cityBike?.networks)) {
       targets.push('BikeRentalStations');
+    }
+    if (this.context.config.includeParkAndRideSuggestions) {
+      targets.push('ParkingAreas');
     }
     return (
       <React.Fragment>
@@ -383,12 +386,15 @@ class FavouritesContainer extends React.Component {
                 (this.state.favourite && this.state.favourite.address) || ''
               }
               selectHandler={this.setLocationProperties}
+              getAutoSuggestIcons={this.context.config.getAutoSuggestIcons}
               lang={this.props.lang}
               isMobile={this.props.isMobile}
               color={this.props.color}
               hoverColor={this.props.hoverColor}
               fontWeights={fontWeights}
               required
+              modeSet={this.context.config.iconModeSet}
+              favouriteContext
             />
           }
           color={this.props.color}

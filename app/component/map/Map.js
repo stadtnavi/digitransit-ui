@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import LeafletMap from 'react-leaflet/es/Map';
 import TileLayer from 'react-leaflet/es/TileLayer';
+import WMSTileLayer from 'react-leaflet/es/WMSTileLayer';
 import AttributionControl from 'react-leaflet/es/AttributionControl';
 import ScaleControl from 'react-leaflet/es/ScaleControl';
 import ZoomControl from 'react-leaflet/es/ZoomControl';
@@ -11,7 +12,7 @@ import isString from 'lodash/isString';
 import isEmpty from 'lodash/isEmpty';
 // Webpack handles this by bundling it with the other css files
 import 'leaflet/dist/leaflet.css';
-import { withRouter, routerShape, matchShape } from 'found';
+import { withRouter, routerShape } from 'found';
 import VehicleMarkerContainer from './VehicleMarkerContainer';
 import {
   startRealTimeClient,
@@ -25,7 +26,6 @@ import { isDebugTiles } from '../../util/browser';
 import { BreakpointConsumer } from '../../util/withBreakpoint';
 import events from '../../util/events';
 import { MapMode } from '../../constants';
-import { getMapMode } from '../../util/queryUtils';
 
 import GeoJSON from './GeoJSON';
 
@@ -76,6 +76,7 @@ class Map extends React.Component {
     topButtons: PropTypes.node,
     geoJson: PropTypes.object,
     mapLayers: PropTypes.object,
+    mapMode: PropTypes.oneOf(Object.values(MapMode)),
   };
 
   static defaultProps = {
@@ -96,7 +97,6 @@ class Map extends React.Component {
     getStore: PropTypes.func,
     config: PropTypes.object.isRequired,
     router: routerShape,
-    match: matchShape,
   };
 
   constructor(props) {
@@ -165,8 +165,48 @@ class Map extends React.Component {
     this.updateZoom();
   };
 
-  loadMapLayer(mapUrl, attribution, index) {
+  loadMapLayer(mapUrl, attribution, index, config) {
     const zIndex = -10 + index;
+    // TODO bbnavi uses WMS services and provides layers here instead of config
+    if (
+      config.CONFIG.includes('bbnavi') &&
+      (mapUrl === config.URL.MAP.satellite ||
+        mapUrl === config.URL.MAP.satellite_eu ||
+        mapUrl === config.URL.MAP.default)
+    ) {
+      const layer = {
+        [config.URL.MAP.satellite]: 'dop_brandenburg',
+        [config.URL.MAP.satellite_eu]: 'sentinel_europe',
+        [config.URL.MAP.default]: 'topplus_farbe,webatlas_farbe',
+      }[mapUrl];
+
+      return (
+        <WMSTileLayer
+          layers={layer}
+          key={mapUrl}
+          onLoad={this.setLoaded}
+          url={mapUrl}
+          tileSize={this.context.config.map.tileSize || 256}
+          zoomOffset={this.context.config.map.zoomOffset || 0}
+          updateWhenIdle={false}
+          zIndex={zIndex}
+          size={
+            this.context.config.map.useRetinaTiles &&
+            L.Browser.retina &&
+            !isDebugTiles
+              ? '@2x'
+              : ''
+          }
+          minZoom={this.context.config.map.minZoom}
+          maxZoom={this.context.config.map.maxZoom}
+          attribution={attribution}
+          version="1.3.0"
+          transparent={mapUrl === config.URL.MAP.satellite}
+          format="image/png"
+        />
+      );
+    }
+
     return (
       <TileLayer
         key={mapUrl}
@@ -220,6 +260,20 @@ class Map extends React.Component {
       }
     }
 
+    // When this option is set, the map restricts the view to the given geographical bounds,
+    // bouncing the user back if the user tries to pan outside the view.
+    const mapAreaBounds = L.latLngBounds(
+      L.latLng(
+        config.map.areaBounds.corner1[0],
+        config.map.areaBounds.corner1[1],
+      ),
+      L.latLng(
+        config.map.areaBounds.corner2[0],
+        config.map.areaBounds.corner2[1],
+      ),
+    );
+    naviProps.maxBounds = mapAreaBounds;
+
     if (naviProps.bounds || (naviProps.center && naviProps.zoom)) {
       this.ready = true;
     }
@@ -232,7 +286,8 @@ class Map extends React.Component {
       boundsOptions.paddingBottomRight = [0, this.props.mapBottomPadding];
     }
 
-    const mapUrls = this.getMapUrls(config, this.context.match);
+    const currentMapMode = this.props.mapMode;
+    const mapUrls = this.getMapUrls(config, currentMapMode);
 
     const leafletObjNew = leafletObjs.concat([
       <VectorTileLayerContainer
@@ -254,7 +309,6 @@ class Map extends React.Component {
     }
 
     let attribution = get(config, 'map.attribution.default');
-    const currentMapMode = getMapMode(this.context.match);
     attribution = config.map.attribution[currentMapMode] || attribution;
     if (!isString(attribution) || isEmpty(attribution)) {
       attribution = false;
@@ -319,7 +373,7 @@ class Map extends React.Component {
           closePopupOnClick={false}
         >
           {mapUrls.map((url, index) =>
-            this.loadMapLayer(url, attribution, index),
+            this.loadMapLayer(url, attribution, index, config),
           )}
           <BreakpointConsumer>
             {breakpoint =>
@@ -358,19 +412,28 @@ class Map extends React.Component {
     );
   }
 
-  getMapUrls = (config, match) => {
-    const currentMapMode = getMapMode(match);
+  getMapUrls = (config, currentMapMode) => {
+    // todo: refactor using URI Templates
+    const mapBaseUrl =
+      (isDebugTiles &&
+        `${config.URL.OTP}inspector/tile/traversal/{z}/{x}/{y}{r}.png`) ||
+      config.URL.MAP[this.props.lang] ||
+      config.URL.MAP.default;
+    const defaultMapUrl = config.hasAPISubscriptionQueryParameter
+      ? `${mapBaseUrl}?${config.API_SUBSCRIPTION_QUERY_PARAMETER_NAME}=${config.API_SUBSCRIPTION_TOKEN}`
+      : mapBaseUrl;
 
     const mapUrls = [];
-    if (isDebugTiles) {
-      mapUrls.push(`${config.URL.OTP}inspector/tile/traversal/{z}/{x}/{y}.png`);
-    } else if (currentMapMode === MapMode.Satellite) {
+    if (currentMapMode === MapMode.Satellite) {
+      mapUrls.push(config.URL.MAP.satellite_eu);
       mapUrls.push(config.URL.MAP.satellite);
       mapUrls.push(config.URL.MAP.semiTransparent);
     } else if (currentMapMode === MapMode.Bicycle) {
       mapUrls.push(config.URL.MAP.bicycle);
+    } else if (currentMapMode === MapMode.OSM) {
+      mapUrls.push(config.URL.MAP.osm);
     } else {
-      mapUrls.push(config.URL.MAP.default);
+      mapUrls.push(defaultMapUrl);
     }
     return mapUrls;
   };

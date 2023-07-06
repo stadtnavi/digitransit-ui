@@ -33,7 +33,7 @@ import LazilyLoad, { importLazy } from './LazilyLoad';
 import {
   getTransportModes,
   getNearYouModes,
-  showCityBikes,
+  useCitybikes,
 } from '../util/modeUtils';
 
 const StopRouteSearch = withSearchContext(DTAutoSuggest);
@@ -139,6 +139,7 @@ class IndexPage extends React.Component {
       if (newLocation.query.time === undefined) {
         newLocation.query.time = moment().unix();
       }
+      delete newLocation.query.setTime;
       router.push(newLocation);
     } else {
       const path = getPathWithEndpointObjects(
@@ -212,6 +213,7 @@ class IndexPage extends React.Component {
     const { trafficNowLink, colors, fontWeights } = config;
     const color = colors.primary;
     const hoverColor = colors.hover || LightenDarkenColor(colors.primary, -20);
+    const accessiblePrimaryColor = colors.accessiblePrimary || colors.primary;
     const { breakpoint, lang } = this.props;
     const origin = this.pendingOrigin || this.props.origin;
     const destination = this.pendingDestination || this.props.destination;
@@ -224,9 +226,13 @@ class IndexPage extends React.Component {
       'Stops',
     ];
 
-    if (showCityBikes(this.context.config.cityBike?.networks)) {
+    if (useCitybikes(config.cityBike?.networks)) {
       stopAndRouteSearchTargets.push('BikeRentalStations');
       locationSearchTargets.push('BikeRentalStations');
+    }
+    if (config.includeParkAndRideSuggestions) {
+      stopAndRouteSearchTargets.push('ParkingAreas');
+      locationSearchTargets.push('ParkingAreas');
     }
     const locationSearchTargetsMobile = [
       ...locationSearchTargets,
@@ -243,6 +249,12 @@ class IndexPage extends React.Component {
       (origin.type === 'CurrentLocation' && !origin.address) ||
       (destination.type === 'CurrentLocation' && !destination.address);
     const refPoint = getRefPoint(origin, destination, this.props.locationState);
+    const searchPanelText =
+      config.searchPanelText ||
+      intl.formatMessage({
+        id: 'where',
+        defaultMessage: 'Where to?',
+      });
     const locationSearchProps = {
       appElement: '#app',
       origin,
@@ -251,17 +263,18 @@ class IndexPage extends React.Component {
       sources,
       color,
       hoverColor,
+      accessiblePrimaryColor,
       refPoint,
-      searchPanelText: intl.formatMessage({
-        id: 'where',
-        defaultMessage: 'Where to?',
-      }),
+      searchPanelText,
       originPlaceHolder: 'search-origin-index',
       destinationPlaceHolder: 'search-destination-index',
       selectHandler: this.onSelectLocation,
+      getAutoSuggestIcons: config.getAutoSuggestIcons,
       onGeolocationStart: this.onSelectLocation,
       fromMap: this.props.fromMap,
       fontWeights,
+      modeIconColors: config.colors.iconColors,
+      modeSet: config.iconModeSet,
     };
 
     const stopRouteSearchProps = {
@@ -271,27 +284,41 @@ class IndexPage extends React.Component {
       className: 'destination',
       placeholder: 'stop-near-you',
       selectHandler: this.onSelectStopRoute,
+      getAutoSuggestIcons: config.getAutoSuggestIcons,
       value: '',
       lang,
       color,
       hoverColor,
+      accessiblePrimaryColor,
       sources,
       targets: stopAndRouteSearchTargets,
       fontWeights,
       modeIconColors: config.colors.iconColors,
+      modeSet: config.iconModeSet,
     };
+
+    if (config.stopSearchFilter) {
+      stopRouteSearchProps.filterResults = results =>
+        results.filter(config.stopSearchFilter);
+      stopRouteSearchProps.geocodingSize = 40; // increase size to compensate filtering
+      locationSearchProps.filterResults = results =>
+        results.filter(config.stopSearchFilter);
+    }
 
     const transportModes = getTransportModes(config);
     const nearYouModes = getNearYouModes(config);
 
     const NearStops = CtrlPanel => {
-      const btnWithoutLabel = nearYouModes.length > 0;
+      // Styles are defined by which button type is configured (narrow/wide)
+      const narrowButtons = config.narrowNearYouButtons;
       const modeTitles = this.filterObject(
         transportModes,
         'availableForSelection',
         true,
       );
-      const modes = btnWithoutLabel ? nearYouModes : Object.keys(modeTitles);
+      // If nearYouModes is configured, display those. Otherwise, display all configured transport modes
+      const modes =
+        nearYouModes?.length > 0 ? nearYouModes : Object.keys(modeTitles);
 
       return config.showNearYouButtons ? (
         <>
@@ -305,10 +332,11 @@ class IndexPage extends React.Component {
             omitLanguageUrl
             onClick={this.clickStopNearIcon}
             buttonStyle={
-              btnWithoutLabel ? undefined : transportModes?.nearYouButton
+              narrowButtons ? undefined : transportModes?.nearYouButton
             }
-            title={btnWithoutLabel ? undefined : transportModes?.nearYouTitle}
-            modes={btnWithoutLabel ? undefined : modeTitles}
+            title={narrowButtons ? undefined : transportModes?.nearYouTitle}
+            modes={narrowButtons ? undefined : modeTitles}
+            modeSet={config.nearbyModeSet || config.iconModeSet}
             modeIconColors={config.colors.iconColors}
             fontWeights={fontWeights}
           />

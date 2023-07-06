@@ -13,7 +13,6 @@ import {
   RelayNetworkLayer,
   urlMiddleware,
   retryMiddleware,
-  batchMiddleware,
   errorMiddleware,
   cacheMiddleware,
 } from 'react-relay-network-modern';
@@ -145,22 +144,26 @@ const isRobotRequest = agent =>
 const RELAY_FETCH_TIMEOUT =
   parseInt(process.env.RELAY_FETCH_TIMEOUT, 10) || 3000;
 
-function getEnvironment(config, agent) {
+function getEnvironment(config, agent, locale) {
   const relaySSRMiddleware = new RelayServerSSR();
   relaySSRMiddleware.debug = false;
+  const queryParameters = config.hasAPISubscriptionQueryParameter
+    ? `?${config.API_SUBSCRIPTION_QUERY_PARAMETER_NAME}=${config.API_SUBSCRIPTION_TOKEN}`
+    : '';
 
   const layer = new RelayNetworkLayer([
-    next => req => next(req).catch(() => ({ payload: { data: null } })),
+    next => req => {
+      req.fetchOpts.headers['Accept-Language'] = locale;
+      return next(req).catch(() => ({ payload: { data: null } }));
+    },
     relaySSRMiddleware.getMiddleware(),
     cacheMiddleware({
       size: 200,
       ttl: 60 * 60 * 1000,
     }),
     urlMiddleware({
-      url: () => Promise.resolve(`${config.URL.OTP}index/graphql`),
-    }),
-    batchMiddleware({
-      batchUrl: () => Promise.resolve(`${config.URL.OTP}index/graphql/batch`),
+      url: () =>
+        Promise.resolve(`${config.URL.OTP}index/graphql${queryParameters}`),
     }),
     errorMiddleware(),
     retryMiddleware({
@@ -197,7 +200,7 @@ export default async function (req, res, next) {
       res.cookie('lang', locale);
     }
 
-    const environment = getEnvironment(config, agent);
+    const environment = getEnvironment(config, agent, locale);
 
     setRelayEnvironment(environment);
 

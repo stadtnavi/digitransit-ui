@@ -1,5 +1,6 @@
 /* eslint-disable */
 import configMerger from '../util/configMerger';
+import { MapMode } from '../constants';
 
 const CONFIG = 'hbnext';
 const APP_TITLE = 'stadtnavi Herrenberg';
@@ -37,14 +38,15 @@ export default configMerger(walttiConfig, {
             bicycle: BIKE_MAP_URL
         },
         STOP_MAP: `${API_URL}/routing/v1/router/vectorTiles/stops/`,
-        DYNAMICPARKINGLOTS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
+        PARK_AND_RIDE_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
         ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
-        COVID19_MAP: `https://tiles.caresteouvert.fr/public.poi_osm_light/{z}/{x}/{y}.pbf`,
-        CITYBIKE_MAP: `${API_URL}/routing/v1/router/vectorTiles/citybikes/`,
-        BIKE_PARKS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
+        RENTAL_STATION_MAP: `${API_URL}/routing/v1/router/vectorTiles/rentalStations/`,
+        RENTAL_VEHICLE_MAP: `${API_URL}/routing/v1/router/vectorTiles/rentalVehicles/`,
+        REALTIME_RENTAL_STATION_MAP: `${API_URL}/routing/v1/router/vectorTiles/realtimeRentalStations/`,
         WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
         CHARGING_STATIONS_MAP: `${API_URL}/tiles/charging-stations/{z}/{x}/{y}.mvt`,
         CHARGING_STATION_DETAILS_API: 'https://api.ocpdb.de/api/ocpi/2.2/location/',
+        
         PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
         PELIAS_REVERSE_GEOCODER: `${
             process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
@@ -122,7 +124,7 @@ export default configMerger(walttiConfig, {
     },
 
     sprites: 'assets/svg-sprite.hb.svg',
-
+    
     socialMedia: {
         title: APP_TITLE,
         description: APP_DESCRIPTION,
@@ -139,13 +141,13 @@ export default configMerger(walttiConfig, {
         },
     },
 
-    dynamicParkingLots: {
-        showDynamicParkingLots: true,
-        dynamicParkingLotsSmallIconZoom: 14,
-        dynamicParkingLotsMinZoom: 14
+    parkAndRide: {
+        show: true,
+        smallIconZoom: 14,
+        minZoom: 14,
     },
 
-    bikeParks: {
+    parkAndRideForBikes: {
         show: true,
         smallIconZoom: 14,
         minZoom: 14
@@ -175,6 +177,23 @@ export default configMerger(walttiConfig, {
         smallIconZoom: 14,
         minZoom: 14
     },
+
+    backgroundMaps: [{
+        mapMode: MapMode.Default,
+        messageId: 'map-type-streets',
+        defaultMessage: 'Streets',
+        previewImage: '/img/maptype-streets.png',
+    }, {
+        mapMode: MapMode.Satellite,
+        messageId: 'map-type-satellite',
+        defaultMessage: 'Satellite',
+        previewImage: '/img/maptype-satellite.png',
+    }, {
+        mapMode: MapMode.Bicycle,
+        messageId: 'map-type-bicycle',
+        defaultMessage: 'Bicycle',
+        previewImage: '/img/maptype-bicycle.png',
+    }],
 
     cityBike: {
         minZoomStopsNearYou: 10,
@@ -306,6 +325,12 @@ export default configMerger(walttiConfig, {
             'default': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>',
             'satellite': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href="https://www.lgl-bw.de/">LGL BW</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>',
             'bicycle': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href=https://www.cyclosm.org/#map=12/52.3728/4.8936/cyclosmx>CyclOSM</a>, © <a tabindex=-1 href="https://www.openstreetmap.fr/">OSM-FR</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>',
+        },
+
+        areaBounds: {
+            // large buffer around Germany
+            corner1: [58, 21.2],
+            corner2: [46.5, 3.6],
         },
     },
 

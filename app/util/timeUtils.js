@@ -102,6 +102,9 @@ export function getCurrentSecs() {
 
 // converts time from 24+ hour HHmm to 24 hour HH:mm format
 export function convertTo24HourFormat(time) {
+  if (time.match(/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
+    return time;
+  }
   return parseInt(time.substring(0, 2), 10) > 23
     ? `0${parseInt(time.substring(0, 2), 10) - 24}:${time.substring(2, 4)}`
     : `${time.substring(0, 2)}:${time.substring(2, 4)}`;
@@ -126,6 +129,9 @@ export function getFormattedTimeDate(startTime, pattern) {
 /**
  * Returns number of milliseconds since the Unix Epoch
  */
-export function getCurrentMillis() {
-  return moment().valueOf();
+export function getCurrentMillis(currentTime = undefined) {
+  if (!currentTime) {
+    return moment().valueOf();
+  }
+  return moment(currentTime).valueOf();
 }

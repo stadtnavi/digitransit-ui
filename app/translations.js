@@ -343,7 +343,7 @@ const translations = {
     'accessibility-nolimit': 'Keine Einschränkungen',
     'accessibility-statement': 'Erklärung zur Barrierefreiheit',
     'map-type': 'Kartenarten',
-    'map-type-streets': 'Straßen (LGB)',
+    'map-type-streets': 'Straßen',
     'map-type-satellite': 'Satellit',
     'map-type-bicycle': 'Fahrrad',
     'map-type-openstreetmap': 'OSM',
@@ -881,13 +881,41 @@ const translations = {
     'route-not-possible':
       'Leider konnte keine Route berechnet werden. Technischer Fehler: "{error}"',
     'route-page.similar-routes': 'Vielleicht interessiert Sie auch',
-    'route-page-vehicle-position': '{mode} {shortName} is at {stopName}',
+    'route-page-vehicle-position': '{mode} {shortName} befindet sich bei {stopName}',
     'route-page-vehicle-position-between':
-      '{mode} {shortName} is between {stopName} and {nextStopName}',
+      '{mode} {shortName} ist zwischen {stopName} und {nextStopName}',
     'route-page.description': 'Linie {shortName}, {longName}',
     'route-page.title': 'Route {shortName}',
     'route-page.title-short': 'Linie',
     'route-to-stop': 'Linie zur Haltestelle',
+    'router-location-not-found':
+      'Bitte wählen Sie eine Adresse in der Nähe einer Straße oder Haltestelle.',
+    'router-location-not-found-title-1':
+      'Kein Zugang zur Zieladresse ermittelbar',
+    'router-location-not-found-title-2':
+      'Kein Zugang zur Startadresse ermittelbar',
+    'router-location-not-found-title-3':
+      'Kein Zugang zur Start- und Zieladresse ermittelbar',
+    'router-only-walk':
+      'Für die von Ihnen gewählte Route ist Zu-Fuß-Gehen die schnellste Option.',
+    'router-only-walk-title': 'Die Strecke zu Fuß zurücklegen',
+    'router-outside-bounds-3':
+      'Keine Routenvorschläge gefunden, ad sich Start und Ziel außerhalb des Abdeckungsgebietes befinden.',
+    'router-outside-service-period':
+      'Keine Abfahrtsinformationen verfügbar für den gewählten Zeitpunkt.',
+    'router-stops-in-range-1':
+      'Es befinden sich keine Haltestellen in der Nähe des Zielpunktes.',
+    'router-stops-in-range-2':
+      'Es befinden sich keine Haltestellen in der Nähe des Startpunktes.',
+    'router-stops-in-range-3':
+      'Es befinden sich keine Haltestellen in der Nähe des Start- und Zielpunktes.',
+    'router-system-error':
+      'Ein Systemfehler ist aufgetreten. Bitte versuchen Sie es später erneut.',
+    'router-transit-connection':
+      'Bitte versuchen Sie, Start- oder Zieladresse zu verändern.',
+    'router-transit-connection-in-search-window':
+      'Zum angefragten Zeitpunkt sind keine Fahrten verfügbar.',
+    'router-unable': 'Keine Reise-Optionen gefunden.',
     routes: 'Linien',
     'routes-platforms': 'Linien, Steige',
     'routes-tracks': 'Linien, Gleise',
@@ -1186,7 +1214,7 @@ const translations = {
     'accessibility-nolimit': 'No limits',
     'accessibility-statement': 'Accessibility statement',
     'map-type': 'map types',
-    'map-type-streets': 'roads (LGB)',
+    'map-type-streets': 'roads',
     'map-type-satellite': 'satellite',
     'map-type-bicycle': 'bicycle',
     'map-type-openstreetmap': 'OSM',
@@ -5865,7 +5893,7 @@ const translations = {
     "zone-unknown": "Nieznana strefa", 
     zones: "Strefy taryfowe",
     'map-type': 'Typy kart',
-    'map-type-streets': 'Drogi (LGB)',
+    'map-type-streets': 'Drogi',
     'map-type-satellite': 'Satelita',
     'map-type-bicycle': 'Rower',
     'map-type-openstreetmap': 'OSM',

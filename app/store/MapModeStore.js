@@ -1,5 +1,6 @@
 import Store from 'fluxible/addons/BaseStore';
 import { MapMode } from '../constants';
+import { isBrowser } from '../util/browser';
 
 export default class MapModeStore extends Store {
   static storeName = 'MapModeStore';
@@ -11,8 +12,10 @@ export default class MapModeStore extends Store {
 
     const { config } = dispatcher.getContext();
 
-    const query = new URLSearchParams(window.location.search);
-    if (query.has('mapMode')) {
+    const query = isBrowser
+      ? new URLSearchParams(window.location.search)
+      : undefined;
+    if (query && query.has('mapMode')) {
       this.mapMode = query.get('mapMode');
     } else if (config.backgroundMaps?.[0]) {
       this.mapMode = config.backgroundMaps[0].mapMode;

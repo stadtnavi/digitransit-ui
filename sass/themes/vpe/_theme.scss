@@ -14,7 +14,7 @@ $top-bar-color: $primary-color;
 
 /* Vehicle palette */
 $bus-color: red;
-$metro-color: blue;
+$metro-color: #0065B0;
 $rail-color: green;
 $citybike-color: #009fe4;
 $carpool-color: #9fc727;
@@ -38,6 +38,7 @@ $bike-color: #005ab4;
   color: #fff;
   padding: 30px 10px 0px 20px;
   font-size: 24px;
+  font-weight: 400;
 }
 
 .top-bar .logo {

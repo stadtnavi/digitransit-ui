@@ -1,0 +1,301 @@
+/* eslint-disable */
+import configMerger from '../util/configMerger';
+import { MapMode } from '../constants';
+
+const CONFIG = 'herrenberg';
+const APP_TITLE = 'stadtnavi Herrenberg';
+const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
+const API_URL = process.env.API_URL || 'https://api.dev.stadtnavi.eu';
+const YEAR = 1900 + new Date().getYear();
+const STATIC_MESSAGE_URL =
+    process.env.STATIC_MESSAGE_URL ||
+    '/assets/messages/message.hb.json';
+
+const parentConfig = require('./config.stadtnavi.js').default;
+
+const realtimeHbg = require('./realtimeUtils').default.hbg;
+const hostname = new URL(API_URL);
+realtimeHbg.mqtt = `wss://${hostname.host}/mqtt/`;
+
+const minLat = 47.6020;
+const maxLat = 49.0050;
+const minLon = 8.4087;
+const maxLon = 9.9014;
+
+export default configMerger(parentConfig, {
+    CONFIG,
+    
+    issueTrackerUrl: 'https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}',
+    // issueTrackerUrls define issuetracker URLs per postalCode. In case none matches, issueTrackerUrl is used as falllback
+    issueTrackerUrls: {
+      '71083': 'https://www.herrenberg.de/tools/mvs/?lat=${lat}&lng=${lon}#mvPagePictures',
+      '71634': 'https://www.ludwigsburg.de/,Lde/start/stadt_buerger/maengelmelder.html?uri=/bms/create%3Flat=${lat}%26lon=${lon}',
+      '71636': 'https://www.ludwigsburg.de/,Lde/start/stadt_buerger/maengelmelder.html?uri=/bms/create%3Flat=${lat}%26lon=${lon}',
+      '71638': 'https://www.ludwigsburg.de/,Lde/start/stadt_buerger/maengelmelder.html?uri=/bms/create%3Flat=${lat}%26lon=${lon}',
+      '71640': 'https://www.ludwigsburg.de/,Lde/start/stadt_buerger/maengelmelder.html?uri=/bms/create%3Flat=${lat}%26lon=${lon}',
+      '71642': 'https://www.ludwigsburg.de/,Lde/start/stadt_buerger/maengelmelder.html?uri=/bms/create%3Flat=${lat}%26lon=${lon}',
+    },
+
+    cityBike: {
+        minZoomStopsNearYou: 10,
+        showStationId: false,
+        useSpacesAvailable: false,
+        showCityBikes: true,
+        networks: {
+            'de.mfdz.flinkster.cab.regiorad_stuttgart': {
+                icon: 'regiorad',
+                name: {
+                    de: 'RegioRad',
+                    en: 'RegioRad',
+                },
+                type: 'citybike',
+                url: {
+                    de: 'https://www.regioradstuttgart.de/de',
+                    en: 'https://www.regioradstuttgart.de/',
+                },
+                visibleInSettingsUi: true,
+                hideCode: true,
+                enabled: true,
+                season: {
+                    // 1.1. - 31.12.
+                    start: new Date(new Date().getFullYear(), 0, 1),
+                    end: new Date(new Date().getFullYear(), 11, 31),
+                },
+            },
+            'tier_ludwigsburg': {
+                icon: 'tier_scooter',
+                name: {
+                    de: 'TIER Ludwigsburg',
+                    en: 'TIER Ludwigsburg',
+                },
+                type: 'scooter',
+                url: {
+                    de: 'https://www.tier.app/de',
+                    en: 'https://www.tier.app/',
+                },
+                visibleInSettingsUi: true,
+                hideCode: true,
+                enabled: true,
+            },
+            'taxi': {
+                icon: 'taxi',
+                name: {
+                    de: 'Taxi',
+                    en: 'Taxi',
+                },
+                type: 'taxi',
+                visibleInSettingsUi: false,
+                enabled: true,
+            },
+            "car-sharing": {
+                icon: 'car-sharing',
+                name: {
+                    de: 'Carsharing',
+                    en: 'Car sharing',
+                },
+                type: 'car-sharing',
+                url: {
+                    de: 'https://stuttgart.stadtmobil.de/privatkunden/',
+                    en: 'https://stuttgart.stadtmobil.de/privatkunden/',
+                },
+                visibleInSettingsUi: false,
+                enabled: true,
+            },
+            "cargo-bike": {
+                icon: 'cargobike',
+                name: {
+                    de: 'Freie Lastenräder Herrenberg',
+                    en: 'Free cargo bikes Herrenberg',
+                },
+                type: 'cargo-bike',
+                visibleInSettingsUi: false,
+                enabled: true,
+            },
+            "de.openbikebox.stadt-herrenberg": {
+                icon: 'cargobike',
+                name: {
+                    de: 'Lastenrad Herrenberg',
+                    en: 'Cargo bike Herrenberg',
+                },
+                type: 'cargo-bike',
+                visibleInSettingsUi: false,
+                enabled: true,
+            },
+        }
+    },
+
+    title: APP_TITLE,
+
+    favicon: './app/configurations/images/hbnext/favicon.png',
+
+    meta: {
+        description: APP_DESCRIPTION,
+    },
+
+    logo: 'herrenberg/stadtnavi-herrenberg-logo.svg',
+
+    feedIds: ['hbg'],
+
+    realtime: { hbg: realtimeHbg },
+
+    searchSources: ['oa', 'osm'],
+
+    searchParams: {
+        'boundary.rect.min_lat': 48.34164,
+        'boundary.rect.max_lat': 48.97661,
+        'boundary.rect.min_lon': 9.95635,
+        'boundary.rect.max_lon': 8.530883,
+        'focus.point.lat': 48.5957,
+        'focus.point.lon': 8.8675
+    },
+
+    areaPolygon: [
+        [minLon, minLat],
+        [minLon, maxLat],
+        [maxLon, maxLat],
+        [maxLon, minLat],
+    ],
+
+    defaultEndpoint: {
+        lat: 48.5942066,
+        lon: 8.8644041,
+    },
+
+    menu: {
+        copyright: {
+            label: `© Stadt Herrenberg ${YEAR}`
+        },
+        content: [
+            {
+                name: 'about-this-service',
+                nameEn: 'About this service',
+                route: '/dieser-dienst',
+                icon: 'icon-icon_info',
+            },
+            {
+                name: 'imprint',
+                nameEn: 'Imprint',
+                href: 'https://www.herrenberg.de/impressum',
+            },
+            {
+                name: 'privacy',
+                nameEn: 'Privacy',
+                href: 'https://www.herrenberg.de/datenschutz',
+            },
+        ],
+    },
+
+    aboutThisService: {
+        de: [
+            {
+                header: 'Über diesen Dienst',
+                paragraphs: [
+                    'stadtnavi ist eine Reiseplanungs-Anwendung für die Stadt Herrenberg und Umgebung. Dieser Dienst umfasst ÖPNV, Fußwege, Radverkehr, Straßen- und Parkplatzinformationen, Ladeinfrastruktur und Sharing-Angebote. Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt.',
+                    'Gefördert durch <br>',
+                    '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
+
+                ],
+            },
+            {
+                header: 'Mitmachen',
+                paragraphs: [
+                    'Die Stadt Herrenberg hat diese App im Rahmen der Modellstadt, gefördert durch das Bundesministerium für Verkehr und digitale Infrastruktur (BMVI) entwickelt. stadtnavi Anwendung ist eine Open Source Lösung und kann von anderen Kommunen und Akteuren unter ihrem Namen und Erscheinungsbild verwendet und an individuelle Bedürfnisse angepasst und weiterentwickelt werden (White Label Lösung). Mitmachen ist gewünscht!',
+                ]
+            },
+            {
+                header: 'Digitransit Plattform',
+                paragraphs: [
+                    'Dieser Dienst basiert auf der Digitransit Platform und dem Backend-Dienst OpenTripPlanner. Alle Software ist unter einer offenen Lizenzen verfügbar. Vielen Dank an alle Beteiligten.',
+                    'Der gesamte Quellcode der Plattform, die aus vielen verschiedenen Komponenten besteht, ist auf <a href="https://github.com/stadtnavi/">Github</a> verfügbar.'
+                ],
+            },
+            {
+                header: 'Datenquellen',
+                paragraphs: [
+                    'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
+                    'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> und der <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
+                    'Alle Angaben ohne Gewähr.'
+                ],
+            },
+        ],
+        en: [
+            {
+                header: 'About this service',
+                paragraphs: [
+                    'stadtnavi is a travel planning application for the city of Herrenberg and its surroundings. This service includes public transport, footpaths, cycling, street and parking information, charging infrastructure and sharing offerings. The mobility offerings are connected through intermodal routing.',
+                    '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
+                ],
+            },
+            {
+                header: 'Contribute',
+                paragraphs: [
+                    'The city of Herrenberg has developed this app, funded by the Federal Ministry of Transport and Digital Infrastructure (BMVI), as model city. The stadtnavi app is an open source solution and can be used, customized and further developed by other municipalities to meet individual needs (white lable solution). Participation is welcome!',
+                ]
+            },
+            {
+                header: 'Digitransit platform',
+                paragraphs: [
+                    'The Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source. Thanks to everybody working on this!',
+                ],
+            },
+            {
+                header: 'Data sources',
+                paragraphs: [
+                    'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
+                    'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> and <a target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
+                    'No responsibility is accepted for the accuracy of this information.'
+                ],
+            },
+        ],
+    },
+
+    // adding assets/geoJson/hb-layers layers
+    geoJson: {
+        layers: [
+            // bicycleinfrastructure includes shops, repair stations,
+            {
+                name: {
+                    fi: '',
+                    en: 'Service stations and stores',
+                    de: "Service Stationen und Läden",
+                },
+                url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
+                icon: 'icon-icon_bike_repair',
+            },
+            // LoRaWan map layer
+            {
+                name: {
+                    fi: '',
+                    en: 'LoRaWAN Gateways',
+                    de: 'LoRaWAN Gateways',
+                },
+                url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
+                isOffByDefault: true,
+                icon: 'icon-icon_gateways',
+            },
+            // Nette Toilette layer
+            {
+                name: {
+                    fi: '',
+                    en: 'Public Toilets',
+                    de: 'Nette Toilette',
+                },
+                url: '/assets/geojson/hb-layers/toilet.geojson',
+                isOffByDefault: true,
+                icon: 'icon-icon_public_toilets',
+            },
+        ],
+    },
+    staticMessagesUrl: STATIC_MESSAGE_URL,
+
+    parkAndRideBannedVehicleParkingTags: [
+        'lot_type:Parkplatz',
+        'lot_type:Tiefgarage',
+        'lot_type:Parkhaus'
+    ],
+
+    realtime: { hbg: realtimeHbg },
+
+    // live bus locations
+    vehicles: true,
+});

@@ -796,7 +796,7 @@ export default {
     vpe: 'vpe',
     bar: '(bar|hamburg)',
     walttiOpas: 'waltti',
-    hbnext: 'hbnext',
+    herrenberg: 'herrenberg',
     bbnavi: 'bbnavi',
     bw: 'bw',
     ludwigsburg: 'ludwigsburg',

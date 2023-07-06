@@ -7,27 +7,21 @@ const APP_TITLE = 'stadtnavi Herrenberg';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
 const API_URL = process.env.API_URL || 'https://api.dev.stadtnavi.eu';
 const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
-const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png';
+const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://tiles.stadtnavi.eu/bicycle/{z}/{x}/{y}{r}.png';
 
 const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png";
 const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.stadtnavi.eu/pelias/v1";
 const YEAR = 1900 + new Date().getYear();
-const STATIC_MESSAGE_URL =
-    process.env.STATIC_MESSAGE_URL ||
-    '/assets/messages/message.hb.json';
+const STATIC_MESSAGE_URL = process.env.STATIC_MESSAGE_URL;
 
-const walttiConfig = require('./config.waltti.js').default;
-
-const realtimeHbg = require('./realtimeUtils').default.hbg;
-const hostname = new URL(API_URL);
-realtimeHbg.mqtt = `wss://${hostname.host}/mqtt/`;
+const parentConfig = require('./config.waltti.js').default;
 
 const minLat = 47.6020;
 const maxLat = 49.0050;
 const minLon = 8.4087;
 const maxLon = 9.9014;
 
-export default configMerger(walttiConfig, {
+export default configMerger(parentConfig, {
     CONFIG,
     URL: {
         OTP: process.env.OTP_URL || `${API_URL}/routing/v1/router/`,
@@ -105,8 +99,8 @@ export default configMerger(walttiConfig, {
     },
 
     contactName: {
-        de: 'transportkollektiv',
-        default: 'transportkollektiv',
+        de: 'systect Holger Bruch',
+        default: 'systect Holger Bruch',
     },
 
     colors: {
@@ -115,7 +109,7 @@ export default configMerger(walttiConfig, {
             'mode-bus': '#ff0000',
             'mode-car': '#007AC9',
             'mode-rail': '#008000',
-            'mode-subway': '#0000ff',
+            'mode-metro': '#0065B0',
             'mode-citybike': '#ff834a',
             'mode-charging-station': '#00b096',
             'mode-bike-park': '#005ab4',
@@ -201,85 +195,6 @@ export default configMerger(walttiConfig, {
         useSpacesAvailable: false,
         showCityBikes: true,
         networks: {
-            'de.mfdz.flinkster.cab.regiorad_stuttgart': {
-                icon: 'regiorad',
-                name: {
-                    de: 'RegioRad',
-                    en: 'RegioRad',
-                },
-                type: 'citybike',
-                url: {
-                    de: 'https://www.regioradstuttgart.de/de',
-                    en: 'https://www.regioradstuttgart.de/',
-                },
-                visibleInSettingsUi: true,
-                hideCode: true,
-                enabled: true,
-                season: {
-                    // 1.1. - 31.12.
-                    start: new Date(new Date().getFullYear(), 0, 1),
-                    end: new Date(new Date().getFullYear(), 11, 31),
-                },
-            },
-            'tier_ludwigsburg': {
-                icon: 'tier_scooter',
-                name: {
-                    de: 'TIER Ludwigsburg',
-                    en: 'TIER Ludwigsburg',
-                },
-                type: 'scooter',
-                url: {
-                    de: 'https://www.tier.app/de',
-                    en: 'https://www.tier.app/',
-                },
-                visibleInSettingsUi: true,
-                hideCode: true,
-                enabled: true,
-            },
-            'taxi': {
-                icon: 'taxi',
-                name: {
-                    de: 'Taxi',
-                    en: 'Taxi',
-                },
-                type: 'taxi',
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
-            "car-sharing": {
-                icon: 'car-sharing',
-                name: {
-                    de: 'Carsharing',
-                    en: 'Car sharing',
-                },
-                type: 'car-sharing',
-                url: {
-                    de: 'https://stuttgart.stadtmobil.de/privatkunden/',
-                    en: 'https://stuttgart.stadtmobil.de/privatkunden/',
-                },
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
-            "cargo-bike": {
-                icon: 'cargobike',
-                name: {
-                    de: 'Freie Lastenräder Herrenberg',
-                    en: 'Free cargo bikes Herrenberg',
-                },
-                type: 'cargo-bike',
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
-            "de.openbikebox.stadt-herrenberg": {
-                icon: 'cargobike',
-                name: {
-                    de: 'Lastenrad Herrenberg',
-                    en: 'Cargo bike Herrenberg',
-                },
-                type: 'cargo-bike',
-                visibleInSettingsUi: false,
-                enabled: true,
-            },
         }
     },
 
@@ -297,7 +212,7 @@ export default configMerger(walttiConfig, {
         carpool: 'CARPOOL',
     },
 
-    logo: 'hbnext/stadtnavi-herrenberg-logo.svg',
+    logo: 'herrenberg/stadtnavi-herrenberg-logo.svg',
 
     GTMid: '',
 
@@ -335,8 +250,6 @@ export default configMerger(walttiConfig, {
     },
 
     feedIds: ['hbg'],
-
-    realtime: { hbg: realtimeHbg },
 
     searchSources: ['oa', 'osm'],
 
@@ -475,10 +388,6 @@ export default configMerger(walttiConfig, {
 
     redirectReittiopasParams: true,
 
-    themeMap: {
-        hbnext: 'hbnext'
-    },
-
     transportModes: {
 
         nearYouTitle: {
@@ -611,42 +520,8 @@ export default configMerger(walttiConfig, {
     showRouteSearch: false,
     showNearYouButtons: false,
 
-    // adding assets/geoJson/hb-layers layers
     geoJson: {
-        layers: [
-            // bicycleinfrastructure includes shops, repair stations,
-            {
-                name: {
-                    fi: '',
-                    en: 'Service stations and stores',
-                    de: "Service Stationen und Läden",
-                },
-                url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
-                icon: 'icon-icon_bike_repair',
-            },
-            // LoRaWan map layer
-            {
-                name: {
-                    fi: '',
-                    en: 'LoRaWAN Gateways',
-                    de: 'LoRaWAN Gateways',
-                },
-                url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
-                isOffByDefault: true,
-                icon: 'icon-icon_gateways',
-            },
-            // Nette Toilette layer
-            {
-                name: {
-                    fi: '',
-                    en: 'Public Toilets',
-                    de: 'Nette Toilette',
-                },
-                url: '/assets/geojson/hb-layers/toilet.geojson',
-                isOffByDefault: true,
-                icon: 'icon-icon_public_toilets',
-            },
-        ],
+        layers: [],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
 

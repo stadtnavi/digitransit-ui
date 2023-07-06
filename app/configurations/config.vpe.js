@@ -4,16 +4,12 @@ import configMerger from '../util/configMerger';
 const CONFIG = 'vpe';
 const APP_TITLE = 'VPE mobi';
 const APP_DESCRIPTION = 'Verbindungssuche des VPE';
-const API_URL = process.env.API_URL || 'https://api.dev.stadtnavi.eu';
-const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
-const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png";
-const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.stadtnavi.eu/pelias/v1";
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||
     '/assets/messages/message.vpe.json';
 
-const walttiConfig = require('./config.waltti.js').default;
+const parentConfig = require('./config.stadtnavi.js').default;
 
 const hostname = new URL(API_URL);
 
@@ -22,64 +18,11 @@ const maxLat = 50.008;
 const minLon = 5.620;
 const maxLon = 12.387;
 
-export default configMerger(walttiConfig, {
+export default configMerger(parentConfig, {
     CONFIG,
-    URL: {
-        OTP: process.env.OTP_URL || `${API_URL}/routing/v1/router/`,
-        MAP: {
-            default: MAP_URL,
-            satellite: 'https://tiles.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
-            semiTransparent: SEMI_TRANSPARENT_MAP_URL,
-            bicycle: 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
-        },
-        STOP_MAP: `${API_URL}/routing/v1/router/vectorTiles/stops/`,
-        DYNAMICPARKINGLOTS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        //ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
-        CITYBIKE_MAP: `${API_URL}/routing/v1/router/vectorTiles/citybikes/`,
-        BIKE_PARKS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        CHARGING_STATIONS_MAP: `${API_URL}/tiles/charging-stations/{z}/{x}/{y}.mvt`,
-        CHARGING_STATION_DETAILS_API: `${API_URL}/charging-stations/2.2/location/`,
-        PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
-        PELIAS_REVERSE_GEOCODER: `${
-            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
-        }/reverse`,
-        PELIAS_PLACE: `${
-            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
-        }/place`,
-        FARES: `${API_URL}/fares`,
-        FONT: '' // Do not use Google fonts.
-    },
-
-    mainMenu: {
-        showDisruptions: false,
-    },
-
-    availableLanguages: ['de', 'en'],
-    defaultLanguage: 'de',
+    URL: {},
     issueTrackerUrl: 'https://mangel.vpe.de/tools/index.php?lat=${lat}&lng=${lon}',
 
-    MATOMO_URL: process.env.MATOMO_URL,
-
-    /* disable the "next" column of the Route panel as it can be confusing sometimes: https://github.com/stadtnavi/digitransit-ui/issues/167 */
-    displayNextDeparture: false,
-    maxWalkDistance: 15000,
-
-    optimize: "TRIANGLE",
-
-    defaultSettings: {
-        optimize: "TRIANGLE",
-        safetyFactor: 0.4,
-        slopeFactor: 0.3,
-        timeFactor: 0.3,
-    },
-
-    defaultOptions: {
-        walkSpeed: [0.83, 1.38, 1.94],
-    },
-
-    itinerary: {
-        delayThreshold: 60,
-    },
 
     appBarLink: {
         name: 'Kontakt',
@@ -106,8 +49,6 @@ export default configMerger(walttiConfig, {
         },
     },
 
-    sprites: 'assets/svg-sprite.hb.svg',
-
     socialMedia: {
         title: APP_TITLE,
         description: APP_DESCRIPTION,
@@ -121,24 +62,6 @@ export default configMerger(walttiConfig, {
         twitter: {
             card: 'summary_large_image',
         },
-    },
-
-    dynamicParkingLots: {
-        showDynamicParkingLots: true,
-        dynamicParkingLotsSmallIconZoom: 14,
-        dynamicParkingLotsMinZoom: 14
-    },
-
-    bikeParks: {
-        show: true,
-        smallIconZoom: 14,
-        minZoom: 14
-    },
-
-    chargingStations: {
-        show: true,
-        smallIconZoom: 14,
-        minZoom: 14
     },
 
     cityBike: {
@@ -164,8 +87,6 @@ export default configMerger(walttiConfig, {
         }
     },
 
-    mergeStopsByCode: true,
-
     title: APP_TITLE,
     showTitles: true,
     favicon: './app/configurations/images/vpe/favicon.png',
@@ -179,38 +100,7 @@ export default configMerger(walttiConfig, {
         carpool: 'CARPOOL',
     },
 
-    GTMid: '',
-
-    // get newest version from: https://github.com/moment/moment-timezone/blame/develop/data/packed/latest.json
-    timezoneData: 'Europe/Berlin|CET CEST CEMT|-10 -20 -30|01010101010101210101210101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010|-2aFe0 11d0 1iO0 11A0 1o00 11A0 Qrc0 6i00 WM0 1fA0 1cM0 1cM0 1cM0 kL0 Nc0 m10 WM0 1ao0 1cp0 dX0 jz0 Dd0 1io0 17c0 1fA0 1a00 1ehA0 1a00 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|41e5',
-
-    map: {
-        useRetinaTiles: true,
-        tileSize: 256,
-        zoomOffset: 0,
-
-        showZoomControl: true, // DT-3470, DT-3397
-        showStreetModeSelector: false, // DT-3470
-        showLayerSelector: true, // DT-3470
-        showStopMarkerPopupOnMobile: false, // DT-3470
-        showScaleBar: true, // DT-3470, DT-3397
-        genericMarker: {
-            popup: {
-                offset: [0,0],
-                maxWidth: 250,
-                minWidth: 250,
-            }
-        },
-        attribution: {
-            'default': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://vpe.de/>VPE GmbH</a>',
-            'satellite': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href="https://www.lgl-bw.de/">LGL BW</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://vpe.de/>VPE GmbH</a>',
-            'bicycle': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>, © <a tabindex=-1 href=https://www.cyclosm.org/#map=12/52.3728/4.8936/cyclosmx>CyclOSM</a>, © <a tabindex=-1 href="https://www.openstreetmap.fr/">OSM-FR</a>, <a tabindex=-1 href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>Datensätze der NVBW GmbH</a> und <a tabindex=-1 href=https://vpe.de/>VPE GmbH</a>',
-        },
-    },
-
     feedIds: ['hbg'],
-
-    searchSources: ['oa', 'osm'],
 
     searchParams: {
         'boundary.rect.min_lat': 47.305,
@@ -228,7 +118,6 @@ export default configMerger(walttiConfig, {
         [maxLon, minLat],
     ],
 
-    nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
     ticketingUrls: {
         web: "https://reiseauskunft.bahn.de/bin/query.exe/dn?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
         ios: "https://mobile.bahn.de/bin/mobil/query.exe/dox?S={startStopName}&Z={destStopName}&date={date}&time={time}&start=1",
@@ -320,127 +209,6 @@ export default configMerger(walttiConfig, {
         ],
     },
 
-    redirectReittiopasParams: true,
-
-    transportModes: {
-
-        nearYouTitle: {
-            de: 'Fahrpläne und Routen',
-        },
-
-        bus: {
-            availableForSelection: true,
-            defaultValue: true,
-            smallIconZoom: 16,
-            nearYouLabel: {
-                de: 'Bushaltestellen in der Nähe',
-            }
-        },
-
-        rail: {
-            availableForSelection: true,
-            defaultValue: true,
-            nearYouLabel: {
-                de: 'Bahnhaltestellen in der Nähe',
-            }
-        },
-
-        tram: {
-            availableForSelection: true,
-            defaultValue: true,
-            nearYouLabel: {
-                de: 'S-Bahnhaltestellen in der Nähe',
-            }
-        },
-
-        subway: {
-            availableForSelection: true,
-            defaultValue: true,
-            nearYouLabel: {
-                de: 'U-Bahnhaltestellen in der Nähe',
-            }
-        },
-        airplane: {
-            availableForSelection: false,
-            defaultValue: false,
-            nearYouLabel: {
-                de: 'Flughäfen in der Nähe',
-            }
-        },
-
-        ferry: {
-            availableForSelection: true,
-            defaultValue: true,
-            nearYouLabel: {
-                de: 'Fähranleger in der Nähe',
-            }
-        },
-
-        carpool: {
-            availableForSelection: true,
-            defaultValue: false,
-            nearYouLabel: {
-                de: 'Mitfahrpunkte in der Nähe',
-                en: 'Nearby carpool stops on the map',
-            }
-        },
-
-        citybike: {
-            availableForSelection: true,
-            defaultValue: false,
-            nearYouLabel: {
-                de: 'Sharing-Angebote in der Nähe',
-                en: 'Shared mobility near you'
-            }
-        },
-    },
-
-    streetModes: {
-        public_transport: {
-            availableForSelection: true,
-            defaultValue: true,
-            exclusive: false,
-            icon: 'bus-withoutBox',
-        },
-
-        walk: {
-            availableForSelection: true,
-            defaultValue: false,
-            exclusive: true,
-            icon: 'walk',
-        },
-
-        bicycle: {
-            availableForSelection: true,
-            defaultValue: false,
-            exclusive: true,
-            icon: 'bicycle-withoutBox',
-        },
-
-        car: {
-            availableForSelection: false,
-            defaultValue: false,
-            exclusive: false,
-            icon: 'car-withoutBox',
-        },
-
-        car_park: {
-            availableForSelection: true,
-            defaultValue: false,
-            exclusive: false,
-            icon: 'car-withoutBox',
-        },
-
-        carpool: {
-            availableForSelection: true,
-            defaultValue: false,
-            exclusive: true,
-            icon: 'carpool-withoutBox',
-        },
-    },
-
-    showTicketInformation: true,
-    showTicketPrice: true,
     availableTickets: { 'hbg' : {}},
     fareMapping: function mapHbFareId(fareId) {
         return {
@@ -448,12 +216,7 @@ export default configMerger(walttiConfig, {
             de: "Regulär",
         };
     },
-    displayFareInfoTop: false,
-
-
-    showRouteSearch: false,
-    showNearYouButtons: false,
-
+    
     // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
@@ -498,20 +261,6 @@ export default configMerger(walttiConfig, {
         'lot_type:Parkhaus'
     ],
 
-    suggestCarMinDistance: 800,
-    suggestWalkMaxDistance: 3000,
-    suggestBikeAndPublicMinDistance: 3000,
-    suggestBikeAndParkMinDistance: 3000,
-
     // live bus locations
     vehicles: false,
-    showVehiclesOnSummaryPage: false,
-    showVehiclesOnStopPage: true,
-
-    showBikeAndPublicItineraries: true,
-    showBikeAndParkItineraries: true,
-    showStopAndRouteSearch: false,
-    showTimeTableOptions: false,
-
-    viaPointsEnabled: false,
 });

@@ -5,7 +5,7 @@ on:
     branches:
       - '*'
     tags:
-      - 'release_*'
+      - '*'
   pull_request:
     branches:
       - '*'
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -116,7 +116,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -174,7 +174,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -244,10 +244,10 @@ jobs:
     # uses BuildKit's GitHub caching feature (https://github.com/moby/buildkit/blob/c81deef18855d952247915d3418371f405719a23/README.md#github-actions-cache-experimental),
     # which follows the general GitHub Actions caching restrictions (https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#restrictions-for-accessing-a-cache).
     # The means that Git tag CI runs *cannot* access each other's cached Docker layers, but only the default
-    # branch's one. This is why, on the default branch (`bbnavi`), we *do* build & cache the Docker layers
+    # branch's one. This is why, on the default branch (`next`), we *do* build & cache the Docker layers
     # but don't push and don't deploy the resulting image.
     # todo: as of 2023-04-27, this fails because of https://github.com/moby/buildkit/issues/2887
-    if: github.ref_name == 'bbnavi' || (github.ref_type == 'tag' && startsWith(github.ref_name, 'release_'))
+    if: github.ref_name == 'next' || (github.ref_type == 'tag' && startsWith(github.ref_name, 'release_'))
     needs:
       - lint
       - unit-test
@@ -264,42 +264,24 @@ jobs:
         run: |
           echo -e "export const COMMIT_ID = \"${GITHUB_SHA}\";\nexport const BUILD_TIME = \"$(date -Iminutes -u)\";" >app/buildInfo.js
       - name: Configure Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
 
       - name: log into GitHub Container Registry
-        uses: docker/login-action@v1 
+        uses: docker/login-action@v2
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: parse name of bbnavi config from Git tag
-        id: bbnavi-config
-        # Strip "release_" prefix & date suffix from Git tag, set as output.
-        # With an invalid tag (e.g. `release_foo_bar`), this fails.
-        run: |
-          set -e -u -o pipefail # fail on errors
-          sudo apt install --no-install-recommends -qq -y pcre2-utils
-          set -x
-          # https://mattdood.com/2022/3/github-actions-conditional-environment-variables-20220325012837
-          if [[ -n "${{ github.ref_type == 'tag' && startsWith(github.ref_name, 'release_') || '' }}" ]]; then
-            cfg="$(echo -n "${{ github.ref_name }}" | pcre2grep -o1 '(?:release_)([\w-]+)(?:_\d{4}-\d{2}-\d{2})')"
-            echo 'should-deploy="yes"' >>$GITHUB_OUTPUT  
-          else
-            cfg="${{ github.ref_name }}"
-          fi
-          echo "cfg=\"$cfg\"" >>$GITHUB_OUTPUT
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_AUTH}}
 
       - name: compute Docker image metadata
         id: docker-meta
         run: |
           set -e -x -u -o pipefail # fail on errors
-          echo "image=ghcr.io/${{ github.repository }}" >>$GITHUB_OUTPUT
+          echo "image=${{ github.repository }}" >>$GITHUB_OUTPUT
           echo "permanent-tag=$(date +"%Y-%m-%dT%H.%M.%S")-${GITHUB_SHA:0:7}" >>$GITHUB_OUTPUT
           echo "release-tag=${{ github.ref_name }}" >>$GITHUB_OUTPUT
 
       - name: build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v4
         with:
           context: .
           tags: |
@@ -309,34 +291,5 @@ jobs:
           # https://github.com/moby/buildkit#registry-push-image-and-cache-separately
           cache-from: type=gha
           cache-to: type=gha,mode=max,oci-mediatypes=true,compression=zstd
-          push: ${{ steps.bbnavi-config.outputs.should-deploy == 'yes' }}
+          push: yes
 
-      - name: generate Docker Swarm stack definition
-        if: ${{ steps.bbnavi-config.outputs.should-deploy == 'yes' }}
-        env:
-          DOCKER_IMAGE: ${{ steps.docker-meta.outputs.image }}
-          DOCKER_TAG: ${{ steps.docker-meta.outputs.permanent-tag }}
-          FAHRGEMEINSCHAFT_API_KEY: ${{ secrets.FAHRGEMEINSCHAFT_API_KEY }}
-        run: |
-          set -e -x -u -o pipefail # fail on errors
-          docker-compose \
-            -f docker-compose.yml -f deployment/stack.yml \
-            -f "deployment/stack.${{ steps.bbnavi-config.outputs.cfg }}.yml" \
-            config | tee quantum.yml
-
-      - name: deploy stack using Planetary Quantum CLI
-        if: ${{ steps.bbnavi-config.outputs.should-deploy == 'yes' }}
-        env:
-          QUANTUM_ENDPOINT: tpwd-bb-navi
-          QUANTUM_PROJECT: bbnavi-digitransit-ui
-          QUANTUM_USER: ${{ secrets.QUANTUM_USER }}
-          QUANTUM_PASSWORD: ${{ secrets.QUANTUM_PASSWORD }}
-        run: |
-          set -e -x -u -o pipefail # fail on errors
-          # The "bb-" namespace stands for "Brandenburg", in case we ever have instances in other regions.
-          stack="$QUANTUM_PROJECT-bb-${{ steps.bbnavi-config.outputs.cfg }}"
-          docker run --rm -i \
-            -v $PWD:/app:ro -w /app \
-            -e QUANTUM_ENDPOINT -e QUANTUM_PROJECT -e QUANTUM_USER -e QUANTUM_PASSWORD \
-            r.planetary-quantum.com/quantum-public/cli:2 \
-            quantum-cli stack update --create --stack "$stack" --wait

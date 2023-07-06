@@ -13,8 +13,7 @@ const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||
     '/assets/messages/message.ludwigsburgold.json';
 
-const parentConfig = require('./config.hbnext.js').default;
-
+const parentConfig = require('./config.herrenberg.js').default;
 
 const minLat = 47.6020;
 const maxLat = 49.0050;
@@ -23,42 +22,6 @@ const maxLon = 9.9014;
 
 export default configMerger(parentConfig, {
     CONFIG,
-    URL: {
-        OTP: process.env.OTP_URL || `${API_URL}/routing/v1/router/`,
-        MAP: {
-            default: MAP_URL,
-            satellite: 'https://tiles.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
-            semiTransparent: SEMI_TRANSPARENT_MAP_URL,
-            bicycle: 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
-        },
-        STOP_MAP: `${API_URL}/routing/v1/router/vectorTiles/stops/`,
-        DYNAMICPARKINGLOTS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
-        CITYBIKE_MAP: `${API_URL}/routing/v1/router/vectorTiles/citybikes/`,
-        BIKE_PARKS_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        CHARGING_STATIONS_MAP: `${API_URL}/tiles/charging-stations/`,
-        CHARGING_STATION_DETAILS_API: 'https://api.ocpdb.de/api/ocpi/2.2/location/',
-        PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
-        PELIAS_REVERSE_GEOCODER: `${
-            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
-        }/reverse`,
-        PELIAS_PLACE: `${
-            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
-        }/place`,
-        FARES: `${API_URL}/fares`,
-        FONT: '' // Do not use Google fonts.
-    },
-
-    mainMenu: {
-        showDisruptions: false,
-    },
-
-    availableLanguages: ['de', 'en'],
-    defaultLanguage: 'de',
-
-    MATOMO_URL: process.env.MATOMO_URL,
-
-    /* disable the "next" column of the Route panel as it can be confusing sometimes: https://github.com/stadtnavi/digitransit-ui/issues/167 */
 
     appBarLink: {
         name: 'Feedback',
@@ -77,7 +40,7 @@ export default configMerger(parentConfig, {
             'mode-bus': '#ff0000',
             'mode-car': '#007AC9',
             'mode-rail': '#008000',
-            'mode-subway': '#0000ff',
+            'mode-subway': '#0065B0',
             'mode-charging-station': '#00b096',
             'mode-bike-park': '#005ab4',
             'mode-carpool': '#9fc727',
@@ -113,13 +76,7 @@ export default configMerger(parentConfig, {
     favicon: './app/configurations/images/ludwigsburg/favicon.png',
     logo: 'ludwigsburg/stadtnavi-ludwigsburg-logo.svg',
 
-    GTMid: '',
-
-    feedIds: ['hbg'],
-
     realtime: { hbg: null },
-
-    searchSources: ['oa', 'osm'],
 
     searchParams: {
         'boundary.rect.min_lat': 48.34164,
@@ -136,8 +93,6 @@ export default configMerger(parentConfig, {
         [maxLon, maxLat],
         [maxLon, minLat],
     ],
-
-    nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
 
     defaultEndpoint: {
         zoomLevel: 14,
@@ -233,12 +188,6 @@ export default configMerger(parentConfig, {
         ],
     },
 
-    redirectReittiopasParams: true,
-
-    displayFareInfoTop: false,
-    showRouteSearch: false,
-    showNearYouButtons: false,
-
     // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
@@ -305,14 +254,6 @@ export default configMerger(parentConfig, {
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
 
-    parkAndRideBannedVehicleParkingTags: [
-        'lot_type:Parkplatz',
-        'lot_type:Tiefgarage',
-        'lot_type:Parkhaus'
-    ],
-
-    // live bus locations
+    // no live bus locations
     vehicles: false,
-    showVehiclesOnSummaryPage: false,
-    showVehiclesOnStopPage: true
 });

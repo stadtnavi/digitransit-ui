@@ -290,7 +290,7 @@ export default {
       return '/gtfsrt/vp/#';
     },
 
-    // this value is overridden in config.hbnext.js
+    // this value is overridden in config.herrenberg.js
     mqtt: 'wss://api.dev.stadtnavi.eu/mqtt/',
 
     gtfsrt: true,

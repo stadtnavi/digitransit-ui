@@ -229,7 +229,7 @@ export default configMerger(walttiConfig, {
 
     title: APP_TITLE,
 
-    favicon: './app/configurations/images/hbnext/favicon.png',
+    favicon: './app/configurations/images/herrenberg/favicon.png',
 
     meta: {
         description: APP_DESCRIPTION,

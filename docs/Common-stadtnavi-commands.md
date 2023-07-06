@@ -11,13 +11,13 @@ routing algorithm.
 Generally, it's enough to run digitransit and use the dev backend, like this
 
 ```
-CONFIG=hbnext API_URL=https://api.dev.stadtnavi.eu yarn run de
+CONFIG=herrenberg API_URL=https://api.dev.stadtnavi.eu yarn run de
 ```
 
 In some special cases you might want to run a local OTP and run queries against that:
 
 ```
-CONFIG=hbnext \
+CONFIG=herrenberg \
   PORT=9090 \
   API_URL=http://localhost:8080 \
   OTP_URL=http://localhost:8080/otp/routers/default/ \

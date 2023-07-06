@@ -11,8 +11,6 @@ const STATIC_MESSAGE_URL =
 
 const parentConfig = require('./config.stadtnavi.js').default;
 
-const hostname = new URL(API_URL);
-
 const minLat = 47.305;
 const maxLat = 50.008;
 const minLon = 5.620;

@@ -425,7 +425,9 @@ class Map extends React.Component {
 
     const mapUrls = [];
     if (currentMapMode === MapMode.Satellite) {
-      mapUrls.push(config.URL.MAP.satellite_eu);
+      if (config.URL.MAP.satellite_eu) {
+        mapUrls.push(config.URL.MAP.satellite_eu);
+      }
       mapUrls.push(config.URL.MAP.satellite);
       mapUrls.push(config.URL.MAP.semiTransparent);
     } else if (currentMapMode === MapMode.Bicycle) {

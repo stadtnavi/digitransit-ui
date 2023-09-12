@@ -18,7 +18,6 @@ import {
   PREFIX_BIKEPARK,
   PREFIX_CARPARK,
   PREFIX_ROAD_WEATHER,
-  PREFIX_DATAHUB_POI,
   PREFIX_GEOJSON,
   createReturnPath,
   TAB_NEARBY,
@@ -112,28 +111,6 @@ export default config => {
               getComponent={() =>
                 import(
                   /* webpackChunkName: "road weather" */ './component/map/sidebar/WeatherStationContent'
-                ).then(getDefault)
-              }
-            />
-          ),
-          map: (
-            <Route
-              getComponent={() =>
-                import(
-                  /* webpackChunkName: "map" */ './component/map/SidebarMap.js'
-                ).then(getDefault)
-              }
-            />
-          ),
-        }}
-      </Route>
-      <Route path={`/${PREFIX_DATAHUB_POI}`}>
-        {{
-          content: (
-            <Route
-              getComponent={() =>
-                import(
-                  /* webpackChunkName: "road weather" */ './component/map/sidebar/bbnavi/DatahubTileContent'
                 ).then(getDefault)
               }
             />

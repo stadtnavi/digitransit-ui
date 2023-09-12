@@ -73,9 +73,10 @@ module.exports = {
         'graphql/template-strings': [
           'error',
           {
-            ...graphqlTemplateStringsConfig,
+            env: 'relay',
             // eslint-disable-next-line global-require
-            schemaJson: require('./build/schema-bbnavi-datahub.json').data,
+            schemaJson: require('./build/schema.json').data,
+            tagName: 'graphql',
           },
         ],
       },

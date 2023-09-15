@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'found/Link';
 import Icon from '../../Icon';
 import ParkandRideForBikes from './ParkAndRideForBikes.bbnavi';
+import { PREFIX_BIKEPARK } from '../../../util/path';
 
 export default function SelectBikeParkRow(props, { intl }) {
-  const { selectRow, properties } = props;
-  const icon = ParkandRideForBikes.getIcon(properties);
-  const { name } = properties;
+  const img = ParkandRideForBikes.getIcon(props);
+  const { name, bikeParkId } = props;
 
   function cleanName(otpBikeparkName) {
     const cleaned = otpBikeparkName.replace('Bicycle parking', '').trim();
@@ -20,25 +21,26 @@ export default function SelectBikeParkRow(props, { intl }) {
   }
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-    <div className="stop-popup-choose-row" onClick={selectRow}>
-      <div className="padding-vertical-normal select-row-icon">
-        <Icon img={icon} viewBox="0 0 18 18" />
-      </div>
+    <Link
+      className="stop-popup-choose-row"
+      to={`/${PREFIX_BIKEPARK}/${encodeURIComponent(bikeParkId)}`}
+    >
+      <span className="choose-row-left-column" aria-hidden="true">
+        <Icon img={img} />
+      </span>
       <span className="choose-row-center-column">
         <h5 className="choose-row-header">{cleanName(name)}</h5>
       </span>
       <span className="choose-row-right-column">
         <Icon img="icon-icon_arrow-collapse--right" />
       </span>
-      <hr className="no-margin gray" />
-    </div>
+    </Link>
   );
 }
 
 SelectBikeParkRow.propTypes = {
-  selectRow: PropTypes.func.isRequired,
-  properties: PropTypes.object.isRequired,
+  bikeParkId: PropTypes.string,
+  name: PropTypes.string,
 };
 
 SelectBikeParkRow.contextTypes = {

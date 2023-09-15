@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import SelectStopRow from './SelectStopRow';
 import SelectCityBikeRow from './SelectCityBikeRow';
 import SelectParkAndRideRow from './SelectParkAndRideRow';
+import SelectBikeParkRow from './SelectBikeParkRow';
 import SelectVehicleContainer from './SelectVehicleContainer';
 import SelectCarpoolRow from './SelectCarpoolRow';
 import SelectRoadworksRow from './SelectRoadworksRow';
@@ -19,15 +20,22 @@ function MarkerSelectPopup(props) {
     props.options.find(option => option.layer === 'realTimeVehicle');
 
   const getRowForParking = (parking, layer) =>
-    ((layer === 'parkAndRide' && parking.carPlaces) ||
-      (layer === 'parkAndRideForBikes' && parking.bicyclePlaces)) && (
+    (layer === 'parkAndRide' && parking.carPlaces && (
       <SelectParkAndRideRow
         key={parking.id}
         name={parking.name}
         carParkId={layer === 'parkAndRide' ? parking.id : undefined}
         bikeParkId={layer === 'parkAndRideForBikes' ? parking.id : undefined}
       />
-    );
+    )) ||
+    (layer === 'parkAndRideForBikes' && parking.bicyclePlaces && (
+      <SelectBikeParkRow
+        key={parking.id}
+        name={parking.name}
+        bikeParkId={layer === 'parkAndRideForBikes' ? parking.id : undefined}
+        tags={parking.tags}
+      />
+    ));
 
   const rows = props.options.map(option => {
     if (option.layer === 'datahubTiles') {

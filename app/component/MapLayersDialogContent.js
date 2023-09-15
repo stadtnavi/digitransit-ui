@@ -344,7 +344,7 @@ class MapLayersDialogContent extends React.Component {
                       ?.isLocked,
                     defaultMessage: 'Park &amp; ride',
                     labelId: 'map-layer-park-and-ride',
-                    icon: 'icon-icon_park-and-ride',
+                    icon: 'icon-icon_open_carpark',
                     settings: 'parkAndRide',
                   },
                 this.context.config.chargingStations &&

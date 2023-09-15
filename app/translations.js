@@ -682,7 +682,7 @@ const translations = {
     'map-layer-citybike': 'Leihrad-Stationen',
     'map-layer-charging-stations': 'Ladestationen',
     'map-layer-bike-parks': 'Fahrradstellplätze',
-    'map-layer-park-and-ride': 'Park & Ride-Plätze',
+    'map-layer-park-and-ride': 'Parkplätze',
     'map-layer-stop-bus': 'Bushaltestellen',
     'map-layer-stop-ferry': 'Fähren',
     'map-layer-stop-tram': 'Tramhaltestellen',

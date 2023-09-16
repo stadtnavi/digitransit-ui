@@ -3,6 +3,7 @@ import React from 'react';
 import { shallowWithIntl } from '../../../helpers/mock-intl-enzyme';
 import MarkerSelectPopup from '../../../../../app/component/map/tile-layer/MarkerSelectPopup';
 import SelectStopRow from '../../../../../app/component/map/tile-layer/SelectStopRow';
+import SelectBikeParkRow from '../../../../../app/component/map/tile-layer/SelectBikeParkRow';
 import SelectCityBikeRow from '../../../../../app/component/map/tile-layer/SelectCityBikeRow';
 import SelectParkAndRideRow from '../../../../../app/component/map/tile-layer/SelectParkAndRideRow';
 import SelectVehicleContainer from '../../../../../app/component/map/tile-layer/SelectVehicleContainer';
@@ -109,7 +110,8 @@ describe('<MarkerSelectPopup />', () => {
     });
     expect(wrapper.find(SelectStopRow)).to.have.lengthOf(1);
     expect(wrapper.find(SelectCityBikeRow)).to.have.lengthOf(1);
-    expect(wrapper.find(SelectParkAndRideRow)).to.have.lengthOf(2);
+    expect(wrapper.find(SelectParkAndRideRow)).to.have.lengthOf(1);
+    expect(wrapper.find(SelectBikeParkRow)).to.have.lengthOf(1);
     expect(wrapper.find(SelectVehicleContainer)).to.have.lengthOf(1);
   });
 });

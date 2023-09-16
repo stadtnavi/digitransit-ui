@@ -1,8 +1,7 @@
 import { VectorTile } from '@mapbox/vector-tile';
 import Protobuf from 'pbf';
 import pick from 'lodash/pick';
-
-import range from 'lodash-es/range';
+import range from 'lodash/range';
 import { isBrowser } from '../../../util/browser';
 import {
   drawAvailabilityBadge,

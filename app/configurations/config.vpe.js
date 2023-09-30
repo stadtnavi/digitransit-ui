@@ -215,49 +215,42 @@ export default configMerger(parentConfig, {
         };
     },
     
-    // adding assets/geoJson/hb-layers layers
     geoJson: {
-        layers: [
-            // bicycleinfrastructure includes shops, repair stations,
-            /* 
-            {
-                name: {
-                    fi: '',
-                    en: 'Service stations and stores',
-                    de: "Service Stationen und Läden",
-                },
-                url: '/assets/geojson/hb-layers/bicycleinfrastructure.geojson',
-            },
-            // LoRaWan map layer
-            {
-                name: {
-                    fi: '',
-                    en: 'LoRaWAN Gateways',
-                    de: 'LoRaWAN Gateways',
-                },
-                url: '/assets/geojson/hb-layers/lorawan-gateways.geojson',
-                isOffByDefault: true,
-            },
-            // Nette Toilette layer
-            {
-                name: {
-                    fi: '',
-                    en: 'Public Toilets',
-                    de: 'Nette Toilette',
-                },
-                url: '/assets/geojson/hb-layers/toilet.geojson',
-                isOffByDefault: true,
-            },
-            */
-        ],
+        layers: [],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
 
-    parkAndRideBannedVehicleParkingTags: [
-        'lot_type:Parkplatz',
-        'lot_type:Tiefgarage',
-        'lot_type:Parkhaus'
-    ],
+    transportModes: {
+        tram: {
+            availableForSelection: true,
+            defaultValue: true,
+            nearYouLabel: {
+                de: 'Tramhaltestellen in der Nähe',
+            }
+        },
+
+        ferry: {
+            availableForSelection: true,
+            defaultValue: true,
+            nearYouLabel: {
+                de: 'Fähranleger in der Nähe',
+            }
+        },
+    },
+
+    // Additioal Map layers
+    roadworks: {
+        showRoadworks: true,
+        roadworksSmallIconZoom: 16,
+        roadworksMinZoom: 10
+    },
+
+    weatherStations: {
+        show: true,
+        smallIconZoom: 17,
+        minZoom: 15
+    },
+    // /Additional Map layers
 
     // live bus locations
     vehicles: false,

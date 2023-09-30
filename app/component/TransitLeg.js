@@ -580,33 +580,40 @@ class TransitLeg extends React.Component {
               />
             )}
           </div>
-          {leg.fare && leg.fare.isUnknown && shouldShowFareInfo(config) && (
-            <div className="disclaimer-container unknown-fare-disclaimer__leg">
-              <div className="description-container">
-                <span className="accent">
-                  {`${intl.formatMessage({ id: 'pay-attention' })} `}
-                </span>
-                {intl.formatMessage({ id: 'separate-ticket-required' })}
+          {
+            /* For stadtnavi, don't show unknown leg fare info, as we
+              a) receive all or nothing,
+              b) fetch fares after the itinary is shown, wich causes a delay 
+                 before fares are shown.
+            leg.fare && leg.fare.isUnknown && shouldShowFareInfo(config) && ( */
+            false && leg.fare.isUnknown && shouldShowFareInfo(config) && (
+              <div className="disclaimer-container unknown-fare-disclaimer__leg">
+                <div className="description-container">
+                  <span className="accent">
+                    {`${intl.formatMessage({ id: 'pay-attention' })} `}
+                  </span>
+                  {intl.formatMessage({ id: 'separate-ticket-required' })}
+                </div>
+                <div className="ticket-info">
+                  <div className="accent">{LegRouteName}</div>
+                  {leg.fare.agency &&
+                    !config.hideExternalOperator(leg.fare.agency) && (
+                      <React.Fragment>
+                        <div>{leg.fare.agency.name}</div>
+                        {leg.fare.agency.fareUrl && (
+                          <ExternalLink
+                            className="agency-link"
+                            href={leg.fare.agency.fareUrl}
+                          >
+                            {intl.formatMessage({ id: 'extra-info' })}
+                          </ExternalLink>
+                        )}
+                      </React.Fragment>
+                    )}
+                </div>
               </div>
-              <div className="ticket-info">
-                <div className="accent">{LegRouteName}</div>
-                {leg.fare.agency &&
-                  !config.hideExternalOperator(leg.fare.agency) && (
-                    <React.Fragment>
-                      <div>{leg.fare.agency.name}</div>
-                      {leg.fare.agency.fareUrl && (
-                        <ExternalLink
-                          className="agency-link"
-                          href={leg.fare.agency.fareUrl}
-                        >
-                          {intl.formatMessage({ id: 'extra-info' })}
-                        </ExternalLink>
-                      )}
-                    </React.Fragment>
-                  )}
-              </div>
-            </div>
-          )}
+            )
+          }
         </div>
         <span className="sr-only">{alertSeverityDescription}</span>
       </div>

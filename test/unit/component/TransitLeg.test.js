@@ -693,7 +693,8 @@ describe('<TransitLeg />', () => {
     );
   });
 
-  it('should show a disclaimer with relevant information for an unknown ticket', () => {
+  // Disable for stadtnavi, as we don't want to show disclaimer
+  it.skip('should show a disclaimer with relevant information for an unknown ticket', () => {
     const props = {
       ...defaultProps,
       leg: {
@@ -750,7 +751,8 @@ describe('<TransitLeg />', () => {
     expect(wrapper.find('.agency-link')).to.have.lengthOf(1);
   });
 
-  it('should not show a disclaimer for an unknown ticket when there is nothing for feedIds in availableTickets', () => {
+  // stadtnavi: skip, as we show a disclaimer
+  it.skip('should not show a disclaimer for an unknown ticket when there is nothing for feedIds in availableTickets', () => {
     const props = {
       ...defaultProps,
       leg: {

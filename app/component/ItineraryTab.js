@@ -179,8 +179,8 @@ class ItineraryTab extends React.Component {
   componentDidMount() {
     const { itinerary } = this.props;
     const { config } = this.context;
-
-    if (itinerary.fares === null && config.URL.FARES) {
+    
+    if (!this.state.fetchedFares && config.URL?.FARES) {
       fetchFares(itinerary, config.URL.FARES)
         .then(data => {
           this.setState({

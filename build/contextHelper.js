@@ -30,17 +30,19 @@ function getAllPossibleLanguages() {
     );
 }
 
-function getEntries(theme, sprites) {
+function getEntries(theme, sprites = null) {
   let themeCss = `./sass/themes/${theme}/main.scss`;
   if (!fs.existsSync(themeCss)) {
     themeCss = './sass/themes/default/main.scss';
   }
   const entries = {
     [`${theme}_theme`]: themeCss,
+    ...(sprites !== null
+      ? {
+          [sprites]: `./static/${sprites}`,
+        }
+      : {}),
   };
-  if (sprites !== null) {
-    entries[sprites] = `./static/${sprites}`;
-  }
   return entries;
 }
 
@@ -99,7 +101,7 @@ function faviconPluginFromConfig(config) {
     icons: {
       android: true,
       appleIcon: true,
-      appleStartup: true,
+      appleStartup: false,
       coast: false,
       favicons: true,
       firefox: true,

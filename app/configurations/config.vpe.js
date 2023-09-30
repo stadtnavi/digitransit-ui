@@ -71,8 +71,8 @@ export default configMerger(parentConfig, {
             "car-sharing": {
                 icon: 'car-sharing',
                 name: {
-                    de: 'Carsharing',
-                    en: 'Car sharing',
+                    de: 'stadtmobil',
+                    en: 'stadtmobil',
                 },
                 type: 'car-sharing',
                 url: {
@@ -81,6 +81,12 @@ export default configMerger(parentConfig, {
                 },
                 visibleInSettingsUi: false,
                 enabled: true,
+                season: {
+                    // currently not enabled for routing, but for display
+                    start: new Date(new Date().getFullYear()+10, 0, 1),
+                    end: new Date(new Date().getFullYear()+10, 11, 31),
+                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+                },
             }
         }
     },

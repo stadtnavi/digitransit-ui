@@ -98,8 +98,10 @@ export default function TicketInformation(
         const startTime = new Moment(transitLegs[0].startTime);
         url = url.replace('{startStopName}', transitLegs[0].from.name);
         url = url.replace('{destStopName}', transitLegs.slice(-1)[0].to.name);
-        url = url.replace('{date}', startTime.format('DD.MM.YYYY'));
-        url = url.replace('{time}', startTime.format('HH:MM'));
+        url = url.replace(
+          '{datetime}',
+          startTime.format('YYYY-MM-DDTHH:MM:SS'),
+        );
         return url;
       }
       if (fare.agency && fare.agency.fareUrl) {

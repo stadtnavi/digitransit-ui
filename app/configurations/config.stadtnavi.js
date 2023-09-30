@@ -444,7 +444,7 @@ export default configMerger(parentConfig, {
 
         carpool: {
             availableForSelection: true,
-            defaultValue: false,
+            defaultValue: true,
             nearYouLabel: {
                 de: 'Mitfahrpunkte in der Nähe',
                 en: 'Nearby carpool stops on the map',

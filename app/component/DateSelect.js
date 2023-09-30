@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { intlShape } from 'react-intl';
 
 import Select from 'react-select';

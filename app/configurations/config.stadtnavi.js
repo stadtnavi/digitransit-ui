@@ -545,6 +545,7 @@ export default configMerger(parentConfig, {
     showBikeAndParkItineraries: true,
     showStopAndRouteSearch: false,
     showTimeTableOptions: false,
+    showWeatherInformation: false,
 
     viaPointsEnabled: false,
 });

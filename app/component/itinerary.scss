@@ -466,7 +466,8 @@ $itinerary-tab-switch-height: 48px;
   color: $gray;
   font-weight: $font-weight-book;
   font-size: $font-size-small;
-  margin: 0 10px;
+  // stadtnavi: no margin
+  // margin: 0 10px;
   border-bottom: 1px solid #ddd;
 
   .ticket-type-agency-link {
@@ -594,7 +595,8 @@ $itinerary-tab-switch-height: 48px;
   .itinerary-ticket-information {
     font-size: 0.9375rem;
     width: 400px;
-    margin: 0 60px;
+    // stadtnavi: no margin
+    // margin: 0 60px;
   }
 }
 .call-agency {

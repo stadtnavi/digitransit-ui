@@ -246,15 +246,13 @@ export default configMerger(parentConfig, {
 
     // Additioal Map layers
     roadworks: {
-        showRoadworks: true,
-        roadworksSmallIconZoom: 16,
-        roadworksMinZoom: 10
+        // No roadwork information for Pforzheim, so we disable
+        show: false,
     },
 
     weatherStations: {
-        show: true,
-        smallIconZoom: 17,
-        minZoom: 15
+        // Pforzheim has non weather stations, so we disable
+        show: false,
     },
     // /Additional Map layers
 

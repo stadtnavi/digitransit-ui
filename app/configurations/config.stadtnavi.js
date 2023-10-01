@@ -148,7 +148,7 @@ export default configMerger(parentConfig, {
     },
 
     roadworks: {
-        showRoadworks: true,
+        show: true,
         roadworksSmallIconZoom: 16,
         roadworksMinZoom: 10
     },

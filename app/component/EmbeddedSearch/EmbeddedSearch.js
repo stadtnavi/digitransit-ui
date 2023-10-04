@@ -22,6 +22,14 @@ import useUTMCampaignParams from './hooks/useUTMCampaignParams';
 const LocationSearch = withSearchContext(DTAutosuggestPanel, true);
 
 const translations = {
+  de: {
+    'own-position': 'Ihre aktuelle Position',
+    'find-bike-route': 'Eine Radroute finden',
+    'find-walk-route': 'Einen Fußweg finden',
+    'find-route': 'Verbindungssuche',
+    'search-fields-sr-instructions': '',
+    'search-route': 'Verbindung suchen',
+  },
   fi: {
     'own-position': 'Nykyinen sijaintisi',
     'find-bike-route': 'Löydä pyöräreitti',

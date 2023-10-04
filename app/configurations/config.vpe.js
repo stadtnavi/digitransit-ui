@@ -130,6 +130,8 @@ export default configMerger(parentConfig, {
     faresDisclaimer: 'Sie verlassen mit dem Ticketkauf die Seiten des VPE und benutzen dann den Ticketshop der Deutschen Bahn. Für deren Inhalte übernehmen wir keine Verantwortung. <br/><br/> Tarifauskünfte werden durch die Nahverkehrsgesellschaft Baden-Württemberg mbH (NVBW) zur Verfügung gestellt. Alle Angaben ohne Gewähr.',
     ticketingLogo: 'icon-ticketing_db',
 
+    issueTrackerUrl: 'https://mangel.vpe.de/tools/index.php?lat=${lat}&lng=${lon}',
+
     defaultEndpoint: {
         lat: 48.8910,
         lon: 8.7033,

@@ -25,7 +25,7 @@ const EmbeddedSearchGenerator = (props, context) => {
   const MIN_WIDTH = 360;
   const MAX_WIDTH = 640;
 
-  const [searchLang, setSearchLang] = useState('fi');
+  const [searchLang, setSearchLang] = useState('de');
   const [searchWidth, setSearchWidth] = useState(360);
   const [searchModeRestriction, setSearchModeRestriction] = useState('');
 
@@ -191,28 +191,16 @@ const EmbeddedSearchGenerator = (props, context) => {
               </h3>
             </legend>
 
-            <label htmlFor="lang-fi">
+            <label htmlFor="lang-de">
               <input
                 type="radio"
-                value="fi"
+                value="de"
                 name="lang"
-                id="lang-fi"
+                id="lang-de"
                 onChange={event => handleLangChange(event)}
-                checked={searchLang === 'fi'}
+                checked={searchLang === 'de'}
               />
-              <FormattedMessage id="finnish" defaultMessage="Finnish" />
-            </label>
-
-            <label htmlFor="lang-sv">
-              <input
-                type="radio"
-                value="sv"
-                name="lang"
-                id="lang-sv"
-                onChange={event => handleLangChange(event)}
-                checked={searchLang === 'sv'}
-              />
-              <FormattedMessage id="swedish" defaultMessage="Swedish" />
+              <FormattedMessage id="german" defaultMessage="Deutsch" />
             </label>
 
             <label htmlFor="lang-en">

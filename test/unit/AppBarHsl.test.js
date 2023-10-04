@@ -26,9 +26,9 @@ describe('<AppBarHsl />', () => {
     expect(wrapper.isEmptyRender()).to.equal(false);
   });
 
-  it.skip("language should be 'fi'", () => {
+  it.skip("language should be 'de'", () => {
     const props = {
-      lang: 'fi',
+      lang: 'de',
     };
     const wrapper = shallowWithIntl(<AppBarHsl {...props} />, {
       context: {
@@ -40,7 +40,9 @@ describe('<AppBarHsl />', () => {
       },
     });
     expect(wrapper.name()).to.equal('ForwardRef');
-    expect(wrapper.prop('searchPage')).to.equal('https://uusi.hsl.fi/haku');
+    expect(wrapper.prop('searchPage')).to.equal(
+      'https://uusi.hsl.fi/embeddedsearch',
+    );
   });
 
   /* it("language should be 'sv'", () => {

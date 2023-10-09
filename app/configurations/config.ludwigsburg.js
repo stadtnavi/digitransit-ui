@@ -11,7 +11,7 @@ const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.sta
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||
-    '/assets/messages/message.ludwigsburgold.json';
+    '/assets/messages/message.ludwigsburg.json';
 
 const parentConfig = require('./config.herrenberg.js').default;
 
@@ -36,18 +36,7 @@ export default configMerger(parentConfig, {
 
     colors: {
         primary: '#333333',
-        iconColors: {
-            'mode-bus': '#ff0000',
-            'mode-car': '#007AC9',
-            'mode-rail': '#008000',
-            'mode-subway': '#0065B0',
-            'mode-charging-station': '#00b096',
-            'mode-bike-park': '#005ab4',
-            'mode-carpool': '#9fc727',
-        },
     },
-
-    sprites: 'assets/svg-sprite.hb.svg',
 
     socialMedia: {
         title: APP_TITLE,
@@ -64,19 +53,9 @@ export default configMerger(parentConfig, {
             site: '@TUGHerrenberg',
         },
     },
-
-    weatherStations: {
-        show: false,
-    },
- 
-    mergeStopsByCode: true,
-
     title: APP_TITLE,
-
     favicon: './app/configurations/images/ludwigsburg/favicon.png',
     logo: 'ludwigsburg/stadtnavi-ludwigsburg-logo.svg',
-
-    realtime: { hbg: null },
 
     searchParams: {
         'boundary.rect.min_lat': 48.34164,
@@ -94,13 +73,6 @@ export default configMerger(parentConfig, {
         [maxLon, minLat],
     ],
 
-    defaultEndpoint: {
-        zoomLevel: 14,
-        address: 'Bahnhof Ludwigsburg',
-        lat: 48.8922609,
-        lon: 9.1852056
-    },
-
     menu: {
         copyright: {
             label: `© Stadtwerke Ludwigsburg ${YEAR}`
@@ -115,12 +87,12 @@ export default configMerger(parentConfig, {
             {
                 name: 'imprint',
                 nameEn: 'Imprint',
-                href: 'https://www.ludwigsburg.de/LB2020/impressum.html',
+                href: 'https://www.ludwigsburg.de/stadtnavi-impressum',
             },
             {
                 name: 'privacy',
                 nameEn: 'Privacy',
-                href: 'https://www.ludwigsburg.de/start/datenschutz/datenschutz+-+stadtnavi.html',
+                href: 'https://www.swlb.de/datenschutz',
             },
         ],
     },
@@ -131,7 +103,6 @@ export default configMerger(parentConfig, {
                 header: 'Über diesen Dienst',
                 paragraphs: [
                     'stadtnavi Ludwigsburg ist eine Reiseplanungs-Anwendung für die Stadt Ludwigsburg und Umgebung. Dieser Dienst umfasst ÖPNV, Fußwege, Radverkehr, Straßen- und Parkplatzinformationen, Ladeinfrastruktur und Sharing-Angebote. Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt.',
-                    '<a href=""><img src="img/BMDV_Fz_2021_Web2x_de.gif"/></a>',
                 ],
             },
             {
@@ -152,7 +123,7 @@ export default configMerger(parentConfig, {
                 paragraphs: [
                     'Kartendaten: © <a class="link" arget=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
                     'ÖPNV-Daten: Datensätze der <a class="link" target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> und der <a class="link" target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
-                    'Sharing-Angebote: RegioRad Stuttgart, stadtmobil carsharing AG, TIER Mobility SE, ride2go GmbH, mifaz',
+                    'Sharing-Angebote: RegioRad Stuttgart, stadtmobil carsharing AG, TIER Mobility SE, ride2go GmbH.',
                     'Alle Angaben ohne Gewähr.'
                 ],
             },
@@ -162,7 +133,6 @@ export default configMerger(parentConfig, {
                 header: 'About this service',
                 paragraphs: [
                     'stadtnavi Ludwigsburg is a travel planning application for the city of Ludwigsburg and its surroundings. This service includes public transport, footpaths, cycling, street and parking information, charging infrastructure and sharing offerings. The mobility offerings are connected through intermodal routing.',
-                    '<a href=""><img src="img/BMDV_Fz_2021_Web2x_de.gif"/></a>',
                 ],
             },
             {
@@ -182,6 +152,7 @@ export default configMerger(parentConfig, {
                 paragraphs: [
                     'Map data: © <a class="link" target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
                     'Public transit data: Datasets by <a class="link" target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a> and <a class="link" target=new href=https://www.openvvs.de/dataset/gtfs-daten>VVS GmbH</a>, Shapes (d.h. Geometries of transit routes) enhanced with OpenStreetMap data © OpenStreetMap contributors',
+                    'Sharing: RegioRad Stuttgart, stadtmobil carsharing AG, TIER Mobility SE, ride2go GmbH',
                     'No responsibility is accepted for the accuracy of this information.'
                 ],
             },
@@ -198,7 +169,7 @@ export default configMerger(parentConfig, {
                     en: 'Service stations and stores',
                     de: "Radservice Stationen",
                 },
-                url: 'https://node21-iot.apps.okd.swlb.de/radservice.json',
+                url: '/assets/geojson/lb-layers/radservice.json',
                 icon: 'icon-icon_bike_repair',
                 isOffByDefault: true,
             },
@@ -209,19 +180,8 @@ export default configMerger(parentConfig, {
                     en: 'Public Toilets',
                     de: 'Nette Toilette',
                 },
-                url: "https://node21-iot.apps.okd.swlb.de/nettetoilette.json",
+                url: "/assets/geojson/lb-layers/nettetoilette.json",
                 icon: 'icon-icon_public_toilets',
-                isOffByDefault: true,
-            },
-            // LoRaWan map layer
-            {
-                name: {
-                    fi: '',
-                    en: 'LoRaWAN Gateways',
-                    de: 'LoRaWAN Gateways',
-                },
-                url: "https://node21-iot.apps.okd.swlb.de/lora.json",
-                icon: 'icon-icon_gateways',
                 isOffByDefault: true,
             },
             // Parking zones layer
@@ -232,7 +192,7 @@ export default configMerger(parentConfig, {
                   de: 'Parkzonen',
                 },
                 category: 'car',
-                url: 'https://node21-iot.apps.okd.swlb.de/parkzonen.json',
+                url: '/assets/geojson/lb-layers/nettetoilette.json',
                 icon: 'icon-icon_open_carpark',
                 isOffByDefault: false,
                 minZoom: 13
@@ -245,7 +205,7 @@ export default configMerger(parentConfig, {
                   de: 'Radnetz Ludwigsburg',
                 },
                 category: 'bicycle',
-                url: 'https://node21-iot.apps.okd.swlb.de/radwege.json',
+                url: '/assets/geojson/lb-layers/radnetz.json',
                 icon: 'icon-icon_radnetz',
                 isOffByDefault: false,
                 minZoom: 12

@@ -4,9 +4,9 @@ import configMerger from '../util/configMerger';
 const CONFIG = 'engstingen';
 const APP_TITLE = 'landstadtmobil Engstingen';
 
-const walttiConfig = require('./config.landstadtmobil.js').default;
+const parentConfig = require('./config.landstadtmobil.js').default;
 
-export default configMerger(walttiConfig, {
+export default configMerger(parentConfig, {
     CONFIG,
 
     colors: {

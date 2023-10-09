@@ -7,9 +7,9 @@ const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||
     '/assets/messages/message.muensingen.json';
 
-const walttiConfig = require('./config.landstadtmobil.js').default;
+const parentConfig = require('./config.landstadtmobil.js').default;
 
-export default configMerger(walttiConfig, {
+export default configMerger(parentConfig, {
     CONFIG,
 
     colors: {

@@ -25,12 +25,6 @@ const maxLon = 10.9014;
 export default configMerger(parentConfig, {
     CONFIG,
 
-    themeMap: {
-        muensingen: 'muensingen',
-        landstadtmobil: 'landstadtmobil',
-        engstingen: 'engstingen'
-    },
-
     appBarLink: {
         name: 'Feedback',
         href: 'mailto:nachhaltige-entwicklung@kreis-reutlingen.de?subject=landstadtmobil Feedback',

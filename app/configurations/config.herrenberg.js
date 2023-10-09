@@ -84,8 +84,13 @@ export default configMerger(parentConfig, {
                     en: 'Taxi',
                 },
                 type: 'taxi',
-                visibleInSettingsUi: false,
                 enabled: true,
+                season: {
+                    // currently not enabled for routing, but for display
+                    start: new Date(new Date().getFullYear()+10, 0, 1),
+                    end: new Date(new Date().getFullYear()+10, 11, 31),
+                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+                },
             },
             "car-sharing": {
                 icon: 'car-sharing',
@@ -98,8 +103,13 @@ export default configMerger(parentConfig, {
                     de: 'https://stuttgart.stadtmobil.de/privatkunden/',
                     en: 'https://stuttgart.stadtmobil.de/privatkunden/',
                 },
-                visibleInSettingsUi: false,
                 enabled: true,
+                season: {
+                    // currently not enabled for routing, but for display
+                    start: new Date(new Date().getFullYear()+10, 0, 1),
+                    end: new Date(new Date().getFullYear()+10, 11, 31),
+                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+                },
             },
             "cargo-bike": {
                 icon: 'cargobike',
@@ -108,8 +118,13 @@ export default configMerger(parentConfig, {
                     en: 'Free cargo bikes Herrenberg',
                 },
                 type: 'cargo-bike',
-                visibleInSettingsUi: false,
                 enabled: true,
+                season: {
+                    // currently not enabled for routing, but for display
+                    start: new Date(new Date().getFullYear()+10, 0, 1),
+                    end: new Date(new Date().getFullYear()+10, 11, 31),
+                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+                },
             },
             "de.openbikebox.stadt-herrenberg": {
                 icon: 'cargobike',
@@ -118,8 +133,13 @@ export default configMerger(parentConfig, {
                     en: 'Cargo bike Herrenberg',
                 },
                 type: 'cargo-bike',
-                visibleInSettingsUi: false,
                 enabled: true,
+                season: {
+                    // currently not enabled for routing, but for display
+                    start: new Date(new Date().getFullYear()+10, 0, 1),
+                    end: new Date(new Date().getFullYear()+10, 11, 31),
+                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+                },
             },
         }
     },

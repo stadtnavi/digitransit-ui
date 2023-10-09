@@ -79,7 +79,6 @@ export default configMerger(parentConfig, {
                     de: 'https://pforzheim.stadtmobil.de/privatkunden/',
                     en: 'https://pforzheim.stadtmobil.de/privatkunden/',
                 },
-                visibleInSettingsUi: false,
                 enabled: true,
                 season: {
                     // currently not enabled for routing, but for display

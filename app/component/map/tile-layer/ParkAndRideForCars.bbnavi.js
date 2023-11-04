@@ -122,9 +122,14 @@ class ParkAndRideForCars {
     ).then(() => {
       const { state, free, total, freeDisabled, totalDisabled } = properties;
       const hasBothDisabledAndRegular =
-        isNumber(free) && isNumber(freeDisabled);
-      const hasOnlyRegular = isNumber(free) && !isNumber(freeDisabled);
-      const hasOnlyDisabled = !isNumber(free) && isNumber(freeDisabled);
+        isNumber(total) &&
+        isNumber(totalDisabled) &&
+        total > 0 &&
+        totalDisabled > 0;
+      const hasOnlyRegular =
+        isNumber(total) && (!isNumber(totalDisabled) || totalDisabled === 0);
+      const hasOnlyDisabled =
+        (!isNumber(total) || total === 0) && isNumber(totalDisabled);
       const percentFree = free / total;
       const percentFreeDisabled = freeDisabled / totalDisabled;
 

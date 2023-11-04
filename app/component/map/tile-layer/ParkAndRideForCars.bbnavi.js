@@ -101,16 +101,14 @@ class ParkAndRideForCars {
         this.config.colors.iconColors,
       );
     }
-
     const tags = properties.tags.split(',').reduce((newTags, tag) => {
       return { ...newTags, [tag.split(':')[0]]: tag.split(':')[1] };
     }, {});
 
     const icon = getIcon(tags.lot_type);
-
     let isOpenNow = true;
-    if (properties.opening_hours) {
-      const opening = new SimpleOpeningHours(properties.opening_hours);
+    if (properties.openingHours) {
+      const opening = new SimpleOpeningHours(properties.openingHours);
       isOpenNow = opening.isOpen();
     }
 

@@ -94,16 +94,27 @@ class DynamicParkingLotsContent extends React.Component {
       ?.wheelchairAccessibleCarSpaces;
     const totalDisabled = this.props.vehicleParking.capacity
       ?.wheelchairAccessibleCarSpaces;
-    return freeDisabled !== undefined && totalDisabled !== undefined
-      ? this.context.intl.formatMessage(
-          {
-            id: 'disabled-parking-spaces-available',
-            defaultMessage:
-              '{freeDisabled} of {totalDisabled} wheelchair-accessible parking spaces available',
-          },
-          { freeDisabled, totalDisabled },
-        )
-      : null;
+    if (freeDisabled !== null && totalDisabled !== null) {
+      return this.context.intl.formatMessage(
+        {
+          id: 'disabled-parking-spaces-available',
+          defaultMessage:
+            '{freeDisabled} of {totalDisabled} wheelchair-accessible parking spaces available',
+        },
+        { freeDisabled, totalDisabled },
+      );
+    }
+    if (totalDisabled !== null) {
+      return this.context.intl.formatMessage(
+        {
+          id: 'disabled-parking-spaces-capacity',
+          defaultMessage:
+            '{totalDisabled} wheelchair-accessible parking spaces',
+        },
+        { totalDisabled },
+      );
+    }
+    return null;
   }
 
   getUrl() {

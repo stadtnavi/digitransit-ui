@@ -742,6 +742,7 @@ const translations = {
     // TODO: rename to itinerary-summary....
     'leave-your-car-park-and-ride': 'Am P&R-Parkplatz parken und weiterfahren',
     'disabled-parking-spaces-available':'{freeDisabled} von {totalDisabled} barrierefreien Stellplätzen verfügbar',
+    'disabled-parking-spaces-capacity':'{totalDisabled} barrierefreie Stellplätze',
     'itinerary-ticket.title': 'Benötigte Fahrkarte',
     'itinerary-tickets.title': 'Benötigte Fahrkarten',
     'itinerary-time.title': 'Dauer',

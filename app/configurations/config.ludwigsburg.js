@@ -73,6 +73,13 @@ export default configMerger(parentConfig, {
         [maxLon, minLat],
     ],
 
+    defaultEndpoint: {
+        zoomLevel: 14,
+        address: 'Bahnhof Ludwigsburg',
+        lat: 48.8922609,
+        lon: 9.1852056
+    },
+
     menu: {
         copyright: {
             label: `© Stadtwerke Ludwigsburg ${YEAR}`

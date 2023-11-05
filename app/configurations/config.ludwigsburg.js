@@ -199,7 +199,7 @@ export default configMerger(parentConfig, {
                   de: 'Parkzonen',
                 },
                 category: 'car',
-                url: '/assets/geojson/lb-layers/nettetoilette.json',
+                url: '/assets/geojson/lb-layers/parkzonen.json',
                 icon: 'icon-icon_open_carpark',
                 isOffByDefault: false,
                 minZoom: 13
@@ -217,7 +217,7 @@ export default configMerger(parentConfig, {
                 isOffByDefault: false,
                 minZoom: 12
             },
-	],
+	   ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
 

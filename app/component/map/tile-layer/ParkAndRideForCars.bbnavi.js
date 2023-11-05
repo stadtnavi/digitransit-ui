@@ -133,13 +133,12 @@ class ParkAndRideForCars {
 
       // what percentage needs to be free in order to get a green icon
       const percentFreeBadgeThreshold = 0.1;
-
       let avail;
       if (
         (hasOnlyRegular && free === 0) ||
         (hasOnlyDisabled && freeDisabled === 0) ||
         !isOpenNow ||
-        state === 'closed'
+        state?.toLowerCase() !== 'operational'
       ) {
         avail = 'no';
       } else if (

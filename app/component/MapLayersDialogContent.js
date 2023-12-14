@@ -388,7 +388,7 @@ class MapLayersDialogContent extends React.Component {
                   settings: { geoJson: publicToiletsLayer.url },
                 },
                 this.context.config.roadworks &&
-                  this.context.config.roadworks.showRoadworks && {
+                  this.context.config.roadworks.show && {
                     checked: roadworks,
                     defaultMessage: 'Roadworks',
                     labelId: 'map-layer-roadworks',

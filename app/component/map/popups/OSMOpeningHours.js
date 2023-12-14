@@ -9,7 +9,9 @@ export default class OSMOpeningHours extends React.Component {
   constructor() {
     super();
     this.state = { dropDownIsOpen: false };
-    this.weekdays = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su', 'ph'];
+    // ph currently not supported by OTP 2.4, so remove it from weekdays
+    // this.weekdays = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su', 'ph'];
+    this.weekdays = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su'];
   }
 
   static contextTypes = {
@@ -33,13 +35,14 @@ export default class OSMOpeningHours extends React.Component {
 
   getOpeningHours = opening => {
     const { intl } = this.context;
+    const { openingHours } = this.props;
     const openingTable = opening.getTable();
     const closed = intl.formatMessage({
       id: 'closed',
       defaultMessage: 'Closed',
     });
-
-    const isAlwaysOpen = this.props.openingHours.trim() === '24/7';
+    const isAlwaysOpen =
+      openingHours === '24/7' || openingHours === 'Mo-Su 0:00-24:00';
     if (isAlwaysOpen) {
       return (
         <div>

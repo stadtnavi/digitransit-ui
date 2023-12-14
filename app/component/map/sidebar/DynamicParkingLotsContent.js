@@ -94,7 +94,7 @@ class DynamicParkingLotsContent extends React.Component {
       ?.wheelchairAccessibleCarSpaces;
     const totalDisabled = this.props.vehicleParking.capacity
       ?.wheelchairAccessibleCarSpaces;
-    if (freeDisabled !== null && totalDisabled !== null) {
+    if (!(freeDisabled == null || totalDisabled == null)) {
       return this.context.intl.formatMessage(
         {
           id: 'disabled-parking-spaces-available',
@@ -104,7 +104,7 @@ class DynamicParkingLotsContent extends React.Component {
         { freeDisabled, totalDisabled },
       );
     }
-    if (totalDisabled !== null) {
+    if (totalDisabled) {
       return this.context.intl.formatMessage(
         {
           id: 'disabled-parking-spaces-capacity',
@@ -138,7 +138,12 @@ class DynamicParkingLotsContent extends React.Component {
   renderOpeningHours() {
     const { openingHours } = this.props.vehicleParking;
     if (openingHours && openingHours.osm) {
-      return <OSMOpeningHours openingHours={openingHours.osm} displayStatus />;
+      return (
+        <OSMOpeningHours
+          openingHours={openingHours.osm?.replaceAll('-23:59', '-24:00')}
+          displayStatus
+        />
+      );
     }
     return null;
   }

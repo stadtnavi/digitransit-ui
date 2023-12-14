@@ -506,6 +506,8 @@ export default configMerger(parentConfig, {
         },
     },
 
+    separatedParkAndRideSwitch: false,
+
     showTicketInformation: true,
     showTicketPrice: true,
     availableTickets: { 'hbg' : {}},

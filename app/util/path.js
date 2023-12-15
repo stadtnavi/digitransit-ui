@@ -27,7 +27,7 @@ export const PREFIX_DATAHUB_POI = 'datahub-poi';
 export const PREFIX_GEOJSON = 'geojson';
 export const stopUrl = id => id;
 export const LOCAL_STORAGE_EMITTER_PATH = '/local-storage-emitter';
-export const EMBEDDED_SEARCH_PATH = '/haku';
+export const EMBEDDED_SEARCH_PATH = '/embeddedsearch';
 
 /**
  * Join argument with slash separator.

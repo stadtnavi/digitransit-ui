@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedMessage, intlShape } from 'react-intl';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { Link } from 'found';
 import ItineraryCircleLine from './ItineraryCircleLine';
 import Icon from './Icon';

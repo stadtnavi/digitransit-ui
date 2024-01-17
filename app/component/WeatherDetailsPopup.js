@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Modal from '@hsl-fi/modal';
 import { FormattedMessage, intlShape } from 'react-intl';
 

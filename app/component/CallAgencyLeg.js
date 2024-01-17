@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Link from 'found/Link';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { FormattedMessage } from 'react-intl';
 
 import RouteNumber from './RouteNumber';

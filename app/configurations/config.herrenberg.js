@@ -5,7 +5,7 @@ import { MapMode } from '../constants';
 const CONFIG = 'herrenberg';
 const APP_TITLE = 'stadtnavi Herrenberg';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
-const API_URL = process.env.API_URL || 'https://api.dev.stadtnavi.eu';
+const API_URL = process.env.API_URL || 'https://api.stadtnavi.de';
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||

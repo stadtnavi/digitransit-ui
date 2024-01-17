@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { intlShape, FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import Moment from 'moment';
+import Moment from 'moment-timezone';
 import { routerShape } from 'found';
 import Icon from './Icon';
 import Checkbox from './Checkbox';

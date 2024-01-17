@@ -4,7 +4,7 @@ import find from 'lodash/find';
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';
 import orderBy from 'lodash/orderBy';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 import { getNameLabel } from '@digitransit-search-util/digitransit-search-util-uniq-by-label';
 import { getOldSearchesStorage, setOldSearchesStorage } from './localStorage';

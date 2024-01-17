@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import connectToStores from 'fluxible-addons-react/connectToStores';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { ExtendedRouteTypes } from '../../constants';
 import VehicleIcon from '../VehicleIcon';
 import IconMarker from './IconMarker';

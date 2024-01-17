@@ -4,7 +4,7 @@ import { createFragmentContainer, graphql } from 'react-relay';
 
 import Link from 'found/Link';
 import { FormattedMessage } from 'react-intl';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { PREFIX_ROUTES, PREFIX_STOPS } from '../../../util/path';
 
 import RouteHeader from '../../RouteHeader';

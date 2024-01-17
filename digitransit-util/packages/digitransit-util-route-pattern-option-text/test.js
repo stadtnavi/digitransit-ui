@@ -2,7 +2,7 @@
 /* eslint-disable func-names */
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import cloneDeep from 'lodash/cloneDeep';
 import routePatternOptionText from '.';
 

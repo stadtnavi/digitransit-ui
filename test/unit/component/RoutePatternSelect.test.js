@@ -4,7 +4,7 @@ import { describe, it } from 'mocha';
 import React from 'react';
 import sinon from 'sinon';
 
-import moment from 'moment'; // DT-3182
+import moment from 'moment-timezone'; // DT-3182
 import { shallowWithIntl } from '../helpers/mock-intl-enzyme';
 import { mockContext } from '../helpers/mock-context';
 import { Component as RoutePatternSelect } from '../../../app/component/RoutePatternSelect';

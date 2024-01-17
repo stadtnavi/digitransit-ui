@@ -3,7 +3,7 @@
 'use strict';
 
 const { Issuer, Strategy, custom } = require('openid-client');
-const moment = require('moment');
+const moment = require('moment-timezone');
 const util = require('util');
 const process = require('process');
 const User = require('./User').User;

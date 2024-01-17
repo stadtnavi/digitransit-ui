@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import enrichPatterns from '.';
 
 describe('Testing @digitransit-util/digitransit-util-enrich-patterns module', () => {

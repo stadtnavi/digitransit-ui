@@ -1,5 +1,5 @@
 import ceil from 'lodash/ceil';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { parseFeedMQTT } from './gtfsRtParser';
 import { convertTo24HourFormat } from './timeUtils';
 

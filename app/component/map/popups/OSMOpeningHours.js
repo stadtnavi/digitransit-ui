@@ -2,7 +2,7 @@ import SimpleOpeningHours from 'simple-opening-hours';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, intlShape } from 'react-intl';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Icon from '../../Icon';
 
 export default class OSMOpeningHours extends React.Component {

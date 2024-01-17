@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 /**
  Helper for determining is current date in active dates.
  Return false if pattern doesn't have active dates information available

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { matchShape } from 'found';
 import { graphql, fetchQuery } from 'react-relay';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import uniqBy from 'lodash/uniqBy';
 import compact from 'lodash/compact';
 import indexOf from 'lodash/indexOf';

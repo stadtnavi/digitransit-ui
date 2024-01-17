@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import cx from 'classnames';
 import capitalize from 'lodash/capitalize';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { intlShape } from 'react-intl';

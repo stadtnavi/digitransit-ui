@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useContext, useState } from 'react';
 import { matchShape, routerShape } from 'found';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { connectToStores } from 'fluxible-addons-react';
 import distance from '@digitransit-search-util/digitransit-search-util-distance';
 import { graphql, fetchQuery } from 'react-relay';

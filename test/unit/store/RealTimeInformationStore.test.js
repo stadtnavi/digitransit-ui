@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { beforeEach, describe, it } from 'mocha';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import sinon from 'sinon';
 
 import RealTimeInformationStore from '../../../app/store/RealTimeInformationStore';

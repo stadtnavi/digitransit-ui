@@ -3,7 +3,7 @@ const passport = require('passport');
 const session = require('express-session');
 const redis = require('redis');
 const axios = require('axios');
-const moment = require('moment');
+const moment = require('moment-timezone');
 const RedisStore = require('connect-redis')(session);
 const LoginStrategy = require('./Strategy').Strategy;
 

@@ -2,7 +2,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint no-bitwise: ["error", { "allow": [">>"] }] */
 
-import moment from 'moment';
+import moment from 'moment-timezone';
 import i18next from 'i18next';
 import translations from './helpers/translations';
 

@@ -2,7 +2,7 @@
 import { expect } from 'chai';
 import { afterEach, describe, it } from 'mocha';
 import MockDate from 'mockdate';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 import OldSearchesStore, {
   STORE_VERSION,

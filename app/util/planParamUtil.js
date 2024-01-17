@@ -1,5 +1,5 @@
 import omitBy from 'lodash/omitBy';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Cookies from 'universal-cookie';
 import booleanPointInPolygon from '@turf/boolean-point-in-polygon';
 import point from 'turf-point';

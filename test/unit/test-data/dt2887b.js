@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { PREFIX_STOPS } from '../../../app/util/path';
 
 export default {

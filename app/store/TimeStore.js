@@ -1,5 +1,5 @@
 import Store from 'fluxible/addons/BaseStore';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 class TimeStore extends Store {
   static storeName = 'TimeStore';

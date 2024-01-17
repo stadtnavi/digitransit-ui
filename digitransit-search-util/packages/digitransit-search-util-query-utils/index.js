@@ -3,7 +3,7 @@ import take from 'lodash/take';
 import flatten from 'lodash/flatten';
 import uniq from 'lodash/uniq';
 import compact from 'lodash/compact';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { fetchQuery, graphql } from 'react-relay';
 import routeNameCompare from '@digitransit-search-util/digitransit-search-util-route-name-compare';
 import {

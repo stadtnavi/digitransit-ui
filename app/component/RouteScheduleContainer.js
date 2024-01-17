@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { matchShape, routerShape, RedirectException } from 'found';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { intlShape, FormattedMessage } from 'react-intl';
 import sortBy from 'lodash/sortBy';
 import cx from 'classnames';

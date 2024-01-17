@@ -4,7 +4,7 @@ import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage, intlShape } from 'react-intl';
 
 import { v4 as uuid } from 'uuid';
-import Moment from 'moment';
+import Moment from 'moment-timezone';
 import ExternalLink from './ExternalLink';
 import { renderZoneTicket } from './ZoneTicket';
 import { getAlternativeFares } from '../util/fareUtils';

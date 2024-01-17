@@ -3,7 +3,7 @@ import { describe, it } from 'mocha';
 import React from 'react';
 import sinon from 'sinon';
 
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { mockContext } from '../helpers/mock-context';
 import { mockMatch, mockRouter } from '../helpers/mock-router';
 import { shallowWithIntl } from '../helpers/mock-intl-enzyme';

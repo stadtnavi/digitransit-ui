@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import {
   validateServiceTimeRange,
   RANGE_PAST,

@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';

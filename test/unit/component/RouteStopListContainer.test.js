@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 import { shallowWithIntl } from '../helpers/mock-intl-enzyme';
 import { Component as RouteStopListContainer } from '../../../app/component/RouteStopListContainer';

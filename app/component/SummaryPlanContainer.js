@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import connectToStores from 'fluxible-addons-react/connectToStores';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {

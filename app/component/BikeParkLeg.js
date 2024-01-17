@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { Link } from 'found';
 import { FormattedMessage, intlShape } from 'react-intl';
 import { displayDistance } from '../util/geo-utils';

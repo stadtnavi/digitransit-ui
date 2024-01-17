@@ -5,7 +5,7 @@
 /* eslint-disable prefer-destructuring */
 
 import cloneDeep from 'lodash/cloneDeep';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 export const DATE_FORMAT = 'YYYYMMDD';
 export const DATE_FORMAT2 = 'D.M.';

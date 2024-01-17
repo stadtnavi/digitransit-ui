@@ -7,7 +7,7 @@ import groupBy from 'lodash/groupBy';
 import values from 'lodash/values';
 import cx from 'classnames';
 import { FormattedMessage } from 'react-intl';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 import RouteStop from './RouteStop';
 import withBreakpoint from '../util/withBreakpoint';

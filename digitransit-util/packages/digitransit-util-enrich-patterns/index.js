@@ -5,7 +5,7 @@
 /* eslint-disable prefer-destructuring */
 import dayRangeAllowedDiff from '@digitransit-util/digitransit-util-day-range-allowed-diff';
 import cloneDeep from 'lodash/cloneDeep';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 const DATE_FORMAT = 'YYYYMMDD';
 

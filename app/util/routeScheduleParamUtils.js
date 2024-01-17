@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { DATE_FORMAT } from '../constants';
 
 const populateData = (params, match, noOfWeeks) => {

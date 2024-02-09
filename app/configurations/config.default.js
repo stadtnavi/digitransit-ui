@@ -793,6 +793,7 @@ export default {
     oulu: 'oulu',
     hameenlinna: 'hameenlinna',
     matka: 'matka',
+    mobidatabw: 'mobidatabw',
     vpe: 'vpe',
     bar: '(bar|hamburg)',
     walttiOpas: 'waltti',

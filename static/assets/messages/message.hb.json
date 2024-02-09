@@ -4,36 +4,36 @@
       "content": {
         "en": [
           {
-            "content": "Mobility award for stadtnavi!",
+            "content": "Free city tours for everyone",
             "type": "heading"
           },
           {
-            "content": "stadtnavi was awarded the Baden-Württemberg mobility prize in the category 'Multimodality and more quality of life through fewer cars' in the state competition ",
+            "content": "The city of Herrenberg offers free guided tours and hikes for everyone almost every weekend. More information can be found ",
             "type": "text"
           },
           {
             "type": "a",
-            "content": " 'Wir machen Mobilitäswende'.",
-            "href": "https://www.herrenberg.de/Mobilitaet/stadtnavi"
+            "content": "here.",
+            "href": "https://www.herrenberg.de/kostenfreie_Stadtfuehrungen"
           }
         ],
         "de": [
           {
-            "content": "stadtnavi mit Mobilitätspreis BW ausgezeichnet",
+            "content": "Kostenlose Stadtführungen für alle",
             "type": "heading"
           },
           {
-            "content": "stadtnavi wurde mit dem baden-württembergischen Mobilitätspreis in der Kategorie 'Multimodalität und mehr Lebensqualität durch weniger Autos' ",
+            "content": "Die Stadt Herrenberg bietet fast jedes Wochenende kostenlose Führungen und Wanderungen für alle an. Mehr Informationen finden Sie ",
             "type": "text"
           },
           {
             "type": "a",
-            "content": " ausgezeichnet.",
-            "href": "https://www.herrenberg.de/Mobilitaet/stadtnavi"
+            "content": "hier.",
+            "href": "https://www.herrenberg.de/kostenfreie_Stadtfuehrungen"
           }]
       },
       "type": "info",
-      "id": "202212021650",
+      "id": "202402091600",
       "persistence": "repeat",
       "icon": "info"
     }

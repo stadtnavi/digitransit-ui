@@ -1,0 +1,11 @@
+.top-bar {
+    border-width: 10px 0px 1px 0px;
+    border-style: solid;
+    border-color: $primary-color;
+    background: #fff;
+    min-height: 80px;
+}
+
+.mobile.top-bar {
+    background: #fff;
+}

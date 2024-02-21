@@ -92,7 +92,7 @@ export default configMerger(parentConfig, {
 
     logo: 'mobidatabw/mobidatabw_logo.png',
 
-    feedIds: ['hbg'],
+    feedIds: ['mi'],
 
     searchSources: ['oa', 'osm'],
 

@@ -197,10 +197,19 @@ export default configMerger(parentConfig, {
         ],
     },
 
-    // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
-            // bicycleinfrastructure includes shops, repair stations,
+            {
+                name: {
+                  fi: '',
+                  en: 'Covered region',
+                  de: 'Auskunft',
+                },
+                url: '/assets/geojson/mobidatabw_service_area.json',
+                icon: 'icon-icon_open_carpark',
+                isOffByDefault: false,
+                minZoom: 1
+            },
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,

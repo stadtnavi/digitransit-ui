@@ -18,10 +18,10 @@ const parentConfig = require('./config.stadtnavi.js').default;
 
 const hostname = new URL(API_URL);
 
-const minLat = 47.6020;
-const maxLat = 49.0050;
-const minLon = 8.4087;
-const maxLon = 9.9014;
+const minLat = 47.5;
+const maxLat = 49.8;
+const minLon = 7.5;
+const maxLon = 10.5;
 
 export default configMerger(parentConfig, {
     CONFIG,
@@ -89,12 +89,12 @@ export default configMerger(parentConfig, {
     searchSources: ['oa', 'osm'],
 
     searchParams: {
-        'boundary.rect.min_lat': 48.34164,
-        'boundary.rect.max_lat': 48.97661,
-        'boundary.rect.min_lon': 9.95635,
-        'boundary.rect.max_lon': 8.530883,
-        'focus.point.lat': 48.5957,
-        'focus.point.lon': 8.8675
+        'boundary.rect.min_lat': 47.5,
+        'boundary.rect.max_lat': 49.8,
+        'boundary.rect.min_lon': 7.5,
+        'boundary.rect.max_lon': 10.5,
+        'focus.point.lat': 48.7710755,
+        'focus.point.lon': 9.177739
     },
 
     areaPolygon: [
@@ -105,8 +105,8 @@ export default configMerger(parentConfig, {
     ],
 
     defaultEndpoint: {
-        lat: 48.5942066,
-        lon: 8.8644041,
+        lat: 48.7710755, 
+        lon: 9.177739,
     },
 
     menu: {

@@ -32,6 +32,7 @@ class MapLayerStore extends Store {
     weatherStations: false,
     chargingStations: false,
     roadworks: false,
+    // TODO: where is citybike layer?
   };
 
   static handlers = {
@@ -46,6 +47,8 @@ class MapLayerStore extends Store {
     super(dispatcher);
 
     const { config } = dispatcher.getContext();
+    // TODO citybike should be renamed to rentalVehicles.
+    // TODO probably, sharing vehicles should be separated by formFactor
     this.mapLayers.citybike = showCityBikes(config.cityBike?.networks);
 
     const datahubLayers =
@@ -54,6 +57,8 @@ class MapLayerStore extends Store {
       datahubLayers.map(l => [l.name, true]),
     );
 
+    // TODO additionalLayers config should be moved in custom config section.
+    // That way, they could be iterated over without creating dependencies here
     this.mapLayers.weatherStations = !!config.weatherStations?.show;
     this.mapLayers.chargingStations = !!config.chargingStations?.show;
     this.mapLayers.roadworks = !!config.roadworks?.show;

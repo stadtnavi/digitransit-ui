@@ -112,6 +112,9 @@ class CustomizeSearch extends React.Component {
               />
             </div>
           </div>
+          {
+            // TODO: extract the whole section into new, customizable component
+          }
           {useCitybikes(config?.cityBike?.networks) && (
             <div className="settings-section">
               <div className="settings-option-container">

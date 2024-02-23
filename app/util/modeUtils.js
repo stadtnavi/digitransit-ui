@@ -41,6 +41,7 @@ export const isCitybikePreSeasonActive = season => {
 
 export const showCitybikeNetwork = network => {
   return (
+    // TODO enabled should default to true
     network?.enabled &&
     (isCitybikeSeasonActive(network?.season) ||
       isCitybikePreSeasonActive(network?.season))

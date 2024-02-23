@@ -54,7 +54,7 @@
           <g transform="translate(204 348)" fill-rule="evenodd">
             <g transform="translate(25.2 25.2)">
               <circle id="c" cx="10.8" cy="10.8" r="11.4" style="fill: var(--operatorbg);stroke:#fff; stroke-width:1.2"/>
-              <g >
+              <g>
                 <mask id="b" fill="white">
                   <use xlink:href="#a"/>
                 </mask>

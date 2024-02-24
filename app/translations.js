@@ -265,6 +265,7 @@ const translations = {
     'about-service-feedback': 'Über dieses Angebot und Feedback',
     'about-these-pages': 'Über diese Webseiten',
     'access_with': 'Zugang mit',
+    'accessibility-routing-disabled': 'Aufgrund fehlender Date zur Barrierefreiheit können wir derzeit leider keine barrierefreien Routen beauskunften.',
     'additional-info': 'Hier werden Informationen erscheinen...',
     'all': 'Alle',
     'aria-itinerary-summary-car-distance': 'Gesamte Fahrzeit {duration}, {distance} ',
@@ -1246,6 +1247,7 @@ const translations = {
   },
 
   en: {
+    'accessibility-routing-disabled': 'Due to a lack of data on accessibility, we are unfortunately unable to provide any barrier-free routes at the moment.',
     'bicycle-parking-filter': 'Bicycle parking options',
     'bicycle-parking-filter-all': 'All parking spaces',
     'bicycle-parking-filter-freeOnly': 'Only free ones',

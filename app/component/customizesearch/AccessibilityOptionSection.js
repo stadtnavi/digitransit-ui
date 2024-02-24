@@ -6,7 +6,10 @@ import { saveRoutingSettings } from '../../action/SearchSettingsActions';
 import Icon from '../Icon';
 import { addAnalyticsEvent } from '../../util/analyticsUtils';
 
-const AccessibilityOptionSection = ({ currentSettings }, { executeAction }) => {
+const AccessibilityOptionSection = (
+  { currentSettings },
+  { config, executeAction },
+) => {
   const onToggle = () => {
     addAnalyticsEvent({
       category: 'ItinerarySettings',
@@ -19,35 +22,50 @@ const AccessibilityOptionSection = ({ currentSettings }, { executeAction }) => {
       accessibilityOption: !currentSettings.accessibilityOption,
     });
   };
-
+  const accessibilityOptionDisabled =
+    config.accessibilityRoutingDisabled === true;
   return (
     <fieldset>
       <legend className="accessibility-header settings-header">
         <FormattedMessage id="accessibility" defaultMessage="Accessibility" />
       </legend>
-      <div className="mode-option-container toggle-container accessibility-container">
-        {/* eslint jsx-a11y/label-has-associated-control: ["error", { assert: "either" } ] */}
-        <label htmlFor="settings-toggle-accessibility" className="toggle-label">
-          <Icon
-            className="wheelchair-icon"
-            img="icon-icon_wheelchair"
-            height={2}
-            width={2}
-          />
-          <span className="accessibility-label">
+      {accessibilityOptionDisabled ? (
+        <>
+          <div className="accessibility-routing-disabled-notice">
             <FormattedMessage
-              id="accessibility-limited"
-              defaultMessage="Wheelchair"
+              id="accessibility-routing-disabled"
+              defaultMessage="Due to a lack of data on accessibility, we are unfortunately unable to provide any barrier-free routes at the moment."
             />
-          </span>
-          <Toggle
-            id="settings-toggle-accessibility"
-            toggled={!!currentSettings.accessibilityOption}
-            title="accessibility"
-            onToggle={() => onToggle()}
-          />
-        </label>
-      </div>
+          </div>
+        </>
+      ) : (
+        <div className="mode-option-container toggle-container accessibility-container">
+          {/* eslint jsx-a11y/label-has-associated-control: ["error", { assert: "either" } ] */}
+          <label
+            htmlFor="settings-toggle-accessibility"
+            className="toggle-label"
+          >
+            <Icon
+              className="wheelchair-icon"
+              img="icon-icon_wheelchair"
+              height={2}
+              width={2}
+            />
+            <span className="accessibility-label">
+              <FormattedMessage
+                id="accessibility-limited"
+                defaultMessage="Wheelchair"
+              />
+            </span>
+            <Toggle
+              id="settings-toggle-accessibility"
+              toggled={!!currentSettings.accessibilityOption}
+              title="accessibility"
+              onToggle={() => onToggle()}
+            />
+          </label>
+        </div>
+      )}
     </fieldset>
   );
 };
@@ -57,6 +75,7 @@ AccessibilityOptionSection.propTypes = {
 };
 
 AccessibilityOptionSection.contextTypes = {
+  config: PropTypes.object.isRequired,
   executeAction: PropTypes.func.isRequired,
 };
 

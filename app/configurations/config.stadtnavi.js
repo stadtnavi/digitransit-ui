@@ -553,13 +553,12 @@ export default configMerger(parentConfig, {
     viaPointsEnabled: false,
 
     embeddedSearch: {
-    title: {
-      de: 'Verbindungssuche-Widget',
-    },
-    infoText: {
-      de:
-        'Erstellen Sie ein Widget zur Verbindungssuche und fügen Sie es Ihrem eigenen Web-Angebot zu. Nach Eingabe der Start-/Zieladresse gelangen Sie über "Verbindung suchen" in diese Routensuche.',
+        title: {
+            de: 'Verbindungssuche-Widget',
+        },
+        infoText: {
+            de: 'Erstellen Sie ein Widget zur Verbindungssuche und fügen Sie es Ihrem eigenen Web-Angebot zu. Nach Eingabe der Start-/Zieladresse gelangen Sie über "Verbindung suchen" in diese Routensuche.',
+        },
     },
     accessibilityRoutingDisabled: true,
-  },
 });

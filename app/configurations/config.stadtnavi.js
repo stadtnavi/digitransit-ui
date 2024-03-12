@@ -119,7 +119,7 @@ export default configMerger(parentConfig, {
         },
     },
 
-    sprites: 'assets/svg-sprite.hb.svg',
+    sprites: 'assets/svg-sprite.stadtnavi.svg',
     
     socialMedia: {
         title: APP_TITLE,

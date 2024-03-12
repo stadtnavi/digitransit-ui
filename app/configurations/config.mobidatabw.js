@@ -7,9 +7,9 @@ const APP_TITLE = 'stadtnavi mobidatabw';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
 const API_URL = process.env.API_URL || 'https://otp.mobidata-bw.de';
 const OTP_URL = process.env.OTP_URL || `${API_URL}/otp/routers/default/`;
-const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
-const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://tiles.stadtnavi.eu/bicycle/{z}/{x}/{y}{r}.png';
-const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png";
+const MAP_URL = process.env.MAP_URL || 'https://tiles.mobidata-bw.de/styles/streets/{z}/{x}/{y}{r}.png';
+//const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://tiles.stadtnavi.eu/bicycle/{z}/{x}/{y}{r}.png';
+const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.mobidata-bw.de/styles/satellite-overlay/{z}/{x}/{y}{r}.png";
 
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ;
@@ -32,7 +32,7 @@ export default configMerger(parentConfig, {
             default: MAP_URL,
             satellite: 'https://tiles.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
             semiTransparent: SEMI_TRANSPARENT_MAP_URL,
-            bicycle: BIKE_MAP_URL
+            bicycle: null
         },
         STOP_MAP: `${OTP_URL}vectorTiles/stops/`,
         PARK_AND_RIDE_MAP: `${OTP_URL}vectorTiles/parking/`,

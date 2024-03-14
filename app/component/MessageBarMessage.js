@@ -25,6 +25,8 @@ const MessageBarMessage = ({
           className="message-bar-link"
           href={link.href}
           style={{ color: link.color || null }}
+          target="_blank"
+          rel="noreferrer noopener"
         >
           {link.content || link.href}
         </a>

@@ -544,7 +544,7 @@ const translations = {
     'carpool-legal-notice': 'Dies ist ein Angebot des externen Anbieters ride2Go GmbH.',
     'card-header-back-to-result-list' : 'Zurück zu den Ergebnissen',
     'carpool-distance-duration': '{duration} ({distance}) mitfahren',
-    'carpool-details-link': 'Details bei {agency}',
+    'carpool-details-link': 'Mitfahrt vereinbaren',
     cause: 'Grund',
     'char-left': 'Zeichen',
     'charging-direct-deep-link': 'Ladevorgang starten',

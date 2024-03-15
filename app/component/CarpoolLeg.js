@@ -124,8 +124,7 @@ CarpoolLeg.createBookButton = route => {
       <ExternalLink className="carpool-leg-details-link" href={route.url}>
         <FormattedMessage
           id="carpool-details-link"
-          values={{ agency: route.agency.name }}
-          defaultMessage="Details"
+          defaultMessage="Contact driver"
         />
       </ExternalLink>
     );

@@ -114,3 +114,9 @@ input[type='radio'] {
   border: solid 1px #888888;
   background-color: #ffffff;
 }
+
+.carpool-leg-details-link .external-link-container {
+  a.external-link {
+    color: $primary-color;
+  }
+}

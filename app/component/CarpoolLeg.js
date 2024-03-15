@@ -144,18 +144,11 @@ CarpoolLeg.drawIcons = agency => {
     );
   }
   return (
-    <>
-      <Icon
-        img="fg_icon"
-        className="carpool-agency-logo"
-        ariaLabel={agency.name}
-      />
-      <Icon
-        img="adac_icon"
-        className="carpool-agency-logo"
-        ariaLabel="ADAC Mitfahrclub"
-      />
-    </>
+    <Icon
+      img="fg_icon"
+      className="carpool-agency-logo"
+      ariaLabel={agency.name}
+    />
   );
 };
 

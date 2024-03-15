@@ -115,6 +115,7 @@ export default configMerger(parentConfig, {
             'mode-charging-station': '#00b096',
             'mode-bike-park': '#005ab4',
             'mode-carpool': '#9fc727',
+            'mode-funicular': '#FFCC00',
         },
     },
 
@@ -450,6 +451,11 @@ export default configMerger(parentConfig, {
                 de: 'Mitfahrpunkte in der Nähe',
                 en: 'Nearby carpool stops on the map',
             }
+        },
+
+        funicular: {
+            availableForSelection: true,
+            defaultValue: true,
         },
 
         citybike: {

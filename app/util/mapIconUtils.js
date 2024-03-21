@@ -197,6 +197,19 @@ export const getFill = memoize(selector => getStyleOrDefault(selector).fill);
 export const getModeColor = mode => getColor(`.${mode}`);
 
 function getImageFromSpriteSync(icon, width, height, fill) {
+  /**
+   * This function creates an image usind an inlined data:image/svg+xml
+   * from an icon. All elements of this icons are pre-processed as follows:
+   * * if an element has a style attribute which does not provide a fill property,
+   *   the given fill is set
+   * * if an element has a class 'modeColor', it's fill attribute is set
+   * * if a svg references symbols etc via use, they are inlined
+   *   NOTE: external references in files are currently expected as #symbol_id
+   *         which will not work in the standalone svgs
+   *   NOTE 2: Currently, only one level of use inlining is supported. In future,
+   *           recursive inlining might be necessary. Also, only direct children
+   *           of type 'use' are inlined.
+   * */
   if (!document) {
     return null;
   }
@@ -210,16 +223,45 @@ function getImageFromSpriteSync(icon, width, height, fill) {
   const vb = symbol.viewBox.baseVal;
   svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.width} ${vb.height}`);
 
-  // TODO: Simplify after https://github.com/Financial-Times/polyfill-service/pull/722 is merged
-  Array.prototype.forEach.call(symbol.childNodes, node => {
-    const child = node.cloneNode(true);
-    if (node.style && !child.attributes.fill) {
-      child.style.fill = fill || window.getComputedStyle(node).color;
+  // Copy all childNodes from symbol to svg (and set fill style)
+  symbol.childNodes.forEach(node => {
+    // todo: only direct use children are inlined, not deeper nested ones...
+    if (node.nodeName === 'use') {
+      const usedSymbolId =
+        node.getAttribute('xlink:href') || node.getAttribute('href');
+      const usedSymbol = document.getElementById(usedSymbolId.substring(1)); // substring to remove #
+      if (!usedSymbol) {
+        throw new Error(
+          `Could not find icon '${usedSymbolId}' referenced by use in '${icon}'`,
+        );
+      }
+      // todo: here we just deep copy the node, which might use nodes as well, but we don't replace for now
+      const inlineSymbol = usedSymbol.cloneNode(true);
+      // copy properties from icon to inlineSymbol
+      node.attributes.forEach(attr => {
+        if (
+          !(
+            attr.name.startsWith('xmlns') ||
+            attr.name.startsWith('href') ||
+            attr.name.startsWith('xlink')
+          )
+        ) {
+          inlineSymbol.setAttribute(attr.name, attr.value);
+        }
+      });
+      svg.appendChild(inlineSymbol);
+    } else {
+      const child = node.cloneNode(true);
+      if (node.style && !child.attributes.fill) {
+        child.style.fill = fill || window.getComputedStyle(node).color;
+      }
+      svg.appendChild(child);
     }
-    svg.appendChild(child);
   });
 
   if (fill) {
+    // todo: instead of setting fill, the svg could make use of vars
+    //       and set them on the parent element, e.g. fill: var(--modeColor,#<default>)
     const elements = svg.getElementsByClassName('modeColor');
     for (let i = 0; i < elements.length; i++) {
       elements[i].setAttribute('fill', fill);
@@ -240,6 +282,8 @@ function getImageFromSpriteAsync(icon, width, height, fill) {
   });
 }
 
+// DEV: when working on mapIconUtils, it is helpful to deactivate memoizeation:
+// function getImageFromSpriteCache (icon, width, height, fill) { return getImageFromSpriteAsync(icon, width, height, fill);}
 const getImageFromSpriteCache = memoize(
   getImageFromSpriteAsync,
   (icon, w, h, fill) => `${icon}_${w}_${h}_${fill}`,

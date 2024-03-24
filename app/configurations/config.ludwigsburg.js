@@ -56,6 +56,7 @@ export default configMerger(parentConfig, {
     title: APP_TITLE,
     favicon: './app/configurations/images/ludwigsburg/favicon.png',
     logo: 'ludwigsburg/stadtnavi-ludwigsburg-logo.svg',
+    secondaryLogo: 'ludwigsburg/stadtnavi-logo-yellow.svg',
 
     searchParams: {
         'boundary.rect.min_lat': 48.34164,

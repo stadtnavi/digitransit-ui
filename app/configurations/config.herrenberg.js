@@ -153,6 +153,7 @@ export default configMerger(parentConfig, {
     },
 
     logo: 'herrenberg/stadtnavi-herrenberg-logo.svg',
+    secondaryLogo: 'herrenberg/stadtnavi-logo-green.svg',
 
     feedIds: ['hbg'],
 

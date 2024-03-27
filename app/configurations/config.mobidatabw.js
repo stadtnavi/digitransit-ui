@@ -10,7 +10,7 @@ const OTP_URL = process.env.OTP_URL || `${API_URL}/otp/routers/default/`;
 const MAP_URL = process.env.MAP_URL || 'https://tiles.mobidata-bw.de/styles/streets/{z}/{x}/{y}{r}.png';
 //const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://tiles.stadtnavi.eu/bicycle/{z}/{x}/{y}{r}.png';
 const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.mobidata-bw.de/styles/satellite-overlay/{z}/{x}/{y}{r}.png";
-
+const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.nvbw.leonard.io/pelias/v1";
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ;
 
@@ -43,6 +43,14 @@ export default configMerger(parentConfig, {
         // TODO WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
         CHARGING_STATIONS_MAP: `https://api.mobidata-bw.de/ocpdb/tiles/{z}/{x}/{y}.mvt`,
         CHARGING_STATION_DETAILS_API: 'https://api.mobidata-bw.de/ocpdb/api/public/v1/locations/',
+        // use mobidata specific geocoder
+        PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
+        PELIAS_REVERSE_GEOCODER: `${
+            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
+        }/reverse`,
+        PELIAS_PLACE: `${
+            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
+        }/place`,
     },
 
     map: {

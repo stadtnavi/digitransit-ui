@@ -77,6 +77,32 @@ export const getDefaultNetworks = config => {
   return mappedNetworks;
 };
 
+export const getRentalNetworkIconAndColors = (
+  networkId,
+  formFactors,
+  config,
+) => {
+  const networkConfig = getCityBikeNetworkConfig(networkId, config);
+  // TODO HB<->LE: in which cases does OTP return multiple FormFactors? and when none?
+  const formFactor =
+    formFactors === undefined || formFactors.indexOf(',') > 0
+      ? networkConfig.form_factors[0]
+      : formFactors.toLowerCase();
+  const operatorConfig = config.cityBike.operators[networkConfig.operator];
+  const colors = networkConfig.colors || operatorConfig.colors;
+  if (colors === undefined) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `Neither network.colors not operator.colors configuration for ${networkId} (operator ${networkConfig.operator} )`,
+    );
+  }
+  return {
+    iconName: `icon-icon_${formFactor}`,
+    bgColor: colors?.background || config.colors.iconColors['mode-citybike'],
+    fgColor: colors?.foreground || '#fff',
+  };
+};
+
 export const mapDefaultNetworkProperties = config => {
   const mappedNetworks = [];
   // TODO reuse getDefaultNetworks which already filters ids

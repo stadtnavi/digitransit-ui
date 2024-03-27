@@ -12,10 +12,8 @@ import {
 import { showCitybikeNetwork } from '../../../util/modeUtils';
 
 import {
-  getCityBikeNetworkConfig,
-  getCityBikeNetworkIcon,
-  getCityBikeNetworkId,
   getCitybikeCapacity,
+  getRentalNetworkIconAndColors,
   BIKEAVL_UNKNOWN,
 } from '../../../util/citybikes';
 import { getIdWithoutFeed } from '../../../util/feedScopedIdUtils';
@@ -121,23 +119,25 @@ class BikeRentalStations {
   };
 
   draw = (feature, zoomedIn) => {
-    const { id, network } = feature.properties;
+    const { id, network, formFactors } = feature.properties;
     if (!this.shouldShowStation(id, network)) {
       return;
     }
 
-    const iconName = getCityBikeNetworkIcon(
-      getCityBikeNetworkConfig(getCityBikeNetworkId(network), this.config),
+    const { iconName, bgColor, fgColor } = getRentalNetworkIconAndColors(
+      network,
+      formFactors,
+      this.config,
     );
     const isHilighted = this.tile.hilightedStops?.includes(id);
 
     if (zoomedIn) {
-      this.drawLargeIcon(feature, iconName, isHilighted);
+      this.drawLargeIcon(feature, iconName, isHilighted, bgColor, fgColor);
     } else if (isHilighted) {
       this.canHaveStationUpdates = true;
       this.drawHighlighted(feature, iconName);
     } else {
-      this.drawSmallMarker(feature.geom, iconName);
+      this.drawSmallMarker(feature.geom, bgColor);
     }
   };
 
@@ -145,6 +145,8 @@ class BikeRentalStations {
     { geom, properties: { network, operative, vehiclesAvailable } },
     iconName,
     isHilighted,
+    bgColor,
+    fgColor,
   ) => {
     const citybikeCapacity = getCitybikeCapacity(this.config, network);
 
@@ -156,6 +158,8 @@ class BikeRentalStations {
       iconName,
       citybikeCapacity !== BIKEAVL_UNKNOWN,
       isHilighted,
+      bgColor,
+      fgColor,
     );
   };
 
@@ -188,6 +192,7 @@ class BikeRentalStations {
   };
 
   drawSmallMarker = (geom, iconName) => {
+    // TODO marker color should be derived from network
     const iconColor =
       iconName.includes('secondary') &&
       this.config.colors.iconColors['mode-citybike-secondary']

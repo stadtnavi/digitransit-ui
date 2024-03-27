@@ -271,6 +271,122 @@ export default configMerger(parentConfig, {
         showStationId: false,
         useSpacesAvailable: false,
         showCityBikes: true,
+
+        operators : {
+          deer: {
+            icon: "car-sharing",
+            name: {
+                de: "deer"
+            },
+            url: {
+                de: "https://www.deer-carsharing.de/"
+            },
+            colors: {
+                background: '#3C8325'
+            }
+          },
+          lime: {
+            brandIcon: "lime",
+            name: {
+              de: "Lime"
+            },
+            colors: {
+               background: '#00DD00'
+            }
+           },
+          bird: {
+            brandIcon: "bird",
+            name: {
+              de: "bird"
+            },
+            colors: {
+              background: '#00D4F1'
+            },
+           },
+           bolt: {
+             brandIcon: "bolt",
+             name: {
+               de: "bolt"
+             },
+             colors: {
+              background: '#30D287'
+             },
+           },
+           tier: {
+             brandIcon: "tier",
+             name: {
+               de: "TIER"
+             },
+             colors: {
+               background: '#0E1A50',
+               foreground: '#69D2AA'
+             },
+           },
+           nextbike: {
+             brandIcon: "nextbike",
+             name: {
+               de: "nextbike"
+             },
+             colors: {
+               background: '#69D2AA',
+               foreground: '#0E1A50'
+             },
+           },
+           voi: {
+             brandIcon: "voi",
+             name: {
+               de: "VOI"
+             },
+             colors: {
+               background: '#F26961'
+             },
+           },
+           callabike: {
+             brandIcon: "callabike",
+             name: {
+               de: "Call-a-Bike"
+             },
+             colors: {
+               background: '#E30009'
+             },
+            },
+            donkey: {
+             brandIcon: "donkey",
+             name: {
+               de: "Donkey Republic"
+             },
+             colors: {
+               background: '#F47521'
+             },
+            },
+            regiorad: {
+             brandIcon: "regiorad",
+             name: {
+               de: "RegioRad"
+             },
+             colors: {
+               background: '#009fe4'
+             },
+            },
+            stadtmobil: {
+             brandIcon: "stadtmobil",
+             name: {
+               de: "stadtmobil"
+             },
+             colors: {
+               background: '#FF8A36'
+             },
+            },
+            other: {
+             brandIcon: "other",
+             name: {
+               de: "Weitere Anbieter"
+             },
+             colors: {
+               background: '#C84674'
+             },
+        }
+        },
         networks: {
            deer: {
              icon: "car-sharing",
@@ -366,7 +482,7 @@ export default configMerger(parentConfig, {
            },
            regiorad_stuttgart: {
              icon: "regiorad",
-             operator: "other",
+             operator: "regiorad",
              name: {
                de: "RegioRad Stuttgart"
              },
@@ -385,7 +501,7 @@ export default configMerger(parentConfig, {
            },
            callabike: {
              icon: "regiorad",
-             operator: "other",
+             operator: "callabike",
              name: {
                de: "Call a Bike"
              },
@@ -404,7 +520,7 @@ export default configMerger(parentConfig, {
            },
            callabike_ice: {
              icon: "regiorad",
-             operator: "other",
+             operator: "callabike",
              name: {
                de: "Call a Bike"
              },
@@ -423,7 +539,7 @@ export default configMerger(parentConfig, {
            },
            nextbike_df: {
              icon: "other",
-             operator: "tier",
+             operator: "nextbike",
              name: {
                de: "Frelo Freiburg"
              },
@@ -442,7 +558,7 @@ export default configMerger(parentConfig, {
            },
            nextbike_fg: {
              icon: "other",
-             operator: "tier",
+             operator: "nextbike",
              name: {
                de: "KVV.nextbike"
              },
@@ -461,7 +577,7 @@ export default configMerger(parentConfig, {
            },
            nextbike_ds: {
              icon: "regiorad",
-             operator: "tier",
+             operator: "nextbike",
              name: {
                de: "SAP Walldorf"
              },
@@ -480,7 +596,7 @@ export default configMerger(parentConfig, {
            },
            nextbike_vn: {
              icon: "other",
-             operator: "tier",
+             operator: "nextbike",
              name: {
                de: "VRNnextbike"
              },
@@ -588,7 +704,7 @@ export default configMerger(parentConfig, {
            },
            zeus_freiburg: {
              icon: "tier_scooter",
-             operator: "other",
+             operator: "zeus",
              name: {
                de: "Zeus Scooters"
              },
@@ -1146,7 +1262,7 @@ export default configMerger(parentConfig, {
            },
            nextbike_ch: {
              icon: "regiorad",
-             operator: "tier",
+             operator: "nextbike",
              name: {
                de: "nextbike Switzerland"
              },

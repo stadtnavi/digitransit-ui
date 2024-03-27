@@ -42,8 +42,12 @@ def operator_id(operator, name):
         'deer': 'deer',
         'donkey': 'donkey',
         'lime': 'lime',
+        'my-e-car': 'my-e-car',
         'tier': 'tier',
         'voi': 'voi',
+        'zeus': 'zeus',
+        'südbaden': 'stadtmobil_suedbaden',
+        'lastenvelo': 'frelo_freiburg',
     }
 
     for partial_operator_name in mappings.keys():
@@ -52,7 +56,7 @@ def operator_id(operator, name):
 
     if 'deutsche bahn' in lowercased_operator:
         if  'RegioRad' in name:
-            return 'regiorad's
+            return 'regiorad'
         else:
             return 'callabike'
 
@@ -68,7 +72,7 @@ for system in systems['systems']:
     system_information_response = requests.get(f'{LAMASSU_URL}/{system_id}/system_information')
 
     if system_information_response.status_code >= 400:
-        print(f'Ignoring {system_id}', file=sys.stderr)
+        print(f'Ignoring {system_id}, as response status was {system_information_response.status_code}', file=sys.stderr)
         continue
 
     system_information = system_information_response.json()['data']
@@ -80,22 +84,25 @@ for system in systems['systems']:
     else:
         vehicle_types = vehicle_types_response.json()['data']['vehicle_types']
         form_factors = extract_form_factors(vehicle_types)
+        if len(form_factors) == 0:
+            print(f'No formFactors for {system_id}, assuming bicycle', file=sys.stderr)
+            form_factors = ['bicycle']
 
     system_config = {
-        'icon': 'rental', # colors will be provided via css, symbol via appended formfactor
+        'icon': f"brand_{operator_id(system_information['operator'], system_information['name'])}", # colors will be provided via css, symbol via appended formfactor
         'operator': operator_id(system_information['operator'], system_information['name']),
         'name': {
             'de': system_information['name'],
         },
         'type': 'citybike' if form_factors[0] == 'bicycle' else form_factors[0], # TODO citybike should be renamed
-        'formFactors': form_factors,
+        'form_factors': form_factors,
         # 'visibleInSettingsUi': True, currently not checked in code. Probably lost during upstream merge. Intention: Show e.g. Taxi, but don't allow routing
         'hideCode': True,
         'enabled': True,
-        'season': {
-            'start': 'new Date(new Date().getFullYear(), 0, 1)',
-            'end': 'new Date(new Date().getFullYear(), 11, 31)',
-         },
+        #season': {
+        #    'start': 'new Date(new Date().getFullYear(), 0, 1)',
+        #    'end': 'new Date(new Date().getFullYear(), 11, 31)',
+        # },
     }
 
     if 'url' in system_information:

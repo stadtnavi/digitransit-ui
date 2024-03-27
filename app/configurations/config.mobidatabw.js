@@ -389,1246 +389,1065 @@ export default configMerger(parentConfig, {
         },
         networks: {
            deer: {
-             icon: "car-sharing",
+             icon: "brand_deer",
              operator: "deer",
              name: {
                de: "deer"
              },
              type: "car",
              form_factors: ['car'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.deer-carsharing.de/"
              }
            },
            voi_karlsruhe: {
-             icon: "tier_scooter",
+             icon: "brand_voi",
              operator: "voi",
              name: {
                de: "Voi Scooter Karlsruhe"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            lastenvelo_fr: {
-             icon: "other",
-             operator: "other",
+             icon: "brand_frelo_freiburg",
+             operator: "frelo_freiburg",
              name: {
                de: "LastenVelo Freiburg"
              },
              type: "cargo_bicycle",
              form_factors: ['cargo_bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.lastenvelofreiburg.de/"
              }
            },
-           stadtmobil_suedbaden: {
-             icon: "car-sharing",
+           stadtmobil_stuttgart: {
+             icon: "brand_other",
              operator: "other",
+             name: {
+               de: "Stadtmobil Stuttgart"
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://stuttgart.stadtmobil.de/"
+             }
+           },
+           stadtmobil_suedbaden: {
+             icon: "brand_stadtmobil_suedbaden",
+             operator: "stadtmobil_suedbaden",
              name: {
                de: "Stadtmobil Südbaden"
              },
              type: "car",
              form_factors: ['car'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.stadtmobil-suedbaden.de/"
              }
            },
            "my-e-car": {
-             icon: "other",
-             operator: "other",
+             icon: "brand_my-e-car",
+             operator: "my-e-car",
              name: {
                de: "my-e-car"
              },
              type: "cargo_bicycle",
              form_factors: ['cargo_bicycle', 'car'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.my-e-car.de/"
              }
            },
            regiorad_stuttgart: {
-             icon: "regiorad",
+             icon: "brand_regiorad",
              operator: "regiorad",
              name: {
                de: "RegioRad Stuttgart"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.regioradstuttgart.de"
              }
            },
            callabike: {
-             icon: "regiorad",
+             icon: "brand_callabike",
              operator: "callabike",
              name: {
                de: "Call a Bike"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.callabike.de"
              }
            },
            callabike_ice: {
-             icon: "regiorad",
+             icon: "brand_callabike",
              operator: "callabike",
              name: {
                de: "Call a Bike"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.callabike.de"
              }
            },
            nextbike_df: {
-             icon: "other",
-             operator: "nextbike",
+             icon: "brand_tier",
+             operator: "tier",
              name: {
                de: "Frelo Freiburg"
              },
              type: "cargo_bicycle",
              form_factors: ['cargo_bicycle', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.frelo-freiburg.de/de/"
              }
            },
            nextbike_fg: {
-             icon: "other",
-             operator: "nextbike",
+             icon: "brand_tier",
+             operator: "tier",
              name: {
                de: "KVV.nextbike"
              },
              type: "cargo_bicycle",
              form_factors: ['cargo_bicycle', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.kvv-nextbike.de/de/"
              }
            },
            nextbike_ds: {
-             icon: "regiorad",
-             operator: "nextbike",
+             icon: "brand_tier",
+             operator: "tier",
              name: {
                de: "SAP Walldorf"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.nextbike.de/de/sapwalldorf/"
              }
            },
            nextbike_vn: {
-             icon: "other",
-             operator: "nextbike",
+             icon: "brand_tier",
+             operator: "tier",
              name: {
                de: "VRNnextbike"
              },
              type: "cargo_bicycle",
              form_factors: ['cargo_bicycle', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.vrnnextbike.de/de/"
              }
            },
+           nextbike_eh: {
+             icon: "brand_tier",
+             operator: "tier",
+             name: {
+               de: "EinfachMobil"
+             },
+             type: "cargo_bicycle",
+             form_factors: ['cargo_bicycle', 'bicycle'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://www.nextbike.de/einfachmobil/"
+             }
+           },
            bolt_karlsruhe: {
-             icon: "tier_scooter",
+             icon: "brand_bolt",
              operator: "bolt",
              name: {
                de: "Bolt OÜ"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.bolt.eu/"
              }
            },
            bolt_stuttgart: {
-             icon: "tier_scooter",
+             icon: "brand_bolt",
              operator: "bolt",
              name: {
                de: "Bolt OÜ"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.bolt.eu/"
              }
            },
            bolt_reutlingen_tuebingen: {
-             icon: "tier_scooter",
+             icon: "brand_bolt",
              operator: "bolt",
              name: {
                de: "Bolt OÜ"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.bolt.eu/"
              }
            },
            roxy_freiburg: {
-             icon: "tier_scooter",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Freiburg"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            yoio_freiburg: {
-             icon: "tier_scooter",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Freiburg"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            zeus_freiburg: {
-             icon: "tier_scooter",
+             icon: "brand_zeus",
              operator: "zeus",
              name: {
                de: "Zeus Scooters"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_heidelberg: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
              },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_konstanz: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_ludwigsburg: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_pforzheim: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_schwabisch_gmund: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_tubingen: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_villingen_schwenningen: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_hemmingen: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_renningen_malmsheim: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://zeusscooters.com"
+             }
+           },
+           zeus_goppingen: {
+             icon: "brand_zeus",
+             operator: "zeus",
+             name: {
+               de: "Zeus Scooters"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
              url: {
                de: "https://zeusscooters.com"
              }
            },
            tier_stuttgart: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier STUTTGART"
              },
              type: "scooter",
-             form_factors: ['scooter'],
-             visibleInSettingsUi: true,
+             form_factors: ['scooter', 'bicycle'],
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "tier_mannheim-ludwigshafen": {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier MANNHEIM-LUDWIGSHAFEN"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_friedrichshafen: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier FRIEDRICHSHAFEN"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
+           },
+           tier_rastatt: {
+             icon: "brand_tier",
+             operator: "tier",
+             name: {
+               de: "Tier RASTATT"
+             },
+             type: "citybike",
+             form_factors: ['bicycle'],
+             hideCode: true,
+             enabled: true
            },
            tier_boeblingen: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier BOEBLINGEN"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_tubingen: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier TUBINGEN"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_sindelfingen: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier SINDELFINGEN"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_ludwigsburg: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier LUDWIGSBURG"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_reutlingen: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier REUTLINGEN"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_heilbronn: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier HEILBRONN"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_karlsruhe: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier KARLSRUHE"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_heidelberg: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier HEIDELBERG"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-basel": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird basel"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-biel": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird biel"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-bulle": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird bulle"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-kloten": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird kloten"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-uster": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird uster"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-winterthur": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird winterthur"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-zurich": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird zurich"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            bolt_basel: {
-             icon: "tier_scooter",
+             icon: "brand_bolt",
              operator: "bolt",
              name: {
                de: "Bolt OÜ"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.bolt.eu/"
              }
            },
            bolt_winterthur: {
-             icon: "tier_scooter",
+             icon: "brand_bolt",
              operator: "bolt",
              name: {
                de: "Bolt OÜ"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.bolt.eu/"
              }
            },
            bolt_zurich: {
-             icon: "tier_scooter",
+             icon: "brand_bolt",
              operator: "bolt",
              name: {
                de: "Bolt OÜ"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.bolt.eu/"
              }
            },
            donkey_ge: {
-             icon: "regiorad",
+             icon: "brand_donkey",
              operator: "donkey",
              name: {
                de: "Donkey Republic Geneva"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.donkey.bike/cities/bike-rental-geneva/"
              }
            },
            donkey_kreuzlingen: {
-             icon: "other",
+             icon: "brand_donkey",
              operator: "donkey",
              name: {
                de: "Donkey Republic Kreuzlingen"
              },
              type: "cargo_bicycle",
              form_factors: ['cargo_bicycle', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.donkey.bike/cities/bike-rental-kreuzlingen/"
              }
            },
            donkey_neuchatel: {
-             icon: "other",
+             icon: "brand_donkey",
              operator: "donkey",
              name: {
                de: "Donkey Republic Neuchâtel"
              },
              type: "other",
              form_factors: ['other', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.donkey.bike/cities/bike-rental-neuchatel/"
              }
            },
            donkey_sion: {
-             icon: "other",
+             icon: "brand_donkey",
              operator: "donkey",
              name: {
                de: "Donkey Republic Sion"
              },
              type: "other",
              form_factors: ['other', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.donkey.bike/cities/bike-rental-sion/"
              }
            },
            donkey_thun: {
-             icon: "regiorad",
+             icon: "brand_donkey",
              operator: "donkey",
              name: {
                de: "Donkey Republic Thun"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.donkey.bike/cities/bike-rental-thun/"
              }
            },
            "donkey_yverdon-les-bains": {
-             icon: "regiorad",
+             icon: "brand_donkey",
              operator: "donkey",
              name: {
                de: "Donkey Republic Yverdon-les-Bains"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.donkey.bike/cities/bike-rental-yverdon-les-bains/"
              }
            },
            lime_basel: {
-             icon: "tier_scooter",
+             icon: "brand_lime",
              operator: "lime",
              name: {
                de: "Lime City partners from Partners::RegionFeedMediator"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            lime_opfikon: {
-             icon: "tier_scooter",
+             icon: "brand_lime",
              operator: "lime",
              name: {
                de: "Lime Opfikon"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            lime_uster: {
-             icon: "tier_scooter",
+             icon: "brand_lime",
              operator: "lime",
              name: {
                de: "Lime City partners from Partners::RegionFeedMediator"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            lime_zug: {
-             icon: "tier_scooter",
+             icon: "brand_lime",
              operator: "lime",
              name: {
                de: "Lime Zug"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            lime_zurich: {
-             icon: "tier_scooter",
+             icon: "brand_lime",
              operator: "lime",
              name: {
                de: "Lime City partners from Partners::RegionFeedMediator"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            nextbike_ch: {
-             icon: "regiorad",
-             operator: "nextbike",
+             icon: "brand_tier",
+             operator: "tier",
              name: {
                de: "nextbike Switzerland"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.nextbike.ch/"
              }
            },
            publibike_ch: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "PubliBike"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://publibike.ch"
              }
            },
            velospot_ch: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Velospot"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://velospot.info/customer/public"
              }
            },
            pickebike_aubonne: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Aubonne"
              },
-             type: "citybike",
-             form_factors: ['bicycle', 'moped'],
-             visibleInSettingsUi: true,
+             type: "moped",
+             form_factors: ['moped', 'bicycle'],
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            pickebike_basel: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Basel"
              },
-             type: "citybike",
-             form_factors: ['bicycle', 'moped'],
-             visibleInSettingsUi: true,
+             type: "moped",
+             form_factors: ['moped', 'bicycle'],
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            pickebike_fribourg: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Fribourg"
              },
-             type: "citybike",
-             form_factors: ['bicycle', 'moped'],
-             visibleInSettingsUi: true,
+             type: "moped",
+             form_factors: ['moped', 'bicycle'],
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            share_birrer_ch: {
-             icon: "car-sharing",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Share Birrer AG"
              },
              type: "car",
              form_factors: ['car'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_basel: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier BASEL"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_bern: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier BERN"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_rotkreuz: {
-             icon: "regiorad",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier ROTKREUZ"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_stgallen: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier STGALLEN"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_winterthur: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier WINTERTHUR"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            tier_zurich: {
-             icon: "tier_scooter",
+             icon: "brand_tier",
              operator: "tier",
              name: {
                de: "Tier ZURICH"
              },
              type: "scooter",
              form_factors: ['scooter'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            voi_ch: {
-             icon: "tier_scooter",
+             icon: "brand_voi",
              operator: "voi",
              name: {
                de: "Voi Technology AB"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.voiscooters.com/"
              }
            },
            liemobil_liechtenstein: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "Liechtenstein"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            zem_ch: {
-             icon: "car-sharing",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "2EM Car Sharing"
              },
              type: "car",
              form_factors: ['car'],
-             visibleInSettingsUi: true,
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.2em.ch"
              }
            },
            edrivecarsharing_ch: {
-             icon: "car-sharing",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "edrive carsharing AG"
              },
              type: "car",
              form_factors: ['car'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            carvelo2go_ch: {
-             icon: "other",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "carvelo eCargo-Bike Sharing"
              },
              type: "cargo_bicycle",
-             form_factors: ['cargo_bicycle', 'bicycle', 'car'],
-             visibleInSettingsUi: true,
+             form_factors: ['cargo_bicycle', 'car', 'bicycle'],
              hideCode: true,
              enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             },
              url: {
                de: "https://www.carvelo.ch"
              }
            },
            "bird-chalonsenchampagne": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird chalonsenchampagne"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            "bird-sarreguemines": {
-             icon: "tier_scooter",
+             icon: "brand_bird",
              operator: "bird",
              name: {
                de: "bird sarreguemines"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            mulhouse: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "VéloCité"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            },
            nancy: {
-             icon: "regiorad",
+             icon: "brand_other",
              operator: "other",
              name: {
                de: "vélOstan'lib"
              },
              type: "citybike",
              form_factors: ['bicycle'],
-             visibleInSettingsUi: true,
              hideCode: true,
-             enabled: true,
-             season: {
-               start: new Date(new Date().getFullYear(), 0, 1),
-               end: new Date(new Date().getFullYear(), 11, 31)
-             }
+             enabled: true
            }
          }
      }

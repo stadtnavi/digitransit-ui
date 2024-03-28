@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FormattedMessage, intlShape } from 'react-intl';
+import { intlShape } from 'react-intl';
 import connectToStores from 'fluxible-addons-react/connectToStores';
 
 import Icon from './Icon';
 import FareZoneSelector from './customizesearch/FareZoneSelector';
+import SharingSettingsPanel from './customizesearch/SharingSettingsPanel';
 import StreetModeSelectorPanel from './customizesearch/StreetModeSelectorPanel';
 import TransportModesSection from './customizesearch/TransportModesSection';
 import WalkingOptionsSection from './customizesearch/WalkingOptionsSection';
 import AccessibilityOptionSection from './customizesearch/AccessibilityOptionSection';
 import TransferOptionsSection from './customizesearch/TransferOptionsSection';
-import CityBikeNetworkSelector from './customizesearch/CityBikeNetworkSelector';
 import { showModeSettings, useCitybikes } from '../util/modeUtils';
 import ScrollableWrapper from './ScrollableWrapper';
 import { getDefaultSettings } from '../util/planParamUtil';
-import { getCitybikeNetworks } from '../util/citybikes';
 
 class CustomizeSearch extends React.Component {
   static contextTypes = {
@@ -115,28 +114,8 @@ class CustomizeSearch extends React.Component {
           {
             // TODO: extract the whole section into new, customizable component
           }
-          {useCitybikes(config?.cityBike?.networks) && (
-            <div className="settings-section">
-              <div className="settings-option-container">
-                <fieldset>
-                  <legend className="settings-header transport-mode-subheader">
-                    <FormattedMessage
-                      id="citybike-network-header"
-                      defaultMessage={intl.formatMessage({
-                        id: 'citybike-network-headers',
-                        defaultMessage: 'Citybikes and scooters',
-                      })}
-                    />
-                  </legend>
-                  <div className="transport-modes-container">
-                    <CityBikeNetworkSelector
-                      currentOptions={getCitybikeNetworks(config)}
-                    />
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-          )}
+
+          {useCitybikes(config?.cityBike?.networks) && <SharingSettingsPanel />}
           <div className="settings-section">
             <div className="settings-option-container">
               <StreetModeSelectorPanel

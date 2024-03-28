@@ -5,7 +5,7 @@ import connectToStores from 'fluxible-addons-react/connectToStores';
 
 import Icon from './Icon';
 import FareZoneSelector from './customizesearch/FareZoneSelector';
-import SharingSettingsPanel from './customizesearch/SharingSettingsPanel';
+import SharingSettingsPanel from './customizesearch/SharingSettingsPanel.stadtnavi';
 import StreetModeSelectorPanel from './customizesearch/StreetModeSelectorPanel';
 import TransportModesSection from './customizesearch/TransportModesSection';
 import WalkingOptionsSection from './customizesearch/WalkingOptionsSection';
@@ -115,7 +115,12 @@ class CustomizeSearch extends React.Component {
             // TODO: extract the whole section into new, customizable component
           }
 
-          {useCitybikes(config?.cityBike?.networks) && <SharingSettingsPanel />}
+          {useCitybikes(config?.cityBike?.networks) && (
+            <SharingSettingsPanel
+              currentSettings={currentSettings}
+              defaultSettings={this.defaultSettings}
+            />
+          )}
           <div className="settings-section">
             <div className="settings-option-container">
               <StreetModeSelectorPanel

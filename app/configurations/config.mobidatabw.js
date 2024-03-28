@@ -266,6 +266,8 @@ export default configMerger(parentConfig, {
         'lot_type:Parkhaus'
     ],
 
+    // TODO: instead of cityBike this should be renamend to vehicleSharing.
+    // and layer settings and operator/network settings should be separated
     cityBike: {
         minZoomStopsNearYou: 10,
         showStationId: false,
@@ -273,20 +275,48 @@ export default configMerger(parentConfig, {
         showCityBikes: true,
 
         operators : {
-          deer: {
-            icon: "car-sharing",
-            name: {
-                de: "deer"
-            },
-            url: {
-                de: "https://www.deer-carsharing.de/"
-            },
+            deer: {
+                icon: "brand_deer",
+                name: {
+                    de: "deer"
+                },
+                url: {
+                    de: "https://www.deer-carsharing.de/"
+                },
             colors: {
                 background: '#3C8325'
             }
+            },
+
+            bird: {
+                icon: "brand_bird",
+                name: {
+                    de: "bird"
+                },
+            colors: {
+              background: '#00D4F1'
+            },
+            },
+            bolt: {
+                icon: "brand_bolt",
+                name: {
+                    de: "bolt"
+                },
+             colors: {
+              background: '#30D287'
+            },
+    },
+           callabike: {
+             icon: "brand_callabike",
+            name: {
+               de: "Call-a-Bike"
+            },
+            colors: {
+               background: '#E30009'
+             },
           },
           lime: {
-            brandIcon: "lime",
+            icon: "brand_lime",
             name: {
               de: "Lime"
             },
@@ -294,36 +324,8 @@ export default configMerger(parentConfig, {
                background: '#00DD00'
             }
            },
-          bird: {
-            brandIcon: "bird",
-            name: {
-              de: "bird"
-            },
-            colors: {
-              background: '#00D4F1'
-            },
-           },
-           bolt: {
-             brandIcon: "bolt",
-             name: {
-               de: "bolt"
-             },
-             colors: {
-              background: '#30D287'
-             },
-           },
-           tier: {
-             brandIcon: "tier",
-             name: {
-               de: "TIER"
-             },
-             colors: {
-               background: '#0E1A50',
-               foreground: '#69D2AA'
-             },
-           },
            nextbike: {
-             brandIcon: "nextbike",
+             icon: "brand_nextbike",
              name: {
                de: "nextbike"
              },
@@ -332,8 +334,19 @@ export default configMerger(parentConfig, {
                foreground: '#0E1A50'
              },
            },
+           tier: {
+             icon: "brand_tier",
+             name: {
+               de: "TIER"
+             },
+             colors: {
+               background: '#0E1A50',
+               foreground: '#69D2AA'
+             },
+           },
+           
            voi: {
-             brandIcon: "voi",
+             icon: "brand_voi",
              name: {
                de: "VOI"
              },
@@ -341,17 +354,9 @@ export default configMerger(parentConfig, {
                background: '#F26961'
              },
            },
-           callabike: {
-             brandIcon: "callabike",
-             name: {
-               de: "Call-a-Bike"
-             },
-             colors: {
-               background: '#E30009'
-             },
-            },
+           
             donkey: {
-             brandIcon: "donkey",
+             icon: "brand_donkey",
              name: {
                de: "Donkey Republic"
              },
@@ -360,7 +365,7 @@ export default configMerger(parentConfig, {
              },
             },
             regiorad: {
-             brandIcon: "regiorad",
+             icon: "brand_regiorad",
              name: {
                de: "RegioRad"
              },
@@ -369,7 +374,7 @@ export default configMerger(parentConfig, {
              },
             },
             stadtmobil: {
-             brandIcon: "stadtmobil",
+             icon: "brand_stadtmobil",
              name: {
                de: "stadtmobil"
              },
@@ -377,8 +382,28 @@ export default configMerger(parentConfig, {
                background: '#FF8A36'
              },
             },
+            nextbike: {
+             icon: "brand_nextbike",
+             name: {
+               de: "nextbike by TIER",
+               en: "nextbike by TIER"
+             },
+             colors: {
+               background: '#004A99'
+             },
+            },
+            zeus: {
+             icon: "brand_zeus",
+             name: {
+               de: "ZEUS Scooters",
+               en: "ZEUS Scooters"
+             },
+             colors: {
+               background: '#F75118'
+             },
+            },
             other: {
-             brandIcon: "other",
+             icon: "brand_other",
              name: {
                de: "Weitere Anbieter"
              },
@@ -402,17 +427,6 @@ export default configMerger(parentConfig, {
                de: "https://www.deer-carsharing.de/"
              }
            },
-           voi_karlsruhe: {
-             icon: "brand_voi",
-             operator: "voi",
-             name: {
-               de: "Voi Scooter Karlsruhe"
-             },
-             type: "scooter",
-             form_factors: ['scooter'],
-             hideCode: true,
-             enabled: true
-           },
            lastenvelo_fr: {
              icon: "brand_frelo_freiburg",
              operator: "frelo_freiburg",
@@ -429,7 +443,7 @@ export default configMerger(parentConfig, {
            },
            stadtmobil_stuttgart: {
              icon: "brand_other",
-             operator: "other",
+             operator: "stadtmobil",
              name: {
                de: "Stadtmobil Stuttgart"
              },
@@ -512,8 +526,8 @@ export default configMerger(parentConfig, {
              }
            },
            nextbike_df: {
-             icon: "brand_tier",
-             operator: "tier",
+             icon: "brand_frelo_freiburg",
+             operator: "nextbike",
              name: {
                de: "Frelo Freiburg"
              },
@@ -526,8 +540,8 @@ export default configMerger(parentConfig, {
              }
            },
            nextbike_fg: {
-             icon: "brand_tier",
-             operator: "tier",
+             icon: "brand_nextbike",
+             operator: "nextbike",
              name: {
                de: "KVV.nextbike"
              },
@@ -540,8 +554,8 @@ export default configMerger(parentConfig, {
              }
            },
            nextbike_ds: {
-             icon: "brand_tier",
-             operator: "tier",
+             icon: "brand_sap_walldorf",
+             operator: "nextbike",
              name: {
                de: "SAP Walldorf"
              },
@@ -554,8 +568,8 @@ export default configMerger(parentConfig, {
              }
            },
            nextbike_vn: {
-             icon: "brand_tier",
-             operator: "tier",
+             icon: "brand_nextbike",
+             operator: "nextbike",
              name: {
                de: "VRNnextbike"
              },
@@ -568,8 +582,8 @@ export default configMerger(parentConfig, {
              }
            },
            nextbike_eh: {
-             icon: "brand_tier",
-             operator: "tier",
+             icon: "brand_nextbike",
+             operator: "nextbike",
              name: {
                de: "EinfachMobil"
              },
@@ -1448,7 +1462,18 @@ export default configMerger(parentConfig, {
              form_factors: ['bicycle'],
              hideCode: true,
              enabled: true
-           }
+           },
+           voi_karlsruhe: {
+             icon: "brand_voi",
+             operator: "voi",
+             name: {
+               de: "Voi Scooter Karlsruhe"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true
+           },
          }
      }
  }

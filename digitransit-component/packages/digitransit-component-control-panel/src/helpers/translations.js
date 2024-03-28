@@ -9,6 +9,7 @@ const translations = {
     'pick-mode-rail': 'Zug',
     'pick-mode-subway': 'U-Bahn',
     'pick-mode-tram': 'Straßenbahn',
+    'pick-mode-rental': 'Sharing-Anbebote',
     'placeholder-destination': 'Geben Sie Ihren Zielort ein',
     'placeholder-origin': 'Geben Sie Ihren Abfahrtsort ein',
     'placeholder-route-stop-station': 'Enter route, stop or station',

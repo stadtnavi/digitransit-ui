@@ -16,7 +16,11 @@ import {
   isTransportModeAvailable,
 } from './modeUtils';
 import { otpToLocation, getIntermediatePlaces } from './otpStrings';
-import { getCitybikeNetworks, getDefaultNetworks } from './citybikes';
+import {
+  getCitybikeNetworks,
+  getDefaultNetworks,
+  getDefaultFormFactors,
+} from './citybikes';
 import { getCustomizedSettings } from '../store/localStorage';
 import { estimateItineraryDistance } from './geo-utils';
 import { BicycleParkingFilter } from '../constants';
@@ -35,6 +39,9 @@ export const getDefaultSettings = config => {
     modes: getDefaultModes(config).sort(),
     allowedVehicleRentalNetworks: config.transportModes.citybike.defaultValue
       ? getDefaultNetworks(config)
+      : [],
+    allowedVehicleRentalFormFactors: config.transportModes.citybike.defaultValue
+      ? getDefaultFormFactors(config)
       : [],
     useVehicleParkingAvailabilityInformation: null,
   };

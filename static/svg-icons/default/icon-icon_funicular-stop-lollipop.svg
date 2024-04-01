@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="14 15 24 24" version="1.1" width="48" height="48">
   <circle cx="24" cy="24" r="7.7" fill="#007AC9" stroke="white"/>
   <circle cx="24.0001" cy="24.0001" r="4.4" fill="white"/>
-  <circle cx="24" cy="24" r="7.7" fill="#ff00ff" stroke="white"/>
+  <circle class="modeColor funicular" cx="24" cy="24" r="7.7" stroke="white"/>
   <rect x="20.2122" y="25.7332" width="7.80215" height="0.433318" rx="0.216659" transform="rotate(15 20.2122 25.7332)" fill="white"/>
   <path d="M21.3999 21.0333C21.3999 20.7572 21.6238 20.5333 21.8999 20.5333H27.0059C27.2821 20.5333 27.5059 20.7572 27.5059 21.0333V21.1C27.5059 21.2656 27.3716 21.4 27.2059 21.4H21.5999C21.4894 21.4 21.3999 21.3104 21.3999 21.2V21.0333Z" fill="white"/>
   <rect x="24.1136" y="24.6978" width="4.07069" height="0.346655" transform="rotate(-70 24.1136 24.6978)" fill="white"/>

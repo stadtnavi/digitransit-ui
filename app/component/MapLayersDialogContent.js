@@ -130,7 +130,6 @@ class MapLayersDialogContent extends React.Component {
 
   render() {
     const {
-      citybike,
       parkAndRide,
       parkAndRideForBikes,
       stop,
@@ -141,6 +140,7 @@ class MapLayersDialogContent extends React.Component {
       weatherStations,
       datahubTiles,
       chargingStations,
+      rental,
     } = this.props.mapLayers;
     const { mapMode: currentMapMode } = this.props;
 
@@ -313,12 +313,36 @@ class MapLayersDialogContent extends React.Component {
               onChange={this.updateSetting}
               options={[
                 showCityBikes(this.context.config?.cityBike?.networks) && {
-                  checked: citybike,
+                  checked: rental.bicycle,
                   disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
-                  defaultMessage: 'Sharing',
-                  labelId: 'map-layer-sharing',
-                  icon: 'icon-icon_citybike',
-                  settings: 'citybike',
+                  defaultMessage: 'Rental Bikes',
+                  labelId: 'map-layer-sharing-bicycle',
+                  icon: 'icon-icon_rental_bicycle',
+                  settings: { rental: 'bicycle' },
+                },
+                showCityBikes(this.context.config?.cityBike?.networks) && {
+                  checked: rental.scooter,
+                  disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
+                  defaultMessage: 'Rental Scooters',
+                  labelId: 'map-layer-sharing-scooter',
+                  icon: 'icon-icon_rental_scooter',
+                  settings: { rental: 'scooter' },
+                },
+                showCityBikes(this.context.config?.cityBike?.networks) && {
+                  checked: rental.cargo_bicycle,
+                  disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
+                  defaultMessage: 'Rental Cargo-Bikes',
+                  labelId: 'map-layer-sharing-cargo_bicycle',
+                  icon: 'icon-icon_rental_cargo_bicycle',
+                  settings: { rental: 'cargo_bicycle' },
+                },
+                showCityBikes(this.context.config?.cityBike?.networks) && {
+                  checked: rental.car,
+                  disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
+                  defaultMessage: 'Rental Cars',
+                  labelId: 'map-layer-sharing-car',
+                  icon: 'icon-icon_rental_car',
+                  settings: { rental: 'car' },
                 },
                 isTransportModeEnabled(transportModes.carpool) && {
                   checked: terminal.carpool,

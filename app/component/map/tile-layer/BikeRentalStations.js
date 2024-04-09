@@ -31,6 +31,7 @@ const query = graphql`
 
 const REALTIME_REFETCH_FREQUENCY = 60000; // 60 seconds
 
+// TODO rename to VehicleRentalStation
 class BikeRentalStations {
   constructor(tile, config, mapLayers, relayEnvironment) {
     this.tile = tile;
@@ -43,6 +44,7 @@ class BikeRentalStations {
       14 * this.scaleratio * getMapIconScale(this.tile.coords.z);
     this.timeOfLastFetch = undefined;
     this.canHaveStationUpdates = true;
+    this.rentalLayers = mapLayers.rental;
   }
 
   getPromise = lang => this.fetchAndDraw(lang);
@@ -93,12 +95,14 @@ class BikeRentalStations {
 
             if (
               this.features.length === 0 ||
-              !this.features.some(feature =>
-                this.shouldShowStation(
+              !this.features.some(feature => {
+                return this.shouldShowStation(
                   feature.properties.id,
                   feature.properties.network,
-                ),
-              )
+                  feature.properties.formFactors ||
+                    feature.properties.formFactor,
+                );
+              })
             ) {
               this.canHaveStationUpdates = false;
             } else {
@@ -119,8 +123,9 @@ class BikeRentalStations {
   };
 
   draw = (feature, zoomedIn) => {
-    const { id, network, formFactors } = feature.properties;
-    if (!this.shouldShowStation(id, network)) {
+    // stations have formFactors (comma separeted list), vehicles formFactor...
+    const { id, network, formFactors, formFactor } = feature.properties;
+    if (!this.shouldShowStation(id, network, formFactors || formFactor)) {
       return;
     }
 
@@ -212,8 +217,18 @@ class BikeRentalStations {
     }
   };
 
-  shouldShowStation = (id, network) =>
+  isAnyFormFactorEnabled = formFactors => {
+    return (
+      !this.rentalLayers ||
+      formFactors
+        .split(',')
+        .some(formFactor => this.rentalLayers[formFactor.toLowerCase()])
+    );
+  };
+
+  shouldShowStation = (id, network, formFactors) =>
     (!this.tile.stopsToShow || this.tile.stopsToShow.includes(id)) &&
+    this.isAnyFormFactorEnabled(formFactors) &&
     showCitybikeNetwork(this.config.cityBike.networks[network]);
 
   static getName = () => 'citybike';

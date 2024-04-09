@@ -196,11 +196,13 @@ describe('<MapLayersDialogContent />', () => {
     expect(mapLayers.stop.ferry).to.equal(true);
   });
 
-  it('should update the citybike layer', () => {
+  it('should update the rental layer', () => {
     let mapLayers = {
-      citybike: false,
       stop: {},
       terminal: {},
+      rental: {
+        bicycle: false,
+      },
     };
     const props = {
       open: true,
@@ -236,14 +238,14 @@ describe('<MapLayersDialogContent />', () => {
       },
     );
 
-    expect(mapLayers.citybike).to.equal(false);
+    expect(mapLayers.rental.bicycle).to.equal(false);
 
     wrapper
       .find('.option-checkbox input')
       .at(2)
       .simulate('change', { target: { checked: true } });
 
-    expect(mapLayers.citybike).to.equal(true);
+    expect(mapLayers.rental.bicycle).to.equal(true);
   });
 
   xit('should update the park&ride layer', () => {

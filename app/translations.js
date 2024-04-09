@@ -388,6 +388,10 @@ const translations = {
     'map-layer-dynamic-parking-lots': 'Parkplätze',
     'map-layer-roadworks': 'Baustellen',
     'map-layer-sharing': 'Carsharing & Fahrrad- / Lastenradverleih',
+    'map-layer-sharing-bicycle': 'Leihräder',
+    'map-layer-sharing-cargo_bicycle': 'Leih-Lastenräder',
+    'map-layer-sharing-car': 'Car-Sharing',
+    'map-layer-sharing-scooter': 'Leih-Scooter',
     'map-layer-category-public-transit': 'Öffentlicher Nahverkehr',
     'map-layer-category-bicycle': 'Fahrrad',
     'map-layer-category-sharing': 'Sharing-Angebote',
@@ -855,7 +859,7 @@ const translations = {
     'no-route-origin-same-as-destination':
       'Keine Reisevorschläge gefunden, da Abfahrts- und Zielort übereinstimmen.',
     'no-route-showing-alternative-options':
-      'Es wurden keine Routen mit öffentlichen Verkehrsmitteln und Ihren Einstellungen gefunden. Prüfen Sie, ob die folgenden Reiseoptionen für Sie passend sind:',
+      'Es wurden keine Routen mit Ihren Einstellungen gefunden. Prüfen Sie, ob die folgenden Reiseoptionen für Sie passend sind:',
     'no-route-start': 'Bitte wählen Sie den Startort aus',
     'no-route-start-date-too-early':
       'Der aktuelle Fahrplan enthält keine früheren Abfahrten.',

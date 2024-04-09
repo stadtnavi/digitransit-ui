@@ -49,6 +49,7 @@ export const showCitybikeNetwork = network => {
 };
 
 export const citybikeRoutingIsActive = network => {
+  // TODO: enabled should be the default..., even if not specified
   return network?.enabled && isCitybikeSeasonActive(network?.season);
 };
 
@@ -72,6 +73,27 @@ export const showCityBikes = networks => {
     return false;
   }
   return Object.values(networks).some(network => showCitybikeNetwork(network));
+};
+
+export const showRentalVehiclesAndStations = config => {
+  if (!config.cityBike?.networks) {
+    return {};
+  }
+  // TODO respect formFactor
+  return {
+    bicycle: Object.values(config.cityBike?.networks).some(network =>
+      showCitybikeNetwork(network),
+    ),
+    scooter: Object.values(config.cityBike?.networks).some(network =>
+      showCitybikeNetwork(network),
+    ),
+    cargo_bicycle: Object.values(config.cityBike?.networks).some(network =>
+      showCitybikeNetwork(network),
+    ),
+    car: Object.values(config.cityBike?.networks).some(network =>
+      showCitybikeNetwork(network),
+    ),
+  };
 };
 
 export const getNearYouModes = config => {

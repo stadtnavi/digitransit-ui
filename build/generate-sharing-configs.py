@@ -43,6 +43,7 @@ def operator_id(operator, name):
         'donkey': 'donkey',
         'lime': 'lime',
         'my-e-car': 'my-e-car',
+        'nextbike': 'nextbike',
         'tier': 'tier',
         'voi': 'voi',
         'zeus': 'zeus',
@@ -93,6 +94,7 @@ for system in systems['systems']:
         'operator': operator_id(system_information['operator'], system_information['name']),
         'name': {
             'de': system_information['name'],
+            'en': system_information['name'],
         },
         'type': 'citybike' if form_factors[0] == 'bicycle' else form_factors[0], # TODO citybike should be renamed
         'form_factors': form_factors,

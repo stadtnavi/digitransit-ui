@@ -78,6 +78,8 @@ export default configMerger(parentConfig, {
             'mode-carpool': '#9fc727',
         },
     },
+
+    sprites: 'assets/svg-sprite.mobidatabw.svg',
     
     issueTrackerUrl: 'https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}',
     // issueTrackerUrls define issuetracker URLs per postalCode. In case none matches, issueTrackerUrl is used as falllback
@@ -275,47 +277,47 @@ export default configMerger(parentConfig, {
         showCityBikes: true,
 
         operators : {
-            deer: {
-                icon: "brand_deer",
-                name: {
-                    de: "deer"
-                },
-                url: {
-                    de: "https://www.deer-carsharing.de/"
-                },
+          deer: {
+            icon: "brand_deer",
+            name: {
+                de: "deer"
+            },
+            url: {
+                de: "https://www.deer-carsharing.de/"
+            },
             colors: {
                 background: '#3C8325'
             }
-            },
+          },
 
-            bird: {
-                icon: "brand_bird",
-                name: {
-                    de: "bird"
-                },
+          bird: {
+            icon: "brand_bird",
+            name: {
+              de: "bird"
+            },
             colors: {
               background: '#00D4F1'
             },
-            },
-            bolt: {
-                icon: "brand_bolt",
-                name: {
-                    de: "bolt"
-                },
+           },
+           bolt: {
+             icon: "brand_bolt",
+             name: {
+               de: "bolt"
+             },
              colors: {
               background: '#30D287'
-            },
-    },
+             },
+           },
            callabike: {
              icon: "brand_callabike",
-            name: {
+             name: {
                de: "Call-a-Bike"
-            },
-            colors: {
+             },
+             colors: {
                background: '#E30009'
              },
-          },
-          lime: {
+            },
+            lime: {
             icon: "brand_lime",
             name: {
               de: "Lime"
@@ -402,7 +404,7 @@ export default configMerger(parentConfig, {
                background: '#F75118'
              },
             },
-            other: {
+          other: {
              icon: "brand_other",
              name: {
                de: "Weitere Anbieter"
@@ -410,7 +412,7 @@ export default configMerger(parentConfig, {
              colors: {
                background: '#C84674'
              },
-        }
+          }
         },
         networks: {
            deer: {

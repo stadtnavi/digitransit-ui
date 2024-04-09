@@ -268,6 +268,8 @@ export default configMerger(parentConfig, {
         'lot_type:Parkhaus'
     ],
 
+    // don't show vehicle positions
+    vehicles: false,
     // TODO: instead of cityBike this should be renamend to vehicleSharing.
     // and layer settings and operator/network settings should be separated
     cityBike: {

@@ -5,6 +5,22 @@ import getContext from 'recompose/getContext';
 import GeoJsonStore from '../../store/GeoJsonStore';
 import { isBrowser } from '../../util/browser';
 
+const getGeoJSONLayers = async (config, getGeoJsonConfig) => {
+  if (
+    !config.geoJson ||
+    (!Array.isArray(config.geoJson.layers) && !config.geoJson.layerConfigUrl)
+  ) {
+    return [];
+  }
+  const layers = config.geoJson.layerConfigUrl
+    ? getGeoJsonConfig(config.geoJson.layerConfigUrl)
+    : config.geoJson.layers;
+
+  return Array.isArray(layers)
+    ? layers.filter(l => (l.type || 'geojson') === 'geojson')
+    : [];
+};
+
 /**
  * Adds geojson map layers to the leafletObjs props of the given component. The component should be a component that renders the leaflet map.
  *
@@ -24,16 +40,7 @@ function withGeojsonObjects(Component) {
         if (!isBrowser) {
           return;
         }
-        if (
-          !config.geoJson ||
-          (!Array.isArray(config.geoJson.layers) &&
-            !config.geoJson.layerConfigUrl)
-        ) {
-          return;
-        }
-        const layers = config.geoJson.layerConfigUrl
-          ? await getGeoJsonConfig(config.geoJson.layerConfigUrl)
-          : config.geoJson.layers;
+        const layers = await getGeoJSONLayers(config, getGeoJsonConfig);
         if (Array.isArray(layers) && layers.length > 0) {
           const json = await Promise.all(
             layers.map(

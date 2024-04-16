@@ -128,6 +128,25 @@ class MapLayersDialogContent extends React.Component {
     this.updateSetting({ geoJson });
   };
 
+  layerOptionsByCategory = (category, layers, geoJson, lang) => {
+    return (
+      layers
+        ?.filter(l => l.category === undefined || l.category === category)
+        .map(layer => {
+          const key = layer.id || layer.url;
+          return {
+            checked:
+              (layer.isOffByDefault && geoJson[key] === true) ||
+              (!layer.isOffByDefault && geoJson[key] !== false), // todo: is active?
+            defaultMessage: layer.name?.[lang] || layer.defaultMessage,
+            labelId: layer.labelId, // todo: rename?
+            icon: layer.icon,
+            settings: { geoJson: key }, // layer.id,
+          };
+        }) || []
+    );
+  };
+
   render() {
     const {
       parkAndRide,
@@ -144,33 +163,9 @@ class MapLayersDialogContent extends React.Component {
     } = this.props.mapLayers;
     const { mapMode: currentMapMode } = this.props;
 
-    let geoJsonLayers;
-    if (this.props.geoJson) {
-      geoJsonLayers = Object.entries(this.props.geoJson)?.map(([k, v]) => {
-        return { url: k, ...v };
-      });
-    }
-
     const isTransportModeEnabled = transportMode =>
       transportMode && transportMode.availableForSelection;
     const transportModes = getTransportModes(this.context.config);
-
-    // TODO switch to IDs, or even better, be agnostic by choosing layers via category
-    const bikeServiceLayer = geoJsonLayers?.find(
-      layer => layer.name.en === 'Service stations and stores',
-    );
-    const publicToiletsLayer = geoJsonLayers?.find(
-      layer => layer.name.en === 'Public Toilets',
-    );
-    const gatewaysLayer = geoJsonLayers?.find(
-      layer => layer.name.en === 'LoRaWAN Gateways',
-    );
-    const parkingZonesLayer = geoJsonLayers?.find(
-      layer => layer.name.en === 'Parking zones',
-    );
-    const cycleNetworkLayer = geoJsonLayers?.find(
-      layer => layer.name.en === 'Bicycle network',
-    );
 
     const { config } = this.context;
     const datahubLayers =
@@ -279,30 +274,16 @@ class MapLayersDialogContent extends React.Component {
                     icon: 'icon-bike-park',
                     settings: 'parkAndRideForBikes',
                   },
-                bikeServiceLayer && {
-                  checked:
-                    (bikeServiceLayer.isOffByDefault &&
-                      geoJson[bikeServiceLayer.url] === true) ||
-                    (!bikeServiceLayer.isOffByDefault &&
-                      geoJson[bikeServiceLayer.url] !== false),
-                  defaultMessage: bikeServiceLayer.name[this.props.lang],
-                  icon: bikeServiceLayer.icon,
-                  key: bikeServiceLayer.url,
-                  settings: { geoJson: bikeServiceLayer.url },
-                },
-                cycleNetworkLayer && {
-                  checked:
-                    (cycleNetworkLayer.isOffByDefault &&
-                      geoJson[cycleNetworkLayer.url] === true) ||
-                    (!cycleNetworkLayer.isOffByDefault &&
-                      geoJson[cycleNetworkLayer.url] !== false),
-                  defaultMessage: cycleNetworkLayer.name[this.props.lang],
-                  key: cycleNetworkLayer.url,
-                  icon: cycleNetworkLayer.icon,
-                  settings: { geoJson: cycleNetworkLayer.url },
-                },
-                ...datahubBicycleLayers,
-              ]}
+              ]
+                .concat(
+                  this.layerOptionsByCategory(
+                    'bicycle',
+                    config.geoJson?.layers,
+                    geoJson,
+                    this.props.lang,
+                  ),
+                )
+                .concat(datahubBicycleLayers)}
             />
             <LayerCategoryDropdown
               title={this.context.intl.formatMessage({
@@ -379,18 +360,14 @@ class MapLayersDialogContent extends React.Component {
                     icon: 'icon-icon_stop_car_charging_station',
                     settings: 'chargingStations',
                   },
-                parkingZonesLayer && {
-                  checked:
-                    (parkingZonesLayer.isOffByDefault &&
-                      geoJson[parkingZonesLayer.url] === true) ||
-                    (!parkingZonesLayer.isOffByDefault &&
-                      geoJson[parkingZonesLayer.url] !== false),
-                  defaultMessage: parkingZonesLayer.name[this.props.lang],
-                  key: parkingZonesLayer.url,
-                  icon: parkingZonesLayer.icon,
-                  settings: { geoJson: parkingZonesLayer.url },
-                },
-              ]}
+              ].concat(
+                this.layerOptionsByCategory(
+                  'car',
+                  config.geoJson?.layers,
+                  geoJson,
+                  this.props.lang,
+                ),
+              )}
             />
             <LayerCategoryDropdown
               title={this.context.intl.formatMessage({
@@ -400,17 +377,6 @@ class MapLayersDialogContent extends React.Component {
               icon="icon-icon_material_map"
               onChange={this.updateSetting}
               options={[
-                publicToiletsLayer && {
-                  checked:
-                    (publicToiletsLayer.isOffByDefault &&
-                      geoJson[publicToiletsLayer.url] === true) ||
-                    (!publicToiletsLayer.isOffByDefault &&
-                      geoJson[publicToiletsLayer.url] !== false),
-                  defaultMessage: publicToiletsLayer.name[this.props.lang],
-                  key: publicToiletsLayer.url,
-                  icon: publicToiletsLayer.icon,
-                  settings: { geoJson: publicToiletsLayer.url },
-                },
                 this.context.config.roadworks &&
                   this.context.config.roadworks.show && {
                     checked: roadworks,
@@ -427,18 +393,14 @@ class MapLayersDialogContent extends React.Component {
                     icon: 'icon-icon_stop_monitor',
                     settings: 'weatherStations',
                   },
-                gatewaysLayer && {
-                  checked:
-                    (gatewaysLayer.isOffByDefault &&
-                      geoJson[gatewaysLayer.url] === true) ||
-                    (!gatewaysLayer.isOffByDefault &&
-                      geoJson[gatewaysLayer.url] !== false),
-                  defaultMessage: gatewaysLayer.name[this.props.lang],
-                  key: gatewaysLayer.url,
-                  icon: gatewaysLayer.icon,
-                  settings: { geoJson: gatewaysLayer.url },
-                },
-              ]}
+              ].concat(
+                this.layerOptionsByCategory(
+                  'other',
+                  config.geoJson?.layers,
+                  geoJson,
+                  this.props.lang,
+                ),
+              )}
             />
           </div>
 

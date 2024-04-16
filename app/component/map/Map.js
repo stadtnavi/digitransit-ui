@@ -165,6 +165,33 @@ class Map extends React.Component {
     this.updateZoom();
   };
 
+  loadWMSTLayer(mapUrl, layer, attribution, index, transparent, config) {
+    const zIndex = -10 + index;
+    return (
+      <WMSTileLayer
+        layers={layer}
+        key={mapUrl}
+        onLoad={this.setLoaded}
+        url={mapUrl}
+        tileSize={config.map.tileSize || 256}
+        zoomOffset={config.map.zoomOffset || 0}
+        updateWhenIdle={false}
+        zIndex={zIndex}
+        size={
+          config.map.useRetinaTiles && L.Browser.retina && !isDebugTiles
+            ? '@2x'
+            : ''
+        }
+        minZoom={config.map.minZoom}
+        maxZoom={config.map.maxZoom}
+        attribution={attribution}
+        version="1.3.0"
+        transparent={transparent}
+        format="image/png"
+      />
+    );
+  }
+
   loadMapLayer(mapUrl, attribution, index, config) {
     const zIndex = -10 + index;
     // TODO bbnavi uses WMS services and provides layers here instead of config
@@ -179,31 +206,14 @@ class Map extends React.Component {
         [config.URL.MAP.satellite_eu]: 'sentinel_europe',
         [config.URL.MAP.default]: 'topplus_farbe,webatlas_farbe',
       }[mapUrl];
-
-      return (
-        <WMSTileLayer
-          layers={layer}
-          key={mapUrl}
-          onLoad={this.setLoaded}
-          url={mapUrl}
-          tileSize={this.context.config.map.tileSize || 256}
-          zoomOffset={this.context.config.map.zoomOffset || 0}
-          updateWhenIdle={false}
-          zIndex={zIndex}
-          size={
-            this.context.config.map.useRetinaTiles &&
-            L.Browser.retina &&
-            !isDebugTiles
-              ? '@2x'
-              : ''
-          }
-          minZoom={this.context.config.map.minZoom}
-          maxZoom={this.context.config.map.maxZoom}
-          attribution={attribution}
-          version="1.3.0"
-          transparent={mapUrl === config.URL.MAP.satellite}
-          format="image/png"
-        />
+      const transparent = mapUrl === config.URL.MAP.satellite;
+      return this.loadWMSTLayer(
+        mapUrl,
+        layer,
+        attribution,
+        index,
+        transparent,
+        config,
       );
     }
 

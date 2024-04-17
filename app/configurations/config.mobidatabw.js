@@ -86,16 +86,6 @@ export default configMerger(parentConfig, {
     issueTrackerUrls: {
     },
 
-    cityBike: {
-        minZoomStopsNearYou: 10,
-        showStationId: false,
-        useSpacesAvailable: false,
-        showCityBikes: true,
-        networks: {
-            
-        }
-    },
-
     title: APP_TITLE,
 
     favicon: './app/configurations/images/herrenberg/favicon.png',

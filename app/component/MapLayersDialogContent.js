@@ -329,7 +329,7 @@ class MapLayersDialogContent extends React.Component {
                   checked: terminal.carpool,
                   defaultMessage: 'Carpool stops',
                   labelId: 'map-layer-carpool',
-                  icon: 'icon-icon_carpool',
+                  icon: 'icon-icon_carpool_stops',
                   settings: { stop: 'carpool', terminal: 'carpool' },
                 },
               ]}

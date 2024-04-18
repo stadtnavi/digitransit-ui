@@ -115,8 +115,22 @@ input[type='radio'] {
   background-color: #ffffff;
 }
 
-.carpool-leg-details-link .external-link-container {
-  a.external-link {
-    color: $primary-color;
+.carpool-leg-details-link {
+  line-height: unset;
+  .external-link-container {
+    margin: 12px 0px 0px 0px;
+    padding: 6px 12px 6px 6px;
+    background-color: $carpool-color;
+    color: #ffffff;
+    font-weight: bold;
+    a.external-link {
+      color: #ffffff;
+    }
   }
+}
+
+.row.itinerary-row .itinerary-instruction-column .itinerary-leg-action {
+  /* height: 60px; */
+  height: unset;
+  min-height: 60px;
 }

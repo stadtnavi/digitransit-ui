@@ -259,4 +259,7 @@ export default configMerger(parentConfig, {
 
     // live bus locations
     vehicles: false,
+
+    // Disclaimer shown if trip has a leg with mode=CARPOOL 
+    carpoolDisclaimer: 'Der VPE stellt lediglich die Plattform zur Verfügung, auf der Personen Mitfahrangebote veröffentlichen können, um von möglichen Mitfahrer*innen kontaktiert zu werden. Der VPE ist weder an einer etwaigen Vereinbarung zwischen Fahrenden und Mitfahrenden beteiligt noch haftet er für deren Verhalten im Zusammenhang mit der Durchführung der Fahrt, den Zustand des eingesetzten Fahrzeugs oder das Zustandekommen der Fahrt.',
 });

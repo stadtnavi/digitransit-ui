@@ -230,6 +230,17 @@ export default configMerger(parentConfig, {
                 isOffByDefault: false,
                 minZoom: 1
             },
+            {
+                name: {
+                  fi: '',
+                  en: 'Bicycle Service Stations',
+                  de: 'Radservice-Punkte',
+                },
+                url: 'https://data.mfdz.de/mobidata-bw/routing/dt_radservice_punkte.json',
+                icon: 'icon-icon_bike_repair',
+                isOffByDefault: false,
+                minZoom: 10
+            },
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,

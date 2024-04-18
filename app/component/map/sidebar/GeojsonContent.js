@@ -3,13 +3,23 @@ import PropTypes from 'prop-types';
 import SidebarContainer from './SidebarContainer';
 import { getPropertyValueOrDefault } from '../PointFeatureMarker';
 
-const GeoJsonContent = ({ match }) => {
+const GeoJsonContent = ({ match }, context) => {
   const { language, lat, lng } = match.location.query;
-  const properties = match.location.query;
+
+  const selectedFeature = context
+    .getStore('SelectedFeatureStore')
+    .getSelectedFeature();
+  const geojsonContent = selectedFeature?.properties?.popupContent;
+
+  const properties = selectedFeature?.properties || match.location.query;
 
   const header = getPropertyValueOrDefault(properties, 'name', language);
 
-  const content = getPropertyValueOrDefault(properties, 'content', language);
+  const unsafeContent = getPropertyValueOrDefault(
+    properties,
+    'content',
+    language,
+  );
   // use header as fallback, so address won't be undefined
   const address = getPropertyValueOrDefault(
     properties,
@@ -45,13 +55,26 @@ const GeoJsonContent = ({ match }) => {
       name={useDescriptionAsHeader ? description : header}
       description={useDescriptionAsHeader ? '' : description}
     >
-      {content && <div className="card-text opening-hours">{content}</div>}
+      {geojsonContent ? (
+        <div
+          className="card-text opening-hours"
+          dangerouslySetInnerHTML={{ __html: geojsonContent }}
+        />
+      ) : (
+        unsafeContent && (
+          <div className="card-text opening-hours">{unsafeContent}</div>
+        )
+      )}
     </SidebarContainer>
   );
 };
 
 GeoJsonContent.propTypes = {
   match: PropTypes.object,
+};
+
+GeoJsonContent.contextTypes = {
+  getStore: PropTypes.func.isRequired,
 };
 
 export default GeoJsonContent;

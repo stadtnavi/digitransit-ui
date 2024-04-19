@@ -334,15 +334,29 @@ class Map extends React.Component {
             this.state.zoom >= (geoJson[key].minZoom || 0),
         )
         .forEach((key, i) => {
-          leafletObjNew.push(
-            <GeoJSON
-              key={key.concat(i)}
-              data={geoJson[key].data}
-              geoJsonZoomLevel={this.state.zoom}
-              locationPopup={locationPopup}
-              onSelectLocation={onSelectLocation}
-            />,
-          );
+          const layerConfig = geoJson[key];
+          if (layerConfig.type === 'wmst') {
+            leafletObjNew.push(
+              this.loadWMSTLayer(
+                layerConfig.url,
+                layerConfig.layers,
+                layerConfig.attribution,
+                4,
+                true,
+                config,
+              ),
+            );
+          } else {
+            leafletObjNew.push(
+              <GeoJSON
+                key={key.concat(i)}
+                data={geoJson[key].data}
+                geoJsonZoomLevel={this.state.zoom}
+                locationPopup={locationPopup}
+                onSelectLocation={onSelectLocation}
+              />,
+            );
+          }
         });
     }
 

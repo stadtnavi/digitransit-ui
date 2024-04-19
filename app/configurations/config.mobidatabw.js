@@ -243,6 +243,22 @@ export default configMerger(parentConfig, {
                 isOffByDefault: false,
                 minZoom: 10
             },
+            // Bicycle network layer
+            {
+                name: {
+                  fi: '',
+                  en: "Bicycle network",
+                  de: 'Radnetz',
+                },
+                category: 'bicycle',
+                url: 'https://api.mobidata-bw.de/geoserver/MobiData-BW/wms',
+                icon: 'icon-icon_radnetz',
+                isOffByDefault: false,
+                minZoom: 12,
+                type: 'wmst',
+                layers: 'MobiData-BW:radvis_cycle_network',
+                attribution: 'RadNETZ-BW',
+            },
         ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,

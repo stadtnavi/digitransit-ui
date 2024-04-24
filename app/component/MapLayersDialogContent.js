@@ -131,17 +131,22 @@ class MapLayersDialogContent extends React.Component {
   layerOptionsByCategory = (category, layers, geoJson, lang) => {
     return (
       layers
-        ?.filter(l => l.category === undefined || l.category === category)
+        ?.filter(
+          l =>
+            l.alwaysOn !== true &&
+            (l.category === undefined || l.category === category),
+        )
         .map(layer => {
           const key = layer.id || layer.url;
           return {
+            key,
             checked:
               (layer.isOffByDefault && geoJson[key] === true) ||
               (!layer.isOffByDefault && geoJson[key] !== false), // todo: is active?
             defaultMessage: layer.name?.[lang] || layer.defaultMessage,
             labelId: layer.labelId, // todo: rename?
             icon: layer.icon,
-            settings: { geoJson: key }, // layer.id,
+            settings: { geoJson: key },
           };
         }) || []
     );

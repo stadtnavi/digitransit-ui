@@ -228,7 +228,8 @@ export default configMerger(parentConfig, {
                 url: '/assets/geojson/mobidatabw_service_area.json',
                 icon: 'icon-icon_open_carpark',
                 isOffByDefault: false,
-                minZoom: 1
+                minZoom: 1,
+                alwaysOn: true,
             },
             {
                 name: {
@@ -237,6 +238,7 @@ export default configMerger(parentConfig, {
                   de: 'Radservice-Punkte',
                 },
                 url: 'https://data.mfdz.de/mobidata-bw/routing/dt_radservice_punkte.json',
+                category: 'bicycle',
                 icon: 'icon-icon_bike_repair',
                 isOffByDefault: false,
                 minZoom: 10

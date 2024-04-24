@@ -298,6 +298,16 @@ export default configMerger(parentConfig, {
         showCityBikes: true,
 
         operators : {
+
+          taxi: {
+            icon: "brand_taxi",
+            name: {
+                de: "Taxi"
+            },
+            colors: {
+                background: '#FFCD00'
+            }
+          },
           deer: {
             icon: "brand_deer",
             name: {
@@ -436,6 +446,24 @@ export default configMerger(parentConfig, {
           }
         },
         networks: {
+           'mobidata-bw-taxi': {
+             icon: "brand_taxi",
+             operator: "taxi",
+             name: {
+               de: "Taxi"
+             },
+             type: "taxi",
+             capacity: "No availability",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             season: {
+                // currently not enabled for routing, but for display
+                start: new Date(new Date().getFullYear()+10, 0, 1),
+                end: new Date(new Date().getFullYear()+10, 11, 31),
+                preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+            },
+           },
            deer: {
              icon: "brand_deer",
              operator: "deer",

@@ -390,7 +390,7 @@ const translations = {
     'map-layer-sharing': 'Carsharing & Fahrrad- / Lastenradverleih',
     'map-layer-sharing-bicycle': 'Leihräder',
     'map-layer-sharing-cargo_bicycle': 'Leih-Lastenräder',
-    'map-layer-sharing-car': 'Car-Sharing',
+    'map-layer-sharing-car': 'Car-Sharing & Taxi-Stationen',
     'map-layer-sharing-scooter': 'Leih-Scooter',
     'map-layer-category-public-transit': 'Öffentlicher Nahverkehr',
     'map-layer-category-bicycle': 'Fahrrad',

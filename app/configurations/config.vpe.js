@@ -142,8 +142,14 @@ export default configMerger(parentConfig, {
         },
         content: [
             {
+                name: 'current-alerts',
+                nameEn: 'Current Alerts',
+                href: 'https://startmobi.vpe.de/rss/',
+                icon: 'icon-icon_warning',
+            },
+            {
                 name: 'about-this-service',
-                nameEn: 'About this service',
+                nameEn: 'About this Service',
                 route: '/dieser-dienst',
                 icon: 'icon-icon_info',
             },

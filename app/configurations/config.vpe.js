@@ -188,7 +188,8 @@ export default configMerger(parentConfig, {
                 paragraphs: [
                     'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
                     'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
-                    'Sharing-Daten: Car-Sharing-Standorte bereitgestellt durch <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Carsharing-Daten: Car-Sharing-Standorte bereitgestellt durch <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Mitfahrangebote: Mitfahrangebote für das Gebiet Baden-Württemberg werden bereitgestellt durch <a href="https://fahrgemeinschaft.de">Fahrgemeinschaft.de</a>. Sind Sie Anbieter einer Mitfahrplattform und möchten mit Ihrem Angebot ebenfalls in <b>VPE</b>mobi erscheinen? Dann nehmen Sie gerne Kontakt mit uns auf.',
                     'Alle Angaben ohne Gewähr.'
                 ],
             },
@@ -213,7 +214,8 @@ export default configMerger(parentConfig, {
                 paragraphs: [
                     'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
                     'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
-                    'Sharing data: carsharing locations are provided by <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Carsharing data: carsharing locations are provided by <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Carpooling data: Carpooling offers for the area of Baden-Württemberg are provided by <a href="https://fahrgemeinschaft.de">Fahrgemeinschaft.de</a>.',
                     'No responsibility is accepted for the accuracy of this information.'
                 ],
             },

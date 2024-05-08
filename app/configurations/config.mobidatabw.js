@@ -10,7 +10,7 @@ const OTP_URL = process.env.OTP_URL || `${API_URL}/otp/routers/default/`;
 const MAP_URL = process.env.MAP_URL || 'https://tiles.mobidata-bw.de/styles/streets/{z}/{x}/{y}{r}.png';
 const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://tiles.mobidata-bw.de/styles/bicycle/{z}/{x}/{y}{r}.png';
 const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.mobidata-bw.de/styles/satellite-overlay/{z}/{x}/{y}{r}.png";
-const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.nvbw.leonard.io/pelias/v1";
+const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://geocoding.mobidata-bw.de/pelias/v1";
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ;
 

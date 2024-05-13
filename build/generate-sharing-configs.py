@@ -28,7 +28,9 @@ def print_js_like_dict(d, indentation_level=0):
 def extract_form_factors(vehicle_types):
     form_factors = set()
     for vehicle_type in vehicle_types:
-        form_factors.add(vehicle_type['form_factor'])
+        form_factor = vehicle_type.get('form_factor')
+        if form_factor is not None:
+            form_factors.add(form_factor)
 
     return list(form_factors)
 

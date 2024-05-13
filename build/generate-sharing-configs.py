@@ -49,7 +49,7 @@ def operator_id(operator, name):
         'tier': 'tier',
         'voi': 'voi',
         'zeus': 'zeus',
-        'südbaden': 'stadtmobil_suedbaden',
+        'stadtmobil': 'stadtmobil',
         'lastenvelo': 'frelo_freiburg',
     }
 

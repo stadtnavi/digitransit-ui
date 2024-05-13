@@ -123,7 +123,7 @@ export default configMerger(parentConfig, {
 
     menu: {
         copyright: {
-            copyright: { label: `© MobiData BW ${parentConfig.YEAR}` },
+            label: `© MobiData BW ${parentConfig.YEAR}`
         },
         content: [
             {

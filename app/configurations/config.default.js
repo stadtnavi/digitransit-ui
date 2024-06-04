@@ -793,6 +793,7 @@ export default {
     oulu: 'oulu',
     hameenlinna: 'hameenlinna',
     matka: 'matka',
+    aachen: 'aachen',
     mobidatabw: 'mobidatabw',
     vpe: 'vpe',
     bar: '(bar|hamburg)',

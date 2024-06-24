@@ -2,45 +2,83 @@
 import configMerger from '../util/configMerger';
 
 const CONFIG = 'aachen';
-const APP_TITLE = 'stadtnavi aachen';
+const APP_TITLE = 'Op Jöck.';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
-const API_URL = process.env.API_URL || 'http://otp.nvbw.leonard.io';
+const API_URL = process.env.API_URL || 'https://api.aachen-sb.stadtnavi.eu';
+const OTP_URL = process.env.OTP_URL || `${API_URL}/otp/routers/default/`;
+const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon-eu.stadtnavi.eu/pelias/v1";
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||
     '/assets/messages/message.empty.json';
 
 const parentConfig = require('./config.stadtnavi.js').default;
 
-const minLat = 47.6020;
-const maxLat = 49.0050;
-const minLon = 8.4087;
-const maxLon = 9.9014;
+const minLat = 50.39;
+const maxLat = 51.31;
+const minLon = 5.02;
+const maxLon = 7.21;
 
 export default configMerger(parentConfig, {
     CONFIG,
+    URL: {
+        OTP: OTP_URL,
+        MAP: {
+            satellite: 'https://www.wmts.nrw.de/geobasis/wmts_nw_dop/tiles/nw_dop/EPSG_3857_16/{z}/{x}/{y}',
+        },
+        STOP_MAP: `${OTP_URL}vectorTiles/stops/`,
+        PARK_AND_RIDE_MAP: `${OTP_URL}vectorTiles/parking/`,
+        // TODO ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
+        RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/rentalStations/`,
+        RENTAL_VEHICLE_MAP: `${OTP_URL}vectorTiles/rentalVehicles/`,
+        REALTIME_RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/realtimeRentalStations/`,
+        
+        PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
+        PELIAS_REVERSE_GEOCODER: `${
+            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
+        }/reverse`,
+        PELIAS_PLACE: `${
+            process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
+        }/place`,
+        FARES: `${API_URL}/fares`,
+        FONT: '', // Do not use Google fonts.
+        EMBEDDED_SEARCH_GENERATION: '/embeddedSearchGenerator',
+    },
 
     title: APP_TITLE,
     meta: {
         description: APP_DESCRIPTION,
     },
 
+    map: {
+        attribution: {
+            'default': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>© <a tabindex=-1 href="https://www.maptiler.com/copyright/">MapTiler</a> ÖPNV-Daten: <a tabindex=-1 href=https://avv.de/de/fahrplaene/opendata-service>AVV GmbH</a></a>',
+            'satellite': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a> © <a tabindex=-1 href="https://www.lgl-bw.de/">LGL BW</a>,ÖPNV-Daten: <a tabindex=-1 href=https://avv.de/de/fahrplaene/opendata-service>AVV GmbH</a>',
+            'bicycle': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a> ÖPNV-Daten: <a tabindex=-1 href=https://avv.de/de/fahrplaene/opendata-service>AVV GmbH</a>',
+        },
+    },
+
     // -- Style configuration  ----
-    logo: 'herrenberg/stadtnavi-herrenberg-logo.svg',
-    favicon: './app/configurations/images/herrenberg/favicon.png',
+    textLogo: true,
+    appBarTitle: 'Das Aachener stadtnavi',
+    //logo: 'aachen/logo.svg',
+    favicon: './app/configurations/images/aachen/stadt-aachen.png',
     
     colors: {
-        primary: '#E5C500',
+        primary: '#6E9BD2',
+        iconColors: {
+            'mode-bus': '#B70F75',
+        }
     },
 
     // -- Bounding boxes for display and search ----
 
     searchParams: {
-        'boundary.rect.min_lat': 48.34164,
-        'boundary.rect.max_lat': 48.97661,
-        'boundary.rect.min_lon': 9.95635,
-        'boundary.rect.max_lon': 8.530883,
-        'focus.point.lat': 48.5957,
-        'focus.point.lon': 8.8675
+        'boundary.rect.min_lat': 51.31,
+        'boundary.rect.max_lat': 50.39,
+        'boundary.rect.min_lon': 5.02,
+        'boundary.rect.max_lon': 7.21,
+        'focus.point.lat': 50.7754,
+        'focus.point.lon': 6.0847
     },
 
     areaPolygon: [
@@ -51,8 +89,20 @@ export default configMerger(parentConfig, {
     ],
 
     defaultEndpoint: {
-        lat: 48.5942066,
-        lon: 8.8644041,
+        lat: 50.7754,
+        lon: 6.0847,
+    },
+
+    transportModes: {
+        subway: {
+            availableForSelection: false,
+        },
+        carpool: {
+            availableForSelection: false,
+        },
+        funicular: {
+            availableForSelection: false,
+        },
     },
 
     // -- Map-Layers configuration -----
@@ -83,16 +133,14 @@ export default configMerger(parentConfig, {
     },
 
     
-    feedIds: ['hbg'],
+    feedIds: ['1'], // TODO: GTFS Feed AVV contains feed_info.txt, but no feed_id
 
     // -- Menu and content customization ----
 
     staticMessagesUrl: STATIC_MESSAGE_URL,
 
     menu: {
-        copyright: {
-            copyright: { label: `© Aachen ${parentConfig.YEAR}` },
-        },
+        copyright: { label: `© Aachen ${parentConfig.YEAR}` },
         content: [
             {
                 name: 'about-this-service',
@@ -103,12 +151,12 @@ export default configMerger(parentConfig, {
             {
                 name: 'imprint',
                 nameEn: 'Imprint',
-                href: 'https://www.nvbw.de/impressum',
+                href: 'https://www.aachen.de/DE/stadt_buerger/allgemeines/impressum.html',
             },
             {
                 name: 'privacy',
                 nameEn: 'Privacy',
-                href: 'https://www.mobidata-bw.de/pages/datenschutz',
+                href: 'https://www.aachen.de/DE/stadt_buerger/allgemeines/datenschutz.html',
             },
         ],
     },
@@ -141,7 +189,7 @@ export default configMerger(parentConfig, {
                 header: 'Datenquellen',
                 paragraphs: [
                     'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
-                    'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
+                    'ÖPNV-Daten: Datensätze der <a target=new href=https://avv.de/>AVV GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
                     'Alle Angaben ohne Gewähr.'
                 ],
             },
@@ -170,7 +218,7 @@ export default configMerger(parentConfig, {
                 header: 'Data sources',
                 paragraphs: [
                     'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
-                    'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
+                    'Public transit data: Datasets by <a target=new href=https://avv.de/>AVV GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
                     'No responsibility is accepted for the accuracy of this information.'
                 ],
             },

@@ -1,0 +1,27 @@
+$from-color: #000000;
+
+// font-family The Mix is to larger for fixed size button, need to reduce font-size
+.embedded-seach-container .embedded-search-button-container .search-button {
+  /* font-size: 0.92rem; */
+  font-size: 0.7rem;
+}
+
+.top-bar section.title {
+  color: #fff;
+  font-size: xx-large;
+
+  .logo {
+    font-weight: 300;
+    padding-left: 0.5em;
+  }
+}
+
+.origin-destination-bar div div div,
+.front-page div div div {
+  .origin-input-icon svg {
+    fill: $from-color;
+  }
+  .destination-input-icon svg {
+    fill: $to-color;
+  }
+}

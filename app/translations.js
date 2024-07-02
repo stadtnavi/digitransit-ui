@@ -532,6 +532,7 @@ const translations = {
     car: 'Auto',
     'car-charging-station': 'Elektroauto-Ladestation',
     'car-distance-duration': 'Fahren {duration} ({distance})',
+    'car-only': 'Nur PKW',
     'car-park-full': 'Volle Parkplätze ausschließen',
     car_park: 'Park & Ride',
     'car-park-disclaimer':
@@ -543,6 +544,7 @@ const translations = {
     'card-header-back-to-result-list' : 'Zurück zu den Ergebnissen',
     'carpool-distance-duration': '{duration} ({distance}) mitfahren',
     'carpool-details-link': 'Mitfahrt vereinbaren',
+    'carpool-only': 'Nur Mitfahrgelegenheiten',
     cause: 'Grund',
     'char-left': 'Zeichen',
     'charging-direct-deep-link': 'Ladevorgang starten',
@@ -1459,6 +1461,7 @@ const translations = {
     car: 'Car',
     'car-charging-station': 'Car charging station',
     'car-distance-duration': 'Drive {duration} ({distance})',
+    'car-only': 'Car only',
     'car-park-full': 'Exclude car parks with few spaces',
     'car-park-disclaimer':
       'You can conveniently combine car and public transport: leave your car at a Park & Ride and continue by train, bus, metro or tram. Car parking is free of charge and there are no time limits.',
@@ -1468,6 +1471,7 @@ const translations = {
     carpool: 'Carpool',
     'carpool-legal-notice': 'This is a service of the external provider ride2Go GmbH.',
     'carpool-distance-duration': 'Ride {duration} ({distance})',
+    'carpool-only': 'Carpool only',
     'carpool-with-route-number': 'Carpool route {routeNumber} to {headsign}',
     'card-header-back-to-result-list' : 'Go back to results',
     cause: 'cause',

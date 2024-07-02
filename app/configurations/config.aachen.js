@@ -60,6 +60,7 @@ export default configMerger(parentConfig, {
     // -- Style configuration  ----
     textLogo: true,
     appBarTitle: 'Das Aachener stadtnavi',
+    sprites: 'assets/svg-sprite.aachen.svg',
     //logo: 'aachen/logo.svg',
     favicon: './app/configurations/images/aachen/stadt-aachen.png',
     

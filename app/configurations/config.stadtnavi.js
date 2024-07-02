@@ -6,11 +6,11 @@ const CONFIG = 'stadtnavi';
 const APP_TITLE = 'stadtnavi Herrenberg';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
 const API_URL = process.env.API_URL || 'https://api.stadtnavi.de';
-const MAP_URL = process.env.MAP_URL || 'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
-const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://tiles.stadtnavi.eu/bicycle/{z}/{x}/{y}{r}.png';
+const MAP_URL = process.env.MAP_URL || 'https://tiles-eu.stadtnavi.eu/styles/streets/{z}/{x}/{y}{r}.png';
+const BIKE_MAP_URL = process.env.BIKE_MAP_URL ||'https://tiles-eu.stadtnavi.eu/styles/bicycle/{z}/{x}/{y}{r}.png';
 
-const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles.stadtnavi.eu/satellite-overlay/{z}/{x}/{y}{r}.png";
-const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon.stadtnavi.eu/pelias/v1";
+const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https://tiles-eu.stadtnavi.eu/styles/satellite-overlay/{z}/{x}/{y}{r}.png";
+const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon-eu.stadtnavi.eu/pelias/v1";
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL = process.env.STATIC_MESSAGE_URL;
 
@@ -27,7 +27,7 @@ export default configMerger(parentConfig, {
         OTP: process.env.OTP_URL || `${API_URL}/routing/v1/router/`,
         MAP: {
             default: MAP_URL,
-            satellite: 'https://tiles.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
+            satellite: 'https://tiles-eu.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
             semiTransparent: SEMI_TRANSPARENT_MAP_URL,
             bicycle: BIKE_MAP_URL
         },

@@ -217,13 +217,18 @@ class Map extends React.Component {
       );
     }
 
+    // TODO make zoomOffset configurable
+    const zoomOffset = mapUrl.includes('www.wmts.nrw.de')
+      ? -5
+      : this.context.config.map.zoomOffset || 0;
+
     return (
       <TileLayer
         key={mapUrl}
         onLoad={this.setLoaded}
         url={mapUrl}
         tileSize={this.context.config.map.tileSize || 256}
-        zoomOffset={this.context.config.map.zoomOffset || 0}
+        zoomOffset={zoomOffset}
         updateWhenIdle={false}
         zIndex={zIndex}
         size={

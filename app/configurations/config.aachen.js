@@ -111,7 +111,17 @@ export default configMerger(parentConfig, {
     // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
-            // bicycleinfrastructure includes shops, repair stations,
+            {
+                name: {
+                    fi: '',
+                    en: 'Points of interest',
+                    de: "Sehenswürdigkeiten",
+                },
+                // url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_2.json', // TODO: CORS headers
+                url: '/assets/geojson/aachen/poi_2.json', // TODO: CORS headers
+                
+                icon: 'icon-icon_poi-marker',
+            },
         ],
     },
 

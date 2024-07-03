@@ -14,6 +14,8 @@ const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://geocoding.
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ;
 
+const MOBIDATA_BASE_URL = "https://dev-ipl.mobidata-bw.de/";
+
 const parentConfig = require('./config.stadtnavi.js').default;
 
 const hostname = new URL(API_URL);
@@ -36,7 +38,7 @@ export default configMerger(parentConfig, {
         },
         STOP_MAP: `${OTP_URL}vectorTiles/stops/`,
         PARK_AND_RIDE_MAP: `${OTP_URL}vectorTiles/parking/`,
-        // TODO ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
+        ROADWORKS_MAP: `${MOBIDATA_BASE_URL}geoserver/gwc/service/tms/1.0.0/MobiData-BW:roadworks@EPSG:900913@pbf/{z}/{x}/{-y}.pbf`,
         RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/rentalStations/`,
         RENTAL_VEHICLE_MAP: `${OTP_URL}vectorTiles/rentalVehicles/`,
         REALTIME_RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/realtimeRentalStations/`,
@@ -211,7 +213,7 @@ export default configMerger(parentConfig, {
 
 
     roadworks: {
-        show: false,
+        show: true,
     },
     weatherStations: {
         show: false,

@@ -5,7 +5,6 @@ import Roadworks from './Roadworks';
 
 export default function SelectRoadworksRow(props) {
   const { selectRow, properties } = props;
-
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div className="stop-popup-choose-row" onClick={selectRow}>
@@ -16,7 +15,7 @@ export default function SelectRoadworksRow(props) {
         />
       </div>
       <span className="choose-row-center-column">
-        <h5 className="choose-row-header">{properties['location.street']}</h5>
+        <h5 className="choose-row-header">{properties.street}</h5>
       </span>
       <span className="choose-row-right-column">
         <Icon img="icon-icon_arrow-collapse--right" />

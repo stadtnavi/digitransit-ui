@@ -88,7 +88,7 @@ export default configMerger(parentConfig, {
 
     title: APP_TITLE,
 
-    favicon: './app/configurations/images/herrenberg/favicon.png',
+    favicon: './app/configurations/images/mobidatabw/favicon.png',
 
     meta: {
         description: APP_DESCRIPTION,

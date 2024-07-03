@@ -409,7 +409,7 @@ export default configMerger(parentConfig, {
              },
             },
             stadtmobil: {
-             icon: "brand_stadtmobil",
+             icon: "brand_stadtmobil_suedbaden",
              name: {
                de: "stadtmobil"
              },
@@ -495,7 +495,7 @@ export default configMerger(parentConfig, {
              }
            },
            stadtmobil_stuttgart: {
-             icon: "brand_other",
+             icon: "brand_stadtmobil_suedbaden",
              operator: "stadtmobil",
              name: {
                de: "Stadtmobil Stuttgart"

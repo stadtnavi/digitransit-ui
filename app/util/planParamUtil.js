@@ -200,6 +200,21 @@ const getShouldMakeCarQuery = (
   );
 };
 
+const getShouldMakeCarRentalQuery = (
+  linearDistance,
+  config,
+  settings,
+  defaultSettings,
+) => {
+  return (
+    linearDistance > config.suggestCarMinDistance &&
+    // TODO carsharing enabled?
+    (settings.includeCarSuggestions !== undefined
+      ? settings.includeCarSuggestions
+      : defaultSettings.includeCarSuggestions)
+  );
+};
+
 const isDestinationOldTownOfHerrenberg = destination => {
   return booleanPointInPolygon(
     point([destination.lon, destination.lat]),
@@ -384,6 +399,12 @@ export const preparePlanParams = (config, useDefaultModes) => (
       settings,
       defaultSettings,
     ),
+    shouldMakeCarRentalQuery: getShouldMakeCarRentalQuery(
+      linearDistance,
+      config,
+      settings,
+      defaultSettings,
+    ),
     shouldMakeParkRideQuery: getShouldMakeParkRideQuery(
       linearDistance,
       config,
@@ -455,6 +476,7 @@ export const preparePlanParams = (config, useDefaultModes) => (
         ? { mode: 'CAR', qualifier: 'PARK' }
         : { mode: 'CAR' },
     ],
+    carRentalModes: [{ mode: 'CAR', qualifier: 'RENT' }],
     parkRideModes: [
       { mode: 'CAR', qualifier: 'PARK' },
       ...modesAsOTPModes(

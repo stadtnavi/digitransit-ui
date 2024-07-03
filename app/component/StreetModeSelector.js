@@ -21,6 +21,7 @@ export const StreetModeSelector = ({
   bikeRentAndPublicPlan,
   bikeParkPlan,
   carPlan,
+  carRentalPlan,
   parkRidePlan,
   onDemandTaxiPlan,
   loading,
@@ -31,6 +32,14 @@ export const StreetModeSelector = ({
           ...(bikeParkPlan?.itineraries || []),
           ...(bikeAndPublicPlan?.itineraries || []),
           ...(bikeRentAndPublicPlan?.itineraries || []),
+        ],
+      }
+    : {};
+  const carRentalOrOwn = !loading
+    ? {
+        itineraries: [
+          ...(carPlan?.itineraries || []),
+          ...(carRentalPlan?.itineraries || []),
         ],
       }
     : {};
@@ -84,8 +93,8 @@ export const StreetModeSelector = ({
             <StreetModeSelectorButton
               icon="icon-icon_car-withoutBox"
               name="car"
-              plan={carPlan}
-              onClick={setStreetModeAndSelect}
+              plan={carRentalOrOwn}
+              onClick={toggleStreetMode}
             />
           )}
           {showOnDemandTaxiOptionButton && (

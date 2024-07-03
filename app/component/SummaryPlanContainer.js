@@ -119,7 +119,14 @@ class SummaryPlanContainer extends React.Component {
   };
 
   getSubPath(fallback) {
-    const modesWithSubpath = ['bikeAndVehicle', 'parkAndRide', 'onDemandTaxi'];
+    // TODO the tabs with subpaths should be configurable/managed in a central place
+    // e.g. we want to show multiple car routing results (own and rented car)
+    const modesWithSubpath = [
+      'bikeAndVehicle',
+      'parkAndRide',
+      'onDemandTaxi',
+      'car',
+    ];
     const { hash } = this.props.params;
     if (modesWithSubpath.includes(hash)) {
       return `/${hash}/`;
@@ -264,7 +271,6 @@ class SummaryPlanContainer extends React.Component {
       currentTime;
     const disableButtons = !itineraries || itineraries.length === 0;
     const arriveBy = this.context.match.location.query.arriveBy === 'true';
-
     return (
       <div className="summary">
         <h2 className="sr-only">

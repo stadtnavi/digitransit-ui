@@ -202,18 +202,10 @@ const getShouldMakeCarQuery = (
   );
 };
 
-const getShouldMakeCarRentalQuery = (
-  linearDistance,
-  config,
-  settings,
-  defaultSettings,
-) => {
+const getShouldMakeCarRentalQuery = (linearDistance, config, settings) => {
   return (
     linearDistance > config.suggestCarMinDistance &&
-    // TODO carsharing enabled?
-    (settings.includeCarSuggestions !== undefined
-      ? settings.includeCarSuggestions
-      : defaultSettings.includeCarSuggestions)
+    settings?.allowedVehicleRentalFormFactors?.includes(FormFactorType.Car)
   );
 };
 
@@ -286,7 +278,9 @@ export const preparePlanParams = (config, useDefaultModes) => (
         )
       : defaultSettings.allowedVehicleRentalNetworks;
 
-  const includeBikeRentSuggestions = modesOrDefault.includes('BICYCLE_RENT');
+  const includeBikeRentSuggestions = settings?.allowedVehicleRentalFormFactors?.includes(
+    FormFactorType.Bicycle,
+  );
   // We need to remove BIYCLE_RENT as it is requested via Batch and not standard query
   const modesWithoutBikeRent = modesOrDefault.filter(
     mode => mode !== 'BICYCLE_RENT',

@@ -27,7 +27,6 @@ export default configMerger(parentConfig, {
         },
         STOP_MAP: `${OTP_URL}vectorTiles/stops/`,
         PARK_AND_RIDE_MAP: `${OTP_URL}vectorTiles/parking/`,
-        // TODO ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
         RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/rentalStations/`,
         RENTAL_VEHICLE_MAP: `${OTP_URL}vectorTiles/rentalVehicles/`,
         REALTIME_RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/realtimeRentalStations/`,
@@ -39,7 +38,6 @@ export default configMerger(parentConfig, {
         PELIAS_PLACE: `${
             process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
         }/place`,
-        FARES: `${API_URL}/fares`,
         FONT: '', // Do not use Google fonts.
         EMBEDDED_SEARCH_GENERATION: '/embeddedSearchGenerator',
     },
@@ -119,7 +117,7 @@ export default configMerger(parentConfig, {
                 },
                 // url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_2.json', // TODO: CORS headers
                 url: '/assets/geojson/aachen/poi_2.json', // TODO: CORS headers
-                
+                category: 'other',
                 icon: 'icon-icon_poi-marker',
             },
         ],
@@ -143,6 +141,14 @@ export default configMerger(parentConfig, {
         }
     },
 
+    // No live vehicles
+    vehicles: false,
+    weatherStations: {
+        show: false,
+    },
+    roadworks: {
+        show: false,
+    },
     
     feedIds: ['1'], // TODO: GTFS Feed AVV contains feed_info.txt, but no feed_id
 

@@ -271,7 +271,11 @@ export default configMerger(parentConfig, {
         [maxLon, minLat],
     ],
 
-    nationalServiceLink: { name: 'Fahrplanauskunft efa-bw', href: 'https://www.efa-bw.de' },
+    nationalServiceLink: { 
+        de: {
+            name: 'Fahrplanauskunft bwegt', href: 'https://www.bwegt.de' 
+        }
+    },
 
     defaultEndpoint: {
         lat: 48.5942066,

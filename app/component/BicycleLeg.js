@@ -60,7 +60,9 @@ function BicycleLeg(
   const isFirstLeg = i => i === 0;
   // TODO should better be deduced from leg, as network may rent different formFactors
   const rentalFormFactor =
-    networkConfig?.type === 'bicycle' ? 'citybike' : networkConfig?.type;
+    networkConfig?.type && networkConfig?.type !== 'citybike'
+      ? networkConfig?.type
+      : 'bicycle';
   let rentalUri;
   if (leg.mode === 'WALK' || leg.mode === 'BICYCLE_WALK') {
     modeClassName = leg.mode.toLowerCase();

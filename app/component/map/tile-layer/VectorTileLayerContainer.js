@@ -34,7 +34,7 @@ export default function VectorTileLayerContainer(props, { config }) {
     layers.push(ParkAndRideForBikes);
   }
 
-  if (props.mapLayers.weatherStations) {
+  if (config.weatherStations?.show && props.mapLayers.weatherStations) {
     layers.push(WeatherStations);
   }
 
@@ -67,7 +67,7 @@ export default function VectorTileLayerContainer(props, { config }) {
     layers.push(ChargingStations);
   }
 
-  if (props.mapLayers.roadworks) {
+  if (config.roadworks?.show && props.mapLayers.roadworks) {
     layers.push(Roadworks);
   }
 

@@ -23,7 +23,7 @@ import {
 } from './citybikes';
 import { getCustomizedSettings } from '../store/localStorage';
 import { estimateItineraryDistance } from './geo-utils';
-import { BicycleParkingFilter } from '../constants';
+import { BicycleParkingFilter, FormFactorType } from '../constants';
 
 /**
  * Retrieves the default settings from the configuration.
@@ -162,6 +162,8 @@ export const getSettings = config => {
           ),
       ),
     allowedVehicleRentalNetworks: custSettings.allowedVehicleRentalNetworks,
+    allowedVehicleRentalFormFactors:
+      custSettings.allowedVehicleRentalFormFactors,
     includeBikeSuggestions: custSettings.includeBikeSuggestions,
     includeCarSuggestions: custSettings.includeCarSuggestions,
     includeParkAndRideSuggestions: custSettings.includeParkAndRideSuggestions,
@@ -393,6 +395,11 @@ export const preparePlanParams = (config, useDefaultModes) => (
       !wheelchair &&
       linearDistance < config.suggestBikeMaxDistance &&
       includeBikeSuggestions,
+    shouldMakeScooterQuery:
+      !wheelchair &&
+      settings?.allowedVehicleRentalFormFactors?.includes(
+        FormFactorType.Scooter,
+      ),
     shouldMakeCarQuery: getShouldMakeCarQuery(
       linearDistance,
       config,
@@ -471,6 +478,10 @@ export const preparePlanParams = (config, useDefaultModes) => (
       ),
     ],
     bikeParkModes: [{ mode: 'BICYCLE', qualifier: 'PARK' }, ...formattedModes],
+    scooterRentAndPublicModes: [
+      { mode: 'SCOOTER', qualifier: 'RENT' },
+      ...modesAsOTPModes(getBicycleCompatibleModes(config, modesOrDefault)),
+    ],
     carParkModes: [
       isDestinationOldTownOfHerrenberg(toLocation)
         ? { mode: 'CAR', qualifier: 'PARK' }

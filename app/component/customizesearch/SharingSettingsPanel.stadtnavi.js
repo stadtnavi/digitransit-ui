@@ -17,7 +17,10 @@ const formFactorsAndDefaultMessages = {
   cargo_bicycle: 'Cargo bikes',
   car: 'Cars',
 };
-
+/**
+ * SharingSettingsPanel controls the setting `allowedVehicleRentalFormFactors`,
+ * a list of currently enabled formFactors.
+ */
 const SharingSettingsPanel = (
   { currentSettings, defaultSettings },
   { config, intl, executeAction },

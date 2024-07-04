@@ -9,6 +9,7 @@ export const StreetModeSelector = ({
   showWalkOptionButton,
   showBikeOptionButton,
   showBikeAndPublicOptionButton,
+  showScooterOptionButton,
   showCarOptionButton,
   showParkRideOptionButton,
   showOnDemandTaxiOptionButton,
@@ -20,6 +21,7 @@ export const StreetModeSelector = ({
   bikeAndPublicPlan,
   bikeRentAndPublicPlan,
   bikeParkPlan,
+  scooterRentAndPublicPlan,
   carPlan,
   carRentalPlan,
   parkRidePlan,
@@ -72,6 +74,14 @@ export const StreetModeSelector = ({
               onClick={setStreetModeAndSelect}
             />
           )}
+          {showScooterOptionButton && (
+            <StreetModeSelectorButton
+              icon="icon-icon_scooter_rider"
+              name="scooter"
+              plan={scooterRentAndPublicPlan}
+              onClick={toggleStreetMode}
+            />
+          )}
           {showBikeAndPublicOptionButton && (
             <StreetModeSelectorButton
               icon="icon-icon_cyclist"
@@ -115,6 +125,7 @@ StreetModeSelector.propTypes = {
   showWalkOptionButton: PropTypes.bool.isRequired,
   showBikeOptionButton: PropTypes.bool.isRequired,
   showBikeAndPublicOptionButton: PropTypes.bool.isRequired,
+  showScooterOptionButton: PropTypes.bool.isRequired,
   showCarOptionButton: PropTypes.bool.isRequired,
   showParkRideOptionButton: PropTypes.bool.isRequired,
   showOnDemandTaxiOptionButton: PropTypes.bool.isRequired,
@@ -124,6 +135,7 @@ StreetModeSelector.propTypes = {
   bikePlan: PropTypes.object,
   bikeAndPublicPlan: PropTypes.object,
   bikeParkPlan: PropTypes.object,
+  scooterRentAndPublicPlan: PropTypes.object,
   parkRidePlan: PropTypes.object,
   onDemandTaxiPlan: PropTypes.object,
   // eslint-disable-next-line react/require-default-props
@@ -140,6 +152,7 @@ StreetModeSelector.defaultProps = {
   bikePlan: undefined,
   bikeAndPublicPlan: undefined,
   bikeParkPlan: undefined,
+  scooterRentAndPublicPlan: undefined,
   loading: undefined,
 };
 

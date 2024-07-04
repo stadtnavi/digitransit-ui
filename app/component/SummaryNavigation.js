@@ -90,6 +90,7 @@ class SummaryNavigation extends React.Component {
               this.props.params.hash === 'bikeAndVehicle' ||
               this.props.params.hash === 'parkAndRide' ||
               this.props.params.hash === 'onDemandTaxi' ||
+              this.props.params.hash === 'scooter' ||
               this.props.params.hash === 'car'
                 ? 'pop'
                 : undefined

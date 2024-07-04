@@ -550,6 +550,7 @@ export default configMerger(parentConfig, {
     showVehiclesOnSummaryPage: false,
     showVehiclesOnStopPage: true,
 
+    includeScooterSuggestions: true,
     showBikeAndPublicItineraries: true,
     showBikeAndParkItineraries: true,
     showStopAndRouteSearch: false,

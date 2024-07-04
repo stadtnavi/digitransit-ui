@@ -251,6 +251,7 @@ export const streetHash = {
   walk: 'walk',
   bike: 'bike',
   bikeAndVehicle: 'bikeAndVehicle',
+  scooter: 'scooter',
   car: 'car',
   parkAndRide: 'parkAndRide',
   onDemandTaxi: 'onDemandTaxi',

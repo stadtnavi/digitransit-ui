@@ -55,6 +55,7 @@ class SummaryPlanContainer extends React.Component {
     bikeAndPublicItinerariesToShow: PropTypes.number.isRequired,
     bikeRentAndPublicItinerariesToShow: PropTypes.number.isRequired,
     bikeAndParkItinerariesToShow: PropTypes.number.isRequired,
+    scooter: PropTypes.bool,
     parkAndRide: PropTypes.bool,
     car: PropTypes.bool,
     onDemandTaxi: PropTypes.bool,
@@ -126,6 +127,7 @@ class SummaryPlanContainer extends React.Component {
       'parkAndRide',
       'onDemandTaxi',
       'car',
+      'scooter',
     ];
     const { hash } = this.props.params;
     if (modesWithSubpath.includes(hash)) {
@@ -251,6 +253,7 @@ class SummaryPlanContainer extends React.Component {
       bikeAndPublicItinerariesToShow,
       bikeRentAndPublicItinerariesToShow,
       bikeAndParkItinerariesToShow,
+      scooter,
       parkAndRide,
       car,
       onDemandTaxi,
@@ -305,6 +308,7 @@ class SummaryPlanContainer extends React.Component {
             bikeRentAndPublicItinerariesToShow
           }
           bikeAndParkItinerariesToShow={bikeAndParkItinerariesToShow}
+          scooter={scooter}
           parkAndRide={parkAndRide}
           car={car}
           onDemandTaxi={onDemandTaxi}

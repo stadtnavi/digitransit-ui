@@ -1133,6 +1133,8 @@ const translations = {
     'street-mode-car': 'Auto',
     'street-mode-car_park': 'Park & Ride',
     'street-mode-public_transport': 'ÖPNV',
+    'street-mode-scooter': 'Scooter',
+    'street-mode-scooter-aria': 'Zeige Scooter und ÖPNV Route. Dauer {duration}, davon {length} per Scooter',
     'street-mode-walk': 'Zu Fuß',
     'street-mode-walk-aria': 'Zeige Fußweg. Dauer {duration}, Strecke {length}',
     'street-mode-ondemandtaxi-aria': 'Zeige Ruftaxi. Dauer {duration}, Strecke {length}',
@@ -2091,6 +2093,8 @@ const translations = {
     'street-mode-parkandride-aria':
       'Show park and ride route. Duration {duration}, distance {length}',
     'street-mode-public_transport': 'Public transport',
+    'street-mode-scooter': 'Scooter',
+    'street-mode-scooter-aria': 'Show scooter or scooter with transit route. Duration {duration}, distance {length}',
     'street-mode-walk': 'Walking',
     'street-mode-walk-aria':
       'Show walking route. Duration {duration}, distance {length}',

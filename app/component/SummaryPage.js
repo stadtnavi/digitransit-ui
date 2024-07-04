@@ -66,7 +66,7 @@ import {
 import { getTotalBikingDistance } from '../util/legUtils';
 import { userHasChangedModes } from '../util/modeUtils';
 import CarpoolDrawer from './CarpoolDrawer';
-import { MapMode } from '../constants';
+import { MapMode, FormFactorType } from '../constants';
 import { saveFutureRoute } from '../action/FutureRoutesActions';
 import { saveSearch } from '../action/SearchActions';
 import CustomizeSearch from './CustomizeSearchNew';
@@ -85,6 +85,7 @@ const POINT_FOCUS_ZOOM = 16; // used when focusing to a point
  */
 const multipleResultsHashes = [
   streetHash.bikeAndVehicle,
+  streetHash.scooter,
   streetHash.parkAndRide,
   streetHash.car,
   streetHash.onDemandTaxi,
@@ -152,6 +153,7 @@ export const getHashNumber = hash => {
 export const routeSelected = (hash, secondHash, itineraries) => {
   if (
     hash === 'car' || // we combine own car and rental car, so more than one route is possible
+    hash === 'scooter' ||
     hash === 'bikeAndVehicle' ||
     hash === 'parkAndRide' ||
     hash === 'onDemandTaxi'
@@ -411,6 +413,7 @@ class SummaryPage extends React.Component {
       bikeAndPublicPlan: undefined,
       bikeRentAndPublicPlan: undefined,
       bikeParkPlan: undefined,
+      scooterRentAndPublicPlan: undefined,
       carPlan: undefined,
       carRentalPlan: undefined,
       parkRidePlan: undefined,
@@ -579,6 +582,8 @@ class SummaryPage extends React.Component {
   planHasNoStreetModeItineraries = () =>
     (!this.state.bikePlan?.itineraries ||
       this.state.bikePlan.itineraries.length === 0) &&
+    (!this.state.scooterRentAndPublicPlan?.itineraries ||
+      this.state.scooterRentAndPublicPlan.itineraries.length === 0) &&
     (!this.state.carPlan?.itineraries ||
       this.state.carPlan.itineraries.length === 0) &&
     (!this.state.carRentalPlan?.itineraries ||
@@ -708,8 +713,10 @@ class SummaryPage extends React.Component {
         $showBikeAndPublicItineraries: Boolean!
         $showBikeRentAndPublicItineraries: Boolean!
         $showBikeAndParkItineraries: Boolean!
+        $shouldMakeScooterQuery: Boolean!
         $bikeAndPublicModes: [TransportMode!]
         $bikeRentAndPublicModes: [TransportMode!]
+        $scooterRentAndPublicModes: [TransportMode!]
         $onDemandTaxiModes: [TransportMode!]
         $bikeParkModes: [TransportMode!]
         $carParkModes: [TransportMode!]
@@ -869,6 +876,66 @@ class SummaryPage extends React.Component {
           locale: $locale
         ) @include(if: $showBikeRentAndPublicItineraries) {
           # todo: does this match the expected data of bike (rent) + public itineraries
+          ...SummaryPlanContainer_plan
+          ...ItineraryTab_plan
+          itineraries {
+            duration
+            startTime
+            endTime
+            ...ItineraryTab_itinerary
+            ...SummaryPlanContainer_itineraries
+            legs {
+              mode
+              ...ItineraryLine_legs
+              transitLeg
+              rentedBike
+              startTime
+              endTime
+              legGeometry {
+                points
+              }
+              route {
+                gtfsId
+              }
+              trip {
+                gtfsId
+                directionId
+                stoptimesForDate {
+                  scheduledDeparture
+                }
+                pattern {
+                  ...RouteLine_pattern
+                }
+              }
+              distance
+            }
+          }
+        }
+
+        scooterRentAndPublicPlan: plan(
+          fromPlace: $fromPlace
+          toPlace: $toPlace
+          intermediatePlaces: $intermediatePlaces
+          numItineraries: 6
+          transportModes: $scooterRentAndPublicModes
+          date: $date
+          time: $time
+          walkReluctance: $walkReluctance
+          walkBoardCost: $walkBoardCost
+          minTransferTime: $minTransferTime
+          walkSpeed: $walkSpeed
+          allowedTicketTypes: $ticketTypes
+          arriveBy: $arriveBy
+          transferPenalty: $transferPenalty
+          bikeSpeed: $bikeSpeed
+          optimize: $optimize
+          triangle: $triangle
+          itineraryFiltering: $itineraryFiltering
+          unpreferred: $unpreferred
+          allowedVehicleRentalNetworks: $allowedVehicleRentalNetworks
+          locale: $locale
+        ) @include(if: $shouldMakeScooterQuery) {
+          # todo: does this match the expected data of scooter (rent) + public itineraries
           ...SummaryPlanContainer_plan
           ...ItineraryTab_plan
           itineraries {
@@ -1266,6 +1333,7 @@ class SummaryPage extends React.Component {
             bikeAndPublicPlan: result.bikeAndPublicPlan,
             bikeRentAndPublicPlan: result.bikeRentAndPublicPlan,
             bikeParkPlan: result.bikeParkPlan,
+            scooterRentAndPublicPlan: result.scooterRentAndPublicPlan,
             carPlan: result.carPlan,
             carRentalPlan: result.carRentalPlan,
             parkRidePlan: result.parkRidePlan,
@@ -1840,6 +1908,7 @@ class SummaryPage extends React.Component {
           bikePlan: undefined,
           bikeAndPublicPlan: undefined,
           bikeParkPlan: undefined,
+          scooterRentAndPublicPlan: undefined,
           carPlan: undefined,
           carRentalPlan: undefined,
           parkRidePlan: undefined,
@@ -2015,18 +2084,23 @@ class SummaryPage extends React.Component {
     };
   };
 
+  filteredHasRentalVehicleLeg = (plan, mode) => {
+    return {
+      itineraries: (plan?.itineraries || []).filter(it =>
+        it.legs.some(leg => leg.mode === mode && leg.rentedBike === true),
+      ),
+    };
+  };
+
   // Keep each itinerary that
   // - contains >0 bicycle rent legs, *and*
   // - contains >0 transit legs.
   filteredBikeRentAndPublic = plan => {
     return {
-      itineraries: (plan?.itineraries || [])
-        .filter(it =>
-          it.legs.some(
-            leg => leg.mode === 'BICYCLE' && leg.rentedBike === true,
-          ),
-        )
-        .filter(it => it.legs.some(leg => leg.transitLeg === true)),
+      itineraries: this.filteredHasRentalVehicleLeg(
+        plan,
+        'BICYCLE',
+      ).itineraries.filter(it => it.legs.some(leg => leg.transitLeg === true)),
     };
   };
 
@@ -2441,6 +2515,9 @@ class SummaryPage extends React.Component {
     const carDuration = this.getDuration(this.state.carPlan);
     const parkAndRideDuration = this.getDuration(this.state.parkRidePlan);
     const bikeParkDuration = this.getDuration(this.state.bikeParkPlan);
+    const scooterRentAndPublicDuration = this.getDuration(
+      this.state.scooterRentAndPublicPlan,
+    );
     let bikeAndPublicDuration;
     if (this.context.config.includePublicWithBikePlan) {
       bikeAndPublicDuration = this.getDuration(this.state.bikeAndPublicPlan);
@@ -2450,7 +2527,9 @@ class SummaryPage extends React.Component {
       (carDuration && carDuration < walkDuration) ||
       (parkAndRideDuration && parkAndRideDuration < walkDuration) ||
       (bikeParkDuration && bikeParkDuration < walkDuration) ||
-      (bikeAndPublicDuration && bikeAndPublicDuration < walkDuration)
+      (bikeAndPublicDuration && bikeAndPublicDuration < walkDuration) ||
+      (scooterRentAndPublicDuration &&
+        scooterRentAndPublicDuration < walkDuration)
     ) {
       return false;
     }
@@ -2496,6 +2575,12 @@ class SummaryPage extends React.Component {
     const bikeRentAndPublicPlan = this.filteredBikeRentAndPublic(
       this.state.bikeRentAndPublicPlan,
     );
+
+    const scooterRentAndPublicPlan = this.filteredHasRentalVehicleLeg(
+      this.state.scooterRentAndPublicPlan,
+      'SCOOTER',
+    );
+
     const planHasNoItineraries = this.planHasNoItineraries();
     if (
       planHasNoItineraries &&
@@ -2540,6 +2625,16 @@ class SummaryPage extends React.Component {
         );
       }
       this.selectedPlan = bikePlan;
+    } else if (this.props.match.params.hash === 'scooter') {
+      this.stopClient();
+      if (this.state.isFetchingWalkAndBike) {
+        return (
+          <>
+            <Loading />
+          </>
+        );
+      }
+      this.selectedPlan = scooterRentAndPublicPlan;
     } else if (this.props.match.params.hash === 'onDemandTaxi') {
       this.stopClient();
       if (!onDemandTaxiPlan) {
@@ -2680,6 +2775,13 @@ class SummaryPage extends React.Component {
       bikeAndPublicPlanHasItineraries ||
       bikeRentAndPublicPlanHasItineraries ||
       bikeParkPlanHasItineraries;
+
+    const showScooterOptionButton =
+      this.context.config.includeScooterSuggestions &&
+      currentSettings.allowedVehicleRentalFormFactors?.includes(
+        FormFactorType.Scooter,
+      ) &&
+      !isEmpty(get(scooterRentAndPublicPlan, 'itineraries'));
 
     // TODO merged with carRental?
     const hasCarItinerary = !isEmpty(get(carPlan, 'itineraries'));
@@ -2905,6 +3007,7 @@ class SummaryPage extends React.Component {
                 this.bikeRentAndPublicItinerariesToShow
               }
               bikeAndParkItinerariesToShow={this.bikeAndParkItinerariesToShow}
+              scooter={showBikeAndPublicOptionButton}
               car={showCarOptionButton}
               parkAndRide={showParkRideOptionButton}
               onDemandTaxi={showOnDemandTaxiOptionButton}
@@ -3007,6 +3110,7 @@ class SummaryPage extends React.Component {
                   showWalkOptionButton={showWalkOptionButton}
                   showBikeOptionButton={showBikeOptionButton}
                   showBikeAndPublicOptionButton={showBikeAndPublicOptionButton}
+                  showScooterOptionButton={showScooterOptionButton}
                   showCarOptionButton={showCarOptionButton}
                   showParkRideOptionButton={showParkRideOptionButton}
                   showOnDemandTaxiOptionButton={showOnDemandTaxiOptionButton}
@@ -3018,6 +3122,7 @@ class SummaryPage extends React.Component {
                   bikeAndPublicPlan={bikeAndPublicPlan}
                   bikeRentAndPublicPlan={bikeRentAndPublicPlan}
                   bikeParkPlan={bikeParkPlan}
+                  scooterRentAndPublicPlan={scooterRentAndPublicPlan}
                   carPlan={carPlan}
                   carRentalPlan={carRentalPlan}
                   parkRidePlan={parkRidePlan}
@@ -3138,6 +3243,7 @@ class SummaryPage extends React.Component {
                 this.bikeRentAndPublicItinerariesToShow
               }
               bikeAndParkItinerariesToShow={this.bikeAndParkItinerariesToShow}
+              scooter={showScooterOptionButton}
               car={showCarOptionButton}
               parkAndRide={showParkRideOptionButton}
               onDemandTaxi={showOnDemandTaxiOptionButton}
@@ -3194,6 +3300,7 @@ class SummaryPage extends React.Component {
                   showWalkOptionButton={showWalkOptionButton}
                   showBikeOptionButton={showBikeOptionButton}
                   showBikeAndPublicOptionButton={showBikeAndPublicOptionButton}
+                  showScooterOptionButton={showScooterOptionButton}
                   showCarOptionButton={showCarOptionButton}
                   showParkRideOptionButton={showParkRideOptionButton}
                   toggleStreetMode={this.toggleStreetMode}
@@ -3204,6 +3311,7 @@ class SummaryPage extends React.Component {
                   bikeAndPublicPlan={bikeAndPublicPlan}
                   bikeRentAndPublicPlan={bikeRentAndPublicPlan}
                   bikeParkPlan={bikeParkPlan}
+                  scooterRentAndPublicPlan={scooterRentAndPublicPlan}
                   carPlan={carPlan}
                   carRentalPlan={carRentalPlan}
                   parkRidePlan={parkRidePlan}

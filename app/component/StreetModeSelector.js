@@ -134,8 +134,11 @@ StreetModeSelector.propTypes = {
   walkPlan: PropTypes.object,
   bikePlan: PropTypes.object,
   bikeAndPublicPlan: PropTypes.object,
+  bikeRentAndPublicPlan: PropTypes.object,
   bikeParkPlan: PropTypes.object,
   scooterRentAndPublicPlan: PropTypes.object,
+  carPlan: PropTypes.object,
+  carRentalPlan: PropTypes.object,
   parkRidePlan: PropTypes.object,
   onDemandTaxiPlan: PropTypes.object,
   // eslint-disable-next-line react/require-default-props
@@ -151,8 +154,13 @@ StreetModeSelector.defaultProps = {
   walkPlan: undefined,
   bikePlan: undefined,
   bikeAndPublicPlan: undefined,
+  bikeRentAndPublicPlan: undefined,
   bikeParkPlan: undefined,
   scooterRentAndPublicPlan: undefined,
+  carPlan: undefined,
+  carRentalPlan: undefined,
+  parkRidePlan: undefined,
+  onDemandTaxiPlan: undefined,
   loading: undefined,
 };
 

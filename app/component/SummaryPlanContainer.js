@@ -71,7 +71,7 @@ class SummaryPlanContainer extends React.Component {
     alternativePlan: PropTypes.shape({
       date: PropTypes.number,
       itineraries: PropTypes.arrayOf(ItineraryShape),
-    }).isRequired,
+    }),
     showSettingsChangedNotification: PropTypes.func.isRequired,
     driving: PropTypes.bool,
     onlyHasWalkingItineraries: PropTypes.bool,

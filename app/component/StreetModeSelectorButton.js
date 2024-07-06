@@ -74,7 +74,7 @@ export const StreetModeSelectorButton = (
     );
 
     if (name !== 'scooter') {
-      const mode = publicModes?.[0].mode?.toLowerCase() || 'rail';
+      const mode = publicModes?.[0]?.mode?.toLowerCase() || 'rail';
       secondaryIcon = `icon-icon_${mode}`;
       secondaryColor =
         mode === 'subway' ? config.colors?.iconColors?.['mode-metro'] : '';

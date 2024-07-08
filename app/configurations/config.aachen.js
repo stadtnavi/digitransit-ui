@@ -30,7 +30,8 @@ export default configMerger(parentConfig, {
         RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/rentalStations/`,
         RENTAL_VEHICLE_MAP: `${OTP_URL}vectorTiles/rentalVehicles/`,
         REALTIME_RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/realtimeRentalStations/`,
-        
+        CHARGING_STATIONS_MAP: `https://api.ocpdb.de/tiles/{z}/{x}/{y}.mvt`,
+        CHARGING_STATION_DETAILS_API: 'https://api.ocpdb.de/api/ocpi/2.2/location/',
         PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
         PELIAS_REVERSE_GEOCODER: `${
             process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL

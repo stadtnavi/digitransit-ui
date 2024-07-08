@@ -2,7 +2,7 @@
 import configMerger from '../util/configMerger';
 
 const CONFIG = 'aachen';
-const APP_TITLE = 'Op Jöck.';
+const APP_TITLE = 'stadtnavi';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
 const API_URL = process.env.API_URL || 'https://api.aachen-sb.stadtnavi.eu';
 const OTP_URL = process.env.OTP_URL || `${API_URL}/otp/routers/default/`;
@@ -57,7 +57,7 @@ export default configMerger(parentConfig, {
 
     // -- Style configuration  ----
     textLogo: true,
-    appBarTitle: 'Das Aachener stadtnavi',
+    appBarTitle: 'Aachen',
     sprites: 'assets/svg-sprite.aachen.svg',
     //logo: 'aachen/logo.svg',
     favicon: './app/configurations/images/aachen/stadt-aachen.png',

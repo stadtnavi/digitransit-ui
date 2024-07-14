@@ -105,6 +105,7 @@ export default configMerger(parentConfig, {
         },
     },
 
+    suggestCarMinDistance: 10,
     // -- Map-Layers configuration -----
 
     // adding assets/geoJson/hb-layers layers
@@ -137,7 +138,7 @@ export default configMerger(parentConfig, {
         showStationId: false,
         useSpacesAvailable: false,
         showCityBikes: true,
-            
+        
         operators : {
           cambio: {
             icon: "brand_cambio",
@@ -146,8 +147,8 @@ export default configMerger(parentConfig, {
             },
             colors: {
                 background: '#EB690B'
-        }
-    },
+            }
+          },
         },
 
         networks: {
@@ -174,7 +175,8 @@ export default configMerger(parentConfig, {
     roadworks: {
         show: false,
     },
-    
+    showCarpoolOfferButton: false,
+
     feedIds: ['1'], // TODO: GTFS Feed AVV contains feed_info.txt, but no feed_id
 
     // -- Menu and content customization ----

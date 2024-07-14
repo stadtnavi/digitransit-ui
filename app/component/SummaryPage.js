@@ -2697,13 +2697,13 @@ class SummaryPage extends React.Component {
       }
       this.selectedPlan = {
         itineraries: [
-          ...(carPlan.itineraries ? carPlan.itineraries.slice(0, 3) : []),
-          ...(carRentalPlan.itineraries
+          ...(carPlan?.itineraries ? carPlan.itineraries.slice(0, 3) : []),
+          ...(carRentalPlan?.itineraries
             ? carRentalPlan.itineraries.slice(0, 3)
             : []),
         ],
       };
-      [carLeg] = carPlan.itineraries[0].legs;
+      [carLeg] = this.selectedPlan.itineraries[0].legs;
     } else if (this.props.match.params.hash === 'parkAndRide') {
       if (this.state.isFetchingWalkAndBike) {
         return <Loading />;

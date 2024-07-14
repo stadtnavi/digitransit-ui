@@ -204,8 +204,11 @@ const getShouldMakeCarQuery = (
 
 const getShouldMakeCarRentalQuery = (linearDistance, config, settings) => {
   return (
-    linearDistance > config.suggestCarMinDistance &&
-    settings?.allowedVehicleRentalFormFactors?.includes(FormFactorType.Car)
+    (linearDistance > config.suggestCarMinDistance &&
+      settings?.allowedVehicleRentalFormFactors?.includes(
+        FormFactorType.Car,
+      )) ||
+    false
   );
 };
 
@@ -278,9 +281,10 @@ export const preparePlanParams = (config, useDefaultModes) => (
         )
       : defaultSettings.allowedVehicleRentalNetworks;
 
-  const includeBikeRentSuggestions = settings?.allowedVehicleRentalFormFactors?.includes(
-    FormFactorType.Bicycle,
-  );
+  const includeBikeRentSuggestions =
+    settings?.allowedVehicleRentalFormFactors?.includes(
+      FormFactorType.Bicycle,
+    ) || false;
   // We need to remove BIYCLE_RENT as it is requested via Batch and not standard query
   const modesWithoutBikeRent = modesOrDefault.filter(
     mode => mode !== 'BICYCLE_RENT',
@@ -390,10 +394,11 @@ export const preparePlanParams = (config, useDefaultModes) => (
       linearDistance < config.suggestBikeMaxDistance &&
       includeBikeSuggestions,
     shouldMakeScooterQuery:
-      !wheelchair &&
-      settings?.allowedVehicleRentalFormFactors?.includes(
-        FormFactorType.Scooter,
-      ),
+      (!wheelchair &&
+        settings?.allowedVehicleRentalFormFactors?.includes(
+          FormFactorType.Scooter,
+        )) ||
+      false,
     shouldMakeCarQuery: getShouldMakeCarQuery(
       linearDistance,
       config,

@@ -137,9 +137,33 @@ export default configMerger(parentConfig, {
         showStationId: false,
         useSpacesAvailable: false,
         showCityBikes: true,
-        networks: {
             
+        operators : {
+          cambio: {
+            icon: "brand_cambio",
+            name: {
+                de: "Cambio"
+            },
+            colors: {
+                background: '#EB690B'
         }
+    },
+        },
+
+        networks: {
+           'cambio_aachen': {
+             icon: "brand_cambio",
+             operator: "cambio",
+             name: {
+               de: "Cambio Aachen"
+             },
+             type: "car",
+             capacity: "No availability",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+           },
+        },   
     },
 
     // No live vehicles

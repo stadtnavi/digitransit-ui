@@ -105,6 +105,29 @@ export default configMerger(parentConfig, {
         },
     },
 
+    streetModes: {
+        bicycle: {
+            availableForSelection: true,
+            defaultValue: true,
+            exclusive: true,
+            icon: 'bicycle-withoutBox',
+        },
+
+        car: {
+            availableForSelection: false,
+            defaultValue: true,
+            exclusive: false,
+            icon: 'car-withoutBox',
+        },
+
+        car_park: {
+            availableForSelection: true,
+            defaultValue: true,
+            exclusive: false,
+            icon: 'car-withoutBox',
+        },
+    },
+
     suggestCarMinDistance: 10,
     // -- Map-Layers configuration -----
 

@@ -82,6 +82,22 @@ export default configMerger(parentConfig, {
     },
 
     sprites: 'assets/svg-sprite.mobidatabw.svg',
+
+    socialMedia: {
+        title: APP_TITLE,
+        description: APP_DESCRIPTION,
+
+        image: {
+            url: '/img/mobidatabw-social-media-card.png',
+            width: 1000,
+            height: 563,
+        },
+
+        twitter: {
+            card: 'summary_large_image',
+            site: '@NVBWOpenData',
+        },
+    },
     
     issueTrackerUrl: 'https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}',
     // issueTrackerUrls define issuetracker URLs per postalCode. In case none matches, issueTrackerUrl is used as falllback

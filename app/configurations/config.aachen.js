@@ -140,11 +140,21 @@ export default configMerger(parentConfig, {
                     en: 'Points of interest',
                     de: "Sehenswürdigkeiten",
                 },
-                // url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_2.json', // TODO: CORS headers
-                url: '/assets/geojson/aachen/poi_2.json', // TODO: CORS headers
+                url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_2.json',
                 category: 'other',
                 icon: 'icon-icon_poi-marker',
             },
+            {
+                name: {
+                    fi: '',
+                    en: 'Smart Shopping',
+                    de: 'Smart Shopping',
+                },
+                url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_smart_shopping.json',
+                category: 'other',
+                icon: 'icon-icon_aac_smart-shopping-marker',
+            },
+            
         ],
     },
 

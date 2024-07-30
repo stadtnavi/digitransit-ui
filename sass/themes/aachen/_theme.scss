@@ -24,7 +24,8 @@ $heading-font-family: "The Mix","Gotham Rounded B", Arial, Georgia, Serif;
 $button-font-family: $heading-font-family;
 $font-weight-medium: 500;
 $font-narrow-weight-medium: 500;
-$letter-spacing: -0.025em;
+$letter-spacing: initial;
+$letter-spacing-front-page: 0px;
 $font-size-medium-large: 1rem;
 
 $font-family-narrow: 'Transit', Arial, Georgia, serif;

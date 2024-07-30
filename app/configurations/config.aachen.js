@@ -114,7 +114,7 @@ export default configMerger(parentConfig, {
         },
 
         car: {
-            availableForSelection: false,
+            availableForSelection: true,
             defaultValue: true,
             exclusive: false,
             icon: 'car-withoutBox',

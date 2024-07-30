@@ -51,6 +51,8 @@ const modules = {
   FavouritesContainer: () => importLazy(import('./FavouritesContainer')),
   DatetimepickerContainer: () =>
     importLazy(import('./DatetimepickerContainer')),
+  PhasepickerContainer: () =>
+    importLazy(import('./aachen/PhasepickerContainer')),
 };
 
 class IndexPage extends React.Component {
@@ -418,6 +420,7 @@ class IndexPage extends React.Component {
           OverlayWithSpinner,
           FavouritesContainer,
           DatetimepickerContainer,
+          PhasepickerContainer,
         }) =>
           breakpoint === 'large' ? (
             <div
@@ -442,6 +445,12 @@ class IndexPage extends React.Component {
                   position="left"
                   fontWeights={fontWeights}
                 >
+                  <span className="searchIntro">
+                    Die neue Lenkung des Autoverkehrs wurde im November 2023
+                    politisch beschlossen. Durch die Einrichtung von drei
+                    Lenkungspunkten ergeben sich neue Wege für den Autoverkehr.
+                    Sieh schon jetzt was sich für dich ändert.
+                  </span>
                   <span className="sr-only">
                     <FormattedMessage
                       id="search-fields.sr-instructions"
@@ -452,15 +461,23 @@ class IndexPage extends React.Component {
                     targets={locationSearchTargets}
                     {...locationSearchProps}
                   />
-                  <div className="datetimepicker-container">
-                    <DatetimepickerContainer realtime color={color} />
-                  </div>
-                  <FavouritesContainer
-                    favouriteModalAction={this.props.favouriteModalAction}
-                    onClickFavourite={this.clickFavourite}
-                    lang={lang}
-                  />
-                  <CtrlPanel.SeparatorLine usePaddingBottom20 />
+                  {config.CONFIG === 'aachen-sb' ? (
+                    <div className="phasepicker">
+                      <PhasepickerContainer />
+                    </div>
+                  ) : (
+                    <>
+                      <div className="datetimepicker-container">
+                        <DatetimepickerContainer realtime color={color} />
+                      </div>
+                      <FavouritesContainer
+                        favouriteModalAction={this.props.favouriteModalAction}
+                        onClickFavourite={this.clickFavourite}
+                        lang={lang}
+                      />
+                      <CtrlPanel.SeparatorLine usePaddingBottom20 />
+                    </>
+                  )}
                   {bottomPanel(CtrlPanel, TrafficNowLink)}
                 </CtrlPanel>
               </div>

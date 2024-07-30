@@ -3,3 +3,20 @@
   /* padding-top: 47px; */
   padding-top: 17px;
 }
+
+.searchIntro {
+  padding-bottom: 17px;
+}
+
+input[type='radio'] {
+  accent-color: $black; /* stylelint-disable-line property-no-unknown */
+}
+
+.phasepicker.bp-large {
+  margin: 0 60px;
+}
+
+.phasepicker label {
+  color: #000;
+  font-size: 1em;
+}

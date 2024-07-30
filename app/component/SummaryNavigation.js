@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 
 import OriginDestinationBar from './OriginDestinationBar';
 import QuickSettingsPanel from './QuickSettingsPanel';
+import PhasepickerContainer from './aachen/PhasepickerContainer';
 import { isBrowser } from '../util/browser';
 import { parseLocation, PREFIX_ITINERARY_SUMMARY } from '../util/path';
 import withBreakpoint from '../util/withBreakpoint';
@@ -110,16 +111,21 @@ class SummaryNavigation extends React.Component {
           isMobile={this.props.breakpoint !== 'large'}
           modeSet={this.context.config.iconModeSet}
         />
-        {isBrowser && (
-          <React.Fragment>
-            <QuickSettingsPanel
-              timeSelectorStartTime={this.props.startTime}
-              timeSelectorEndTime={this.props.endTime}
-              timeSelectorServiceTimeRange={this.props.serviceTimeRange}
-              toggleSettings={this.props.toggleSettings}
-            />
-          </React.Fragment>
-        )}
+        {isBrowser &&
+          (this.context.config.CONFIG === 'aachen-sb' ? (
+            <div className={`phasepicker ${className}`}>
+              <PhasepickerContainer />
+            </div>
+          ) : (
+            <React.Fragment>
+              <QuickSettingsPanel
+                timeSelectorStartTime={this.props.startTime}
+                timeSelectorEndTime={this.props.endTime}
+                timeSelectorServiceTimeRange={this.props.serviceTimeRange}
+                toggleSettings={this.props.toggleSettings}
+              />
+            </React.Fragment>
+          ))}
       </div>
     );
   }

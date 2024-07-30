@@ -303,7 +303,7 @@ export default configMerger(parentConfig, {
     },
 
     // -- Issue Tracker configuration ---- 
-    issueTrackerUrl: 'https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}',
+    issueTrackerUrl: 'https://maengelmelder.aachen.de/?lat=${lat}&lng=${lon}',
     // issueTrackerUrls define issuetracker URLs per postalCode. In case none matches, issueTrackerUrl is used as falllback
     issueTrackerUrls: {
         // The issue tracker is selected depending on the postal code returned by the geocoding service.

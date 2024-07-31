@@ -47,7 +47,8 @@ export default configMerger(parentConfig, {
     meta: {
         description: APP_DESCRIPTION,
     },
-
+    availableLanguages: ['de', 'en', 'fr', 'nl'],
+    
     map: {
         attribution: {
             'default': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>© <a tabindex=-1 href="https://www.maptiler.com/copyright/">MapTiler</a> ÖPNV-Daten: <a tabindex=-1 href=https://avv.de/de/fahrplaene/opendata-service>AVV GmbH</a>',

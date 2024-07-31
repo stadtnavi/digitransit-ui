@@ -289,7 +289,13 @@ export const preparePlanParams = (config, useDefaultModes) => (
   const modesWithoutBikeRent = modesOrDefault.filter(
     mode => mode !== 'BICYCLE_RENT',
   );
-  const formattedModes = modesAsOTPModes(modesWithoutBikeRent);
+
+  // IMPORTANT: For aachen-sb: car is the default mode, not transit
+  const formattedModes =
+    config.CONFIG === 'aachen-sb'
+      ? [{ mode: 'CAR' }]
+      : modesAsOTPModes(modesWithoutBikeRent);
+
   const wheelchair =
     getNumberValueOrDefault(settings.accessibilityOption, defaultSettings) ===
     1;

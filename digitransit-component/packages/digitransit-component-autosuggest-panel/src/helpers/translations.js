@@ -74,6 +74,20 @@ const translations = {
     'via-point-index': 'Punkt {{index}}',
     'viapoint-slack-amount': 'Czas trwania zatrzymania',
   },
+  nl: {
+    'add-via-button-label': 'Toevoegen via punt',
+    'add-via-duration-button-label': 'Stopduur instellen op viapunt {{index}}',
+    'add-via-duration-button-label-close':
+      'Selecteer de stopduur via punt sluiten {{index}}',
+    'add-via-duration-button-label-open':
+      'Open stop duur selector op via punt {{index}}',
+    'minute-short': 'min',
+    'remove-via-button-label': 'Via punt verwijderen {{index}}',
+    'swap-order-button-label': 'Start en finish verwisselen.',
+    'via-point': 'Via punt',
+    'via-point-index': 'Via punt {{index}}',
+    'viapoint-slack-amount': 'Transfertijd',
+  },
 };
 
 export default translations;

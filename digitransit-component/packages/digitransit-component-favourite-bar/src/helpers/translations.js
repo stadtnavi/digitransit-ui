@@ -57,6 +57,19 @@ const translations = {
     home: ' Strona główna',
     work: 'zadanie',
   },
+
+  nl: {
+    'add-destination': 'Als bestemming instellen',
+    'add-favourite': 'Favoriet toevoegen',
+    'add-home': 'Thuis instellen',
+    'add-place': 'Locatie instellen',
+    'add-work': 'Werklocatie instellen',
+    'favourites-list': 'Favorietenlijst',
+    edit: 'Bewerken',
+    'open-favourites': 'Favorieten openen',
+    home: 'thuis',
+    work: 'werk',
+  },
 };
 
 export default translations;

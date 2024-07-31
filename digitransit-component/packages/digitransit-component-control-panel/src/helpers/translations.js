@@ -99,6 +99,28 @@ const translations = {
     'nearby-stops-teaser-content':
       'Rozkłady jazdy w czasie rzeczywistym dla pobliskich przystanków i pojazdów na mapie.',
   },
+
+  nl: {
+    'close-teaser-modal': 'Sluiten',
+    'pick-mode': 'Een transportmiddel kiezen',
+    'pick-mode-airplane': 'Vlucht',
+    'pick-mode-bus': 'Bus',
+    'pick-mode-citybike': 'Huurfiets ',
+    'pick-mode-ferry': 'veerboot',
+    'pick-mode-rail': 'Trein',
+    'pick-mode-subway': 'Metro',
+    'pick-mode-tram': 'Tram',
+    'placeholder-destination': 'Bestemming invoeren',
+    'placeholder-origin': 'Vertrekpunt invoeren',
+    'placeholder-route-stop-station': 'Voer route, stop of station in',
+    'title-route-stop-station': 'Haltes en lijnen in de omgeving',
+    'title-origin-to-destination': 'Waarheen?',
+    'use-own-position': 'Huidige positie gebruiken',
+    'nearby-stops-teaser-header':
+      'Probeer de nieuwe kaart met haltes in de buurt',
+    'nearby-stops-teaser-content':
+      'Real-time dienstregelingen voor haltes en voertuigen in de buurt op de kaart.',
+  },
 };
 
 export default translations;

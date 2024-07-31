@@ -891,6 +891,8 @@ class DTAutosuggest extends React.Component {
       'Käytä nykyistä sijaintia',
       'Use current location',
       'Your current location',
+      'Actuele locatie',
+      'Huidige positie gebruiken',
     ];
     if (positions.includes(this.state.value)) {
       this.clearInput();

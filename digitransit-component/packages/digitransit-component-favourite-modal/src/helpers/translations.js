@@ -89,6 +89,26 @@ const translations = {
     shopping: 'zakupy',
     'required-text': 'wymagane pole',
   },
+
+  nl: {
+    cancel: 'Annuleren',
+    'choose-icon': 'Selecteer een pictogram voor deze locatie',
+    'close-favourite-modal': 'De favoriete modal sluiten',
+    'edit-place': 'Plaats bewerken',
+    'favourite-modal-on-add-new': 'Een nieuwe favoriet toevoegen',
+    'favourite-modal-on-edit': 'Favoriet bewerken: {{favourite.name}}',
+    'input-placeholder': 'Geef de naam een plaats (facultatief)',
+    save: 'Opslaan',
+    'save-place': 'Favoriet opslaan',
+    'cannot-save-place': 'Kan geen plaats opslaan zonder adres of pictogram',
+    place: 'een plaats',
+    home: 'thuis',
+    work: 'werk',
+    sport: 'sport',
+    school: 'school',
+    shopping: 'winkelen',
+    'required-text': 'verplicht veld',
+  },
 };
 
 export default translations;

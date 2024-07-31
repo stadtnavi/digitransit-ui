@@ -52,6 +52,16 @@ const translations = {
     'search-fields-sr-instructions': '',
     'search-route': 'Search routes',
   },
+  nl: {
+    'own-position': 'Actuele locatie',
+    'find-bike-route': 'Zoek een fietsroute',
+    'find-car-route': 'Zoek een rijroute',
+    'find-capool-route': 'Zoek een carpoolaanbieding',
+    'find-walk-route': 'Zoek een looproute',
+    'find-route': 'Zoek een route',
+    'search-fields-sr-instructions': '',
+    'search-route': 'Routes zoeken',
+  },
   sv: {
     'own-position': 'Min position',
     'find-bike-route': 'Sök en cyckelrutt',

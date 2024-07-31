@@ -93,6 +93,25 @@ const translations = {
     ready: 'Gotowe',
     cancel: 'Anuluj',
   },
+  nl: {
+    today: 'Vandaag',
+    tomorrow: 'Morgen',
+    'accessible-close': 'Selectie sluiten',
+    'accessible-closed': 'Selectie gesloten',
+    'accessible-open': 'Open de selectie',
+    'accessible-opened': 'Selectie open',
+    'accessible-title': 'Datum en tijd selecteren',
+    'accessible-update-instructions':
+      'Als u de tijdparameters wijzigt, wordt er opnieuw gezocht.',
+    arrival: 'Aankomst',
+    date: 'Datum',
+    departure: 'Vertrek',
+    'departure-now': 'Vertrek nu',
+    time: 'Tijd',
+    'choose-time': 'Tijd kiezen',
+    ready: 'Klaar',
+    cancel: 'Annuleren',
+  },
 };
 
 export default translations;

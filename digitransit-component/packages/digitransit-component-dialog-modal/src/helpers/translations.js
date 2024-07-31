@@ -15,6 +15,9 @@ const translations = {
   pl: {
     'close-modal': 'Zamknij modal',
   },
+  nl: {
+    'close-modal': 'Sluit de modale',
+  },
 };
 
 export default translations;

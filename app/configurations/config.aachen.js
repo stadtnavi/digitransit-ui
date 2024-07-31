@@ -2,7 +2,7 @@
 import configMerger from '../util/configMerger';
 
 const CONFIG = 'aachen';
-const APP_TITLE = 'stadtnavi';
+const APP_TITLE = 'Innenstadtnavi Aachen';
 const APP_DESCRIPTION = 'Gemeinsam Mobilität neu denken - die intermodale Verbindungssuche mit offenen, lokalen Daten';
 const API_URL = process.env.API_URL || 'https://api.aachen-sb.stadtnavi.eu';
 const OTP_URL = process.env.OTP_URL || `${API_URL}/otp/routers/default/`;

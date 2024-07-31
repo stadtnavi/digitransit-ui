@@ -70,6 +70,19 @@ const translations = {
     home: 'thuis',
     work: 'werk',
   },
+
+  fr: {
+    'add-destination': 'Définir comme destination',
+    'add-favourite': 'Ajouter un favori',
+    'add-home': 'Ajouter la maison',
+    'add-place': 'Ajouter un endroit',
+    'add-work': 'Ajouter le travail',
+    edit: 'Modifier',
+    'favourites-list': 'Liste des favoris',
+    home: 'chez soi',
+    'open-favourites': 'Ouvrir les favoris',
+    work: 'travail',
+  },
 };
 
 export default translations;

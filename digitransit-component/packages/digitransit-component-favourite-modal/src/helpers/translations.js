@@ -109,6 +109,27 @@ const translations = {
     shopping: 'winkelen',
     'required-text': 'verplicht veld',
   },
+
+  fr: {
+    cancel: 'Annuler',
+    'cannot-save-place':
+      "Impossible d'enregistrer un endroit sans adresse ou symbol",
+    'choose-icon': "Sélectionnez l'icône de l'endroit",
+    'close-favourite-modal': 'Fermez le mode préféré',
+    'edit-place': 'Modifier le lieu',
+    'favourite-modal-on-add-new': 'Ajouter un nouveau favori',
+    'favourite-modal-on-edit': 'Modifier le favori : {{favourite.name}}',
+    home: 'chez soi',
+    'input-placeholder': "Indiquer le nom d'un lieu (facultatif)",
+    place: 'un lieu',
+    'required-text': 'champ requis',
+    save: 'Enregistrer',
+    'save-place': 'Enregistrer la place',
+    school: 'école',
+    shopping: 'shopping',
+    sport: 'sport',
+    work: 'travail',
+  },
 };
 
 export default translations;

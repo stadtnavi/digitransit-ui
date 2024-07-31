@@ -112,6 +112,26 @@ const translations = {
     ready: 'Klaar',
     cancel: 'Annuleren',
   },
+
+  fr: {
+    'accessible-close': 'Fermer la sélection',
+    'accessible-closed': 'Timepicker fermé',
+    'accessible-open': 'Ouvrez le sélecteur',
+    'accessible-opened': 'Timepicker ouvert',
+    'accessible-title': "Sélection de la date et de l'heure",
+    'accessible-update-instructions':
+      'Changer les paramètres de temps déclenchera une nouvelle recherche.',
+    arrival: 'Arrivée',
+    cancel: 'Annuler',
+    'choose-time': "Choisir l'heure",
+    date: 'Date',
+    departure: 'Départ',
+    'departure-now': 'Départ immédiat',
+    ready: 'Prêt',
+    time: 'Heure',
+    today: "Aujourd'hui",
+    tomorrow: 'Demain',
+  },
 };
 
 export default translations;

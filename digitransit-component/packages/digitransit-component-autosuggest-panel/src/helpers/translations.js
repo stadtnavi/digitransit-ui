@@ -88,6 +88,22 @@ const translations = {
     'via-point-index': 'Via punt {{index}}',
     'viapoint-slack-amount': 'Transfertijd',
   },
+
+  fr: {
+    'add-via-button-label': 'Ajouter par point',
+    'add-via-duration-button-label':
+      "Régler la durée d'arrêt au point {{index}}",
+    'add-via-duration-button-label-close':
+      "Fermer le sélecteur de durée d'arrêt via point {{index}}",
+    'add-via-duration-button-label-open':
+      "Ouvrir le sélecteur de durée d'arrêt au point {{index}}",
+    'minute-short': 'min',
+    'remove-via-button-label': 'Supprimer par point {{index}}',
+    'swap-order-button-label': 'Origine et destination inversées',
+    'via-point': 'Étape',
+    'via-point-index': 'Étape {index}',
+    'viapoint-slack-amount': "Durée de l'étape",
+  },
 };
 
 export default translations;

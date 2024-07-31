@@ -18,5 +18,8 @@ const translations = {
   nl: {
     traffic: 'Veranderingen en verstoringen',
   },
+  fr: {
+    traffic: 'Changements et perturbations',
+  },
 };
 export default translations;

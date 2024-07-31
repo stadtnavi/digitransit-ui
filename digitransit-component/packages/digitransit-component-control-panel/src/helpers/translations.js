@@ -121,6 +121,29 @@ const translations = {
     'nearby-stops-teaser-content':
       'Real-time dienstregelingen voor haltes en voertuigen in de buurt op de kaart.',
   },
+
+  fr: {
+    'close-teaser-modal': 'Fermer',
+    'nearby-stops-teaser-content':
+      'Horaires en temps réel pour les arrêts à proximité et les véhicules sur la carte.',
+    'nearby-stops-teaser-header':
+      'Essayez les nouvelles vues de la carte montrant les arrêts à proximité',
+    'pick-mode': 'Sélectionner un mode de transport',
+    'pick-mode-airplane': 'Vol',
+    'pick-mode-bus': 'Bus',
+    'pick-mode-citybike': 'Vélo de ville',
+    'pick-mode-ferry': 'Ferry',
+    'pick-mode-rail': 'Train',
+    'pick-mode-subway': 'Métro',
+    'pick-mode-tram': 'Tram',
+    'placeholder-destination': 'Entrez la destination',
+    'placeholder-origin': 'Entrez le lieu de départ',
+    'placeholder-route-stop-station':
+      "Entrez l'itinéraire, l'arrêt ou la station",
+    'title-origin-to-destination': 'Où aller?',
+    'title-route-stop-station': 'Arrêts et itinéraires à proximité',
+    'use-own-position': 'Utiliser la position actuelle',
+  },
 };
 
 export default translations;

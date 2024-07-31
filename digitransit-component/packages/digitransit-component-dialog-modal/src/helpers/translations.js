@@ -18,6 +18,9 @@ const translations = {
   nl: {
     'close-modal': 'Sluit de modale',
   },
+  fr: {
+    'close-modal': 'Fermez le modal',
+  },
 };
 
 export default translations;

@@ -311,4 +311,5 @@ export default configMerger(parentConfig, {
         // '71083': 'https://www.herrenberg.de/tools/mvs/?lat=${lat}&lng=${lon}#mvPagePictures',
     },
 
+    appBarLink: false,
 });

@@ -17,20 +17,22 @@ import Loading from '../../Loading';
 export default function VectorTileLayerContainer(props, { config }) {
   const layers = [];
 
-  layers.push(Stops);
+  if (config.URL.STOP_MAP) {
+    layers.push(Stops);
+  }
 
   // TODO switch to mapLayers.rental
-  if (props.mapLayers.citybike) {
+  if (props.mapLayers.citybike && config.URL.RENTAL_STATION_MAP) {
     layers.push(BikeRentalStations);
     if (config.URL.RENTAL_VEHICLE_MAP) {
       layers.push(RentalVehicles);
     }
   }
 
-  if (props.mapLayers.parkAndRide) {
+  if (config.parkAndRide?.show && props.mapLayers.parkAndRide) {
     layers.push(ParkAndRideForCars);
   }
-  if (props.mapLayers.parkAndRideForBikes) {
+  if (config.parkAndRideForBikes?.show && props.mapLayers.parkAndRideForBikes) {
     layers.push(ParkAndRideForBikes);
   }
 
@@ -63,7 +65,7 @@ export default function VectorTileLayerContainer(props, { config }) {
     });
   }
 
-  if (props.mapLayers.chargingStations) {
+  if (config.chargingStations?.show && props.mapLayers.chargingStations) {
     layers.push(ChargingStations);
   }
 

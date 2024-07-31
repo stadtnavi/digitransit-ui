@@ -216,7 +216,11 @@ describe('<MapLayersDialogContent />', () => {
     };
     const context = {
       config: {
+        URL: {
+          RENTAL_STATION_MAP: 'http://example.org/',
+        },
         cityBike: {
+          showCityBikes: true,
           networks: {
             foo: {
               enabled: true,
@@ -237,12 +241,11 @@ describe('<MapLayersDialogContent />', () => {
         childContextTypes: { ...mockChildContextTypes },
       },
     );
-
     expect(mapLayers.rental.bicycle).to.equal(false);
 
     wrapper
       .find('.option-checkbox input')
-      .at(2)
+      .at(0)
       .simulate('change', { target: { checked: true } });
 
     expect(mapLayers.rental.bicycle).to.equal(true);
@@ -325,6 +328,9 @@ describe('<MapLayersDialogContent />', () => {
     };
     const context = {
       config: {
+        URL: {
+          STOP_MAP: 'http://example.org/',
+        },
         geoJson: {
           layers: [
             {
@@ -355,8 +361,7 @@ describe('<MapLayersDialogContent />', () => {
       },
     );
     const checkboxes = wrapper.find('.option-checkbox input');
-
-    checkboxes.at(4).simulate('change', { target: { checked: true } });
+    checkboxes.at(1).simulate('change', { target: { checked: true } });
 
     expect(mapLayers.geoJson.morejson).to.equal(true);
   });

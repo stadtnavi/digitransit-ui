@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { matchShape, routerShape } from 'found';
 import debounce from 'lodash/debounce';
 import { connectToStores } from 'fluxible-addons-react';
+import { intlShape } from 'react-intl';
 import { replaceQueryParams } from '../../util/queryUtils';
 
 function PhasepickerContainer(props, context) {
-  const { router, match } = context;
+  const { router, match, intl } = context;
 
   const getPhaseFromQueryParam = () => {
     const timeMs = match.location.query.time * 1000;
@@ -46,12 +47,26 @@ function PhasepickerContainer(props, context) {
     setParams(Math.floor(time.getTime() / 1000), undefined, 'true');
   };
 
+  const phaseLabel = (num, name) => {
+    return intl.formatMessage(
+      {
+        id: 'phasepicker.phase',
+        defaultMessage: 'Phase {phase}: Lenkungspunkt {name}',
+      },
+      { phase: num, name },
+    );
+  };
   // TODO aktuelle Uhrzeit beibehalten, nur Datum ändern
   // TODO als Dropdown die ausgwählte Phase nennen
   //
   return (
     <div>
-      <h2>Neue Routen</h2>
+      <h2>
+        {intl.formatMessage({
+          id: 'phasepicker.new-routes',
+          defaultMessage: 'Neue Routen',
+        })}
+      </h2>
       <input
         type="radio"
         name="aachen_phase"
@@ -61,7 +76,7 @@ function PhasepickerContainer(props, context) {
         onChange={onPhaseChange}
       />
       {/* eslint-disable-next-line  jsx-a11y/label-has-associated-control */}
-      <label htmlFor="aachen_phase1">Phase 1: Lenkungspunkt Karlsgraben</label>
+      <label htmlFor="aachen_phase1">{phaseLabel(1, 'Karlsgraben')}</label>
       <br />
       <input
         type="radio"
@@ -72,7 +87,7 @@ function PhasepickerContainer(props, context) {
         onChange={onPhaseChange}
       />
       {/* eslint-disable-next-line  jsx-a11y/label-has-associated-control */}
-      <label htmlFor="aachen_phase2">Phase 2: Lenkungspunkt Theaterplatz</label>
+      <label htmlFor="aachen_phase2">{phaseLabel(2, 'Theaterplatz')}</label>
       <br />
       <input
         type="radio"
@@ -83,7 +98,7 @@ function PhasepickerContainer(props, context) {
         onChange={onPhaseChange}
       />
       {/* eslint-disable-next-line  jsx-a11y/label-has-associated-control */}
-      <label htmlFor="aachen_phase3">Phase 3: Lenkungspunkt Seilgraben</label>
+      <label htmlFor="aachen_phase3">{phaseLabel(3, 'Seilgraben')}</label>
       <br />
     </div>
   );
@@ -92,6 +107,7 @@ function PhasepickerContainer(props, context) {
 PhasepickerContainer.contextTypes = {
   router: routerShape.isRequired,
   match: matchShape.isRequired,
+  intl: intlShape.isRequired,
 };
 
 const withLang = connectToStores(

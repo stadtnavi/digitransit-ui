@@ -6571,7 +6571,7 @@ const translations = {
     "cargo_bicycle-capacity-available": "{available} van {capacity} beschikbaar", 
     "cargo_bicycle-capacity-in-total": "Capaciteit: {capacity} cargo fiets/cargo fietsen", 
     "citybike-availability": "Fietsen beschikbaar", 
-    privacy: "Privacy", 
+    privacy: "Gegevensbescherming", 
     "citybike-station-no-id": "Fietsstation", 
     "taxi-station-no-id": "Taxistandplaats", 
     "car-sharing-station-no-id": "Autodeelstation", 

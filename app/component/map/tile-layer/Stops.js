@@ -51,9 +51,10 @@ class Stops {
       }
     }
     const ignoreMinZoomLevel =
-      feature.properties.type === 'FERRY' ||
-      feature.properties.type === 'RAIL' ||
-      feature.properties.type === 'SUBWAY';
+      this.config.CONFIG !== 'aachen-sb' &&
+      (feature.properties.type === 'FERRY' ||
+        feature.properties.type === 'RAIL' ||
+        feature.properties.type === 'SUBWAY');
     if (ignoreMinZoomLevel || zoom >= minZoom) {
       if (isHybrid) {
         drawHybridStopIcon(

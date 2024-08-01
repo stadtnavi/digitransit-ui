@@ -54,6 +54,8 @@ export default configMerger(parentConfig, {
         },
     },
     // Layers
+    stopsMinZoom: 25, // hide stops
+
     parkAndRide: {
         show: false,
     },

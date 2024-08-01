@@ -53,6 +53,58 @@ export default configMerger(parentConfig, {
             'bicycle': '© <a tabindex=-1 href=http://osm.org/copyright>OpenStreetMap Mitwirkende</a>',
         },
     },
+    // Layers
+    parkAndRide: {
+        show: false,
+    },
+
+    parkAndRideForBikes: {
+        show: false,
+    },
+
+    chargingStations: {
+        show: false,
+    },
+
+    cityBike: {
+        showCityBikes: false,
+    },
+
+    transportModes: {
+        bus: {
+            availableForSelection: false,
+        },
+        rail: {
+            availableForSelection: false,
+        },
+    },
+
+    streetModes: {
+        bicycle: {
+            availableForSelection: true,
+            defaultValue: true,
+            exclusive: true,
+            icon: 'bicycle-withoutBox',
+        },
+
+        car: {
+            availableForSelection: true,
+            defaultValue: true,
+            exclusive: false,
+            icon: 'car-withoutBox',
+        },
+
+        car_park: {
+            availableForSelection: false,
+            defaultValue: false,
+            exclusive: false,
+            icon: 'car-withoutBox',
+        },
+    },
+
+    geoJson: {
+        layers: []
+    },
 
     appBarTitle: '| Zukunftsrouting',
     

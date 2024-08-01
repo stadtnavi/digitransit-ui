@@ -149,10 +149,10 @@ class ItineraryTab extends React.Component {
     const bikingDuration = getTotalBikingDuration(compressedItinerary);
     const drivingDuration = getTotalDrivingDuration(compressedItinerary);
     const drivingDistance = getTotalDrivingDistance(compressedItinerary);
-    const futureText = this.getFutureText(
+    const futureText = this.context.config.CONFIG !== 'aachen-sb' ? this.getFutureText(
       itinerary.startTime,
       this.props.currentTime,
-    );
+    ) : '';
     const isMultiRow =
       walkingDistance > 0 &&
       (bikingDistance > 0 || drivingDistance > 0) &&

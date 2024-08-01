@@ -459,6 +459,7 @@ class SummaryPage extends React.Component {
 
   shouldShowSettingsChangedNotification = (plan, alternativePlan) => {
     if (
+      this.context.config.showSettingsChangedNotification &&
       relevantRoutingSettingsChanged(this.context.config) &&
       !this.state.settingsChangedRecently &&
       !this.planHasNoItineraries() &&

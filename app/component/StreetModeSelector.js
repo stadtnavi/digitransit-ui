@@ -28,6 +28,23 @@ export const StreetModeSelector = ({
   onDemandTaxiPlan,
   loading,
 }) => {
+  const splitParkWalkAndParkRide = prPlan => {
+    const parkAndWalkItineraries = prPlan?.itineraries?.filter(
+      itinerary => !itinerary.legs.some(l => l.hasTransit),
+    );
+    const parkAndRideItineraries = prPlan?.itineraries.filter(itinerary =>
+      itinerary.legs.some(l => l.hasTransit),
+    );
+    return {
+      parkAndWalkItineraries: parkAndWalkItineraries || [],
+      parkAndRideItineraries: parkAndRideItineraries || [],
+    };
+  };
+
+  const { parkAndWalkItineraries, parkAndRideItineraries } = !loading
+    ? splitParkWalkAndParkRide(parkRidePlan)
+    : { parkAndWalkItineraries: [], parkAndRideItineraries: [] };
+
   const bikeAndVehicle = !loading
     ? {
         itineraries: [
@@ -41,6 +58,7 @@ export const StreetModeSelector = ({
     ? {
         itineraries: [
           ...(carPlan?.itineraries || []),
+          ...parkAndWalkItineraries,
           ...(carRentalPlan?.itineraries || []),
         ],
       }
@@ -103,7 +121,7 @@ export const StreetModeSelector = ({
             <StreetModeSelectorButton
               icon="icon-icon_car-withoutBox"
               name="parkAndRide"
-              plan={parkRidePlan}
+              plan={{ itineraries: [...(parkAndRideItineraries || [])] }}
               onClick={toggleStreetMode}
             />
           )}

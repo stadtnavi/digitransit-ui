@@ -56,6 +56,9 @@ export default configMerger(parentConfig, {
 
     appBarTitle: '| Zukunftsrouting',
     
+    mainMenu: {
+        showEmbeddedSearch: false,
+    },
     
     // -- Menu and content customization ----
 

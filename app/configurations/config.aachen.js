@@ -190,6 +190,31 @@ export default configMerger(parentConfig, {
                 background: '#EB690B'
             }
           },
+          tier: {
+            icon: "brand_tier",
+            name: {
+                de: "TIER",
+                fr: "TIER",
+                en: "TIER",
+                nl: "TIER",
+            },
+            colors: {
+               background: '#0E1A50',
+               foreground: '#69D2AA'
+            }
+          },
+          velocity: {
+            icon: "brand_velocity",
+            name: {
+                de: "Velocity Aachen",
+                fr: "Velocity Aachen",
+                en: "Velocity Aix-la-Chapelle",
+                nl: "Velocity Aken",
+            },
+            colors: {
+                background: '#2E2B51'
+            }
+          },
         },
 
         networks: {
@@ -205,6 +230,28 @@ export default configMerger(parentConfig, {
              hideCode: true,
              enabled: true,
            },
+           'openvelo_aachen_tier': {
+             icon: "brand_tier",
+             operator: "tier",
+             name: {
+               de: "TIER"
+             },
+             type: "scooter",
+             form_factors: ['scooter'],
+             hideCode: true,
+             enabled: true,
+           },
+           'openvelo_aachen_velocity': {
+             icon: "brand_velocity",
+             operator: "velocity",
+             name: {
+               de: "Velocity Aachen"
+             },
+             type: "bicycle",
+             form_factors: ['bicycle'],
+             hideCode: true,
+             enabled: true,
+           }
         },   
     },
 

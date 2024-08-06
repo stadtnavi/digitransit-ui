@@ -59,7 +59,6 @@ export default configMerger(parentConfig, {
 
     availableLanguages: ['de', 'en'],
     defaultLanguage: 'de',
-    issueTrackerUrl: 'https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}',
     // issueTrackerUrls define issuetracker URLs per postalCode. In case none matches, issueTrackerUrl is used as falllback
     issueTrackerUrls: {
       '71083': 'https://www.herrenberg.de/tools/mvs/?lat=${lat}&lng=${lon}#mvPagePictures',

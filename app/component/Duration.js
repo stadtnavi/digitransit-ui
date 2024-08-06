@@ -40,7 +40,7 @@ function Duration(props) {
       </span>
       <Icon img="icon-icon_clock" className="clock" />
       <span className="duration" aria-hidden>
-        {duration}
+        ca. {duration}
         {props.futureText !== '' && props.multiRow && (
           <span data-text={futureText} />
         )}

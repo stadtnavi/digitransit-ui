@@ -774,14 +774,16 @@ const SummaryRow = (
                 key="startTime"
                 aria-hidden="true"
               >
-                {startDate && (
+                {startDate && config.CONFIG !== 'aachen-sb' && (
                   <div className="itinerary-start-date">{startDate}</div>
                 )}
-                <div className="itinerary-start-time-and-end-time">
-                  {itineraryStartAndEndTime}
-                </div>
+                {config.CONFIG !== 'aachen-sb' && (
+                  <div className="itinerary-start-time-and-end-time">
+                    {itineraryStartAndEndTime}
+                  </div>
+                )}
                 <div className="itinerary-duration">
-                  <RelativeDuration duration={duration} />
+                  ca. <RelativeDuration duration={duration} /> *
                 </div>
               </div>
               <div

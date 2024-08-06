@@ -72,6 +72,8 @@ export default configMerger(parentConfig, {
         showCityBikes: false,
     },
 
+    showDisclaimer: true,
+
     transportModes: {
         bus: {
             availableForSelection: false,

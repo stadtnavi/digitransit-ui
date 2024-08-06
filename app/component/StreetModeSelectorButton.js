@@ -120,7 +120,7 @@ export const StreetModeSelectorButton = (
           ''
         )}
         <div className="street-mode-button-info">
-          <div className="street-mode-button-time">{duration}</div>
+          <div className="street-mode-button-time">ca. {duration}</div>
           <div className="street-mode-button-length">{distance}</div>
         </div>
       </div>

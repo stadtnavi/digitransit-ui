@@ -219,6 +219,15 @@ function ItinerarySummaryListContainer(
             </div>{' '}
           </div>
         )}
+        {config.CONFIG === 'aachen-sb' && config.showDisclaimer && (
+          <div className="itinerary-disclaimer">
+            *&nbsp;
+            <FormattedMessage
+              id="disclaimer"
+              defaultMessage="Results are based on estimated travel times"
+            />
+          </div>
+        )}
       </>
     );
   }

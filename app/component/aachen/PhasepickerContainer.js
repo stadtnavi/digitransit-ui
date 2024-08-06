@@ -47,18 +47,41 @@ function PhasepickerContainer(props, context) {
     setParams(Math.floor(time.getTime() / 1000), undefined, 'true');
   };
 
-  const phaseLabel = (num, name) => {
+  const phaseLabel = (num, name, starting) => {
+    const fromMessageId =
+      starting === '2024'
+        ? 'phasepicker.starting-in'
+        : 'phasepicker.starting-from';
+    const from = intl.formatMessage({ id: fromMessageId });
     return intl.formatMessage(
       {
         id: 'phasepicker.phase',
-        defaultMessage: 'Phase {phase}: Lenkungspunkt {name}',
+        defaultMessage:
+          'Phase {phase}: Lenkungspunkt {name} ({from} {starting})',
       },
-      { phase: num, name },
+      { phase: num, name, starting, from },
     );
   };
-  // TODO aktuelle Uhrzeit beibehalten, nur Datum ändern
-  // TODO als Dropdown die ausgwählte Phase nennen
-  //
+
+  const phaseToggle = (phaseName, num, name, starting) => {
+    return (
+      <span>
+        {/* eslint-disable-next-line  jsx-a11y/label-has-associated-control */}
+        <label>
+          <input
+            type="radio"
+            name="aachen_phase"
+            id={`aachen_${phaseName})`}
+            value={phaseName}
+            checked={phase === phaseName}
+            onChange={onPhaseChange}
+          />
+          <span>{phaseLabel(num, name, starting)}</span>
+        </label>
+      </span>
+    );
+  };
+
   return (
     <div>
       <h2>
@@ -67,39 +90,9 @@ function PhasepickerContainer(props, context) {
           defaultMessage: 'Neue Routen',
         })}
       </h2>
-      <input
-        type="radio"
-        name="aachen_phase"
-        id="aachen_phase1"
-        value="phase1"
-        checked={phase === 'phase1'}
-        onChange={onPhaseChange}
-      />
-      {/* eslint-disable-next-line  jsx-a11y/label-has-associated-control */}
-      <label htmlFor="aachen_phase1">{phaseLabel(1, 'Karlsgraben')}</label>
-      <br />
-      <input
-        type="radio"
-        name="aachen_phase"
-        id="aachen_phase2"
-        value="phase2"
-        checked={phase === 'phase2'}
-        onChange={onPhaseChange}
-      />
-      {/* eslint-disable-next-line  jsx-a11y/label-has-associated-control */}
-      <label htmlFor="aachen_phase2">{phaseLabel(2, 'Theaterplatz')}</label>
-      <br />
-      <input
-        type="radio"
-        name="aachen_phase"
-        id="aachen_phase3"
-        value="phase3"
-        checked={phase === 'phase3'}
-        onChange={onPhaseChange}
-      />
-      {/* eslint-disable-next-line  jsx-a11y/label-has-associated-control */}
-      <label htmlFor="aachen_phase3">{phaseLabel(3, 'Seilgraben')}</label>
-      <br />
+      {phaseToggle('phase1', 1, 'Karlsgraben', '2024')}
+      {phaseToggle('phase2', 2, 'Theaterplatz', '2025')}
+      {phaseToggle('phase3', 3, 'Seilgraben', '2025')}
     </div>
   );
 }

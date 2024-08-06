@@ -806,6 +806,7 @@ export default {
     hameenlinna: 'hameenlinna',
     matka: 'matka',
     aachen: 'aachen',
+    'mitfahren-bw': 'mitfahren-bw',
     mobidatabw: 'mobidatabw',
     vpe: 'vpe',
     bar: '(bar|hamburg)',

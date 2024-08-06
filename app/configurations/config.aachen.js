@@ -140,6 +140,8 @@ export default configMerger(parentConfig, {
                     fi: '',
                     en: 'Points of interest',
                     de: "Sehenswürdigkeiten",
+                    fr: 'Sites',
+                    nl: 'Bezienswaardigheden',
                 },
                 url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_2.json',
                 category: 'other',
@@ -150,6 +152,8 @@ export default configMerger(parentConfig, {
                     fi: '',
                     en: 'Smart Shopping',
                     de: 'Smart Shopping',
+                    fr: 'Smart Shopping',
+                    nl: 'Smart Shopping',
                 },
                 url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_smart_shopping.json',
                 category: 'other',
@@ -177,7 +181,10 @@ export default configMerger(parentConfig, {
           cambio: {
             icon: "brand_cambio",
             name: {
-                de: "Cambio"
+                de: "Cambio",
+                fr: "Cambio",
+                en: "Cambio",
+                nl: "Cambio",
             },
             colors: {
                 background: '#EB690B'

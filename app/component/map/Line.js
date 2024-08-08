@@ -107,6 +107,11 @@ export default class Line extends React.Component {
           className={`leg-halo ${className}`}
           weight={haloWeight}
           interactive={false}
+          dashArray={
+            this.props.mode === 'car' || this.props.mode === 'bicycle'
+              ? [5, 15]
+              : null
+          }
         />
         <Polyline
           key="line"
@@ -118,6 +123,11 @@ export default class Line extends React.Component {
           color={color}
           weight={legWeight}
           interactive={false}
+          dashArray={
+            this.props.mode === 'car' || this.props.mode === 'bicycle'
+              ? [5, 15]
+              : null
+          }
         />
       </div>
     );

@@ -68,6 +68,12 @@ export const getCurrentSettings = config => {
         ].sort()
       : defaultSettings.modes,
     allowedVehicleRentalNetworks: getCitybikeNetworks(config),
+    ...(config.CONFIG === 'aachen-sb'
+      ? {
+          includeBikeSuggestions: true,
+          includeCarSuggestions: true,
+        }
+      : {}),
   };
 };
 
@@ -112,7 +118,6 @@ const getNumberValueOrDefault = (value, defaultValue = undefined) =>
 
 export const getSettings = config => {
   const custSettings = getCustomizedSettings();
-
   return {
     walkSpeed:
       config.defaultOptions.walkSpeed.find(
@@ -164,8 +169,12 @@ export const getSettings = config => {
     allowedVehicleRentalNetworks: custSettings.allowedVehicleRentalNetworks,
     allowedVehicleRentalFormFactors:
       custSettings.allowedVehicleRentalFormFactors,
-    includeBikeSuggestions: custSettings.includeBikeSuggestions,
-    includeCarSuggestions: custSettings.includeCarSuggestions,
+    includeBikeSuggestions:
+      config.CONFIG === 'aachen-sb'
+        ? true
+        : custSettings.includeBikeSuggestions,
+    includeCarSuggestions:
+      config.CONFIG === 'aachen-sb' ? true : custSettings.includeCarSuggestions,
     includeParkAndRideSuggestions: custSettings.includeParkAndRideSuggestions,
     useVehicleParkingAvailabilityInformation:
       custSettings.useVehicleParkingAvailabilityInformation,

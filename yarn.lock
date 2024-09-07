@@ -10984,9 +10984,9 @@ __metadata:
     point-in-polygon: 1.0.1
     polyfill-library: 3.96.0
     polyline-encoded: 0.0.9
-    postcss: 8.2.1
-    postcss-flexbugs-fixes: 4.2.1
-    postcss-loader: 4.0.1
+    postcss: 8.4.33
+    postcss-flexbugs-fixes: 5.0.2
+    postcss-loader: ^4
     prettier: 2.1.1
     prop-types: 15.7.2
     raven: 2.6.4
@@ -17720,7 +17720,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"klona@npm:^2.0.3, klona@npm:^2.0.4":
+"klona@npm:^2.0.4":
   version: 2.0.6
   resolution: "klona@npm:2.0.6"
   checksum: ac9ee3732e42b96feb67faae4d27cf49494e8a3bf3fa7115ce242fe04786788e0aff4741a07a45a2462e2079aa983d73d38519c85d65b70ef11447bbc3c58ce7
@@ -19810,12 +19810,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.1.20, nanoid@npm:^3.3.6":
+"nanoid@npm:^3.3.6":
   version: 3.3.6
   resolution: "nanoid@npm:3.3.6"
   bin:
     nanoid: bin/nanoid.cjs
   checksum: 7d0eda657002738aa5206107bd0580aead6c95c460ef1bdd0b1a87a9c7ae6277ac2e9b945306aaa5b32c6dcb7feaf462d0f552e7f8b5718abfc6ead5c94a71b3
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^3.3.7":
+  version: 3.3.7
+  resolution: "nanoid@npm:3.3.7"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: d36c427e530713e4ac6567d488b489a36582ef89da1d6d4e3b87eded11eb10d7042a877958c6f104929809b2ab0bafa17652b076cdf84324aa75b30b722204f2
   languageName: node
   linkType: hard
 
@@ -21928,12 +21937,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-flexbugs-fixes@npm:4.2.1":
-  version: 4.2.1
-  resolution: "postcss-flexbugs-fixes@npm:4.2.1"
-  dependencies:
-    postcss: ^7.0.26
-  checksum: 51a626bc80dbe42fcc8b0895b4f23a558bb809ec52cdc05aa27fb24cdffd4c9dc53f25218085ddf407c53d76573bc6d7568219c912161609f02532a8f5f59b43
+"postcss-flexbugs-fixes@npm:5.0.2":
+  version: 5.0.2
+  resolution: "postcss-flexbugs-fixes@npm:5.0.2"
+  peerDependencies:
+    postcss: ^8.1.4
+  checksum: 022ddbcca8987303b9be75ff259e9de81b98643adac87a5fc6b52a0fcbbf95e1ac9fd508c4ed67cad76ac5d039b7123de8a0832329481b3c626f5d63f7a28f47
   languageName: node
   linkType: hard
 
@@ -21976,19 +21985,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-loader@npm:4.0.1":
-  version: 4.0.1
-  resolution: "postcss-loader@npm:4.0.1"
+"postcss-loader@npm:^4":
+  version: 4.3.0
+  resolution: "postcss-loader@npm:4.3.0"
   dependencies:
     cosmiconfig: ^7.0.0
-    klona: ^2.0.3
+    klona: ^2.0.4
     loader-utils: ^2.0.0
-    schema-utils: ^2.7.1
-    semver: ^7.3.2
+    schema-utils: ^3.0.0
+    semver: ^7.3.4
   peerDependencies:
-    postcss: ^7.0.0
+    postcss: ^7.0.0 || ^8.0.1
     webpack: ^4.0.0 || ^5.0.0
-  checksum: d8c62ad30059d7bebc08e95df49570b065bf78393a4e22e53a2188c22540d4bcc79e4feb466f5042363a6704400a9b1ffc20bc06b19f7d1e4463d120621e6a66
+  checksum: b8ba29789d48512c7ce10e9391b1e1512a4b8f8b4063ebff0f9ebdd0a3a01e433ccfa0d2db6dbdd63b126acf7692330f0773bef75e78d53f38eba556ca5f2aee
   languageName: node
   linkType: hard
 
@@ -22370,14 +22379,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.2.1":
-  version: 8.2.1
-  resolution: "postcss@npm:8.2.1"
+"postcss@npm:8.4.33":
+  version: 8.4.33
+  resolution: "postcss@npm:8.4.33"
   dependencies:
-    colorette: ^1.2.1
-    nanoid: ^3.1.20
-    source-map: ^0.6.1
-  checksum: 1d697ef5d3772128bac4fdaa0c528d2fb74e745dd0e16ad615b285ee0ab155d1e7257d23de7acb8f95e6f1d7482842b307a5de9c068d4d1e8bd2992ad4cbd321
+    nanoid: ^3.3.7
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 6f98b2af4b76632a3de20c4f47bf0e984a1ce1a531cf11adcb0b1d63a6cbda0aae4165e578b66c32ca4879038e3eaad386a6be725a8fb4429c78e3c1ab858fe9
   languageName: node
   linkType: hard
 

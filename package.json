@@ -289,7 +289,7 @@
         "mocha": "10.2.0",
         "mock-local-storage": "1.1.24",
         "mockdate": "3.0.2",
-        "node-sass": "^6.0.1",
+        "node-sass": "^9.0.0",
         "nodemon": "1.18.10",
         "nyc": "15.1.0",
         "optimize-css-assets-webpack-plugin": "5.0.4",
@@ -306,7 +306,7 @@
         "rollup-plugin-peer-deps-external": "2.2.4",
         "rollup-plugin-postcss": "4.0.0",
         "rollup-plugin-terser": "7.0.2",
-        "sass-loader": "^10.4.1",
+        "sass-loader": "^10.5.2",
         "selenium-webdriver": "4.0.0-alpha.1",
         "sinon": "15.1.0",
         "stats-webpack-plugin": "0.7.0",
@@ -323,7 +323,7 @@
     },
     "resolutions": {
         "html-webpack-plugin": "4.5.2",
-        "node-sass/node-gyp": "^8.4.1",
-        "sharp": "0.31.3"
+        "node-sass/node-gyp": "^10",
+        "sharp": "0.33"
     }
 }

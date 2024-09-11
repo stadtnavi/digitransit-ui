@@ -383,8 +383,8 @@ class IndexPage extends React.Component {
         const welcome = config.welcomeMessage[lang];
 
         return welcome.imageUrl ? (
-          <a href={welcome.imageUrl} rel="noreferrer" target="_blank">
-            <img alt={welcome.imageAltText} src={welcome.linkUrl} />
+          <a href={welcome.linkUrl} rel="noreferrer" target="_blank">
+            <img alt={welcome.imageAltText} src={welcome.imageUrl} />
           </a>
         ) : (
           <div>

@@ -382,7 +382,11 @@ class IndexPage extends React.Component {
       if (config.welcomeMessage) {
         const welcome = config.welcomeMessage[lang];
 
-        return (
+        return welcome.imageUrl ? (
+          <a href={welcome.imageUrl} rel="noreferrer" target="_blank">
+            <img alt={welcome.imageAltText} src={welcome.imageUrl} />
+          </a>
+        ) : (
           <div>
             <h2>{welcome.header}</h2>
             {welcome.paragraphs &&

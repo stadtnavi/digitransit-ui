@@ -1,10 +1,21 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { FormattedMessage } from 'react-intl';
+
 const SelectedStopPopupContent = ({ stop }) => (
   <div className="origin-popup">
     <div className="origin-popup-header">
-      <div className="selected-stop-header">{stop.name}</div>
+      <div className="selected-stop-header">
+        {!stop.name || stop.networks[0] === 'tier_REUTLINGEN' ? (
+          <FormattedMessage
+            id={`${stop.networks}-station-no-id`}
+            defaultMessage="Station"
+          />
+        ) : (
+          stop.name
+        )}
+      </div>
     </div>
     {(stop.code || stop.desc) && (
       <div>
@@ -22,6 +33,10 @@ const SelectedStopPopupContent = ({ stop }) => (
 
 SelectedStopPopupContent.propTypes = {
   stop: PropTypes.object.isRequired,
+  networks: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
 };
 
 SelectedStopPopupContent.displayName = 'SelectedStopPopupContent';

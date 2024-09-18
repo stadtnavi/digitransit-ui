@@ -88,7 +88,6 @@ const getConnectors = evses => {
 
 const ChargingStationContent = ({ match }, { intl, config }) => {
   const { CHARGING_STATION_DETAILS_API } = config.URL;
-  const { lat, lng } = match.location.query;
   const [details, setDetails] = useState({});
   const [connectors, setConnectors] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -251,11 +250,11 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
       className="charging-station-card"
       location={{
         address: details.address,
-        lat: Number(lat),
-        lon: Number(lng),
+        lat: details.coordinates.lat,
+        lon: details.coordinates.lon,
       }}
       name={details.name || details.address}
-      icon={getIcon(match.location.query)}
+      icon="icon-icon_stop_car_charging_station"
       newLayout
     >
       <div className="content">

@@ -215,6 +215,19 @@ export default configMerger(parentConfig, {
                 background: '#2E2B51'
             }
           },
+          voi: {
+            icon: "brand_voi",
+            name: {
+                de: "voi.",
+                fr: "voi.",
+                en: "voi.",
+                nl: "voi.",
+            },
+            colors: {
+               background: '#D04740',
+               foreground: '#ffffff'
+            }
+          },
         },
 
         networks: {
@@ -227,6 +240,18 @@ export default configMerger(parentConfig, {
              type: "car",
              capacity: "No availability",
              form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+           },
+           'voiscooters.com': {
+             icon: "brand_voi",
+             operator: "voi",
+             name: {
+               de: "voi."
+             },
+             type: "scooter",
+             capacity: "No availability",
+             form_factors: ['scooter'],
              hideCode: true,
              enabled: true,
            },

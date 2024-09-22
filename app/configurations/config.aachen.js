@@ -206,10 +206,10 @@ export default configMerger(parentConfig, {
           velocity: {
             icon: "brand_velocity",
             name: {
-                de: "Velocity Aachen",
-                fr: "Velocity Aachen",
-                en: "Velocity Aix-la-Chapelle",
-                nl: "Velocity Aken",
+                de: "velocity Aachen",
+                fr: "velocity Aachen",
+                en: "velocity Aix-la-Chapelle",
+                nl: "velocity Aken",
             },
             colors: {
                 background: '#2E2B51'
@@ -235,7 +235,10 @@ export default configMerger(parentConfig, {
              icon: "brand_cambio",
              operator: "cambio",
              name: {
-               de: "Cambio Aachen"
+               de: "Cambio",
+               fr: "Cambio",
+               en: "Cambio",
+               nl: "Cambio",
              },
              type: "car",
              capacity: "No availability",
@@ -247,35 +250,61 @@ export default configMerger(parentConfig, {
              icon: "brand_voi",
              operator: "voi",
              name: {
-               de: "voi."
+               de: "voi.",
+               fr: "voi.",
+               en: "voi.",
+               nl: "voi.",
              },
              type: "scooter",
-             capacity: "No availability",
              form_factors: ['scooter'],
              hideCode: true,
              enabled: true,
+             url: {
+                de: "https://www.voi.com/de",
+                en: "https://www.voi.com/en",
+                fr: "https://www.voi.com/fr",
+                nl: "https://www.voi.com/nl",
+             }
            },
-           'openvelo_aachen_tier': {
+           'tier_aachen': {
              icon: "brand_tier",
              operator: "tier",
              name: {
-               de: "TIER"
+               de: "TIER",
+               fr: "TIER",
+               en: "TIER",
+               nl: "TIER",
              },
              type: "scooter",
              form_factors: ['scooter'],
              hideCode: true,
              enabled: true,
+             url: {
+                de: "https://www.tier.app/de/",
+                en: "https://www.tier.app/en/",
+                nl: "https://www.tier.app/nl/",
+                fr: "https://www.tier.app/fr/",
+             }
            },
-           'openvelo_aachen_velocity': {
+           'velocity_aachen': {
              icon: "brand_velocity",
              operator: "velocity",
              name: {
-               de: "Velocity Aachen"
+               de: "velocity Aachen",
+               fr: "velocity Aachen",
+               en: "velocity Aix-la-Chapelle",
+               nl: "velocity Aken",
              },
              type: "bicycle",
              form_factors: ['bicycle'],
              hideCode: true,
              enabled: true,
+             url: {
+                de: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
+                en: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
+                nl: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
+                fr: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
+             }
            }
         },   
     },

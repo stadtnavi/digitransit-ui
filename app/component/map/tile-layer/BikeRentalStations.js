@@ -100,7 +100,8 @@ class BikeRentalStations {
                   feature.properties.id,
                   feature.properties.network,
                   feature.properties.formFactors ||
-                    feature.properties.formFactor,
+                    feature.properties.formFactor ||
+                    'bicycle',
                 );
               })
             ) {
@@ -123,15 +124,16 @@ class BikeRentalStations {
   };
 
   draw = (feature, zoomedIn) => {
-    // stations have formFactors (comma separeted list), vehicles formFactor...
     const { id, network, formFactors, formFactor } = feature.properties;
-    if (!this.shouldShowStation(id, network, formFactors || formFactor)) {
+    // stations have formFactors (comma separeted list), vehicles formFactor, or bicycle if non...
+    const formFactorsOrDefault = formFactors || formFactor || 'bicycle';
+    if (!this.shouldShowStation(id, network, formFactorsOrDefault)) {
       return;
     }
 
     const { iconName, bgColor, fgColor } = getRentalNetworkIconAndColors(
       network,
-      formFactors,
+      formFactorsOrDefault,
       this.config,
     );
     const isHilighted = this.tile.hilightedStops?.includes(id);

@@ -385,6 +385,7 @@ export default configMerger(parentConfig, {
                 header: 'About this service',
                 paragraphs: [
                     'stadtnavi is a travel planning application for Aachen and its surroundings. This service includes public transport, footpaths, cycling, street and parking information, charging infrastructure and sharing offerings. The mobility offerings are connected through intermodal routing.',
+                    'Funded by',
                     '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
                 ],
             },
@@ -406,6 +407,69 @@ export default configMerger(parentConfig, {
                     'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
                     'Public transit data: Datasets by <a target=new href=https://avv.de/>AVV GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
                     'No responsibility is accepted for the accuracy of this information.'
+                ],
+            },
+        ],
+        fr: [
+            {
+                header: 'À propos de ce service',
+                paragraphs: [
+                    'stadtnavi Aachen est une application de planification de voyage pour Aix-la-Chapelle et ses environs. Ce service comprend les transports publics, les sentiers pédestres, les pistes cyclables, les informations routières et de stationnement, les infrastructures de recharge et les offres de partage. Les offres de mobilité sont mises en réseau via un routage intermodal.',
+                    'Soutenu par <br>',
+                    '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
+                ],
+            },
+            {
+                header: 'Participer',
+                paragraphs: [
+                    "La ville de Herrenberg a développé cette application dans le cadre de la ville modèle financée par le ministère des Transports et de l'Infrastructure numérique (BMVI). L'application stadtnavi est une solution open source et peut être utilisée par d'autres communes et acteurs sous leur nom et leur apparence et adaptée et développée selon les besoins individuels (Solution White Label). La participation est la bienvenue!",
+                ]
+            },
+            {
+                header: 'Plateforme Digitransit',
+                paragraphs: [
+                    'Ce service est basé sur la plateforme Digitransit et le service backend OpenTripPlanner. Tous les logiciels sont disponibles sous licences ouvertes. Merci à toutes les personnes impliquées.',
+                    "L'intégralité du code source de la plateforme, composé de nombreux composants différents, est disponible sur Github.",
+                ],
+            },
+            {
+                header: 'Les sources de données',
+                paragraphs: [
+                    'Données cartographiques : © <a target=new href=https://www.openstreetmap.org/>Contributeurs OpenStreetMap</a>',
+                    "Données de transports publics : ensembles de données d'<a target=new href=https://avv.de/>AVV GmbH</a>, formes (c'est-à-dire géométries de l'itinéraire) enrichiés de données OpenStreetMap © Contributeurs OpenStreetMap",
+                    'Tous les renseignements sont donnés sans garantie.'
+                ],
+            },
+        ],
+        nl: [
+            {
+                header: 'Over deze dienst',
+                paragraphs: [
+                    'stadtnavi Aken is een reisplanningsapplicatie voor Aken en omgeving. Deze dienst omvat openbaar vervoer, voetpaden, fiets-, weg- en parkeerinformatie, laadinfrastructuur en deelaanbiedingen. Het mobiliteitsaanbod wordt met elkaar verbonden via intermodale routing.',
+                    'Gesponsord door <br>',
+                    '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
+
+                ],
+            },
+            {
+                header: 'Doe mee',
+                paragraphs: [
+                    'De stad Herrenberg heeft deze app ontwikkeld als onderdeel van de modelstad, gefinancierd door het federale ministerie van Transport en Digitale Infrastructuur (BMVI). applicatie stadtnavi is een open source oplossing en kan door andere gemeenten en actoren onder hun naam en uitstraling gebruikt worden en aangepast en verder ontwikkeld worden naar individuele behoeften (white label oplossing). Deelname is welkom!',
+                ]
+            },
+            {
+                header: 'Digitransit-platform',
+                paragraphs: [
+                    'Deze dienst is gebaseerd op het Digitransit Platform en de backend dienst OpenTripPlanner. Alle software is beschikbaar onder open licenties. Bedankt aan alle betrokkenen.',
+                    'De volledige broncode van het platform, dat uit veel verschillende componenten bestaat, is beschikbaar op <a href="https://github.com/stadtnavi/">Github</a>.'
+                ],
+            },
+            {
+                header: 'Gegevensbronnen',
+                paragraphs: [
+                    'Kaartgegevens: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap-bijdragers</a>',
+                    'Gegevens openbaar vervoer: Datasets van <a target=new href=https://avv.de/>AVV GmbH</a>, vormen (d.w.z. geometrieën van de route), elk verrijkt met OpenStreetMap-gegevens © OpenStreetMap-bijdragers',
+                    'Alle verklaringen zonder garantie.'
                 ],
             },
         ],

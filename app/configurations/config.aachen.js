@@ -138,6 +138,18 @@ export default configMerger(parentConfig, {
             {
                 name: {
                     fi: '',
+                    en: 'Roadworks',
+                    de: "Baustellen",
+                    fr: 'Chantiers de construction',
+                    nl: 'Buwplaats',
+                },
+                url: 'https://data.mfdz.de/aachen/baustellen/roadworks.geojson',
+                category: 'other',
+                icon: 'icon-icon_roadworks',
+            },
+            {
+                name: {
+                    fi: '',
                     en: 'Points of interest',
                     de: "Sehenswürdigkeiten",
                     fr: 'Sites',

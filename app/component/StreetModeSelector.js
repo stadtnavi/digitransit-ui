@@ -30,10 +30,10 @@ export const StreetModeSelector = ({
 }) => {
   const splitParkWalkAndParkRide = prPlan => {
     const parkAndWalkItineraries = prPlan?.itineraries?.filter(
-      itinerary => !itinerary.legs.some(l => l.hasTransit),
+      itinerary => !itinerary.legs.some(l => l.transitLeg),
     );
     const parkAndRideItineraries = prPlan?.itineraries.filter(itinerary =>
-      itinerary.legs.some(l => l.hasTransit),
+      itinerary.legs.some(l => l.transitLeg),
     );
     return {
       parkAndWalkItineraries: parkAndWalkItineraries || [],

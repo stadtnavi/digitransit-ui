@@ -167,6 +167,11 @@ class ParkAndRideForBikes {
     }
   };
 
+  shouldShowFeature = feature => {
+    const type = ParkAndRideForBikes.getBikeParkType(feature.properties?.tags);
+    return this.tile.coords.z >= (type.minZoom || 0);
+  };
+
   static getName = () => 'parkAndRideForBikes';
 }
 

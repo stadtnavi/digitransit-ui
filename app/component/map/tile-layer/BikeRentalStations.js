@@ -32,6 +32,8 @@ const query = graphql`
 const REALTIME_REFETCH_FREQUENCY = 60000; // 60 seconds
 
 // TODO rename to VehicleRentalStation
+// TODO this is a Layer without saying so. If they had an explicit interface,
+// they could share some common logic
 class BikeRentalStations {
   constructor(tile, config, mapLayers, relayEnvironment) {
     this.tile = tile;
@@ -124,12 +126,13 @@ class BikeRentalStations {
   };
 
   draw = (feature, zoomedIn) => {
+    if (!this.shouldShowFeature(feature)) {
+      return;
+    }
+
     const { id, network, formFactors, formFactor } = feature.properties;
     // stations have formFactors (comma separeted list), vehicles formFactor, or bicycle if non...
     const formFactorsOrDefault = formFactors || formFactor || 'bicycle';
-    if (!this.shouldShowStation(id, network, formFactorsOrDefault)) {
-      return;
-    }
 
     const { iconName, bgColor, fgColor } = getRentalNetworkIconAndColors(
       network,
@@ -232,6 +235,13 @@ class BikeRentalStations {
     (!this.tile.stopsToShow || this.tile.stopsToShow.includes(id)) &&
     this.isAnyFormFactorEnabled(formFactors) &&
     showCitybikeNetwork(this.config.cityBike.networks[network]);
+
+  shouldShowFeature = feature => {
+    const { id, network, formFactors, formFactor } = feature.properties;
+    // stations have formFactors (comma separeted list), vehicles formFactor, or bicycle if non...
+    const formFactorsOrDefault = formFactors || formFactor || 'bicycle';
+    return this.shouldShowStation(id, network, formFactorsOrDefault);
+  };
 
   static getName = () => 'citybike';
 }

@@ -1,14 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import connectToStores from 'fluxible-addons-react/connectToStores';
 import SidebarContainer from './SidebarContainer';
-import { getPropertyValueOrDefault } from '../PointFeatureMarker';
+import SelectedFeatureStore from '../../../store/SelectedFeatureStore';
 
-const GeoJsonContent = ({ match }, context) => {
+const getPropertyValueOrDefault = (
+  properties,
+  propertyName,
+  language,
+  defaultValue = undefined,
+) =>
+  (properties &&
+    propertyName &&
+    ((language && properties[`${propertyName}_${language}`]) ||
+      properties[propertyName])) ||
+  defaultValue;
+
+const GeoJsonContent = ({ match, selectedFeature }) => {
   const { language, lat, lng } = match.location.query;
 
-  const selectedFeature = context
-    .getStore('SelectedFeatureStore')
-    .getSelectedFeature();
   const geojsonContent = selectedFeature?.properties?.popupContent;
 
   const properties = selectedFeature?.properties || match.location.query;
@@ -71,10 +81,19 @@ const GeoJsonContent = ({ match }, context) => {
 
 GeoJsonContent.propTypes = {
   match: PropTypes.object,
+  selectedFeature: PropTypes.object,
 };
 
 GeoJsonContent.contextTypes = {
   getStore: PropTypes.func.isRequired,
 };
 
-export default GeoJsonContent;
+const connectedComponent = connectToStores(
+  GeoJsonContent,
+  [SelectedFeatureStore],
+  ({ getStore }) => ({
+    selectedFeature: getStore(SelectedFeatureStore).getSelectedFeature(),
+  }),
+);
+
+export { connectedComponent as default, GeoJsonContent as Component };

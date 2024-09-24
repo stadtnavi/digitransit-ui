@@ -99,8 +99,8 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
       .then(res => res.json())
       .then(data => {
         setConnectors(getConnectors(data.evses));
-        setLoading(false);
         setDetails(data);
+        setLoading(false);
       });
   }, [match.location.query]);
 

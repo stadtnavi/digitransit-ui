@@ -465,6 +465,10 @@ $margin-left-right: 21.3px;
             letter-spacing: -0.03em;
           }
         }
+        .original-time {
+          text-decoration: line-through;
+          color: $gray;
+        }
       }
     }
   }

@@ -33,11 +33,17 @@ describe('<DepartureTime />', () => {
     const props = {
       canceled: true,
       currentTime: 0,
-      departureTime: 180,
+      scheduledDeparture: 180,
+      realtimeDeparture: 180,
       showCancelationIcon: true,
     };
     const wrapper = shallowWithIntl(<DepartureTime {...props} />, {
-      context: { config: { minutesToDepartureLimit: 2 } },
+      context: {
+        config: {
+          minutesToDepartureLimit: 2,
+          itinerary: { delayThreshold: 180 },
+        },
+      },
     });
     expect(wrapper.find('.caution')).to.have.lengthOf(1);
   });

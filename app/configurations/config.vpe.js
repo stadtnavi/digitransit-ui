@@ -142,8 +142,14 @@ export default configMerger(parentConfig, {
         },
         content: [
             {
+                name: 'current-alerts',
+                nameEn: 'Current Alerts',
+                href: 'https://startmobi.vpe.de/rss/',
+                icon: 'icon-icon_warning',
+            },
+            {
                 name: 'about-this-service',
-                nameEn: 'About this service',
+                nameEn: 'About this Service',
                 route: '/dieser-dienst',
                 icon: 'icon-icon_info',
             },
@@ -182,7 +188,8 @@ export default configMerger(parentConfig, {
                 paragraphs: [
                     'Kartendaten: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap Mitwirkende</a>',
                     'ÖPNV-Daten: Datensätze der <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) jeweils angereichert mit OpenStreetMap-Daten © OpenStreetMap Mitwirkende',
-                    'Sharing-Daten: Car-Sharing-Standorte bereitgestellt durch <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Carsharing-Daten: Car-Sharing-Standorte bereitgestellt durch <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Mitfahrangebote: Mitfahrangebote für das Gebiet Baden-Württemberg werden bereitgestellt durch <a href="https://fahrgemeinschaft.de">Fahrgemeinschaft.de</a>. Sind Sie Anbieter einer Mitfahrplattform und möchten mit Ihrem Angebot ebenfalls in <b>VPE</b>mobi erscheinen? Dann nehmen Sie gerne Kontakt mit uns auf.',
                     'Alle Angaben ohne Gewähr.'
                 ],
             },
@@ -207,7 +214,8 @@ export default configMerger(parentConfig, {
                 paragraphs: [
                     'Map data: © <a target=new href=https://www.openstreetmap.org/>OpenStreetMap contributors</a>',
                     'Public transit data: Datasets by <a target=new href=https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/>NVBW GmbH</a>, Shapes (d.h. Geometrien der Streckenverläufe) enhanced with OpenStreetMap data © OpenStreetMap contributors',
-                    'Sharing data: carsharing locations are provided by <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Carsharing data: carsharing locations are provided by <a href="https://karlsruhe.stadtmobil.de/">stadtmobil Karlsruhe</a>',
+                    'Carpooling data: Carpooling offers for the area of Baden-Württemberg are provided by <a href="https://fahrgemeinschaft.de">Fahrgemeinschaft.de</a>.',
                     'No responsibility is accepted for the accuracy of this information.'
                 ],
             },
@@ -259,4 +267,15 @@ export default configMerger(parentConfig, {
 
     // live bus locations
     vehicles: false,
+
+    // Disclaimer shown if trip has a leg with mode=CARPOOL 
+    carpoolDisclaimer: 'Der VPE stellt lediglich die Plattform zur Verfügung, auf der Personen Mitfahrangebote veröffentlichen können, um von möglichen Mitfahrer*innen kontaktiert zu werden. Der VPE ist weder an einer etwaigen Vereinbarung zwischen Fahrenden und Mitfahrenden beteiligt noch haftet er für deren Verhalten im Zusammenhang mit der Durchführung der Fahrt, den Zustand des eingesetzten Fahrzeugs oder das Zustandekommen der Fahrt.',
+
+    welcomeMessage: {
+        'de': {
+            imageUrl: '/img/vpe-mitfahrportal.png',
+            imageAltText: 'Mitfahrgelegenheit bieten und buchen - ab sofort über das Mitfahrportal des VPE!',
+            linkUrl: 'https://startmobi.vpe.de/mitfahrportal/',       
+        }
+    }
 });

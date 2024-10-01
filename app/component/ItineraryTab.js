@@ -108,6 +108,11 @@ class ItineraryTab extends React.Component {
     );
   };
 
+  shouldShowCarpoolDisclaimer = (itinerary, config) => {
+    const hasCarpoolLegs = itinerary.legs.some(l => l.mode === 'CARPOOL');
+    return hasCarpoolLegs && config.carpoolDisclaimer;
+  };
+
   printItinerary = e => {
     e.stopPropagation();
 
@@ -236,6 +241,7 @@ class ItineraryTab extends React.Component {
         }
       }
     }
+
     const suggestionIndex = this.context.match.params.secondHash
       ? Number(this.context.match.params.secondHash) + 1
       : Number(this.context.match.params.hash) + 1;
@@ -338,6 +344,19 @@ class ItineraryTab extends React.Component {
                   focusToLeg={this.props.focusToLeg}
                   toggleCarpoolDrawer={this.props.toggleCarpoolDrawer}
                 />
+                { this.shouldShowCarpoolDisclaimer(itinerary, config) && (
+                  <div className="itinerary-disclaimer">
+                    <div className="info-container">
+                      <div className="icon-container">
+                        <Icon className="info" img="icon-icon_info" />
+                      </div>
+                      <div className="description-container">
+                        {config.carpoolDisclaimer}
+                      </div>
+                    </div>
+                  </div>
+                  )}
+                
                 {shouldShowFareInfo(config) && (
                   <TicketInformation
                     fares={fares}

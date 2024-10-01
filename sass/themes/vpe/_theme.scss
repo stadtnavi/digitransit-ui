@@ -19,6 +19,11 @@ $rail-color: green;
 $citybike-color: #009fe4;
 $carpool-color: #9fc727;
 $bike-color: #005ab4;
+$funicular-color: #FFCC00;
+
+.funicular {
+  color: $funicular-color;
+}
 
 .car {
   color: #005ab4;

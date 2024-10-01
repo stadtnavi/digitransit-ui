@@ -89,10 +89,11 @@ export const getRentalNetworkIconAndColors = (
   // TODO HB<->LE: in which cases does OTP return multiple FormFactors? and when none?
   const formFactor =
     formFactors === undefined || formFactors.indexOf(',') > 0
-      ? networkConfig.form_factors[0]
+      ? (networkConfig.form_factors || ['bicycle'])[0]
       : formFactors.toLowerCase();
-  const operatorConfig = config.cityBike.operators[networkConfig.operator];
-  const colors = networkConfig.colors || operatorConfig.colors;
+  const operatorConfig =
+    config.cityBike.operators[networkConfig.operator || 'other'];
+  const colors = networkConfig.colors || operatorConfig?.colors;
   if (colors === undefined) {
     // eslint-disable-next-line no-console
     console.error(
@@ -100,7 +101,9 @@ export const getRentalNetworkIconAndColors = (
     );
   }
   return {
-    iconName: `icon-icon_${formFactor}`,
+    iconName: networkId.includes('taxi')
+      ? `icon-icon_taxi`
+      : `icon-icon_${formFactor}`,
     bgColor: colors?.background || config.colors.iconColors['mode-citybike'],
     fgColor: colors?.foreground || '#fff',
   };

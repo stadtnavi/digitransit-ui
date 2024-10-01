@@ -196,6 +196,87 @@ export default configMerger(parentConfig, {
         showStationId: false,
         useSpacesAvailable: false,
         showCityBikes: true,
+
+        operators : {
+          taxi: {
+            icon: "brand_taxi",
+            name: {
+                de: "Taxi"
+            },
+            colors: {
+                background: '#FFCD00'
+            }
+          },
+          deer: {
+            icon: "brand_deer",
+            name: {
+                de: "deer"
+            },
+            url: {
+                de: "https://www.deer-carsharing.de/"
+            },
+            colors: {
+                background: '#3C8325'
+            }
+          },
+           bolt: {
+             icon: "brand_bolt",
+             name: {
+               de: "bolt"
+             },
+             colors: {
+              background: '#30D287'
+             },
+           },
+           voi: {
+             icon: "brand_voi",
+             name: {
+               de: "VOI"
+             },
+             colors: {
+               background: '#F26961'
+             },
+           },
+           
+            regiorad: {
+             icon: "brand_regiorad",
+             name: {
+               de: "RegioRad"
+             },
+             colors: {
+               background: '#009fe4'
+             },
+            },
+            stadtmobil: {
+             icon: "brand_stadtmobil",
+             name: {
+               de: "stadtmobil"
+             },
+             colors: {
+               background: '#FF8A36'
+             },
+            },
+            zeus: {
+             icon: "brand_zeus",
+             name: {
+               de: "ZEUS Scooters",
+               en: "ZEUS Scooters"
+             },
+             colors: {
+               background: '#F75118'
+             },
+            },
+          other: {
+             icon: "brand_other",
+             name: {
+               de: "Weitere Anbieter"
+             },
+             colors: {
+               background: '#C84674'
+             },
+          }
+        },
+
         networks: {
         }
     },

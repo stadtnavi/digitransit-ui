@@ -145,7 +145,7 @@ class BikeRentalStations {
       this.drawLargeIcon(feature, iconName, isHilighted, bgColor, fgColor);
     } else if (isHilighted) {
       this.canHaveStationUpdates = true;
-      this.drawHighlighted(feature, iconName);
+      this.drawHighlighted(feature, iconName, bgColor, fgColor);
     } else {
       this.drawSmallMarker(feature.geom, bgColor);
     }
@@ -173,7 +173,12 @@ class BikeRentalStations {
     );
   };
 
-  drawHighlighted = ({ geom, properties: { id, network } }, iconName) => {
+  drawHighlighted = (
+    { geom, properties: { id, network } },
+    iconName,
+    bgColor,
+    fgColor,
+  ) => {
     const citybikeCapacity = getCitybikeCapacity(this.config, network);
 
     const callback = ({ station: result }) => {
@@ -186,6 +191,8 @@ class BikeRentalStations {
           iconName,
           citybikeCapacity !== BIKEAVL_UNKNOWN,
           true,
+          bgColor,
+          fgColor,
         );
       }
       return this;

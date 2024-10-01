@@ -13,6 +13,7 @@ const SEMI_TRANSPARENT_MAP_URL = process.env.SEMITRANSPARENT_MAP_URL || "https:/
 const GEOCODING_BASE_URL = process.env.GEOCODING_BASE_URL || "https://photon-eu.stadtnavi.eu/pelias/v1";
 const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL = process.env.STATIC_MESSAGE_URL;
+const MOBIDATA_BASE_URL = "https://api.mobidata-bw.de/";
 
 const parentConfig = require('./config.waltti.js').default;
 
@@ -33,7 +34,7 @@ export default configMerger(parentConfig, {
         },
         STOP_MAP: `${API_URL}/routing/v1/router/vectorTiles/stops/`,
         PARK_AND_RIDE_MAP: `${API_URL}/routing/v1/router/vectorTiles/parking/`,
-        ROADWORKS_MAP: `${API_URL}/map/v1/cifs/`,
+        ROADWORKS_MAP: `${MOBIDATA_BASE_URL}geoserver/gwc/service/tms/1.0.0/MobiData-BW:roadworks@EPSG:900913@pbf/{z}/{x}/{-y}.pbf`,
         RENTAL_STATION_MAP: `${API_URL}/routing/v1/router/vectorTiles/rentalStations/`,
         RENTAL_VEHICLE_MAP: `${API_URL}/routing/v1/router/vectorTiles/rentalVehicles/`,
         REALTIME_RENTAL_STATION_MAP: `${API_URL}/routing/v1/router/vectorTiles/realtimeRentalStations/`,

@@ -1,13 +1,20 @@
 import React from 'react';
+import Link from 'found/Link';
 import PropTypes from 'prop-types';
 import Icon from '../../Icon';
 import Roadworks from './Roadworks';
+import { PREFIX_ROADWORKS } from '../../../util/path';
 
 export default function SelectRoadworksRow(props) {
-  const { selectRow, properties } = props;
+  const { properties, latitude, longitude } = props;
+
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-    <div className="stop-popup-choose-row" onClick={selectRow}>
+    <Link
+      className="stop-popup-choose-row"
+      to={`/${PREFIX_ROADWORKS}?${new URLSearchParams(
+        properties,
+      ).toString()}&lat=${latitude}&lng=${longitude}`}
+    >
       <div className="padding-vertical-normal select-row-icon">
         <Icon
           img={`icon-icon_roadworks${Roadworks.getIconSuffix(properties)}`}
@@ -21,11 +28,12 @@ export default function SelectRoadworksRow(props) {
         <Icon img="icon-icon_arrow-collapse--right" />
       </span>
       <hr className="no-margin gray" />
-    </div>
+    </Link>
   );
 }
 
 SelectRoadworksRow.propTypes = {
-  selectRow: PropTypes.func.isRequired,
   properties: PropTypes.object.isRequired,
+  latitude: PropTypes.number.isRequired,
+  longitude: PropTypes.number.isRequired,
 };

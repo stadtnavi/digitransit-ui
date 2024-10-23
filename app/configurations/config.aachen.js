@@ -68,6 +68,13 @@ export default configMerger(parentConfig, {
         primary: '#6E9BD2',
         iconColors: {
             'mode-bus': '#B70F75',
+            'mode-rail': '#6E9BD2',
+            'mode-tram': '#6E9BD2',
+            'mode-subway': '#6E9BD2',
+            'mode-ferry': '#6E9BD2',
+            'mode-charging-station': '#7ABC3C',
+            'mode-bike-park': '#225BD2',
+            'mode-citybike': '#EF8925',
         }
     },
 
@@ -211,8 +218,8 @@ export default configMerger(parentConfig, {
                 nl: "TIER",
             },
             colors: {
-               background: '#0E1A50',
-               foreground: '#69D2AA'
+               background: '#ffffff',
+               foreground: '#000000'
             }
           },
           velocity: {
@@ -224,7 +231,8 @@ export default configMerger(parentConfig, {
                 nl: "velocity Aken",
             },
             colors: {
-                background: '#2E2B51'
+                background: '#D0D0D0',
+                foreground: '#000000'
             }
           },
           voi: {
@@ -236,8 +244,8 @@ export default configMerger(parentConfig, {
                 nl: "voi.",
             },
             colors: {
-               background: '#D04740',
-               foreground: '#ffffff'
+               background: '#ffffff',
+               foreground: '#000000'
             }
           },
         },

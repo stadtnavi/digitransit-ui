@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32.5 32.5" version="1.1" style="enable-background:new 0 0 32.5 32.5;">
   <style type="text/css">
-        .st0{fill:#005AB4;}
+        .st0{fill:#225BD2;}
         .st1{fill:#FFFFFF;}
         .st2{clip-path:url(#SVGID_2_);}
-        .st3{fill:#FFFFFF;stroke:#005AB4;stroke-miterlimit:10;}
+        .st3{fill:#FFFFFF;stroke:#225BD2;stroke-miterlimit:10;}
       </style>
   <title>womoparken</title>
   <path fill="#fff" class="st0" d="M32.5,16.3c0,9-7.3,16.3-16.3,16.3S0,25.3,0,16.3C0,7.3,7.3,0,16.3,0h0C25.2,0,32.5,7.3,32.5,16.3          C32.5,16.3,32.5,16.3,32.5,16.3"/>

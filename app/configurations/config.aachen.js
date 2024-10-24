@@ -180,7 +180,18 @@ export default configMerger(parentConfig, {
                 category: 'other',
                 icon: 'icon-icon_aac_smart-shopping-marker',
             },
-            
+            {
+                name: {
+                    fi: '',
+                    en: 'Shopping streets',
+                    de: 'Einkaufsstraßen',
+                    fr: 'Rues commerçantes',
+                    nl: 'Winkelstraten',
+                },
+                url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/einkaufsstrasse.json',
+                category: 'other',
+                icon: 'icon-icon_aac_shopping-streets-marker',
+            },
         ],
     },
 

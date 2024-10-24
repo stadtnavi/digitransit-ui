@@ -13,6 +13,9 @@ $from-color: #000000;
   .logo {
     font-weight: 300;
     padding-left: 0.25em;
+    display: flex;
+    align-items: center;
+    height: 45px;
   }
 }
 
@@ -30,3 +33,37 @@ $from-color: #000000;
   color: $black;
 }
 
+.logo-title {
+  margin-top: 13px;
+  margin-left: 240px;
+  font-size: 1.6em;
+  font-weight: 500;
+}
+
+.logo-title:after {
+  content: '';
+  position: absolute;
+  left: 236px;
+  top: 10%;
+  height: 100%;
+  border-left: 1px solid #fff;
+}
+
+.mobile .logo-title {
+  margin-top: 10px;
+  margin-left: 160px;
+  font-size: 1.0em;
+}
+
+.mobile .logo-title:after {
+  content: '';
+  position: absolute;
+  left: 158px;
+  top: 10%;
+  height: 100%;
+  border-left: 1px solid #fff;
+}
+
+.mobile.top-bar section.title .logo {
+  height: 30px;
+}

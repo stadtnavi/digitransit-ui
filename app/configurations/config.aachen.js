@@ -58,8 +58,10 @@ export default configMerger(parentConfig, {
     },
 
     // -- Style configuration  ----
-    textLogo: true,
-    appBarTitle: '',
+    logo: 'herrenberg/stadtnavi-logo.svg',
+    showTitles: true,
+    subTitle: 'Aachen',
+
     sprites: 'assets/svg-sprite.aachen.svg',
     //logo: 'aachen/logo.svg',
     favicon: './app/configurations/images/aachen/stadt-aachen.png',

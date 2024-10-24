@@ -276,6 +276,11 @@ export default configMerger(parentConfig, {
             imageUrl: '/img/vpe-mitfahrportal.png',
             imageAltText: 'Mitfahrgelegenheit bieten und buchen - ab sofort über das Mitfahrportal des VPE!',
             linkUrl: 'https://startmobi.vpe.de/mitfahrportal/',       
+        },
+        'en': {
+            imageUrl: '/img/vpe-mitfahrportal.png',
+            imageAltText: 'Offer and book a ride - from now on via the VPE carpooling portal!',
+            linkUrl: 'https://startmobi.vpe.de/mitfahrportal/',       
         }
     }
 });

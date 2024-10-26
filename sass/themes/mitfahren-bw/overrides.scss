@@ -1,0 +1,19 @@
+
+.main-content input[type="text"],
+.drawer-container .drawer-content input[type="text"] {
+  background-color: var(--bw-background-subtle);
+  border: 1px solid var(--bw-background-subtle);
+  border-bottom: 2px solid var(--bw-border-primary);
+  border-bottom-color: var(--bw-background-subtle);
+  border-bottom-width: 1px;
+  border-radius: var(--bw-border-radius-100) var(--bw-border-radius-100) 0 0;
+  color: var(--bw-foreground-primary);
+  font-size: var(--bw-font-size-300);
+  // height: 4.8rem;
+  line-height: 2rem;
+  overflow: hidden;
+  // padding: .6rem var(--bw-space-200);
+  transition-property: border,box-shadow;
+  width: 100%;
+  box-shadow: none;
+}

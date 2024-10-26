@@ -216,7 +216,7 @@ export default configMerger(parentConfig, {
 
 
     roadworks: {
-        show: true,
+        show: false,
     },
     weatherStations: {
         show: false,

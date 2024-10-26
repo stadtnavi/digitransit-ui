@@ -257,3 +257,14 @@
     }
   }
 }
+
+// ---- style orgin/destination markers
+.origin-destination-bar div div div,
+.front-page div div div {
+  .origin-input-icon svg {
+      fill: $from-color;
+  }
+  .destination-input-icon svg {
+      fill: $to-color;
+  }
+}

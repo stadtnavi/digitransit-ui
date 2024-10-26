@@ -17,3 +17,10 @@
   width: 100%;
   box-shadow: none;
 }
+
+.origin-destination-bar div div div,
+.front-page div div div {
+  .destination-input-icon svg {
+      stroke: #000000
+  }
+}

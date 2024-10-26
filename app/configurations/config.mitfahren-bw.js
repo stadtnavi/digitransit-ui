@@ -84,7 +84,7 @@ export default configMerger(parentConfig, {
         },
     },
 
-    sprites: 'assets/svg-sprite.mobidatabw.svg',
+    sprites: 'assets/svg-sprite.mitfahrenbw.svg',
     
     issueTrackerUrl: 'https://maengelmelder.service-bw.de/?lat=${lat}&lng=${lon}',
     // issueTrackerUrls define issuetracker URLs per postalCode. In case none matches, issueTrackerUrl is used as falllback

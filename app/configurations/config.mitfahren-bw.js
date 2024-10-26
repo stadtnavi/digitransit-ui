@@ -124,6 +124,8 @@ export default configMerger(parentConfig, {
         lon: 9.177739,
     },
 
+    showFavouritesContainer: false,
+
     menu: {
         copyright: {
             label: `© Mitfahren-BW ${parentConfig.YEAR}`

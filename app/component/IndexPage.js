@@ -401,14 +401,16 @@ class IndexPage extends React.Component {
         <>
           <>{NearStops(CtrlPanel)}</>
           {stopRouteSearch(false)}
-          <CtrlPanel.SeparatorLine />
 
           {!trafficNowLink ||
             (trafficNowLink[lang] !== '' && (
-              <TrafficNowLink
-                lang={lang}
-                handleClick={this.trafficNowHandler}
-              />
+              <>
+                <CtrlPanel.SeparatorLine />
+                <TrafficNowLink
+                  lang={lang}
+                  handleClick={this.trafficNowHandler}
+                />
+              </>
             ))}
         </>
       );
@@ -459,11 +461,13 @@ class IndexPage extends React.Component {
                   <div className="datetimepicker-container">
                     <DatetimepickerContainer realtime color={color} />
                   </div>
-                  <FavouritesContainer
-                    favouriteModalAction={this.props.favouriteModalAction}
-                    onClickFavourite={this.clickFavourite}
-                    lang={lang}
-                  />
+                  {config.showFavouritesContainer && (
+                    <FavouritesContainer
+                      favouriteModalAction={this.props.favouriteModalAction}
+                      onClickFavourite={this.clickFavourite}
+                      lang={lang}
+                    />
+                  )}
                   <CtrlPanel.SeparatorLine usePaddingBottom20 />
                   {bottomPanel(CtrlPanel, TrafficNowLink)}
                 </CtrlPanel>
@@ -498,11 +502,13 @@ class IndexPage extends React.Component {
                   <div className="datetimepicker-container">
                     <DatetimepickerContainer realtime color={color} />
                   </div>
-                  <FavouritesContainer
-                    onClickFavourite={this.clickFavourite}
-                    lang={lang}
-                    isMobile
-                  />
+                  {config.showFavouritesContainer && (
+                    <FavouritesContainer
+                      onClickFavourite={this.clickFavourite}
+                      lang={lang}
+                      isMobile
+                    />
+                  )}
                   <CtrlPanel.SeparatorLine />
                   {bottomPanel(CtrlPanel, TrafficNowLink)}
                 </CtrlPanel>

@@ -189,6 +189,8 @@ export default {
     },
   },
 
+  showFavouritesContainer: true,
+
   hostnames: [
     // DEV hostnames
     'https://next-dev-hameenlinna.digitransit.fi',

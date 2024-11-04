@@ -245,10 +245,10 @@ export default configMerger(parentConfig, {
                   de: 'P & M Parkplätze'
                 },
                 url: 'https://data.mfdz.de/mobidata-bw/routing/carpool_parkings.json',
-                category: 'bicycle',
+                category: 'car',
                 icon: 'icon-icon_bike_repair',
                 isOffByDefault: false,
-                minZoom: 10
+                minZoom: 8
             },
         ],
     },

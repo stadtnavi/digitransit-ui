@@ -33,7 +33,8 @@ const isRoundIconVisible = zoom => getCaseRadius(zoom) >= ROUND_ICON_MIN_RADIUS;
 /**
  * The minimum zoom level at which a custom icon is visible.
  */
-export const CUSTOM_ICON_MIN_ZOOM = 15;
+// TODO: should depend on config
+export const CUSTOM_ICON_MIN_ZOOM = 5;
 
 /**
  * The custom icon's width and height (before scaling).

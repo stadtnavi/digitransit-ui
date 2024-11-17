@@ -345,10 +345,10 @@ export default configMerger(parentConfig, {
              hideCode: true,
              enabled: true,
              url: {
-                de: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
-                en: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
-                nl: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
-                fr: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
+                de: "https://mova.aseag.de/#/home",
+                en: "https://mova.aseag.de/#/home",
+                nl: "https://mova.aseag.de/#/home",
+                fr: "https://mova.aseag.de/#/home",
              }
            }
         },   

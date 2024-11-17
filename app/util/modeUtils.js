@@ -68,6 +68,17 @@ export const useCitybikes = networks => {
   );
 };
 
+export function showRentalVehiclesOfType(networks, config, type) {
+  if (!networks) {
+    return false;
+  }
+  return Object.values(networks).some(
+    network =>
+      network.type === type.toLowerCase() &&
+      network.enabled &&
+      (network.showRentalVehicles || showCitybikeNetwork(network, config)),
+  );
+}
 export const showCityBikes = networks => {
   if (!networks) {
     return false;

@@ -16,7 +16,7 @@ import { MapMode } from '../constants';
 import { setMapMode } from '../action/MapModeActions';
 import LayerCategoryDropdown from './LayerCategoryDropdown';
 import { mapLayerOptionsShape } from '../util/shapes';
-import { getTransportModes, showCityBikes } from '../util/modeUtils';
+import { getTransportModes, showRentalVehiclesOfType } from '../util/modeUtils';
 
 const transportModeConfigShape = PropTypes.shape({
   availableForSelection: PropTypes.bool,
@@ -299,7 +299,11 @@ class MapLayersDialogContent extends React.Component {
               onChange={this.updateSetting}
               options={[
                 this.context.config?.cityBike?.showCityBikes &&
-                  showCityBikes(this.context.config?.cityBike?.networks) && {
+                  showRentalVehiclesOfType(
+                    this.context.config?.cityBike?.networks,
+                    this.context.config,
+                    'bicycle',
+                  ) && {
                     checked: rental.bicycle,
                     disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
                     defaultMessage: 'Rental Bikes',
@@ -308,7 +312,11 @@ class MapLayersDialogContent extends React.Component {
                     settings: { rental: 'bicycle' },
                   },
                 this.context.config?.cityBike?.showCityBikes &&
-                  showCityBikes(this.context.config?.cityBike?.networks) && {
+                  showRentalVehiclesOfType(
+                    this.context.config?.cityBike?.networks,
+                    this.context.config,
+                    'scooter',
+                  ) && {
                     checked: rental.scooter,
                     disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
                     defaultMessage: 'Rental Scooters',
@@ -317,7 +325,11 @@ class MapLayersDialogContent extends React.Component {
                     settings: { rental: 'scooter' },
                   },
                 this.context.config?.cityBike?.showCityBikes &&
-                  showCityBikes(this.context.config?.cityBike?.networks) && {
+                  showRentalVehiclesOfType(
+                    this.context.config?.cityBike?.networks,
+                    this.context.config,
+                    'cargo_bicycle',
+                  ) && {
                     checked: rental.cargo_bicycle,
                     disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
                     defaultMessage: 'Rental Cargo-Bikes',
@@ -326,7 +338,11 @@ class MapLayersDialogContent extends React.Component {
                     settings: { rental: 'cargo_bicycle' },
                   },
                 this.context.config?.cityBike?.showCityBikes &&
-                  showCityBikes(this.context.config?.cityBike?.networks) && {
+                  showRentalVehiclesOfType(
+                    this.context.config?.cityBike?.networks,
+                    this.context.config,
+                    'car',
+                  ) && {
                     checked: rental.car,
                     disabled: !!this.props.mapLayerOptions?.citybike?.isLocked,
                     defaultMessage: 'Rental Cars',

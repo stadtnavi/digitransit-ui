@@ -238,9 +238,11 @@ class BikeRentalStations {
     );
   };
 
-  shouldShowStation = (id, network, formFactors) =>
+  shouldShowStation = (id, network /* , formFactors */) =>
     (!this.tile.stopsToShow || this.tile.stopsToShow.includes(id)) &&
-    this.isAnyFormFactorEnabled(formFactors) &&
+    // for now, ignore formFactors and just use networks primary formFactor (=type)
+    // to decide if station should be shown
+    this.isAnyFormFactorEnabled(this.config.cityBike.networks[network]?.type) &&
     showCitybikeNetwork(this.config.cityBike.networks[network]);
 
   shouldShowFeature = feature => {

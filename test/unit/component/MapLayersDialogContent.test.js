@@ -224,6 +224,7 @@ describe('<MapLayersDialogContent />', () => {
           networks: {
             foo: {
               enabled: true,
+              type: 'bicycle',
             },
           },
         },

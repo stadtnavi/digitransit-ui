@@ -89,6 +89,8 @@ const multipleResultsHashes = [
   streetHash.parkAndRide,
   streetHash.car,
   streetHash.onDemandTaxi,
+  streetHash.walk,
+  streetHash.bike,
 ];
 
 /**
@@ -142,33 +144,15 @@ export const getActiveIndex = (
 
 export const getHashNumber = hash => {
   if (hash) {
-    if (hash === 'walk' || hash === 'bike') {
-      return 0;
-    }
     return Number(hash);
   }
   return undefined;
 };
 
 export const routeSelected = (hash, secondHash, itineraries) => {
-  if (
-    hash === 'car' || // we combine own car and rental car, so more than one route is possible
-    hash === 'scooter' ||
-    hash === 'bikeAndVehicle' ||
-    hash === 'parkAndRide' ||
-    hash === 'onDemandTaxi'
-  ) {
-    if (secondHash && secondHash < itineraries.length) {
-      return true;
-    }
-    return false;
-  }
-  if (
-    (hash && hash < itineraries.length) ||
-    hash === 'walk' ||
-    hash === 'bike'
-    // hash === 'car' => we combine own car and rental car, so more than one route is possible and we need the secondHash
-  ) {
+  // we want to show an overview list for all options, even walk and bicycle
+  // (this will allow us to render different alternative options later on)
+  if (secondHash && secondHash < itineraries.length) {
     return true;
   }
   return false;

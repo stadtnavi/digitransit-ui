@@ -126,6 +126,8 @@ class SummaryPlanContainer extends React.Component {
       'bikeAndVehicle',
       'parkAndRide',
       'onDemandTaxi',
+      'walk',
+      'bike',
       'car',
       'scooter',
     ];

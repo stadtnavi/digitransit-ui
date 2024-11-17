@@ -357,7 +357,14 @@ class MapLayersDialogContent extends React.Component {
                   icon: 'icon-icon_carpool_stops',
                   settings: { stop: 'carpool', terminal: 'carpool' },
                 },
-              ]}
+              ].concat(
+                this.layerOptionsByCategory(
+                  'sharing',
+                  config.geoJson?.layers,
+                  geoJson,
+                  this.props.lang,
+                ),
+              )}
             />
             <LayerCategoryDropdown
               title={this.context.intl.formatMessage({

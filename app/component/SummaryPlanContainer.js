@@ -242,6 +242,24 @@ class SummaryPlanContainer extends React.Component {
     );
   }
 
+  static shouldShowEarlierLaterButtons(
+    disableButtons,
+    onlyHasWalkingItineraries,
+    pageHash,
+  ) {
+    const pageShouldNotShowButtons = [
+      'car',
+      'walk',
+      'bike',
+      'scooter',
+    ].includes(pageHash);
+    return !(
+      disableButtons ||
+      onlyHasWalkingItineraries ||
+      pageShouldNotShowButtons
+    );
+  }
+
   render() {
     const { location } = this.context.match;
     const { from, to } = this.props.params;
@@ -274,6 +292,11 @@ class SummaryPlanContainer extends React.Component {
       currentTime;
     const disableButtons = !itineraries || itineraries.length === 0;
     const arriveBy = this.context.match.location.query.arriveBy === 'true';
+    const showEarlierLaterButtons = SummaryPlanContainer.shouldShowEarlierLaterButtons(
+      disableButtons,
+      onlyHasWalkingItineraries,
+      this.context.match.params?.hash,
+    );
     return (
       <div className="summary">
         <h2 className="sr-only">
@@ -282,14 +305,8 @@ class SummaryPlanContainer extends React.Component {
             defaultMessage="Route suggestions"
           />
         </h2>
-        {(this.context.match.params.hash &&
-          this.context.match.params.hash === 'bikeAndVehicle') ||
-        disableButtons ||
-        onlyHasWalkingItineraries
-          ? null
-          : arriveBy
-          ? this.laterButton(true)
-          : this.earlierButton()}
+        {showEarlierLaterButtons &&
+          (arriveBy ? this.laterButton(true) : this.earlierButton())}
         <ItinerarySummaryListContainer
           activeIndex={activeIndex}
           currentTime={currentTime}
@@ -327,14 +344,8 @@ class SummaryPlanContainer extends React.Component {
           this.props.plan,
           this.props.alternativePlan,
         ) && <SettingsChangedNotification />}
-        {(this.context.match.params.hash &&
-          this.context.match.params.hash === 'bikeAndVehicle') ||
-        disableButtons ||
-        onlyHasWalkingItineraries
-          ? null
-          : arriveBy
-          ? this.earlierButton(true)
-          : this.laterButton()}
+        {showEarlierLaterButtons &&
+          (arriveBy ? this.earlierButton(true) : this.laterButton())}
       </div>
     );
   }

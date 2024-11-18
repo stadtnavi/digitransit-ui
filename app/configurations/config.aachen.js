@@ -250,19 +250,6 @@ export default configMerger(parentConfig, {
                 background: '#EB690B'
             }
           },
-          tier: {
-            icon: "brand_tier",
-            name: {
-                de: "TIER",
-                fr: "TIER",
-                en: "TIER",
-                nl: "TIER",
-            },
-            colors: {
-               background: '#ffffff',
-               foreground: '#000000'
-            }
-          },
           velocity: {
             icon: "brand_velocity",
             name: {
@@ -325,26 +312,6 @@ export default configMerger(parentConfig, {
                 en: "https://www.voi.com/en",
                 fr: "https://www.voi.com/fr",
                 nl: "https://www.voi.com/nl",
-             }
-           },
-           'tier_aachen': {
-             icon: "brand_tier",
-             operator: "tier",
-             name: {
-               de: "TIER",
-               fr: "TIER",
-               en: "TIER",
-               nl: "TIER",
-             },
-             type: "scooter",
-             form_factors: ['scooter'],
-             hideCode: true,
-             enabled: true,
-             url: {
-                de: "https://www.tier.app/de/",
-                en: "https://www.tier.app/en/",
-                nl: "https://www.tier.app/nl/",
-                fr: "https://www.tier.app/fr/",
              }
            },
            'velocity_aachen': {

@@ -44,6 +44,21 @@ export default configMerger(parentConfig, {
         description: APP_DESCRIPTION,
     },
 
+    socialMedia: {
+        title: APP_TITLE,
+        description: APP_DESCRIPTION,
+
+        image: {
+            url: '/img/aachen-social-media-card.jpg',
+            width: 974,
+            height: 448,
+        },
+
+        twitter: {
+            card: 'summary_large_image',
+            site: '@PresseamtAachen',
+        },
+    },
     //searchPanelText: 'Wohin?',
 
     map: {

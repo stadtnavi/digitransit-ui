@@ -62,6 +62,22 @@ export default configMerger(parentConfig, {
     showTitles: true,
     subTitle: 'Aachen',
 
+    socialMedia: {
+        title: APP_TITLE,
+        description: APP_DESCRIPTION,
+
+        image: {
+            url: '/img/aachen-social-media-card.jpg',
+            width: 974,
+            height: 448,
+        },
+
+        twitter: {
+            card: 'summary_large_image',
+            site: '@PresseamtAachen',
+        },
+    },
+
     sprites: 'assets/svg-sprite.aachen.svg',
     //logo: 'aachen/logo.svg',
     favicon: './app/configurations/images/aachen/stadt-aachen.png',

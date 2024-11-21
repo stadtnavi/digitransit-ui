@@ -22,7 +22,7 @@ import { replaceQueryParams } from '../util/queryUtils';
 import withBreakpoint from '../util/withBreakpoint';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import { isIOS, isSafari } from '../util/browser';
-import SettingsChangedNotification from './SettingsChangedNotification';
+import SettingsNotification from './SettingsNotification';
 import ItineraryShape from '../prop-types/ItineraryShape';
 import ErrorShape from '../prop-types/ErrorShape';
 import LocationStateShape from '../prop-types/LocationStateShape';
@@ -48,10 +48,6 @@ class ItineraryListContainer extends React.Component {
       itineraries: PropTypes.arrayOf(ItineraryShape),
     }).isRequired,
     routingErrors: PropTypes.arrayOf(RoutingErrorShape),
-    serviceTimeRange: PropTypes.shape({
-      start: PropTypes.number.isRequired,
-      end: PropTypes.number.isRequired,
-    }).isRequired,
     bikeAndPublicItinerariesToShow: PropTypes.number.isRequired,
     bikeRentAndPublicItinerariesToShow: PropTypes.number.isRequired,
     bikeAndParkItinerariesToShow: PropTypes.number.isRequired,
@@ -63,16 +59,11 @@ class ItineraryListContainer extends React.Component {
     biking: PropTypes.bool,
     showAlternativePlan: PropTypes.bool,
     separatorPosition: PropTypes.number,
-    loading: PropTypes.bool.isRequired,
     onLater: PropTypes.func.isRequired,
     onEarlier: PropTypes.func.isRequired,
     onDetailsTabFocused: PropTypes.func.isRequired,
+    settingsNotification: PropTypes.func,
     loadingMoreItineraries: PropTypes.string,
-    alternativePlan: PropTypes.shape({
-      date: PropTypes.number,
-      itineraries: PropTypes.arrayOf(ItineraryShape),
-    }),
-    showSettingsChangedNotification: PropTypes.func.isRequired,
     driving: PropTypes.bool,
     onlyHasWalkingItineraries: PropTypes.bool,
   };
@@ -88,6 +79,7 @@ class ItineraryListContainer extends React.Component {
     driving: false,
     routingErrors: [],
     separatorPosition: undefined,
+    settingsNotification: false,
   };
 
   static contextTypes = {
@@ -261,10 +253,10 @@ class ItineraryListContainer extends React.Component {
       biking,
       showAlternativePlan,
       separatorPosition,
-      loading,
       loadingMoreItineraries,
       driving,
       onlyHasWalkingItineraries,
+      settingsNotification,
     } = this.props;
     const searchTime =
       this.props.plan?.date ||
@@ -317,16 +309,12 @@ class ItineraryListContainer extends React.Component {
           showAlternativePlan={showAlternativePlan}
           separatorPosition={separatorPosition}
           loadingMoreItineraries={loadingMoreItineraries}
-          loading={loading}
           driving={driving}
           onlyHasWalkingItineraries={onlyHasWalkingItineraries}
         >
           {this.props.children}
         </ItineraryList>
-        {this.props.showSettingsChangedNotification(
-          this.props.plan,
-          this.props.alternativePlan,
-        ) && <SettingsChangedNotification />}
+        {settingsNotification && <SettingsNotification />}
         {(this.context.match.params.hash &&
           this.context.match.params.hash === 'bikeAndVehicle') ||
         disableButtons ||

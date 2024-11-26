@@ -62,3 +62,14 @@
   li:last-of-type { border: 0; }
   .list-item-start { font-weight: 700; }
 }
+// top bar
+
+.top-bar section .logo {
+  height: auto;
+  margin-left: 50px;
+}
+.top-bar {
+  /* height: 70px; */
+  /* min-height: 70px; */
+  height: 6vw;
+}

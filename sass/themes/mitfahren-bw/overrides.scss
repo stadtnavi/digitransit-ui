@@ -14,6 +14,10 @@
   transition-property: border,box-shadow;
   width: 100%;
   box-shadow: none;
+  &:focus {
+    background-color: var(--bw-background-subtle);
+    border: solid 2px var(--bw-foreground-focus);
+  }
 }
 
 .origin-destination-bar div div div,

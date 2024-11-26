@@ -12,7 +12,8 @@ import {
 } from '../../util/planParamUtil';
 
 import Icon from '../Icon';
-import Itinerary from '../Itinerary';
+//import Itinerary from '../Itinerary';
+import CarpoolItinerary from '../Itinerary.Carpool';
 import { isBrowser } from '../../util/browser';
 import { getZones } from '../../util/legUtils';
 import CanceledItineraryToggler from '../CanceledItineraryToggler';
@@ -72,8 +73,10 @@ function ItineraryList(
           return a.emissionsPerPerson?.co2 < b.emissionsPerPerson?.co2 ? a : b;
         }, 0).emissionsPerPerson?.co2,
     );
+    // TODO Sortiere nach Qualität
+    // debugger;
     const summaries = itineraries.map((itinerary, i) => (
-      <Itinerary
+      <CarpoolItinerary
         refTime={searchTime}
         key={i} // eslint-disable-line react/no-array-index-key
         hash={i}
@@ -398,6 +401,7 @@ const containerComponent = createFragmentContainer(ItineraryList, {
             realtimeState
             stop {
               gtfsId
+              name
             }
             pickupType
           }

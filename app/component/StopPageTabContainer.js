@@ -53,7 +53,7 @@ const containerComponent = createFragmentContainer(StopPageTabContainer, {
       id
       gtfsId
       code
-      alerts(types: [STOP, ROUTES]) {
+      alerts(types: [STOP, ROUTES, STOP_ON_ROUTES]) {
         id
         alertSeverityLevel
         effectiveEndDate

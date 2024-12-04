@@ -46,20 +46,29 @@ export const getTimePeriod = ({ currentTime, startTime, endTime, intl }) => {
   return `${start} - ${end}`;
 };
 
-const getColor = entities => {
+const getRouteFromEntities = entities => {
   if (Array.isArray(entities)) {
     const routeEntities = getEntitiesOfType(entities, AlertEntityType.Route);
-    return routeEntities.length > 0 && `#${routeEntities[0].color}`;
+    const stopOnRouteEntities = getEntitiesOfType(
+      entities,
+      AlertEntityType.StopOnRoute,
+    );
+    const route =
+      (routeEntities.length > 0 && routeEntities[0]) ||
+      (stopOnRouteEntities.length > 0 && stopOnRouteEntities[0].route);
+    return route || null;
   }
   return null;
 };
 
+const getColor = entities => {
+  const route = getRouteFromEntities(entities);
+  return (route && `#${route.color}`) || null;
+};
+
 const getMode = entities => {
-  if (Array.isArray(entities)) {
-    const routeEntities = getEntitiesOfType(entities, AlertEntityType.Route);
-    return routeEntities.length > 0 && getRouteMode(routeEntities[0]);
-  }
-  return 'bus';
+  const route = getRouteFromEntities(entities);
+  return (route && getRouteMode(route)) || 'bus';
 };
 
 const getGtfsIds = entities => entities?.map(entity => entity.gtfsId) || [];
@@ -69,6 +78,7 @@ const getEntityIdentifiers = entities =>
     ?.map(
       entity =>
         entity.shortName ||
+        entity?.route?.shortName ||
         (entity.code ? `${entity.name} (${entity.code})` : entity.name),
     )
     .filter(identifier => identifier);
@@ -82,6 +92,17 @@ const getEntitiesWithUniqueIdentifiers = entities => {
     ] = entity;
   });
   return Object.values(entitiesByIdentifier);
+};
+
+const getEntityType = entities => {
+  const entityTypes = [
+    AlertEntityType.Stop,
+    AlertEntityType.Route,
+    AlertEntityType.StopOnRoute,
+  ];
+  return entityTypes.find(
+    entityType => getEntitiesOfType(entities, entityType).length > 0,
+  );
 };
 
 export default function AlertRow(
@@ -112,15 +133,16 @@ export default function AlertRow(
   const gtfsIdList = getGtfsIds(uniqueEntities);
   const entityIdentifiers = getEntityIdentifiers(uniqueEntities);
 
-  const entityType =
-    getEntitiesOfType(uniqueEntities, AlertEntityType.Stop).length > 0
-      ? AlertEntityType.Stop
-      : AlertEntityType.Route;
+  const entityType = getEntityType(uniqueEntities);
 
   const routeColor =
-    entityType === AlertEntityType.Route && getColor(uniqueEntities);
+    (entityType === AlertEntityType.Route ||
+      entityType === AlertEntityType.StopOnRoute) &&
+    getColor(uniqueEntities);
   const routeMode =
-    entityType === AlertEntityType.Route && getMode(uniqueEntities);
+    (entityType === AlertEntityType.Route ||
+      entityType === AlertEntityType.StopOnRoute) &&
+    getMode(uniqueEntities);
 
   const routeLinks =
     entityType === AlertEntityType.Route && entityIdentifiers && gtfsIdList
@@ -168,7 +190,8 @@ export default function AlertRow(
 
   return (
     <div className="alert-row" role="listitem">
-      {(entityType === AlertEntityType.Route && (
+      {((entityType === AlertEntityType.Route ||
+        entityType === AlertEntityType.StopOnRoute) && (
         <RouteNumber
           alertSeverityLevel={severityLevel}
           color={routeColor}
@@ -196,7 +219,8 @@ export default function AlertRow(
         <div className="alert-top-row">
           {entityIdentifiers &&
             entityIdentifiers.length > 0 &&
-            ((entityType === AlertEntityType.Route &&
+            (((entityType === AlertEntityType.Route ||
+              entityType === AlertEntityType.StopOnRoute) &&
               showLinks &&
               routeLinks.length > 0 && <>{routeLinks} </>) ||
               (!showLinks && (
@@ -246,7 +270,13 @@ AlertRow.propTypes = {
   entities: PropTypes.arrayOf(
     PropTypes.shape({
       __typename: PropTypes.string.isRequired,
-      gtfsId: PropTypes.string.isRequired,
+      gtfsId: PropTypes.string,
+      route: PropTypes.shape({
+        gtfsId: PropTypes.string,
+      }),
+      stop: PropTypes.shape({
+        gtfsId: PropTypes.string,
+      }),
     }),
   ),
   severityLevel: PropTypes.string,

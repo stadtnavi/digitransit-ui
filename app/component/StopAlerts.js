@@ -18,7 +18,11 @@ export const isRelevantEntity = (entity, stopIds, routeIds) =>
     stopIds.includes(entity.gtfsId)) ||
   // eslint-disable-next-line no-underscore-dangle
   (entity.__typename === AlertEntityType.Route &&
-    routeIds.includes(entity.gtfsId));
+    routeIds.includes(entity.gtfsId)) ||
+  // eslint-disable-next-line no-underscore-dangle
+  (entity.__typename === AlertEntityType.StopOnRoute &&
+    routeIds.includes(entity.route.gtfsId) &&
+    stopIds.includes(entity.stop.gtfsId));
 
 export const getRouteIdsForStop = stop =>
   uniq(stop?.routes.map(route => route.gtfsId));

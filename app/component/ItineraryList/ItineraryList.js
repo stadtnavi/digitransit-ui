@@ -379,6 +379,7 @@ const containerComponent = createFragmentContainer(ItineraryList, {
           agency {
             name
           }
+          url
           alerts {
             alertSeverityLevel
             effectiveEndDate
@@ -431,6 +432,9 @@ const containerComponent = createFragmentContainer(ItineraryList, {
           }
         }
         to {
+          name
+          lat
+          lon
           stop {
             gtfsId
             zoneId

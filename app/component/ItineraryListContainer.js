@@ -352,6 +352,7 @@ const connectedContainer = createFragmentContainer(
             }
             route {
               gtfsId
+              url
             }
             trip {
               gtfsId
@@ -378,6 +379,7 @@ const connectedContainer = createFragmentContainer(
               }
             }
             to {
+              name
               stop {
                 gtfsId
                 zoneId
@@ -412,6 +414,7 @@ const connectedContainer = createFragmentContainer(
           }
           route {
             gtfsId
+            url
           }
           trip {
             gtfsId

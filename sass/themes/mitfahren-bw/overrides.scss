@@ -6,7 +6,7 @@
   border-bottom: 2px solid var(--bw-border-primary);
   border-radius: var(--bw-border-radius-100) var(--bw-border-radius-100) 0 0;
   color: var(--bw-foreground-primary);
-  font-size: var(--bw-font-size-300);
+  font-size: var(--bw-font-size-100);
   // height: 4.8rem;
   line-height: 2rem;
   overflow: hidden;
@@ -62,9 +62,14 @@
 // Styling of carpool lines on map
 .map {
   .leg-halo.carpool {
-    stroke: #000;
+    stroke: #666;
     stroke-width: 1%;
   }
+
+  //.leg-halo.carpool.passive {
+  //  stroke: #999;
+  //  stroke-width: 0%;
+  //}
 }
 
 // top bar
@@ -77,161 +82,4 @@
   /* height: 70px; */
   /* min-height: 70px; */
   height: 6vw;
-}
-
-//
-
-:root
-{
-  --margin-horizontal: 15vw;
-  --margin-vertikal: 5vw;
-  --margin-details-content: 1vw;
-  --testrahmen: 1px solid red;
-
-  --bw-leading-compact: 120%;
-  --bw-font-weight-regular: 400;
-  --bw-font-weight-bold: 700;
-
-  --bw-color-foreground-primary: hsla(26, 9.1%, 15.1%, 1.0);
-  --bw-color-background-primary: hsla(0, 0%, 100%, 1.0);
-  --bw-color-background-subtle: hsla(40, 12%, 95.1%, 1.0);
-  --bw-color-background-warning: hsla(22, 100%, 88.2%, 1.0);
-  --bw-color-background-accent: hsla(59, 100%, 50%, 1.0);
-
-  --bw-map-pin-line: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%232a2623' fill-rule='evenodd' clip-rule='evenodd' d='M12 4C8.68629 4 6 6.68629 6 10C6 12.5608 7.54775 15.0765 9.25529 17.0444C10.0926 18.0092 10.9326 18.8016 11.5639 19.3529C11.7244 19.493 11.871 19.6171 12 19.7241C12.129 19.6171 12.2756 19.493 12.4361 19.3529C13.0674 18.8016 13.9074 18.0092 14.7447 17.0444C16.4523 15.0765 18 12.5608 18 10C18 6.68629 15.3137 4 12 4ZM12 21C11.4086 21.8064 11.4083 21.8062 11.4081 21.806L11.4074 21.8055L11.4056 21.8042L11.4 21.8001L11.3815 21.7863C11.3659 21.7746 11.3438 21.758 11.3156 21.7365C11.2594 21.6937 11.1789 21.6316 11.0777 21.5514C10.8755 21.3909 10.5898 21.1574 10.2486 20.8594C9.5674 20.2647 8.65744 19.407 7.74471 18.3551C5.95225 16.2895 4 13.3052 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 13.3052 18.0477 16.2895 16.2553 18.3551C15.3426 19.407 14.4326 20.2647 13.7514 20.8594C13.4102 21.1574 13.1245 21.3909 12.9223 21.5514C12.8211 21.6316 12.7406 21.6937 12.6844 21.7365C12.6562 21.758 12.6341 21.7746 12.6185 21.7863L12.6 21.8001L12.5944 21.8042L12.5926 21.8055L12.5919 21.806C12.5917 21.8062 12.5914 21.8064 12 21ZM12 21L12.5914 21.8064L12 22.2401L11.4086 21.8064L12 21ZM11.9978 8.5C11.1694 8.5 10.4978 9.17157 10.4978 10C10.4978 10.8284 11.1694 11.5 11.9978 11.5C12.8262 11.5 13.4978 10.8284 13.4978 10C13.4978 9.17157 12.8262 8.5 11.9978 8.5ZM8.4978 10C8.4978 8.067 10.0648 6.5 11.9978 6.5C13.9308 6.5 15.4978 8.067 15.4978 10C15.4978 11.933 13.9308 13.5 11.9978 13.5C10.0648 13.5 8.4978 11.933 8.4978 10Z' /%3E%3C/svg%3E");
-  --bw-map-pin-solid: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%232a2623' fill-rule='evenodd' clip-rule='evenodd' d='M12.5926 21.8055L12.5944 21.8042L12.6 21.8001L12.6185 21.7863C12.6341 21.7746 12.6562 21.758 12.6844 21.7365C12.7406 21.6937 12.8211 21.6316 12.9223 21.5514C13.1245 21.3909 13.4102 21.1574 13.7514 20.8594C14.4326 20.2647 15.3426 19.407 16.2553 18.3551C18.0477 16.2895 20 13.3052 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 13.3052 5.95225 16.2895 7.74471 18.3551C8.65744 19.407 9.5674 20.2647 10.2486 20.8594C10.5898 21.1574 10.8755 21.3909 11.0777 21.5514C11.1789 21.6316 11.2594 21.6937 11.3156 21.7365C11.3438 21.758 11.3659 21.7746 11.3815 21.7863L11.4 21.8001L11.4056 21.8042L11.4081 21.806L12 22.2401L12.5926 21.8055ZM11.9978 12.5C13.3785 12.5 14.4978 11.3807 14.4978 10C14.4978 8.61929 13.3785 7.5 11.9978 7.5C10.6171 7.5 9.4978 8.61929 9.4978 10C9.4978 11.3807 10.6171 12.5 11.9978 12.5Z' /%3E%3C/svg%3E");
-  --bw-car-solid: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%232a2623' fill-rule='evenodd' clip-rule='evenodd' d='M1.49078 9.5L5.49078 4H18.5192L22.5192 9.68571H24V11.6857H23V20H17V18H7V20H1V11.5H0V9.5H1.49078ZM5 12V14H9V12H5ZM15 12V14H19V12H15Z' /%3E%3C/svg%3E");
-  --bw-arrow-up-right-line: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 5H19V16H17V8.41421L6.25 19.1642L4.83578 17.75L15.5858 7H8V5Z' /%3E%3C/svg%3E");
-  --bw-circle-info-line: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM13 10V17H11V12H10V10H13ZM13 9V7H11V9H13Z' /%3E%3C/svg%3E");
-}
-.itinerary-summary-header.einzelergebnis {
-  border-top: 1px solid var(--bw-color-background-primary);
-  border-right: 1px solid var(--bw-color-background-primary);
-  border-bottom: 1px solid var(--bw-color-foreground-primary);
-  border-left: 1px solid var(--bw-color-background-primary);
-  font-weight: 400;
-
-  &:hover {
-    background-color:var(--bw-color-background-subtle);
-    border-top: 1px solid var(--bw-color-background-subtle);
-    border-right: 1px solid var(--bw-color-background-subtle);
-    border-bottom: 1px solid var(--bw-color-foreground-primary);
-    border-left: 1px solid var(--bw-color-background-subtle);
-  }
-
-  .departure, .times, .destination {
-    color: #2a2623;
-    position: relative;
-    -webkit-user-select: text;
-    user-select: text;
-    line-height: var(--bw-leading-compact);
-    background: none;
-  }
-
-  .departure, .destination {
-    padding: 0 1.4em;
-    margin: 0.5rem;
-  }
-  .times {
-    padding: 0 1.8em;
-  }
-
-  .match, .times {
-    margin: 0.5rem 3rem;
-  }
-
-  .portal {
-    text-align: right;
-    margin: 2.5vw 2.5vw 0.5 2.5vw;
-  }
-
-  .departure::before, .times::before, .destination::before, .info::before {
-    content: "";
-    width: 1.1em;
-    height: 1.2em;
-    position: absolute;
-    left: 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 0;
-  }
-
-  .departure::before {
-    top: 0;
-    background-image: var(--bw-map-pin-solid);
-  }
-
-  .match-value {
-    font-weight: var(--bw-font-weight-bold);
-  }
-  .match-value::after {
-    content: "% Übereinstimmung";
-    font-weight: var(--bw-font-weight-regular);
-  }
-
-  .times::before {
-    top: 0;
-    background-image: var(--bw-car-solid);
-  }
-
-  .destination::before {
-    top: 0;
-    background-image: var(--bw-map-pin-line);
-  }
-
-  .info::before {
-    top: -0.5em;
-    background-image: var(--bw-circle-info-line);
-  }
-
-  /* link-external und info */
-
-  .link-external::before {
-    content: "";
-    width: 1.1em;
-    height: 1.2em;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 0;
-    background-image: var(--bw-arrow-up-right-line);
-  }
-
-  .link-external {
-    font-weight: var(--bw-font-weight-bold);
-    color: #2a2623;
-    cursor: pointer;
-    display: inline;
-    position: relative;
-    text-decoration: none;
-    -webkit-user-select: text;
-    user-select: text;
-    line-height: var(--bw-leading-compact);
-    -webkit-text-decoration-skip-ink: none;
-    text-decoration-skip-ink: none;
-    box-shadow: 0 1px #2a2623;
-    background-color: initial;
-    padding: 0 .2rem 0 1.4em;
-  }
-
-  .link-external:hover {
-    background-color: var(--bw-color-background-accent);
-    box-shadow: 0 2px #2a2623;
-  }
-
-  .info {
-    cursor: pointer;
-    display: inline;
-    position: relative;
-    text-decoration: none;
-    -webkit-user-select: text;
-    user-select: text;
-    line-height: var(--bw-leading-compact);
-    -webkit-text-decoration-skip-ink: none;
-    text-decoration-skip-ink: none;
-    background-color: initial;
-    padding: 0 0 0 1.4em;
-  }
 }

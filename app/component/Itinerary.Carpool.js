@@ -30,14 +30,20 @@ const Itinerary = (
   const mobile = bp => !(bp === 'large');
   const vehicleNames = [];
   const noTransitLegs = false;
-  const stoptimes = data.legs[0]?.trip?.stoptimes;
+
+  if (noTransitLegs) {
+    // TODO display message
+    return null;
+  }
+  const firstDepartureLeg = data.legs.find(isTransitLeg);
+  const { stoptimes } = firstDepartureLeg.trip;
   const origin = stoptimes[0].stop.name;
+  const boarding = firstDepartureLeg.from.name;
+  const alighting = firstDepartureLeg.to.name;
+  const agencyName = firstDepartureLeg.route.agency.name;
+  const routeUrl = firstDepartureLeg.route.url;
   const destination = stoptimes[stoptimes.length - 1].stop.name;
 
-  let firstDeparture;
-  if (!noTransitLegs) {
-    firstDeparture = data.legs.find(isTransitLeg);
-  }
   const ariaLabelMessage = intl.formatMessage(
     {
       id: 'itinerary-page.show-details-label',
@@ -73,12 +79,10 @@ const Itinerary = (
                   id="itinerary-summary-row.first-departure"
                   values={{
                     vehicle: vehicleNames[0],
-                    departureTime: firstDeparture ? (
-                      <LocalTime time={firstDeparture.startTime} />
-                    ) : (
-                      'ggh'
+                    departureTime: (
+                      <LocalTime time={firstDepartureLeg.startTime} />
                     ),
-                    stopName: firstDeparture.from.name,
+                    stopName: firstDepartureLeg.from.name,
                   }}
                 />
               </>
@@ -128,23 +132,25 @@ const Itinerary = (
                 <FormattedMessage id="itinerary-summary-row.clickable-area-description" />
               </span>
 
-              <h3 className="departure">{origin}</h3>
+              <div className="start">{origin}</div>
+              <h3 className="boarding">{boarding}</h3>
               <div className="match">
-                <span className="match-value">99</span>
+                <span className="match-value">99 % Übereinstimmung</span>
               </div>
               <div className="times">
-                Mo – Fr | <LocalTime time={firstDeparture.startTime} /> Uhr
+                Mo – Fr | <LocalTime time={firstDepartureLeg.startTime} /> Uhr
               </div>
-              <h3 className="destination">{destination}</h3>
+              <h3 className="exit">{alighting}</h3>
+              <div className="target">{destination}</div>
               <div className="portal">
                 <a
                   className="link-external"
                   target="_blank"
                   rel="noreferrer"
                   title="Zum Angebot"
-                  href="https://www.ride2go.com"
+                  href={routeUrl}
                 >
-                  ride2go
+                  {agencyName}
                 </a>
                 <span className="info" />
               </div>

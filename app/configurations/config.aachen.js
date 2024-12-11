@@ -62,6 +62,8 @@ export default configMerger(parentConfig, {
     showTitles: true,
     subTitle: 'Aachen',
 
+    MATOMO_SITE_ID: process.env.MATOMO_SITE_ID,
+
     socialMedia: {
         title: APP_TITLE,
         description: APP_DESCRIPTION,

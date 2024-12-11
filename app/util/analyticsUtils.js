@@ -24,12 +24,28 @@ export function addAnalyticsEvent(event) {
  * Get code to initialize UI analytics in server side
  *
  * @param {number|string} GTMid Google Tag Manager id
+ * @param {string} MATOMO_URL matomo url
+ * @param {number|string} MATOMO_SITE_UD matomo site id
  *
- * @param MATOMO_URL
  * @return string
  */
-export function getAnalyticsInitCode(GTMid, MATOMO_URL) {
-  if (MATOMO_URL) {
+export function getAnalyticsInitCode(GTMid, MATOMO_URL, MATOMO_SITE_ID) {
+  if (MATOMO_URL && MATOMO_SITE_ID) {
+    return `<!-- Matomo -->
+        <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u='${MATOMO_URL}';
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '${MATOMO_SITE_ID}']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+        </script>
+        <!-- End Matomo Code -->`;
+  } else if (MATOMO_URL) {
     return `<!-- Matomo Tag Manager -->
       <script type="text/javascript">
       var _mtm = _mtm || [];

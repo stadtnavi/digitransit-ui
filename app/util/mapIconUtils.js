@@ -179,8 +179,9 @@ export const getMapIconScale = memoize(
   glfun({
     base: 1,
     stops: [
-      [13, 0.8],
-      [20, 1.6],
+      [7, 0.5],
+      [13, 2.0],
+      [20, 4.8],
     ],
   }),
 );

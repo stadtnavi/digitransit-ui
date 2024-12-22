@@ -37,12 +37,12 @@ const translations = {
     'search-address-or-place': 'Suche anhand von Adresse oder Ortsangabe',
     'search-button-label': 'Suche',
     'search-destination': 'Suche Zielort, Linie or Haltestelle',
-    'search-destination-index': 'Zielort eingeben',
+    'search-destination-index': 'Nach',
     'search-destination-results-but-no-search':
       'Ergebnisse in “Zielort”-Reiter anzeigen',
     'search-no-results': 'Kein Ort gefunden.',
     'search-origin': 'Suche Startort, Linie oder Haltestelle',
-    'search-origin-index': 'Startort eingeben',
+    'search-origin-index': 'Von',
     'search-position': 'Standort ermitteln',
     'search-autosuggest-label-desktop':
       'Adresse, Ort und Haltestellensuche. Navigieren Sie in der Liste mit den Pfeiltasten und wählen Sie mit der Enter-Taste',

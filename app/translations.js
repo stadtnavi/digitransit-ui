@@ -1306,7 +1306,7 @@ const translations = {
     'weather-icon-83': 'Starker Graupel',
     'weather-icon-91': 'Nebel',
     'weather-icon-92': 'Schleier',
-    where: 'Wohin?',
+    where: 'Mitfahrgelegenheit finden',
     yesterday: 'Gestern',
     zone: 'Tarifzone',
     zones: 'Tarifzonen',

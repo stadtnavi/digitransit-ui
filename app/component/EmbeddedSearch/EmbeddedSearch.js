@@ -28,9 +28,9 @@ const translations = {
     'find-car-route': 'Eine PKW-Route finden',
     'find-carpool-route': 'Mitfahrgelegenheit finden',
     'find-walk-route': 'Einen Fußweg finden',
-    'find-route': 'Verbindungssuche',
+    'find-route': 'Verbindung suchen',
     'search-fields-sr-instructions': '',
-    'search-route': 'Verbindung suchen',
+    'search-route': 'Suchen',
   },
   fi: {
     'own-position': 'Nykyinen sijaintisi',

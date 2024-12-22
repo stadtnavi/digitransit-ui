@@ -83,3 +83,75 @@
   /* min-height: 70px; */
   height: 6vw;
 }
+
+// Embedded search -------------------------------------------------
+
+.embedded-seach-container {
+    padding: 10px 0px;
+    .control-panel-container > div:first-of-type /* styles_main_left */ {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: row;
+        column-gap: 10px;
+
+        > div:first-of-type /* styles_autosuggest-panel */{
+          display: flex;
+          column-gap: 10px;
+          height: 40px;
+
+          > div:nth-child(1) /* Header */,
+          > div:nth-child(3) /* rectangle-container */,
+          > div:nth-child(4) /* via-points-container */ {
+            display: none;
+          }
+          > div:nth-child(2) /* origin-input-container */,
+          > div:nth-child(5) /* destination-input-container */ {
+            /* flex: 1 0 100%; */
+            /* orginin/destinat in one row */
+            flex: 1 0 30%;
+
+            input {
+              border: none;
+              border-radius: 0;
+              background-color: #eeeeee;
+              border-bottom: solid 2px black;
+            }
+
+            .origin-input-icon svg {
+              fill: $from-color;
+            }
+            .destination-input-icon svg {
+              fill: $to-color;
+              stroke: #000;
+            }
+          }
+        }
+    }
+    .embedded-search-button-container {
+        margin-top: 0px;
+        .search-button {
+            background-color: $primary-color;
+            font-family: $button-font-family;
+            color: white;
+            border-radius: 0px;
+            font-weight: 500;
+            width: 128px;
+            height: 43px;
+            font-size: $font-size-small;
+        }
+        .brand-logo {
+            display: none;
+        }
+    }
+    @media only screen and (min-width: 600px) {
+
+        .embedded-search-button-container {
+          .brand-logo {
+              display: none;
+              object-fit: contain;
+              height: 40px;
+              max-width: 55%;
+          }
+      }
+    }
+}

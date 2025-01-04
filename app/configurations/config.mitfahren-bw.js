@@ -32,7 +32,7 @@ export default configMerger(parentConfig, {
         OTP: OTP_URL,
         MAP: {
             default: MAP_URL,
-            satellite: 'https://tiles.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
+            satellite: 'https://tiles-eu.stadtnavi.eu/orthophoto/{z}/{x}/{y}.jpg',
             semiTransparent: SEMI_TRANSPARENT_MAP_URL,
             bicycle: BIKE_MAP_URL
         },

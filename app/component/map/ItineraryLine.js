@@ -166,7 +166,10 @@ class ItineraryLine extends React.Component {
               />,
             );
           } else {
-            if (!leg?.interlineWithPreviousLeg) {
+            if (
+              this.context.config.showTransitLegMarkers &&
+              !leg?.interlineWithPreviousLeg
+            ) {
               const isOnDemandTaxi = leg.route.type === 715;
               objs.push(
                 <LegMarker

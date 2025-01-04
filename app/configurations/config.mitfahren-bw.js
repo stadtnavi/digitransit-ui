@@ -234,6 +234,8 @@ export default configMerger(parentConfig, {
                   de: 'P & M Parkplätze'
                 },
                 url: 'https://data.mfdz.de/mobidata-bw/routing/carpool_parkings.json',
+                // TODO: once CORS is resolved, switch to this, automatically updated version
+                // url: 'https://dev.mitfahren-bw.de/carpool_parkings.json',
                 category: 'car',
                 icon: 'icon-icon_bike_repair',
                 isOffByDefault: false,

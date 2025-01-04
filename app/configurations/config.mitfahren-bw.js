@@ -258,11 +258,30 @@ export default configMerger(parentConfig, {
     staticMessagesUrl: STATIC_MESSAGE_URL,
 
     transportModes: {
+        bus: {
+            availableForSelection: false,
+            defaultValue: false,
+        },
+        rail: {
+            availableForSelection: false,
+            defaultValue: false,
+        },
+        subway: {
+            availableForSelection: false,
+            defaultValue: false,
+        },
+        carpool: {
+            availableForSelection: true,
+            defaultValue: true,
+        },
+        funicular: {
+            availableForSelection: false,
+            defaultValue: false,
+        },
         tram: {
             availableForSelection: false,
             defaultValue: false,
         },
-
         ferry: {
             availableForSelection: false,
             defaultValue: false,

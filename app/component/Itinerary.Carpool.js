@@ -93,7 +93,7 @@ const Itinerary = (
       />
     </div>
   );
-
+  const TIME_ROUNDING_INTERVAL = 15 * 60 * 1000;
   return (
     <span role="listitem" className={classes} aria-atomic="true">
       <h3 className="sr-only">
@@ -138,7 +138,15 @@ const Itinerary = (
                 <span className="match-value">99 % Übereinstimmung</span>
               </div>
               <div className="times">
-                Mo – Fr | <LocalTime time={firstDepartureLeg.startTime} /> Uhr
+                Mo – Fr | ca.{' '}
+                <LocalTime
+                  time={
+                    Math.round(
+                      firstDepartureLeg.startTime / TIME_ROUNDING_INTERVAL,
+                    ) * TIME_ROUNDING_INTERVAL
+                  }
+                />{' '}
+                Uhr
               </div>
               <h3 className="exit">{alighting}</h3>
               <div className="target">{destination}</div>

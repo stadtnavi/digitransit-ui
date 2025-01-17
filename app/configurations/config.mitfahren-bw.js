@@ -74,7 +74,7 @@ export default configMerger(parentConfig, {
     logo: 'mitfahren-bw/mfbw-logo-v1-2.svg',
 
     colors: {
-        primary: '#000000',
+        primary: '#2a2623',
         iconColors: {
             'mode-bus': '#ff0000',
             'mode-car': '#007AC9',

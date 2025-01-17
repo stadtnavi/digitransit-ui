@@ -129,6 +129,16 @@ export default configMerger(parentConfig, {
 
     showFavouritesContainer: false,
 
+    mainMenu: {
+        showEmbeddedSearch: false,
+    },
+
+    appBarLink: {
+            name: 'Feedback',
+            href: 'mailto:support@mitfahren-bw.de?subject=Mitfahren-BW: Feedback',
+            target: '_blank'
+    },
+
     menu: {
         copyright: {
             label: `© Mitfahren-BW ${parentConfig.YEAR}`
@@ -143,12 +153,12 @@ export default configMerger(parentConfig, {
             {
                 name: 'imprint',
                 nameEn: 'Imprint',
-                href: 'https://www.nvbw.de/impressum',
+                href: 'https://vm.baden-wuerttemberg.de/de/header-und-footer/impressum',
             },
             {
                 name: 'privacy',
                 nameEn: 'Privacy',
-                href: 'https://www.mobidata-bw.de/pages/datenschutz',
+                href: 'https://vm.baden-wuerttemberg.de/de/header-und-footer/datenschutz',
             },
         ],
     },
@@ -158,8 +168,7 @@ export default configMerger(parentConfig, {
             {
                 header: 'Über diesen Dienst',
                 paragraphs: [
-                    'Mitfahren-BW ist ein Meta-Informationsplattform für Baden-Württemeberg und Umgebung. Dieser Dienst umfasst ÖPNV, Fußwege, Radverkehr, Straßen- und Parkplatzinformationen, Ladeinfrastruktur und Sharing-Angebote. Mobilitätsangebote werden durch intermodales Routing miteinander vernetzt.',
-
+                    'Mitfahren-BW ist ein Meta-Informationsplattform für Baden-Württemeberg und Umgebung. Dieser Dienst ermöglicht die Suche von Mitfahrangeboten verschiedener Anbieter.',
                 ],
             },
             
@@ -176,20 +185,7 @@ export default configMerger(parentConfig, {
             {
                 header: 'About this service',
                 paragraphs: [
-                    'stadtnavi is a travel planning application for Baden-Wurttemberg and its surroundings. This service includes public transport, footpaths, cycling, street and parking information, charging infrastructure and sharing offerings. The mobility offerings are connected through intermodal routing.',
-                    '<a href="https://www.herrenberg.de/stadtluft"><img src="https://www.herrenberg.de/ceasy/resource/?id=4355&predefinedImageSize=rightEditorContent"/></a>',
-                ],
-            },
-            {
-                header: 'Contribute',
-                paragraphs: [
-                    'The city of Herrenberg has developed this app, funded by the Federal Ministry of Transport and Digital Infrastructure (BMVI), as model city. The stadtnavi app is an open source solution and can be used, customized and further developed by other municipalities to meet individual needs (white lable solution). Participation is welcome!',
-                ]
-            },
-            {
-                header: 'Digitransit platform',
-                paragraphs: [
-                    'The Digitransit service platform is an open source routing platform developed by HSL and Traficom. It builds on OpenTripPlanner by Conveyal. Enhancements by Transportkollektiv and MITFAHR|DE|ZENTRALE. All software is open source. Thanks to everybody working on this!',
+                    'Mitfahren-BW is a carpool meta search for Baden-Wurttemberg and its surroundings. This service allows searching carpool offers of various carpooling services.',
                 ],
             },
             {
@@ -233,9 +229,7 @@ export default configMerger(parentConfig, {
                   en: 'Carpool Parkings',
                   de: 'P & M Parkplätze'
                 },
-                url: 'https://data.mfdz.de/mobidata-bw/routing/carpool_parkings.json',
-                // TODO: once CORS is resolved, switch to this, automatically updated version
-                // url: 'https://dev.mitfahren-bw.de/carpool_parkings.json',
+                url: 'https://dev.mitfahren-bw.de/carpool_parkings.json',
                 category: 'car',
                 icon: 'icon-icon_bike_repair',
                 isOffByDefault: false,

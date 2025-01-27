@@ -293,8 +293,8 @@ class DTAutosuggest extends React.Component {
     isMobile: false,
     color: '#007ac9',
     hoverColor: '#0062a1',
-    accessiblePrimaryColor: '#0074be',
-    timeZone: 'Europe/Helsinki',
+    accessiblePrimaryColor: '#2a2623',
+    timeZone: 'Europe/Berlin',
     pathOpts: {
       routesPrefix: 'linjat',
       stopsPrefix: 'pysakit',

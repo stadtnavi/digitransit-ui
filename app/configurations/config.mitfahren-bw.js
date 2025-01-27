@@ -75,6 +75,8 @@ export default configMerger(parentConfig, {
 
     colors: {
         primary: '#2a2623',
+        accessiblePrimary:  '#2a2623',
+        hover: '#524942',
         iconColors: {
             'mode-bus': '#ff0000',
             'mode-car': '#007AC9',

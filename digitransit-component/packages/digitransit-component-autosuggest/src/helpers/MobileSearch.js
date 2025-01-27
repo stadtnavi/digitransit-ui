@@ -138,7 +138,10 @@ const MobileSearch = ({
 
   const renderContent = () => {
     return (
-      <div className={styles['combobox-container']} htmlFor={inputId}>
+      <div
+        className={`${styles['combobox-container']} mfbw-combobox-container`}
+        htmlFor={inputId}
+      >
         <button
           type="button"
           className={styles['combobox-icon']}
@@ -170,7 +173,7 @@ const MobileSearch = ({
               className: cx(
                 `${styles.input} ${styles[id] || ''} ${
                   inputProps.value ? styles.hasValue : ''
-                }`,
+                } mfbw`,
               ),
               autoFocus: true,
             }}

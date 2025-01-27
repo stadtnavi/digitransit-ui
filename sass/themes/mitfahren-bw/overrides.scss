@@ -145,13 +145,39 @@
     }
     @media only screen and (min-width: 600px) {
 
-        .embedded-search-button-container {
-          .brand-logo {
-              display: none;
-              object-fit: contain;
-              height: 40px;
-              max-width: 55%;
-          }
+      .embedded-search-button-container {
+        .brand-logo {
+            display: none;
+            object-fit: contain;
+            height: 40px;
+            max-width: 55%;
+        }
       }
     }
+}
+
+/* Style embedded search origin/destination search */
+.ReactModalPortal {
+  .mfbw-combobox-container {
+    border: 0px;
+    border-bottom: solid var(--bw-border-width-200);
+    background-color: var(--bw-background-subtle);
+    border-radius: var(--bw-border-radius-100) var(--bw-border-radius-100) 0 0;
+    &:focus {
+      outline: var(--focus-border-width) solid var(--focus-border-color);
+      outline-offset: var(--focus-border-offset);
+    }
+    input.mfbw {
+      background-color: var(--bw-background-subtle);
+      color: var(--bw-foreground-primary);
+    }
+  }
+}
+
+/* set background to transparent so it can be place with zIndex */
+section.content {
+  background-color: #00000000;
+}
+body {
+  background: #00000000 !important;
 }

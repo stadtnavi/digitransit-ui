@@ -174,3 +174,7 @@ $carpool-color: #fffc00;
   --focus-border-width:var(--bw-border-width-200);
   --focus-border-offset:var(--bw-space-50)
 }
+
+$font-family: var(--bw-font-family-sans), "Gotham Rounded A","Gotham Rounded B", Arial, Georgia, Serif;
+$font-family-narrow: var(--bw-font-family-sans), 'Roboto Condensed', 'Arial Condensed', arial, georgia,
+  serif;

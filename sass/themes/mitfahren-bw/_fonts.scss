@@ -21,20 +21,20 @@
   --fluid-font-size-5: clamp(2.1773rem, 1.6077rem + 2.8477vw, 3.8147rem);
 }
 
-/* BaWue Sans Web und BaWue Serif Web */
+/* BaWue Sans und BaWue Serif */
 
 /* sans */
 
 /* regular */
 @font-face {
-	font-family: 'BaWue Sans Web';
+	font-family: 'BaWue Sans';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-Regular.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-Regular.woff')  format('woff');
 }
 /* regular italic */
 @font-face {
-	font-family: 'BaWue Sans Web';
+	font-family: 'BaWue Sans';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-RegularItalic.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-RegularItalic.woff')  format('woff');
@@ -42,7 +42,7 @@
 }
 /* semi bold */
 @font-face {
-	font-family: 'BaWue Sans Web';
+	font-family: 'BaWue Sans';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-SemiBold.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-SemiBold.woff')  format('woff');
@@ -50,7 +50,7 @@
 }
 /* semi bold italic */
 @font-face {
-	font-family: 'BaWue Serif Web';
+	font-family: 'BaWue Serif';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-SemiBoldItalic.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-SemiBoldItalic.woff')  format('woff');
@@ -59,7 +59,7 @@
 }
 /* bold */
 @font-face {
-	font-family: 'BaWue Sans Web';
+	font-family: 'BaWue Sans';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-Bold.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-Bold.woff')  format('woff');
@@ -67,7 +67,7 @@
 }
 /* bold italic */
 @font-face {
-	font-family: 'BaWue Sans Web';
+	font-family: 'BaWue Sans';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-BoldItalic.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSansWeb-BoldItalic.woff')  format('woff');
@@ -79,14 +79,14 @@
 
 /*regular */
 @font-face {
-	font-family: 'BaWue Serif Web';
+	font-family: 'BaWue Serif';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSerifWeb-Regular.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSerifWeb-Regular.woff')  format('woff');
 }
 /* bold */
 @font-face {
-	font-family: 'BaWue Serif Web';
+	font-family: 'BaWue Serif';
 	src:
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSerifWeb-Bold.woff2') format('woff2'),
 		url('../../../static/assets/fonts/mitfahren-bw/BaWueSerifWeb-Bold.woff')  format('woff');

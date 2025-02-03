@@ -37,12 +37,12 @@ const Itinerary = (
   }
   const firstDepartureLeg = data.legs.find(isTransitLeg);
   const { stoptimes } = firstDepartureLeg.trip;
-  const origin = stoptimes[0].stop.name;
+  const origin = stoptimes[0].stop.name.split(',')[0];
   const boarding = firstDepartureLeg.from.name;
   const alighting = firstDepartureLeg.to.name;
   const agencyName = firstDepartureLeg.route.agency.name;
   const routeUrl = firstDepartureLeg.route.url;
-  const destination = stoptimes[stoptimes.length - 1].stop.name;
+  const destination = stoptimes[stoptimes.length - 1].stop.name.split(',')[0];
 
   const ariaLabelMessage = intl.formatMessage(
     {

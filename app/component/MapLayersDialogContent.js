@@ -222,21 +222,21 @@ const MapLayersDialogContent = (props, context) => {
       .filter(Boolean);
   };
 
-  const sortLayersByKey = (a, b) => {
-    // Retrieve the order of the layers from the configuration.
-    // Top- and Sub-level category codes are considered.
-    const layerOrder =
-      layerCategories
-        ?.flatMap(category => category.categories || category)
-        .map(category => [
-          category.code,
-          // Retrieve order of sub-categories if they exist
-          ...(category.categories
-            ? category.categories.map(({ code }) => code)
-            : []),
-        ])
-        .flat() || [];
+  // Retrieve the order of the layers from the configuration.
+  // Top- and Sub-level category codes are considered.
+  const layerOrder =
+    layerCategories
+      ?.flatMap(category => category.categories || category)
+      .map(category => [
+        category.code,
+        // Retrieve order of sub-categories if they exist
+        ...(category.categories
+          ? category.categories.map(({ code }) => code)
+          : []),
+      ])
+      .flat() || [];
 
+  const sortLayersByKey = (a, b) => {
     return layerOrder.indexOf(a.key) - layerOrder.indexOf(b.key);
   };
 
@@ -256,6 +256,13 @@ const MapLayersDialogContent = (props, context) => {
   const healthAndSocialServicesLayer = layerCategories?.find(
     ({ code }) => code === 'health_and_social_services',
   );
+
+  const getIconFromLayerConfig = (category, subcategory) => {
+    const layers = layerCategories?.find(({ code }) => code === category);
+    const layer = layers?.categories?.find(({ code }) => code === subcategory);
+    const svg = layer?.properties?.icon?.svg;
+    return svg ? `data:image/svg+xml;base64,${btoa(svg)}` : undefined;
+  };
 
   return (
     <>
@@ -358,6 +365,10 @@ const MapLayersDialogContent = (props, context) => {
                   defaultMessage: 'Bike parks',
                   labelId: 'map-layer-bike-parks', // todo: rename?
                   icon: 'icon-bike-park',
+                  dataURI: getIconFromLayerConfig(
+                    'bike_car',
+                    'parkAndRideForBikes',
+                  ),
                   key: 'parkAndRideForBikes',
                   settings: 'parkAndRideForBikes',
                 },
@@ -377,6 +388,7 @@ const MapLayersDialogContent = (props, context) => {
                     defaultMessage: 'Roadworks',
                     labelId: 'map-layer-roadworks',
                     icon: 'icon-icon_roadworks',
+                    dataURI: getIconFromLayerConfig('bike_car', 'roadworks'),
                     key: 'roadworks',
                     settings: 'roadworks',
                   },
@@ -386,6 +398,10 @@ const MapLayersDialogContent = (props, context) => {
                     defaultMessage: 'Weather stations',
                     labelId: 'map-layer-weather-stations',
                     icon: 'icon-icon_stop_monitor',
+                    dataURI: getIconFromLayerConfig(
+                      'bike_car',
+                      'weatherStations',
+                    ),
                     key: 'weatherStations',
                     settings: 'weatherStations',
                   },
@@ -396,6 +412,7 @@ const MapLayersDialogContent = (props, context) => {
                     defaultMessage: 'Park &amp; ride',
                     labelId: 'map-layer-park-and-ride',
                     icon: 'icon-icon_open_carpark',
+                    dataURI: getIconFromLayerConfig('bike_car', 'parkAndRide'),
                     key: 'parkAndRide',
                     settings: 'parkAndRide',
                   },
@@ -405,6 +422,10 @@ const MapLayersDialogContent = (props, context) => {
                     defaultMessage: 'Charging stations',
                     labelId: 'map-layer-charging-stations',
                     icon: 'icon-icon_stop_car_charging_station',
+                    dataURI: getIconFromLayerConfig(
+                      'bike_car',
+                      'chargingStations',
+                    ),
                     key: 'chargingStations',
                     settings: 'chargingStations',
                   },
@@ -436,6 +457,10 @@ const MapLayersDialogContent = (props, context) => {
                   defaultMessage: 'Rental Bikes',
                   labelId: 'map-layer-sharing-bicycle',
                   icon: 'icon-icon_rental_bicycle',
+                  dataURI: getIconFromLayerConfig(
+                    'sharing_services',
+                    'bicycle',
+                  ),
                   key: 'bicycle',
                   settings: { rental: 'bicycle' },
                 },
@@ -446,6 +471,10 @@ const MapLayersDialogContent = (props, context) => {
                   defaultMessage: 'Rental Scooters',
                   labelId: 'map-layer-sharing-scooter',
                   icon: 'icon-icon_rental_scooter',
+                  dataURI: getIconFromLayerConfig(
+                    'sharing_services',
+                    'scooter',
+                  ),
                   key: 'scooter',
                   settings: { rental: 'scooter' },
                 },
@@ -456,6 +485,10 @@ const MapLayersDialogContent = (props, context) => {
                   defaultMessage: 'Rental Cargo-Bikes',
                   labelId: 'map-layer-sharing-cargo_bicycle',
                   icon: 'icon-icon_rental_cargo_bicycle',
+                  dataURI: getIconFromLayerConfig(
+                    'sharing_services',
+                    'cargo_bicycle',
+                  ),
                   key: 'cargo_bicycle',
                   settings: { rental: 'cargo_bicycle' },
                 },
@@ -466,6 +499,7 @@ const MapLayersDialogContent = (props, context) => {
                   defaultMessage: 'Rental Cars',
                   labelId: 'map-layer-sharing-car',
                   icon: 'icon-icon_rental_car',
+                  dataURI: getIconFromLayerConfig('sharing_services', 'car'),
                   key: 'car',
                   settings: { rental: 'car' },
                 },
@@ -474,6 +508,7 @@ const MapLayersDialogContent = (props, context) => {
                 defaultMessage: 'Carpool stops',
                 labelId: 'map-layer-carpool',
                 icon: 'icon-icon_carpool_stops',
+                dataURI: getIconFromLayerConfig('sharing_services', 'carpool'),
                 key: 'carpool',
                 settings: { stop: 'carpool', terminal: 'carpool' },
               },

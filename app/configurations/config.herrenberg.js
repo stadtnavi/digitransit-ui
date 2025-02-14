@@ -411,19 +411,6 @@ export default configMerger(parentConfig, {
           isOffByDefault: true,
           icon: 'icon-icon_gateways',
         },
-        // Nette Toilette layer
-        {
-          code: 'friendly_toilet',
-          name: {
-            fi: '',
-            en: 'Public Toilets',
-            de: 'Nette Toilette',
-          },
-          url: 'https://data.mfdz.de/hbg/dt-layers/toilet.geojson',
-          category: 'leisure_and_tourism',
-          isOffByDefault: true,
-          icon: 'icon-icon_public_toilets',
-        },
         {
           code: 'sights',
           name: {

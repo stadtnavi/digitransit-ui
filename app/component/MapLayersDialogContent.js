@@ -329,6 +329,7 @@ const MapLayersDialogContent = (props, context) => {
                 defaultMessage: 'Funicular stop',
                 labelId: 'map-layer-stop-funicular',
                 icon: 'icon-icon_stop_funicular',
+                key: 'funicular',
                 settings: { stop: 'funicular' },
               },
               isTransportModeEnabled(transportModes.ferry) && {

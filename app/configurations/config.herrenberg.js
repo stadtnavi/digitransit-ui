@@ -424,6 +424,18 @@ export default configMerger(parentConfig, {
           icon: 'icon-icon_sights',
         },
         {
+          code: 'walking_bus',
+          name: {
+            fi: '',
+            en: 'Walking Bus',
+            de: 'Schulbus auf Beinen',
+          },
+          url: 'https://data.mfdz.de/hbg/dt-layers/walking_bus.geojson',
+          category: 'health_and_social_services',
+          isOffByDefault: true,
+          icon: 'icon-icon_school_bus',
+        },
+        {
           code: 'school_route_map',
           name: {
             fi: '',

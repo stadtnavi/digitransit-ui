@@ -260,7 +260,7 @@ const MapLayersDialogContent = (props, context) => {
   const getIconFromLayerConfig = (category, subcategory) => {
     const layers = layerCategories?.find(({ code }) => code === category);
     const layer = layers?.categories?.find(({ code }) => code === subcategory);
-    const svg = layer?.properties?.icon?.svg;
+    const svg = layer?.properties?.icon?.svg_menu;
     return svg ? `data:image/svg+xml;base64,${btoa(svg)}` : undefined;
   };
 

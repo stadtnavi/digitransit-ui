@@ -122,7 +122,7 @@ class GeoJSON extends React.Component {
     const { config } = this.context;
     const defaultLineStyle = {
       className: 'cursor-grab',
-      color: config.colors.primary,
+      color: config.colors.geojsonLineColor || config.colors.primary,
       weight: 3,
       opacity: 0.8,
     };

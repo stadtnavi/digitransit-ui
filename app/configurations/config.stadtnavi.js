@@ -120,6 +120,7 @@ export default configMerger(parentConfig, {
 
   colors: {
     primary: '#9fc727',
+    geojsonLineColor: '#864A91',
     iconColors: {
       'mode-bus': '#ff0000',
       'mode-car': '#007AC9',

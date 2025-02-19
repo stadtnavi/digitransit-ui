@@ -3,55 +3,26 @@ import PropTypes from 'prop-types';
 import connectToStores from 'fluxible-addons-react/connectToStores';
 import SidebarContainer from './SidebarContainer';
 import SelectedFeatureStore from '../../../store/SelectedFeatureStore';
-
-const getPropertyValueOrDefault = (
-  properties,
-  propertyName,
-  language,
-  defaultValue = undefined,
-) =>
-  (properties &&
-    propertyName &&
-    ((language && properties[`${propertyName}_${language}`]) ||
-      properties[propertyName])) ||
-  defaultValue;
+import Icon from '../../Icon';
+import OSMOpeningHours from '../popups/OSMOpeningHours';
 
 const GeoJsonContent = ({ match, selectedFeature }) => {
-  const { language, lat, lng } = match.location.query;
+  const { lat, lng } = match.location.query;
 
-  const geojsonContent = selectedFeature?.properties?.popupContent;
+  const {
+    name,
+    address,
+    openingHours,
+    openingHoursText,
+    phone,
+    website,
+    popupContent,
+    icon,
+    imageUrl,
+    email,
+  } = selectedFeature?.properties || {};
 
-  const properties = selectedFeature?.properties || match.location.query;
-
-  const header = getPropertyValueOrDefault(properties, 'name', language);
-
-  const unsafeContent = getPropertyValueOrDefault(
-    properties,
-    'content',
-    language,
-  );
-  // use header as fallback, so address won't be undefined
-  const address = getPropertyValueOrDefault(
-    properties,
-    'address',
-    language,
-    header,
-  );
-
-  const city = getPropertyValueOrDefault(properties, 'city', language);
-
-  let description = null;
-  // Only display address field as description if it is a real address + add city if exists.
-  if (address !== header && city) {
-    description = `${address}, ${city}`;
-  } else if (address !== header) {
-    description = address;
-  } else if (city) {
-    description = city;
-  }
-
-  const useDescriptionAsHeader = !header;
-
+  const svg = icon?.svg;
   return (
     <SidebarContainer
       location={
@@ -62,19 +33,87 @@ const GeoJsonContent = ({ match, selectedFeature }) => {
           lon: Number(lng),
         }
       }
-      name={useDescriptionAsHeader ? description : header}
-      description={useDescriptionAsHeader ? '' : description}
+      name={name}
+      dataURI={svg ? `data:image/svg+xml;base64,${btoa(svg)}` : undefined}
+      description=""
     >
-      {geojsonContent ? (
-        <div
-          className="card-text opening-hours"
-          dangerouslySetInnerHTML={{ __html: geojsonContent }}
-        />
-      ) : (
-        unsafeContent && (
-          <div className="card-text opening-hours">{unsafeContent}</div>
-        )
-      )}
+      <div className="scrollable-content-wrapper scroll-target momentum-scroll content">
+        {imageUrl && (
+          <div className="text-light sidebar-info-container">
+            <img src={imageUrl} alt={name} />
+          </div>
+        )}
+        {(address || phone || website || email) && <div className="divider" />}
+        {address && (
+          <div className="text-light sidebar-info-container">
+            <Icon className="sidebar-info-icon" img="icon-icon_place" />
+            <span className="text-alignment">{address}</span>
+            <br />
+            <br />
+          </div>
+        )}
+        {phone && (
+          <div className="text-light sidebar-info-container">
+            <Icon className="sidebar-info-icon" img="icon-icon_phone" />
+            <span className="text-alignment">
+              <a href={`tel:${phone}`}>{phone}</a>
+            </span>
+            <br />
+            <br />
+          </div>
+        )}
+        {website && (
+          <div className="text-light sidebar-info-container">
+            <Icon className="sidebar-info-icon" img="icon-icon_website" />
+            <span className="text-alignment">
+              <a target="_blank" rel="noopener noreferrer" href={website}>
+                {website}
+              </a>
+            </span>
+            <br />
+            <br />
+          </div>
+        )}
+        {email && (
+          <div className="text-light sidebar-info-container">
+            <Icon className="sidebar-info-icon" img="icon-icon_email" />
+            <span className="text-alignment">
+              <a href={`mailto:${email}`}>{email}</a>
+            </span>
+            <br />
+            <br />
+          </div>
+        )}
+        {!openingHoursText && openingHours && (
+          <>
+            <div className="divider" />
+            <div className="text-light sidebar-info-container">
+              <OSMOpeningHours openingHours={openingHours} displayStatus />
+            </div>
+          </>
+        )}
+        {openingHoursText && (
+          <>
+            <div className="divider" />
+            <div className="text-light sidebar-info-container">
+              <Icon className="sidebar-info-icon" img="icon-icon_schedule" />
+              <span
+                className="text-alignment"
+                dangerouslySetInnerHTML={{ __html: openingHoursText }}
+              />
+            </div>
+          </>
+        )}
+        {popupContent && (
+          <>
+            <div className="divider" />
+            <div
+              className="text-light sidebar-info-container"
+              dangerouslySetInnerHTML={{ __html: popupContent }}
+            />
+          </>
+        )}
+      </div>
     </SidebarContainer>
   );
 };

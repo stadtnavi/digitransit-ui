@@ -415,7 +415,7 @@ export default configMerger(parentConfig, {
           code: 'sights',
           name: {
             fi: '',
-            en: 'sights',
+            en: 'Sights',
             de: 'Sehenswürdigkeiten',
           },
           url: 'https://data.mfdz.de/hbg/dt-layers/sights.geojson',

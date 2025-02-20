@@ -5,6 +5,12 @@
 
 .sidebar-card-desktop {
   padding-top: 2.6em;
+  height: 100%;
+  .padding-horizontal-xlarge {
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+  }
 }
 
 .sidebar-card-header {

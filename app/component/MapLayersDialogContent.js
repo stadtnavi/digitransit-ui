@@ -64,26 +64,6 @@ const mapLayersConfigShape = PropTypes.shape({
 });
 
 const MapLayersDialogContent = (props, context) => {
-  MapLayersDialogContent.propTypes = {
-    mapLayers: mapLayerShape.isRequired,
-    layerCategories: PropTypes.array,
-    mapLayerOptions: mapLayerOptionsShape,
-    setOpen: PropTypes.func.isRequired,
-    updateMapLayers: PropTypes.func.isRequired,
-    lang: PropTypes.string.isRequired,
-    mapMode: PropTypes.oneOf(Object.keys(MapMode)),
-    setMapMode: PropTypes.func.isRequired,
-    open: PropTypes.bool.isRequired,
-    geoJson: PropTypes.object,
-  };
-
-  MapLayersDialogContent.defaultProps = {
-    mapLayerOptions: null,
-    layerCategories: [],
-    mapMode: null,
-    geoJson: {},
-  };
-
   const { layerCategories, mapLayers } = props;
 
   const updateSetting = newSetting => {
@@ -631,11 +611,32 @@ const MapLayersDialogContent = (props, context) => {
   );
 };
 
+MapLayersDialogContent.propTypes = {
+  mapLayers: mapLayerShape.isRequired,
+  layerCategories: PropTypes.array,
+  mapLayerOptions: mapLayerOptionsShape,
+  setOpen: PropTypes.func.isRequired,
+  updateMapLayers: PropTypes.func.isRequired,
+  lang: PropTypes.string.isRequired,
+  mapMode: PropTypes.oneOf(Object.keys(MapMode)),
+  setMapMode: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  geoJson: PropTypes.object,
+};
+
+MapLayersDialogContent.defaultProps = {
+  mapLayerOptions: null,
+  layerCategories: [],
+  mapMode: null,
+  geoJson: {},
+};
+
 MapLayersDialogContent.contextTypes = {
   config: PropTypes.object.isRequired,
   intl: intlShape.isRequired,
   router: routerShape.isRequired,
 };
+
 /**
  * Retrieves the list of geojson layers in use from the configuration or
  * the geojson store. If no layers exist in these sources, the

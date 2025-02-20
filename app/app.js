@@ -20,6 +20,7 @@ import RoutingSettingsStore from './store/RoutingSettingsStore';
 import FutureRouteStore from './store/FutureRouteStore';
 import MapModeStore from './store/MapModeStore';
 import SelectedFeatureStore from './store/SelectedFeatureStore';
+import { isBrowser } from './util/browser';
 
 export default config => {
   const app = new Fluxible({
@@ -64,6 +65,12 @@ export default config => {
         plugStoreContext: storeContext => {
           // eslint-disable-next-line no-param-reassign
           storeContext.config = config;
+          const url = new URL(
+            isBrowser ? window.location.href : options.url,
+            'https://server',
+          );
+          // eslint-disable-next-line no-param-reassign
+          storeContext.url = url;
         },
         dehydrate() {
           return {

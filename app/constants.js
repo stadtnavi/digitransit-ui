@@ -95,10 +95,10 @@ export const AlertEntityType = Object.freeze({
 });
 
 export const MapMode = {
-  Default: 'default',
-  Satellite: 'satellite',
-  Bicycle: 'bicycle',
-  OSM: 'osm',
+  Default: 'Default',
+  Satellite: 'Satellite',
+  Bicycle: 'Bicycle',
+  OSM: 'OSM',
 };
 
 export const BicycleParkingFilter = {

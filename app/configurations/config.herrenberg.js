@@ -369,18 +369,6 @@ export default configMerger(parentConfig, {
     // adding assets/geoJson/hb-layers layers
     geoJson: {
       layers: [
-        // bicycleinfrastructure includes repair stations,
-        {
-          code: 'bike_repair',
-          name: {
-            fi: '',
-            en: 'Bicycle service stations',
-            de: 'Radservice-Punkte',
-          },
-          url: 'https://data.mfdz.de/hbg/dt-layers/bicycleinfrastructure.geojson',
-          category: 'bicycle',
-          icon: 'icon-icon_bike_repair',
-        },
         // Bicycle network layer
         {
           code: 'cycle_network',

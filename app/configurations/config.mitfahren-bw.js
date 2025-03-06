@@ -53,6 +53,7 @@ export default configMerger(parentConfig, {
         PELIAS_PLACE: `${
             process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL
         }/place`,
+        FARES: undefined,
     },
 
     map: {

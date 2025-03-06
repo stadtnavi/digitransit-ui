@@ -40,10 +40,10 @@ const Itinerary = (
   const origin = stoptimes[0].stop.name.split(',')[0];
   const boarding = firstDepartureLeg.from.name;
   const alighting = firstDepartureLeg.to.name;
-  const agencyName = firstDepartureLeg.route.agency.name;
-  const routeUrl = firstDepartureLeg.route.url;
+  const agencyName = firstDepartureLeg?.route?.agency?.name;
+  const routeUrl = firstDepartureLeg?.route?.url;
+  const verbalSchedule = firstDepartureLeg?.route?.desc;
   const destination = stoptimes[stoptimes.length - 1].stop.name.split(',')[0];
-
   const ariaLabelMessage = intl.formatMessage(
     {
       id: 'itinerary-page.show-details-label',
@@ -138,7 +138,7 @@ const Itinerary = (
                 <span className="match-value">99 % Übereinstimmung</span>
               </div>
               <div className="times">
-                Mo – Fr | ca.{' '}
+                {verbalSchedule} | ca.{' '}
                 <LocalTime
                   time={
                     Math.round(

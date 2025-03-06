@@ -12,7 +12,7 @@ import {
 } from '../../util/planParamUtil';
 
 import Icon from '../Icon';
-//import Itinerary from '../Itinerary';
+// import Itinerary from '../Itinerary';
 import CarpoolItinerary from '../Itinerary.Carpool';
 import { isBrowser } from '../../util/browser';
 import { getZones } from '../../util/legUtils';
@@ -376,6 +376,7 @@ const containerComponent = createFragmentContainer(ItineraryList, {
           shortName
           type
           color
+          desc
           agency {
             name
           }

@@ -160,7 +160,6 @@ const Itinerary = (
                 >
                   {agencyName}
                 </a>
-                <span className="info" />
               </div>
             </div>
             {mobile(breakpoint) !== true && (

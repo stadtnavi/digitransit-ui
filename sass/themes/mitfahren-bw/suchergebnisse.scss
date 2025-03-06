@@ -39,12 +39,13 @@ body {
      font-size: 1rem;
      line-height: var(--bw-leading-compact);
      color: var(--bw-color-foreground-primary);
+     font-weight: var(--bw-font-weight-regular);
 }
  .suchcontainer {
      margin: var(--margin-horizontal);
 }
 .itinerary-summary-header.einzelergebnis {
-    width: 30vw;
+    width: 100%;
     border-top: 1px solid var(--bw-color-background-primary);
     border-right: 1px solid var(--bw-color-background-primary);
     border-left: 1px solid var(--bw-color-background-primary);
@@ -66,18 +67,19 @@ body {
     }
     .start, .target {
         padding: 0 1.4em;
-        margin: 1rem;
+        margin: 0.5rem 0 0.25rem 4rem;
     }
     .boarding, .exit {
         padding: 0 1.4em;
-        margin: 0.7rem 2rem;
+        margin: 0.25rem 0 0.25rem 1rem;
     }
+
     .times {
          padding: 0 1.8em;
-         margin: 0.7rem 4rem;
+         margin: 0 0 0.5rem 4rem;
     }
     .match {
-        margin: 1rem 4rem;
+        margin: 0.5rem 0 0.5rem 4rem;
     }
 
     .start::before, .boarding::before, .times::before, .exit::before, .target::before, .info::before {
@@ -97,9 +99,6 @@ body {
     .boarding::before {
          top: 0;
          background-image: var(--mfbw-boarding);
-    }
-    .match-value {
-         font-weight: var(--bw-font-weight-bold);
     }
     .match-value::after {
         font-weight: var(--bw-font-weight-regular);
@@ -168,6 +167,19 @@ body {
     }
     .portal {
      text-align: right;
-     margin: 1.5vw;
+     margin: 0.5rem 0 0.5rem 0;
     }
+}
+
+.itinerary-summary-row .itinerary-summary-header {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+//?
+.summary-list-container {
+  line-height: var(--bw-leading-compact);
+}
+.itinerary-summary-row .summary-clickable-area {
+  flex-direction: column;
 }

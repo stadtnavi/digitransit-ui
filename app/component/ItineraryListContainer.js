@@ -260,7 +260,9 @@ class ItineraryListContainer extends React.Component {
         location.query.time &&
         moment.unix(location.query.time).valueOf()) ||
       currentTime;
-    const disableButtons = !itineraries || itineraries.length === 0;
+    // const disableButtons = !itineraries || itineraries.length === 0;
+    // mitfahren-bw sorts by match rate, not time, so we disable for now
+    const disableButtons = true;
     const arriveBy = this.context.match.location.query.arriveBy === 'true';
     return (
       <div className="summary">

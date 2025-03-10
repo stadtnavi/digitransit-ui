@@ -181,3 +181,32 @@ section.content {
 body {
   background: #00000000 !important;
 }
+
+.itinerary-summary-row {
+  // Allow line break
+  white-space: normal;
+  // Use padding at right hand side as well
+  &.bp-large {
+    padding: 0 60px 0 60px;
+    .summary-clickable-area {
+      // Claim space of action arrow
+      max-width: 100%
+    }
+    .action-arrow-click-area {
+      // Hide action arrow
+      display: none;
+    }
+  }
+}
+
+.summary-navigation-container {
+  padding: 0 0 1em 0;
+}
+
+.summary-list-items {
+  margin-top: 10px;
+}
+
+.desktop .itinerary-summary-row::before {
+  height: 100%;
+}

@@ -72,7 +72,7 @@ export default configMerger(parentConfig, {
     },
 
     //textLogo: true,
-    logo: 'mitfahren-bw/mfbw-logo-v1-2.svg',
+    logo: 'mitfahren-bw/mfbw-logo-v1-3.svg',
 
     colors: {
         primary: '#2a2623',

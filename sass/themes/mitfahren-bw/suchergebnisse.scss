@@ -183,3 +183,10 @@ body {
 .itinerary-summary-row .summary-clickable-area {
   flex-direction: column;
 }
+
+// For now, we disable datetimepicker. Once more results can be expected,
+// it should be re-introduced, at first only allowing coarse granular filtern
+// e.g. by weekday or morning/afternoon/evening, later fine grained.
+.front-page .datetimepicker-container, .quicksettings-container .datetimepicker-container {
+    display: none;
+}

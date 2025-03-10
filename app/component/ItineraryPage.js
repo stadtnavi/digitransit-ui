@@ -1209,7 +1209,9 @@ class ItineraryPage extends React.Component {
       (!error && props.loading);
 
     const showRelaxedPlanNotifier = this.selectedPlan === state.relaxedPlan;
+    // Mitfahren-BW: no settings notification
     const settingsNotification =
+      false &&
       !showRelaxedPlanNotifier && // show only on notifier about limitations
       settingsLimitRouting(this.context.config) &&
       compareItineraries(

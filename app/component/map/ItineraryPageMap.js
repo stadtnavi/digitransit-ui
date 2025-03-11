@@ -33,6 +33,7 @@ function ItineraryPageMap(
       <VehicleMarkerContainer key="vehicles" useLargeIcon topics={topics} />,
     );
   }
+  /* Only show active itinerary
   if (!showActive) {
     itineraries.forEach((itinerary, i) => {
       if (i !== activeIndex) {
@@ -47,6 +48,7 @@ function ItineraryPageMap(
       }
     });
   }
+  */
   if (activeIndex < itineraries.length) {
     leafletObjs.push(
       <ItineraryLine

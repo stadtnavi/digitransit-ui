@@ -63,6 +63,7 @@ class ItineraryListContainer extends React.Component {
     loadingMoreItineraries: PropTypes.string,
     driving: PropTypes.bool,
     onlyHasWalkingItineraries: PropTypes.bool,
+    dontShowItineraryDetails: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -79,6 +80,7 @@ class ItineraryListContainer extends React.Component {
     separatorPosition: undefined,
     settingsNotification: false,
     onlyHasWalkingItineraries: false,
+    dontShowItineraryDetails: true,
   };
 
   static contextTypes = {
@@ -128,6 +130,9 @@ class ItineraryListContainer extends React.Component {
   }
 
   onSelectImmediately = index => {
+    if (this.props.dontShowItineraryDetails) {
+      return;
+    }
     const subpath = this.getSubPath('/');
     // eslint-disable-next-line compat/compat
     const momentumScroll = document.getElementsByClassName(

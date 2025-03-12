@@ -62,6 +62,70 @@ export default configMerger(parentConfig, {
                en: "https://stuttgart.stadtmobil.de/"
              }
            },
+           stadtmobil_karlsruhe: {
+             icon: "brand_stadtmobil",
+             operator: "stadtmobil",
+             name: {
+               de: "Stadtmobil Karlsruhe",
+               en: "Stadtmobil Karlsruhe"
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://karlsruhe.stadtmobil.de/",
+               en: "https://karlsruhe.stadtmobil.de/"
+             }
+           },
+           flinkster_carsharing: {
+             icon: "brand_flinkster",
+             operator: "flinkster",
+             name: {
+               de: "Flinkster",
+               en: "Flinkster"
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://www.flinkster.de/de/start",
+               en: "https://www.flinkster.de/en/home"
+             }
+           },
+           oekostadt_renningen: {
+             icon: "brand_stadtmobil",
+             operator: "stadtmobil",
+             name: {
+               de: "Ökostadt Renningen e.V.",
+               en: "Ökostadt Renningen e.V."
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://carsharing-renningen.de/",
+               en: "https://carsharing-renningen.de/"
+             }
+           },
+           "teilauto_neckar-alb": {
+             icon: "brand_stadtmobil",
+             operator: "stadtmobil",
+             name: {
+               de: "Teilauto Neckar-Alb",
+               en: "Teilauto Neckar-Alb"
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://www.teilauto-neckar-alb.de/",
+               en: "https://www.teilauto-neckar-alb.de/"
+             }
+           },
            regiorad_stuttgart: {
              icon: "brand_regiorad",
              operator: "regiorad",
@@ -107,6 +171,22 @@ export default configMerger(parentConfig, {
              url: {
                de: "https://www.bolt.eu/",
                en: "https://www.bolt.eu/"
+             }
+           },
+           zeo_bruchsal: {
+             icon: "brand_zeus",
+             operator: "other",
+             name: {
+               de: "Zeo Bruchsal",
+               en: "Zeo Bruchsal"
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://www.zeo-carsharing.de/",
+               en: "https://www.zeo-carsharing.de/"
              }
            },
            zeus_ludwigsburg: {
@@ -157,57 +237,106 @@ export default configMerger(parentConfig, {
                en: "https://zeusscooters.com"
              }
            },
-           voi_karlsruhe: {
+           voi_de: {
              icon: "brand_voi",
              operator: "voi",
              name: {
-               de: "Voi Scooter Karlsruhe",
-               en: "Voi Scooter Karlsruhe"
+               de: "Voi Scooter",
+               en: "Voi Scooter"
              },
              type: "scooter",
              form_factors: ['scooter'],
              hideCode: true,
              enabled: true
            },
-            'tier_ludwigsburg': {
-                icon: 'tier_scooter',
+           dott_boblingen: {
+                icon: 'brand_dott',
+                operator: "dott",
                 name: {
-                    de: 'TIER Ludwigsburg',
-                    en: 'TIER Ludwigsburg',
+                    de: 'Dott Böblingen',
+                    en: 'Dott Böblingen',
                 },
                 type: 'scooter',
                 url: {
-                    de: 'https://www.tier.app/de',
-                    en: 'https://www.tier.app/',
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
                 },
                 visibleInSettingsUi: true,
                 hideCode: true,
                 enabled: true,
             },
-            'taxi': {
-                icon: 'brand_taxi',
-                operator: 'taxi',
+           dott_ludwigsburg: {
+                icon: 'brand_dott',
+                operator: "dott",
                 name: {
-                    de: 'Taxi',
-                    en: 'Taxi',
+                    de: 'Dott Ludwigsburg',
+                    en: 'Dott Ludwigsburg',
                 },
-                type: 'taxi',
-                form_factors: ['car'],
+                type: 'scooter',
+                url: {
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
+                },
+                visibleInSettingsUi: true,
                 hideCode: true,
                 enabled: true,
-                season: {
-                    // currently not enabled for routing, but for display
-                    start: new Date(new Date().getFullYear()+10, 0, 1),
-                    end: new Date(new Date().getFullYear()+10, 11, 31),
-                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
-                },
             },
-            "cargo-bike": {
+            dott_reutlingen: {
+                icon: 'brand_dott',
+                operator: "dott",
+                name: {
+                    de: 'Dott Reutlingen',
+                    en: 'Dott Reutlingen',
+                },
+                type: 'scooter',
+                form_factors: ['scooter', 'bicycle'],
+                url: {
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
+                },
+                visibleInSettingsUi: true,
+                hideCode: true,
+                enabled: true,
+            },
+            dott_stuttgart: {
+                icon: 'brand_dott',
+                operator: "dott",
+                name: {
+                    de: 'Dott Stuttgart',
+                    en: 'Dott Stuttgart',
+                },
+                type: 'scooter',
+                url: {
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
+                },
+                visibleInSettingsUi: true,
+                hideCode: true,
+                enabled: true,
+            },
+            dott_tubingen: {
+                icon: 'brand_dott',
+                operator: "dott",
+                name: {
+                    de: 'Dott Tübingen',
+                    en: 'Dott Tübingen',
+                },
+                type: 'scooter',
+                form_factors: ['scooter', 'bicycle'],
+                url: {
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
+                },
+                visibleInSettingsUi: true,
+                hideCode: true,
+                enabled: true,
+            },
+            "de.stadtnavi.gbfs.alf": {
                 icon: 'cargobike',
                 operator: 'other',
                 name: {
-                    de: 'Freie Lastenräder Herrenberg',
-                    en: 'Free cargo bikes Herrenberg',
+                    de: 'Lastenrad Alf',
+                    en: 'Cargobike Alf',
                 },
                 type: 'cargo_bicycle',
                 enabled: true,
@@ -218,12 +347,44 @@ export default configMerger(parentConfig, {
                     preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
                 },
             },
-            "de.openbikebox.stadt-herrenberg": {
+            "de.stadtnavi.gbfs.gueltstein": {
                 icon: 'cargobike',
                 operator: 'other',
                 name: {
-                    de: 'Lastenrad Herrenberg',
-                    en: 'Cargo bike Herrenberg',
+                    de: 'Lastenrad Gültstein-Mobil',
+                    en: 'Cargobike Gültstein-Mobil',
+                },
+                type: 'cargo_bicycle',
+                enabled: true,
+                season: {
+                    // currently not enabled for routing, but for display
+                    start: new Date(new Date().getFullYear()+10, 0, 1),
+                    end: new Date(new Date().getFullYear()+10, 11, 31),
+                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+                },
+            },
+            "de.stadtnavi.gbfs.stadtrad": {
+                icon: 'cargobike',
+                operator: 'other',
+                name: {
+                    de: 'stadtRad der Stadt Herrenberg',
+                    en: 'City of Herrberg\'s StadtRad',
+                },
+                type: 'cargo_bicycle',
+                enabled: true,
+                season: {
+                    // currently not enabled for routing, but for display
+                    start: new Date(new Date().getFullYear()+10, 0, 1),
+                    end: new Date(new Date().getFullYear()+10, 11, 31),
+                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+                },
+            },
+            "de.stadtnavi.gbfs.bananologen": {
+                icon: 'cargobike',
+                operator: 'other',
+                name: {
+                    de: 'Lastenrad Bananologen',
+                    en: 'Cargobike Bananologen',
                 },
                 type: 'cargo_bicycle',
                 enabled: true,

@@ -220,6 +220,7 @@ export default configMerger(parentConfig, {
         icon: 'brand_taxi',
         name: {
           de: 'Taxi',
+          en: 'Taxi',
         },
         colors: {
           background: '#FFCD00',
@@ -229,6 +230,7 @@ export default configMerger(parentConfig, {
         icon: 'brand_deer',
         name: {
           de: 'deer',
+          en: 'deer',
         },
         url: {
           de: 'https://www.deer-carsharing.de/',
@@ -237,10 +239,25 @@ export default configMerger(parentConfig, {
           background: '#3C8325',
         },
       },
+      flinkster: {
+        icon: 'brand_flinkster',
+        name: {
+          de: 'Flinkster',
+          en: 'Flinkster',
+        },
+        url: {
+          de: "https://www.flinkster.de/de/start",
+          en: "https://www.flinkster.de/en/home"
+        },
+        colors: {
+          background: '#D50F0F',
+        },
+      },
       bolt: {
         icon: 'brand_bolt',
         name: {
           de: 'bolt',
+          en: 'bolt',
         },
         colors: {
           background: '#30D287',
@@ -250,9 +267,20 @@ export default configMerger(parentConfig, {
         icon: 'brand_voi',
         name: {
           de: 'VOI',
+          en: 'VOI',
         },
         colors: {
           background: '#F26961',
+        },
+      },
+      dott: {
+        icon: 'brand_dott',
+        name: {
+          de: 'dott',
+          en: 'dott',
+        },
+        colors: {
+          background: '#009DDB',
         },
       },
 
@@ -260,6 +288,7 @@ export default configMerger(parentConfig, {
         icon: 'brand_regiorad',
         name: {
           de: 'RegioRad',
+          en: 'RegioRad',
         },
         colors: {
           background: '#009fe4',
@@ -269,6 +298,7 @@ export default configMerger(parentConfig, {
         icon: 'brand_stadtmobil',
         name: {
           de: 'stadtmobil',
+          en: 'stadtmobil',
         },
         colors: {
           background: '#FF8A36',
@@ -288,6 +318,7 @@ export default configMerger(parentConfig, {
         icon: 'brand_other',
         name: {
           de: 'Weitere Anbieter',
+          en: 'Other Operators',
         },
         colors: {
           background: '#C84674',

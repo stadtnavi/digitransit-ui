@@ -44,7 +44,7 @@ export default configMerger(parentConfig, {
     },
     STOP_MAP: `${API_URL}/otp/routers/default/vectorTiles/stops/`,
     PARK_AND_RIDE_MAP: `${API_URL}/otp/routers/default/vectorTiles/parking/`,
-    ROADWORKS_MAP: `${MOBIDATA_BASE_URL}geoserver/gwc/service/tms/1.0.0/MobiData-BW:roadworks@WebMercatorQuadx2@pbf/{z}/{x}/{-y}.pbf`,
+    ROADWORKS_MAP: `${MOBIDATA_BASE_URL}geoserver/gwc/service/tms/1.0.0/MobiData-BW:roadworks@WebMercatorQuad@pbf/{z}/{x}/{-y}.pbf`,
     RENTAL_STATION_MAP: `${API_URL}/otp/routers/default/vectorTiles/rentalStations/`,
     RENTAL_VEHICLE_MAP: `${API_URL}/otp/routers/default/vectorTiles/rentalVehicles/`,
     REALTIME_RENTAL_STATION_MAP: `${API_URL}/otp/routers/default/vectorTiles/realtimeRentalStations/`,

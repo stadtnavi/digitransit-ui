@@ -91,22 +91,21 @@ class BikeRentalStations {
                 // TODO use feedScopedId here
                 feature.properties.id = getIdWithoutFeed(feature.properties.id);
 
-                this.features.push(pick(feature, ['geom', 'properties']));
+                if (
+                  this.shouldShowStation(
+                    feature.properties.id,
+                    feature.properties.network,
+                    feature.properties.formFactors ||
+                      feature.properties.formFactor ||
+                      'bicycle',
+                  )
+                ) {
+                  this.features.push(pick(feature, ['geom', 'properties']));
+                }
               }
             }
 
-            if (
-              this.features.length === 0 ||
-              !this.features.some(feature => {
-                return this.shouldShowStation(
-                  feature.properties.id,
-                  feature.properties.network,
-                  feature.properties.formFactors ||
-                    feature.properties.formFactor ||
-                    'bicycle',
-                );
-              })
-            ) {
+            if (this.features.length === 0) {
               this.canHaveStationUpdates = false;
             } else {
               // if zoomed out and there is a highlighted station,
@@ -234,6 +233,13 @@ class BikeRentalStations {
       !this.rentalLayers ||
       formFactors
         .split(',')
+        // PATCH: workaround for https://github.com/opentripplanner/OpenTripPlanner/issues/6532
+        // if station has more than one formfactor and includes CAR, we filter out bicycle
+        .filter(formFactor =>
+          formFactors.indexOf(',') > 0 && formFactors.indexOf('CAR') >= 0
+            ? formFactor !== 'BICYCLE'
+            : true,
+        )
         .some(formFactor => this.rentalLayers[formFactor.toLowerCase()])
     );
   };

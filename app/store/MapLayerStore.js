@@ -117,6 +117,9 @@ class MapLayerStore extends Store {
 
   updateMapLayers = mapLayers => {
     this.mapLayers = defaultsDeep(cloneDeep(mapLayers), this.mapLayers);
+    this.mapLayers.citybike = Object.values(this.mapLayers.rental || {}).some(
+      v => v === true,
+    );
     setMapLayerSettings({ ...this.mapLayers });
     this.emitChange();
   };

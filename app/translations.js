@@ -904,7 +904,8 @@ const translations = {
     'no-route-end-date-not-in-range':
       'Der aktuelle Fahrplan enthält keine späteren Abfahrten.',
     'no-route-msg':
-      'Wir konnten leider keine Reisevorschläge für diese Strecke finden. Bitte versuchen Sie den Abfahrts- oder Zielort zu ändern.',
+      'Wir konnten leider keine Mitfahrangebote für diese Strecke finden. Vielleicht möchten Sie bei einer der Mitfahrplattformen ein',
+    'publish-carpool-request': 'Gesuch oder Angebot veröffentlichen?',
     'no-route-msg-with-changes':
       'Leider wurden keine Reiseoptionen zu Ihrer Anfrage gefunden. Passen Sie Ihre Einstellungen, Abfahrt- oder Zielort an.',
     'book-locker': 'Stellplatz buchen',

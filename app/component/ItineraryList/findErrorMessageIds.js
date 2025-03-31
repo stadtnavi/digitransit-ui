@@ -210,7 +210,7 @@ const findQueryError = (query, queryContext) => {
   }
 
   // todo: re-add no-route-msg? or remove it from errorCardProperties()
-  return undefined;
+  return 'no-route-msg';
 };
 
 /**

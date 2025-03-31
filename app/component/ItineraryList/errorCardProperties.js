@@ -7,6 +7,7 @@ import {
 import NationalServiceLink from './NationalServiceLink';
 import PastLink from './PastLink';
 import ChangeDepartureTimeLink from './ChangeDepartureTimeLink';
+import PublishCarpoolOfferLink from './PublishCarpoolOfferLink';
 
 const info = { iconType: ICON_TYPE_INFO, iconImg: ICON_INFO };
 const caution = { iconImg: ICON_CAUTION, iconType: ICON_TYPE_CAUTION };
@@ -197,6 +198,7 @@ const errorCardProps = [
     id: 'no-route-msg',
     props: {
       bodyId: 'no-route-msg',
+      LinkComponent: PublishCarpoolOfferLink,
       ...caution,
     },
   },

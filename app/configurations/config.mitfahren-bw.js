@@ -130,7 +130,12 @@ export default configMerger(parentConfig, {
         lon: 9.177739,
     },
 
+    // Not other suggestions than carpool
+    suggestBikeMaxDistance: 0,
+    suggestWalkMaxDistance: 0,
     showFavouritesContainer: false,
+    showBikeAndPublicItineraries: false,
+    showBikeAndParkItineraries: false,
 
     mainMenu: {
         showEmbeddedSearch: false,

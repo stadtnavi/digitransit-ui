@@ -227,6 +227,7 @@ const Itinerary = (
   { intl, intl: { formatMessage }, config },
 ) => {
   const isTransitLeg = leg => leg.transitLeg;
+  const isRentedVehicleLeg = leg => leg.rentedBike;
   const isLegOnFoot = leg => leg.mode === 'WALK' || leg.mode === 'BICYCLE_WALK';
   const usingOwnBicycle = data.legs.some(
     leg => getLegMode(leg) === 'BICYCLE' && leg.rentedBike === false,
@@ -385,7 +386,8 @@ const Itinerary = (
     } else if (
       (leg.mode === 'CITYBIKE' ||
         leg.mode === 'BICYCLE' ||
-        leg.mode === 'SCOOTER') &&
+        leg.mode === 'SCOOTER' ||
+        leg.mode === 'CAR') &&
       leg.rentedBike
     ) {
       const bikingTime = Math.floor((leg.endTime - leg.startTime) / 1000 / 60);
@@ -594,7 +596,7 @@ const Itinerary = (
               firstDeparture.from.bikeRentalStation.networks[0],
             ) !== BIKEAVL_UNKNOWN && (
               <FormattedMessage
-                id="bikes-available"
+                id={`${firstDeparture.mode.toLowerCase()}-availability`}
                 values={{
                   amount: firstDeparture.from.bikeRentalStation.bikesAvailable,
                 }}
@@ -632,7 +634,41 @@ const Itinerary = (
       );
     }
   } else {
-    firstLegStartTime = (
+    firstDeparture = compressedLegs.find(isRentedVehicleLeg);
+    firstLegStartTime = firstDeparture?.rentedBike ? (
+      <div
+        className={cx('itinerary-first-leg-start-time', {
+          small: breakpoint !== 'large',
+        })}
+      >
+        <FormattedMessage
+          id="itinerary-summary-row.first-leg-start-time-citybike"
+          values={{
+            firstDepartureTime: (
+              <span
+                className={cx('time', { realtime: firstDeparture.realTime })}
+              >
+                <LocalTime time={firstDeparture.startTime} />
+              </span>
+            ),
+            firstDepartureStop: firstDeparture.from.name,
+          }}
+        />
+        <div>
+          {getCitybikeCapacity(
+            config,
+            firstDeparture.from.bikeRentalStation.networks[0],
+          ) !== BIKEAVL_UNKNOWN && (
+            <FormattedMessage
+              id={`${firstDeparture.mode.toLowerCase()}-availability`}
+              values={{
+                amount: firstDeparture.from.bikeRentalStation.bikesAvailable,
+              }}
+            />
+          )}
+        </div>
+      </div>
+    ) : (
       <div
         className={cx('itinerary-first-leg-start-time', {
           small: breakpoint !== 'large',

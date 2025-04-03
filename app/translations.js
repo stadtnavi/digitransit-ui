@@ -580,7 +580,7 @@ const translations = {
     'choose-stop': 'Option auswählen',
     'choose-stop-or-vehicle': 'Fahrzeug oder Haltestelle auswählen',
     'choose-vehicle': 'Fahrzeug auswählen',
-    'direction': 'Ri. ',
+    'direction': 'Richtung ',
     'position-estimated': 'Position geschätzt. Keine aktuellen Positionsinformationen verfügbar.',
     citybike: 'Sharing-Angebote',
     'citybike-buy-season': 'Ticket für Tag, Monat oder Jahr kaufen',

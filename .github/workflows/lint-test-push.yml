@@ -230,7 +230,7 @@ jobs:
           yarn run relay
 
       - name: Run unit tests
-        run: yarn run test-unit
+        run: yarn run test-unit --no-experimental-detect-module
 
   docker-push:
     # Because we use one full CI run for a deployment of *each* instance (i.e. n deployments for n instances),

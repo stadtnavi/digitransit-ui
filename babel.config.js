@@ -24,9 +24,4 @@ module.exports = {
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-proposal-json-strings',
   ],
-  env: {
-    test: {
-      plugins: ['istanbul'],
-    },
-  },
 };

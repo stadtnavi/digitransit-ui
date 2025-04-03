@@ -587,6 +587,7 @@ export default configMerger(parentConfig, {
 
   separatedParkAndRideSwitch: false,
   showCarpoolOfferButton: true,
+  showNoRouteWarnings: false,
   showTicketInformation: true,
   showTicketPrice: true,
   availableTickets: { hbg: {} },

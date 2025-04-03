@@ -140,7 +140,7 @@ export const mapDefaultNetworkProperties = (
 
 export const getCitybikeCapacity = (config, network = undefined) => {
   return (
-    config.cityBike?.networks[network]?.capacity || config.cityBike.capacity
+    config.cityBike?.networks?.[network]?.capacity || config.cityBike.capacity
   );
 };
 /**

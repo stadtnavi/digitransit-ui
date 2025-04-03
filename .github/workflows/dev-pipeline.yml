@@ -172,7 +172,7 @@ jobs:
           yarn run relay
 
       - name: Run unit tests
-        run: yarn run test-unit
+        run: yarn run test-unit --no-experimental-detect-module
 
   publish-npm:
     if: github.ref == 'refs/heads/v3'

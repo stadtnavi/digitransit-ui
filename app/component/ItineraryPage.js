@@ -236,7 +236,7 @@ class ItineraryPage extends React.Component {
         if (this.state.carPlan?.itineraries?.length) {
           [this.carLeg] = this.state.carPlan.itineraries[0].legs;
         }
-        return this.state.carPlan;
+        return this.state.carAndCarRentalPlan;
       case streetHash.parkAndRide:
         if (this.state.parkRidePlan?.itineraries?.length) {
           [this.carLeg] = this.state.parkRidePlan.itineraries[0].legs;
@@ -307,6 +307,15 @@ class ItineraryPage extends React.Component {
           3,
         );
 
+        const carAndCarRentalPlan = {
+          itineraries: [
+            ...(result.carPlan?.itineraries || []),
+            ...(result.carRentalPlan?.itineraries || []).filter(itinerary =>
+              itinerary.legs.some(l => l.rentedBike),
+            ),
+          ],
+        };
+
         const bikePlan = {
           itineraries: filterItineraries(
             [
@@ -337,7 +346,7 @@ class ItineraryPage extends React.Component {
             },
             scooterRentAndPublicPlan: result.scooterRentAndPublicPlan,
             carPlan: result.carPlan,
-            carRentalPlan: result.carRentalPlan,
+            carAndCarRentalPlan,
             parkRidePlan,
             onDemandTaxiPlan: result.onDemandTaxiPlan,
           },
@@ -931,6 +940,7 @@ class ItineraryPage extends React.Component {
     const subPath = [
       streetHash.bikeAndVehicle,
       streetHash.parkAndRide,
+      streetHash.car,
     ].includes(hash)
       ? `/${hash}`
       : '';
@@ -1149,7 +1159,6 @@ class ItineraryPage extends React.Component {
       bikeRentAndPublicPlan,
       bikeParkPlan,
       scooterRentAndPublicPlan,
-      carRentalPlan,
       onDemandTaxiPlan,
     } = state;
     const { config } = context;
@@ -1353,7 +1362,6 @@ class ItineraryPage extends React.Component {
       parkRidePlan,
       scooterRentAndPublicPlan,
       carPlan: settings.includeCarSuggestions ? carPlan : undefined,
-      carRentalPlan,
       onDemandTaxiPlan,
       loading: loading || state.loadingAlt || state.loadingWeather,
       showWalkOptionButton,

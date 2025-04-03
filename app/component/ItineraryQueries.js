@@ -207,6 +207,7 @@ export const walkAndBikeQuery = graphql`
     $showBikeRentAndPublicItineraries: Boolean!
     $showBikeAndParkItineraries: Boolean!
     $shouldMakeScooterQuery: Boolean!
+    $shouldMakeCarRentalQuery: Boolean!
     $bikeAndPublicModes: [TransportMode!]
     $bikeRentAndPublicModes: [TransportMode!]
     $scooterRentAndPublicModes: [TransportMode!]
@@ -714,7 +715,7 @@ export const walkAndBikeQuery = graphql`
       unpreferred: $unpreferred
       allowedVehicleRentalNetworks: $allowedVehicleRentalNetworks
       locale: $locale
-    ) @include(if: $shouldMakeCarQuery) {
+    ) @include(if: $shouldMakeCarRentalQuery) {
       ...ItineraryListContainer_plan
       ...ItineraryDetails_plan
       itineraries {

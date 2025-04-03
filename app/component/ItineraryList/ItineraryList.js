@@ -154,23 +154,6 @@ function ItineraryList(
     return (
       <>
         <div className="summary-list-container" role="list">
-          {showAlternativePlan && (
-            <div
-              className={cx(
-                'flex-horizontal',
-                'summary-notification',
-                'show-alternatives',
-              )}
-            >
-              <Icon className="icon-icon_settings" img="icon-icon_settings" />
-              <div>
-                <FormattedMessage
-                  id="no-route-showing-alternative-options"
-                  defaultMessage="No routes with current settings found. Here are some alternative options:"
-                />
-              </div>
-            </div>
-          )}
           {loadingMoreItineraries === 'top' && (
             <div className="summary-list-spinner-container">
               <Loading />
@@ -199,34 +182,40 @@ function ItineraryList(
             />
           )}
         </div>
-        {hasNoTransitItineraries && !showAlternativePlan && (
-          <div className="summary-no-route-found" style={{ marginTop: 0 }}>
-            <div
-              className={cx('flex-horizontal', 'summary-notification', 'info')}
-            >
-              <Icon
-                className={cx('no-route-icon', 'info')}
-                img="icon-icon_info"
-                color="#0074be"
-              />
-              <div>
-                <div className="in-the-past">
+        {config.showNoRouteWarnings !== false &&
+          hasNoTransitItineraries &&
+          !showAlternativePlan && (
+            <div className="summary-no-route-found" style={{ marginTop: 0 }}>
+              <div
+                className={cx(
+                  'flex-horizontal',
+                  'summary-notification',
+                  'info',
+                )}
+              >
+                <Icon
+                  className={cx('no-route-icon', 'info')}
+                  img="icon-icon_info"
+                  color="#0074be"
+                />
+                <div>
+                  <div className="in-the-past">
+                    <FormattedMessage
+                      id="router-only-walk-title"
+                      defaultMessage=""
+                    />
+                  </div>
                   <FormattedMessage
-                    id="router-only-walk-title"
-                    defaultMessage=""
+                    id="router-only-walk"
+                    defaultMessage={
+                      'Unfortunately no routes were found for your journey. ' +
+                      'Please change your origin or destination address.'
+                    }
                   />
                 </div>
-                <FormattedMessage
-                  id="router-only-walk"
-                  defaultMessage={
-                    'Unfortunately no routes were found for your journey. ' +
-                    'Please change your origin or destination address.'
-                  }
-                />
-              </div>
-            </div>{' '}
-          </div>
-        )}
+              </div>{' '}
+            </div>
+          )}
       </>
     );
   }

@@ -44,6 +44,7 @@ const Itinerary = (
   const routeUrl = firstDepartureLeg?.route?.url;
   const verbalSchedule = firstDepartureLeg?.route?.desc;
   const destination = stoptimes[stoptimes.length - 1].stop.name.split(',')[0];
+  const carpoolingScore = Math.round((data.carpoolingScore || 0) * 100.0);
   const ariaLabelMessage = intl.formatMessage(
     {
       id: 'itinerary-page.show-details-label',
@@ -135,7 +136,9 @@ const Itinerary = (
               <div className="start">{origin}</div>
               <h3 className="boarding">{boarding}</h3>
               <div className="match">
-                <span className="match-value">99 % Übereinstimmung</span>
+                <span className="match-value">
+                  {carpoolingScore} % Übereinstimmung
+                </span>
               </div>
               <div className="times">
                 {verbalSchedule} | ca.{' '}

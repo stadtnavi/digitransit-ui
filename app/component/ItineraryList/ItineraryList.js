@@ -346,6 +346,7 @@ const containerComponent = createFragmentContainer(ItineraryList, {
       walkDistance
       startTime
       endTime
+      carpoolingScore
       emissionsPerPerson {
         co2
       }

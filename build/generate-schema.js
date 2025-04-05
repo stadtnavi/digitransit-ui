@@ -4,7 +4,10 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const { getIntrospectionQuery } = require('graphql');
 
-const introspectionQuery = getIntrospectionQuery();
+const introspectionQuery = getIntrospectionQuery({
+  inputValueDeprecation: true,
+});
+
 const outputPath = path.join(__dirname, 'schema.json');
 
 const authHeaders = process.env.ROUTING_API_SUBSCRIPTION_KEY

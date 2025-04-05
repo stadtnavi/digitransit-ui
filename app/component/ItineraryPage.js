@@ -1711,6 +1711,7 @@ const containerComponent = createRefetchContainer(
             duration
             startTime
             endTime
+            carpoolingScore
             ...ItineraryDetails_itinerary
             ...ItineraryListContainer_itineraries
             emissionsPerPerson {

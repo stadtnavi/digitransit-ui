@@ -308,6 +308,9 @@ export default configMerger(parentConfig, {
             ]
         }
     },
+
+    issueTrackerUrls: {},
+    issueTrackerUrl: null,
     chargingStations: {
         show: false,
     }

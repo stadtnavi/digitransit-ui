@@ -43,8 +43,8 @@ export default configMerger(parentConfig, {
         RENTAL_VEHICLE_MAP: `${OTP_URL}vectorTiles/rentalVehicles/`,
         REALTIME_RENTAL_STATION_MAP: `${OTP_URL}vectorTiles/realtimeRentalStations/`,
         // TODO WEATHER_STATIONS_MAP: `${API_URL}/map/v1/weather-stations/`,
-        CHARGING_STATIONS_MAP: `https://api.mobidata-bw.de/ocpdb/tiles/{z}/{x}/{y}.mvt`,
-        CHARGING_STATION_DETAILS_API: 'https://api.mobidata-bw.de/ocpdb/api/public/v1/locations/',
+        CHARGING_STATIONS_MAP: null,
+        CHARGING_STATION_DETAILS_API: null,
         // use mobidata specific geocoder
         PELIAS: `${process.env.GEOCODING_BASE_URL || GEOCODING_BASE_URL}/search`,
         PELIAS_REVERSE_GEOCODER: `${
@@ -307,6 +307,9 @@ export default configMerger(parentConfig, {
                 '114 P+M Parkplätze', '7 Mitfahrplattformen', 'Über 100 Mitfahr-Angebote'
             ]
         }
+    },
+    chargingStations: {
+        show: false,
     }
  }
 );

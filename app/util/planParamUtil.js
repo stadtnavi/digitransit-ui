@@ -396,6 +396,8 @@ export const preparePlanParams = (config, useDefaultModes) => (
       includeBikeSuggestions,
     shouldMakeScooterQuery:
       (!wheelchair &&
+        linearDistance <
+          (config.suggestScooterMaxDistance || config.suggestBikeMaxDistance) &&
         settings?.allowedVehicleRentalFormFactors?.includes(
           FormFactorType.Scooter,
         )) ||

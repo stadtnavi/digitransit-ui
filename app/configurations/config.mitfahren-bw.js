@@ -133,6 +133,8 @@ export default configMerger(parentConfig, {
     // Not other suggestions than carpool
     suggestBikeMaxDistance: 0,
     suggestWalkMaxDistance: 0,
+    suggestCarMinDistance: 10000000,
+    suggestBikeAndParkMinDistance: 10000000,
     showFavouritesContainer: false,
     showBikeAndPublicItineraries: false,
     showBikeAndParkItineraries: false,

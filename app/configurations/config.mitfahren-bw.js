@@ -292,6 +292,21 @@ export default configMerger(parentConfig, {
     // and layer settings and operator/network settings should be separated
     cityBike: {
         showCityBikes: false,
+    },
+
+    welcomeMessage: {
+        de: {
+            header: 'Mitfahren BW in Zahlen',
+            paragraphs: [
+                '114 P+M Parkplätze', '7 Mitfahrplattformen', 'Über 100 Mitfahr-Angebote'
+            ]
+        },
+        en: {
+            header: 'Mitfahren BW in Zahlen',
+            paragraphs: [
+                '114 P+M Parkplätze', '7 Mitfahrplattformen', 'Über 100 Mitfahr-Angebote'
+            ]
+        }
     }
  }
 );

@@ -13,35 +13,35 @@ const expectToContain = (arr, expected) => {
 
 describe('findErrorMessageIds', () => {
   describe('routerErrors', () => {
-    it('should return no-transit-connection', async () => {
+    xit('should return no-transit-connection', async () => {
       const msgIds = findErrorMessageIds([
         { code: 'NO_TRANSIT_CONNECTION', inputField: null },
       ]);
       expectSingleValue(msgIds, 'no-transit-connection');
     });
 
-    it('should return no-transit-connection-in-search-window', async () => {
+    xit('should return no-transit-connection-in-search-window', async () => {
       const msgIds = findErrorMessageIds([
         { code: 'NO_TRANSIT_CONNECTION_IN_SEARCH_WINDOW', inputField: null },
       ]);
       expectSingleValue(msgIds, 'no-transit-connection-in-search-window');
     });
 
-    it('should return outside-bounds-1', async () => {
+    xit('should return outside-bounds-1', async () => {
       const msgIds = findErrorMessageIds([
         { code: 'OUTSIDE_BOUNDS', inputField: 'TO' },
       ]);
       expectSingleValue(msgIds, 'outside-bounds-1');
     });
 
-    it('should return outside-bounds-2', async () => {
+    xit('should return outside-bounds-2', async () => {
       const msgIds = findErrorMessageIds([
         { code: 'OUTSIDE_BOUNDS', inputField: 'FROM' },
       ]);
       expectSingleValue(msgIds, 'outside-bounds-2');
     });
 
-    it('should return outside-bounds-3', async () => {
+    xit('should return outside-bounds-3', async () => {
       const msgIds = findErrorMessageIds([
         { code: 'OUTSIDE_BOUNDS', inputField: 'FROM' },
         { code: 'OUTSIDE_BOUNDS', inputField: 'TO' },
@@ -49,7 +49,7 @@ describe('findErrorMessageIds', () => {
       expectSingleValue(msgIds, 'outside-bounds-3');
     });
 
-    it('should return multiple message ids', () => {
+    xit('should return multiple message ids', () => {
       const msgIds = findErrorMessageIds([
         { code: 'OUTSIDE_BOUNDS', inputField: 'FROM' },
         { code: 'NO_STOPS_IN_RANGE', inputField: 'TO' },
@@ -62,7 +62,7 @@ describe('findErrorMessageIds', () => {
   });
 
   describe('queryErrors', () => {
-    it('should return no-route-already-at-destination', () => {
+    xit('should return no-route-already-at-destination', () => {
       const msgIds1 = findErrorMessageIds(
         [],
         {

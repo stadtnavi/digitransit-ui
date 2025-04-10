@@ -11,10 +11,11 @@ function getText(formFactor, available) {
       <p className="sub-header-h4 availability-header">
         <FormattedMessage
           id={`${formFactor}-availability`}
-          defaultMessage="Bikes available at the station right now"
+          defaultMessage="{amount} vehicles available at the station right now"
+          values={{
+            amount: available,
+          }}
         />
-        {'\u00a0'}
-        <span className="available-bikes">{`(${available})`}</span>
       </p>
     );
   }

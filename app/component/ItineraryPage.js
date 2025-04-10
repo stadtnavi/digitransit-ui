@@ -307,6 +307,14 @@ class ItineraryPage extends React.Component {
           3,
         );
 
+        const scooterRentAndPublicPlan = {
+          itineraries: [
+            ...(
+              result.scooterRentAndPublicPlan?.itineraries || []
+            ).filter(itinerary => itinerary.legs.some(l => l.rentedBike)),
+          ],
+        };
+
         const carAndCarRentalPlan = {
           itineraries: [
             ...(result.carPlan?.itineraries || []),
@@ -344,7 +352,7 @@ class ItineraryPage extends React.Component {
             bikeParkPlan: {
               itineraries: bikeParkItineraries,
             },
-            scooterRentAndPublicPlan: result.scooterRentAndPublicPlan,
+            scooterRentAndPublicPlan,
             carPlan: result.carPlan,
             carAndCarRentalPlan,
             parkRidePlan,

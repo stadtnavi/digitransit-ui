@@ -948,6 +948,7 @@ class ItineraryPage extends React.Component {
     const subPath = [
       streetHash.bikeAndVehicle,
       streetHash.parkAndRide,
+      streetHash.scooter,
       streetHash.car,
     ].includes(hash)
       ? `/${hash}`

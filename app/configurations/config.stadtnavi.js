@@ -96,7 +96,9 @@ export default configMerger(parentConfig, {
     slopeFactor: 0.3,
     timeFactor: 0.3,
     walkReluctance: 3,
-    walkBoardCost: 150
+    walkBoardCost: 150,
+    includeParkAndRideSuggestions: true,
+    showBikeAndParkItineraries: true,
   },
 
   defaultOptions: {

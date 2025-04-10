@@ -332,7 +332,7 @@ export default configMerger(parentConfig, {
                 enabled: true,
             },
             "de.stadtnavi.gbfs.alf": {
-                icon: 'cargobike',
+                icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
                     de: 'Lastenrad Alf',
@@ -348,7 +348,7 @@ export default configMerger(parentConfig, {
                 },
             },
             "de.stadtnavi.gbfs.gueltstein": {
-                icon: 'cargobike',
+                icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
                     de: 'Lastenrad Gültstein-Mobil',
@@ -364,7 +364,7 @@ export default configMerger(parentConfig, {
                 },
             },
             "de.stadtnavi.gbfs.stadtrad": {
-                icon: 'cargobike',
+                icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
                     de: 'stadtRad der Stadt Herrenberg',
@@ -380,7 +380,7 @@ export default configMerger(parentConfig, {
                 },
             },
             "de.stadtnavi.gbfs.bananologen": {
-                icon: 'cargobike',
+                icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
                     de: 'Lastenrad Bananologen',

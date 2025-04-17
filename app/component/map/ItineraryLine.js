@@ -304,6 +304,13 @@ export default createFragmentContainer(ItineraryLine, {
           }
           pickupType
         }
+        stoptimesForDate {
+          scheduledDeparture
+          pickupType
+          stop {
+            gtfsId
+          }
+        }
       }
       intermediatePlaces {
         arrivalTime

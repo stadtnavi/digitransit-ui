@@ -391,6 +391,13 @@ const containerComponent = createFragmentContainer(ItineraryList, {
             }
             pickupType
           }
+          stoptimesForDate {
+            scheduledDeparture
+            pickupType
+            stop {
+              gtfsId
+            }
+          }
           alerts {
             alertSeverityLevel
             effectiveEndDate

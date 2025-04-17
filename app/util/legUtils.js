@@ -37,12 +37,13 @@ function filterLegStops(leg, filter) {
       return leg.trip.stoptimesForDate
         .filter(stoptime => stops.indexOf(stoptime.stop.gtfsId) !== -1)
         .filter(filter);
+    } else if (leg.trip.stoptimes) {
+      return leg.trip.stoptimes
+        .filter(stoptime => stops.indexOf(stoptime.stop.gtfsId) !== -1)
+        .filter(filter);
     }
-    return leg.trip.stoptimes
-      .filter(stoptime => stops.indexOf(stoptime.stop.gtfsId) !== -1)
-      .filter(filter);
   }
-  return false;
+  return [];
 }
 
 export function isCallAgencyDeparture(departure) {

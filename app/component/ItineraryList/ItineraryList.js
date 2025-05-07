@@ -59,12 +59,16 @@ function ItineraryList(
 ) {
   const [showCancelled, setShowCancelled] = useState(false);
   const { config } = context;
+  const isCarpoolItinerary = itinerary => {
+    return itinerary.legs.some(leg => leg.mode === 'CARPOOL');
+  };
 
   if (
     !error &&
     itineraries &&
     itineraries.length > 0 &&
-    !itineraries.includes(undefined)
+    !itineraries.includes(undefined) &&
+    itineraries.some(isCarpoolItinerary)
   ) {
     const lowestCo2value = Math.round(
       itineraries
@@ -75,27 +79,29 @@ function ItineraryList(
     );
     // TODO Sortiere nach Qualität
     // debugger;
-    const summaries = itineraries.map((itinerary, i) => (
-      <CarpoolItinerary
-        refTime={searchTime}
-        key={i} // eslint-disable-line react/no-array-index-key
-        hash={i}
-        data={itinerary}
-        passive={i !== activeIndex}
-        currentTime={currentTime}
-        onSelect={onSelect}
-        onSelectImmediately={onSelectImmediately}
-        intermediatePlaces={intermediatePlaces}
-        isCancelled={itineraryHasCancelation(itinerary)}
-        showCancelled={showCancelled}
-        hideBorder={onlyHasWalkingItineraries}
-        zones={
-          config.zones.stops && itinerary.legs ? getZones(itinerary.legs) : []
-        }
-        delayThreshold={config.itinerary.delayThreshold}
-        lowestCo2value={lowestCo2value}
-      />
-    ));
+    const summaries = itineraries
+      .filter(isCarpoolItinerary)
+      .map((itinerary, i) => (
+        <CarpoolItinerary
+          refTime={searchTime}
+          key={i} // eslint-disable-line react/no-array-index-key
+          hash={i}
+          data={itinerary}
+          passive={i !== activeIndex}
+          currentTime={currentTime}
+          onSelect={onSelect}
+          onSelectImmediately={onSelectImmediately}
+          intermediatePlaces={intermediatePlaces}
+          isCancelled={itineraryHasCancelation(itinerary)}
+          showCancelled={showCancelled}
+          hideBorder={onlyHasWalkingItineraries}
+          zones={
+            config.zones.stops && itinerary.legs ? getZones(itinerary.legs) : []
+          }
+          delayThreshold={config.itinerary.delayThreshold}
+          lowestCo2value={lowestCo2value}
+        />
+      ));
     if (
       context.match.params.hash &&
       context.match.params.hash === 'bikeAndVehicle'

@@ -182,7 +182,8 @@ const errorCardProps = [
   {
     id: 'no-route-msg-with-changes',
     props: {
-      bodyId: 'no-route-msg-with-changes',
+      bodyId: 'no-route-msg',
+      LinkComponent: PublishCarpoolOfferLink,
       ...caution,
     },
   },

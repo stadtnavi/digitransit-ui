@@ -12,6 +12,8 @@ const YEAR = 1900 + new Date().getYear();
 const STATIC_MESSAGE_URL =
     process.env.STATIC_MESSAGE_URL ||
     '/assets/messages/message.ludwigsburg.json';
+const LAYER_CATEGORIES_URL =
+  'https://services.stadtnavi.eu/layer-categories/ludwigsburg/layers.json';
 
 const parentConfig = require('./config.herrenberg.js').default;
 
@@ -29,11 +31,21 @@ export default configMerger(parentConfig, {
         target: '_blank'
     },
 
+    // We disable alerts for now, as GTFS-RT-Alert feed assigns high priority to Herrenberg relation alerts.
+    // Would need to define a specific query that only returns locally relevant alerts
+    messageBarAlerts: false,
+
+    layerCategoriesUrl: LAYER_CATEGORIES_URL,
+
     contactName: {
         de: 'SWLB',
         default: 'Stadtwerke Ludwigsburg',
     },
 
+    mainMenu: {
+        showDisruptions: false,
+    },
+    
     colors: {
         primary: '#333333',
     },
@@ -177,28 +189,64 @@ export default configMerger(parentConfig, {
              icon: "brand_deer",
              operator: "deer",
              name: {
-               de: "deer"
+               de: "deer",
+               en: "deer"
              },
              type: "car",
              form_factors: ['car'],
              hideCode: true,
              enabled: true,
              url: {
-               de: "https://www.deer-carsharing.de/"
+               de: "https://www.deer-carsharing.de/",
+               en: "https://www.deer-carsharing.de/"
              }
            },
            stadtmobil_stuttgart: {
              icon: "brand_stadtmobil",
              operator: "stadtmobil",
              name: {
-               de: "Stadtmobil Stuttgart"
+               de: "Stadtmobil Stuttgart",
+               en: "Stadtmobil Stuttgart"
              },
              type: "car",
              form_factors: ['car'],
              hideCode: true,
              enabled: true,
              url: {
-               de: "https://stuttgart.stadtmobil.de/"
+               de: "https://stuttgart.stadtmobil.de/",
+               en: "https://stuttgart.stadtmobil.de/"
+             }
+           },
+           stadtmobil_karlsruhe: {
+             icon: "brand_stadtmobil",
+             operator: "stadtmobil",
+             name: {
+               de: "Stadtmobil Karlsruhe",
+               en: "Stadtmobil Karlsruhe"
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://karlsruhe.stadtmobil.de/",
+               en: "https://karlsruhe.stadtmobil.de/"
+             }
+           },
+           flinkster_carsharing: {
+             icon: "brand_flinkster",
+             operator: "flinkster",
+             name: {
+               de: "Flinkster",
+               en: "Flinkster"
+             },
+             type: "car",
+             form_factors: ['car'],
+             hideCode: true,
+             enabled: true,
+             url: {
+               de: "https://www.flinkster.de/de/start",
+               en: "https://www.flinkster.de/en/home"
              }
            },
            regiorad_stuttgart: {
@@ -212,122 +260,133 @@ export default configMerger(parentConfig, {
              hideCode: true,
              enabled: true,
              url: {
-               de: "https://www.regioradstuttgart.de"
+               de: "https://www.regioradstuttgart.de",
+               en: "https://www.regioradstuttgart.de"
              }
            },
            bolt_stuttgart: {
              icon: "brand_bolt",
              operator: "bolt",
              name: {
-               de: "Bolt OÜ"
+               de: "Bolt OÜ",
+               en: "Bolt OÜ"
              },
              type: "scooter",
              form_factors: ['scooter', 'bicycle'],
              hideCode: true,
              enabled: true,
              url: {
-               de: "https://www.bolt.eu/"
+               de: "https://www.bolt.eu/",
+               en: "https://www.bolt.eu/"
              }
            },
-           bolt_reutlingen_tuebingen: {
-             icon: "brand_bolt",
-             operator: "bolt",
+           zeo_bruchsal: {
+             icon: "brand_zeus",
+             operator: "other",
              name: {
-               de: "Bolt OÜ"
+               de: "Zeo Bruchsal",
+               en: "Zeo Bruchsal"
              },
-             type: "scooter",
-             form_factors: ['scooter', 'bicycle'],
+             type: "car",
+             form_factors: ['car'],
              hideCode: true,
              enabled: true,
              url: {
-               de: "https://www.bolt.eu/"
+               de: "https://www.zeo-carsharing.de/",
+               en: "https://www.zeo-carsharing.de/"
              }
            },
            zeus_ludwigsburg: {
              icon: "brand_zeus",
              operator: "zeus",
              name: {
-               de: "Zeus Scooters"
+               de: "Zeus Scooters",
+               en: "Zeus Scooters"
              },
              type: "scooter",
              form_factors: ['scooter'],
              hideCode: true,
              enabled: true,
              url: {
-               de: "https://zeusscooters.com"
+               de: "https://zeusscooters.com",
+               en: "https://zeusscooters.com"
              }
            },
            zeus_pforzheim: {
              icon: "brand_zeus",
              operator: "zeus",
              name: {
-               de: "Zeus Scooters"
+               de: "Zeus Scooters",
+               en: "Zeus Scooters"
              },
              type: "scooter",
              form_factors: ['scooter'],
              hideCode: true,
              enabled: true,
              url: {
-               de: "https://zeusscooters.com"
+               de: "https://zeusscooters.com",
+               en: "https://zeusscooters.com"
              }
            },
-           zeus_tubingen: {
-             icon: "brand_zeus",
-             operator: "zeus",
-             name: {
-               de: "Zeus Scooters"
-             },
-             type: "scooter",
-             form_factors: ['scooter'],
-             hideCode: true,
-             enabled: true,
-             url: {
-               de: "https://zeusscooters.com"
-             }
-           },
-           voi_karlsruhe: {
+           voi_de: {
              icon: "brand_voi",
              operator: "voi",
              name: {
-               de: "Voi Scooter Karlsruhe"
+               de: "Voi Scooter",
+               en: "Voi Scooter"
              },
              type: "scooter",
              form_factors: ['scooter'],
              hideCode: true,
              enabled: true
            },
-            'tier_ludwigsburg': {
-                icon: 'tier_scooter',
+           dott_boblingen: {
+                icon: 'brand_dott',
+                operator: "dott",
                 name: {
-                    de: 'TIER Ludwigsburg',
-                    en: 'TIER Ludwigsburg',
+                    de: 'Dott Böblingen',
+                    en: 'Dott Böblingen',
                 },
                 type: 'scooter',
                 url: {
-                    de: 'https://www.tier.app/de',
-                    en: 'https://www.tier.app/',
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
                 },
                 visibleInSettingsUi: true,
                 hideCode: true,
                 enabled: true,
             },
-            'taxi': {
-                icon: 'brand_taxi',
-                operator: 'taxi',
+           dott_ludwigsburg: {
+                icon: 'brand_dott',
+                operator: "dott",
                 name: {
-                    de: 'Taxi',
-                    en: 'Taxi',
+                    de: 'Dott Ludwigsburg',
+                    en: 'Dott Ludwigsburg',
                 },
-                type: 'taxi',
-                form_factors: ['car'],
+                type: 'scooter',
+                url: {
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
+                },
+                visibleInSettingsUi: true,
                 hideCode: true,
                 enabled: true,
-                season: {
-                    // currently not enabled for routing, but for display
-                    start: new Date(new Date().getFullYear()+10, 0, 1),
-                    end: new Date(new Date().getFullYear()+10, 11, 31),
-                    preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
+            },
+            dott_stuttgart: {
+                icon: 'brand_dott',
+                operator: "dott",
+                name: {
+                    de: 'Dott Stuttgart',
+                    en: 'Dott Stuttgart',
                 },
+                type: 'scooter',
+                url: {
+                    de: 'https://ridedott.com/de/fahr-mit-uns/',
+                    en: 'https://ridedott.com/ride-with-us/',
+                },
+                visibleInSettingsUi: true,
+                hideCode: true,
+                enabled: true,
             }
         }
     },
@@ -335,38 +394,16 @@ export default configMerger(parentConfig, {
     // adding assets/geoJson/hb-layers layers
     geoJson: {
         layers: [
-            // bicycleinfrastructure includes shops, repair stations,
-            {
-                name: {
-                    fi: '',
-                    en: 'Bicycle Service Stations',
-                    de: "Radservice-Punkte",
-                },
-                category: 'bicycle_car',
-                url: '/assets/geojson/lb-layers/radservice.json',
-                icon: 'icon-icon_bike_repair',
-                isOffByDefault: true,
-            },
-            // Nette Toilette layer
-            {
-                name: {
-                    fi: '',
-                    en: 'Public Toilets',
-                    de: 'Nette Toilette',
-                },
-                category: 'leisure_and_tourism',
-                url: "/assets/geojson/lb-layers/nettetoilette.json",
-                icon: 'icon-icon_public_toilets',
-                isOffByDefault: true,
-            },
+            
             // Parking zones layer
             {
+                code: 'parking_zones',
                 name: {
                   fi: '',
                   en: 'Parking zones',
                   de: 'Parkzonen',
                 },
-                category: 'bicycle_car',
+                category: 'car',
                 url: '/assets/geojson/lb-layers/parkzonen.json',
                 icon: 'icon-icon_open_carpark',
                 isOffByDefault: false,
@@ -374,21 +411,22 @@ export default configMerger(parentConfig, {
             },
             // Bicycle network layer
             {
+                code: 'cycle_network',
                 name: {
                   fi: '',
                   en: "Bicycle network",
                   de: 'Radnetz Ludwigsburg',
                 },
-                category: 'bicycle_car',
+                category: 'bicycle',
                 url: '/assets/geojson/lb-layers/radnetz.json',
                 icon: 'icon-icon_radnetz',
                 isOffByDefault: false,
                 minZoom: 12
-            },
+            }
 	   ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,
 
-    // no live bus locations
-    vehicles: false,
+    vehicles: true,
+    showCO2InItinerarySummary: true,
 });

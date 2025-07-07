@@ -70,6 +70,9 @@ export default configMerger(parentConfig, {
         showZoomControl: false,
         showLayerSelector: false,
     },
+    
+    parkAndRide: false,
+    parkAndRideForBikes: false,
 
     //textLogo: true,
     logo: 'mitfahren-bw/mfbw-logo-v1-3.svg',

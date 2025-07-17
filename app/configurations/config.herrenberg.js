@@ -265,7 +265,7 @@ export default configMerger(parentConfig, {
                 hideCode: true,
                 enabled: true,
             },
-           dott_ludwigsburg: {
+            dott_ludwigsburg: {
                 icon: 'brand_dott',
                 operator: "dott",
                 name: {
@@ -331,12 +331,12 @@ export default configMerger(parentConfig, {
                 hideCode: true,
                 enabled: true,
             },
-            "de.stadtnavi.gbfs.alf": {
+            "herrenberg_alf": {
                 icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
-                    de: 'Lastenrad Alf',
-                    en: 'Cargobike Alf',
+                    de: 'ALF - das Affstätter Lastenfahrrad',
+                    en: 'ALF - the Affstätter cargo bike',
                 },
                 type: 'cargo_bicycle',
                 enabled: true,
@@ -347,12 +347,12 @@ export default configMerger(parentConfig, {
                     preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
                 },
             },
-            "de.stadtnavi.gbfs.gueltstein": {
+            "herrenberg_guelf": {
                 icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
-                    de: 'Lastenrad Gültstein-Mobil',
-                    en: 'Cargobike Gültstein-Mobil',
+                    de: 'Gülf - das Gültsteiner Lastenrad',
+                    en: 'Gülf - the Gültsteiner cargo bike',
                 },
                 type: 'cargo_bicycle',
                 enabled: true,
@@ -363,12 +363,12 @@ export default configMerger(parentConfig, {
                     preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
                 },
             },
-            "de.stadtnavi.gbfs.stadtrad": {
+            "herrenberg_stadtrad": {
                 icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
-                    de: 'stadtRad der Stadt Herrenberg',
-                    en: 'City of Herrberg\'s StadtRad',
+                    de: 'stadtRad - das stadtnavi Lastenrad',
+                    en: 'stadtRad - the stadtnavi cargo bike',
                 },
                 type: 'cargo_bicycle',
                 enabled: true,
@@ -379,12 +379,12 @@ export default configMerger(parentConfig, {
                     preSeasonStart: new Date(new Date().getFullYear(), 0, 1),
                 },
             },
-            "de.stadtnavi.gbfs.bananologen": {
+            "herrenberg_fare": {
                 icon: 'cargo_bike_sharing',
                 operator: 'other',
                 name: {
-                    de: 'Lastenrad Bananologen',
-                    en: 'Cargobike Bananologen',
+                    de: 'FaRe - das Bananologen Lastenrad',
+                    en: 'FaRe - the Bananologen cargo bike',
                 },
                 type: 'cargo_bicycle',
                 enabled: true,

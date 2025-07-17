@@ -577,7 +577,7 @@ export default configMerger(parentConfig, {
           name: {
             fi: '',
             en: 'Walking Bus',
-            de: 'Schulbus auf Beinen',
+            de: 'Bus auf Beinen',
           },
           url: 'https://data.mfdz.de/hbg/dt-layers/walking_bus.geojson',
           category: 'health_and_social_services',
@@ -588,8 +588,8 @@ export default configMerger(parentConfig, {
           code: 'school_route_map',
           name: {
             fi: '',
-            en: 'School route map',
-            de: 'Schulwegplan',
+            en: 'Recommended route to school',
+            de: 'Wegeempfehlung Schulwege',
           },
           url: 'https://data.mfdz.de/hbg/dt-layers/school_route_map.geojson',
           category: 'health_and_social_services',

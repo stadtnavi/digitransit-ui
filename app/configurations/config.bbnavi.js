@@ -7,8 +7,6 @@ const APP_TITLE = 'bbnavi Staging';
 const HEADER_TITLE = 'Staging';
 const APP_DESCRIPTION = 'Mobilitätsplattform für Kommunen in Brandenburg';
 const API_URL = process.env.API_URL || 'https://api.bbnavi.de';
-const DATAHUB_TILES_URL =
-  process.env.DATAHUB_TILES_URL || 'https://tiles.bbnavi.de';
 const MAP_URL =
   process.env.MAP_URL ||
   'https://tiles.stadtnavi.eu/streets/{z}/{x}/{y}{r}.png';
@@ -30,12 +28,7 @@ const maxLon = 15.000255;
 
 export default configMerger(walttiConfig, {
   CONFIG,
-  DATAHUB_O_AUTH: {
-    CLIENT_ID: process.env.DATAHUB_O_AUTH_CLIENT_ID,
-    CLIENT_SECRET: process.env.DATAHUB_O_AUTH_CLIENT_SECRET,
-  },
   URL: {
-    DATAHUB: process.env.DATAHUB_URL || 'https://datahub.bbnavi.de',
     OTP: process.env.OTP_URL || `${API_URL}/otp/routers/default/`,
     MAP: {
       default:
@@ -213,42 +206,6 @@ export default configMerger(walttiConfig, {
       previewImage: '/img/maptype-streets-osm.png',
     },
   ],
-
-  datahubTiles: {
-    show: true,
-    smallIconZoom: 17,
-    minZoom: 15,
-    layers: [
-      {
-        name: 'poi_coords_bike_rentals',
-        labelId: 'map-layer-datahub-bike-rentals',
-        icon: 'poi_bicycle_rental',
-        baseUrl: `${DATAHUB_TILES_URL}/public.poi_coords_bike_rentals/`,
-        vectorTileLayer: 'public.poi_coords_bike_rentals',
-      },
-      {
-        name: 'poi_coords_bike_repair_shops',
-        labelId: 'map-layer-datahub-bike-repair-shops',
-        icon: 'icon-icon_stop_bicycle_repair',
-        baseUrl: `${DATAHUB_TILES_URL}/public.poi_coords_bike_repair_shops/`,
-        vectorTileLayer: 'public.poi_coords_bike_repair_shops',
-      },
-      {
-        name: 'poi_coords_e_bike_charging_stations',
-        labelId: 'map-layer-datahub-e-bike-charging-stations',
-        icon: 'icon-icon_stop_e_bike_charging_station',
-        baseUrl: `${DATAHUB_TILES_URL}/public.poi_coords_e_bike_charging_stations/`,
-        vectorTileLayer: 'public.poi_coords_e_bike_charging_stations',
-      },
-      {
-        name: 'poi_coords_e_bike_rentals',
-        labelId: 'map-layer-datahub-e-bike-rentals',
-        icon: 'poi_e_bike_rental',
-        baseUrl: `${DATAHUB_TILES_URL}/public.poi_coords_e_bike_rentals/`,
-        vectorTileLayer: 'public.poi_coords_e_bike_rentals',
-      },
-    ],
-  },
 
   chargingStations: {
     show: true,
@@ -735,14 +692,6 @@ export default configMerger(walttiConfig, {
   // adding assets/geoJson/hb-layers layers
   geoJson: {
     layers: [
-      // TMB Geo Daten der POIs aus der Kategorie 15 (Fahrradvermietung/-service)
-      // {
-      //     name: {
-      //         en: 'Tourismus-Marketing Brandenburg',
-      //         de: 'Tourismus-Marketing Brandenburg',
-      //     },
-      //     url: 'https://datahub.bbnavi.de/export/point_of_interests/15.geojson'
-      // },
       // bicycleinfrastructure includes shops, repair stations,
       // {
       //     name: {

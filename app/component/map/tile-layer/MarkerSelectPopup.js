@@ -10,7 +10,6 @@ import SelectVehicleContainer from './SelectVehicleContainer';
 import SelectCarpoolRow from './SelectCarpoolRow';
 import SelectRoadworksRow from './SelectRoadworksRow';
 import SelectChargingStationRow from './SelectChargingStationRow';
-import SelectDatahubPoiRow from './SelectDatahubPoiRow';
 import SelectPublicPoiRow from './SelectPublicPoiRow';
 
 function MarkerSelectPopup(props) {
@@ -39,21 +38,6 @@ function MarkerSelectPopup(props) {
     ));
 
   const rows = props.options.map(option => {
-    if (option.layer === 'datahubTiles') {
-      const { lat, lon } = option.coords;
-      return (
-        <SelectDatahubPoiRow
-          datahubId={option.feature.properties.datahub_id}
-          name={option.feature.properties.name}
-          description={option.feature.properties.tag_name}
-          latitude={lat}
-          longitude={lon}
-          // todo: use option.feature.properties.svg_icon?
-          icon={option.layerConfig.icon}
-        />
-      );
-    }
-
     if (option.layer === 'stop') {
       return (
         <SelectStopRow

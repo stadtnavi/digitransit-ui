@@ -23,7 +23,6 @@ export const PREFIX_BIKEPARK = 'fahrradparkplaetze';
 export const PREFIX_CHARGING_STATIONS = 'ladestationen';
 export const PREFIX_CARPARK = 'parkplaetze';
 export const PREFIX_ROAD_WEATHER = 'strassenwetter';
-export const PREFIX_DATAHUB_POI = 'datahub-poi';
 export const PREFIX_GEOJSON = 'geojson';
 export const stopUrl = id => id;
 export const LOCAL_STORAGE_EMITTER_PATH = '/local-storage-emitter';
@@ -231,17 +230,6 @@ export const getHomeUrl = (origin, indexPath) => {
   const homeUrl = getPathWithEndpointObjects(origin, {}, indexPath);
 
   return homeUrl;
-};
-
-export const getDatahubPoiPath = (datahubId, name, latitude, longitude) => {
-  const searchParams = new URLSearchParams({
-    datahubId,
-    name,
-    // We follow SidebarMap's parameter naming here.
-    lat: latitude,
-    lng: longitude,
-  }).toString();
-  return `/${PREFIX_DATAHUB_POI}?${searchParams}`;
 };
 
 export const streetHash = {

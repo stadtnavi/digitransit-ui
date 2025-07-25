@@ -140,7 +140,6 @@ const MapLayersDialogContent = (props, context) => {
     vehicles,
     roadworks,
     weatherStations,
-    datahubTiles,
     chargingStations,
     rental,
   } = mapLayers;
@@ -152,20 +151,6 @@ const MapLayersDialogContent = (props, context) => {
   const transportModes = getTransportModes(context.config);
 
   const { config, intl } = context;
-  const datahubLayers =
-    config.datahubTiles && config.datahubTiles.show
-      ? config.datahubTiles.layers
-      : [];
-  const datahubBicycleLayers = datahubLayers.map(layer => {
-    return {
-      checked: datahubTiles[layer.name],
-      defaultMessage: layer.name,
-      labelId: layer.labelId,
-      icon: layer.icon,
-      settings: { datahubTiles: layer.name },
-    };
-  });
-
   const getPoiLayers = layer => {
     if (!layer || !layer.categories) {
       return [];
@@ -419,7 +404,6 @@ const MapLayersDialogContent = (props, context) => {
                   props.lang,
                 ),
               )
-              .concat(datahubBicycleLayers)
               .concat(getPoiLayers(bikeCarLayer))
               .sort(sortLayersByKey)}
           />

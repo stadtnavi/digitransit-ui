@@ -192,30 +192,8 @@ class Map extends React.Component {
     );
   }
 
-  loadMapLayer(mapUrl, attribution, index, config) {
+  loadMapLayer(mapUrl, attribution, index) {
     const zIndex = -10 + index;
-    // TODO bbnavi uses WMS services and provides layers here instead of config
-    if (
-      config.CONFIG.includes('bbnavi') &&
-      (mapUrl === config.URL.MAP.satellite ||
-        mapUrl === config.URL.MAP.satellite_eu ||
-        mapUrl === config.URL.MAP.default)
-    ) {
-      const layer = {
-        [config.URL.MAP.satellite]: 'dop_brandenburg',
-        [config.URL.MAP.satellite_eu]: 'sentinel_europe',
-        [config.URL.MAP.default]: 'topplus_farbe,webatlas_farbe',
-      }[mapUrl];
-      const transparent = mapUrl === config.URL.MAP.satellite;
-      return this.loadWMSTLayer(
-        mapUrl,
-        layer,
-        attribution,
-        index,
-        transparent,
-        config,
-      );
-    }
 
     // TODO make zoomOffset configurable
     const zoomOffset = mapUrl.includes('www.wmts.nrw.de')
@@ -402,7 +380,7 @@ class Map extends React.Component {
           closePopupOnClick={false}
         >
           {mapUrls.map((url, index) =>
-            this.loadMapLayer(url, attribution, index, config),
+            this.loadMapLayer(url, attribution, index),
           )}
           <BreakpointConsumer>
             {breakpoint =>

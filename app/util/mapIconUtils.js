@@ -866,37 +866,6 @@ export function drawHybridStationIcon(tile, geom, isHilighted) {
   }
 }
 
-/**
- * Draw icon for hybrid stations, meaning BUS and TRAM station in the same place.
- */
-export function drawDatahubTileIcon(tile, geom, isHilighted, properties) {
-  const zoom = tile.coords.z - 1;
-  const styles = getTerminalIconStyles(zoom);
-  if (!styles) {
-    return;
-  }
-  let { width, height } = styles;
-  width *= tile.scaleratio;
-  height *= tile.scaleratio;
-
-  const { svg_icon: svgIcon } = properties;
-  const blobUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
-    svgIcon,
-  )}`;
-  const image = new Image(width, height);
-
-  image.onload = function () {
-    tile.ctx.drawImage(
-      image,
-      geom.x / tile.ratio - width / 2 - 1 / tile.scaleratio,
-      geom.y / tile.ratio - height / 2 - height / tile.scaleratio,
-      width + 2 / tile.scaleratio,
-      height + 2 / tile.scaleratio,
-    );
-  };
-  image.src = blobUrl;
-}
-
 export function drawParkAndRideIcon(
   type,
   tile,

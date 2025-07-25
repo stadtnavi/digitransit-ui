@@ -8,7 +8,6 @@ import TileLayerContainer from './TileLayerContainer';
 import BikeRentalStations from './BikeRentalStations';
 import RentalVehicles from './RentalVehicles';
 import WeatherStations from './WeatherStations';
-import DatahubTiles from './DatahubTiles';
 import Stops from './Stops';
 import ParkAndRideForCars from './ParkAndRideForCars.bbnavi';
 import ParkAndRideForBikes from './ParkAndRideForBikes.bbnavi';
@@ -50,31 +49,6 @@ function VectorTileLayerContainer(props, { config }) {
 
   if (config.weatherStations?.show && props.mapLayers.weatherStations) {
     layers.push(WeatherStations);
-  }
-
-  if (config.datahubTiles && props.mapLayers.datahubTiles) {
-    config.datahubTiles.layers.forEach(layerConfig => {
-      // Don't render tile layer if it isn't enabled.
-      if (!props.mapLayers.datahubTiles[layerConfig.name]) {
-        return;
-      }
-
-      // Technically, we just need to pass the layer's base URL into the instance.
-      // To follow this code base's style, we use a "wrapper class" instead of a closure.
-      class DatahubTilesWithLayer extends DatahubTiles {
-        // eslint-disable-next-line no-shadow
-        constructor(tile, config) {
-          super(tile, layerConfig, config);
-        }
-
-        static getName = () => 'datahubTiles';
-
-        // We need this as a static property so that `TileContainer` can check if
-        // this layer is enabled *before* creating instances from the class.
-        static layerConfig = layerConfig;
-      }
-      layers.push(DatahubTilesWithLayer);
-    });
   }
 
   if (config.chargingStations?.show && props.mapLayers.chargingStations) {

@@ -31,7 +31,6 @@ class MapLayerStore extends Store {
     },
     vehicles: false,
     geoJson: {},
-    datahubTiles: {},
     weatherStations: false,
     chargingStations: false,
     roadworks: false,
@@ -60,12 +59,6 @@ class MapLayerStore extends Store {
     // TODO DEPRECATE citybike
     this.mapLayers.citybike = showCityBikes(config.cityBike?.networks);
     this.mapLayers.rental = showRentalVehiclesAndStations(config);
-
-    const datahubLayers =
-      (config.datahubTiles && config.datahubTiles.layers) || [];
-    this.mapLayers.datahubTiles = Object.fromEntries(
-      datahubLayers.map(l => [l.name, true]),
-    );
 
     // TODO additionalLayers config should be moved in custom config section.
     // That way, they could be iterated over without creating dependencies here
@@ -151,7 +144,6 @@ export const mapLayerShape = PropTypes.shape({
   vehicles: PropTypes.bool,
   geoJson: PropTypes.object,
   // Because the keys of this object depend on the config, but the config is being fetched asynchronously, we can't describe the shape here.
-  datahubTiles: PropTypes.objectOf(PropTypes.bool),
   weatherStations: PropTypes.bool,
   chargingStations: PropTypes.bool,
   roadworks: PropTypes.bool,

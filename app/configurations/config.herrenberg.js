@@ -530,23 +530,6 @@ export default configMerger(parentConfig, {
     // adding assets/geoJson/hb-layers layers
     geoJson: {
       layers: [
-        // Bicycle network layer
-        {
-          code: 'cycle_network',
-          name: {
-            fi: '',
-            en: "Bicycle network",
-            de: 'Radnetz',
-          },
-          category: 'bicycle',
-          url: 'https://api.mobidata-bw.de/geoserver/MobiData-BW/wms',
-          icon: 'icon-icon_radnetz',
-          isOffByDefault: true,
-          minZoom: 12,
-          type: 'wmst',
-          layers: 'MobiData-BW:radvis_cycle_network',
-          attribution: 'RadNETZ-BW',
-        },
         // LoRaWan map layer
         {
           code: 'loarawan_gateways',

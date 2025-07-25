@@ -335,7 +335,6 @@ export default async function (req, res, next) {
         res.write(getAnalyticsInitCode(config.GTMid, config.MATOMO_URL));
 
         const preloads = [
-          { as: 'style', href: config.URL.FONT },
           {
             as: 'style',
             href: `${ASSET_URL}/${assets[`${config.CONFIG}_theme.css`]}`,
@@ -347,6 +346,10 @@ export default async function (req, res, next) {
             crossorigin: true,
           })),
         ];
+        // Only add fonts URL if defined
+        if (config.URL.FONT !== '') {
+          preloads.push({ as: 'style', href: config.URL.FONT });
+        }
 
         preloads.forEach(({ as, href, crossorigin }) =>
           res.write(

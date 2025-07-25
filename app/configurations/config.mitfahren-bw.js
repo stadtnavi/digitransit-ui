@@ -77,6 +77,22 @@ export default configMerger(parentConfig, {
     //textLogo: true,
     logo: 'mitfahren-bw/mfbw-logo-v1-3.svg',
 
+    socialMedia: {
+        title: APP_TITLE,
+        description: APP_DESCRIPTION,
+
+        image: {
+            url: '/img/mitfahren-bw-social-media-card.png',
+            width: 600,
+            height: 300,
+        },
+
+        twitter: {
+            card: 'summary_large_image',
+            site: '@',
+        },
+    },
+
     colors: {
         primary: '#2a2623',
         accessiblePrimary:  '#2a2623',

@@ -21,7 +21,7 @@ const containerComponent = createFragmentContainer(StopAlertsContainer, {
       }
       gtfsId
       locationType
-      alerts(types: [STOP, ROUTES]) {
+      alerts(types: [STOP, ROUTES, STOP_ON_ROUTES, STOP_ON_TRIPS]) {
         id
         alertDescriptionText
         alertHash
@@ -32,6 +32,18 @@ const containerComponent = createFragmentContainer(StopAlertsContainer, {
         effectiveStartDate
         entities {
           __typename
+          ... on StopOnRoute {
+            route {
+              color
+              type
+              mode
+              shortName
+              gtfsId
+            }
+            stop {
+              gtfsId
+            }
+          }
           ... on Route {
             color
             type

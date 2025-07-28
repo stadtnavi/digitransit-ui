@@ -46,18 +46,35 @@ export const getTimePeriod = ({ currentTime, startTime, endTime, intl }) => {
   return `${start} - ${end}`;
 };
 
-const getColor = entities => {
+const getFirstRouteFromEntities = entities => {
   if (Array.isArray(entities)) {
     const routeEntities = getEntitiesOfType(entities, AlertEntityType.Route);
-    return routeEntities.length > 0 && `#${routeEntities[0].color}`;
+    if (routeEntities.length > 0) {
+      return routeEntities[0];
+    }
+    const stopOnRouteEntities = getEntitiesOfType(
+      entities,
+      AlertEntityType.StopOnRoute,
+    );
+    if (stopOnRouteEntities.length > 0) {
+      return stopOnRouteEntities[0].route;
+    }
+  }
+  return null;
+};
+
+const getColor = entities => {
+  const route = getFirstRouteFromEntities(entities);
+  if (route) {
+    return `#${route.color}`;
   }
   return null;
 };
 
 const getMode = entities => {
-  if (Array.isArray(entities)) {
-    const routeEntities = getEntitiesOfType(entities, AlertEntityType.Route);
-    return routeEntities.length > 0 && getRouteMode(routeEntities[0]);
+  const route = getFirstRouteFromEntities(entities);
+  if (route) {
+    return getRouteMode(route);
   }
   return 'bus';
 };
@@ -112,10 +129,14 @@ export default function AlertRow(
   const gtfsIdList = getGtfsIds(uniqueEntities);
   const entityIdentifiers = getEntityIdentifiers(uniqueEntities);
 
-  const entityType =
-    getEntitiesOfType(uniqueEntities, AlertEntityType.Stop).length > 0
-      ? AlertEntityType.Stop
-      : AlertEntityType.Route;
+  const handledEntityTypes = [
+    AlertEntityType.Stop,
+    AlertEntityType.StopOnRoute,
+    AlertEntityType.Route,
+  ];
+  const entityType = handledEntityTypes.find(
+    eType => getEntitiesOfType(uniqueEntities, eType).length > 0,
+  );
 
   const routeColor =
     entityType === AlertEntityType.Route && getColor(uniqueEntities);

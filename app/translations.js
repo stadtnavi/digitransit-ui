@@ -393,7 +393,7 @@ const translations = {
     'weekday-ph': 'Gesetzlicher Feiertag',
     'opening-hours': 'Öffnungszeiten',
     // duplicate of `number-of-spaces`
-    'parking-spaces-in-total': '{total} Stellplätze',
+    'parking-spaces-in-total': '{total, plural, =0 {Kein Stellplatz} one {Ein Stellplatz} other {{total} Stellplätze}}',
     // duplicate of `park-and-ride-availability`
     'parking-spaces-available': '{free} von {total} Stellplätzen verfügbar',
     'map-layer-dynamic-parking-lots': 'Parkplätze',
@@ -798,7 +798,7 @@ const translations = {
     'disabled-parking-spaces-available':
       '{freeDisabled} von {totalDisabled} barrierefreien Stellplätzen verfügbar',
     'disabled-parking-spaces-capacity':
-      '{totalDisabled} barrierefreie Stellplätze',
+      '{totalDisabled, plural, =0 {Kein barrierefreier Stellplatz} one {Ein barrierefreier Stellplatz} other {{totalDisabled} barrierefreie Stellplätze}}',
     'itinerary-ticket.title': 'Benötigte Fahrkarte',
     'itinerary-tickets.title': 'Benötigte Fahrkarten',
     'itinerary-time.title': 'Dauer',
@@ -1364,7 +1364,7 @@ const translations = {
     'weekday-su': 'Sunday',
     'weekday-ph': 'Public holiday',
     'opening-hours': 'Opening hours',
-    'parking-spaces-in-total': '{total} parking spaces',
+    'parking-spaces-in-total': '{total, plural, =0 {No parking space} one {One parking space} other {{total} parking spaces}}',
     'parking-spaces-available': '{free} of {total} parking spaces available',
     open: 'Open',
     closed: 'Closed',
@@ -1618,6 +1618,8 @@ const translations = {
     'destination-placeholder': 'Enter destination, route or stop',
     'dialog-return-to-map': 'Return to map',
     'digitransit-platform': 'Digitransit service platform',
+    'disabled-parking-spaces-capacity':
+      '{totalDisabled, plural, =0 {No wheelchair-accessible parking space} one {One wheelchair-accessible parking space} other {{totalDisabled} wheelchair-accessible parking spaces}}',
     disclaimer:
       'Please note that the results are based on estimated travel times. The suggested transport connections cannot be guaranteed.',
     disruption: 'Disruption',

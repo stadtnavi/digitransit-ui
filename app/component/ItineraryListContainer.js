@@ -22,7 +22,7 @@ import { replaceQueryParams } from '../util/queryUtils';
 import withBreakpoint from '../util/withBreakpoint';
 import { addAnalyticsEvent } from '../util/analyticsUtils';
 import { isIOS, isSafari } from '../util/browser';
-import SettingsNotification from './SettingsNotification';
+import ItineraryNotification from './ItineraryNotification';
 import ItineraryShape from '../prop-types/ItineraryShape';
 import ErrorShape from '../prop-types/ErrorShape';
 import LocationStateShape from '../prop-types/LocationStateShape';
@@ -63,6 +63,8 @@ class ItineraryListContainer extends React.Component {
     loadingMoreItineraries: PropTypes.string,
     driving: PropTypes.bool,
     hasNoTransitItineraries: PropTypes.bool,
+    topNote: PropTypes.string,
+    bottomNote: PropTypes.string,
   };
 
   static defaultProps = {
@@ -79,6 +81,8 @@ class ItineraryListContainer extends React.Component {
     separatorPosition: undefined,
     settingsNotification: false,
     hasNoTransitItineraries: false,
+    topNote: undefined,
+    bottomNote: undefined,
   };
 
   static contextTypes = {
@@ -253,7 +257,6 @@ class ItineraryListContainer extends React.Component {
       loadingMoreItineraries,
       driving,
       hasNoTransitItineraries,
-      settingsNotification,
       error,
       routingErrors,
     } = this.props;
@@ -282,6 +285,9 @@ class ItineraryListContainer extends React.Component {
           : arriveBy
           ? this.laterButton(true)
           : this.earlierButton()}
+        {this.props.topNote && (
+          <ItineraryNotification bodyId={this.props.topNote} />
+        )}
         <ItineraryList
           activeIndex={activeIndex}
           currentTime={currentTime}
@@ -309,7 +315,16 @@ class ItineraryListContainer extends React.Component {
         >
           {this.props.children}
         </ItineraryList>
-        {settingsNotification && <SettingsNotification />}
+        {this.props.settingsNotification && (
+          <ItineraryNotification
+            headerId="settings-missing-itineraries-header"
+            bodyId="settings-missing-itineraries-body"
+            iconId="icon-icon_settings"
+          />
+        )}
+        {this.props.bottomNote && (
+          <ItineraryNotification bodyId={this.props.bottomNote} />
+        )}
         {(this.context.match.params.hash &&
           this.context.match.params.hash === 'bikeAndVehicle') ||
         disableButtons ||

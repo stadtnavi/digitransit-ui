@@ -460,6 +460,7 @@ class ItineraryPage extends React.Component {
       arriveBy: false,
       date: latestDepartureTime.format('YYYY-MM-DD'),
       time: latestDepartureTime.format('HH:mm'),
+      searchWindow: 6 * 3600,
     };
 
     this.setState({
@@ -560,6 +561,7 @@ class ItineraryPage extends React.Component {
       arriveBy: true,
       date: earliestArrivalTime.format('YYYY-MM-DD'),
       time: earliestArrivalTime.format('HH:mm'),
+      searchWindow: 6 * 3600,
     };
     this.setState({
       loadingMore: reversed ? spinnerPosition.bottom : spinnerPosition.top,

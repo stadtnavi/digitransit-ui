@@ -85,6 +85,7 @@ export const moreItinerariesQuery = graphql`
     $unpreferred: InputUnpreferred
     $allowedVehicleRentalNetworks: [String]
     $locale: String
+    $searchWindow: Long
   ) {
     plan(
       fromPlace: $fromPlace
@@ -108,6 +109,7 @@ export const moreItinerariesQuery = graphql`
       unpreferred: $unpreferred
       allowedVehicleRentalNetworks: $allowedVehicleRentalNetworks
       locale: $locale
+      searchWindow: $searchWindow
     ) {
       ...ItineraryListContainer_plan
       ...ItineraryDetails_plan

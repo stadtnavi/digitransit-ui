@@ -168,6 +168,8 @@ export default configMerger(parentConfig, {
             target: '_blank'
     },
 
+    availableLanguages: ['de'],
+
     menu: {
         copyright: {
             label: `© Mitfahren-BW ${parentConfig.YEAR}`

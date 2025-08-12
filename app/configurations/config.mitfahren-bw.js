@@ -163,8 +163,8 @@ export default configMerger(parentConfig, {
     },
 
     appBarLink: {
-            name: 'Feedback',
-            href: 'mailto:support@mitfahren-bw.de?subject=Mitfahren-BW: Feedback',
+            name: 'Mitfahren-BW Infoseite',
+            href: 'https://dev.mitfahren-bw.de/',
             target: '_blank'
     },
 
@@ -180,14 +180,20 @@ export default configMerger(parentConfig, {
                 icon: 'icon-icon_info',
             },
             {
+                name: 'Support',
+                nameEn: 'Support',
+                href: 'mailto:support@mitfahren-bw.de?subject=Mitfahren-BW: Support',
+                target: '_blank'
+            },
+            {
                 name: 'imprint',
                 nameEn: 'Imprint',
-                href: 'https://vm.baden-wuerttemberg.de/de/header-und-footer/impressum',
+                href: 'https://dev.mitfahren-bw.de/impressum.html',
             },
             {
                 name: 'privacy',
                 nameEn: 'Privacy',
-                href: 'https://vm.baden-wuerttemberg.de/de/header-und-footer/datenschutz',
+                href: 'https://dev.mitfahren-bw.de/datenschutz.html',
             },
         ],
     },

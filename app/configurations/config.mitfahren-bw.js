@@ -203,7 +203,7 @@ export default configMerger(parentConfig, {
             {
                 header: 'Über diesen Dienst',
                 paragraphs: [
-                    'Mitfahren-BW ist ein Meta-Informationsplattform für Baden-Württemeberg und Umgebung. Dieser Dienst ermöglicht die Suche von Mitfahrangeboten verschiedener Anbieter.',
+                    'Mitfahren-BW ist ein Meta-Informationsplattform für Baden-Württemberg und Umgebung. Dieser Dienst ermöglicht die Suche von Mitfahrangeboten verschiedener Anbieter.',
                 ],
             },
             

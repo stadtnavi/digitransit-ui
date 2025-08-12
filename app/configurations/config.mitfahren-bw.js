@@ -83,8 +83,8 @@ export default configMerger(parentConfig, {
 
         image: {
             url: '/img/mitfahren-bw-social-media-card.png',
-            width: 600,
-            height: 300,
+            width: 800,
+            height: 400,
         },
 
         twitter: {

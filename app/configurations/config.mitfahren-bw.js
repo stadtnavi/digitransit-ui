@@ -75,7 +75,7 @@ export default configMerger(parentConfig, {
     parkAndRideForBikes: false,
 
     //textLogo: true,
-    logo: 'mitfahren-bw/mfbw-logo-v1-3.svg',
+    logo: 'mitfahren-bw/mfbw-logo-v10-3.svg',
 
     socialMedia: {
         title: APP_TITLE,

@@ -36,14 +36,14 @@ const Itinerary = (
     return null;
   }
   const firstDepartureLeg = data.legs.find(isTransitLeg);
-  const { stoptimes } = firstDepartureLeg.trip;
-  const origin = stoptimes[0].stop.name.split(',')[0];
+  const { stops } = firstDepartureLeg.trip.pattern;
+  const origin = stops[0].name.split(',')[0];
   const boarding = firstDepartureLeg.from.name;
   const alighting = firstDepartureLeg.to.name;
   const agencyName = firstDepartureLeg?.route?.agency?.name;
   const routeUrl = firstDepartureLeg?.route?.url;
   const verbalSchedule = firstDepartureLeg?.route?.desc;
-  const destination = stoptimes[stoptimes.length - 1].stop.name.split(',')[0];
+  const destination = stops[stops.length - 1].name.split(',')[0];
   const carpoolingScore = Math.round((data.carpoolingScore || 0) * 100.0);
   const ariaLabelMessage = intl.formatMessage(
     {

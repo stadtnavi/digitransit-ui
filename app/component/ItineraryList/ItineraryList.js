@@ -405,6 +405,9 @@ const containerComponent = createFragmentContainer(ItineraryList, {
         trip {
           pattern {
             code
+            stops {
+              name
+            }
           }
           stoptimes {
             realtimeState

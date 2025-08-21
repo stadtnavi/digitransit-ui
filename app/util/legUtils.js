@@ -38,9 +38,11 @@ function filterLegStops(leg, filter) {
         .filter(stoptime => stops.indexOf(stoptime.stop.gtfsId) !== -1)
         .filter(filter);
     }
-    return leg.trip.stoptimes
-      .filter(stoptime => stops.indexOf(stoptime.stop.gtfsId) !== -1)
-      .filter(filter);
+    if (leg.trip.stoptimes) {
+      return leg.trip.stoptimes
+        .filter(stoptime => stops.indexOf(stoptime.stop.gtfsId) !== -1)
+        .filter(filter);
+    }
   }
   return false;
 }

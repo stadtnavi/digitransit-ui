@@ -316,9 +316,9 @@ ItineraryList.propTypes = {
   onSelectImmediately: PropTypes.func.isRequired,
   searchTime: PropTypes.number.isRequired,
   to: LocationShape.isRequired,
-  bikeAndPublicItineraryCount: PropTypes.number.isRequired,
-  bikeRentAndPublicItineraryCount: PropTypes.number.isRequired,
-  bikeAndParkItineraryCount: PropTypes.number.isRequired,
+  bikeAndPublicItineraryCount: PropTypes.number,
+  bikeRentAndPublicItineraryCount: PropTypes.number,
+  bikeAndParkItineraryCount: PropTypes.number,
   walking: PropTypes.bool,
   biking: PropTypes.bool,
   driving: PropTypes.bool,
@@ -339,6 +339,9 @@ ItineraryList.defaultProps = {
   separatorPosition: undefined,
   loadingMoreItineraries: undefined,
   routingErrors: [],
+  bikeAndPublicItineraryCount: 0,
+  bikeRentAndPublicItineraryCount: 0,
+  bikeAndParkItineraryCount: 0,
 };
 
 ItineraryList.contextTypes = {

@@ -371,8 +371,8 @@ export default configMerger(parentConfig, {
 
   nationalServiceLink: {
     de: {
-      name: 'Fahrplanauskunft bwegt',
-      href: 'https://www.bwegt.de',
+      name: 'Mitfahrplatformen',
+      href: 'https://dev.mitfahren-bw.de/mitfahrplattformen.html',
     },
   },
 

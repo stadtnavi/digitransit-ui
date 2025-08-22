@@ -1063,7 +1063,7 @@ const translations = {
       'Für die von Ihnen gewählte Route ist Zu-Fuß-Gehen die schnellste Option.',
     'router-only-walk-title': 'Die Strecke zu Fuß zurücklegen',
     'router-outside-bounds-3':
-      'Keine Routenvorschläge gefunden, ad sich Start und Ziel außerhalb des Abdeckungsgebietes befinden.',
+      'Keine Routen gefunden – Start und Ziel liegen außerhalb des Abdeckungsgebiets.',
     'router-outside-service-period':
       'Keine Abfahrtsinformationen verfügbar für den gewählten Zeitpunkt.',
     'router-stops-in-range-1':
@@ -1246,7 +1246,7 @@ const translations = {
     'use-citybike': 'Leihrad benutzen',
     'use-national-service-postfix': '.',
     'use-national-service-prefix':
-      'Wir empfehlen Ihnen, die überregionale Reiseauskunft der Deutschen Bahn zu nutzen: ',
+      'Bitte nutzen Sie direkt die ',
     'use-own-position': 'Aktuellen Standort benutzen',
     'using-modes': 'Verkehrsmittel',
     'vehicle-parking-operator': 'Betreiberin: {operator}',

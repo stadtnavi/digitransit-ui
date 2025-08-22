@@ -112,8 +112,8 @@ class ItineraryLine extends React.Component {
           />,
         );
       }
-
-      if (!this.props.passive) {
+      const hideMarkers = true; // for MFBW, we for now don't show markers
+      if (!hideMarkers && !this.props.passive) {
         if (
           this.props.showIntermediateStops &&
           leg.intermediatePlaces != null

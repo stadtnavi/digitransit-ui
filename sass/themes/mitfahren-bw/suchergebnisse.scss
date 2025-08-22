@@ -184,9 +184,22 @@ body {
   flex-direction: column;
 }
 
-// For now, we disable datetimepicker. Once more results can be expected,
-// it should be re-introduced, at first only allowing coarse granular filtern
-// e.g. by weekday or morning/afternoon/evening, later fine grained.
-.front-page .datetimepicker-container, .quicksettings-container .datetimepicker-container {
+// We hide departure/arrival switch as carpool search currently only uses serviceDate
+.content .datetimepicker-container {
+  .datetimepicker-top-row {
     display: none;
+  }
+  .datetimepicker-top-row + div > span:nth-child(1) {
+    width: 100%;
+  }
+  .datetimepicker-top-row + div > span:nth-child(2) {
+    display: none;
+  }
+  .datetimepicker-select__control:focus-within {
+    box-shadow: 0 0 0 1px var(--bw-foreground-focus);
+  }
+
+  .open-embed-container, .open-advanced-settings {
+    display: none;
+  }
 }

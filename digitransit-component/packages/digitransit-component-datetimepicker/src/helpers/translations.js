@@ -6,7 +6,7 @@ const translations = {
     'accessible-closed': 'Auswahl geschlossen',
     'accessible-open': 'Öffne die Auswahl',
     'accessible-opened': 'Auswahl geöffnet',
-    'accessible-title': 'Datum und Uhrzeitauswahl',
+    'accessible-title': 'Datumsauswahl',
     'accessible-update-instructions':
       'Eine Änderung des Datums löst eine neue Suche aus.',
     arrival: 'Ankunft',

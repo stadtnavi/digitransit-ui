@@ -405,10 +405,11 @@ export default class CarpoolOffer extends React.Component {
         <button className="close-offcanvas" onClick={this.close}>
           <Icon className="close-icon" img="icon-icon_close" />
         </button>
-        <img
-          alt="Fahrgemeinschaft.de"
+        <Icon
+          img="fg_icon"
           className="fg_icon"
-          src="/img/fahrgemeinschaft-de-rund.png"
+          ariaLabel="Logo Fahrgemeinschaft.de"
+          height="8"
         />
         {this.renderBody()}
       </div>

@@ -432,11 +432,13 @@ const translations = {
     'add-phone-number': 'Bitte geben Sie Ihre Telefonnummer an:',
     'phone-number-info': 'Diese wird Interessenten angezeigt.',
     'your-carpool-trip': 'Ihr Inserat',
-    'carpool-success-info':
-      'Sie erhalten eine E-Mail von ride2go zur Aktivierung Ihres Inserats. Diese Mail enthält auch einen Link, mit dem Sie das Inserat später löschen können.',
-    'carpool-offer-success':
-      'Ihr Inserat von {origin} nach {destination} wurde auf der Plattform Fahrgemeinschaft.de eingestellt.',
     'time-oclock': ' Uhr',
+    'carpool-offer-success-single-date':
+      'Ihr Inserat von {origin} nach {destination} am {departureDay} um {departureTime} Uhr wurde erfolgreich übermittelt.',
+    'carpool-offer-success-regularly': 'Ihr Inserat von {origin} nach {destination} um {departureTime} Uhr wurde erfolgreich übermittelt.',
+    'carpool-offer-success-link-notice-important': 'Wichtig:',
+    'carpool-offer-success-link-notice': 'Bitte klicken Sie auf den Aktivierungslink in der Bestätigungs-E-Mail von ride2go, um Ihr Inserat zu aktivieren. Nur dann ist es für andere sichtbar.',
+    'carpool-offer-success-deactivation-notice': 'In der E-Mail finden Sie außerdem einen Link, mit dem Sie das Inserat bei Bedarf löschen können. Ihr Inserat wird nach Ablauf der Zeit, jedoch spätestens nach sechs Monaten (bei regelmäßigen Fahrten) automatisch gelöscht.',
     accessibility: 'Barrierefreiheit',
     'accessibility-limited': 'Rollstuhlgerecht',
     'accessibility-nolimit': 'Keine Einschränkungen',
@@ -1347,6 +1349,13 @@ const translations = {
     'cargo_bicycle-capacity-no-data': 'No capacity data available',
     'cargo_bicycle-capacity-available': '{available} of {capacity} available',
     'cargo_bicycle-capacity-in-total': 'Capacity: {capacity} cargo bike/ cargo bikes',
+    'carpool-offer-success-single-date':
+      'Your ride offer from {origin} to {destination} on {departureDay} at {departureTime} has been submitted successfully.',
+    'carpool-offer-success-regularly': 'Your ride offer from {origin} to {destination} at {departureTime} has been submitted successfully.',
+    'carpool-offer-success-link-notice-important': 'Important:',
+    'carpool-offer-success-link-notice': 'Please click the activation link in the confirmation email from ride2go to activate your offer. Only then will it become visible to others.',
+    'carpool-offer-success-deactivation-notice': 'The email also contains a link to delete your offer if needed. Your offer will be automatically deleted after the scheduled time or, in the case of recurring rides, after a maximum of six months.',
+    accessibility: 'Barrierefreiheit',
     'bicycle-availability': "{amount} Bikes available",
     privacy: 'Privacy',
     'bicycle-station-no-id': 'Bike rental station',

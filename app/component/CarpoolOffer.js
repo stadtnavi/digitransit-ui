@@ -202,32 +202,45 @@ export default class CarpoolOffer extends React.Component {
         </h2>
         <div>
           <p>
-            <FormattedMessage
-              id="carpool-offer-success"
-              values={{ origin, destination }}
-              defaultMessage="Your offer from {origin} to {destination} was added."
-            />
-          </p>
-          <p>
             {isRegularly ? (
               <FormattedMessage
-                id="chosen-times-recurring"
-                defaultMessage="You've set the following times and days: "
+                id="carpool-offer-success-regularly"
+                values={{
+                  origin,
+                  destination,
+                  departureTime,
+                }}
+                defaultMessage="Your ride offer from {origin} to {destination} at {departureTime} has been submitted successfully."
               />
             ) : (
               <FormattedMessage
-                id="chosen-times-once"
-                defaultMessage="You've set the following time: "
+                id="carpool-offer-success-single-date"
+                values={{
+                  origin,
+                  destination,
+                  departureDay,
+                  departureTime,
+                }}
+                defaultMessage="Your ride offer from {origin} to {destination} on {departureDay} at {departureTime} has been submitted successfully."
               />
             )}
-            {departureDay} <FormattedMessage id="at-time" defaultMessage="at" />{' '}
-            {departureTime}{' '}
-            <FormattedMessage id="time-oclock" defaultMessage=" " />.
+          </p>
+          <p id="carpool-offer-success-link-notice">
+            <span className="carpool-emphasize">
+              <FormattedMessage
+                id="carpool-offer-success-link-notice-important"
+                defaultMessage="Important:"
+              />
+            </span>{' '}
+            <FormattedMessage
+              id="carpool-offer-success-link-notice"
+              defaultMessage="Please click the activation link in the confirmation email from ride2go to activate your offer. Only then will it become visible to others."
+            />
           </p>
           <p>
             <FormattedMessage
-              id="carpool-success-info"
-              defaultMessage="You will receive an email from ride2go to activate your ad. This email also contains a link with which you can later delete the advertisement."
+              id="carpool-offer-success-deactivation-notice"
+              defaultMessage="The email also contains a link to delete your offer if needed. Your offer will be automatically deleted after the scheduled time or, in the case of recurring rides, after a maximum of six months."
             />
           </p>
         </div>

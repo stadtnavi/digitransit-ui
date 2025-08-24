@@ -100,9 +100,7 @@ function CarpoolLeg(props, { config, intl }) {
               ariaLabel={modeClassName}
             />
           </span>
-          <div className="headsign">
-            {CarpoolLeg.drawIcons(leg.route.agency)} {leg.to.name}
-          </div>
+          <div className="headsign">{leg.to.name}</div>
         </div>
         <div className="itinerary-leg-action" aria-hidden="true">
           <FormattedMessage
@@ -131,25 +129,6 @@ CarpoolLeg.createBookButton = route => {
     );
   }
   return <span />;
-};
-
-CarpoolLeg.drawIcons = agency => {
-  if (agency.gtfsId === 'mfdz:mifaz') {
-    return (
-      <Icon
-        img="mifaz_icon-without-text"
-        className="carpool-agency-logo"
-        ariaLabel={agency.name}
-      />
-    );
-  }
-  return (
-    <Icon
-      img="fg_icon"
-      className="carpool-agency-logo"
-      ariaLabel={agency.name}
-    />
-  );
 };
 
 CarpoolLeg.propTypes = {

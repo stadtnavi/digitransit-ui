@@ -539,7 +539,7 @@ export default configMerger(parentConfig, {
             de: 'LoRaWAN Gateways',
           },
           url: 'https://data.mfdz.de/hbg/dt-layers/lorawan-gateways.geojson',
-          category: 'leisure_and_tourism',
+          category: 'public_facilities',
           isOffByDefault: true,
           icon: 'icon-icon_gateways',
         },

@@ -118,7 +118,7 @@ class ParkAndRideForBikes {
 
   static getAvailability(properties) {
     const available = properties['availability.bicyclePlaces'];
-    if (available === 0) {
+    if (available === 0 || properties.state === 'CLOSED') {
       return 'no';
     }
     /* if (available === 1) {
@@ -147,7 +147,10 @@ class ParkAndRideForBikes {
     } else if (this.tile.coords.z >= type.smallIconZoom) {
       const icon = ParkAndRideForBikes.getIcon(properties);
       drawIcon(icon, this.tile, geom, this.iconSize).then(() => {
-        if (typeof properties['availability.bicyclePlaces'] === 'number') {
+        if (
+          properties.state === 'CLOSED' ||
+          typeof properties['availability.bicyclePlaces'] === 'number'
+        ) {
           drawAvailabilityBadge(
             ParkAndRideForBikes.getAvailability(properties),
             this.tile,

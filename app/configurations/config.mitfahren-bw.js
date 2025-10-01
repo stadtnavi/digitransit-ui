@@ -111,7 +111,7 @@ export default configMerger(parentConfig, {
 
     sprites: 'assets/svg-sprite.mitfahrenbw.svg',
     
-    issueTrackerUrl: null,
+    issueTrackerUrl: '',
     // issueTrackerUrls define issuetracker URLs per postalCode. In case none matches, issueTrackerUrl is used as falllback
     issueTrackerUrls: {
     },

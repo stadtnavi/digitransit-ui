@@ -404,7 +404,7 @@ export default configMerger(parentConfig, {
                   de: 'Parkzonen',
                 },
                 category: 'car',
-                url: '/assets/geojson/lb-layers/parkzonen.json',
+                url: 'https://stadtnavi.swlb.de/assets/geojson/lb-layers/parkzonen.json',
                 icon: 'icon-icon_open_carpark',
                 isOffByDefault: false,
                 minZoom: 13
@@ -418,7 +418,7 @@ export default configMerger(parentConfig, {
                   de: 'Radnetz Ludwigsburg',
                 },
                 category: 'bicycle',
-                url: '/assets/geojson/lb-layers/radnetz.json',
+                url: 'https://stadtnavi.swlb.de/assets/geojson/lb-layers/radnetz.json',
                 icon: 'icon-icon_radnetz',
                 isOffByDefault: false,
                 minZoom: 12

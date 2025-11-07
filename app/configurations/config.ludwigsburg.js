@@ -387,7 +387,24 @@ export default configMerger(parentConfig, {
                 visibleInSettingsUi: true,
                 hideCode: true,
                 enabled: true,
-            }
+            },
+            lime_stuttgart: {
+                icon: 'brand_lime',
+                operator: "lime",
+                name: {
+                    de: 'Lime Stuttgart',
+                    en: 'Lime Stuttgart',
+                },
+                type: 'scooter',
+                form_factors: ['scooter', 'bicycle'],
+                url: {
+                    de: 'https://www.li.me/de-de/locations/stuttgart',
+                    en: 'https://www.li.me/en-gb/',
+                },
+                visibleInSettingsUi: true,
+                hideCode: true,
+                enabled: true,
+            },
         }
     },
 

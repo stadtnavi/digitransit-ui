@@ -285,7 +285,16 @@ export default configMerger(parentConfig, {
           background: '#009DDB',
         },
       },
-
+      lime: {
+        icon: 'brand_lime',
+        name: {
+          de: 'Lime',
+          en: 'Lime',
+        },
+        colors: {
+          background: '#00DD00',
+        },
+      },
       regiorad: {
         icon: 'brand_regiorad',
         name: {

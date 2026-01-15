@@ -161,6 +161,22 @@ class MessageBar extends Component {
       </div>
     ));
 
+  isPeriodActive = msg => {
+    /*
+    Return false, if msg.validfrom is set (as isodate string) 
+    and in after Date.now, or if msg.validto is set (as isodate string) 
+    and in the past.
+    */
+    if (
+      Date.parse(msg.validfrom) > Date.now() ||
+      Date.parse(msg.validto) < Date.now()
+    ) {
+      return false;
+    }
+
+    return true;
+  };
+
   validMessages = () => {
     const { serviceAlerts } = this.state;
     const { intl, config } = this.context;
@@ -175,16 +191,18 @@ class MessageBar extends Component {
         toMessage(alert, intl, config, lang),
       ),
       ...messages,
-    ].filter(el => {
-      if (
-        Array.isArray(el.content[lang]) &&
-        el.content[lang].length > 0 &&
-        el.content[lang][0].content
-      ) {
-        return true;
-      }
-      return false;
-    });
+    ]
+      .filter(el => {
+        if (
+          Array.isArray(el.content[lang]) &&
+          el.content[lang].length > 0 &&
+          el.content[lang][0].content
+        ) {
+          return true;
+        }
+        return false;
+      })
+      .filter(el => this.isPeriodActive(el));
   };
 
   handleClose = () => {

@@ -11,6 +11,27 @@ import { dateOrEmpty } from '../util/timeUtils';
 import withBreakpoint from '../util/withBreakpoint';
 import { isKeyboardSelectionEvent } from '../util/browser';
 
+const carpoolUrl = carpoolLeg => {
+  const routeUrl = carpoolLeg?.route?.url;
+  if (routeUrl === undefined) {
+    return null;
+  }
+  // Replace template params in url by values deduced from carpool leg
+  // https://host/offer-id/?start={pickupLongitude},{pickupLatitude}&destination={dropOffLongitude},{dropOffLatitude}&departureTime={departureTime}&departureDate={departureDate}
+  const startTime = moment(carpoolLeg.startTime).local();
+  const departureDateTime = startTime.format('YYYY-MM-DDTHH:mm:ss');
+  const departureTime = startTime.format('HH:mm');
+  const departureDate = startTime.format('YYYY-MM-DD');
+  const parameterizedUrl = routeUrl
+    .replace('{departureTime}', departureTime)
+    .replace('{departureDate}', departureDate)
+    .replace('{departureDateTime}', departureDateTime)
+    .replace('{pickupLongitude}', carpoolLeg?.from?.lon)
+    .replace('{pickupLatitude}', carpoolLeg?.from?.lat)
+    .replace('{dropOffLongitude}', carpoolLeg?.to?.lon)
+    .replace('{dropOffLatitude}', carpoolLeg?.to?.lat);
+  return parameterizedUrl;
+};
 const Itinerary = (
   {
     data,
@@ -41,7 +62,7 @@ const Itinerary = (
   const boarding = firstDepartureLeg.from.name;
   const alighting = firstDepartureLeg.to.name;
   const agencyName = firstDepartureLeg?.route?.agency?.name;
-  const routeUrl = firstDepartureLeg?.route?.url;
+  const routeUrl = carpoolUrl(firstDepartureLeg);
   const verbalSchedule = firstDepartureLeg?.route?.desc;
   const destination = stops[stops.length - 1].name.split(',')[0];
   const carpoolingScore = Math.round((data.carpoolingScore || 0) * 100.0);

@@ -6,7 +6,7 @@ const PublishCarpoolOfferLink = () => (
   <div>
     <a
       className={cx('no-decoration', 'medium')}
-      href="https://dev.mitfahren-bw.de/mitfahrplattformen.html"
+      href="https://mitfahren-bw.de/mitfahrplattformen.html"
     >
       <FormattedMessage id="publish-carpool-request" defaultMessage="" />
     </a>

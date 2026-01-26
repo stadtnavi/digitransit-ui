@@ -164,8 +164,15 @@ export default configMerger(parentConfig, {
 
     appBarLink: {
             name: 'Mitfahren-BW Infoseite',
-            href: 'https://dev.mitfahren-bw.de/',
+            href: 'https://mitfahren-bw.de/',
             target: '_blank'
+    },
+
+    nationalServiceLink: {
+      de: {
+        name: 'Mitfahrplatformen',
+        href: 'https://mitfahren-bw.de/mitfahrplattformen.html',
+      },
     },
 
     availableLanguages: ['de'],
@@ -190,12 +197,12 @@ export default configMerger(parentConfig, {
             {
                 name: 'imprint',
                 nameEn: 'Imprint',
-                href: 'https://dev.mitfahren-bw.de/impressum.html',
+                href: 'https://mitfahren-bw.de/impressum.html',
             },
             {
                 name: 'privacy',
                 nameEn: 'Privacy',
-                href: 'https://dev.mitfahren-bw.de/datenschutz.html',
+                href: 'https://mitfahren-bw.de/datenschutz.html',
             },
         ],
     },
@@ -266,7 +273,7 @@ export default configMerger(parentConfig, {
                   en: 'Carpool Parkings',
                   de: 'P & M Parkplätze'
                 },
-                url: 'https://dev.mitfahren-bw.de/carpool_parkings.json',
+                url: 'https://mitfahren-bw.de/carpool_parkings.json',
                 category: 'car',
                 icon: 'icon-icon_bike_repair',
                 isOffByDefault: false,

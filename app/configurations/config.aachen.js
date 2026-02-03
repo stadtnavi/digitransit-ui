@@ -222,26 +222,24 @@ export default configMerger(parentConfig, {
                 background: '#EB690B'
             }
           },
-          tier: {
-            icon: "brand_tier",
+          dott: {
+            icon: 'brand_dott',
             name: {
-                de: "TIER",
-                fr: "TIER",
-                en: "TIER",
-                nl: "TIER",
+              de: 'dott',
+              en: 'dott',
             },
             colors: {
                background: '#ffffff',
                foreground: '#000000'
-            }
           },
-          velocity: {
-            icon: "brand_velocity",
+          },
+          "esel.ac": {
+            icon: "brand_esel_ac",
             name: {
-                de: "velocity Aachen",
-                fr: "velocity Aachen",
-                en: "velocity Aix-la-Chapelle",
-                nl: "velocity Aken",
+                de: "esel.ac",
+                fr: "esel.ac",
+                en: "esel.ac",
+                nl: "esel.ac",
             },
             colors: {
                 background: '#D0D0D0',
@@ -299,44 +297,44 @@ export default configMerger(parentConfig, {
                 nl: "https://www.voi.com/nl",
              }
            },
-           'tier_aachen': {
-             icon: "brand_tier",
-             operator: "tier",
+           'dott-aachen': {
+             icon: "brand_dott",
+             operator: "dott",
              name: {
-               de: "TIER",
-               fr: "TIER",
-               en: "TIER",
-               nl: "TIER",
+               de: "dott",
+               fr: "dott",
+               en: "dott",
+               nl: "dott",
              },
              type: "scooter",
              form_factors: ['scooter'],
              hideCode: true,
              enabled: true,
              url: {
-                de: "https://www.tier.app/de/",
-                en: "https://www.tier.app/en/",
-                nl: "https://www.tier.app/nl/",
-                fr: "https://www.tier.app/fr/",
+                de: 'https://ridedott.com/de/fahr-mit-uns/',
+                en: 'https://ridedott.com/ride-with-us/',
+                nl: "https://ridedott.com/nl/rijd-met-ons-mee/",
+                fr: "https://ridedott.com/fr/rouler-avec-dott/",
              }
            },
-           'velocity_aachen': {
-             icon: "brand_velocity",
-             operator: "velocity",
+           'esel_ac': {
+             icon: "brand_esel_ac",
+             operator: "esel.ac",
              name: {
-               de: "velocity Aachen",
-               fr: "velocity Aachen",
-               en: "velocity Aix-la-Chapelle",
-               nl: "velocity Aken",
+               de: "esel.ac",
+               fr: "esel.ac",
+               en: "esel.ac",
+               nl: "esel.ac",
              },
              type: "bicycle",
              form_factors: ['bicycle'],
              hideCode: true,
              enabled: true,
              url: {
-                de: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
-                en: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
-                nl: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
-                fr: "https://portal.velocitymobility.com/js_sign_up/1581407379#/subscription-selection",
+                de: "https://esel.ac/",
+                en: "https://esel.ac/",
+                nl: "https://esel.ac/",
+                fr: "https://esel.ac/",
              }
            }
         },   

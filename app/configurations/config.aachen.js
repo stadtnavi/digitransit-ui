@@ -153,7 +153,7 @@ export default configMerger(parentConfig, {
                     nl: 'Buwplaats',
                 },
                 url: 'https://data.mfdz.de/aachen/baustellen/roadworks.geojson',
-                category: 'bicycle_car',
+                category: 'car',
                 icon: 'icon-icon_roadworks',
             },
             {
@@ -229,9 +229,9 @@ export default configMerger(parentConfig, {
               en: 'dott',
             },
             colors: {
-               background: '#ffffff',
-               foreground: '#000000'
-          },
+              background: '#ffffff',
+              foreground: '#000000'
+            },
           },
           "esel.ac": {
             icon: "brand_esel_ac",

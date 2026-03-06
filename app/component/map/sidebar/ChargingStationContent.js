@@ -268,8 +268,8 @@ const ChargingStationContent = ({ match }, { intl, config }) => {
                 <span className="text-alignment">{connector.text}</span>
               </div>
             ))}
+            {getCapacity()}
           </div>
-          {getCapacity()}
         </div>
         <div className="divider" />
         {getPaymentTypes()}

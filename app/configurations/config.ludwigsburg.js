@@ -439,7 +439,19 @@ export default configMerger(parentConfig, {
                 icon: 'icon-icon_radnetz',
                 isOffByDefault: false,
                 minZoom: 12
-            }
+            },
+            {
+              code: 'sights',
+              name: {
+                fi: '',
+                en: 'Sights',
+                de: 'Sehenswürdigkeiten',
+              },
+              url: 'https://data.mfdz.de/lbg/dt-layers/sights.geojson',
+              category: 'leisure_and_tourism',
+              isOffByDefault: true,
+              icon: 'icon-icon_sights',
+            },
 	   ],
     },
     staticMessagesUrl: STATIC_MESSAGE_URL,

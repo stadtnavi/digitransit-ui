@@ -192,6 +192,18 @@ export default configMerger(parentConfig, {
                 category: 'shopping_and_services',
                 icon: 'icon-icon_aac_shopping-streets-marker',
             },
+            {
+                name: {
+                    fi: '',
+                    en: 'Rental Cargo-Bikes',
+                    de: 'Lastenrad-Sharing',
+                    fr: 'Cargo vélo partage',
+                    nl: 'Winkelstraten',
+                },
+                url: 'https://kim.regioit.de/GIS/STAC/stadtnavi/poi_lastenrad.json',
+                icon: 'icon-icon_cargo_bike_sharing',
+                category: 'sharing',
+            }
         ],
     },
 

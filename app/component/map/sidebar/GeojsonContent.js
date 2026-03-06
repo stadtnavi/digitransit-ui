@@ -108,7 +108,7 @@ const GeoJsonContent = ({ match, selectedFeature }) => {
           <>
             <div className="divider" />
             <div
-              className="text-light sidebar-info-container"
+              className="text-light popup-content sidebar-info-container"
               dangerouslySetInnerHTML={{ __html: popupContent }}
             />
           </>

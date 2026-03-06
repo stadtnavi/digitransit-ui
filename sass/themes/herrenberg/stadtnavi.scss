@@ -118,8 +118,6 @@
 
 .sidebar-info-container {
   padding: 0 26px 0 26px;
-  display: flex;
-  flex-direction: row;
 
   .icon-container {
     display: flex;
@@ -191,6 +189,10 @@
   font-size: 13px;
   color: #666666;
   margin: 5px 0 5px 0;
+
+  &.popup-content {
+    display: initial;
+  }
 }
 
 .text-alignment {

@@ -63,7 +63,7 @@ CityBikeStopContent.propTypes = {
   bikeRentalStation: PropTypes.shape({
     bikesAvailable: PropTypes.number.isRequired,
     spacesAvailable: PropTypes.number.isRequired,
-    capacity: PropTypes.number.isRequired,
+    capacity: PropTypes.number,
     networks: PropTypes.arrayOf(PropTypes.string),
     state: PropTypes.string || BIKESTATION_CLOSED,
   }),

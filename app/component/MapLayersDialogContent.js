@@ -503,7 +503,7 @@ const MapLayersDialogContent = (props, context) => {
             icon="icon-icon_shopping_services"
             title={context.intl.formatMessage({
               id: 'map-layer-category-shopping-services',
-              defaultMessage: 'Shopping & Services',
+              defaultMessage: 'Shopping / Services',
             })}
             onChange={updateSetting}
             options={getPoiLayers(shoppingAndServicesLayer)

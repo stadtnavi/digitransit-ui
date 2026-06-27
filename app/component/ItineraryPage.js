@@ -273,6 +273,7 @@ class ItineraryPage extends React.Component {
 
     fetchQuery(this.props.relayEnvironment, walkAndBikeQuery, planParams)
       .then(result => {
+        const MAX_RESULTS_PER_CATEGORY = 5;
         const bikeParkItineraries = filterItineraries(
           transitItineraries(result.bikeParkPlan?.itineraries),
           ['BICYCLE'],
@@ -288,25 +289,25 @@ class ItineraryPage extends React.Component {
 
         const bikeTransitPlan = {
           itineraries: [
-            ...bikeParkItineraries.slice(0, 3),
-            ...bikePublicItineraries.slice(0, 3),
-            ...bikeRentAndPublicItineraries.slice(0, 3),
+            ...bikeParkItineraries.slice(0, MAX_RESULTS_PER_CATEGORY),
+            ...bikePublicItineraries.slice(0, MAX_RESULTS_PER_CATEGORY),
+            ...bikeRentAndPublicItineraries.slice(0, MAX_RESULTS_PER_CATEGORY),
           ],
         };
 
         this.bikeAndParkItineraryCount = Math.min(
           bikeParkItineraries.length,
-          3,
+          MAX_RESULTS_PER_CATEGORY,
         );
 
         this.bikeAndPublicItineraryCount = Math.min(
           bikePublicItineraries.length,
-          3,
+          MAX_RESULTS_PER_CATEGORY,
         );
 
         this.bikeRentAndPublicItineraryCount = Math.min(
           bikeRentAndPublicItineraries.length,
-          3,
+          MAX_RESULTS_PER_CATEGORY,
         );
 
         const scooterRentAndPublicPlan = {

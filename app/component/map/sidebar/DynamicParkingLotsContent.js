@@ -53,8 +53,7 @@ class DynamicParkingLotsContent extends React.Component {
     const { intl } = this.context;
     const free = this.props.vehicleParking.availability?.carSpaces;
     const total = this.props.vehicleParking.capacity?.carSpaces;
-
-    if (Number(free) || Number(free) === 0) {
+    if (free !== null) {
       return intl.formatMessage(
         {
           id: 'parking-spaces-available',
@@ -64,7 +63,7 @@ class DynamicParkingLotsContent extends React.Component {
       );
     }
 
-    if (Number(total)) {
+    if (total !== null) {
       return intl.formatMessage(
         {
           id: 'parking-spaces-in-total',

@@ -62,6 +62,8 @@ export default configMerger(parentConfig, {
     showTitles: true,
     subTitle: 'Aachen',
 
+    MATOMO_SITE_ID: process.env.MATOMO_SITE_ID,
+
     sprites: 'assets/svg-sprite.aachen.svg',
     //logo: 'aachen/logo.svg',
     favicon: './app/configurations/images/aachen/stadt-aachen.png',

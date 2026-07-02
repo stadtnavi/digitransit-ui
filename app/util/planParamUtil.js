@@ -374,15 +374,15 @@ export const preparePlanParams = (config, useDefaultModes) => (
     ),
     // These modes are used by the "default" routing query.
     modes: [
-      // In stadtnavi, we want flex routing to be displayed as proper mode.
-      /*
-      ...(formattedModes.some(({ mode }) => mode === 'BUS')
+      // As ondemand is more and more common, we include flex routing in standard transit mode.
+      ...(config.includeOnDemandSuggestionsWithDefault === true &&
+      formattedModes.some(({ mode }) => mode === 'BUS')
         ? [
             { mode: 'FLEX', qualifier: 'DIRECT' },
             { mode: 'FLEX', qualifier: 'ACCESS' },
             { mode: 'FLEX', qualifier: 'EGRESS' },
           ]
-        : []), */
+        : []),
       ...formattedModes,
     ],
     ticketTypes,
@@ -418,9 +418,10 @@ export const preparePlanParams = (config, useDefaultModes) => (
       settings,
       defaultSettings,
     ),
+    // Optionally show OnDemandResults as extra tab
+    shouldMakeOnDemandTaxiQuery:
+      config.includeOnDemandSuggestionsAsExtra === true,
     // TODO shouldMakeXYZQuery and showXYZItineraries have same intend, harmonize
-    // In bbnavi, we include Flex routing in the "default" public routing mode.
-    shouldMakeOnDemandTaxiQuery: false,
     showBikeAndPublicItineraries:
       !wheelchair &&
       config.showBikeAndPublicItineraries &&

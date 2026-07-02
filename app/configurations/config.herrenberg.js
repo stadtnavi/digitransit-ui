@@ -618,5 +618,7 @@ export default configMerger(parentConfig, {
 
     showCO2InItinerarySummary: true,
 
-    EMISSIONS_INFO: 'https://www.herrenberg.de/Mobilit%C3%A4t/CO2'
+    EMISSIONS_INFO: 'https://www.herrenberg.de/Mobilit%C3%A4t/CO2',
+
+    includeOnDemandSuggestionsWithDefault: true,
 });

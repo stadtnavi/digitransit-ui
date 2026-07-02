@@ -135,4 +135,6 @@ export default configMerger(parentConfig, {
 
     staticMessagesUrl: STATIC_MESSAGE_URL,
 
+    zukunftsroutingPhasenDownloadURL: 'https://data.mfdz.de/aachen/phasen/zukunftsroutingPhasen.json',
+ 
 });

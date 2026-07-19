@@ -445,12 +445,14 @@ class IndexPage extends React.Component {
                   position="left"
                   fontWeights={fontWeights}
                 >
-                  <span className="searchIntro">
-                    <FormattedMessage
-                      id="index.searchIntro"
-                      defaultMessage="The new traffic management for car traffic was politically decided in November 2023. By establishing three control points, new routes for car traffic are created. See now what changes for you."
-                    />
-                  </span>
+                  <span
+                    className="searchIntro"
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatHTMLMessage({
+                        id: 'index.searchIntro',
+                      }),
+                    }}
+                  />
                   <span className="sr-only">
                     <FormattedMessage
                       id="search-fields.sr-instructions"
@@ -502,12 +504,14 @@ class IndexPage extends React.Component {
                   position="bottom"
                   fontWeights={fontWeights}
                 >
-                  <div className="searchIntro">
-                    <FormattedMessage
-                      id="index.searchIntro"
-                      defaultMessage="The new traffic management for car traffic was politically decided in November 2023. By establishing three control points, new routes for car traffic are created. See now what changes for you."
-                    />
-                  </div>
+                  <div
+                    className="searchIntro"
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatHTMLMessage({
+                        id: 'index.searchIntro',
+                      }),
+                    }}
+                  />
                   <LocationSearch
                     disableAutoFocus
                     isMobile

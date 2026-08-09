@@ -7,9 +7,17 @@ import Icon from './Icon';
 import LocalTime from './LocalTime';
 
 function DepartureTime(props, context) {
+  const isLate =
+    props.realtimeDeparture - props.scheduledDeparture >=
+    context.config.itinerary.delayThreshold;
+  const departureTime =
+    props.canceled || !isLate
+      ? props.scheduledDeparture
+      : props.realtimeDeparture;
+
   let shownTime;
   const timeDiffInMinutes = Math.floor(
-    (props.departureTime - props.currentTime) / 60,
+    (departureTime - props.currentTime) / 60,
   );
   if (timeDiffInMinutes <= -1) {
     shownTime = undefined;
@@ -45,6 +53,7 @@ function DepartureTime(props, context) {
               {
                 realtime: props.realtime,
                 canceled: props.canceled,
+                late: isLate,
               },
               props.className,
             )}
@@ -63,6 +72,7 @@ function DepartureTime(props, context) {
             canceled: props.canceled,
             first: !props.isNextDeparture,
             next: props.isNextDeparture,
+            late: isLate,
           },
           props.className,
         )}
@@ -72,8 +82,13 @@ function DepartureTime(props, context) {
             id: 'next',
             defaultMessage: 'Next',
           })} `}
-        <LocalTime forceUtc={props.useUTC} time={props.departureTime} />
+        <LocalTime forceUtc={props.useUTC} time={departureTime} />
       </span>
+      {props.realtime && isLate && (
+        <span key="time" className="time original-time">
+          <LocalTime forceUtc={props.useUTC} time={props.scheduledDeparture} />
+        </span>
+      )}
       {props.canceled && props.showCancelationIcon && (
         <Icon className="caution" img="icon-icon_caution" />
       )}
@@ -92,7 +107,8 @@ DepartureTime.propTypes = {
   className: PropTypes.string,
   canceled: PropTypes.bool,
   currentTime: PropTypes.number.isRequired,
-  departureTime: PropTypes.number.isRequired,
+  scheduledDeparture: PropTypes.number.isRequired,
+  realtimeDeparture: PropTypes.number.isRequired,
   realtime: PropTypes.bool,
   style: PropTypes.object,
   useUTC: PropTypes.bool,
@@ -123,11 +139,8 @@ export default DepartureTime;
 export const mapStopTime = (stoptime, pattern) => ({
   stop: stoptime.stop,
   canceled: stoptime.realtimeState === 'CANCELED',
-  departureTime:
-    stoptime.serviceDay +
-    (stoptime.realtimeState === 'CANCELED' || stoptime.realtimeDeparture === -1
-      ? stoptime.scheduledDeparture
-      : stoptime.realtimeDeparture),
+  scheduledDeparture: stoptime.serviceDay + stoptime.scheduledDeparture,
+  realtimeDeparture: stoptime.serviceDay + stoptime.realtimeDeparture,
   realtime: stoptime.realtimeDeparture !== -1 && stoptime.realtime,
   pattern: pattern && pattern.pattern,
   trip: stoptime.trip,

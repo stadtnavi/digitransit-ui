@@ -621,4 +621,6 @@ export default configMerger(parentConfig, {
     EMISSIONS_INFO: 'https://www.herrenberg.de/Mobilit%C3%A4t/CO2',
 
     includeOnDemandSuggestionsWithDefault: true,
+    // Reactivate accessibility routing
+    accessibilityRoutingDisabled: false,
 });
